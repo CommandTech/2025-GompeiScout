@@ -1,4 +1,7 @@
-﻿using SharpDX.XInput;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using SharpDX.XInput;
 using SharpDX.DirectInput;
 
 namespace ScoutingCodeRedo.Static
@@ -315,6 +318,67 @@ namespace ScoutingCodeRedo.Static
             {
                 return false;
             }
+        }
+    }
+
+    class Controller
+    {
+        public Joystick[] GetSticks(DirectInput Input, Joystick stick, Joystick[] Sticks, Joystick stick1)
+        {
+            List<Joystick> sticks = new List<Joystick>();
+            foreach (DeviceInstance device in Input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
+            {
+                try
+                {
+                    stick = new Joystick(Input, device.InstanceGuid);
+                    stick.Acquire();
+
+                    foreach (DeviceObjectInstance deviceObject in stick.GetObjects())
+                    {
+                        if ((deviceObject.ObjectType & ObjectDevi) != 0)
+                            stick.GetObjectPropertiesById((int)deviceObject.ObjectType).SetRange(-100, 100);
+                    }
+
+                    sticks.Add(stick);
+                }
+                catch (Exception) { }
+            }
+            return sticks.ToArray();
+        }
+
+        public GamePad[] getGamePads()
+        {
+            DirectInput Input = new DirectInput();
+            Joystick stick;
+            GamePad gamepad;
+
+            List<Joystick> sticks = new List<Joystick>();
+            List<GamePad> gamepads = new List<GamePad>();
+            foreach (DeviceInstance device in Input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
+            {
+                try
+                {
+                    stick = new Joystick(Input, device.InstanceGuid);
+                    stick.Acquire();
+
+                    foreach (DeviceObjectInstance deviceObject in stick.GetObjects())
+                    {
+                        if ((deviceObject.ObjectType & ObjectDeviceType.Axis) != 0)
+                            stick.GetObjectPropertiesById((int)deviceObject.ObjectType).SetRange(-100, 100);
+                    }
+
+                    gamepad = new GamePad(stick);
+
+                    sticks.Add(stick);
+                    gamepads.Add(gamepad);
+                    Console.WriteLine(stick.Information.InstanceName);
+                }
+                catch (Exception)
+                {
+                    // cry
+                }
+            }
+            return gamepads.ToArray();
         }
     }
 }

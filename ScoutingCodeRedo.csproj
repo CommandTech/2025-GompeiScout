@@ -71,47 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Dynamic\DynamicDatabase.cs" />
-    <Compile Include="Dynamic\DynamicGamePadResponses.cs" />
-    <Compile Include="Dynamic\DynamicRobotState.cs" />
+    <Compile Include="Dynamic\RobotState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Static\BuildInitalDatabase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Static\CollectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Static\CollectionForm.Designer.cs">
-      <DependentUpon>CollectionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Static\CollectionForm1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CollectionForm.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Static\DatabaseSchema.cs" />
-    <Compile Include="Static\GamePadDefinition.cs" />
-    <Compile Include="Static\ModeCode.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Static\GamePadCode.cs" />
+    <Compile Include="Static\GamePadDefinitions.cs" />
+    <Compile Include="Static\BaseScreen.cs" />
     <Compile Include="Static\ProgramStart.cs" />
-    <Compile Include="Static\UpdateDatabase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Static\UpdateDatabase.Designer.cs">
-      <DependentUpon>UpdateDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Static\UpdateDatabase1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateDatabase.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Static\Utilities.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -121,27 +86,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Static\CollectionForm.resx">
-      <DependentUpon>CollectionForm.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CollectionForm1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Static\UpdateDatabase.resx">
-      <DependentUpon>UpdateDatabase.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>UpdateDatabase1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Database.xsc">
-      <DependentUpon>Database.xsd</DependentUpon>
-    </None>
-    <None Include="Database.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database.xss">
-      <DependentUpon>Database.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,39 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\panel9.BackgroundImage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="panel9.BackgroundImage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox1.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox1.InitialImage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox2.Image.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox3.Image.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox4.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox5.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox6.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox7.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pictureBox8.Image.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
