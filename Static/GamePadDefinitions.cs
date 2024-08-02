@@ -323,62 +323,56 @@ namespace ScoutingCodeRedo.Static
 
     class Controller
     {
-        public Joystick[] GetSticks(DirectInput Input, Joystick stick, Joystick[] Sticks, Joystick stick1)
+        public Joystick[] GetSticks(DirectInput input)
         {
             List<Joystick> sticks = new List<Joystick>();
-            foreach (DeviceInstance device in Input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
+            foreach (DeviceInstance device in input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
             {
                 try
                 {
-                    stick = new Joystick(Input, device.InstanceGuid);
+                    Joystick stick = new Joystick(input, device.InstanceGuid);
                     stick.Acquire();
 
-                    foreach (DeviceObjectInstance deviceObject in stick.GetObjects())
+                    foreach (DeviceObjectInstance deviceObject in stick.GetObjects(DeviceObjectTypeFlags.Axis))
                     {
-                        if ((deviceObject.ObjectType & ObjectDevi) != 0)
-                            stick.GetObjectPropertiesById((int)deviceObject.ObjectType).SetRange(-100, 100);
+                        var objectProperties = stick.GetObjectPropertiesById(deviceObject.ObjectId);
+                        objectProperties.Range = new InputRange(-100, 100);
                     }
 
                     sticks.Add(stick);
-                }
-                catch (Exception) { }
-            }
-            return sticks.ToArray();
-        }
-
-        public GamePad[] getGamePads()
-        {
-            DirectInput Input = new DirectInput();
-            Joystick stick;
-            GamePad gamepad;
-
-            List<Joystick> sticks = new List<Joystick>();
-            List<GamePad> gamepads = new List<GamePad>();
-            foreach (DeviceInstance device in Input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
-            {
-                try
-                {
-                    stick = new Joystick(Input, device.InstanceGuid);
-                    stick.Acquire();
-
-                    foreach (DeviceObjectInstance deviceObject in stick.GetObjects())
-                    {
-                        if ((deviceObject.ObjectType & ObjectDeviceType.Axis) != 0)
-                            stick.GetObjectPropertiesById((int)deviceObject.ObjectType).SetRange(-100, 100);
-                    }
-
-                    gamepad = new GamePad(stick);
-
-                    sticks.Add(stick);
-                    gamepads.Add(gamepad);
-                    Console.WriteLine(stick.Information.InstanceName);
                 }
                 catch (Exception)
                 {
                     // cry
                 }
             }
-            return gamepads.ToArray();
+            return sticks.ToArray();
+        }
+
+        public List<Joystick> GetGamePads()
+        {
+            var directInput = new DirectInput();
+            var gamePads = new List<Joystick>();
+
+            // Enumerate all gamepad devices
+            foreach (var deviceInstance in directInput.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
+            {
+                var gamePad = new Joystick(directInput, deviceInstance.InstanceGuid);
+                gamePad.Properties.BufferSize = 128; // Set buffer size for input events
+                gamePad.Acquire(); // Acquire the device for capturing input
+
+                // Optionally set axis ranges or other properties here
+                // For example, setting the range for all axes
+                foreach (var deviceObject in gamePad.GetObjects(DeviceObjectTypeFlags.Axis))
+                {
+                    var objectProperties = gamePad.GetObjectPropertiesById(deviceObject.ObjectId);
+                    objectProperties.Range = new InputRange(-1000, 1000); // Example range
+                }
+
+                gamePads.Add(gamePad);
+            }
+
+            return gamePads;
         }
     }
 }
