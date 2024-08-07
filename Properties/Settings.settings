@@ -5,5 +5,8 @@
     <Setting Name="API_Key" Type="System.String" Scope="User">
       <Value Profile="(Default)">zhTqFG7csJoif1sNXt3aZngy0LB1X4LxMgTfXBvPscNG0P9FifZCa2uGJcUk2gKW</Value>
     </Setting>
+    <Setting Name="redRight" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

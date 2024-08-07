@@ -34,5 +34,17 @@ namespace ScoutingCodeRedo.Properties {
                 this["API_Key"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool redRight {
+            get {
+                return ((bool)(this["redRight"]));
+            }
+            set {
+                this["redRight"] = value;
+            }
+        }
     }
 }
