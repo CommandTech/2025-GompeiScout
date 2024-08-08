@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScoutingCodeRedo.Dynamic;
+using System;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Static
@@ -13,7 +14,18 @@ namespace ScoutingCodeRedo.Static
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseScreen());
+
+            BaseScreen baseScreen = new BaseScreen();
+
+            ScouterBoxes scouterBoxes = new ScouterBoxes
+            {
+                Owner = baseScreen,
+                TopMost = true
+            };
+            scouterBoxes.Location = baseScreen.Location;
+            scouterBoxes.Show();
+
+            Application.Run(baseScreen);
         }
     }
 }
