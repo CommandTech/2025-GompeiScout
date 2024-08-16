@@ -1945,7 +1945,7 @@ namespace ScoutingCodeRedo.Static
             // 
             this.panel6.BackColor = System.Drawing.Color.DarkBlue;
             this.panel6.Controls.Add(this.label19);
-            this.panel6.Location = new System.Drawing.Point(2, 310);
+            this.panel6.Location = new System.Drawing.Point(0, 310);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(390, 11);
             this.panel6.TabIndex = 279;
@@ -2030,9 +2030,9 @@ namespace ScoutingCodeRedo.Static
             // 
             this.panel10.BackColor = System.Drawing.Color.DarkBlue;
             this.panel10.Controls.Add(this.label54);
-            this.panel10.Location = new System.Drawing.Point(2, 307);
+            this.panel10.Location = new System.Drawing.Point(0, 307);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(392, 11);
+            this.panel10.Size = new System.Drawing.Size(397, 11);
             this.panel10.TabIndex = 279;
             // 
             // label54
@@ -2115,9 +2115,9 @@ namespace ScoutingCodeRedo.Static
             // 
             this.panel30.BackColor = System.Drawing.Color.DarkBlue;
             this.panel30.Controls.Add(this.label89);
-            this.panel30.Location = new System.Drawing.Point(2, 308);
+            this.panel30.Location = new System.Drawing.Point(0, 308);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(375, 11);
+            this.panel30.Size = new System.Drawing.Size(380, 11);
             this.panel30.TabIndex = 279;
             // 
             // label89
@@ -2213,9 +2213,9 @@ namespace ScoutingCodeRedo.Static
             // 
             this.panel35.BackColor = System.Drawing.Color.Red;
             this.panel35.Controls.Add(this.label106);
-            this.panel35.Location = new System.Drawing.Point(3, 314);
+            this.panel35.Location = new System.Drawing.Point(0, 314);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(390, 11);
+            this.panel35.Size = new System.Drawing.Size(393, 11);
             this.panel35.TabIndex = 279;
             // 
             // label106
@@ -2300,7 +2300,7 @@ namespace ScoutingCodeRedo.Static
             this.panel39.Controls.Add(this.label111);
             this.panel39.Location = new System.Drawing.Point(0, 314);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(392, 11);
+            this.panel39.Size = new System.Drawing.Size(395, 11);
             this.panel39.TabIndex = 279;
             // 
             // label111
@@ -2383,9 +2383,9 @@ namespace ScoutingCodeRedo.Static
             // 
             this.panel41.BackColor = System.Drawing.Color.Red;
             this.panel41.Controls.Add(this.label113);
-            this.panel41.Location = new System.Drawing.Point(3, 317);
+            this.panel41.Location = new System.Drawing.Point(6, 317);
             this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(378, 11);
+            this.panel41.Size = new System.Drawing.Size(381, 11);
             this.panel41.TabIndex = 279;
             // 
             // label113
