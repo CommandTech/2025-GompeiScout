@@ -2480,7 +2480,7 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.AutoSize = true;
             this.lblMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatch.ForeColor = System.Drawing.Color.White;
-            this.lblMatch.Location = new System.Drawing.Point(1487, 410);
+            this.lblMatch.Location = new System.Drawing.Point(672, 23);
             this.lblMatch.Name = "lblMatch";
             this.lblMatch.Size = new System.Drawing.Size(32, 33);
             this.lblMatch.TabIndex = 292;

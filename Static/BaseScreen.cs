@@ -51,8 +51,7 @@ namespace ScoutingCodeRedo.Static
             List<string> ScoutList = new List<string>();
             if (cbxEndMatch.Checked)
             {
-                currentmatch++;
-                this.lblMatch.Text = (currentmatch).ToString();
+                nextMatch();
                 for (int i = 0; i <= 5; i++)
                 {
                     //using (var db = new SeasonContext())
@@ -76,16 +75,14 @@ namespace ScoutingCodeRedo.Static
                 {
                     MessageBox.Show("You are at the last match.");
                     currentmatch--;
-
                 }
             }
             else
             {
                 DialogResult dialogResult = MessageBox.Show("All unsaved data will be lost.  Continue?", "Next Match", MessageBoxButtons.YesNo);
-                currentmatch++;
                 if (dialogResult == DialogResult.Yes && currentmatch != bgc.InMemoryMatchList.Count)
                 {
-
+                    nextMatch();
                 }
                 else
                 {
@@ -93,7 +90,15 @@ namespace ScoutingCodeRedo.Static
                     currentmatch--;
                 }
             }
+
         }
+
+        private void nextMatch()
+        {
+            currentmatch++;
+            this.lblMatch.Text = (currentmatch).ToString();
+        }
+
         private void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
             if (this.comboBoxSelectRegional.Text == "Please press the Load Events Button...")
