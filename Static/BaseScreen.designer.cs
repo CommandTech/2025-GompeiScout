@@ -176,6 +176,7 @@ namespace ScoutingCodeRedo.Static
         private Label lbl0TeamName;
         private Label lbl0ScoutName;
         private Label lbl0ModeValue;
+        private System.Windows.Forms.ListBox lstLog;
         private System.ComponentModel.IContainer components = null;
 
         public string eventcode;
@@ -188,6 +189,8 @@ namespace ScoutingCodeRedo.Static
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseScreen));
+            this.lstLog = new System.Windows.Forms.ListBox();
+            this.comboBoxSelectRegional = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
@@ -2486,6 +2489,18 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.TabIndex = 292;
             this.lblMatch.Text = "0";
             // 
+            // lstLog
+            // 
+            this.lstLog.BackColor = System.Drawing.Color.Black;
+            this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstLog.ForeColor = System.Drawing.Color.White;
+            this.lstLog.FormattingEnabled = true;
+            this.lstLog.ItemHeight = 20;
+            this.lstLog.Location = new System.Drawing.Point(8, 728);
+            this.lstLog.Name = "lstLog";
+            this.lstLog.Size = new System.Drawing.Size(1010, 0);
+            this.lstLog.TabIndex = 1;
+            // 
             // BaseScreen
             // 
             this.AutoScroll = true;
@@ -2507,6 +2522,7 @@ namespace ScoutingCodeRedo.Static
             this.Controls.Add(this.btnPreviousMatch);
             this.Controls.Add(this.btnpopulateForEvent);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lstLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BaseScreen";
             this.TopMost = true;
@@ -2573,5 +2589,6 @@ namespace ScoutingCodeRedo.Static
 
         }
         #endregion
+
     }
 }
