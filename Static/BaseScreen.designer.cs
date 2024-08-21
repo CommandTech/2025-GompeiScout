@@ -40,11 +40,7 @@ namespace ScoutingCodeRedo.Static
         private Label lbl5Position8;
         private Label lbl5Position1;
         private Label lbl5Position2;
-        private Label lbl5Position11;
         private Label lbl5Position0Value;
-        private Label lbl5TeamName;
-        private Label lbl5ScoutName;
-        private Label lbl5ModeValue;
         private Panel panel15;
         private Panel panel26;
         private Label label33;
@@ -75,11 +71,7 @@ namespace ScoutingCodeRedo.Static
         private Label lbl4Position8;
         private Label lbl4Position1;
         private Label lbl4Position2;
-        private Label lbl4Position11;
         private Label lbl4Position0Value;
-        private Label lbl4TeamName;
-        private Label lbl4ScoutName;
-        private Label lbl4ModeValue;
         private Panel panel12;
         private Panel panel23;
         private Label label11;
@@ -114,11 +106,7 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3Position8;
         private Label lbl3Position1;
         private Label lbl3Position2;
-        private Label lbl3Position11;
         private Label lbl3Position0Value;
-        private Label lbl3TeamName;
-        private Label lbl3ScoutName;
-        private Label lbl3ModeValue;
         private Button SwapScouters;
         private Button btnUpdateDB;
         private CheckBox cbxEndMatch;
@@ -135,20 +123,8 @@ namespace ScoutingCodeRedo.Static
         private Panel panel3;
         private Panel panel6;
         private Label label19;
-        private Label label29;
-        private Label label35;
-        private Label label36;
-        private Label label37;
         private Panel panel7;
-        private Label label64;
-        private Label label66;
-        private Label label67;
-        private Label label68;
         private Panel panel11;
-        private Label label99;
-        private Label label101;
-        private Label label102;
-        private Label label103;
         private Panel panel31;
         private Panel panel32;
         private Panel panel35;
@@ -222,11 +198,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position8 = new System.Windows.Forms.Label();
             this.lbl5Position1 = new System.Windows.Forms.Label();
             this.lbl5Position2 = new System.Windows.Forms.Label();
-            this.lbl5Position11 = new System.Windows.Forms.Label();
             this.lbl5Position0Value = new System.Windows.Forms.Label();
-            this.lbl5TeamName = new System.Windows.Forms.Label();
-            this.lbl5ScoutName = new System.Windows.Forms.Label();
-            this.lbl5ModeValue = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
@@ -257,11 +229,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position8 = new System.Windows.Forms.Label();
             this.lbl4Position1 = new System.Windows.Forms.Label();
             this.lbl4Position2 = new System.Windows.Forms.Label();
-            this.lbl4Position11 = new System.Windows.Forms.Label();
             this.lbl4Position0Value = new System.Windows.Forms.Label();
-            this.lbl4TeamName = new System.Windows.Forms.Label();
-            this.lbl4ScoutName = new System.Windows.Forms.Label();
-            this.lbl4ModeValue = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -296,18 +264,13 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position8 = new System.Windows.Forms.Label();
             this.lbl3Position1 = new System.Windows.Forms.Label();
             this.lbl3Position2 = new System.Windows.Forms.Label();
-            this.lbl3Position11 = new System.Windows.Forms.Label();
             this.lbl3Position0Value = new System.Windows.Forms.Label();
-            this.lbl3TeamName = new System.Windows.Forms.Label();
-            this.lbl3ScoutName = new System.Windows.Forms.Label();
-            this.lbl3ModeValue = new System.Windows.Forms.Label();
             this.SwapScouters = new System.Windows.Forms.Button();
             this.btnUpdateDB = new System.Windows.Forms.Button();
             this.cbxEndMatch = new System.Windows.Forms.CheckBox();
             this.lblkey = new System.Windows.Forms.Label();
             this.btnInitialDBLoad = new System.Windows.Forms.Button();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.comboBoxSelectRegional = new System.Windows.Forms.ComboBox();
             this.btnNextMatch = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.btnPreviousMatch = new System.Windows.Forms.Button();
@@ -317,24 +280,12 @@ namespace ScoutingCodeRedo.Static
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label54 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.label89 = new System.Windows.Forms.Label();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
@@ -360,6 +311,18 @@ namespace ScoutingCodeRedo.Static
             this.lbl0ModeValue = new System.Windows.Forms.Label();
             this.labelMatch = new System.Windows.Forms.Label();
             this.lblMatch = new System.Windows.Forms.Label();
+            this.lbl3Position11 = new System.Windows.Forms.Label();
+            this.lbl3TeamName = new System.Windows.Forms.Label();
+            this.lbl3ScoutName = new System.Windows.Forms.Label();
+            this.lbl3ModeValue = new System.Windows.Forms.Label();
+            this.lbl4Position11 = new System.Windows.Forms.Label();
+            this.lbl4TeamName = new System.Windows.Forms.Label();
+            this.lbl4ScoutName = new System.Windows.Forms.Label();
+            this.lbl4ModeValue = new System.Windows.Forms.Label();
+            this.lbl5Position11 = new System.Windows.Forms.Label();
+            this.lbl5TeamName = new System.Windows.Forms.Label();
+            this.lbl5ScoutName = new System.Windows.Forms.Label();
+            this.lbl5ModeValue = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -391,6 +354,29 @@ namespace ScoutingCodeRedo.Static
             this.panel41.SuspendLayout();
             this.team1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lstLog
+            // 
+            this.lstLog.BackColor = System.Drawing.Color.Black;
+            this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstLog.ForeColor = System.Drawing.Color.White;
+            this.lstLog.FormattingEnabled = true;
+            this.lstLog.ItemHeight = 20;
+            this.lstLog.Location = new System.Drawing.Point(8, 728);
+            this.lstLog.Name = "lstLog";
+            this.lstLog.Size = new System.Drawing.Size(1010, 0);
+            this.lstLog.TabIndex = 1;
+            // 
+            // comboBoxSelectRegional
+            // 
+            this.comboBoxSelectRegional.DisplayMember = "event_code";
+            this.comboBoxSelectRegional.FormattingEnabled = true;
+            this.comboBoxSelectRegional.Location = new System.Drawing.Point(169, 21);
+            this.comboBoxSelectRegional.Name = "comboBoxSelectRegional";
+            this.comboBoxSelectRegional.Size = new System.Drawing.Size(290, 28);
+            this.comboBoxSelectRegional.TabIndex = 290;
+            this.comboBoxSelectRegional.Text = "Please press the Load Events Button...";
+            this.comboBoxSelectRegional.ValueMember = "event_code";
             // 
             // panel2
             // 
@@ -432,11 +418,7 @@ namespace ScoutingCodeRedo.Static
             this.panel18.Controls.Add(this.lbl5Position8);
             this.panel18.Controls.Add(this.lbl5Position1);
             this.panel18.Controls.Add(this.lbl5Position2);
-            this.panel18.Controls.Add(this.lbl5Position11);
             this.panel18.Controls.Add(this.lbl5Position0Value);
-            this.panel18.Controls.Add(this.lbl5TeamName);
-            this.panel18.Controls.Add(this.lbl5ScoutName);
-            this.panel18.Controls.Add(this.lbl5ModeValue);
             this.panel18.Location = new System.Drawing.Point(792, 5);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(393, 391);
@@ -784,17 +766,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position2.TabIndex = 318;
             this.lbl5Position2.Text = "Del:";
             // 
-            // lbl5Position11
-            // 
-            this.lbl5Position11.AutoSize = true;
-            this.lbl5Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position11.Location = new System.Drawing.Point(6, 324);
-            this.lbl5Position11.Name = "lbl5Position11";
-            this.lbl5Position11.Size = new System.Drawing.Size(187, 33);
-            this.lbl5Position11.TabIndex = 291;
-            this.lbl5Position11.Text = "Match Event";
-            // 
             // lbl5Position0Value
             // 
             this.lbl5Position0Value.AutoSize = true;
@@ -807,45 +778,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position0Value.TabIndex = 274;
             this.lbl5Position0Value.Text = "$$";
             this.lbl5Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl5TeamName
-            // 
-            this.lbl5TeamName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl5TeamName.BackColor = System.Drawing.Color.Black;
-            this.lbl5TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl5TeamName.Location = new System.Drawing.Point(231, 348);
-            this.lbl5TeamName.Name = "lbl5TeamName";
-            this.lbl5TeamName.Size = new System.Drawing.Size(159, 37);
-            this.lbl5TeamName.TabIndex = 248;
-            this.lbl5TeamName.Text = "Team 0";
-            this.lbl5TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl5ScoutName
-            // 
-            this.lbl5ScoutName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl5ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl5ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5ScoutName.Location = new System.Drawing.Point(6, 359);
-            this.lbl5ScoutName.Name = "lbl5ScoutName";
-            this.lbl5ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl5ScoutName.Size = new System.Drawing.Size(158, 27);
-            this.lbl5ScoutName.TabIndex = 247;
-            this.lbl5ScoutName.Text = "Select Name";
-            this.lbl5ScoutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl5ModeValue
-            // 
-            this.lbl5ModeValue.AutoSize = true;
-            this.lbl5ModeValue.BackColor = System.Drawing.Color.Black;
-            this.lbl5ModeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lbl5ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbl5ModeValue.Location = new System.Drawing.Point(1, 3);
-            this.lbl5ModeValue.Name = "lbl5ModeValue";
-            this.lbl5ModeValue.Size = new System.Drawing.Size(101, 40);
-            this.lbl5ModeValue.TabIndex = 2;
-            this.lbl5ModeValue.Text = "Auto:";
             // 
             // panel15
             // 
@@ -876,11 +808,7 @@ namespace ScoutingCodeRedo.Static
             this.panel15.Controls.Add(this.lbl4Position8);
             this.panel15.Controls.Add(this.lbl4Position1);
             this.panel15.Controls.Add(this.lbl4Position2);
-            this.panel15.Controls.Add(this.lbl4Position11);
             this.panel15.Controls.Add(this.lbl4Position0Value);
-            this.panel15.Controls.Add(this.lbl4TeamName);
-            this.panel15.Controls.Add(this.lbl4ScoutName);
-            this.panel15.Controls.Add(this.lbl4ModeValue);
             this.panel15.Location = new System.Drawing.Point(391, 8);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(397, 388);
@@ -1228,17 +1156,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position2.TabIndex = 318;
             this.lbl4Position2.Text = "Del:";
             // 
-            // lbl4Position11
-            // 
-            this.lbl4Position11.AutoSize = true;
-            this.lbl4Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position11.Location = new System.Drawing.Point(6, 327);
-            this.lbl4Position11.Name = "lbl4Position11";
-            this.lbl4Position11.Size = new System.Drawing.Size(187, 33);
-            this.lbl4Position11.TabIndex = 291;
-            this.lbl4Position11.Text = "Match Event";
-            // 
             // lbl4Position0Value
             // 
             this.lbl4Position0Value.AutoSize = true;
@@ -1251,45 +1168,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position0Value.TabIndex = 274;
             this.lbl4Position0Value.Text = "$$";
             this.lbl4Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl4TeamName
-            // 
-            this.lbl4TeamName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl4TeamName.BackColor = System.Drawing.Color.Black;
-            this.lbl4TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl4TeamName.Location = new System.Drawing.Point(236, 345);
-            this.lbl4TeamName.Name = "lbl4TeamName";
-            this.lbl4TeamName.Size = new System.Drawing.Size(159, 37);
-            this.lbl4TeamName.TabIndex = 248;
-            this.lbl4TeamName.Text = "Team 0";
-            this.lbl4TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl4ScoutName
-            // 
-            this.lbl4ScoutName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl4ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl4ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4ScoutName.Location = new System.Drawing.Point(6, 355);
-            this.lbl4ScoutName.Name = "lbl4ScoutName";
-            this.lbl4ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl4ScoutName.Size = new System.Drawing.Size(158, 27);
-            this.lbl4ScoutName.TabIndex = 247;
-            this.lbl4ScoutName.Text = "Select Name";
-            this.lbl4ScoutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl4ModeValue
-            // 
-            this.lbl4ModeValue.AutoSize = true;
-            this.lbl4ModeValue.BackColor = System.Drawing.Color.Black;
-            this.lbl4ModeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lbl4ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbl4ModeValue.Location = new System.Drawing.Point(1, 3);
-            this.lbl4ModeValue.Name = "lbl4ModeValue";
-            this.lbl4ModeValue.Size = new System.Drawing.Size(101, 40);
-            this.lbl4ModeValue.TabIndex = 2;
-            this.lbl4ModeValue.Text = "Auto:";
             // 
             // panel12
             // 
@@ -1322,11 +1200,7 @@ namespace ScoutingCodeRedo.Static
             this.panel12.Controls.Add(this.lbl3Position8);
             this.panel12.Controls.Add(this.lbl3Position1);
             this.panel12.Controls.Add(this.lbl3Position2);
-            this.panel12.Controls.Add(this.lbl3Position11);
             this.panel12.Controls.Add(this.lbl3Position0Value);
-            this.panel12.Controls.Add(this.lbl3TeamName);
-            this.panel12.Controls.Add(this.lbl3ScoutName);
-            this.panel12.Controls.Add(this.lbl3ModeValue);
             this.panel12.Location = new System.Drawing.Point(7, 7);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(380, 389);
@@ -1718,17 +1592,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position2.TabIndex = 318;
             this.lbl3Position2.Text = "Del:";
             // 
-            // lbl3Position11
-            // 
-            this.lbl3Position11.AutoSize = true;
-            this.lbl3Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position11.Location = new System.Drawing.Point(4, 324);
-            this.lbl3Position11.Name = "lbl3Position11";
-            this.lbl3Position11.Size = new System.Drawing.Size(187, 33);
-            this.lbl3Position11.TabIndex = 291;
-            this.lbl3Position11.Text = "Match Event";
-            // 
             // lbl3Position0Value
             // 
             this.lbl3Position0Value.AutoSize = true;
@@ -1741,45 +1604,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position0Value.TabIndex = 274;
             this.lbl3Position0Value.Text = "$$";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl3TeamName
-            // 
-            this.lbl3TeamName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl3TeamName.BackColor = System.Drawing.Color.Black;
-            this.lbl3TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl3TeamName.Location = new System.Drawing.Point(216, 346);
-            this.lbl3TeamName.Name = "lbl3TeamName";
-            this.lbl3TeamName.Size = new System.Drawing.Size(159, 37);
-            this.lbl3TeamName.TabIndex = 248;
-            this.lbl3TeamName.Text = "Team 0";
-            this.lbl3TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl3ScoutName
-            // 
-            this.lbl3ScoutName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl3ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl3ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3ScoutName.Location = new System.Drawing.Point(4, 356);
-            this.lbl3ScoutName.Name = "lbl3ScoutName";
-            this.lbl3ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl3ScoutName.Size = new System.Drawing.Size(158, 27);
-            this.lbl3ScoutName.TabIndex = 247;
-            this.lbl3ScoutName.Text = "Select Name";
-            this.lbl3ScoutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl3ModeValue
-            // 
-            this.lbl3ModeValue.AutoSize = true;
-            this.lbl3ModeValue.BackColor = System.Drawing.Color.Black;
-            this.lbl3ModeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lbl3ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbl3ModeValue.Location = new System.Drawing.Point(1, 3);
-            this.lbl3ModeValue.Name = "lbl3ModeValue";
-            this.lbl3ModeValue.Size = new System.Drawing.Size(101, 40);
-            this.lbl3ModeValue.TabIndex = 2;
-            this.lbl3ModeValue.Text = "Auto:";
             // 
             // SwapScouters
             // 
@@ -1847,17 +1671,6 @@ namespace ScoutingCodeRedo.Static
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 292;
             this.pictureBox14.TabStop = false;
-            // 
-            // comboBoxSelectRegional
-            // 
-            this.comboBoxSelectRegional.DisplayMember = "event_code";
-            this.comboBoxSelectRegional.FormattingEnabled = true;
-            this.comboBoxSelectRegional.Location = new System.Drawing.Point(169, 21);
-            this.comboBoxSelectRegional.Name = "comboBoxSelectRegional";
-            this.comboBoxSelectRegional.Size = new System.Drawing.Size(290, 28);
-            this.comboBoxSelectRegional.TabIndex = 290;
-            this.comboBoxSelectRegional.Text = "Please press the Load Events Button...";
-            this.comboBoxSelectRegional.ValueMember = "event_code";
             // 
             // btnNextMatch
             // 
@@ -1934,11 +1747,11 @@ namespace ScoutingCodeRedo.Static
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.lbl5Position11);
+            this.panel3.Controls.Add(this.lbl5TeamName);
+            this.panel3.Controls.Add(this.lbl5ScoutName);
+            this.panel3.Controls.Add(this.lbl5ModeValue);
             this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.label29);
-            this.panel3.Controls.Add(this.label35);
-            this.panel3.Controls.Add(this.label36);
-            this.panel3.Controls.Add(this.label37);
             this.panel3.Location = new System.Drawing.Point(792, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(393, 391);
@@ -1966,64 +1779,14 @@ namespace ScoutingCodeRedo.Static
             this.label19.Text = "00";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(6, 324);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(187, 33);
-            this.label29.TabIndex = 291;
-            this.label29.Text = "Match Event";
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label35.BackColor = System.Drawing.Color.Black;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label35.Location = new System.Drawing.Point(231, 348);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(159, 37);
-            this.label35.TabIndex = 248;
-            this.label35.Text = "Team 0";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label36.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label36.Location = new System.Drawing.Point(6, 359);
-            this.label36.Name = "label36";
-            this.label36.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label36.Size = new System.Drawing.Size(158, 27);
-            this.label36.TabIndex = 247;
-            this.label36.Text = "Select Name";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Black;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label37.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label37.Location = new System.Drawing.Point(1, 3);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(101, 40);
-            this.label37.TabIndex = 2;
-            this.label37.Text = "Auto:";
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Controls.Add(this.lbl4Position11);
+            this.panel7.Controls.Add(this.lbl4TeamName);
+            this.panel7.Controls.Add(this.lbl4ScoutName);
+            this.panel7.Controls.Add(this.lbl4ModeValue);
             this.panel7.Controls.Add(this.panel10);
-            this.panel7.Controls.Add(this.label64);
-            this.panel7.Controls.Add(this.label66);
-            this.panel7.Controls.Add(this.label67);
-            this.panel7.Controls.Add(this.label68);
             this.panel7.Location = new System.Drawing.Point(391, 8);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(397, 388);
@@ -2051,64 +1814,14 @@ namespace ScoutingCodeRedo.Static
             this.label54.Text = "00";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.White;
-            this.label64.Location = new System.Drawing.Point(6, 327);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(187, 33);
-            this.label64.TabIndex = 291;
-            this.label64.Text = "Match Event";
-            // 
-            // label66
-            // 
-            this.label66.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label66.BackColor = System.Drawing.Color.Black;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label66.Location = new System.Drawing.Point(236, 345);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(159, 37);
-            this.label66.TabIndex = 248;
-            this.label66.Text = "Team 0";
-            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label67
-            // 
-            this.label67.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label67.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label67.Location = new System.Drawing.Point(6, 355);
-            this.label67.Name = "label67";
-            this.label67.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label67.Size = new System.Drawing.Size(158, 27);
-            this.label67.TabIndex = 247;
-            this.label67.Text = "Select Name";
-            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.BackColor = System.Drawing.Color.Black;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label68.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label68.Location = new System.Drawing.Point(1, 3);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(101, 40);
-            this.label68.TabIndex = 2;
-            this.label68.Text = "Auto:";
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Black;
+            this.panel11.Controls.Add(this.lbl3Position11);
+            this.panel11.Controls.Add(this.lbl3TeamName);
+            this.panel11.Controls.Add(this.lbl3ScoutName);
+            this.panel11.Controls.Add(this.lbl3ModeValue);
             this.panel11.Controls.Add(this.panel30);
-            this.panel11.Controls.Add(this.label99);
-            this.panel11.Controls.Add(this.label101);
-            this.panel11.Controls.Add(this.label102);
-            this.panel11.Controls.Add(this.label103);
             this.panel11.Location = new System.Drawing.Point(7, 7);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(380, 389);
@@ -2135,56 +1848,6 @@ namespace ScoutingCodeRedo.Static
             this.label89.TabIndex = 277;
             this.label89.Text = "00";
             this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label99.ForeColor = System.Drawing.Color.White;
-            this.label99.Location = new System.Drawing.Point(4, 324);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(187, 33);
-            this.label99.TabIndex = 291;
-            this.label99.Text = "Match Event";
-            // 
-            // label101
-            // 
-            this.label101.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label101.BackColor = System.Drawing.Color.Black;
-            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label101.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label101.Location = new System.Drawing.Point(216, 346);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(159, 37);
-            this.label101.TabIndex = 248;
-            this.label101.Text = "Team 0";
-            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label102
-            // 
-            this.label102.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label102.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label102.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label102.Location = new System.Drawing.Point(4, 356);
-            this.label102.Name = "label102";
-            this.label102.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label102.Size = new System.Drawing.Size(158, 27);
-            this.label102.TabIndex = 247;
-            this.label102.Text = "Select Name";
-            this.label102.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.BackColor = System.Drawing.Color.Black;
-            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label103.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label103.Location = new System.Drawing.Point(1, 3);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(101, 40);
-            this.label103.TabIndex = 2;
-            this.label103.Text = "Auto:";
             // 
             // panel31
             // 
@@ -2489,17 +2152,155 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.TabIndex = 292;
             this.lblMatch.Text = "0";
             // 
-            // lstLog
+            // lbl3Position11
             // 
-            this.lstLog.BackColor = System.Drawing.Color.Black;
-            this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstLog.ForeColor = System.Drawing.Color.White;
-            this.lstLog.FormattingEnabled = true;
-            this.lstLog.ItemHeight = 20;
-            this.lstLog.Location = new System.Drawing.Point(8, 728);
-            this.lstLog.Name = "lstLog";
-            this.lstLog.Size = new System.Drawing.Size(1010, 0);
-            this.lstLog.TabIndex = 1;
+            this.lbl3Position11.AutoSize = true;
+            this.lbl3Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3Position11.ForeColor = System.Drawing.Color.White;
+            this.lbl3Position11.Location = new System.Drawing.Point(6, 325);
+            this.lbl3Position11.Name = "lbl3Position11";
+            this.lbl3Position11.Size = new System.Drawing.Size(187, 33);
+            this.lbl3Position11.TabIndex = 295;
+            this.lbl3Position11.Text = "Match Event";
+            // 
+            // lbl3TeamName
+            // 
+            this.lbl3TeamName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl3TeamName.BackColor = System.Drawing.Color.Black;
+            this.lbl3TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3TeamName.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl3TeamName.Location = new System.Drawing.Point(218, 347);
+            this.lbl3TeamName.Name = "lbl3TeamName";
+            this.lbl3TeamName.Size = new System.Drawing.Size(159, 37);
+            this.lbl3TeamName.TabIndex = 294;
+            this.lbl3TeamName.Text = "Team 0";
+            this.lbl3TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl3ScoutName
+            // 
+            this.lbl3ScoutName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl3ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl3ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl3ScoutName.Location = new System.Drawing.Point(6, 357);
+            this.lbl3ScoutName.Name = "lbl3ScoutName";
+            this.lbl3ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl3ScoutName.Size = new System.Drawing.Size(158, 27);
+            this.lbl3ScoutName.TabIndex = 293;
+            this.lbl3ScoutName.Text = "Select Name";
+            this.lbl3ScoutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl3ModeValue
+            // 
+            this.lbl3ModeValue.AutoSize = true;
+            this.lbl3ModeValue.BackColor = System.Drawing.Color.Black;
+            this.lbl3ModeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lbl3ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbl3ModeValue.Location = new System.Drawing.Point(3, 4);
+            this.lbl3ModeValue.Name = "lbl3ModeValue";
+            this.lbl3ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl3ModeValue.TabIndex = 292;
+            this.lbl3ModeValue.Text = "Auto:";
+            // 
+            // lbl4Position11
+            // 
+            this.lbl4Position11.AutoSize = true;
+            this.lbl4Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4Position11.ForeColor = System.Drawing.Color.White;
+            this.lbl4Position11.Location = new System.Drawing.Point(6, 329);
+            this.lbl4Position11.Name = "lbl4Position11";
+            this.lbl4Position11.Size = new System.Drawing.Size(187, 33);
+            this.lbl4Position11.TabIndex = 295;
+            this.lbl4Position11.Text = "Match Event";
+            // 
+            // lbl4TeamName
+            // 
+            this.lbl4TeamName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl4TeamName.BackColor = System.Drawing.Color.Black;
+            this.lbl4TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4TeamName.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl4TeamName.Location = new System.Drawing.Point(236, 347);
+            this.lbl4TeamName.Name = "lbl4TeamName";
+            this.lbl4TeamName.Size = new System.Drawing.Size(159, 37);
+            this.lbl4TeamName.TabIndex = 294;
+            this.lbl4TeamName.Text = "Team 0";
+            this.lbl4TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl4ScoutName
+            // 
+            this.lbl4ScoutName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl4ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl4ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl4ScoutName.Location = new System.Drawing.Point(6, 357);
+            this.lbl4ScoutName.Name = "lbl4ScoutName";
+            this.lbl4ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl4ScoutName.Size = new System.Drawing.Size(158, 27);
+            this.lbl4ScoutName.TabIndex = 293;
+            this.lbl4ScoutName.Text = "Select Name";
+            this.lbl4ScoutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl4ModeValue
+            // 
+            this.lbl4ModeValue.AutoSize = true;
+            this.lbl4ModeValue.BackColor = System.Drawing.Color.Black;
+            this.lbl4ModeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lbl4ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbl4ModeValue.Location = new System.Drawing.Point(1, 5);
+            this.lbl4ModeValue.Name = "lbl4ModeValue";
+            this.lbl4ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl4ModeValue.TabIndex = 292;
+            this.lbl4ModeValue.Text = "Auto:";
+            // 
+            // lbl5Position11
+            // 
+            this.lbl5Position11.AutoSize = true;
+            this.lbl5Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5Position11.ForeColor = System.Drawing.Color.White;
+            this.lbl5Position11.Location = new System.Drawing.Point(7, 325);
+            this.lbl5Position11.Name = "lbl5Position11";
+            this.lbl5Position11.Size = new System.Drawing.Size(187, 33);
+            this.lbl5Position11.TabIndex = 295;
+            this.lbl5Position11.Text = "Match Event";
+            // 
+            // lbl5TeamName
+            // 
+            this.lbl5TeamName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl5TeamName.BackColor = System.Drawing.Color.Black;
+            this.lbl5TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5TeamName.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl5TeamName.Location = new System.Drawing.Point(232, 349);
+            this.lbl5TeamName.Name = "lbl5TeamName";
+            this.lbl5TeamName.Size = new System.Drawing.Size(159, 37);
+            this.lbl5TeamName.TabIndex = 294;
+            this.lbl5TeamName.Text = "Team 0";
+            this.lbl5TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl5ScoutName
+            // 
+            this.lbl5ScoutName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl5ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl5ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl5ScoutName.Location = new System.Drawing.Point(7, 360);
+            this.lbl5ScoutName.Name = "lbl5ScoutName";
+            this.lbl5ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl5ScoutName.Size = new System.Drawing.Size(158, 27);
+            this.lbl5ScoutName.TabIndex = 293;
+            this.lbl5ScoutName.Text = "Select Name";
+            this.lbl5ScoutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl5ModeValue
+            // 
+            this.lbl5ModeValue.AutoSize = true;
+            this.lbl5ModeValue.BackColor = System.Drawing.Color.Black;
+            this.lbl5ModeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lbl5ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbl5ModeValue.Location = new System.Drawing.Point(2, 4);
+            this.lbl5ModeValue.Name = "lbl5ModeValue";
+            this.lbl5ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl5ModeValue.TabIndex = 292;
+            this.lbl5ModeValue.Text = "Auto:";
             // 
             // BaseScreen
             // 
@@ -2525,7 +2326,7 @@ namespace ScoutingCodeRedo.Static
             this.Controls.Add(this.lstLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BaseScreen";
-            this.TopMost = true;
+            this.TopMost = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
@@ -2590,5 +2391,17 @@ namespace ScoutingCodeRedo.Static
         }
         #endregion
 
+        private Label lbl5Position11;
+        private Label lbl5TeamName;
+        private Label lbl5ScoutName;
+        private Label lbl5ModeValue;
+        private Label lbl4Position11;
+        private Label lbl4TeamName;
+        private Label lbl4ScoutName;
+        private Label lbl4ModeValue;
+        private Label lbl3Position11;
+        private Label lbl3TeamName;
+        private Label lbl3ScoutName;
+        private Label lbl3ModeValue;
     }
 }

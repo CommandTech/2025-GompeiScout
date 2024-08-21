@@ -20,7 +20,7 @@ namespace ScoutingCodeRedo.Static
             ScouterBoxes scouterBoxes = new ScouterBoxes
             {
                 Owner = baseScreen,
-                TopMost = true
+                TopMost = false
             };
             scouterBoxes.Location = baseScreen.Location;
             scouterBoxes.Show();

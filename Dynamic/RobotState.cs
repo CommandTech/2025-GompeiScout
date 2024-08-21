@@ -41,7 +41,7 @@ namespace ScoutingCodeRedo.Dynamic
         public enum STAGE_ATT { Select, Y, N }
         public enum STAGE_LOC { Select, L, C, R }
         public enum LIT { Select, Y, N, }
-        public enum APP_STRAT { Select, None, Defense, Mover, Shooter, Hybrid, Celebity }
+        public enum APP_STRAT { Select, None, Defense, Mover, Shooter, Hybrid, Celebrity }
         public enum CURRENT_LOC { Select, Left, Right, Neutral, SubW, Source }
 
         //2024 PUBLIC INT
@@ -60,14 +60,6 @@ namespace ScoutingCodeRedo.Dynamic
 
         public DateTime Auto_Time;
         public DateTime CenteNoteTimeTemp;
-
-        public static string blue0;
-        public static string blue1;
-        public static string blue2;
-
-        public static string red0;
-        public static string red1;
-        public static string red2;
 
 
         // 2024 timers

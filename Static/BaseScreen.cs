@@ -56,22 +56,15 @@ namespace ScoutingCodeRedo.Static
             List<string> ScoutList = new List<string>();
             if (cbxEndMatch.Checked)
             {
-                nextMatch();
-                //for (int i = 0; i <= 5; i++)
-                //{
-                //    using (var db = new SeasonContext())
-                //    {
-                //        var teamNumber = bgc.Robots[i].TeamName;
-                //        var result = db.Teamset.FirstOrDefault(b => b.team_key == teamNumber);
-
-                //        var activityresult = db.ActivitySet.FirstOrDefault(a => a.Team == teamNumber && a.Match == currentmatch + 1 && a.RecordType == "EndMatch");
-                //    }
-                //}
                 cbxEndMatch.Checked = false;
                 if (currentmatch == bgc.InMemoryMatchList.Count)
                 {
                     MessageBox.Show("You are at the last match.");
                     currentmatch--;
+                }
+                else
+                {
+                    nextMatch();
                 }
             }
             else
@@ -111,7 +104,22 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
+            Console.WriteLine(bgc.InMemoryMatchList[currentmatch - 1].blueteam1);
+            Console.WriteLine(bgc.InMemoryMatchList[currentmatch - 1].blueteam2);
+            Console.WriteLine(bgc.InMemoryMatchList[currentmatch - 1].blueteam3);
+            this.lbl0TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].redteam1;
+            this.lbl1TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].redteam2;
+            this.lbl2TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].redteam3;
+            this.lbl3TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].blueteam1;
+            this.lbl4TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].blueteam2;
+            this.lbl5TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].blueteam3;
 
+            //BackgroundCode.Robots[0].color = "Blue";
+            //BackgroundCode.Robots[1].color = "Blue";
+            //BackgroundCode.Robots[2].color = "Blue";
+            //BackgroundCode.Robots[3].color = "Red";
+            //BackgroundCode.Robots[4].color = "Red";
+            //BackgroundCode.Robots[5].color = "Red";
         }
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
@@ -135,22 +143,22 @@ namespace ScoutingCodeRedo.Static
                 {
                     try
                     {
-                        Log("cringe5");
                         HttpResponseMessage response = await client.GetAsync(uri);
                         response.EnsureSuccessStatusCode(); // Throw if not a success code.
 
                         string responseFromServer = await response.Content.ReadAsStringAsync();
-                        Log("Response from Server -> " + responseFromServer);
+                        //Log("Response from Server -> " + responseFromServer);
+                        //Console.Write(responseFromServer);
 
                         List<TeamSummary> JSONteams = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TeamSummary>>(responseFromServer);
-                        Log("Received " + JSONteams.Count + " teams for " + eventcode + ".");
+                        //Log("Received " + JSONteams.Count + " teams for " + eventcode + ".");
 
                         // Clear the existing team list
                         bgc.teamlist.Clear();
 
                         foreach (var item in JSONteams)
                         {
-                            Log("Team -> " + item.team_number);
+                            //Log("Team -> " + item.team_number);
                             bgc.teamlist.Add(item.team_number);
                         }
                     }
@@ -159,6 +167,77 @@ namespace ScoutingCodeRedo.Static
                         Log("Request error: " + e2.Message);
                     }
                 }
+
+                string matchesuri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{eventcode}/matches?X-TBA-Auth-Key={Settings.Default.API_Key}";
+
+                using (HttpClient client = new HttpClient())
+                {
+                    try
+                    {
+                        HttpResponseMessage response = await client.GetAsync(matchesuri);
+                        response.EnsureSuccessStatusCode(); // Throw if not a success code.
+
+                        string responseFromServer = await response.Content.ReadAsStringAsync();
+                        //Log("Response from Server -> " + responseFromServer);
+                        //Console.Write(responseFromServer);
+
+                        List<Match> JSONmatches = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Match>>(responseFromServer);
+                        dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer);
+
+                        int MatchCount = 0;
+                        bgc.MatchNumbers.Clear();
+
+                        for (int i = 0; i < JSONmatches.Count; i++)
+                        {
+                            if (JSONmatches[i].comp_level == "qm")
+                            {
+                                Match match_record = new Match();
+
+                                MatchCount++;
+                                bgc.MatchNumbers.Add(MatchCount);
+                                bgc.InMemoryMatchList.Add(JSONmatches[i]);
+
+                                dynamic alliances = obj[i].alliances;
+                                dynamic bluealliance = alliances.blue;
+                                dynamic redalliance = alliances.red;
+
+                                dynamic blueteamsobj = bluealliance.team_keys;
+                                dynamic redteamsobj = redalliance.team_keys;
+
+                                string blue1 = blueteamsobj[0];
+                                string blue2 = blueteamsobj[1];
+                                string blue3 = blueteamsobj[2];
+                                string red1 = redteamsobj[0];
+                                string red2 = redteamsobj[1];
+                                string red3 = redteamsobj[2];
+
+                                match_record.match_number = (int)obj[i].match_number;
+
+                                match_record.set_number = obj[i].match_number;
+
+                                match_record.key = obj[i].key;
+                                match_record.comp_level = obj[i].comp_level;
+                                match_record.event_key = obj[i].event_key;
+                                match_record.blueteam1 = blueteamsobj[0];
+                                match_record.blueteam2 = blueteamsobj[1];
+                                match_record.blueteam3 = blueteamsobj[2];
+                                match_record.redteam1 = redteamsobj[0];
+                                match_record.redteam2 = redteamsobj[1];
+                                match_record.redteam3 = redteamsobj[2];
+
+                                //Console.Write(match_record);
+                                bgc.UnSortedMatchList.Add(match_record);
+                            }
+                        }
+
+                    }
+                    catch (HttpRequestException e2)
+                    {
+                        Log("Request error: " + e2.Message);
+                    }
+                }
+
+                bgc.InMemoryMatchList = bgc.UnSortedMatchList.OrderBy(o => o.match_number).ToList();
             }
             nextMatch();
         }

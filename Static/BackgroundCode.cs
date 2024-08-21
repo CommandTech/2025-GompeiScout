@@ -14,9 +14,12 @@ namespace ScoutingCodeRedo.Static
         public DirectInput Input = new DirectInput();
         public GamePad[] gamePads;
 
-        public RobotState[] Robots = new RobotState[6];                            //Contains the state of each Scout's match tracking
+        public static RobotState[] Robots = new RobotState[6];                            //Contains the state of each Scout's match tracking
 
-        public List<System.Text.RegularExpressions.Match> InMemoryMatchList = new List<System.Text.RegularExpressions.Match>();     
+        public List<Dynamic.Match> InMemoryMatchList = new List<Dynamic.Match>();           //The list of all the matches at the selected event.
+        public List<Dynamic.Match> UnSortedMatchList = new List<Dynamic.Match>();           //This is just the list of all matches, not yet sorted
+        public List<int> MatchNumbers = new List<int>();
+
         public SeasonContext seasonframework = new SeasonContext();
         public List<string> teamlist = new List<string>();                         //The list of teams for the event selected
     }
