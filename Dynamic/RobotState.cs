@@ -18,6 +18,7 @@ namespace ScoutingCodeRedo.Dynamic
         // Year to Year ints
         public int ScouterError;
         public int Current_Match;    //Current Match
+        public int ScouterBox;
 
         // Year to Year doubles
         public static double Red_Score;
@@ -27,7 +28,6 @@ namespace ScoutingCodeRedo.Dynamic
         public string color;
 
         // Year to Year bools
-        public static bool Red_Right;
         public bool RTHUP_Lock;
         public bool TransactionCheck = false;
         public bool AUTO = true;
@@ -89,7 +89,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         //LOCAL VARIABLES SECTION.  All underscored variables indicate local variables for one controller/scouter
 
-        public RobotState.SCOUTER_NAME _ScouterName;          //ScouterName
+        public SCOUTER_NAME _ScouterName;          //ScouterName
         private string _TeamName;                   //TeamName
         private MATCHEVENT_NAME _match_event;       //Match Event
         private ROBOT_MODE _RobotMode;              //Control
@@ -179,7 +179,7 @@ namespace ScoutingCodeRedo.Dynamic
 
 
         ///Scouter Name
-        public RobotState.SCOUTER_NAME getScouterName(RobotState.SCOUTER_NAME ScouterName)
+        public SCOUTER_NAME getScouterName(SCOUTER_NAME ScouterName)
         { return ScouterName = _ScouterName; }
 
         ///<summary>
@@ -191,10 +191,10 @@ namespace ScoutingCodeRedo.Dynamic
         public void changeScouterName(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
-                _ScouterName = (RobotState.SCOUTER_NAME)GetNextEnum<RobotState.SCOUTER_NAME>(_ScouterName);
+                _ScouterName = (SCOUTER_NAME)GetNextEnum<SCOUTER_NAME>(_ScouterName);
             else
             {
-                _ScouterName = (RobotState.SCOUTER_NAME)GetPreviousEnum<RobotState.SCOUTER_NAME>(_ScouterName);
+                _ScouterName = (SCOUTER_NAME)GetPreviousEnum<SCOUTER_NAME>(_ScouterName);
             }
         }
 

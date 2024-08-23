@@ -1616,6 +1616,7 @@ namespace ScoutingCodeRedo.Static
             this.SwapScouters.TabIndex = 298;
             this.SwapScouters.Text = "SwapScouters";
             this.SwapScouters.UseVisualStyleBackColor = false;
+            this.SwapScouters.Click += new System.EventHandler(this.SwapScouters_Click);
             // 
             // btnUpdateDB
             // 

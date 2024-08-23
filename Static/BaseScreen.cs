@@ -13,12 +13,21 @@ namespace ScoutingCodeRedo.Static
     public partial class BaseScreen : Form
     {
 
+        public static RobotState[] rs;   //Objects for storing Match State
         BackgroundCode bgc;
         public BaseScreen()
         {
             InitializeComponent();
             this.lblkey.Text = "";
             bgc = new BackgroundCode();
+
+            for (int i = 0; i < 6; i++)
+            {
+                BackgroundCode.Robots[i] = new RobotState();
+                BackgroundCode.Robots[i].ScouterBox = i;
+                //Sets the first 3 robots to red and the last 3 to blue
+                BackgroundCode.Robots[i].color = i < 3 ? "Red" : "Blue";
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -104,23 +113,13 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
-            Console.WriteLine(bgc.InMemoryMatchList[currentmatch - 1].blueteam1);
-            Console.WriteLine(bgc.InMemoryMatchList[currentmatch - 1].blueteam2);
-            Console.WriteLine(bgc.InMemoryMatchList[currentmatch - 1].blueteam3);
-            this.lbl0TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].redteam1;
-            this.lbl1TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].redteam2;
-            this.lbl2TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].redteam3;
-            this.lbl3TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].blueteam1;
-            this.lbl4TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].blueteam2;
-            this.lbl5TeamName.Text = bgc.InMemoryMatchList[currentmatch - 1].blueteam3;
-
-            //BackgroundCode.Robots[0].color = "Blue";
-            //BackgroundCode.Robots[1].color = "Blue";
-            //BackgroundCode.Robots[2].color = "Blue";
-            //BackgroundCode.Robots[3].color = "Red";
-            //BackgroundCode.Robots[4].color = "Red";
-            //BackgroundCode.Robots[5].color = "Red";
-        }
+            this.lbl0TeamName.Text = BackgroundCode.Robots[0].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam1;
+            this.lbl1TeamName.Text = BackgroundCode.Robots[1].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam2;
+            this.lbl2TeamName.Text = BackgroundCode.Robots[2].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam3;
+            this.lbl3TeamName.Text = BackgroundCode.Robots[3].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam1;
+            this.lbl4TeamName.Text = BackgroundCode.Robots[4].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam2;
+            this.lbl5TeamName.Text = BackgroundCode.Robots[5].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam3;
+        } 
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
@@ -240,6 +239,11 @@ namespace ScoutingCodeRedo.Static
                 bgc.InMemoryMatchList = bgc.UnSortedMatchList.OrderBy(o => o.match_number).ToList();
             }
             nextMatch();
+        }
+        private void SwapScouters_Click(object sender, EventArgs e)
+        {
+            SwapScouters frm = new SwapScouters();
+            frm.Show();
         }
         public void Log(string m)
         {
