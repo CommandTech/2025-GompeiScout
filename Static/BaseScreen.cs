@@ -25,6 +25,7 @@ namespace ScoutingCodeRedo.Static
             {
                 BackgroundCode.Robots[i] = new RobotState();
                 BackgroundCode.Robots[i].ScouterBox = i;
+                BackgroundCode.Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Scouter1 + i;
                 //Sets the first 3 robots to red and the last 3 to blue
                 BackgroundCode.Robots[i].color = i < 3 ? "Red" : "Blue";
             }

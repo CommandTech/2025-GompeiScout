@@ -20,6 +20,7 @@ namespace ScoutingCodeRedo.Static
             this.ScoutDrop2 = new System.Windows.Forms.ComboBox();
             this.ScoutDrop1 = new System.Windows.Forms.ComboBox();
             this.ScoutDrop0 = new System.Windows.Forms.ComboBox();
+            this.clearScouters = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -46,6 +47,7 @@ namespace ScoutingCodeRedo.Static
             this.ScoutOK.TabIndex = 352;
             this.ScoutOK.Text = "OK";
             this.ScoutOK.UseVisualStyleBackColor = true;
+            this.ScoutOK.Click += new System.EventHandler(this.ScoutOK_Click);
             // 
             // ScoutDrop5
             // 
@@ -119,10 +121,24 @@ namespace ScoutingCodeRedo.Static
             this.ScoutDrop0.Size = new System.Drawing.Size(163, 28);
             this.ScoutDrop0.TabIndex = 346;
             // 
+            // clearScouters
+            // 
+            this.clearScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearScouters.ForeColor = System.Drawing.Color.Navy;
+            this.clearScouters.Location = new System.Drawing.Point(13, 182);
+            this.clearScouters.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.clearScouters.Name = "clearScouters";
+            this.clearScouters.Size = new System.Drawing.Size(99, 35);
+            this.clearScouters.TabIndex = 354;
+            this.clearScouters.Text = "CLEAR";
+            this.clearScouters.UseVisualStyleBackColor = true;
+            this.clearScouters.Click += new System.EventHandler(this.ClearScouters);
+            // 
             // SwapScouters
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(535, 231);
+            this.Controls.Add(this.clearScouters);
             this.Controls.Add(this.UpdateScouterText);
             this.Controls.Add(this.ScoutOK);
             this.Controls.Add(this.ScoutDrop5);
@@ -146,5 +162,6 @@ namespace ScoutingCodeRedo.Static
         private System.Windows.Forms.ComboBox ScoutDrop2;
         private System.Windows.Forms.ComboBox ScoutDrop1;
         private System.Windows.Forms.ComboBox ScoutDrop0;
+        private System.Windows.Forms.Button clearScouters;
     }
 }
