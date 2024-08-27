@@ -8,11 +8,6 @@ namespace ScoutingCodeRedo.Static
 {
     public partial class SwapScouters : Form
     {
-        public List<RobotState.SCOUTER_NAME> scouterNames = new List<RobotState.SCOUTER_NAME>();
-        public List<RobotState.SCOUTER_NAME> scouterNamesC = new List<RobotState.SCOUTER_NAME>();
-
-        public List<int> newLocations = new List<int>();
-
         public List<ComboBox> scoutDrops = new List<ComboBox>();
 
         public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new Dictionary<RobotState.SCOUTER_NAME, int>();
@@ -21,8 +16,10 @@ namespace ScoutingCodeRedo.Static
             InitializeComponent();
             for (int i = 0; i < 6; i++)
             {
-                scouterNames.Add(BackgroundCode.Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name));
-                scouterDict.Add(scouterNames[i], BackgroundCode.Robots[i].ScouterBox);
+                if (BackgroundCode.Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name) != RobotState.SCOUTER_NAME.Select_Name)
+                {
+                    scouterDict.Add(BackgroundCode.Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name), BackgroundCode.Robots[i].ScouterBox);
+                }
             }
 
             scoutDrops.Add(ScoutDrop0);
@@ -34,7 +31,7 @@ namespace ScoutingCodeRedo.Static
 
             foreach (var comboBox in scoutDrops)
             {
-                comboBox.Items.AddRange(scouterNames.Select(sn => sn.ToString()).ToArray());
+                comboBox.Items.AddRange(scouterDict.Keys.Select(sn => sn.ToString()).ToArray());
                 comboBox.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);
             }
         }
@@ -43,39 +40,48 @@ namespace ScoutingCodeRedo.Static
 
         private void ScoutOK_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 6; i++)
+            List<int> newLocations = new List<int>();
+
+            for (int i = 0; i < scoutDrops.Count; i++)
             {
-                Console.WriteLine(scouterDict[scouterNames[i]]);
+                if (scoutDrops[i].SelectedIndex != -1)
+                {
+                    if (Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME selectedName))
+                    {
+                        newLocations.Add(scouterDict[selectedName]);
+                    }
+                }
+                else
+                {
+                    newLocations.Add(-1);
+                }
             }
 
-            //bool error = false;
-            //List<int> scouterIntsSelected = new List<int>();
-            //foreach (var robot in BackgroundCode.Robots)
-            //{
-            //    if (!scouterIntsSelected.Contains(robot.ScouterBox))
-            //    {
-            //        scouterIntsSelected.Add(robot.ScouterBox);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("2 Scouters in the same spot.");
-            //        error = true;
-            //    }
-            //}
-            //if (!error)
-            //{
-            //    this.Hide();
-            //}
+            for (int i = 0; i < newLocations.Count; i++)
+            {
+                if (newLocations[i] != -1)
+                {
+                    BackgroundCode.Robots[i].ScouterBox = newLocations[i];
+                }
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                Console.WriteLine(BackgroundCode.Robots[i]._ScouterName + ": " + BackgroundCode.Robots[i].ScouterBox);
+            }
+
+            this.Hide();
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Update ComboBox items when a selection changes
             UpdateComboBox(scoutDrops);
         }
         private void UpdateComboBox(List<ComboBox> comboBoxes)
         {
-            scouterNamesC = scouterNames.ToList();
+            List<RobotState.SCOUTER_NAME> scouterNamesC = new List<RobotState.SCOUTER_NAME>();
+
+            scouterNamesC = scouterDict.Keys.ToList();
             var selectedNames = comboBoxes.Select(cb => cb.SelectedItem).ToList();
             
             scouterNamesC.RemoveAll(sn => selectedNames.Contains(sn.ToString()));
@@ -110,7 +116,7 @@ namespace ScoutingCodeRedo.Static
             {
                 comboBox.SelectedItem = null;
                 comboBox.Items.Clear();
-                comboBox.Items.AddRange(scouterNames.Select(sn => sn.ToString()).ToArray());
+                comboBox.Items.AddRange(scouterDict.Keys.Select(sn => sn.ToString()).ToArray());
             }
         }
     }

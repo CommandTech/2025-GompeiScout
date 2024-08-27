@@ -33,7 +33,7 @@ namespace ScoutingCodeRedo.Static
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            System.Environment.Exit(0);
+            Environment.Exit(0);
         }
         private void btnInitialDBLoad_Click(object sender, EventArgs e)
         {
