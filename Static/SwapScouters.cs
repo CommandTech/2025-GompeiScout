@@ -57,17 +57,24 @@ namespace ScoutingCodeRedo.Static
                 }
             }
 
-            for (int i = 0; i < newLocations.Count; i++)
+            for (int i = 0; i < 6; i++)
             {
+                //BackgroundCode.Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
+                //BackgroundCode.Robots[i].ScouterBox = i;
+
                 if (newLocations[i] != -1)
                 {
-                    BackgroundCode.Robots[i].ScouterBox = newLocations[i];
+                    BackgroundCode.Robots[i].ScouterBox = i;
+                    BackgroundCode.Robots[i]._ScouterName = scouterDict.Keys.ToList()[newLocations[i]];
+
+                    Console.WriteLine();
                 }
             }
 
             for (int i = 0; i < 6; i++)
             {
-                Console.WriteLine(BackgroundCode.Robots[i]._ScouterName + ": " + BackgroundCode.Robots[i].ScouterBox);
+                Console.WriteLine(newLocations[i]);
+                //Console.WriteLine(BackgroundCode.Robots[i]._ScouterName + ": " + BackgroundCode.Robots[i].ScouterBox);
             }
 
             this.Hide();
@@ -89,10 +96,7 @@ namespace ScoutingCodeRedo.Static
             foreach (var comboBox in comboBoxes)
             {
                 comboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
-            }
 
-            foreach (var comboBox in comboBoxes)
-            {
                 var prevItem = comboBox.SelectedItem;
                 comboBox.Items.Clear();
                 comboBox.Items.AddRange(scouterNamesC.Select(sn => sn.ToString()).ToArray());
@@ -102,10 +106,7 @@ namespace ScoutingCodeRedo.Static
                     comboBox.Items.Add(prevItem);
                     comboBox.SelectedItem = prevItem;
                 }
-            }
 
-            foreach (var comboBox in comboBoxes)
-            {
                 comboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             }
         }
