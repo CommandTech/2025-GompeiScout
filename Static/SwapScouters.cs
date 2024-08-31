@@ -41,6 +41,7 @@ namespace ScoutingCodeRedo.Static
         private void ScoutOK_Click(object sender, EventArgs e)
         {
             List<int> newLocations = new List<int>();
+            List<RobotState.SCOUTER_NAME> newScouters = Enumerable.Repeat(default(RobotState.SCOUTER_NAME), 6).ToList();
 
             for (int i = 0; i < scoutDrops.Count; i++)
             {
@@ -59,22 +60,28 @@ namespace ScoutingCodeRedo.Static
 
             for (int i = 0; i < 6; i++)
             {
-                //BackgroundCode.Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
-                //BackgroundCode.Robots[i].ScouterBox = i;
-
                 if (newLocations[i] != -1)
                 {
                     BackgroundCode.Robots[i].ScouterBox = i;
-                    BackgroundCode.Robots[i]._ScouterName = scouterDict.Keys.ToList()[newLocations[i]];
 
-                    Console.WriteLine();
+                    //if (newLocations[newLocations[i]] != -1)
+                    //{
+                    //    newScouters[i] = scouterDict.Keys.ToList()[newLocations[i]];
+                    //    newScouters[newLocations[newLocations[i]]] = scouterDict.Keys.ToList()[i];
+                    //}
+                    //else
+                    //{
+                    //    newScouters[i] = scouterDict.Keys.ToList()[newLocations[i]];
+                    //    newScouters[newLocations[i]] = scouterDict.Keys.ToList()[i];
+                    //}
                 }
             }
 
             for (int i = 0; i < 6; i++)
             {
-                Console.WriteLine(newLocations[i]);
-                //Console.WriteLine(BackgroundCode.Robots[i]._ScouterName + ": " + BackgroundCode.Robots[i].ScouterBox);
+                //Console.WriteLine(newScouters[i]);
+                //Console.WriteLine(newLocations[i]);
+                Console.WriteLine($"Robot {i}: Scouter {newScouters[i]}, Location {i}");
             }
 
             this.Hide();
