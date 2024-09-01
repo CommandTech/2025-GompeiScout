@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dynamic\DynamicDatabase.cs" />
     <Compile Include="Dynamic\RobotState.cs" />
     <Compile Include="Dynamic\ScouterBoxes.cs">
       <SubType>Form</SubType>
@@ -83,12 +84,27 @@
     <Compile Include="Static\BaseScreen.designer.cs">
       <DependentUpon>BaseScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Static\GamePadCode.cs" />
-    <Compile Include="Static\GamePadDefinitions.cs" />
+    <Compile Include="Static\BuildInitalDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Static\GamePad\GamePadCode.cs" />
+    <Compile Include="Static\GamePad\GamePadDefinitions.cs" />
     <Compile Include="Static\BaseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Static\ProgramStart.cs" />
+    <Compile Include="Static\SwapScouters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Static\SwapScouters.designer.cs">
+      <DependentUpon>SwapScouters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic\UpdateDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dynamic\UpdateDatabase.designer.cs">
+      <DependentUpon>UpdateDatabase.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dynamic\ScouterBoxes.resx">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +119,12 @@
     </Compile>
     <EmbeddedResource Include="Static\BaseScreen.resx">
       <DependentUpon>BaseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Static\SwapScouters.resx">
+      <DependentUpon>SwapScouters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic\UpdateDatabase.resx">
+      <DependentUpon>UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
