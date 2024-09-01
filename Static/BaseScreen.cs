@@ -2,11 +2,10 @@
 using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Windows.Forms;
+using T250DynoScout_v2024;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -20,14 +19,17 @@ namespace ScoutingCodeRedo.Static
             InitializeComponent();
             this.lblkey.Text = "";
             bgc = new BackgroundCode();
+            Label[] scoutNameLabels = { lbl0ScoutName, lbl1ScoutName, lbl2ScoutName, lbl3ScoutName, lbl4ScoutName, lbl5ScoutName };
 
             for (int i = 0; i < 6; i++)
             {
-                BackgroundCode.Robots[i] = new RobotState();
-                BackgroundCode.Robots[i].ScouterBox = i;
-                BackgroundCode.Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Scouter1 + i;
-                //Sets the first 3 robots to red and the last 3 to blue
-                BackgroundCode.Robots[i].color = i < 3 ? "Red" : "Blue";
+                BackgroundCode.Robots[i] = new RobotState
+                {
+                    ScouterBox = i,
+                    _ScouterName = RobotState.SCOUTER_NAME.Scouter1 + i,
+                    color = i < 3 ? "Red" : "Blue"
+                };
+                scoutNameLabels[i].Text = BackgroundCode.Robots[i]._ScouterName.ToString();
             }
         }
 
@@ -245,6 +247,20 @@ namespace ScoutingCodeRedo.Static
         {
             SwapScouters frm = new SwapScouters();
             frm.Show();
+        }
+        private void btnUpdateDB_Click(object sender, EventArgs e)
+        {
+            UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
+            frm.Show();
+            //if (DBExists)
+            //{
+            //    UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
+            //    frm.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
+            //}
         }
         public void Log(string m)
         {

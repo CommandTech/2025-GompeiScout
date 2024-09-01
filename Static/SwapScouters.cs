@@ -56,14 +56,14 @@ namespace ScoutingCodeRedo.Static
                 {
                     newLocations.Add(-1);
                 }
+
+                BackgroundCode.Robots[i].ScouterBox = i;
             }
 
             for (int i = 0; i < 6; i++)
             {
                 if (newLocations[i] != -1)
                 {
-                    BackgroundCode.Robots[i].ScouterBox = i;
-
                     //if (newLocations[newLocations[i]] != -1)
                     //{
                     //    newScouters[i] = scouterDict.Keys.ToList()[newLocations[i]];
