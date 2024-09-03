@@ -9,7 +9,6 @@ namespace ScoutingCodeRedo.Dynamic
 {
     public class RobotState
     {
-        public enum TEAM_ENUM { };
         public enum ROBOT_MODE { Auto, Teleop, Showtime };
         public enum CYCLE_DIRECTION { Up, Down }
         public enum MATCHEVENT_NAME { Match_Event, Fumbled, BrokeDown, CrossedCenter, LostParts, RingToss, AdditionalNote, MultiClimb, NoShow, StageInt, TippedOver, JammedPiece }

@@ -1,7 +1,10 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
+using ScoutingCodeRedo.Static.GamePadFolder;
+using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
@@ -12,6 +15,7 @@ namespace ScoutingCodeRedo.Static
     public partial class BaseScreen : Form
     {
 
+        private bool initializing = true;
         public static RobotState[] rs;   //Objects for storing Match State
         BackgroundCode bgc;
         public BaseScreen()
@@ -23,19 +27,35 @@ namespace ScoutingCodeRedo.Static
 
             for (int i = 0; i < 6; i++)
             {
-                BackgroundCode.Robots[i] = new RobotState
-                {
-                    ScouterBox = i,
-                    _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
-                    color = i < 3 ? "Red" : "Blue"
-                };
                 scoutNameLabels[i].Text = BackgroundCode.Robots[i]._ScouterName.ToString();
             }
+
+            timerJoysticks.Enabled = true;
+        }
+
+        private void JoyStickReader(object sender, EventArgs e)
+        {
+            // Loop through all connected gamepads
+            //for (int gamepad_ctr = 0; gamepad_ctr < bgc.gamePads.Length; gamepad_ctr++) bgc.controllers.readStick(bgc.gamePads, gamepad_ctr);   //Initialize all six controllers
+
+            //// Loop through all Scouters/Robots
+            //for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
+            //{
+            //    BackgroundCode.Robots[robot_ctr] = bgc.controllers.getRobotState(robot_ctr);  //Initialize all six robots
+            //}
+
+            initializing = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
+            if (confirmExit == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+
+            //Possibly implement saving the current data (i.e. match number, event, maybe scouter names) to csv or ini before leaving
         }
         private void btnInitialDBLoad_Click(object sender, EventArgs e)
         {
@@ -53,11 +73,11 @@ namespace ScoutingCodeRedo.Static
             DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
             if (red == DialogResult.Yes)
             {
-                Properties.Settings.Default.redRight = true;
+                Settings.Default.redRight = true;
             }
             else
             {
-                Properties.Settings.Default.redRight = false;
+                Settings.Default.redRight = false;
             }
 
             Log("SQL start time is " + DateTime.Now.TimeOfDay);

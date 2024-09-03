@@ -164,6 +164,7 @@ namespace ScoutingCodeRedo.Static
         #region
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseScreen));
             this.lstLog = new System.Windows.Forms.ListBox();
             this.comboBoxSelectRegional = new System.Windows.Forms.ComboBox();
@@ -323,6 +324,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl0ModeValue = new System.Windows.Forms.Label();
             this.labelMatch = new System.Windows.Forms.Label();
             this.lblMatch = new System.Windows.Forms.Label();
+            this.timerJoysticks = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -366,6 +368,11 @@ namespace ScoutingCodeRedo.Static
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(1010, 0);
             this.lstLog.TabIndex = 1;
+            // 
+            // timerJoysticks
+            // 
+            this.timerJoysticks.Interval = 50;
+            this.timerJoysticks.Tick += new System.EventHandler(this.JoyStickReader);
             // 
             // comboBoxSelectRegional
             // 
@@ -2392,6 +2399,7 @@ namespace ScoutingCodeRedo.Static
         }
         #endregion
 
+        private Timer timerJoysticks;
         private Label lbl5Position11;
         private Label lbl5TeamName;
         private Label lbl5ScoutName;
