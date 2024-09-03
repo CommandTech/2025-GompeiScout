@@ -21,7 +21,6 @@ namespace ScoutingCodeRedo.Static
             this.ScoutDrop1 = new System.Windows.Forms.ComboBox();
             this.ScoutDrop0 = new System.Windows.Forms.ComboBox();
             this.clearScouters = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -135,24 +134,10 @@ namespace ScoutingCodeRedo.Static
             this.clearScouters.UseVisualStyleBackColor = true;
             this.clearScouters.Click += new System.EventHandler(this.ClearScouters);
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.BackColor = System.Drawing.Color.Orange;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(45, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 74);
-            this.label1.TabIndex = 355;
-            this.label1.Text = "dont use this yet";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SwapScouters
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(535, 231);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.clearScouters);
             this.Controls.Add(this.UpdateScouterText);
             this.Controls.Add(this.ScoutOK);
@@ -178,6 +163,5 @@ namespace ScoutingCodeRedo.Static
         private System.Windows.Forms.ComboBox ScoutDrop1;
         private System.Windows.Forms.ComboBox ScoutDrop0;
         private System.Windows.Forms.Button clearScouters;
-        private System.Windows.Forms.Label label1;
     }
 }
