@@ -36,52 +36,22 @@ namespace ScoutingCodeRedo.Static
             }
         }
 
-        //How I vision this is that each robot state is an object, each one has an int that declares which box they are in, then when deciding which box gets controlled by which controller, it looks at the int.
-
         private void ScoutOK_Click(object sender, EventArgs e)
         {
-            List<int> newLocations = new List<int>();
-            List<RobotState.SCOUTER_NAME> newScouters = Enumerable.Repeat(default(RobotState.SCOUTER_NAME), 6).ToList();
-
-            for (int i = 0; i < scoutDrops.Count; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (scoutDrops[i].SelectedIndex != -1)
                 {
-                    if (Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME selectedName))
-                    {
-                        newLocations.Add(scouterDict[selectedName]);
-                    }
-                }
-                else
-                {
-                    newLocations.Add(-1);
-                }
-
-                BackgroundCode.Robots[i].ScouterBox = i;
-            }
-
-            for (int i = 0; i < 6; i++)
-            {
-                if (newLocations[i] != -1)
-                {
-                    //if (newLocations[newLocations[i]] != -1)
-                    //{
-                    //    newScouters[i] = scouterDict.Keys.ToList()[newLocations[i]];
-                    //    newScouters[newLocations[newLocations[i]]] = scouterDict.Keys.ToList()[i];
-                    //}
-                    //else
-                    //{
-                    //    newScouters[i] = scouterDict.Keys.ToList()[newLocations[i]];
-                    //    newScouters[newLocations[i]] = scouterDict.Keys.ToList()[i];
-                    //}
+                    Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
+                    var keyList = scouterDict.Keys.ToList();
+                    scouterDict[keyList[i]] = scouterDict[name];
+                    scouterDict[name] = i;
                 }
             }
 
-            for (int i = 0; i < 6; i++)
+            foreach (var robot in BackgroundCode.Robots)
             {
-                //Console.WriteLine(newScouters[i]);
-                //Console.WriteLine(newLocations[i]);
-                Console.WriteLine($"Robot {i}: Scouter {newScouters[i]}, Location {i}");
+                robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
             }
 
             this.Hide();
@@ -97,7 +67,7 @@ namespace ScoutingCodeRedo.Static
 
             scouterNamesC = scouterDict.Keys.ToList();
             var selectedNames = comboBoxes.Select(cb => cb.SelectedItem).ToList();
-            
+
             scouterNamesC.RemoveAll(sn => selectedNames.Contains(sn.ToString()));
 
             foreach (var comboBox in comboBoxes)
