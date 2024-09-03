@@ -26,7 +26,7 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.Robots[i] = new RobotState
                 {
                     ScouterBox = i,
-                    _ScouterName = RobotState.SCOUTER_NAME.Scouter1 + i,
+                    _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
                     color = i < 3 ? "Red" : "Blue"
                 };
                 scoutNameLabels[i].Text = BackgroundCode.Robots[i]._ScouterName.ToString();
