@@ -12,7 +12,7 @@ Wants:
 
 - [ ] Make the API key in 1 spot in the entire code
 
-- [ ] Have a save/load option (Try out ini files)
+- [x] Have a save/load option (Try out ini files)
 
 - [ ] Event checklist screen (Not having to load excess events that you don't care about)
 
