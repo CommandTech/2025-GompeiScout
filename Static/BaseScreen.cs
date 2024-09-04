@@ -104,6 +104,20 @@ namespace ScoutingCodeRedo.Static
                 {
                     Console.WriteLine(ex.Message);
                 }
+
+                try
+                {
+                    string labelName = $"lbl{i}ModeValue";
+                    Label label = this.Controls.Find(labelName, true).FirstOrDefault() as Label;
+                    if (label != null)
+                    {
+                        label.Text = BackgroundCode.Robots[i].Current_Mode.ToString() + "Mode";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
