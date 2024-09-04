@@ -51,20 +51,31 @@ namespace ScoutingCodeRedo.Static
                     loadData();
                 }
             }
+
+            UpdateJoysticks();
+
+            initializing = false;
         }
 
         private void JoyStickReader(object sender, EventArgs e)
         {
-            ////Loop through all connected gamepads
-            //for (int gamepad_ctr = 0; gamepad_ctr < bgc.gamePads.Length; gamepad_ctr++) bgc.controllers.readStick(bgc.gamePads, gamepad_ctr);   //Initialize all six controllers
+            if (!initializing)
+            {
+                //Loop through all connected gamepads
+                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);   //Initialize all six controllers
 
-            //// Loop through all Scouters/Robots
-            //for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
-            //{
-            //    BackgroundCode.Robots[robot_ctr] = bgc.controllers.getRobotState(robot_ctr);  //Initialize all six robots
-            //}
+                // Loop through all Scouters/Robots
+                for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
+                {
+                    BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.getRobotState(robot_ctr);  //Initialize all six robots
+                }
+            }
+        }
 
-            initializing = false;
+        private void UpdateJoysticks()
+        {
+            BackgroundCode.controllers.getGamePads();
+            BackgroundCode.gamePads = BackgroundCode.controllers.getGamePads();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -72,12 +83,14 @@ namespace ScoutingCodeRedo.Static
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
             if (confirmExit == DialogResult.Yes)
             {
-                confirmExit = MessageBox.Show("Do you want to save the data?", "Please Confirm", MessageBoxButtons.YesNo);
-                if (confirmExit == DialogResult.Yes)
+                if (loadedEvent != null)
                 {
-                    saveData();
+                    confirmExit = MessageBox.Show("Do you want to save the data?", "Please Confirm", MessageBoxButtons.YesNo);
+                    if (confirmExit == DialogResult.Yes)
+                    {
+                        saveData();
+                    }
                 }
-
                 Environment.Exit(0);
             }
         }
@@ -176,6 +189,8 @@ namespace ScoutingCodeRedo.Static
                     currentmatch--;
                 }
             }
+
+            UpdateJoysticks();
         }
 
         private void nextMatch()
@@ -347,6 +362,10 @@ namespace ScoutingCodeRedo.Static
             //    MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
             //}
         }
+        private void btnRefreshControllers_Click(object sender, EventArgs e)
+        {
+            UpdateJoysticks();
+        }
         public void Log(string m)
         {
             //cross-thread Logging
@@ -358,5 +377,6 @@ namespace ScoutingCodeRedo.Static
             };
             Invoke(del);
         }
+
     }
 }

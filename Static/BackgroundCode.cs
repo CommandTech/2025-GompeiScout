@@ -9,7 +9,8 @@ namespace ScoutingCodeRedo.Static
     internal class BackgroundCode
     {
         public DirectInput Input = new DirectInput();
-        public GamePad[] gamePads;
+        public static GamePad[] gamePads;
+        public static Controllers controllers = new Controllers();
 
         public static RobotState[] Robots = new RobotState[6];                            //Contains the state of each Scout's match tracking
 
@@ -22,7 +23,6 @@ namespace ScoutingCodeRedo.Static
 
         public RobotState[] rs = new RobotState[6];
 
-        public GamePadFolder.Controllers controllers = new GamePadFolder.Controllers();
         public BackgroundCode()
         {
             for (int i = 0; i < 6; i++)

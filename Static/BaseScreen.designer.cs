@@ -325,6 +325,7 @@ namespace ScoutingCodeRedo.Static
             this.labelMatch = new System.Windows.Forms.Label();
             this.lblMatch = new System.Windows.Forms.Label();
             this.timerJoysticks = new System.Windows.Forms.Timer(this.components);
+            this.btnRefreshControllers = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -368,11 +369,6 @@ namespace ScoutingCodeRedo.Static
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(1010, 0);
             this.lstLog.TabIndex = 1;
-            // 
-            // timerJoysticks
-            // 
-            this.timerJoysticks.Interval = 50;
-            this.timerJoysticks.Tick += new System.EventHandler(this.JoyStickReader);
             // 
             // comboBoxSelectRegional
             // 
@@ -2311,11 +2307,27 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.TabIndex = 292;
             this.lblMatch.Text = "0";
             // 
+            // timerJoysticks
+            // 
+            this.timerJoysticks.Interval = 50;
+            this.timerJoysticks.Tick += new System.EventHandler(this.JoyStickReader);
+            // 
+            // btnRefreshControllers
+            // 
+            this.btnRefreshControllers.Location = new System.Drawing.Point(1129, 20);
+            this.btnRefreshControllers.Name = "btnRefreshControllers";
+            this.btnRefreshControllers.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshControllers.TabIndex = 301;
+            this.btnRefreshControllers.Text = "Refresh";
+            this.btnRefreshControllers.UseVisualStyleBackColor = true;
+            this.btnRefreshControllers.Click += new System.EventHandler(this.btnRefreshControllers_Click);
+            // 
             // BaseScreen
             // 
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnRefreshControllers);
             this.Controls.Add(this.lblMatch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel31);
@@ -2412,5 +2424,6 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3TeamName;
         private Label lbl3ScoutName;
         private Label lbl3ModeValue;
+        private Button btnRefreshControllers;
     }
 }

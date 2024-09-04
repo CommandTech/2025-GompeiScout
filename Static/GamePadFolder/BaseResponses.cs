@@ -12,8 +12,6 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
 {
     class Controllers
     {
-        public static RobotState[] rs;   //Objects for storing Match State
-
         public Stopwatch stopwatch = new Stopwatch();
         public TimeSpan Zero { get; private set; }
 
@@ -59,10 +57,10 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         {
             state = Math.Max(0, state);
             state = Math.Min(5, state);
-            return rs[state]; //If you crash here, you do not have a controller connected
+            return BackgroundCode.Robots[state]; //If you crash here, you do not have a controller connected
         }
 
-        public GamePad[] GetGamePads()
+        public GamePad[] getGamePads()
         {
             DirectInput input = new DirectInput();
             List<GamePad> gamepads = new List<GamePad>();
@@ -80,13 +78,13 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             GamePad gamepad = gpArray[controllerNumber];
             gamepad.Update();
 
-            if (gamepad.RTHRight_Press && !rs[controllerNumber].NoSho && !gamepad.XButton_Down)
+            if (gamepad.RTHRight_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
             {
-                rs[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Up);
+                BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Up);
             }
-            if (gamepad.RTHLeft_Press && !rs[controllerNumber].NoSho && !gamepad.XButton_Down)
+            if (gamepad.RTHLeft_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
             {
-                rs[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
+                BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
             }
         }
     }
