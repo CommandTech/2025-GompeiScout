@@ -15,6 +15,8 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         public Stopwatch stopwatch = new Stopwatch();
         public TimeSpan Zero { get; private set; }
 
+        private DynamicResponses dynamicGamepad = new DynamicResponses();
+
         private bool IsAxis(Guid objectType)
         {
             return objectType == ObjectGuid.XAxis ||
@@ -86,6 +88,10 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             {
                 BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
             }
+        }
+        public void dynamicReadStick(GamePad[] gpArray, int controllerNumber)
+        {
+            dynamicGamepad.readStick(gpArray, controllerNumber);
         }
     }
 }

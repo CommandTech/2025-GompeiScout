@@ -1,8 +1,7 @@
-﻿using ScoutingCodeRedo.Dynamic;
-using System;
+﻿using System;
 using System.Linq;
 
-namespace T250DynoScout_v2024
+namespace ScoutingCodeRedo.Dynamic
 {
     partial class UpdateDatabase
     {

@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dynamic\DynamicDatabase.cs" />
+    <Compile Include="Dynamic\DynamicResponses.cs" />
     <Compile Include="Dynamic\RobotState.cs" />
     <Compile Include="Dynamic\ScouterBoxes.cs">
       <SubType>Form</SubType>

@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
-using T250DynoScout_v2024;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -30,12 +29,6 @@ namespace ScoutingCodeRedo.Static
             InitializeComponent();
             this.lblkey.Text = "";
             bgc = new BackgroundCode();
-            Label[] scoutNameLabels = { lbl0ScoutName, lbl1ScoutName, lbl2ScoutName, lbl3ScoutName, lbl4ScoutName, lbl5ScoutName };
-
-            for (int i = 0; i < 6; i++)
-            {
-                scoutNameLabels[i].Text = BackgroundCode.Robots[i]._ScouterName.ToString();
-            }
 
             projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
             iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
@@ -59,10 +52,13 @@ namespace ScoutingCodeRedo.Static
 
         private void JoyStickReader(object sender, EventArgs e)
         {
+            UpdateScreen();
+
             if (!initializing)
             {
                 //Loop through all connected gamepads
-                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);   //Initialize all six controllers
+                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);
+                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.dynamicReadStick(BackgroundCode.gamePads, gamepad_ctr);
 
                 // Loop through all Scouters/Robots
                 for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
@@ -77,7 +73,39 @@ namespace ScoutingCodeRedo.Static
             BackgroundCode.controllers.getGamePads();
             BackgroundCode.gamePads = BackgroundCode.controllers.getGamePads();
         }
+        private void UpdateScreen()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                try
+                {
+                    string labelName = $"lbl{i}ScoutName";
+                    Label label = this.Controls.Find(labelName, true).FirstOrDefault() as Label;
+                    if (label != null)
+                    {
+                        label.Text = BackgroundCode.Robots[i]._ScouterName.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
+                try
+                {
+                    string labelName = $"lbl{i}MatchEvent";
+                    Label label = this.Controls.Find(labelName, true).FirstOrDefault() as Label;
+                    if (label != null)
+                    {
+                        label.Text = BackgroundCode.Robots[i].match_event.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
@@ -130,7 +158,7 @@ namespace ScoutingCodeRedo.Static
             }
             catch(Exception e)
             {
-                MessageBox.Show("Could not load data.");
+                MessageBox.Show("Could not load data.", "Error: " + e);
             }
 
         }

@@ -1,10 +1,9 @@
-﻿using ScoutingCodeRedo.Dynamic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace T250DynoScout_v2024
+namespace ScoutingCodeRedo.Dynamic
 {
     public partial class UpdateDatabase : Form
     {
