@@ -18,6 +18,12 @@ namespace ScoutingCodeRedo.Static
         private bool initializing = true;
         public static RobotState[] rs;   //Objects for storing Match State
         BackgroundCode bgc;
+
+        public string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        public string projectBaseDirectory;
+        public string iniPath;
+        public INIFile iniFile;
+
         public BaseScreen()
         {
             InitializeComponent();
@@ -30,7 +36,20 @@ namespace ScoutingCodeRedo.Static
                 scoutNameLabels[i].Text = BackgroundCode.Robots[i]._ScouterName.ToString();
             }
 
+            projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
+            iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
+            iniFile = new INIFile(iniPath);
+
             timerJoysticks.Enabled = true;
+
+            if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
+            {
+                DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
+                if (loadPrevData == DialogResult.Yes)
+                {
+                    loadData();
+                }
+            }
         }
 
         private void JoyStickReader(object sender, EventArgs e)
@@ -52,10 +71,39 @@ namespace ScoutingCodeRedo.Static
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
             if (confirmExit == DialogResult.Yes)
             {
+                confirmExit = MessageBox.Show("Do you want to save the data?", "Please Confirm", MessageBoxButtons.YesNo);
+                if (confirmExit == DialogResult.Yes)
+                {
+                    saveData();
+                }
+
                 Environment.Exit(0);
             }
+        }
+        private void saveData()
+        {
+            try
+            {
+                // Write data to INI file
+                iniFile.Write("MatchData", "event", comboBoxSelectRegional.SelectedItem.ToString());
+                iniFile.Write("MatchData", "match_number", currentmatch.ToString());
+                iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving data: " + ex.Message);
+            }
+        }
+        private void loadData()
+        {
+            BuildInitialDatabase();
 
-            //Possibly implement saving the current data (i.e. match number, event, maybe scouter names) to csv or ini before leaving
+            comboBoxSelectRegional.Items.Add(iniFile.Read("MatchData", "event", "Test"));
+            comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Test");
+            currentmatch = int.Parse(iniFile.Read("MatchData", "match_number", ""));
+            Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
+
+            btnpopulateForEvent_Click(null, null);
         }
         private void btnInitialDBLoad_Click(object sender, EventArgs e)
         {
@@ -64,7 +112,7 @@ namespace ScoutingCodeRedo.Static
             {
                 BuildInitialDatabase();
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
                 MessageBox.Show("The Blue Alliance data was not loaded", "", MessageBoxButtons.OK);
             }
