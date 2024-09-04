@@ -155,7 +155,7 @@ namespace ScoutingCodeRedo.Static
         private System.Windows.Forms.ListBox lstLog;
         private System.ComponentModel.IContainer components = null;
 
-        public string eventcode;
+        public static string eventcode;
         public static int currentmatch = 0;
         private Label labelMatch;
         private Label lblMatch;

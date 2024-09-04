@@ -24,6 +24,7 @@ namespace ScoutingCodeRedo.Static
         public string iniPath;
         public INIFile iniFile;
 
+        public static string loadedEvent;
         public BaseScreen()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace ScoutingCodeRedo.Static
 
         private void JoyStickReader(object sender, EventArgs e)
         {
-            // Loop through all connected gamepads
+            ////Loop through all connected gamepads
             //for (int gamepad_ctr = 0; gamepad_ctr < bgc.gamePads.Length; gamepad_ctr++) bgc.controllers.readStick(bgc.gamePads, gamepad_ctr);   //Initialize all six controllers
 
             //// Loop through all Scouters/Robots
@@ -80,30 +81,45 @@ namespace ScoutingCodeRedo.Static
                 Environment.Exit(0);
             }
         }
-        private void saveData()
+        public void saveData()
         {
-            try
+            if (loadedEvent != null && currentmatch != 0)
             {
-                // Write data to INI file
-                iniFile.Write("MatchData", "event", comboBoxSelectRegional.SelectedItem.ToString());
-                iniFile.Write("MatchData", "match_number", currentmatch.ToString());
-                iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
+                try
+                {
+                    // Write data to INI file
+                    iniFile.Write("MatchData", "event", loadedEvent);
+                    iniFile.Write("MatchData", "match_number", currentmatch.ToString());
+                    iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving data: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error saving data: " + ex.Message);
+                MessageBox.Show("No data to save.");
             }
         }
         private void loadData()
         {
-            BuildInitialDatabase();
+            try
+            {
+                comboBoxSelectRegional.Items.Add(iniFile.Read("MatchData", "event", "Please press the Load Events Button..."));
+                comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Please press the Load Events Button...");
+                currentmatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
+                Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
 
-            comboBoxSelectRegional.Items.Add(iniFile.Read("MatchData", "event", "Test"));
-            comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Test");
-            currentmatch = int.Parse(iniFile.Read("MatchData", "match_number", ""));
-            Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
+                BuildInitialDatabase();
 
-            btnpopulateForEvent_Click(null, null);
+                btnpopulateForEvent_Click(null, null);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Could not load data.");
+            }
+
         }
         private void btnInitialDBLoad_Click(object sender, EventArgs e)
         {
@@ -202,6 +218,7 @@ namespace ScoutingCodeRedo.Static
             else
             {
                 eventcode = comboBoxSelectRegional.SelectedItem.ToString();
+                loadedEvent = eventcode;
                 eventcode = eventcode.TrimStart('[');
                 regional = eventcode;
                 int index = eventcode.IndexOf(",");
