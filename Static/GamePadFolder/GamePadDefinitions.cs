@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using SharpDX.XInput;
-using SharpDX.DirectInput;
+﻿using SharpDX.DirectInput;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -78,23 +74,21 @@ namespace ScoutingCodeRedo.Static
             //save old values before overwritten.
             RecordOldValues();
 
-            //Gets the current state of the joystick
-            JoystickState jsState = _js.GetCurrentState();
+            //reads all digital buttons 
+            _a = _js.GetCurrentState().Buttons[0];
+            _b = _js.GetCurrentState().Buttons[1];
+            _x = _js.GetCurrentState().Buttons[2];
+            _y = _js.GetCurrentState().Buttons[3];
+            _lb = _js.GetCurrentState().Buttons[4];
+            _rb = _js.GetCurrentState().Buttons[5];
+            _startButton = _js.GetCurrentState().Buttons[7];
+            _backButton = _js.GetCurrentState().Buttons[6];
 
-            //reads all digital buttons
-            _a = jsState.Buttons[0];
-            _b = jsState.Buttons[1];
-            _x = jsState.Buttons[2];
-            _y = jsState.Buttons[3];
-            _lb = jsState.Buttons[4];
-            _rb = jsState.Buttons[5];
-            _startButton = jsState.Buttons[7];
-            _backButton = jsState.Buttons[6];
-            _l3 = jsState.Buttons[8];
-            _r3 = jsState.Buttons[9];
+            _l3 = _js.GetCurrentState().Buttons[8];
+            _r3 = _js.GetCurrentState().Buttons[9];
 
             //reads which dpad directions are pressed
-            int pov = jsState.PointOfViewControllers[0];
+            int pov = _js.GetCurrentState().PointOfViewControllers[0];
             _dpadup = ((pov > 27000 || pov < 9000) && pov != -1);
             _dpaddown = (9000 < pov && pov < 27000);
             _dpadright = (0 < pov && pov < 18000);
@@ -274,12 +268,6 @@ namespace ScoutingCodeRedo.Static
         public bool StartButton_Down
         { get { return _startButton; } }
 
-        public void intiGamePad()
-        { }
-
-        public string DeviceInfo
-        { get { return _deviceInfo; } }
-
         private void RecordOldValues()
         {
             _aPrev = _a;
@@ -318,61 +306,6 @@ namespace ScoutingCodeRedo.Static
             {
                 return false;
             }
-        }
-    }
-
-    class Controller
-    {
-        public Joystick[] GetSticks(DirectInput input)
-        {
-            List<Joystick> sticks = new List<Joystick>();
-            foreach (DeviceInstance device in input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
-            {
-                try
-                {
-                    Joystick stick = new Joystick(input, device.InstanceGuid);
-                    stick.Acquire();
-
-                    foreach (DeviceObjectInstance deviceObject in stick.GetObjects(DeviceObjectTypeFlags.Axis))
-                    {
-                        var objectProperties = stick.GetObjectPropertiesById(deviceObject.ObjectId);
-                        objectProperties.Range = new InputRange(-100, 100);
-                    }
-
-                    sticks.Add(stick);
-                }
-                catch (Exception)
-                {
-                    // cry
-                }
-            }
-            return sticks.ToArray();
-        }
-
-        public List<Joystick> GetGamePads()
-        {
-            var directInput = new DirectInput();
-            var gamePads = new List<Joystick>();
-
-            // Enumerate all gamepad devices
-            foreach (var deviceInstance in directInput.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
-            {
-                var gamePad = new Joystick(directInput, deviceInstance.InstanceGuid);
-                gamePad.Properties.BufferSize = 128; // Set buffer size for input events
-                gamePad.Acquire(); // Acquire the device for capturing input
-
-                // Optionally set axis ranges or other properties here
-                // For example, setting the range for all axes
-                foreach (var deviceObject in gamePad.GetObjects(DeviceObjectTypeFlags.Axis))
-                {
-                    var objectProperties = gamePad.GetObjectPropertiesById(deviceObject.ObjectId);
-                    objectProperties.Range = new InputRange(-1000, 1000); // Example range
-                }
-
-                gamePads.Add(gamePad);
-            }
-
-            return gamePads;
         }
     }
 }

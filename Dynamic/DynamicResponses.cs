@@ -1,22 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
-using ScoutingCodeRedo.Static.GamePadFolder;
 
 namespace ScoutingCodeRedo.Dynamic
 {
     internal class DynamicResponses
     {
-        public void readStick(Static.GamePad[] gpArray, int controllerNumber)
+        public void readStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
             gamepad.Update();
 
             var robot = BackgroundCode.Robots[controllerNumber];
+
+
+            if (gamepad.R3_Press && !gamepad.XButton_Down)
+            {
+                if (robot.match_event != RobotState.MATCHEVENT_NAME.Match_Event &&
+                    !robot.NoSho &&
+                    robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+                {
+                    if (robot.match_event == RobotState.MATCHEVENT_NAME.NoShow)
+                    {
+                        robot.NoSho = true;
+                    }
+                    else
+                    {
+                        //activity_record.match_event = robot.match_event.ToString().ToString(); //If you crash here you didn't load matches
+                    }
+
+                    ////Save Record to the database
+                    //seasonframework.ActivitySet.Add(activity_record);
+                    //seasonframework.SaveChanges(); // If you crash here migration isn't working
+
+                    robot.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+
+                    //Reset Match Event
+                    robot.match_event = 0;
+                }
+                else if (robot.match_event == RobotState.MATCHEVENT_NAME.Match_Event)
+                {
+                    robot.ScouterError = robot.ScouterError + 100000;
+                }
+            }
 
             // #Auto
             // **************************************************************
@@ -24,19 +50,6 @@ namespace ScoutingCodeRedo.Dynamic
             // **************************************************************
             if (robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.NoSho)
             {
-                //2024 Scouter Names
-                if (gamepad.XButton_Down)
-                {
-                    if (gamepad.RTHRight_Press)
-                    {
-                        robot.changeScouterName(RobotState.CYCLE_DIRECTION.Up);
-                    }
-                    if (gamepad.RTHLeft_Press)
-                    {
-                        robot.changeScouterName(RobotState.CYCLE_DIRECTION.Down);
-                    }
-                }
-
                 //2024 Setup Controls
                 if (gamepad.XButton_Down)
                 {
@@ -222,7 +235,6 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.Flag = 0;
                 }
             }
-
 
             // #Teleop
             // **************************************************************
@@ -481,7 +493,6 @@ namespace ScoutingCodeRedo.Dynamic
                 }
             }
 
-
             // #Showtime 
             // **************************************************************
             // *** SHOWTIME MODE ***
@@ -659,7 +670,6 @@ namespace ScoutingCodeRedo.Dynamic
                 }
             }
 
-
             // Values if robot is NoSho
 
             if (robot.NoSho == true)
@@ -687,13 +697,163 @@ namespace ScoutingCodeRedo.Dynamic
 
             }
 
-            // 2024 Changing modes
+            // #Transact
+            // **************************************************************
+            // ***  TRANSACT TO DATABASE  ***
+            // **************************************************************
+            if (robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name &&
+                (robot.Acq_Loc != "Select" ||
+                robot.Del_Dest != RobotState.DEL_DEST.Select ||
+                robot.Acq_Center != 0))
+            {
+                robot.TransactionCheck = true;
+            }
+            else
+            {
+                robot.TransactionCheck = false;
+            }
+
+            //2023 EndAuto End of Autonomous transaction
+            if (robot.AUTO && gamepad.BackButton_Press && !robot.NoSho &&
+                robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+            {
+                if (robot.Current_Loc == RobotState.CURRENT_LOC.Source)
+                {
+                    robot.OpptT_StopWatch.Start();
+                    robot.OpptT_StopWatch_running = true;
+                }
+                else if (robot.Current_Loc == RobotState.CURRENT_LOC.SubW)
+                {
+                    robot.AllyT_StopWatch.Start();
+                    robot.AllyT_StopWatch_running = true;
+                }
+                
+                //TODO: transact things to the database
+                robot.AUTO = false;
+                robot.Acq_Center_Temp = 0;
+                robot.Acq_Center = 0;
+
+            }
+            else if (gamepad.RightTrigger_Press && !robot.NoSho && robot.TransactionCheck == true)
+            {
+                if (robot.Acq_Loc != RobotState.CURRENT_LOC.Select.ToString() || robot.Acq_Center != 0)
+                {
+                    if (Settings.Default.redRight)
+                    {
+                        if (robot.color == "Red")
+                        {
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                robot.Acq_Loc_Temp = "AllyWing";
+                            }
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                robot.Acq_Loc_Temp = "OppWing";
+                            }
+                        }
+                        else
+                        {
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                robot.Acq_Loc_Temp = "OppWing";
+                            }
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                robot.Acq_Loc_Temp = "AllyWing";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (robot.color == "Red")
+                        {
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                robot.Acq_Loc_Temp = "OppWing";
+                            }
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                robot.Acq_Loc_Temp = "AllyWing";
+                            }
+                        }
+                        else
+                        {
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                robot.Acq_Loc_Temp = "AllyWing";
+                            }
+                            if (robot.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                robot.Acq_Loc_Temp = "OppWing";
+                            }
+                        }
+                    }
+                    if (robot.Current_Loc == RobotState.CURRENT_LOC.Source)
+                    {
+                        robot.Acq_Loc_Temp = "Source";
+                    }
+                    if (robot.Current_Loc == RobotState.CURRENT_LOC.Neutral)
+                    {
+                        robot.Acq_Loc_Temp = "Neutral";
+                    }
+                    if (robot.Current_Loc == RobotState.CURRENT_LOC.SubW)
+                    {
+                        robot.Acq_Loc_Temp = "AllyWing";
+                    }
+
+                    robot.Acq_Center_Temp = robot.Acq_Center;
+
+                    if (robot.Flag == 1)
+                    {
+                        if (robot.Acq_Center_Temp != 0 && robot.Acq_Loc_Temp != "Neutral")
+                        {
+                            robot.Acq_Loc_Temp = "Neutral";
+                            robot.ScouterError = robot.ScouterError + 1000;
+                        }
+
+                        //Reset Temp Variables
+                        robot.Acq_Loc_Temp = "Select";
+                        robot.Acq_Center_Temp = 0;
+                    }
+                    else if (robot.Flag == 0 && robot.Acq_Center_Temp != 0)
+                    {
+                        if (robot.Acq_Loc_Temp != "Neutral")
+                        {
+                            robot.Acq_Loc_Temp = "Neutral";
+                            robot.ScouterError = robot.ScouterError + 1000;
+                        }
+                    }
+                }
+                else if (robot.Del_Dest != RobotState.DEL_DEST.Select)
+                {
+
+                    //Reset Temp Variables
+                    robot.Acq_Center_Temp = 0;
+                    robot.Acq_Loc_Temp = "Select";
+                }
+
+                //Reset Values
+                robot.Del_Dest = RobotState.DEL_DEST.Select;
+                robot.Acq_Loc = "Select";
+                robot.Acq_Center = 0;
+                robot.Flag = 0;
+                robot.TransactionCheck = false;
+                robot.Acq_Center_Temp = 0;
+            }
+            else if (gamepad.RightTrigger_Press && !robot.NoSho && robot.TransactionCheck == false)
+            {
+                robot.ScouterError = robot.ScouterError + 100000;
+            }
+
+
+            // 2023 Changing modes
             if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.AUTO && !robot.NoSho)
             {
                 robot.Desired_Mode = RobotState.ROBOT_MODE.Showtime;
                 robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
             }
             else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Teleop && !robot.NoSho)
+
             {
                 robot.Desired_Mode = RobotState.ROBOT_MODE.Teleop;
                 robot.Current_Mode = RobotState.ROBOT_MODE.Showtime;
