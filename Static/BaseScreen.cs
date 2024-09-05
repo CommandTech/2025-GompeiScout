@@ -15,7 +15,6 @@ namespace ScoutingCodeRedo.Static
     {
 
         private bool initializing = true;
-        public static RobotState[] rs;   //Objects for storing Match State
         BackgroundCode bgc;
 
         public string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -77,47 +76,9 @@ namespace ScoutingCodeRedo.Static
         {
             for (int i = 0; i < 6; i++)
             {
-                try
-                {
-                    string labelName = $"lbl{i}ScoutName";
-                    Label label = this.Controls.Find(labelName, true).FirstOrDefault() as Label;
-                    if (label != null)
-                    {
-                        label.Text = BackgroundCode.Robots[i]._ScouterName.ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
-                try
-                {
-                    string labelName = $"lbl{i}MatchEvent";
-                    Label label = this.Controls.Find(labelName, true).FirstOrDefault() as Label;
-                    if (label != null)
-                    {
-                        label.Text = BackgroundCode.Robots[i].match_event.ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
-                try
-                {
-                    string labelName = $"lbl{i}ModeValue";
-                    Label label = this.Controls.Find(labelName, true).FirstOrDefault() as Label;
-                    if (label != null)
-                    {
-                        label.Text = BackgroundCode.Robots[i].Current_Mode.ToString() + "Mode";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
+                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].match_event.ToString();
+                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + "Mode";
             }
         }
         private void btnExit_Click(object sender, EventArgs e)

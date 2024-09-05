@@ -4,9 +4,6 @@ using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ScoutingCodeRedo.Static.GamePadFolder
 {
@@ -80,13 +77,30 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             GamePad gamepad = gpArray[controllerNumber];
             gamepad.Update();
 
+            //Match events
             if (gamepad.RTHRight_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
             {
                 BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Up);
             }
-            if (gamepad.RTHLeft_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
+            else if (gamepad.RTHLeft_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
             {
                 BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
+            }
+            else if (gamepad.R3_Press)
+            {
+                //Transact match event to database
+
+                BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+            }
+
+            //Scouter names
+            if (gamepad.LTHRight_Press)
+            {
+                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
+            }
+            if (gamepad.LTHLeft_Press)
+            {
+                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
             }
         }
         public void dynamicReadStick(GamePad[] gpArray, int controllerNumber)
