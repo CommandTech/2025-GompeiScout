@@ -1,18 +1,22 @@
 ﻿using System;
+using System.Diagnostics;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
 
 namespace ScoutingCodeRedo.Dynamic
 {
-    internal class DynamicResponses
+    class DynamicResponses
     {
         public void readStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
-            gamepad.Update();
 
             var robot = BackgroundCode.Robots[controllerNumber];
 
+            if (robot.OpptT_StopWatch == null) robot.OpptT_StopWatch = new Stopwatch();
+            if (robot.NeutT_StopWatch == null) robot.NeutT_StopWatch = new Stopwatch();
+            if (robot.AllyT_StopWatch == null) robot.AllyT_StopWatch = new Stopwatch();
+            if (robot.ClimbT_StopWatch == null) robot.ClimbT_StopWatch = new Stopwatch();
 
             if (gamepad.R3_Press && !gamepad.XButton_Down)
             {

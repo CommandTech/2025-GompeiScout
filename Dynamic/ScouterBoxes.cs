@@ -257,9 +257,6 @@ namespace ScoutingCodeRedo.Dynamic
 
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position10", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position10Value", true)[0]).Visible = false;
-
-            ((Label)this.Controls.Find($"lbl{Controller_Number}Position11", true)[0]).Text = BackgroundCode.Robots[Controller_Number].match_event.ToString();
-            ((Label)this.Controls.Find($"lbl{Controller_Number}Position11", true)[0]).Visible = true;
         }
         private void InShowtimeMode(int Controller_Number)
         {
@@ -437,10 +434,6 @@ namespace ScoutingCodeRedo.Dynamic
                 ((Label)this.Controls.Find($"lbl{Controller_Number}Position10Value", true)[0]).Text = BackgroundCode.Robots[Controller_Number].Avo_Rat.ToString();
                 ((Label)this.Controls.Find($"lbl{Controller_Number}Position10Value", true)[0]).Visible = true;
             }
-
-
-            ((Label)this.Controls.Find($"lbl{Controller_Number}Position11", true)[0]).Visible = true;
-            ((Label)this.Controls.Find($"lbl{Controller_Number}Position11", true)[0]).Text = BackgroundCode.Robots[Controller_Number].match_event.ToString();
         }
     }
 }

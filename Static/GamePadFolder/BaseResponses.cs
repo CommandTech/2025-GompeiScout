@@ -102,9 +102,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             {
                 BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
             }
-        }
-        public void dynamicReadStick(GamePad[] gpArray, int controllerNumber)
-        {
+
             dynamicGamepad.readStick(gpArray, controllerNumber);
         }
     }

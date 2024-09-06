@@ -56,8 +56,11 @@ namespace ScoutingCodeRedo.Static
             if (!initializing)
             {
                 //Loop through all connected gamepads
-                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);
-                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.dynamicReadStick(BackgroundCode.gamePads, gamepad_ctr);
+                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
+                {
+                    BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);
+                    //BackgroundCode.controllers.dynamicReadStick(BackgroundCode.gamePads, gamepad_ctr);
+                }
 
                 // Loop through all Scouters/Robots
                 for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
