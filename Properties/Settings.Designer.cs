@@ -46,5 +46,53 @@ namespace ScoutingCodeRedo.Properties {
                 this["redRight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string loadedEvent {
+            get {
+                return ((string)(this["loadedEvent"]));
+            }
+            set {
+                this["loadedEvent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AppDomain.CurrentDomain.BaseDirectory")]
+        public string baseDirectory {
+            get {
+                return ((string)(this["baseDirectory"]));
+            }
+            set {
+                this["baseDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @\"..\\..\\\"))")]
+        public string projectBaseDirectory {
+            get {
+                return ((string)(this["projectBaseDirectory"]));
+            }
+            set {
+                this["projectBaseDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("System.IO.Path.Combine(projectBaseDirectory, \"config.ini\")")]
+        public string iniPath {
+            get {
+                return ((string)(this["iniPath"]));
+            }
+            set {
+                this["iniPath"] = value;
+            }
+        }
     }
 }

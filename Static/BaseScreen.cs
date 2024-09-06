@@ -21,8 +21,6 @@ namespace ScoutingCodeRedo.Static
         public string projectBaseDirectory;
         public string iniPath;
         public INIFile iniFile;
-
-        public static string loadedEvent;
         public BaseScreen()
         {
             InitializeComponent();
@@ -35,6 +33,7 @@ namespace ScoutingCodeRedo.Static
 
             timerJoysticks.Enabled = true;
 
+            Console.WriteLine(Settings.Default.iniPath);
             if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
             {
                 DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
@@ -89,7 +88,7 @@ namespace ScoutingCodeRedo.Static
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
             if (confirmExit == DialogResult.Yes)
             {
-                if (loadedEvent != null)
+                if (Settings.Default.loadedEvent != null)
                 {
                     confirmExit = MessageBox.Show("Do you want to save the data?", "Please Confirm", MessageBoxButtons.YesNo);
                     if (confirmExit == DialogResult.Yes)
@@ -102,12 +101,12 @@ namespace ScoutingCodeRedo.Static
         }
         public void saveData()
         {
-            if (loadedEvent != null && currentmatch != 0)
+            if (Settings.Default.loadedEvent != null && currentmatch != 0)
             {
                 try
                 {
                     // Write data to INI file
-                    iniFile.Write("MatchData", "event", loadedEvent);
+                    iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
                     iniFile.Write("MatchData", "match_number", currentmatch.ToString());
                     iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
                 }
@@ -238,14 +237,12 @@ namespace ScoutingCodeRedo.Static
             }
             else
             {
-                eventcode = comboBoxSelectRegional.SelectedItem.ToString();
-                loadedEvent = eventcode;
-                eventcode = eventcode.TrimStart('[');
-                regional = eventcode;
-                int index = eventcode.IndexOf(",");
-                if (index > 0) eventcode = eventcode.Substring(0, index);
+                Settings.Default.loadedEvent = comboBoxSelectRegional.SelectedItem.ToString();
+                regional = Settings.Default.loadedEvent.TrimStart('[');
+                int index = regional.IndexOf(",");
+                if (index > 0) regional = regional.Substring(0, index);
 
-                string uri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{eventcode}/teams?X-TBA-Auth-Key={Settings.Default.API_Key}";
+                string uri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{regional}/teams?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -276,7 +273,7 @@ namespace ScoutingCodeRedo.Static
                     }
                 }
 
-                string matchesuri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{eventcode}/matches?X-TBA-Auth-Key={Settings.Default.API_Key}";
+                string matchesuri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{regional}/matches?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
                 using (HttpClient client = new HttpClient())
                 {

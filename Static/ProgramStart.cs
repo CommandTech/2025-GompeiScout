@@ -13,6 +13,8 @@ namespace ScoutingCodeRedo.Static
         [STAThread]
         static void Main()
         {
+            Settings.Default.loadedEvent = null;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -70,7 +72,7 @@ namespace ScoutingCodeRedo.Static
                 string iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
                 INIFile iniFile = new INIFile(iniPath);
 
-                iniFile.Write("MatchData", "event", BaseScreen.loadedEvent);
+                iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
                 iniFile.Write("MatchData", "match_number", BaseScreen.currentmatch.ToString());
                 iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
             }
