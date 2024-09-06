@@ -1,4 +1,5 @@
 ﻿using SharpDX.DirectInput;
+using System;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -60,9 +61,6 @@ namespace ScoutingCodeRedo.Static
 
         Joystick _js;
 
-        /*
-         * 
-         */
         public GamePad(Joystick js)
         {
             _js = js;
@@ -98,9 +96,9 @@ namespace ScoutingCodeRedo.Static
             int X = _js.GetCurrentState().X;
             int Y = _js.GetCurrentState().Y;
             _lTHUp = (-100 < X) && (X < 100) && (Y < -90);
-            _lTHDown = (-100 < X) && (X < 190) && (Y > 90);
-            _lTHRight = (-100 < Y) && (Y < 100) && (X < -90);
-            _lTHLeft = (-100 < Y) && (Y < 100) && (X > 90);
+            _lTHDown = (-100 < X) && (X < 100) && (Y > 90);
+            _lTHRight = (-100 < Y) && (Y < 100) && (X < 90);
+            _lTHLeft = (-100 < Y) && (Y < 100) && (X > -90);
 
             //reads direction of left hand analog stick
             int RotationX = _js.GetCurrentState().RotationX;
@@ -286,7 +284,7 @@ namespace ScoutingCodeRedo.Static
             _lTHDownPrev = _lTHDown;
             _lTHLeftPrev = _lTHLeft;
             _lTHRightPrev = _lTHRight;
-            _rTHUpPrev = _lTHUp;
+            _rTHUpPrev = _rTHUp;
             _rTHDownPrev = _rTHDown;
             _rTHLeftPrev = _rTHLeft;
             _rTHRightPrev = _rTHRight;

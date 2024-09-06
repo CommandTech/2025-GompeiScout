@@ -96,11 +96,11 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             //Scouter names
             if (gamepad.LTHRight_Press)
             {
-                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
+                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
             }
             if (gamepad.LTHLeft_Press)
             {
-                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
+                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
             }
 
             dynamicGamepad.readStick(gpArray, controllerNumber);
