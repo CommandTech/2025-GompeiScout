@@ -33,7 +33,6 @@ namespace ScoutingCodeRedo.Static
 
             timerJoysticks.Enabled = true;
 
-            Console.WriteLine(Settings.Default.iniPath);
             if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
             {
                 DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
@@ -58,7 +57,6 @@ namespace ScoutingCodeRedo.Static
                 for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
                 {
                     BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);
-                    //BackgroundCode.controllers.dynamicReadStick(BackgroundCode.gamePads, gamepad_ctr);
                 }
 
                 // Loop through all Scouters/Robots
@@ -230,7 +228,27 @@ namespace ScoutingCodeRedo.Static
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
-            if (this.comboBoxSelectRegional.Text == "Please press the Load Events Button...")
+            if (Settings.Default.manualMatchList != null)
+            {
+                // Clear the existing team list
+                bgc.InMemoryMatchList.Clear();
+
+                for (int i = 0; i < Settings.Default.manualMatchList.Count; i++)
+                {
+                    Match matchData = new Match();
+
+                    matchData.match_number = i;
+                    matchData.redteam1 = "frc" + Settings.Default.manualMatchList[i][0];
+                    matchData.redteam2 = "frc" + Settings.Default.manualMatchList[i][1];
+                    matchData.redteam3 = "frc" + Settings.Default.manualMatchList[i][2];
+                    matchData.blueteam1 = "frc" + Settings.Default.manualMatchList[i][3];
+                    matchData.blueteam2 = "frc" + Settings.Default.manualMatchList[i][4];
+                    matchData.blueteam3 = "frc" + Settings.Default.manualMatchList[i][5];
+
+                    bgc.InMemoryMatchList.Add(matchData);
+                }
+            }
+            else if (this.comboBoxSelectRegional.Text == "Please press the Load Events Button...")
             {
                 MessageBox.Show("You must load an event first.", "Not Ready to Get Matches");
                 return;

@@ -7,6 +7,8 @@ namespace ScoutingCodeRedo.Dynamic
 {
     class DynamicResponses
     {
+        Activity activity_record = new Activity();
+        SeasonContext seasonframework = new SeasonContext();
         public void readStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];

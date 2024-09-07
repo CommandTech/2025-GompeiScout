@@ -14,6 +14,7 @@ namespace ScoutingCodeRedo.Static
         static void Main()
         {
             Settings.Default.loadedEvent = null;
+            Settings.Default.manualMatchList = null;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

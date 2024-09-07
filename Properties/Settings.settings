@@ -11,14 +11,8 @@
     <Setting Name="loadedEvent" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="baseDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">AppDomain.CurrentDomain.BaseDirectory</Value>
-    </Setting>
-    <Setting Name="projectBaseDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"))</Value>
-    </Setting>
-    <Setting Name="iniPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">System.IO.Path.Combine(projectBaseDirectory, "config.ini")</Value>
+    <Setting Name="manualMatchList" Type="System.Collections.Generic.List&lt;System.Collections.Generic.List&lt;System.String&gt;&gt;" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

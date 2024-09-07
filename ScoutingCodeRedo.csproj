@@ -128,6 +128,7 @@
     <EmbeddedResource Include="Dynamic\UpdateDatabase.resx">
       <DependentUpon>UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Dynamic\ManualMatchList.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

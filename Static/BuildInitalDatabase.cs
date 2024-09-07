@@ -3,11 +3,10 @@ using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace ScoutingCodeRedo.Static
@@ -19,7 +18,7 @@ namespace ScoutingCodeRedo.Static
         //     then all of the events globally.
         private async void BuildInitialDatabase()
         {
-            string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year.ToString()}?X-TBA-Auth-Key={Settings.Default.API_Key}";
+            string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year.ToString()}?X-TBA-Auth-Key2={Settings.Default.API_Key}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -45,6 +44,11 @@ namespace ScoutingCodeRedo.Static
                 catch (HttpRequestException e)
                 {
                     Log("Request error: " + e.Message);
+                    DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Error loading Blue Alliance data.", MessageBoxButtons.YesNo);
+                    if (manualMatches == DialogResult.Yes)
+                    {
+                        loadManualMatches();
+                    }
                 }
             }
         }
@@ -59,6 +63,39 @@ namespace ScoutingCodeRedo.Static
             {
                 DBExists = false;
             }
+        }
+
+        public void loadManualMatches()
+        {
+
+            string csvBaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string csvProjectBaseDirectory = Path.GetFullPath(Path.Combine(csvBaseDirectory, @"..\..\"));
+            string csvPath = Path.Combine(csvProjectBaseDirectory, "Dynamic\\ManualMatchList.csv");
+
+            Settings.Default.manualMatchList = ReadCsvFile(csvPath);
+        }
+        public static List<List<String>> ReadCsvFile(string filePath)
+        {
+            var records = new List<List<String>>();
+
+            using (var reader = new StreamReader(filePath))
+            {
+                string line;
+                bool isFirstLine = true;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (isFirstLine)
+                    {
+                        isFirstLine = false;
+                        continue;
+                    }
+
+                    var values = line.Split(',');
+                    records.Add(new List<string>(values));
+                }
+            }
+
+            return records;
         }
     }
 }

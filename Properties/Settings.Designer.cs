@@ -61,37 +61,12 @@ namespace ScoutingCodeRedo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AppDomain.CurrentDomain.BaseDirectory")]
-        public string baseDirectory {
+        public global::System.Collections.Generic.List<System.Collections.Generic.List<System.String>> manualMatchList {
             get {
-                return ((string)(this["baseDirectory"]));
+                return ((global::System.Collections.Generic.List<System.Collections.Generic.List<System.String>>)(this["manualMatchList"]));
             }
             set {
-                this["baseDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @\"..\\..\\\"))")]
-        public string projectBaseDirectory {
-            get {
-                return ((string)(this["projectBaseDirectory"]));
-            }
-            set {
-                this["projectBaseDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("System.IO.Path.Combine(projectBaseDirectory, \"config.ini\")")]
-        public string iniPath {
-            get {
-                return ((string)(this["iniPath"]));
-            }
-            set {
-                this["iniPath"] = value;
+                this["manualMatchList"] = value;
             }
         }
     }
