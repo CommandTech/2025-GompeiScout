@@ -94,6 +94,8 @@ namespace ScoutingCodeRedo.Static
                         saveData();
                     }
                 }
+
+                BackgroundCode.seasonframework.Database.Connection.Close();
                 Environment.Exit(0);
             }
         }
@@ -143,24 +145,23 @@ namespace ScoutingCodeRedo.Static
             if (dialogResult == DialogResult.Yes)
             {
                 BuildInitialDatabase();
+                //  Logic for setting left/right and near/far based on side of field scouters are sitting on
+                DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
+                if (red == DialogResult.Yes)
+                {
+                    Settings.Default.redRight = true;
+                }
+                else
+                {
+                    Settings.Default.redRight = false;
+                }
+
+                Log("SQL start time is " + DateTime.Now.TimeOfDay);
             }
             else
             {
                 MessageBox.Show("The Blue Alliance data was not loaded", "", MessageBoxButtons.OK);
             }
-
-            //  Logic for setting left/right and near/far based on side of field scouters are sitting on
-            DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
-            if (red == DialogResult.Yes)
-            {
-                Settings.Default.redRight = true;
-            }
-            else
-            {
-                Settings.Default.redRight = false;
-            }
-
-            Log("SQL start time is " + DateTime.Now.TimeOfDay);
         }
 
         private void btnNextMatch_Click(object sender, EventArgs e)
@@ -327,13 +328,6 @@ namespace ScoutingCodeRedo.Static
                                 dynamic blueteamsobj = bluealliance.team_keys;
                                 dynamic redteamsobj = redalliance.team_keys;
 
-                                string blue1 = blueteamsobj[0];
-                                string blue2 = blueteamsobj[1];
-                                string blue3 = blueteamsobj[2];
-                                string red1 = redteamsobj[0];
-                                string red2 = redteamsobj[1];
-                                string red3 = redteamsobj[2];
-
                                 match_record.match_number = (int)obj[i].match_number;
 
                                 match_record.set_number = obj[i].match_number;
@@ -371,17 +365,17 @@ namespace ScoutingCodeRedo.Static
         }
         private void btnUpdateDB_Click(object sender, EventArgs e)
         {
-            UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
-            frm.Show();
-            //if (DBExists)
-            //{
-            //    UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
-            //    frm.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
-            //}
+            //UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
+            //frm.Show();
+            if (Settings.Default.DBExists)
+            {
+                UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
+            }
         }
         private void btnRefreshControllers_Click(object sender, EventArgs e)
         {

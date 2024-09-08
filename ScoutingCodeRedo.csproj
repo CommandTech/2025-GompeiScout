@@ -81,6 +81,14 @@
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scoutingdbDataSet.cs">
+      <DependentUpon>scoutingdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="scoutingdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>scoutingdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Static\BackgroundCode.cs" />
     <Compile Include="Static\BaseScreen.designer.cs">
       <DependentUpon>BaseScreen.cs</DependentUpon>
@@ -140,6 +148,17 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="README.md" />
+    <None Include="scoutingdbDataSet.xsc">
+      <DependentUpon>scoutingdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="scoutingdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>scoutingdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="scoutingdbDataSet.xss">
+      <DependentUpon>scoutingdbDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

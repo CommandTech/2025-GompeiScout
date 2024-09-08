@@ -15,6 +15,7 @@ namespace ScoutingCodeRedo.Static
         {
             Settings.Default.loadedEvent = null;
             Settings.Default.manualMatchList = null;
+            Settings.Default.DBExists = false;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

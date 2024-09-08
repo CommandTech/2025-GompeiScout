@@ -1,4 +1,5 @@
-﻿using ScoutingCodeRedo.Static;
+﻿using ScoutingCodeRedo.Properties;
+using ScoutingCodeRedo.Static;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,7 +17,7 @@ namespace ScoutingCodeRedo.Dynamic
     internal class SeasonContext : DbContext
     {
         public SeasonContext()
-            : base("2024seasondb")
+            : base(Settings.Default._scoutingdbConnectionString)
         { }
 
         public DbSet<EventSummary> Eventset { get; set; }

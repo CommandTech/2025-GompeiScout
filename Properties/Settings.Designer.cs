@@ -69,5 +69,28 @@ namespace ScoutingCodeRedo.Properties {
                 this["manualMatchList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DBExists {
+            get {
+                return ((bool)(this["DBExists"]));
+            }
+            set {
+                this["DBExists"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LOCALHOST\\SQLEXPRESS;Initial Catalog=scoutingdb;Integrated Security=T" +
+            "rue;Encrypt=True;TrustServerCertificate=True")]
+        public string _scoutingdbConnectionString {
+            get {
+                return ((string)(this["_scoutingdbConnectionString"]));
+            }
+        }
     }
 }

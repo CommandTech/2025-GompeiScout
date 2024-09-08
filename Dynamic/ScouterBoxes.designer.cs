@@ -815,7 +815,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel21.Controls.Add(this.label23);
             this.panel21.Location = new System.Drawing.Point(0, 123);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(394, 11);
+            this.panel21.Size = new System.Drawing.Size(397, 11);
             this.panel21.TabIndex = 348;
             // 
             // label23
@@ -1469,9 +1469,9 @@ namespace ScoutingCodeRedo.Dynamic
             // 
             this.panel15.BackColor = System.Drawing.Color.DarkBlue;
             this.panel15.Controls.Add(this.label60);
-            this.panel15.Location = new System.Drawing.Point(0, 37);
+            this.panel15.Location = new System.Drawing.Point(0, 35);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(393, 13);
+            this.panel15.Size = new System.Drawing.Size(393, 12);
             this.panel15.TabIndex = 397;
             // 
             // label60
@@ -1491,7 +1491,7 @@ namespace ScoutingCodeRedo.Dynamic
             // 
             this.panel16.BackColor = System.Drawing.Color.DarkBlue;
             this.panel16.Controls.Add(this.label61);
-            this.panel16.Location = new System.Drawing.Point(0, 113);
+            this.panel16.Location = new System.Drawing.Point(0, 111);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(393, 11);
             this.panel16.TabIndex = 374;
@@ -1662,7 +1662,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position2Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl5Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position2Value.Location = new System.Drawing.Point(63, 89);
+            this.lbl5Position2Value.Location = new System.Drawing.Point(63, 87);
             this.lbl5Position2Value.Name = "lbl5Position2Value";
             this.lbl5Position2Value.Size = new System.Drawing.Size(49, 33);
             this.lbl5Position2Value.TabIndex = 384;
@@ -1779,7 +1779,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2.AutoSize = true;
             this.lbl5Position2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position2.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position2.Location = new System.Drawing.Point(11, 89);
+            this.lbl5Position2.Location = new System.Drawing.Point(11, 87);
             this.lbl5Position2.Name = "lbl5Position2";
             this.lbl5Position2.Size = new System.Drawing.Size(71, 33);
             this.lbl5Position2.TabIndex = 376;

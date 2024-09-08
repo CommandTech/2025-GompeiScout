@@ -3,6 +3,7 @@ using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.IO;
 using System.Net.Http;
@@ -18,7 +19,11 @@ namespace ScoutingCodeRedo.Static
         //     then all of the events globally.
         private async void BuildInitialDatabase()
         {
-            string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year.ToString()}?X-TBA-Auth-Key2={Settings.Default.API_Key}";
+            BackgroundCode.seasonframework.Database.CreateIfNotExists();
+            DatabaseExists(BackgroundCode.seasonframework.Database.Exists());
+            BackgroundCode.seasonframework.Database.Connection.Open();
+
+            string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year.ToString()}?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -34,6 +39,9 @@ namespace ScoutingCodeRedo.Static
 
                     Log("Received " + JSONevents.Count + " events.");
                     List<KeyValuePair<string, string>> elist = new List<KeyValuePair<string, string>>();
+
+                    BackgroundCode.seasonframework.Eventset.AddRange(JSONevents);
+                    BackgroundCode.seasonframework.SaveChanges();
 
                     foreach (var item in JSONevents)
                     {
@@ -52,17 +60,9 @@ namespace ScoutingCodeRedo.Static
                 }
             }
         }
-        public static bool DBExists;
         public void DatabaseExists(bool DatabaseExists)
         {
-            if (DatabaseExists)
-            {
-                DBExists = true;
-            }
-            else
-            {
-                DBExists = false;
-            }
+            Settings.Default.DBExists = DatabaseExists;
         }
 
         public void loadManualMatches()
