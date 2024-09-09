@@ -30,12 +30,12 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     else
                     {
-                        //activity_record.match_event = robot.match_event.ToString().ToString(); //If you crash here you didn't load matches
+                        BackgroundCode.activity_record.match_event = robot.match_event.ToString().ToString(); //If you crash here you didn't load matches
                     }
 
-                    ////Save Record to the database
-                    //seasonframework.ActivitySet.Add(activity_record);
-                    //seasonframework.SaveChanges(); // If you crash here migration isn't working
+                    //Save Record to the database
+                    BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                    BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
 
                     robot.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
 
