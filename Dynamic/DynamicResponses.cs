@@ -889,5 +889,100 @@ namespace ScoutingCodeRedo.Dynamic
                 robot.ClimbT_StopWatch_running = false;
             }
         }
+        public static void transactToDatabase(RobotState controller, string recordType)
+        {
+            if (controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+            {
+                if (controller.match_event != RobotState.MATCHEVENT_NAME.Match_Event &&
+                    !controller.NoSho &&
+                    controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+                {
+                    if (controller.match_event == RobotState.MATCHEVENT_NAME.NoShow)
+                    {
+                        BackgroundCode.activity_record.match_event = (controller.match_event.ToString())[0].ToString();
+                        controller.NoSho = true;
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.match_event = (controller.match_event.ToString())[0].ToString(); //If you crash here you didn't load matches
+                    }
+                    BackgroundCode.activity_record.Team = controller.TeamName;
+                    BackgroundCode.activity_record.Match = controller.Current_Match;
+                    BackgroundCode.activity_record.Time = DateTime.Now;
+                    BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
+                    BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                    BackgroundCode.activity_record.RecordType = recordType;
+
+                    //2024
+                    BackgroundCode.activity_record.Leave = 0;
+                    BackgroundCode.activity_record.AcqLoc = "-";
+                    BackgroundCode.activity_record.AcqCenter = 0;
+                    BackgroundCode.activity_record.AcqDis = 0;
+                    BackgroundCode.activity_record.AcqDrp = 0;
+                    BackgroundCode.activity_record.DelMiss = 0;
+                    BackgroundCode.activity_record.DelOrig = "-";
+                    BackgroundCode.activity_record.DelDest = "-";
+
+                    if (controller == BackgroundCode.Robots[0])
+                    {
+                        BackgroundCode.activity_record.DriveSta = "red0";
+                    }
+                    else if (controller == BackgroundCode.Robots[1])
+                    {
+                        BackgroundCode.activity_record.DriveSta = "red1";
+                    }
+                    else if (controller == BackgroundCode.Robots[2])
+                    {
+                        BackgroundCode.activity_record.DriveSta = "red2";
+                    }
+                    else if (controller == BackgroundCode.Robots[3])
+                    {
+                        BackgroundCode.activity_record.DriveSta = "blue0";
+                    }
+                    else if (controller == BackgroundCode.Robots[4])
+                    {
+                        BackgroundCode.activity_record.DriveSta = "blue1";
+                    }
+                    else if (controller == BackgroundCode.Robots[5])
+                    {
+                        BackgroundCode.activity_record.DriveSta = "blue2";
+                    }
+
+
+
+
+                    BackgroundCode.activity_record.RobotSta = "-";
+                    BackgroundCode.activity_record.HPAmp = "-";
+                    BackgroundCode.activity_record.StageStat = "-";
+                    BackgroundCode.activity_record.StageAtt = 9;
+                    BackgroundCode.activity_record.StageLoc = "-";
+                    BackgroundCode.activity_record.Harmony = 9;
+                    BackgroundCode.activity_record.Spotlit = 9;
+                    BackgroundCode.activity_record.ClimbT = 0;
+                    BackgroundCode.activity_record.OZTime = 0;
+                    BackgroundCode.activity_record.AZTime = 0;
+                    BackgroundCode.activity_record.NZTime = 0;
+                    BackgroundCode.activity_record.Mics = 9;
+                    BackgroundCode.activity_record.Defense = 9;
+                    BackgroundCode.activity_record.Avoidance = 9;
+                    BackgroundCode.activity_record.Strategy = "-";
+
+
+                    //Save Record to the database
+                    BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                    BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
+
+                    controller.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+
+                    //Reset Match Event
+                    controller.match_event = 0;
+                }
+                else if (controller.match_event == RobotState.MATCHEVENT_NAME.Match_Event)
+                {
+                    controller.ScouterError++;
+                }
+                controller.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+            }
+        }
     }
 }
