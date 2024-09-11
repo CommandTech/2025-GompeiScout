@@ -933,14 +933,94 @@ namespace ScoutingCodeRedo.Dynamic
                     BackgroundCode.activity_record.RecordType = recordType;
 
                     //2024
-                    BackgroundCode.activity_record.Leave = 0;
-                    BackgroundCode.activity_record.AcqLoc = "-";
-                    BackgroundCode.activity_record.AcqCenter = 0;
-                    BackgroundCode.activity_record.AcqDis = 0;
-                    BackgroundCode.activity_record.AcqDrp = 0;
-                    BackgroundCode.activity_record.DelMiss = 0;
-                    BackgroundCode.activity_record.DelOrig = "-";
-                    BackgroundCode.activity_record.DelDest = "-";
+                    BackgroundCode.activity_record.Leave = controller.Leave;
+                    BackgroundCode.activity_record.AcqLoc = controller.Acq_Loc;
+                    BackgroundCode.activity_record.AcqCenter = controller.Acq_Center;
+                    if (controller.Acq_Center != 0)
+                    {
+                        BackgroundCode.activity_record.AcqDis = 1;
+                        BackgroundCode.activity_record.AcqDrp = 0;
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.AcqDis = 0;
+                        BackgroundCode.activity_record.AcqDrp = 1;
+                    }
+
+                    BackgroundCode.activity_record.DelMiss = controller.Flag;
+                    if (Settings.Default.redRight)
+                    {
+                        if (controller.color == "Red")
+                        {
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "AllyW";
+                            }
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "OppW";
+                            }
+                        }
+                        else
+                        {
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "OppW";
+                            }
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "AllyW";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (controller.color == "Red")
+                        {
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "OppW";
+                            }
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "AllyW";
+                            }
+                        }
+                        else
+                        {
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "AllyW";
+                            }
+                            if (controller.Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                BackgroundCode.activity_record.DelOrig = "OppW";
+                            }
+                        }
+                    }
+                    if (controller.Current_Loc == RobotState.CURRENT_LOC.Neutral)
+                    {
+                        BackgroundCode.activity_record.DelOrig = "Neut";
+                    }
+                    if (controller.Current_Loc == RobotState.CURRENT_LOC.SubW)
+                    {
+                        BackgroundCode.activity_record.DelOrig = "SubW";
+                    }
+                    if (controller.Current_Loc == RobotState.CURRENT_LOC.Source)
+                    {
+                        BackgroundCode.activity_record.DelOrig = "Source";
+                    }
+
+                    if (controller.Current_Mode == RobotState.ROBOT_MODE.Showtime)
+                    {
+                        if (controller.Del_Dest == RobotState.DEL_DEST.Trap)
+                        {
+                            BackgroundCode.activity_record.DelOrig = "Showtime";
+                        }
+                    }
+
+
+                    BackgroundCode.activity_record.DelDest = controller.Del_Dest.ToString();
 
                     if (controller == BackgroundCode.Robots[0])
                     {
@@ -970,21 +1050,142 @@ namespace ScoutingCodeRedo.Dynamic
 
 
 
-                    BackgroundCode.activity_record.RobotSta = "-";
-                    BackgroundCode.activity_record.HPAmp = "-";
-                    BackgroundCode.activity_record.StageStat = "-";
-                    BackgroundCode.activity_record.StageAtt = 9;
-                    BackgroundCode.activity_record.StageLoc = "-";
-                    BackgroundCode.activity_record.Harmony = 9;
-                    BackgroundCode.activity_record.Spotlit = 9;
-                    BackgroundCode.activity_record.ClimbT = 0;
-                    BackgroundCode.activity_record.OZTime = 0;
-                    BackgroundCode.activity_record.AZTime = 0;
-                    BackgroundCode.activity_record.NZTime = 0;
-                    BackgroundCode.activity_record.Mics = 9;
-                    BackgroundCode.activity_record.Defense = 9;
-                    BackgroundCode.activity_record.Avoidance = 9;
-                    BackgroundCode.activity_record.Strategy = "-";
+                    BackgroundCode.activity_record.RobotSta = controller.Robot_Set.ToString();
+                    if (controller.HP_Amp == RobotState.HP_AMP.Select)
+                    {
+                        BackgroundCode.activity_record.HPAmp = "Z";
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.HPAmp = controller.HP_Amp.ToString();
+                    }
+
+                    if (controller.Stage_Stat == RobotState.STAGE_STAT.Select)
+                    {
+                        BackgroundCode.activity_record.StageStat = "Z";
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.StageStat = controller.Stage_Stat.ToString();
+                    }
+
+                    if (controller.Stage_Stat == RobotState.STAGE_STAT.Onstage)
+                    {
+                        BackgroundCode.activity_record.StageAtt = 1;
+                    }
+                    else if (controller.Stage_Stat == RobotState.STAGE_STAT.Park)
+                    {
+                        if (controller.Stage_Att == RobotState.STAGE_ATT.Select)
+                        {
+                            BackgroundCode.activity_record.StageAtt = 10;
+                        }
+                        else if (controller.Stage_Att == RobotState.STAGE_ATT.Y)
+                        {
+                            BackgroundCode.activity_record.StageAtt = -1;
+                        }
+                        else if (controller.Stage_Att == RobotState.STAGE_ATT.N)
+                        {
+                            BackgroundCode.activity_record.StageAtt = 0;
+                        }
+                    }
+                    else if (controller.Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                    {
+                        if (controller.Stage_Att == RobotState.STAGE_ATT.Select)
+                        {
+                            BackgroundCode.activity_record.StageAtt = 10;
+                        }
+                        else if (controller.Stage_Att == RobotState.STAGE_ATT.Y)
+                        {
+                            BackgroundCode.activity_record.StageAtt = -1;
+                        }
+                        else if (controller.Stage_Att == RobotState.STAGE_ATT.N)
+                        {
+                            BackgroundCode.activity_record.StageAtt = 0;
+                        }
+                    }
+                    else if (controller.Stage_Stat == RobotState.STAGE_STAT.Select)
+                    {
+                        BackgroundCode.activity_record.StageAtt = 10;
+                    }
+
+                    if (controller.Stage_Loc == RobotState.STAGE_LOC.Select)
+                    {
+                        if (controller.Stage_Stat == RobotState.STAGE_STAT.Park || controller.Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                        {
+                            BackgroundCode.activity_record.StageLoc = "A";
+                        }
+                        else
+                        {
+                            BackgroundCode.activity_record.StageLoc = "Z";
+                        }
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.StageLoc = controller.Stage_Loc.ToString();
+                    }
+
+                    if (controller.Lit == RobotState.LIT.Select)
+                    {
+                        BackgroundCode.activity_record.Spotlit = 10;
+                    }
+                    else if (controller.Lit == RobotState.LIT.Y)
+                    {
+                        BackgroundCode.activity_record.Spotlit = 1;
+                    }
+                    else if (controller.Lit == RobotState.LIT.N)
+                    {
+                        BackgroundCode.activity_record.Spotlit = 0;
+                    }
+
+                    if (controller.Stage_Stat != RobotState.STAGE_STAT.Onstage)
+                    {
+                        BackgroundCode.activity_record.Spotlit = 9;
+                    }
+
+                    if (controller.Stage_Stat == RobotState.STAGE_STAT.Park || controller.Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                    {
+                        BackgroundCode.activity_record.ClimbT = 0;
+                        BackgroundCode.activity_record.OZTime = 0;
+                        BackgroundCode.activity_record.AZTime = 0;
+                        BackgroundCode.activity_record.NZTime = 0;
+                    }
+                    else
+                    {
+                        controller.ClimbTDouble = controller.ClimbT_StopWatch.Elapsed.TotalSeconds;
+                        controller.AllyTDouble = controller.AllyT_StopWatch.Elapsed.TotalSeconds;
+                        controller.OpptTDouble = controller.OpptT_StopWatch.Elapsed.TotalSeconds;
+                        controller.NeutTDouble = controller.NeutT_StopWatch.Elapsed.TotalSeconds;
+                        BackgroundCode.activity_record.ClimbT = controller.ClimbTDouble;
+                        BackgroundCode.activity_record.OZTime = controller.OpptTDouble;
+                        BackgroundCode.activity_record.AZTime = controller.AllyTDouble;
+                        BackgroundCode.activity_record.NZTime = controller.NeutTDouble;
+                    }
+
+                    if (controller.Mic == 9)
+                    {
+                        BackgroundCode.activity_record.Mics = 10;
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.Mics = controller.Mic;
+                    }
+
+                    if (controller.HP_Amp == RobotState.HP_AMP.N)
+                    {
+                        BackgroundCode.activity_record.Mics = 9;
+                    }
+
+                    BackgroundCode.activity_record.Defense = controller.Def_Rat;
+                    BackgroundCode.activity_record.Avoidance = controller.Avo_Rat;
+                    
+                    if (controller.App_Strat == RobotState.APP_STRAT.Select)
+                    {
+                        BackgroundCode.activity_record.Strategy = "Z";
+                    }
+                    else
+                    {
+                        BackgroundCode.activity_record.Strategy = controller.App_Strat.ToString();
+                    }
 
 
                     //Save Record to the database
