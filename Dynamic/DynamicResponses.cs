@@ -731,8 +731,9 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.AllyT_StopWatch.Start();
                     robot.AllyT_StopWatch_running = true;
                 }
-                
-                //TODO: transact things to the database
+
+                transactToDatabase(robot, "StartMatch");
+                transactToDatabase(robot, "EndAuto");
                 robot.AUTO = false;
                 robot.Acq_Center_Temp = 0;
                 robot.Acq_Center = 0;
@@ -814,10 +815,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.Acq_Loc_Temp = "Neutral";
                             robot.ScouterError = robot.ScouterError + 1000;
                         }
-
-                        //Reset Temp Variables
-                        robot.Acq_Loc_Temp = "Select";
-                        robot.Acq_Center_Temp = 0;
                     }
                     else if (robot.Flag == 0 && robot.Acq_Center_Temp != 0)
                     {
@@ -827,6 +824,12 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.ScouterError = robot.ScouterError + 1000;
                         }
                     }
+
+                    transactToDatabase(robot, "Activities");
+
+                    //Reset Temp Variables
+                    robot.Acq_Loc_Temp = "Select";
+                    robot.Acq_Center_Temp = 0;
                 }
                 else if (robot.Del_Dest != RobotState.DEL_DEST.Select)
                 {
@@ -891,24 +894,40 @@ namespace ScoutingCodeRedo.Dynamic
         }
         public static void transactToDatabase(RobotState controller, string recordType)
         {
-            if (controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+            if (controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name && controller.TeamName != null)
             {
-                if (controller.match_event != RobotState.MATCHEVENT_NAME.Match_Event &&
-                    !controller.NoSho &&
+                if (!controller.NoSho &&
                     controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
                 {
                     if (controller.match_event == RobotState.MATCHEVENT_NAME.NoShow)
                     {
-                        BackgroundCode.activity_record.match_event = (controller.match_event.ToString())[0].ToString();
+                        BackgroundCode.activity_record.match_event = controller.match_event.ToString()[0].ToString();
                         controller.NoSho = true;
                     }
                     else
                     {
-                        BackgroundCode.activity_record.match_event = (controller.match_event.ToString())[0].ToString(); //If you crash here you didn't load matches
+                        BackgroundCode.activity_record.match_event = controller.match_event.ToString()[0].ToString();
                     }
                     BackgroundCode.activity_record.Team = controller.TeamName;
-                    BackgroundCode.activity_record.Match = controller.Current_Match;
-                    BackgroundCode.activity_record.Time = DateTime.Now;
+                    BackgroundCode.activity_record.Match = controller.Current_Match + 1;
+
+                    switch (recordType)
+                    {
+                        case "StartMatch":
+                            BackgroundCode.activity_record.Time = controller.Auto_Time.AddSeconds(-18);
+                            break;
+                        case "EndAuto":
+                            BackgroundCode.activity_record.Time = controller.Auto_Time;
+                            break;
+                        default:
+                            BackgroundCode.activity_record.Time = DateTime.Now;
+                            break;
+                    }
+                    if (controller.Acq_Center_Temp != 0)
+                    {
+                        BackgroundCode.activity_record.Time = controller.CenteNoteTimeTemp;
+                    }
+
                     BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                     BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                     BackgroundCode.activity_record.RecordType = recordType;

@@ -8,9 +8,9 @@ Wants:
 
 - [x] See if you can overlay different screens on top of each other
 
-- [ ] Make a way to refresh the amount of controllers connected while running. (Either always looking or a button on the screen to look)
+- [x] Make a way to refresh the amount of controllers connected while running. (Either always looking or a button on the screen to look)
 
-- [ ] Make the API key in 1 spot in the entire code
+- [x] Make the API key in 1 spot in the entire code
 
 - [x] Have a save/load option (Try out ini files)
 

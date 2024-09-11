@@ -88,7 +88,7 @@ namespace ScoutingCodeRedo.Static
             {
                 if (Settings.Default.loadedEvent != null)
                 {
-                    confirmExit = MessageBox.Show("Do you want to save the data?", "Please Confirm", MessageBoxButtons.YesNo);
+                    confirmExit = MessageBox.Show("Do you want to save the current data?", "Please Confirm", MessageBoxButtons.YesNo);
                     if (confirmExit == DialogResult.Yes)
                     {
                         saveData();
@@ -147,14 +147,7 @@ namespace ScoutingCodeRedo.Static
                 BuildInitialDatabase();
                 //  Logic for setting left/right and near/far based on side of field scouters are sitting on
                 DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
-                if (red == DialogResult.Yes)
-                {
-                    Settings.Default.redRight = true;
-                }
-                else
-                {
-                    Settings.Default.redRight = false;
-                }
+                Settings.Default.redRight = (red == DialogResult.Yes);
 
                 Log("SQL start time is " + DateTime.Now.TimeOfDay);
             }
@@ -199,6 +192,11 @@ namespace ScoutingCodeRedo.Static
 
         private void nextMatch()
         {
+            for (int i = 0; i < 6; i++)
+            {
+                DynamicResponses.transactToDatabase(BackgroundCode.Robots[i], "EndMatch");
+            }
+
             currentmatch++;
             this.lblMatch.Text = (currentmatch).ToString();
             loadMatch();
@@ -365,8 +363,6 @@ namespace ScoutingCodeRedo.Static
         }
         private void btnUpdateDB_Click(object sender, EventArgs e)
         {
-            //UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
-            //frm.Show();
             if (Settings.Default.DBExists)
             {
                 UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
@@ -392,6 +388,5 @@ namespace ScoutingCodeRedo.Static
             };
             Invoke(del);
         }
-
     }
 }

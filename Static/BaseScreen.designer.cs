@@ -1711,6 +1711,7 @@ namespace ScoutingCodeRedo.Static
             this.btnPreviousMatch.TabIndex = 286;
             this.btnPreviousMatch.Text = "<<";
             this.btnPreviousMatch.UseVisualStyleBackColor = true;
+            this.btnPreviousMatch.Click += new System.EventHandler(this.btnPrevMatch_Click);
             // 
             // btnpopulateForEvent
             // 
