@@ -19,7 +19,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void UpdateScreen(object sender, EventArgs e)
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < BackgroundCode.Robots.Length; i++)
             {
                 switch (BackgroundCode.Robots[i].Current_Mode)
                 {

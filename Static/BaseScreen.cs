@@ -49,10 +49,10 @@ namespace ScoutingCodeRedo.Static
 
         private void JoyStickReader(object sender, EventArgs e)
         {
-            UpdateScreen();
-
             if (!initializing)
             {
+                UpdateScreen();
+
                 //Loop through all connected gamepads
                 for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
                 {
@@ -63,6 +63,18 @@ namespace ScoutingCodeRedo.Static
                 for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
                 {
                     BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.getRobotState(robot_ctr);  //Initialize all six robots
+                }
+
+                if (cbxPractice.Checked)
+                {
+                    UpdateJoysticks();
+
+                    for (int i = 1; i < 6; i++)
+                    {
+                        BackgroundCode.Robots[i] = null;
+
+                        Console.WriteLine(BackgroundCode.Robots.Length);
+                    }
                 }
             }
         }
