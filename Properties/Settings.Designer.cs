@@ -12,7 +12,7 @@ namespace ScoutingCodeRedo.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -90,6 +90,41 @@ namespace ScoutingCodeRedo.Properties {
         public string _scoutingdbConnectionString {
             get {
                 return ((string)(this["_scoutingdbConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool practiceMode {
+            get {
+                return ((bool)(this["practiceMode"]));
+            }
+            set {
+                this["practiceMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int currentMatch {
+            get {
+                return ((int)(this["currentMatch"]));
+            }
+            set {
+                this["currentMatch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Generic.List<string> teamPrio {
+            get {
+                return ((global::System.Collections.Generic.List<string>)(this["teamPrio"]));
+            }
+            set {
+                this["teamPrio"] = value;
             }
         }
     }

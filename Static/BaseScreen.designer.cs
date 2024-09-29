@@ -112,7 +112,6 @@ namespace ScoutingCodeRedo.Static
         private CheckBox cbxEndMatch;
         private Label lblkey;
         private Button btnInitialDBLoad;
-        private PictureBox pictureBox14;
         private ComboBox comboBoxSelectRegional;
         private Button btnNextMatch;
         private Label label14;
@@ -165,7 +164,6 @@ namespace ScoutingCodeRedo.Static
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseScreen));
             this.lstLog = new System.Windows.Forms.ListBox();
             this.comboBoxSelectRegional = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -271,7 +269,6 @@ namespace ScoutingCodeRedo.Static
             this.cbxEndMatch = new System.Windows.Forms.CheckBox();
             this.lblkey = new System.Windows.Forms.Label();
             this.btnInitialDBLoad = new System.Windows.Forms.Button();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.btnNextMatch = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.btnPreviousMatch = new System.Windows.Forms.Button();
@@ -326,6 +323,8 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch = new System.Windows.Forms.Label();
             this.timerJoysticks = new System.Windows.Forms.Timer(this.components);
             this.btnRefreshControllers = new System.Windows.Forms.Button();
+            this.cbxPractice = new System.Windows.Forms.CheckBox();
+            this.btnPriority = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -341,7 +340,6 @@ namespace ScoutingCodeRedo.Static
             this.panel25.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -1611,8 +1609,8 @@ namespace ScoutingCodeRedo.Static
             // SwapScouters
             // 
             this.SwapScouters.BackColor = System.Drawing.Color.Transparent;
-            this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SwapScouters.ForeColor = System.Drawing.Color.DarkBlue;
+            this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.SwapScouters.ForeColor = System.Drawing.SystemColors.ControlText;
             this.SwapScouters.Location = new System.Drawing.Point(838, 22);
             this.SwapScouters.Name = "SwapScouters";
             this.SwapScouters.Size = new System.Drawing.Size(113, 23);
@@ -1623,7 +1621,7 @@ namespace ScoutingCodeRedo.Static
             // 
             // btnUpdateDB
             // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(1042, 21);
+            this.btnUpdateDB.Location = new System.Drawing.Point(1003, 22);
             this.btnUpdateDB.Name = "btnUpdateDB";
             this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateDB.TabIndex = 297;
@@ -1667,16 +1665,6 @@ namespace ScoutingCodeRedo.Static
             this.btnInitialDBLoad.UseVisualStyleBackColor = true;
             this.btnInitialDBLoad.Click += new System.EventHandler(this.btnInitialDBLoad_Click);
             // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(998, 18);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(39, 31);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 292;
-            this.pictureBox14.TabStop = false;
-            // 
             // btnNextMatch
             // 
             this.btnNextMatch.BackColor = System.Drawing.Color.Black;
@@ -1711,6 +1699,7 @@ namespace ScoutingCodeRedo.Static
             this.btnPreviousMatch.TabIndex = 286;
             this.btnPreviousMatch.Text = "<<";
             this.btnPreviousMatch.UseVisualStyleBackColor = true;
+            this.btnPreviousMatch.Click += new System.EventHandler(this.btnPrevMatch_Click);
             // 
             // btnpopulateForEvent
             // 
@@ -2314,7 +2303,7 @@ namespace ScoutingCodeRedo.Static
             // 
             // btnRefreshControllers
             // 
-            this.btnRefreshControllers.Location = new System.Drawing.Point(1129, 20);
+            this.btnRefreshControllers.Location = new System.Drawing.Point(1084, 22);
             this.btnRefreshControllers.Name = "btnRefreshControllers";
             this.btnRefreshControllers.Size = new System.Drawing.Size(75, 23);
             this.btnRefreshControllers.TabIndex = 301;
@@ -2322,11 +2311,39 @@ namespace ScoutingCodeRedo.Static
             this.btnRefreshControllers.UseVisualStyleBackColor = true;
             this.btnRefreshControllers.Click += new System.EventHandler(this.btnRefreshControllers_Click);
             // 
+            // cbxPractice
+            // 
+            this.cbxPractice.AutoSize = true;
+            this.cbxPractice.BackColor = System.Drawing.Color.Black;
+            this.cbxPractice.ForeColor = System.Drawing.Color.Yellow;
+            this.cbxPractice.Location = new System.Drawing.Point(1247, 24);
+            this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxPractice.Name = "cbxPractice";
+            this.cbxPractice.Size = new System.Drawing.Size(136, 24);
+            this.cbxPractice.TabIndex = 302;
+            this.cbxPractice.Text = "Practice Mode";
+            this.cbxPractice.UseVisualStyleBackColor = false;
+            // 
+            // btnPriority
+            // 
+            this.btnPriority.BackColor = System.Drawing.Color.Transparent;
+            this.btnPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnPriority.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPriority.Location = new System.Drawing.Point(1165, 22);
+            this.btnPriority.Name = "btnPriority";
+            this.btnPriority.Size = new System.Drawing.Size(80, 23);
+            this.btnPriority.TabIndex = 303;
+            this.btnPriority.Text = "Priority";
+            this.btnPriority.UseVisualStyleBackColor = false;
+            this.btnPriority.Click += new System.EventHandler(this.Priority_Click);
+            // 
             // BaseScreen
             // 
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnPriority);
+            this.Controls.Add(this.cbxPractice);
             this.Controls.Add(this.btnRefreshControllers);
             this.Controls.Add(this.lblMatch);
             this.Controls.Add(this.panel1);
@@ -2337,7 +2354,6 @@ namespace ScoutingCodeRedo.Static
             this.Controls.Add(this.labelMatch);
             this.Controls.Add(this.lblkey);
             this.Controls.Add(this.btnInitialDBLoad);
-            this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.comboBoxSelectRegional);
             this.Controls.Add(this.btnNextMatch);
             this.Controls.Add(this.label14);
@@ -2377,7 +2393,6 @@ namespace ScoutingCodeRedo.Static
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -2425,5 +2440,7 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3ScoutName;
         private Label lbl3ModeValue;
         private Button btnRefreshControllers;
+        private CheckBox cbxPractice;
+        private Button btnPriority;
     }
 }

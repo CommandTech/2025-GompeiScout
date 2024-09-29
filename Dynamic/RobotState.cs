@@ -16,7 +16,6 @@ namespace ScoutingCodeRedo.Dynamic
 
         // Year to Year ints
         public int ScouterError;
-        public int Current_Match;    //Current Match
         public int ScouterBox;
 
         // Year to Year doubles

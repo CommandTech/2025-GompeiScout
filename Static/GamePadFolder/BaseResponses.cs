@@ -88,9 +88,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             }
             else if (gamepad.R3_Press)
             {
-                //Transact match event to database
-
-                BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+                DynamicResponses.transactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
             }
 
             //Scouter names

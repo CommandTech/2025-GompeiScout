@@ -23,6 +23,14 @@ namespace ScoutingCodeRedo.Static
             DatabaseExists(BackgroundCode.seasonframework.Database.Exists());
             BackgroundCode.seasonframework.Database.Connection.Open();
 
+            Log("Cleaning databases...");
+            //seasonframework.Database.Initialize(true);
+            BackgroundCode.seasonframework.Database.ExecuteSqlCommand("DELETE FROM [EventSummaries]");  // If you crash here, the database structure has been changed, delete DB and retry
+            BackgroundCode.seasonframework.Database.ExecuteSqlCommand("DELETE FROM [Matches]");
+            //BackgroundCode.seasonframework.Database.ExecuteSqlCommand("DELETE FROM [TeamSummaries]");    // DO NOT DELETE DURING EVENT
+            //BackgroundCode.seasonframework.Database.ExecuteSqlCommand("DELETE FROM [Activities]");       // DO NOT DELETE DURING EVENT
+            BackgroundCode.seasonframework.SaveChanges();  //Save all deletes/database clears
+
             string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year.ToString()}?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
             using (HttpClient client = new HttpClient())

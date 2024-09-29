@@ -25,5 +25,14 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=scoutingdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True</Value>
     </Setting>
+    <Setting Name="practiceMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="currentMatch" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="teamPrio" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

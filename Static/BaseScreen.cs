@@ -5,6 +5,7 @@ using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
@@ -49,10 +50,10 @@ namespace ScoutingCodeRedo.Static
 
         private void JoyStickReader(object sender, EventArgs e)
         {
-            UpdateScreen();
-
             if (!initializing)
             {
+                UpdateScreen();
+
                 //Loop through all connected gamepads
                 for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
                 {
@@ -63,6 +64,23 @@ namespace ScoutingCodeRedo.Static
                 for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
                 {
                     BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.getRobotState(robot_ctr);  //Initialize all six robots
+                }
+
+                if (cbxPractice.Checked)
+                {
+                    Settings.Default.practiceMode = true;
+                    UpdateJoysticks();
+
+                    for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
+                    {
+                        BackgroundCode.gamePads[i] = null;
+
+                        Console.WriteLine(BackgroundCode.gamePads.Length);
+                    }
+                }
+                else
+                {
+                    Settings.Default.practiceMode = false;
                 }
             }
         }
@@ -77,8 +95,13 @@ namespace ScoutingCodeRedo.Static
             for (int i = 0; i < 6; i++)
             {
                 ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
+                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].match_event.ToString();
+                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
+                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
+
+                ((Label)this.Controls.Find($"lbl{i}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -88,7 +111,7 @@ namespace ScoutingCodeRedo.Static
             {
                 if (Settings.Default.loadedEvent != null)
                 {
-                    confirmExit = MessageBox.Show("Do you want to save the data?", "Please Confirm", MessageBoxButtons.YesNo);
+                    confirmExit = MessageBox.Show("Do you want to save the current data?", "Please Confirm", MessageBoxButtons.YesNo);
                     if (confirmExit == DialogResult.Yes)
                     {
                         saveData();
@@ -101,13 +124,13 @@ namespace ScoutingCodeRedo.Static
         }
         public void saveData()
         {
-            if (Settings.Default.loadedEvent != null && currentmatch != 0)
+            if (Settings.Default.loadedEvent != null && Settings.Default.currentMatch != 0)
             {
                 try
                 {
                     // Write data to INI file
                     iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
-                    iniFile.Write("MatchData", "match_number", currentmatch.ToString());
+                    iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                     iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
                 }
                 catch (Exception ex)
@@ -126,7 +149,7 @@ namespace ScoutingCodeRedo.Static
             {
                 comboBoxSelectRegional.Items.Add(iniFile.Read("MatchData", "event", "Please press the Load Events Button..."));
                 comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Please press the Load Events Button...");
-                currentmatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
+                Settings.Default.currentMatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
                 Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
 
                 BuildInitialDatabase();
@@ -147,14 +170,7 @@ namespace ScoutingCodeRedo.Static
                 BuildInitialDatabase();
                 //  Logic for setting left/right and near/far based on side of field scouters are sitting on
                 DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
-                if (red == DialogResult.Yes)
-                {
-                    Settings.Default.redRight = true;
-                }
-                else
-                {
-                    Settings.Default.redRight = false;
-                }
+                Settings.Default.redRight = (red == DialogResult.Yes);
 
                 Log("SQL start time is " + DateTime.Now.TimeOfDay);
             }
@@ -170,10 +186,10 @@ namespace ScoutingCodeRedo.Static
             if (cbxEndMatch.Checked)
             {
                 cbxEndMatch.Checked = false;
-                if (currentmatch == bgc.InMemoryMatchList.Count)
+                if (Settings.Default.currentMatch == bgc.InMemoryMatchList.Count)
                 {
                     MessageBox.Show("You are at the last match.");
-                    currentmatch--;
+                    Settings.Default.currentMatch--;
                 }
                 else
                 {
@@ -183,14 +199,14 @@ namespace ScoutingCodeRedo.Static
             else
             {
                 DialogResult dialogResult = MessageBox.Show("All unsaved data will be lost.  Continue?", "Next Match", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes && currentmatch != bgc.InMemoryMatchList.Count)
+                if (dialogResult == DialogResult.Yes && Settings.Default.currentMatch != bgc.InMemoryMatchList.Count)
                 {
                     nextMatch();
                 }
                 else
                 {
                     MessageBox.Show("You are at the last match.");
-                    currentmatch--;
+                    Settings.Default.currentMatch--;
                 }
             }
 
@@ -199,33 +215,50 @@ namespace ScoutingCodeRedo.Static
 
         private void nextMatch()
         {
-            currentmatch++;
-            this.lblMatch.Text = (currentmatch).ToString();
+            for (int i = 0; i < 6; i++)
+            {
+                DynamicResponses.transactToDatabase(BackgroundCode.Robots[i], "EndMatch");
+            }
+
+            Settings.Default.currentMatch++;
+            this.lblMatch.Text = (Settings.Default.currentMatch).ToString();
             loadMatch();
         }
 
         private void btnPrevMatch_Click(object sender, EventArgs e)
         {
-            if (currentmatch == 0)
+            if (Settings.Default.currentMatch == 0)
             {
                 MessageBox.Show("You are at the first match.");
             }
             else
             {
-                currentmatch--;
+                Settings.Default.currentMatch--;
                 loadMatch();
             }
         }
 
         private void loadMatch()
         {
-            this.lbl0TeamName.Text = BackgroundCode.Robots[0].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam1;
-            this.lbl1TeamName.Text = BackgroundCode.Robots[1].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam2;
-            this.lbl2TeamName.Text = BackgroundCode.Robots[2].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam3;
-            this.lbl3TeamName.Text = BackgroundCode.Robots[3].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam1;
-            this.lbl4TeamName.Text = BackgroundCode.Robots[4].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam2;
-            this.lbl5TeamName.Text = BackgroundCode.Robots[5].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam3;
-        } 
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, Settings.Default.teamPrio);
+        }
+        void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
+        {
+            label.Text = robot.TeamName = teamName;
+            if (teamPrioList != null)
+            {
+                label.ForeColor = teamPrioList.Contains(teamName.Replace("frc", "").Trim()) ? Color.Blue : Color.Orange;
+            }
+            else
+            {
+                label.ForeColor = Color.Orange;
+            }
+        }
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
@@ -363,10 +396,13 @@ namespace ScoutingCodeRedo.Static
             SwapScouters frm = new SwapScouters();
             frm.Show();
         }
+        private void Priority_Click(object sender, EventArgs e)
+        {
+            PriorityForm frm = new PriorityForm();
+            frm.Show();
+        }
         private void btnUpdateDB_Click(object sender, EventArgs e)
         {
-            //UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
-            //frm.Show();
             if (Settings.Default.DBExists)
             {
                 UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
@@ -392,6 +428,5 @@ namespace ScoutingCodeRedo.Static
             };
             Invoke(del);
         }
-
     }
 }
