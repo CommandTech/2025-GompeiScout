@@ -123,13 +123,13 @@ namespace ScoutingCodeRedo.Static
         }
         public void saveData()
         {
-            if (Settings.Default.loadedEvent != null && currentmatch != 0)
+            if (Settings.Default.loadedEvent != null && Settings.Default.currentMatch != 0)
             {
                 try
                 {
                     // Write data to INI file
                     iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
-                    iniFile.Write("MatchData", "match_number", currentmatch.ToString());
+                    iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                     iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
                 }
                 catch (Exception ex)
@@ -148,7 +148,7 @@ namespace ScoutingCodeRedo.Static
             {
                 comboBoxSelectRegional.Items.Add(iniFile.Read("MatchData", "event", "Please press the Load Events Button..."));
                 comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Please press the Load Events Button...");
-                currentmatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
+                Settings.Default.currentMatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
                 Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
 
                 BuildInitialDatabase();
@@ -185,10 +185,10 @@ namespace ScoutingCodeRedo.Static
             if (cbxEndMatch.Checked)
             {
                 cbxEndMatch.Checked = false;
-                if (currentmatch == bgc.InMemoryMatchList.Count)
+                if (Settings.Default.currentMatch == bgc.InMemoryMatchList.Count)
                 {
                     MessageBox.Show("You are at the last match.");
-                    currentmatch--;
+                    Settings.Default.currentMatch--;
                 }
                 else
                 {
@@ -198,14 +198,14 @@ namespace ScoutingCodeRedo.Static
             else
             {
                 DialogResult dialogResult = MessageBox.Show("All unsaved data will be lost.  Continue?", "Next Match", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes && currentmatch != bgc.InMemoryMatchList.Count)
+                if (dialogResult == DialogResult.Yes && Settings.Default.currentMatch != bgc.InMemoryMatchList.Count)
                 {
                     nextMatch();
                 }
                 else
                 {
                     MessageBox.Show("You are at the last match.");
-                    currentmatch--;
+                    Settings.Default.currentMatch--;
                 }
             }
 
@@ -219,32 +219,32 @@ namespace ScoutingCodeRedo.Static
                 DynamicResponses.transactToDatabase(BackgroundCode.Robots[i], "EndMatch");
             }
 
-            currentmatch++;
-            this.lblMatch.Text = (currentmatch).ToString();
+            Settings.Default.currentMatch++;
+            this.lblMatch.Text = (Settings.Default.currentMatch).ToString();
             loadMatch();
         }
 
         private void btnPrevMatch_Click(object sender, EventArgs e)
         {
-            if (currentmatch == 0)
+            if (Settings.Default.currentMatch == 0)
             {
                 MessageBox.Show("You are at the first match.");
             }
             else
             {
-                currentmatch--;
+                Settings.Default.currentMatch--;
                 loadMatch();
             }
         }
 
         private void loadMatch()
         {
-            this.lbl0TeamName.Text = BackgroundCode.Robots[0].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam1;
-            this.lbl1TeamName.Text = BackgroundCode.Robots[1].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam2;
-            this.lbl2TeamName.Text = BackgroundCode.Robots[2].TeamName = bgc.InMemoryMatchList[currentmatch - 1].redteam3;
-            this.lbl3TeamName.Text = BackgroundCode.Robots[3].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam1;
-            this.lbl4TeamName.Text = BackgroundCode.Robots[4].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam2;
-            this.lbl5TeamName.Text = BackgroundCode.Robots[5].TeamName = bgc.InMemoryMatchList[currentmatch - 1].blueteam3;
+            this.lbl0TeamName.Text = BackgroundCode.Robots[0].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1;
+            this.lbl1TeamName.Text = BackgroundCode.Robots[1].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2;
+            this.lbl2TeamName.Text = BackgroundCode.Robots[2].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3;
+            this.lbl3TeamName.Text = BackgroundCode.Robots[3].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1;
+            this.lbl4TeamName.Text = BackgroundCode.Robots[4].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2;
+            this.lbl5TeamName.Text = BackgroundCode.Robots[5].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3;
         } 
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
