@@ -324,6 +324,7 @@ namespace ScoutingCodeRedo.Static
             this.timerJoysticks = new System.Windows.Forms.Timer(this.components);
             this.btnRefreshControllers = new System.Windows.Forms.Button();
             this.cbxPractice = new System.Windows.Forms.CheckBox();
+            this.btnPriority = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -1608,8 +1609,8 @@ namespace ScoutingCodeRedo.Static
             // SwapScouters
             // 
             this.SwapScouters.BackColor = System.Drawing.Color.Transparent;
-            this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SwapScouters.ForeColor = System.Drawing.Color.DarkBlue;
+            this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.SwapScouters.ForeColor = System.Drawing.SystemColors.ControlText;
             this.SwapScouters.Location = new System.Drawing.Point(838, 22);
             this.SwapScouters.Name = "SwapScouters";
             this.SwapScouters.Size = new System.Drawing.Size(113, 23);
@@ -1620,7 +1621,7 @@ namespace ScoutingCodeRedo.Static
             // 
             // btnUpdateDB
             // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(1042, 21);
+            this.btnUpdateDB.Location = new System.Drawing.Point(1003, 22);
             this.btnUpdateDB.Name = "btnUpdateDB";
             this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateDB.TabIndex = 297;
@@ -2302,7 +2303,7 @@ namespace ScoutingCodeRedo.Static
             // 
             // btnRefreshControllers
             // 
-            this.btnRefreshControllers.Location = new System.Drawing.Point(1129, 20);
+            this.btnRefreshControllers.Location = new System.Drawing.Point(1084, 22);
             this.btnRefreshControllers.Name = "btnRefreshControllers";
             this.btnRefreshControllers.Size = new System.Drawing.Size(75, 23);
             this.btnRefreshControllers.TabIndex = 301;
@@ -2315,7 +2316,7 @@ namespace ScoutingCodeRedo.Static
             this.cbxPractice.AutoSize = true;
             this.cbxPractice.BackColor = System.Drawing.Color.Black;
             this.cbxPractice.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxPractice.Location = new System.Drawing.Point(1209, 24);
+            this.cbxPractice.Location = new System.Drawing.Point(1247, 24);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
             this.cbxPractice.Size = new System.Drawing.Size(136, 24);
@@ -2323,11 +2324,25 @@ namespace ScoutingCodeRedo.Static
             this.cbxPractice.Text = "Practice Mode";
             this.cbxPractice.UseVisualStyleBackColor = false;
             // 
+            // btnPriority
+            // 
+            this.btnPriority.BackColor = System.Drawing.Color.Transparent;
+            this.btnPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnPriority.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPriority.Location = new System.Drawing.Point(1165, 22);
+            this.btnPriority.Name = "btnPriority";
+            this.btnPriority.Size = new System.Drawing.Size(80, 23);
+            this.btnPriority.TabIndex = 303;
+            this.btnPriority.Text = "Priority";
+            this.btnPriority.UseVisualStyleBackColor = false;
+            this.btnPriority.Click += new System.EventHandler(this.Priority_Click);
+            // 
             // BaseScreen
             // 
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnPriority);
             this.Controls.Add(this.cbxPractice);
             this.Controls.Add(this.btnRefreshControllers);
             this.Controls.Add(this.lblMatch);
@@ -2426,5 +2441,6 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3ModeValue;
         private Button btnRefreshControllers;
         private CheckBox cbxPractice;
+        private Button btnPriority;
     }
 }

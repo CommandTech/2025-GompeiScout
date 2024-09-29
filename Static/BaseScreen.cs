@@ -5,6 +5,7 @@ using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
@@ -239,13 +240,25 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
-            this.lbl0TeamName.Text = BackgroundCode.Robots[0].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1;
-            this.lbl1TeamName.Text = BackgroundCode.Robots[1].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2;
-            this.lbl2TeamName.Text = BackgroundCode.Robots[2].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3;
-            this.lbl3TeamName.Text = BackgroundCode.Robots[3].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1;
-            this.lbl4TeamName.Text = BackgroundCode.Robots[4].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2;
-            this.lbl5TeamName.Text = BackgroundCode.Robots[5].TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3;
-        } 
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, Settings.Default.teamPrio);
+        }
+        void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
+        {
+            label.Text = robot.TeamName = teamName;
+            if (teamPrioList != null)
+            {
+                label.ForeColor = teamPrioList.Contains(teamName.Replace("frc", "").Trim()) ? Color.Blue : Color.Orange;
+            }
+            else
+            {
+                label.ForeColor = Color.Orange;
+            }
+        }
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
@@ -381,6 +394,11 @@ namespace ScoutingCodeRedo.Static
         private void SwapScouters_Click(object sender, EventArgs e)
         {
             SwapScouters frm = new SwapScouters();
+            frm.Show();
+        }
+        private void Priority_Click(object sender, EventArgs e)
+        {
+            PriorityForm frm = new PriorityForm();
             frm.Show();
         }
         private void btnUpdateDB_Click(object sender, EventArgs e)

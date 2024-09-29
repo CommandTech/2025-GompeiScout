@@ -102,6 +102,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Static\INIFile.cs" />
+    <Compile Include="Static\PriorityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Static\PriorityForm.designer.cs">
+      <DependentUpon>PriorityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Static\ProgramStart.cs" />
     <Compile Include="Static\SwapScouters.cs">
       <SubType>Form</SubType>
@@ -130,6 +136,9 @@
     <EmbeddedResource Include="Static\BaseScreen.resx">
       <DependentUpon>BaseScreen.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Static\PriorityForm.resx">
+      <DependentUpon>PriorityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Static\SwapScouters.resx">
       <DependentUpon>SwapScouters.cs</DependentUpon>
