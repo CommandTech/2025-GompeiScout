@@ -67,14 +67,19 @@ namespace ScoutingCodeRedo.Static
 
                 if (cbxPractice.Checked)
                 {
+                    Settings.Default.practiceMode = true;
                     UpdateJoysticks();
 
-                    for (int i = 1; i < 6; i++)
+                    for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
                     {
-                        BackgroundCode.Robots[i] = null;
+                        BackgroundCode.gamePads[i] = null;
 
-                        Console.WriteLine(BackgroundCode.Robots.Length);
+                        Console.WriteLine(BackgroundCode.gamePads.Length);
                     }
+                }
+                else
+                {
+                    Settings.Default.practiceMode = false;
                 }
             }
         }
@@ -89,8 +94,13 @@ namespace ScoutingCodeRedo.Static
             for (int i = 0; i < 6; i++)
             {
                 ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
+                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].match_event.ToString();
+                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
+                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
+
+                ((Label)this.Controls.Find($"lbl{i}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
