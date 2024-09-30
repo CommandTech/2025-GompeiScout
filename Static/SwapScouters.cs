@@ -44,14 +44,26 @@ namespace ScoutingCodeRedo.Static
                 {
                     Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
                     var keyList = scouterDict.Keys.ToList();
-                    scouterDict[keyList[i]] = scouterDict[name];
+                    try
+                    {
+                        scouterDict[keyList[i]] = scouterDict[name];
+                    }
+                    catch { }
                     scouterDict[name] = i;
                 }
             }
 
             foreach (var robot in BackgroundCode.Robots)
             {
-                robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
+                try {
+                    robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
+                }
+                catch { }
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                Console.WriteLine(BackgroundCode.Robots[i].ScouterBox);
             }
 
             this.Hide();
