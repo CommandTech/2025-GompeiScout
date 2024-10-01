@@ -46,7 +46,7 @@ To use the software, you need at least one Xbox Controller plugged into the lapt
 To get the data from The Blue Alliance you will need to create a Read Me API Key from https://www.thebluealliance.com/account. After that,  go into Settings.settings inside the Properties folder and change the API_KEY value to your api key
 
 ## Usage
-![UI](https://imgur.com/a/o93N5I5)
+![UI](https://imgur.com/a/o93N5I5.png)
 
 When the code starts up, the interface will be prompted.
 The user will need to load the events through the **Load** button at the top. This connects to The Blue Alliance API. After the code gets the events, the user will need to find the name of the event in the list of events, sorted by event code. 
