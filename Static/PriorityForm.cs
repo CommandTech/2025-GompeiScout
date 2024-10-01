@@ -1,6 +1,7 @@
 ﻿using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,12 @@ namespace ScoutingCodeRedo.Static
 
         private void ScoutOK_Click(object sender, EventArgs e)
         {
-            Settings.Default.teamPrio = TeamList.Text.Split(',')
-                                   .Select(team => team.Trim())
-                                   .ToList();
+            var teamPrioList = TeamList.Text.Split(',')
+                                .Select(team => team.Trim())
+                                .ToArray();
+
+            Settings.Default.teamPrio = new StringCollection();
+            Settings.Default.teamPrio.AddRange(teamPrioList);
 
             this.Hide();
         }

@@ -25,7 +25,7 @@ namespace ScoutingCodeRedo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("zhTqFG7csJoif1sNXt3aZngy0LB1X4LxMgTfXBvPscNG0P9FifZCa2uGJcUk2gKW")]
+        [global::System.Configuration.DefaultSettingValueAttribute("zhTqFG7csJoif1sNXt3aZngy0LB1X4LxMgTfXBvPscNG0P9FifZCa2uGJcUk2gKWZ")]
         public string API_Key {
             get {
                 return ((string)(this["API_Key"]));
@@ -119,9 +119,9 @@ namespace ScoutingCodeRedo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Generic.List<string> teamPrio {
+        public global::System.Collections.Specialized.StringCollection teamPrio {
             get {
-                return ((global::System.Collections.Generic.List<string>)(this["teamPrio"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["teamPrio"]));
             }
             set {
                 this["teamPrio"] = value;

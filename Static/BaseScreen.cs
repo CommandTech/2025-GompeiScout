@@ -4,6 +4,7 @@ using ScoutingCodeRedo.Static.GamePadFolder;
 using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -110,7 +111,7 @@ namespace ScoutingCodeRedo.Static
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
             if (confirmExit == DialogResult.Yes)
             {
-                if (Settings.Default.loadedEvent != null)
+                if (Settings.Default.loadedEvent != null || Settings.Default.manualMatchList != null)
                 {
                     confirmExit = MessageBox.Show("Do you want to save the current data?", "Please Confirm", MessageBoxButtons.YesNo);
                     if (confirmExit == DialogResult.Yes)
@@ -125,15 +126,40 @@ namespace ScoutingCodeRedo.Static
         }
         public void saveData()
         {
-            if (Settings.Default.loadedEvent != null && Settings.Default.currentMatch != 0)
+            if ((Settings.Default.loadedEvent != null || Settings.Default.manualMatchList != null) && Settings.Default.currentMatch != 0)
             {
                 try
                 {
                     // Write data to INI file
-                    iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
+                    if (Settings.Default.loadedEvent == null)
+                    {
+                        iniFile.Write("MatchData", "event", "manualEvent");
+                    }
+                    else
+                    {
+                        iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
+                    }
                     iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                     iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
                     iniFile.Write("MatchData", "teamPrio", string.Join(",", Settings.Default.teamPrio));
+                    string scouterNames = "";
+                    string scouterLocations = "";
+                    foreach (var robot in BackgroundCode.Robots)
+                    {
+                        if (scouterNames.Length != 0)
+                        {
+                            scouterNames = scouterNames + ",";
+                        }
+                        scouterNames = scouterNames + robot._ScouterName;
+
+                        if (scouterLocations.Length != 0)
+                        {
+                            scouterLocations = scouterLocations + ",";
+                        }
+                        scouterLocations = scouterLocations + robot.ScouterBox;
+                    }
+                    iniFile.Write("MatchData", "scouterNames", scouterNames);
+                    iniFile.Write("MatchData", "scouterLocations", scouterLocations);
                 }
                 catch (Exception ex)
                 {
@@ -153,9 +179,22 @@ namespace ScoutingCodeRedo.Static
                 comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Please press the Load Events Button...");
                 Settings.Default.currentMatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
                 Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
-                Settings.Default.teamPrio = new List<string>(iniFile.Read("MatchData", "teamPrio", "").Split(','));
+                var teamPrioList = new List<string>(iniFile.Read("MatchData", "teamPrio", "").Split(','));
+                Settings.Default.teamPrio = new StringCollection();
+                Settings.Default.teamPrio.AddRange(teamPrioList.ToArray());
 
-                BuildInitialDatabase();
+
+                List<string> scouterNames = new List<string>(iniFile.Read("MatchData", "scouterNames", "").Split(','));
+                List<string> scouterLocations = new List<string>(iniFile.Read("MatchData", "scouterLocations", "").Split(','));
+
+                for (int i = 0; i < 6; i++)
+                {
+                    BackgroundCode.Robots[i]._ScouterName = (RobotState.SCOUTER_NAME)Enum.Parse(typeof(RobotState.SCOUTER_NAME), scouterNames[i]);
+                    BackgroundCode.Robots[i].ScouterBox = int.Parse(scouterLocations[i]);
+                }
+
+                BackgroundCode.seasonframework.Database.Connection.Close();
+                BuildInitialDatabase(true);
 
                 btnpopulateForEvent_Click(null, null);
             }
@@ -170,7 +209,8 @@ namespace ScoutingCodeRedo.Static
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to load The Blue Alliance data?", "Please Confirm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                BuildInitialDatabase();
+                BackgroundCode.seasonframework.Database.Connection.Close();
+                BuildInitialDatabase(false);
                 //  Logic for setting left/right and near/far based on side of field scouters are sitting on
                 DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
                 Settings.Default.redRight = (red == DialogResult.Yes);
@@ -243,12 +283,18 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
-            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[BackgroundCode.Robots[0].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[BackgroundCode.Robots[1].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[BackgroundCode.Robots[2].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[BackgroundCode.Robots[3].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[BackgroundCode.Robots[4].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[BackgroundCode.Robots[5].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, Settings.Default.teamPrio);
+            List<string> teamPrioList = null;
+            if (Settings.Default.teamPrio != null)
+            {
+                teamPrioList = Settings.Default.teamPrio.Cast<string>().ToList();
+            }
+
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[BackgroundCode.Robots[0].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[BackgroundCode.Robots[1].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[BackgroundCode.Robots[2].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[BackgroundCode.Robots[3].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[BackgroundCode.Robots[4].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[BackgroundCode.Robots[5].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, teamPrioList);
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
