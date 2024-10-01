@@ -101,5 +101,14 @@ namespace ScoutingCodeRedo.Static
                 comboBox.Items.AddRange(scouterDict.Keys.Select(sn => sn.ToString()).ToArray());
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ClearScouters(null, null);
+            for(int i = 0; i < 6; i++)
+            {
+                BackgroundCode.Robots[i].ScouterBox = i;
+            }
+        }
     }
 }

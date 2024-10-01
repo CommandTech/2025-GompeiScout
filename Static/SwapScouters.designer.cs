@@ -21,6 +21,7 @@ namespace ScoutingCodeRedo.Static
             this.ScoutDrop1 = new System.Windows.Forms.ComboBox();
             this.ScoutDrop0 = new System.Windows.Forms.ComboBox();
             this.clearScouters = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -134,10 +135,24 @@ namespace ScoutingCodeRedo.Static
             this.clearScouters.UseVisualStyleBackColor = true;
             this.clearScouters.Click += new System.EventHandler(this.ClearScouters);
             // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Navy;
+            this.btnReset.Location = new System.Drawing.Point(120, 182);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(99, 35);
+            this.btnReset.TabIndex = 355;
+            this.btnReset.Text = "RESET";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // SwapScouters
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(535, 231);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.clearScouters);
             this.Controls.Add(this.UpdateScouterText);
             this.Controls.Add(this.ScoutOK);
@@ -163,5 +178,6 @@ namespace ScoutingCodeRedo.Static
         private System.Windows.Forms.ComboBox ScoutDrop1;
         private System.Windows.Forms.ComboBox ScoutDrop0;
         private System.Windows.Forms.Button clearScouters;
+        private System.Windows.Forms.Button btnReset;
     }
 }

@@ -68,7 +68,7 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.getRobotState(robot_ctr);  //Initialize all six robots
                 }
 
-                if (cbxPractice.Checked)
+                if (Settings.Default.practiceMode)
                 {
                     Settings.Default.practiceMode = true;
                     UpdateJoysticks();
@@ -87,7 +87,7 @@ namespace ScoutingCodeRedo.Static
             }
         }
 
-        private void UpdateJoysticks()
+        public static void UpdateJoysticks()
         {
             BackgroundCode.controllers.getGamePads();
             BackgroundCode.gamePads = BackgroundCode.controllers.getGamePads();
@@ -517,6 +517,12 @@ namespace ScoutingCodeRedo.Static
                 Invoke(del);
             }
             catch { }
+        }
+
+        private void btnFunctions_Click(object sender, EventArgs e)
+        {
+            FunctionsForm frm = new FunctionsForm();
+            frm.Show();
         }
     }
 }

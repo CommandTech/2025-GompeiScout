@@ -107,7 +107,6 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3Position1;
         private Label lbl3Position2;
         private Label lbl3Position0Value;
-        private Button SwapScouters;
         private Button btnUpdateDB;
         private CheckBox cbxEndMatch;
         private Label lblkey;
@@ -262,7 +261,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position1 = new System.Windows.Forms.Label();
             this.lbl3Position2 = new System.Windows.Forms.Label();
             this.lbl3Position0Value = new System.Windows.Forms.Label();
-            this.SwapScouters = new System.Windows.Forms.Button();
             this.btnUpdateDB = new System.Windows.Forms.Button();
             this.cbxEndMatch = new System.Windows.Forms.CheckBox();
             this.lblkey = new System.Windows.Forms.Label();
@@ -320,9 +318,7 @@ namespace ScoutingCodeRedo.Static
             this.labelMatch = new System.Windows.Forms.Label();
             this.lblMatch = new System.Windows.Forms.Label();
             this.timerJoysticks = new System.Windows.Forms.Timer(this.components);
-            this.btnRefreshControllers = new System.Windows.Forms.Button();
-            this.cbxPractice = new System.Windows.Forms.CheckBox();
-            this.btnPriority = new System.Windows.Forms.Button();
+            this.btnFunctions = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -1604,22 +1600,9 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position0Value.Text = "$$";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // SwapScouters
-            // 
-            this.SwapScouters.BackColor = System.Drawing.Color.Transparent;
-            this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.SwapScouters.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SwapScouters.Location = new System.Drawing.Point(899, 22);
-            this.SwapScouters.Name = "SwapScouters";
-            this.SwapScouters.Size = new System.Drawing.Size(91, 23);
-            this.SwapScouters.TabIndex = 298;
-            this.SwapScouters.Text = "SwapScouters";
-            this.SwapScouters.UseVisualStyleBackColor = false;
-            this.SwapScouters.Click += new System.EventHandler(this.SwapScouters_Click);
-            // 
             // btnUpdateDB
             // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(1040, 22);
+            this.btnUpdateDB.Location = new System.Drawing.Point(931, 25);
             this.btnUpdateDB.Name = "btnUpdateDB";
             this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateDB.TabIndex = 297;
@@ -1717,7 +1700,7 @@ namespace ScoutingCodeRedo.Static
             this.btnExit.BackColor = System.Drawing.Color.Black;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Crimson;
-            this.btnExit.Location = new System.Drawing.Point(994, 22);
+            this.btnExit.Location = new System.Drawing.Point(888, 25);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 23);
             this.btnExit.TabIndex = 284;
@@ -2299,54 +2282,29 @@ namespace ScoutingCodeRedo.Static
             this.timerJoysticks.Interval = 50;
             this.timerJoysticks.Tick += new System.EventHandler(this.JoyStickReader);
             // 
-            // btnRefreshControllers
+            // btnFunctions
             // 
-            this.btnRefreshControllers.Location = new System.Drawing.Point(1121, 23);
-            this.btnRefreshControllers.Name = "btnRefreshControllers";
-            this.btnRefreshControllers.Size = new System.Drawing.Size(56, 23);
-            this.btnRefreshControllers.TabIndex = 301;
-            this.btnRefreshControllers.Text = "Refresh";
-            this.btnRefreshControllers.UseVisualStyleBackColor = true;
-            this.btnRefreshControllers.Click += new System.EventHandler(this.btnRefreshControllers_Click);
-            // 
-            // cbxPractice
-            // 
-            this.cbxPractice.AutoSize = true;
-            this.cbxPractice.BackColor = System.Drawing.Color.Black;
-            this.cbxPractice.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxPractice.Location = new System.Drawing.Point(1247, 30);
-            this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxPractice.Name = "cbxPractice";
-            this.cbxPractice.Size = new System.Drawing.Size(136, 24);
-            this.cbxPractice.TabIndex = 302;
-            this.cbxPractice.Text = "Practice Mode";
-            this.cbxPractice.UseVisualStyleBackColor = false;
-            // 
-            // btnPriority
-            // 
-            this.btnPriority.BackColor = System.Drawing.Color.Transparent;
-            this.btnPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnPriority.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPriority.Location = new System.Drawing.Point(1183, 23);
-            this.btnPriority.Name = "btnPriority";
-            this.btnPriority.Size = new System.Drawing.Size(62, 23);
-            this.btnPriority.TabIndex = 303;
-            this.btnPriority.Text = "Priority";
-            this.btnPriority.UseVisualStyleBackColor = false;
-            this.btnPriority.Click += new System.EventHandler(this.Priority_Click);
+            this.btnFunctions.BackColor = System.Drawing.Color.Transparent;
+            this.btnFunctions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.btnFunctions.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFunctions.Location = new System.Drawing.Point(1128, 22);
+            this.btnFunctions.Name = "btnFunctions";
+            this.btnFunctions.Size = new System.Drawing.Size(88, 23);
+            this.btnFunctions.TabIndex = 304;
+            this.btnFunctions.Text = "Functions";
+            this.btnFunctions.UseVisualStyleBackColor = false;
+            this.btnFunctions.Click += new System.EventHandler(this.btnFunctions_Click);
             // 
             // BaseScreen
             // 
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.btnPriority);
-            this.Controls.Add(this.cbxPractice);
-            this.Controls.Add(this.btnRefreshControllers);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnFunctions);
             this.Controls.Add(this.lblMatch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel31);
-            this.Controls.Add(this.SwapScouters);
             this.Controls.Add(this.btnUpdateDB);
             this.Controls.Add(this.cbxEndMatch);
             this.Controls.Add(this.labelMatch);
@@ -2357,7 +2315,6 @@ namespace ScoutingCodeRedo.Static
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnPreviousMatch);
             this.Controls.Add(this.btnpopulateForEvent);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lstLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BaseScreen";
@@ -2437,8 +2394,6 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3TeamName;
         private Label lbl3ScoutName;
         private Label lbl3ModeValue;
-        private Button btnRefreshControllers;
-        private CheckBox cbxPractice;
-        private Button btnPriority;
+        private Button btnFunctions;
     }
 }

@@ -73,6 +73,12 @@
   <ItemGroup>
     <Compile Include="Dynamic\DynamicDatabase.cs" />
     <Compile Include="Dynamic\DynamicResponses.cs" />
+    <Compile Include="Dynamic\FunctionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dynamic\FunctionsForm.designer.cs">
+      <DependentUpon>FunctionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dynamic\RobotState.cs" />
     <Compile Include="Dynamic\ScouterBoxes.cs">
       <SubType>Form</SubType>
@@ -121,6 +127,9 @@
     <Compile Include="Dynamic\UpdateDatabase.designer.cs">
       <DependentUpon>UpdateDatabase.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dynamic\FunctionsForm.resx">
+      <DependentUpon>FunctionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dynamic\ScouterBoxes.resx">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </EmbeddedResource>
