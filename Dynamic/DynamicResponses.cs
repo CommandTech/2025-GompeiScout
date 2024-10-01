@@ -12,7 +12,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             GamePad gamepad = gpArray[controllerNumber];
 
-            var robot = BackgroundCode.Robots[controllerNumber];
+            var robot = BackgroundCode.Robots[BackgroundCode.Robots[controllerNumber].ScouterBox];
 
             if (robot.OpptT_StopWatch == null) robot.OpptT_StopWatch = new Stopwatch();
             if (robot.NeutT_StopWatch == null) robot.NeutT_StopWatch = new Stopwatch();
@@ -800,7 +800,7 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.Auto_Time = DateTime.Now;
                         BackgroundCode.activity_record.Time = controller.Auto_Time.AddSeconds(-18);
 
-                        BackgroundCode.activity_record.Team = controller.TeamName;
+                        BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                         BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
@@ -815,27 +815,27 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.DelOrig = "-";
                         BackgroundCode.activity_record.DelDest = "-";
 
-                        if (controller == BackgroundCode.Robots[0])
+                        if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                         {
                             BackgroundCode.activity_record.DriveSta = "red0";
                         }
-                        else if (controller == BackgroundCode.Robots[1])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                         {
                             BackgroundCode.activity_record.DriveSta = "red1";
                         }
-                        else if (controller == BackgroundCode.Robots[2])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                         {
                             BackgroundCode.activity_record.DriveSta = "red2";
                         }
-                        else if (controller == BackgroundCode.Robots[3])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue0";
                         }
-                        else if (controller == BackgroundCode.Robots[4])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue1";
                         }
-                        else if (controller == BackgroundCode.Robots[5])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue2";
                         }
@@ -861,7 +861,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
 
                         // End Auto line
-                        BackgroundCode.activity_record.Team = controller.TeamName;
+                        BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                         BackgroundCode.activity_record.Time = controller.Auto_Time;
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
@@ -877,27 +877,27 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.DelOrig = "-";
                         BackgroundCode.activity_record.DelDest = "-";
 
-                        if (controller == BackgroundCode.Robots[0])
+                        if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                         {
                             BackgroundCode.activity_record.DriveSta = "red0";
                         }
-                        else if (controller == BackgroundCode.Robots[1])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                         {
                             BackgroundCode.activity_record.DriveSta = "red1";
                         }
-                        else if (controller == BackgroundCode.Robots[2])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                         {
                             BackgroundCode.activity_record.DriveSta = "red2";
                         }
-                        else if (controller == BackgroundCode.Robots[3])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue0";
                         }
-                        else if (controller == BackgroundCode.Robots[4])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue1";
                         }
-                        else if (controller == BackgroundCode.Robots[5])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue2";
                         }
@@ -1047,27 +1047,27 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.DelMiss = 0;
                                 BackgroundCode.activity_record.DelOrig = "-";
                                 BackgroundCode.activity_record.DelDest = "-";
-                                if (controller == BackgroundCode.Robots[0])
+                                if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "red0";
                                 }
-                                else if (controller == BackgroundCode.Robots[1])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "red1";
                                 }
-                                else if (controller == BackgroundCode.Robots[2])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "red2";
                                 }
-                                else if (controller == BackgroundCode.Robots[3])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "blue0";
                                 }
-                                else if (controller == BackgroundCode.Robots[4])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "blue1";
                                 }
-                                else if (controller == BackgroundCode.Robots[5])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "blue2";
                                 }
@@ -1086,7 +1086,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.Defense = 9;
                                 BackgroundCode.activity_record.Avoidance = 9;
                                 BackgroundCode.activity_record.Strategy = "-";
-                                BackgroundCode.activity_record.Team = controller.TeamName;
+                                BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                                 BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                                 BackgroundCode.activity_record.Mode = "Auto";
                                 BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
@@ -1120,27 +1120,27 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.DelMiss = 0;
                                 BackgroundCode.activity_record.DelOrig = "-";
                                 BackgroundCode.activity_record.DelDest = "-";
-                                if (controller == BackgroundCode.Robots[0])
+                                if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "red0";
                                 }
-                                else if (controller == BackgroundCode.Robots[1])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "red1";
                                 }
-                                else if (controller == BackgroundCode.Robots[2])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "red2";
                                 }
-                                else if (controller == BackgroundCode.Robots[3])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "blue0";
                                 }
-                                else if (controller == BackgroundCode.Robots[4])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "blue1";
                                 }
-                                else if (controller == BackgroundCode.Robots[5])
+                                else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                                 {
                                     BackgroundCode.activity_record.DriveSta = "blue2";
                                 }
@@ -1159,7 +1159,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.Defense = 9;
                                 BackgroundCode.activity_record.Avoidance = 9;
                                 BackgroundCode.activity_record.Strategy = "-";
-                                BackgroundCode.activity_record.Team = controller.TeamName;
+                                BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                                 BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                                 BackgroundCode.activity_record.Mode = "Auto";
                                 BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
@@ -1273,27 +1273,27 @@ namespace ScoutingCodeRedo.Dynamic
 
                             BackgroundCode.activity_record.DelDest = controller.Del_Dest.ToString();
 
-                            if (controller == BackgroundCode.Robots[0])
+                            if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                             {
                                 BackgroundCode.activity_record.DriveSta = "red0";
                             }
-                            else if (controller == BackgroundCode.Robots[1])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                             {
                                 BackgroundCode.activity_record.DriveSta = "red1";
                             }
-                            else if (controller == BackgroundCode.Robots[2])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                             {
                                 BackgroundCode.activity_record.DriveSta = "red2";
                             }
-                            else if (controller == BackgroundCode.Robots[3])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                             {
                                 BackgroundCode.activity_record.DriveSta = "blue0";
                             }
-                            else if (controller == BackgroundCode.Robots[4])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                             {
                                 BackgroundCode.activity_record.DriveSta = "blue1";
                             }
-                            else if (controller == BackgroundCode.Robots[5])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                             {
                                 BackgroundCode.activity_record.DriveSta = "blue2";
                             }
@@ -1312,7 +1312,7 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.Defense = 9;
                             BackgroundCode.activity_record.Avoidance = 9;
                             BackgroundCode.activity_record.Strategy = "-";
-                            BackgroundCode.activity_record.Team = controller.TeamName;
+                            BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                             BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                             BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                             BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
@@ -1339,7 +1339,7 @@ namespace ScoutingCodeRedo.Dynamic
                     case ("EndMatch"):
                         if (controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name && controller.NoSho == false)
                         {
-                            BackgroundCode.activity_record.Team = controller.TeamName;
+                            BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                             BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                             BackgroundCode.activity_record.Time = DateTime.Now;
                             BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
@@ -1363,27 +1363,27 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.DelDest = "-";
                             BackgroundCode.activity_record.DelMiss = 0;
 
-                            if (controller == BackgroundCode.Robots[0])
+                            if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                             {
                                 BackgroundCode.activity_record.DriveSta = "red0";
                             }
-                            else if (controller == BackgroundCode.Robots[1])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                             {
                                 BackgroundCode.activity_record.DriveSta = "red1";
                             }
-                            else if (controller == BackgroundCode.Robots[2])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                             {
                                 BackgroundCode.activity_record.DriveSta = "red2";
                             }
-                            else if (controller == BackgroundCode.Robots[3])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                             {
                                 BackgroundCode.activity_record.DriveSta = "blue0";
                             }
-                            else if (controller == BackgroundCode.Robots[4])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                             {
                                 BackgroundCode.activity_record.DriveSta = "blue1";
                             }
-                            else if (controller == BackgroundCode.Robots[5])
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                             {
                                 BackgroundCode.activity_record.DriveSta = "blue2";
                             }
@@ -1664,7 +1664,7 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             BackgroundCode.activity_record.match_event = controller.match_event.ToString().ToString(); //If you crash here you didn't load matches
                         }
-                        BackgroundCode.activity_record.Team = controller.TeamName;
+                        BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                         BackgroundCode.activity_record.Time = DateTime.Now;
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
@@ -1681,27 +1681,27 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.DelOrig = "-";
                         BackgroundCode.activity_record.DelDest = "-";
 
-                        if (controller == BackgroundCode.Robots[0])
+                        if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
                         {
                             BackgroundCode.activity_record.DriveSta = "red0";
                         }
-                        else if (controller == BackgroundCode.Robots[1])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
                         {
                             BackgroundCode.activity_record.DriveSta = "red1";
                         }
-                        else if (controller == BackgroundCode.Robots[2])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
                         {
                             BackgroundCode.activity_record.DriveSta = "red2";
                         }
-                        else if (controller == BackgroundCode.Robots[3])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue0";
                         }
-                        else if (controller == BackgroundCode.Robots[4])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue1";
                         }
-                        else if (controller == BackgroundCode.Robots[5])
+                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
                         {
                             BackgroundCode.activity_record.DriveSta = "blue2";
                         }

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
+using static ScoutingCodeRedo.Dynamic.RobotState;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -94,11 +95,11 @@ namespace ScoutingCodeRedo.Static
         {
             for (int i = 0; i < 6; i++)
             {
-                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
+                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Text = BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox]._ScouterName.ToString();
                 ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
-                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].match_event.ToString();
+                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Text = BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].match_event.ToString();
                 ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
-                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
+                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Text = BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode.ToString() + " Mode";
                 ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
 
                 ((Label)this.Controls.Find($"lbl{i}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
@@ -194,6 +195,11 @@ namespace ScoutingCodeRedo.Static
                 else
                 {
                     nextMatch();
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        DynamicResponses.transactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
+                    }
                 }
             }
             else
@@ -215,11 +221,6 @@ namespace ScoutingCodeRedo.Static
 
         private void nextMatch()
         {
-            for (int i = 0; i < 6; i++)
-            {
-                DynamicResponses.transactToDatabase(BackgroundCode.Robots[i], "EndMatch");
-            }
-
             Settings.Default.currentMatch++;
             this.lblMatch.Text = (Settings.Default.currentMatch).ToString();
             loadMatch();
@@ -240,19 +241,19 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
-            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, Settings.Default.teamPrio);
-            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[BackgroundCode.Robots[0].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[BackgroundCode.Robots[1].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[BackgroundCode.Robots[2].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[BackgroundCode.Robots[3].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[BackgroundCode.Robots[4].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, Settings.Default.teamPrio);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[BackgroundCode.Robots[5].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, Settings.Default.teamPrio);
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
             label.Text = robot.TeamName = teamName;
             if (teamPrioList != null)
             {
-                label.ForeColor = teamPrioList.Contains(teamName.Replace("frc", "").Trim()) ? Color.Blue : Color.Orange;
+                label.ForeColor = teamPrioList.Contains(teamName.Replace("frc", "").Trim()) ? Color.White : Color.Orange;
             }
             else
             {

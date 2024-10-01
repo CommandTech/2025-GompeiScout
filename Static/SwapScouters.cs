@@ -44,11 +44,8 @@ namespace ScoutingCodeRedo.Static
                 {
                     Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
                     var keyList = scouterDict.Keys.ToList();
-                    try
-                    {
-                        scouterDict[keyList[i]] = scouterDict[name];
-                    }
-                    catch { }
+
+                    BackgroundCode.Robots[i].ScouterBox = scouterDict[name];
                     scouterDict[name] = i;
                 }
             }
@@ -59,11 +56,6 @@ namespace ScoutingCodeRedo.Static
                     robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
                 }
                 catch { }
-            }
-
-            for (int i = 0; i < 6; i++)
-            {
-                Console.WriteLine(BackgroundCode.Robots[i].ScouterBox);
             }
 
             this.Hide();
