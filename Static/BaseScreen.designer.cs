@@ -162,7 +162,6 @@ namespace ScoutingCodeRedo.Static
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseScreen));
             this.lstLog = new System.Windows.Forms.ListBox();
             this.comboBoxSelectRegional = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -324,8 +323,6 @@ namespace ScoutingCodeRedo.Static
             this.btnRefreshControllers = new System.Windows.Forms.Button();
             this.cbxPractice = new System.Windows.Forms.CheckBox();
             this.btnPriority = new System.Windows.Forms.Button();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -355,8 +352,6 @@ namespace ScoutingCodeRedo.Static
             this.panel39.SuspendLayout();
             this.panel41.SuspendLayout();
             this.team1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.SuspendLayout();
             // 
             // lstLog
@@ -2340,33 +2335,11 @@ namespace ScoutingCodeRedo.Static
             this.btnPriority.UseVisualStyleBackColor = false;
             this.btnPriority.Click += new System.EventHandler(this.Priority_Click);
             // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(1518, 26);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 304;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(1382, 26);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 305;
-            this.pictureBox15.TabStop = false;
-            // 
             // BaseScreen
             // 
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.pictureBox15);
-            this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.btnPriority);
             this.Controls.Add(this.cbxPractice);
             this.Controls.Add(this.btnRefreshControllers);
@@ -2445,8 +2418,6 @@ namespace ScoutingCodeRedo.Static
             this.panel41.PerformLayout();
             this.team1.ResumeLayout(false);
             this.team1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2469,7 +2440,5 @@ namespace ScoutingCodeRedo.Static
         private Button btnRefreshControllers;
         private CheckBox cbxPractice;
         private Button btnPriority;
-        private PictureBox pictureBox14;
-        private PictureBox pictureBox15;
     }
 }
