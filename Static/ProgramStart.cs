@@ -74,9 +74,35 @@ namespace ScoutingCodeRedo.Static
                 string iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
                 INIFile iniFile = new INIFile(iniPath);
 
-                iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
+                if (Settings.Default.loadedEvent == null)
+                {
+                    iniFile.Write("MatchData", "event", "manualEvent");
+                }
+                else
+                {
+                    iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
+                }
                 iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                 iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
+                iniFile.Write("MatchData", "teamPrio", string.Join(",", Settings.Default.teamPrio));
+                string scouterNames = "";
+                string scouterLocations = "";
+                foreach (var robot in BackgroundCode.Robots)
+                {
+                    if (scouterNames.Length != 0)
+                    {
+                        scouterNames = scouterNames + ",";
+                    }
+                    scouterNames = scouterNames + robot._ScouterName;
+
+                    if (scouterLocations.Length != 0)
+                    {
+                        scouterLocations = scouterLocations + ",";
+                    }
+                    scouterLocations = scouterLocations + robot.ScouterBox;
+                }
+                iniFile.Write("MatchData", "scouterNames", scouterNames);
+                iniFile.Write("MatchData", "scouterLocations", scouterLocations);
             }
             catch (Exception ex)
             {
