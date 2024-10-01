@@ -133,6 +133,7 @@ namespace ScoutingCodeRedo.Static
                     iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
                     iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                     iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
+                    iniFile.Write("MatchData", "teamPrio", string.Join(",", Settings.Default.teamPrio));
                 }
                 catch (Exception ex)
                 {
@@ -152,6 +153,7 @@ namespace ScoutingCodeRedo.Static
                 comboBoxSelectRegional.SelectedItem = iniFile.Read("MatchData", "event", "Please press the Load Events Button...");
                 Settings.Default.currentMatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
                 Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
+                Settings.Default.teamPrio = new List<string>(iniFile.Read("MatchData", "teamPrio", "").Split(','));
 
                 BuildInitialDatabase();
 
@@ -427,7 +429,11 @@ namespace ScoutingCodeRedo.Static
                 lstLog.TopIndex = lstLog.Items.Add(m + System.Environment.NewLine);
                 return 0;
             };
-            Invoke(del);
+            try
+            {
+                Invoke(del);
+            }
+            catch { }
         }
     }
 }
