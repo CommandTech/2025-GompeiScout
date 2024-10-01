@@ -41,7 +41,6 @@ namespace ScoutingCodeRedo.Static
 
                 using (HttpClient client = new HttpClient())
                 {
-                    // FUTURE ME: when adding the database, add the events to the database
                     try
                     {
                         HttpResponseMessage response = await client.GetAsync(uri);
@@ -69,6 +68,7 @@ namespace ScoutingCodeRedo.Static
                         DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Error loading Blue Alliance data.", MessageBoxButtons.YesNo);
                         if (manualMatches == DialogResult.Yes)
                         {
+                            Log("Loading manual matches.");
                             loadManualMatches();
                             comboBoxSelectRegional.Items.Add("manualEvent");
                             comboBoxSelectRegional.SelectedItem = "manualEvent";
@@ -90,6 +90,7 @@ namespace ScoutingCodeRedo.Static
             string csvPath = Path.Combine(csvProjectBaseDirectory, "Dynamic\\ManualMatchList.csv");
 
             Settings.Default.manualMatchList = ReadCsvFile(csvPath);
+            Log($"{Settings.Default.manualMatchList.Count} matches");
         }
         public static List<List<String>> ReadCsvFile(string filePath)
         {

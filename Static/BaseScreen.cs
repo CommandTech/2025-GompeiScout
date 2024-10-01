@@ -251,7 +251,7 @@ namespace ScoutingCodeRedo.Static
                 {
                     nextMatch();
                 }
-                else
+                else if (dialogResult == DialogResult.Yes)
                 {
                     MessageBox.Show("You are at the last match.");
                     Settings.Default.currentMatch--;
@@ -264,7 +264,7 @@ namespace ScoutingCodeRedo.Static
         private void nextMatch()
         {
             Settings.Default.currentMatch++;
-            this.lblMatch.Text = (Settings.Default.currentMatch).ToString();
+            this.lblMatch.Text = $"{Settings.Default.currentMatch.ToString()}/{bgc.UnSortedMatchList.Count}";
             loadMatch();
         }
 
@@ -311,11 +311,11 @@ namespace ScoutingCodeRedo.Static
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
+            Settings.Default.currentMatch = 0;
+            bgc.UnSortedMatchList.Clear();
+            bgc.InMemoryMatchList.Clear();
             if (Settings.Default.manualMatchList != null)
             {
-                // Clear the existing team list
-                bgc.InMemoryMatchList.Clear();
-
                 for (int i = 0; i < Settings.Default.manualMatchList.Count; i++)
                 {
                     Match matchData = new Match();
@@ -357,15 +357,51 @@ namespace ScoutingCodeRedo.Static
                         //Console.Write(responseFromServer);
 
                         List<TeamSummary> JSONteams = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TeamSummary>>(responseFromServer);
-                        //Log("Received " + JSONteams.Count + " teams for " + eventcode + ".");
+                        Log("Received " + JSONteams.Count + " teams for " + regional + ".");
+
+                        var teamquery = from b in BackgroundCode.seasonframework.Teamset
+                                        orderby b.team_key
+                                        select b;
 
                         // Clear the existing team list
                         bgc.teamlist.Clear();
 
                         foreach (var item in JSONteams)
                         {
-                            //Log("Team -> " + item.team_number);
                             bgc.teamlist.Add(item.team_number);
+                        }
+                        Log("Teams -> " + string.Join(", ", JSONteams.Select(item => item.team_number)));
+
+                        using (var db = new SeasonContext())
+                        {
+                            var teamNumber = BackgroundCode.Robots[0].TeamName;
+                            var result = db.Teamset.FirstOrDefault(b => b.team_key == teamNumber);
+                            if (result == null)
+                            {
+                                //Recording a list of teams to the database
+                                JSONteams = (List<TeamSummary>)Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer, typeof(List<TeamSummary>));
+
+                                dynamic objt = Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer);
+
+                                var team_key = "0";
+                                for (int i = 0; i < JSONteams.Count; i++)
+                                {
+                                    team_key = objt[i].key;
+                                    var result2 = db.Teamset.FirstOrDefault(b => b.team_key == team_key);
+                                    if (result2 == null)
+                                    {
+                                        TeamSummary team_record = new TeamSummary();
+                                        team_record.team_key = objt[i].key;
+                                        team_record.team_number = objt[i].team_number;
+                                        team_record.event_key = regional;
+                                        team_record.nickname = objt[i].nickname;
+
+                                        //Save changes
+                                        BackgroundCode.seasonframework.Teamset.Add(team_record);
+                                        BackgroundCode.seasonframework.SaveChanges();
+                                    }
+                                }
+                            }
                         }
                     }
                     catch (HttpRequestException e2)
@@ -428,6 +464,7 @@ namespace ScoutingCodeRedo.Static
                                 bgc.UnSortedMatchList.Add(match_record);
                             }
                         }
+                        Log($"{bgc.UnSortedMatchList.Count} matches");
 
                     }
                     catch (HttpRequestException e2)

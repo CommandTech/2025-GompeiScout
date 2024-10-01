@@ -75,7 +75,7 @@ namespace ScoutingCodeRedo.Static
                 INIFile iniFile = new INIFile(iniPath);
 
                 iniFile.Write("MatchData", "event", Settings.Default.loadedEvent);
-                iniFile.Write("MatchData", "match_number", BaseScreen.currentmatch.ToString());
+                iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                 iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
             }
             catch (Exception ex)

@@ -154,8 +154,6 @@ namespace ScoutingCodeRedo.Static
         private System.Windows.Forms.ListBox lstLog;
         private System.ComponentModel.IContainer components = null;
 
-        public static string eventcode;
-        public static int currentmatch = 0;
         private Label labelMatch;
         private Label lblMatch;
         public string regional;
@@ -1616,9 +1614,9 @@ namespace ScoutingCodeRedo.Static
             this.SwapScouters.BackColor = System.Drawing.Color.Transparent;
             this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.SwapScouters.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SwapScouters.Location = new System.Drawing.Point(838, 22);
+            this.SwapScouters.Location = new System.Drawing.Point(899, 22);
             this.SwapScouters.Name = "SwapScouters";
-            this.SwapScouters.Size = new System.Drawing.Size(113, 23);
+            this.SwapScouters.Size = new System.Drawing.Size(91, 23);
             this.SwapScouters.TabIndex = 298;
             this.SwapScouters.Text = "SwapScouters";
             this.SwapScouters.UseVisualStyleBackColor = false;
@@ -1626,7 +1624,7 @@ namespace ScoutingCodeRedo.Static
             // 
             // btnUpdateDB
             // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(1003, 22);
+            this.btnUpdateDB.Location = new System.Drawing.Point(1040, 22);
             this.btnUpdateDB.Name = "btnUpdateDB";
             this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateDB.TabIndex = 297;
@@ -1639,7 +1637,7 @@ namespace ScoutingCodeRedo.Static
             this.cbxEndMatch.AutoSize = true;
             this.cbxEndMatch.BackColor = System.Drawing.Color.Black;
             this.cbxEndMatch.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxEndMatch.Location = new System.Drawing.Point(741, 26);
+            this.cbxEndMatch.Location = new System.Drawing.Point(802, 27);
             this.cbxEndMatch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEndMatch.Name = "cbxEndMatch";
             this.cbxEndMatch.Size = new System.Drawing.Size(112, 24);
@@ -1675,7 +1673,7 @@ namespace ScoutingCodeRedo.Static
             this.btnNextMatch.BackColor = System.Drawing.Color.Black;
             this.btnNextMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextMatch.ForeColor = System.Drawing.Color.Navy;
-            this.btnNextMatch.Location = new System.Drawing.Point(704, 22);
+            this.btnNextMatch.Location = new System.Drawing.Point(764, 24);
             this.btnNextMatch.Name = "btnNextMatch";
             this.btnNextMatch.Size = new System.Drawing.Size(36, 23);
             this.btnNextMatch.TabIndex = 289;
@@ -1724,7 +1722,7 @@ namespace ScoutingCodeRedo.Static
             this.btnExit.BackColor = System.Drawing.Color.Black;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Crimson;
-            this.btnExit.Location = new System.Drawing.Point(957, 22);
+            this.btnExit.Location = new System.Drawing.Point(994, 22);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 23);
             this.btnExit.TabIndex = 284;
@@ -2295,7 +2293,7 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.AutoSize = true;
             this.lblMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatch.ForeColor = System.Drawing.Color.White;
-            this.lblMatch.Location = new System.Drawing.Point(672, 23);
+            this.lblMatch.Location = new System.Drawing.Point(671, 23);
             this.lblMatch.Name = "lblMatch";
             this.lblMatch.Size = new System.Drawing.Size(32, 33);
             this.lblMatch.TabIndex = 292;
@@ -2308,9 +2306,9 @@ namespace ScoutingCodeRedo.Static
             // 
             // btnRefreshControllers
             // 
-            this.btnRefreshControllers.Location = new System.Drawing.Point(1084, 22);
+            this.btnRefreshControllers.Location = new System.Drawing.Point(1121, 23);
             this.btnRefreshControllers.Name = "btnRefreshControllers";
-            this.btnRefreshControllers.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshControllers.Size = new System.Drawing.Size(56, 23);
             this.btnRefreshControllers.TabIndex = 301;
             this.btnRefreshControllers.Text = "Refresh";
             this.btnRefreshControllers.UseVisualStyleBackColor = true;
@@ -2321,7 +2319,7 @@ namespace ScoutingCodeRedo.Static
             this.cbxPractice.AutoSize = true;
             this.cbxPractice.BackColor = System.Drawing.Color.Black;
             this.cbxPractice.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxPractice.Location = new System.Drawing.Point(1247, 24);
+            this.cbxPractice.Location = new System.Drawing.Point(1247, 30);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
             this.cbxPractice.Size = new System.Drawing.Size(136, 24);
@@ -2334,9 +2332,9 @@ namespace ScoutingCodeRedo.Static
             this.btnPriority.BackColor = System.Drawing.Color.Transparent;
             this.btnPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnPriority.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPriority.Location = new System.Drawing.Point(1165, 22);
+            this.btnPriority.Location = new System.Drawing.Point(1183, 23);
             this.btnPriority.Name = "btnPriority";
-            this.btnPriority.Size = new System.Drawing.Size(80, 23);
+            this.btnPriority.Size = new System.Drawing.Size(62, 23);
             this.btnPriority.TabIndex = 303;
             this.btnPriority.Text = "Priority";
             this.btnPriority.UseVisualStyleBackColor = false;
