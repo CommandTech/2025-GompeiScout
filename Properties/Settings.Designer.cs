@@ -25,7 +25,7 @@ namespace ScoutingCodeRedo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("zhTqFG7csJoif1sNXt3aZngy0LB1X4LxMgTfXBvPscNG0P9FifZCa2uGJcUk2gKWZ")]
+        [global::System.Configuration.DefaultSettingValueAttribute("zhTqFG7csJoif1sNXt3aZngy0LB1X4LxMgTfXBvPscNG0P9FifZCa2uGJcUk2gKW")]
         public string API_Key {
             get {
                 return ((string)(this["API_Key"]));
