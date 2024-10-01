@@ -56,7 +56,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         {
             state = Math.Max(0, state);
             state = Math.Min(5, state);
-            return BackgroundCode.Robots[state]; //If you crash here, you do not have a controller connected
+            return BackgroundCode.Robots[state]; //Shouldn't crash here but if it does, you do not have a controller connected
         }
 
         public GamePad[] getGamePads()
@@ -86,9 +86,10 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             {
                 BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
             }
-            else if (gamepad.R3_Press)
+            else if (gamepad.R3_Press && BackgroundCode.Robots[controllerNumber].match_event != RobotState.MATCHEVENT_NAME.Match_Event)
             {
                 DynamicResponses.transactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
+                BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
             }
 
             //Scouter names
