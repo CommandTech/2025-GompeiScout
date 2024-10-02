@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Media;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
 using SharpDX.XInput;
@@ -906,6 +907,7 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             BackgroundCode.activity_record.RobotSta = "Z";
                             controller.ScouterError++;
+
                         }
                         else
                         {

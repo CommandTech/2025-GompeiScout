@@ -11,7 +11,7 @@ namespace ScoutingCodeRedo.Dynamic
         public FunctionsForm()
         {
             InitializeComponent();
-            bgc = new BackgroundCode();
+            bgc = new BackgroundCode(true);
         }
 
         private void FuncOK_Click(object sender, EventArgs e)

@@ -24,11 +24,13 @@ namespace ScoutingCodeRedo.Static
         public string projectBaseDirectory;
         public string iniPath;
         public INIFile iniFile;
+
+        bool wasPractice = false;
         public BaseScreen()
         {
             InitializeComponent();
             this.lblkey.Text = "";
-            bgc = new BackgroundCode();
+            bgc = new BackgroundCode(false);
 
             projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
             iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
@@ -70,19 +72,27 @@ namespace ScoutingCodeRedo.Static
 
                 if (Settings.Default.practiceMode)
                 {
-                    Settings.Default.practiceMode = true;
-                    UpdateJoysticks();
+                    if (!wasPractice)
+                    {
+                        UpdateJoysticks();
+                    }
 
                     for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
                     {
                         BackgroundCode.gamePads[i] = null;
-
-                        Console.WriteLine(BackgroundCode.gamePads.Length);
                     }
+
+                    if (BackgroundCode.Robots[0].prevScouterError != BackgroundCode.Robots[0].ScouterError)
+                    {
+                        BackgroundCode.soundCue.Play();
+                        BackgroundCode.Robots[0].prevScouterError = BackgroundCode.Robots[0].ScouterError;
+                    }
+                    wasPractice = true;
                 }
                 else
                 {
-                    Settings.Default.practiceMode = false;
+                    wasPractice = false;
+                    BackgroundCode.soundCue.Dispose();
                 }
             }
         }

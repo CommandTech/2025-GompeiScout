@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Media;
 using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static.GamePadFolder;
@@ -25,9 +26,18 @@ namespace ScoutingCodeRedo.Static
 
         public static Activity activity_record = new Activity();
         public static SeasonContext seasonframework = new SeasonContext();
-        public BackgroundCode()
+
+        private static string soundFilePath = System.IO.Path.Combine(
+            System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,
+            "errorSound.wav"
+        );
+        public static SoundPlayer soundCue = new SoundPlayer(soundFilePath);
+        public BackgroundCode(bool func)
         {
-            seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
+            if (!func)
+            {
+                seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
+            }
 
             for (int i = 0; i < 6; i++)
             {
