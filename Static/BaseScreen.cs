@@ -477,32 +477,6 @@ namespace ScoutingCodeRedo.Static
             }
             nextMatch();
         }
-        private void SwapScouters_Click(object sender, EventArgs e)
-        {
-            SwapScouters frm = new SwapScouters();
-            frm.Show();
-        }
-        private void Priority_Click(object sender, EventArgs e)
-        {
-            PriorityForm frm = new PriorityForm();
-            frm.Show();
-        }
-        private void btnUpdateDB_Click(object sender, EventArgs e)
-        {
-            if (Settings.Default.DBExists)
-            {
-                UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
-                frm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
-            }
-        }
-        private void btnRefreshControllers_Click(object sender, EventArgs e)
-        {
-            UpdateJoysticks();
-        }
         public void Log(string m)
         {
             //cross-thread Logging

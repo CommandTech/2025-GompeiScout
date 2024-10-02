@@ -7,9 +7,11 @@ namespace ScoutingCodeRedo.Dynamic
 {
     internal partial class FunctionsForm : Form
     {
+        BackgroundCode bgc;
         public FunctionsForm()
         {
             InitializeComponent();
+            bgc = new BackgroundCode();
         }
 
         private void FuncOK_Click(object sender, EventArgs e)
@@ -36,6 +38,20 @@ namespace ScoutingCodeRedo.Dynamic
         {
             BaseScreen.UpdateJoysticks();
             this.Hide();
+        }
+
+        private void btnUpdateDatabase_Click(object sender, EventArgs e)
+        {
+            if (Settings.Default.DBExists)
+            {
+                UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
+                this.Hide();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
+            }
         }
     }
 }

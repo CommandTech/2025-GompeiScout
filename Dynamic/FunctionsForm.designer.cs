@@ -18,6 +18,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnSwapScouters = new System.Windows.Forms.Button();
             this.cbxPractice = new System.Windows.Forms.CheckBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnUpdateDatabase = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -97,10 +98,24 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnUpdateDatabase
+            // 
+            this.btnUpdateDatabase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateDatabase.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateDatabase.Location = new System.Drawing.Point(24, 234);
+            this.btnUpdateDatabase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdateDatabase.Name = "btnUpdateDatabase";
+            this.btnUpdateDatabase.Size = new System.Drawing.Size(202, 35);
+            this.btnUpdateDatabase.TabIndex = 358;
+            this.btnUpdateDatabase.Text = "Update Database";
+            this.btnUpdateDatabase.UseVisualStyleBackColor = true;
+            this.btnUpdateDatabase.Click += new System.EventHandler(this.btnUpdateDatabase_Click);
+            // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(781, 687);
+            this.Controls.Add(this.btnUpdateDatabase);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbxPractice);
             this.Controls.Add(this.btnSwapScouters);
@@ -121,5 +136,6 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.Button btnSwapScouters;
         private System.Windows.Forms.CheckBox cbxPractice;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnUpdateDatabase;
     }
 }

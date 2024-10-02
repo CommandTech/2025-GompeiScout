@@ -107,7 +107,6 @@ namespace ScoutingCodeRedo.Static
         private Label lbl3Position1;
         private Label lbl3Position2;
         private Label lbl3Position0Value;
-        private Button btnUpdateDB;
         private CheckBox cbxEndMatch;
         private Label lblkey;
         private Button btnInitialDBLoad;
@@ -261,7 +260,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position1 = new System.Windows.Forms.Label();
             this.lbl3Position2 = new System.Windows.Forms.Label();
             this.lbl3Position0Value = new System.Windows.Forms.Label();
-            this.btnUpdateDB = new System.Windows.Forms.Button();
             this.cbxEndMatch = new System.Windows.Forms.CheckBox();
             this.lblkey = new System.Windows.Forms.Label();
             this.btnInitialDBLoad = new System.Windows.Forms.Button();
@@ -1600,16 +1598,6 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position0Value.Text = "$$";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnUpdateDB
-            // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(931, 25);
-            this.btnUpdateDB.Name = "btnUpdateDB";
-            this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateDB.TabIndex = 297;
-            this.btnUpdateDB.Text = "Update DB";
-            this.btnUpdateDB.UseVisualStyleBackColor = true;
-            this.btnUpdateDB.Click += new System.EventHandler(this.btnUpdateDB_Click);
-            // 
             // cbxEndMatch
             // 
             this.cbxEndMatch.AutoSize = true;
@@ -2305,7 +2293,6 @@ namespace ScoutingCodeRedo.Static
             this.Controls.Add(this.lblMatch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel31);
-            this.Controls.Add(this.btnUpdateDB);
             this.Controls.Add(this.cbxEndMatch);
             this.Controls.Add(this.labelMatch);
             this.Controls.Add(this.lblkey);
