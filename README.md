@@ -19,7 +19,7 @@ Wants:
 
 - [x] Select where controllers are located in base program (the addon made in 2024 but better and designed from the start)
 
-- [ ] Training mode or interface with sound cues
+- [x] Training mode or interface with sound cues
 
 --Match Preview Report\Website--
 - [ ] Modular data interface (be able to see what other teams also are looking at for data)
