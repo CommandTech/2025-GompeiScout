@@ -229,7 +229,14 @@ namespace ScoutingCodeRedo.Static
             }
             else
             {
-                MessageBox.Show("The Blue Alliance data was not loaded", "", MessageBoxButtons.OK);
+                DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Please Confirm", MessageBoxButtons.YesNo);
+                if (manualMatches == DialogResult.Yes)
+                {
+                    Log("Loading manual matches.");
+                    loadManualMatches();
+                    comboBoxSelectRegional.Items.Add("manualEvent");
+                    comboBoxSelectRegional.SelectedItem = "manualEvent";
+                }
             }
         }
 
