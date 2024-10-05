@@ -9,7 +9,7 @@ namespace ScoutingCodeRedo.Static
     public partial class SwapScouters : Form
     {
         public List<ComboBox> scoutDrops = new List<ComboBox>();
-
+        public bool wasReset = false;
         public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new Dictionary<RobotState.SCOUTER_NAME, int>();
         public SwapScouters()
         {
@@ -38,24 +38,28 @@ namespace ScoutingCodeRedo.Static
 
         private void ScoutOK_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 6; i++)
+            if (!wasReset)
             {
-                if (scoutDrops[i].SelectedIndex != -1)
+                for (int i = 0; i < 6; i++)
                 {
-                    Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
-                    var keyList = scouterDict.Keys.ToList();
+                    if (scoutDrops[i].SelectedIndex != -1)
+                    {
+                        Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
+                        var keyList = scouterDict.Keys.ToList();
 
-                    BackgroundCode.Robots[i].ScouterBox = scouterDict[name];
-                    scouterDict[name] = i;
+                        BackgroundCode.Robots[i].ScouterBox = scouterDict[name];
+                        scouterDict[name] = i;
+                    }
                 }
-            }
 
-            foreach (var robot in BackgroundCode.Robots)
-            {
-                try {
-                    robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
+                foreach (var robot in BackgroundCode.Robots)
+                {
+                    try
+                    {
+                        robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
+                    }
+                    catch { }
                 }
-                catch { }
             }
 
             this.Hide();
@@ -104,6 +108,7 @@ namespace ScoutingCodeRedo.Static
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            wasReset = true;
             ClearScouters(null, null);
             for(int i = 0; i < 6; i++)
             {

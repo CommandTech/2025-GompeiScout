@@ -27,9 +27,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.UpdateScouterText.BackColor = System.Drawing.Color.Transparent;
             this.UpdateScouterText.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateScouterText.ForeColor = System.Drawing.Color.FloralWhite;
-            this.UpdateScouterText.Location = new System.Drawing.Point(12, 9);
+            this.UpdateScouterText.Location = new System.Drawing.Point(12, 20);
             this.UpdateScouterText.Name = "UpdateScouterText";
-            this.UpdateScouterText.Size = new System.Drawing.Size(435, 74);
+            this.UpdateScouterText.Size = new System.Drawing.Size(263, 74);
             this.UpdateScouterText.TabIndex = 353;
             this.UpdateScouterText.Text = "Functions";
             // 
@@ -37,7 +37,7 @@ namespace ScoutingCodeRedo.Dynamic
             // 
             this.FuncOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FuncOK.ForeColor = System.Drawing.Color.Black;
-            this.FuncOK.Location = new System.Drawing.Point(702, 638);
+            this.FuncOK.Location = new System.Drawing.Point(269, 296);
             this.FuncOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FuncOK.Name = "FuncOK";
             this.FuncOK.Size = new System.Drawing.Size(66, 35);
@@ -77,7 +77,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.cbxPractice.AutoSize = true;
             this.cbxPractice.BackColor = System.Drawing.Color.Black;
             this.cbxPractice.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxPractice.Location = new System.Drawing.Point(592, 99);
+            this.cbxPractice.Location = new System.Drawing.Point(261, 99);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
             this.cbxPractice.Size = new System.Drawing.Size(136, 24);
@@ -114,7 +114,7 @@ namespace ScoutingCodeRedo.Dynamic
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(781, 687);
+            this.ClientSize = new System.Drawing.Size(408, 362);
             this.Controls.Add(this.btnUpdateDatabase);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbxPractice);

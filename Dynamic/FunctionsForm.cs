@@ -11,7 +11,7 @@ namespace ScoutingCodeRedo.Dynamic
         public FunctionsForm()
         {
             InitializeComponent();
-            bgc = new BackgroundCode(true);
+            cbxPractice.Checked = Settings.Default.practiceMode;
         }
 
         private void FuncOK_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             if (Settings.Default.DBExists)
             {
-                UpdateDatabase frm = new UpdateDatabase(bgc.teamlist, bgc.MatchNumbers);
+                UpdateDatabase frm = new UpdateDatabase(BackgroundCode.teamlist, BackgroundCode.MatchNumbers);
                 this.Hide();
                 frm.Show();
             }

@@ -30,7 +30,7 @@ namespace ScoutingCodeRedo.Static
         {
             InitializeComponent();
             this.lblkey.Text = "";
-            bgc = new BackgroundCode(false);
+            bgc = new BackgroundCode();
 
             projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
             iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
@@ -234,6 +234,7 @@ namespace ScoutingCodeRedo.Static
                 {
                     Log("Loading manual matches.");
                     loadManualMatches();
+                    comboBoxSelectRegional.Items.Clear();
                     comboBoxSelectRegional.Items.Add("manualEvent");
                     comboBoxSelectRegional.SelectedItem = "manualEvent";
                 }
@@ -345,6 +346,7 @@ namespace ScoutingCodeRedo.Static
                     matchData.blueteam2 = "frc" + Settings.Default.manualMatchList[i][4];
                     matchData.blueteam3 = "frc" + Settings.Default.manualMatchList[i][5];
 
+                    bgc.UnSortedMatchList.Add(matchData);
                     bgc.InMemoryMatchList.Add(matchData);
                 }
             }
@@ -381,11 +383,11 @@ namespace ScoutingCodeRedo.Static
                                         select b;
 
                         // Clear the existing team list
-                        bgc.teamlist.Clear();
+                        BackgroundCode.teamlist.Clear();
 
                         foreach (var item in JSONteams)
                         {
-                            bgc.teamlist.Add(item.team_number);
+                            BackgroundCode.teamlist.Add(item.team_number);
                         }
                         Log("Teams -> " + string.Join(", ", JSONteams.Select(item => item.team_number)));
 
@@ -444,7 +446,7 @@ namespace ScoutingCodeRedo.Static
                         dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer);
 
                         int MatchCount = 0;
-                        bgc.MatchNumbers.Clear();
+                        BackgroundCode.MatchNumbers.Clear();
 
                         for (int i = 0; i < JSONmatches.Count; i++)
                         {
@@ -453,7 +455,7 @@ namespace ScoutingCodeRedo.Static
                                 Match match_record = new Match();
 
                                 MatchCount++;
-                                bgc.MatchNumbers.Add(MatchCount);
+                                BackgroundCode.MatchNumbers.Add(MatchCount);
                                 bgc.InMemoryMatchList.Add(JSONmatches[i]);
 
                                 dynamic alliances = obj[i].alliances;
