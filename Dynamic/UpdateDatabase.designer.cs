@@ -33,8 +33,13 @@ namespace ScoutingCodeRedo.Dynamic
         {
             this.components = new System.ComponentModel.Container();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.btnFetchValues = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnUpdateDatabase = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkEndMatch = new System.Windows.Forms.CheckBox();
             this.checkEndAuto = new System.Windows.Forms.CheckBox();
@@ -97,27 +102,25 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboStrategy = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnCreateTable = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.comboTeamNumber = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboMatchNumber = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.checkActivities = new System.Windows.Forms.CheckBox();
             this.checkMatchEvent = new System.Windows.Forms.CheckBox();
             this.updatePreviewsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFetchValues = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnUpdateDatabase = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnCreateTable = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboMatchNumber = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboTeamNumber = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel10.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -125,14 +128,11 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updatePreviewsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel10
@@ -145,6 +145,31 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(203, 40);
             this.panel10.TabIndex = 363;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Black;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.btnFetchValues);
+            this.panel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel12.Location = new System.Drawing.Point(-2, -2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(203, 40);
+            this.panel12.TabIndex = 351;
+            // 
+            // btnFetchValues
+            // 
+            this.btnFetchValues.BackColor = System.Drawing.Color.Black;
+            this.btnFetchValues.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFetchValues.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnFetchValues.Location = new System.Drawing.Point(8, 2);
+            this.btnFetchValues.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFetchValues.Name = "btnFetchValues";
+            this.btnFetchValues.Size = new System.Drawing.Size(188, 35);
+            this.btnFetchValues.TabIndex = 11;
+            this.btnFetchValues.Text = "Fetch Values";
+            this.btnFetchValues.UseVisualStyleBackColor = false;
+            this.btnFetchValues.Click += new System.EventHandler(this.btnFetchValues_Click);
             // 
             // panel5
             // 
@@ -168,6 +193,42 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(203, 40);
             this.panel6.TabIndex = 351;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel7.Location = new System.Drawing.Point(-2, -2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(203, 40);
+            this.panel7.TabIndex = 351;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btnUpdateDatabase);
+            this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel8.Location = new System.Drawing.Point(-2, -2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(203, 40);
+            this.panel8.TabIndex = 351;
+            // 
+            // btnUpdateDatabase
+            // 
+            this.btnUpdateDatabase.BackColor = System.Drawing.Color.Black;
+            this.btnUpdateDatabase.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateDatabase.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnUpdateDatabase.Location = new System.Drawing.Point(6, 2);
+            this.btnUpdateDatabase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdateDatabase.Name = "btnUpdateDatabase";
+            this.btnUpdateDatabase.Size = new System.Drawing.Size(188, 35);
+            this.btnUpdateDatabase.TabIndex = 11;
+            this.btnUpdateDatabase.Text = "Update Database";
+            this.btnUpdateDatabase.UseVisualStyleBackColor = false;
+            this.btnUpdateDatabase.Click += new System.EventHandler(this.btnUpdateDatabase_Click);
             // 
             // button2
             // 
@@ -269,7 +330,11 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboStageLoc.BackColor = System.Drawing.Color.Black;
             this.comboStageLoc.ForeColor = System.Drawing.Color.White;
             this.comboStageLoc.FormattingEnabled = true;
-            this.comboStageLoc.Items.AddRange(Enum.GetNames(typeof(RobotState.STAGE_LOC)));
+            this.comboStageLoc.Items.AddRange(new object[] {
+            "Select",
+            "L",
+            "C",
+            "R"});
             this.comboStageLoc.Location = new System.Drawing.Point(20, 182);
             this.comboStageLoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboStageLoc.Name = "comboStageLoc";
@@ -338,7 +403,11 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboStageStat.BackColor = System.Drawing.Color.Black;
             this.comboStageStat.ForeColor = System.Drawing.Color.White;
             this.comboStageStat.FormattingEnabled = true;
-            this.comboStageStat.Items.AddRange(Enum.GetNames(typeof(RobotState.STAGE_STAT)));
+            this.comboStageStat.Items.AddRange(new object[] {
+            "Select",
+            "Onstage",
+            "Park",
+            "Elsewhere"});
             this.comboStageStat.Location = new System.Drawing.Point(18, 48);
             this.comboStageStat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboStageStat.Name = "comboStageStat";
@@ -373,7 +442,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboStageAtt.BackColor = System.Drawing.Color.Black;
             this.comboStageAtt.ForeColor = System.Drawing.Color.White;
             this.comboStageAtt.FormattingEnabled = true;
-            this.comboStageAtt.Items.AddRange(Enumerable.Range(-1, 3).Select(i => i.ToString()).ToArray());
             this.comboStageAtt.Location = new System.Drawing.Point(20, 117);
             this.comboStageAtt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboStageAtt.Name = "comboStageAtt";
@@ -452,7 +520,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboAcqCenter.BackColor = System.Drawing.Color.Black;
             this.comboAcqCenter.ForeColor = System.Drawing.Color.White;
             this.comboAcqCenter.FormattingEnabled = true;
-            this.comboAcqCenter.Items.AddRange(Enumerable.Range(1, 5).Select(i => i.ToString()).ToArray());
             this.comboAcqCenter.Location = new System.Drawing.Point(18, 126);
             this.comboAcqCenter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboAcqCenter.Name = "comboAcqCenter";
@@ -591,7 +658,13 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboDelDest.BackColor = System.Drawing.Color.Black;
             this.comboDelDest.ForeColor = System.Drawing.Color.White;
             this.comboDelDest.FormattingEnabled = true;
-            this.comboDelDest.Items.AddRange(Enum.GetNames(typeof(RobotState.DEL_DEST)));
+            this.comboDelDest.Items.AddRange(new object[] {
+            "Select",
+            "Spkr",
+            "Amp",
+            "Trap",
+            "AllyW",
+            "Neut"});
             this.comboDelDest.Location = new System.Drawing.Point(14, 54);
             this.comboDelDest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboDelDest.Name = "comboDelDest";
@@ -920,7 +993,19 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboMatchEvent.BackColor = System.Drawing.Color.Black;
             this.comboMatchEvent.ForeColor = System.Drawing.Color.White;
             this.comboMatchEvent.FormattingEnabled = true;
-            this.comboMatchEvent.Items.AddRange(Enum.GetNames(typeof(RobotState.MATCHEVENT_NAME)));
+            this.comboMatchEvent.Items.AddRange(new object[] {
+            "Match_Event",
+            "Fumbled",
+            "BrokeDown",
+            "CrossedCenter",
+            "LostParts",
+            "RingToss",
+            "AdditionalNote",
+            "MultiClimb",
+            "NoShow",
+            "StageInt",
+            "TippedOver",
+            "JammedPiece"});
             this.comboMatchEvent.Location = new System.Drawing.Point(16, 215);
             this.comboMatchEvent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboMatchEvent.Name = "comboMatchEvent";
@@ -932,7 +1017,10 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboMode.BackColor = System.Drawing.Color.Black;
             this.comboMode.ForeColor = System.Drawing.Color.White;
             this.comboMode.FormattingEnabled = true;
-            this.comboMode.Items.AddRange(Enum.GetNames(typeof(RobotState.ROBOT_MODE)));
+            this.comboMode.Items.AddRange(new object[] {
+            "Auto",
+            "Teleop",
+            "Showtime"});
             this.comboMode.Location = new System.Drawing.Point(16, 134);
             this.comboMode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboMode.Name = "comboMode";
@@ -944,7 +1032,14 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboStrategy.BackColor = System.Drawing.Color.Black;
             this.comboStrategy.ForeColor = System.Drawing.Color.White;
             this.comboStrategy.FormattingEnabled = true;
-            this.comboStrategy.Items.AddRange(Enum.GetNames(typeof(RobotState.APP_STRAT)));
+            this.comboStrategy.Items.AddRange(new object[] {
+            "Select",
+            "None",
+            "Defense",
+            "Mover",
+            "Shooter",
+            "Hybrid",
+            "Celebrity"});
             this.comboStrategy.Location = new System.Drawing.Point(398, 214);
             this.comboStrategy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboStrategy.Name = "comboStrategy";
@@ -976,6 +1071,31 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel13.Size = new System.Drawing.Size(203, 40);
             this.panel13.TabIndex = 352;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Black;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.btnCreateTable);
+            this.panel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel14.Location = new System.Drawing.Point(-2, -2);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(203, 40);
+            this.panel14.TabIndex = 351;
+            // 
+            // btnCreateTable
+            // 
+            this.btnCreateTable.BackColor = System.Drawing.Color.Black;
+            this.btnCreateTable.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateTable.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnCreateTable.Location = new System.Drawing.Point(6, 2);
+            this.btnCreateTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCreateTable.Name = "btnCreateTable";
+            this.btnCreateTable.Size = new System.Drawing.Size(188, 35);
+            this.btnCreateTable.TabIndex = 11;
+            this.btnCreateTable.Text = "Create Table";
+            this.btnCreateTable.UseVisualStyleBackColor = false;
+            this.btnCreateTable.Click += new System.EventHandler(this.btnCreateTable_Click);
+            // 
             // label37
             // 
             this.label37.AutoSize = true;
@@ -989,6 +1109,68 @@ namespace ScoutingCodeRedo.Dynamic
             this.label37.TabIndex = 277;
             this.label37.Text = "00";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.comboTeamNumber);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.comboMatchNumber);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(122, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(335, 94);
+            this.panel2.TabIndex = 344;
+            // 
+            // comboTeamNumber
+            // 
+            this.comboTeamNumber.BackColor = System.Drawing.Color.Black;
+            this.comboTeamNumber.ForeColor = System.Drawing.Color.White;
+            this.comboTeamNumber.FormattingEnabled = true;
+            this.comboTeamNumber.Location = new System.Drawing.Point(8, 38);
+            this.comboTeamNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboTeamNumber.Name = "comboTeamNumber";
+            this.comboTeamNumber.Size = new System.Drawing.Size(138, 34);
+            this.comboTeamNumber.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(9, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Team Number";
+            // 
+            // comboMatchNumber
+            // 
+            this.comboMatchNumber.BackColor = System.Drawing.Color.Black;
+            this.comboMatchNumber.ForeColor = System.Drawing.Color.White;
+            this.comboMatchNumber.FormattingEnabled = true;
+            this.comboMatchNumber.Location = new System.Drawing.Point(174, 37);
+            this.comboMatchNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboMatchNumber.Name = "comboMatchNumber";
+            this.comboMatchNumber.Size = new System.Drawing.Size(138, 34);
+            this.comboMatchNumber.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(174, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 25);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Match Number";
             // 
             // checkActivities
             // 
@@ -1046,152 +1228,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel1.Size = new System.Drawing.Size(1291, 296);
             this.panel1.TabIndex = 358;
             // 
-            // btnFetchValues
-            // 
-            this.btnFetchValues.BackColor = System.Drawing.Color.Black;
-            this.btnFetchValues.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFetchValues.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnFetchValues.Location = new System.Drawing.Point(8, 2);
-            this.btnFetchValues.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnFetchValues.Name = "btnFetchValues";
-            this.btnFetchValues.Size = new System.Drawing.Size(188, 35);
-            this.btnFetchValues.TabIndex = 11;
-            this.btnFetchValues.Text = "Fetch Values";
-            this.btnFetchValues.UseVisualStyleBackColor = false;
-            this.btnFetchValues.Click += new System.EventHandler(this.btnFetchValues_Click);
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Black;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.btnFetchValues);
-            this.panel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel12.Location = new System.Drawing.Point(-2, -2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(203, 40);
-            this.panel12.TabIndex = 351;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.btnUpdateDatabase);
-            this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel8.Location = new System.Drawing.Point(-2, -2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(203, 40);
-            this.panel8.TabIndex = 351;
-            // 
-            // btnUpdateDatabase
-            // 
-            this.btnUpdateDatabase.BackColor = System.Drawing.Color.Black;
-            this.btnUpdateDatabase.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateDatabase.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnUpdateDatabase.Location = new System.Drawing.Point(6, 2);
-            this.btnUpdateDatabase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnUpdateDatabase.Name = "btnUpdateDatabase";
-            this.btnUpdateDatabase.Size = new System.Drawing.Size(188, 35);
-            this.btnUpdateDatabase.TabIndex = 11;
-            this.btnUpdateDatabase.Text = "Update Database";
-            this.btnUpdateDatabase.UseVisualStyleBackColor = false;
-            this.btnUpdateDatabase.Click += new System.EventHandler(this.btnUpdateDatabase_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(-2, -2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(203, 40);
-            this.panel7.TabIndex = 351;
-            // 
-            // btnCreateTable
-            // 
-            this.btnCreateTable.BackColor = System.Drawing.Color.Black;
-            this.btnCreateTable.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateTable.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnCreateTable.Location = new System.Drawing.Point(6, 2);
-            this.btnCreateTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCreateTable.Name = "btnCreateTable";
-            this.btnCreateTable.Size = new System.Drawing.Size(188, 35);
-            this.btnCreateTable.TabIndex = 11;
-            this.btnCreateTable.Text = "Create Table";
-            this.btnCreateTable.UseVisualStyleBackColor = false;
-            this.btnCreateTable.Click += new System.EventHandler(this.btnCreateTable_Click);
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Black;
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.btnCreateTable);
-            this.panel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel14.Location = new System.Drawing.Point(-2, -2);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(203, 40);
-            this.panel14.TabIndex = 351;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Black;
-            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(174, 6);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 25);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Match Number";
-            // 
-            // comboMatchNumber
-            // 
-            this.comboMatchNumber.BackColor = System.Drawing.Color.Black;
-            this.comboMatchNumber.FormattingEnabled = true;
-            this.comboMatchNumber.Location = new System.Drawing.Point(174, 37);
-            this.comboMatchNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboMatchNumber.Name = "comboMatchNumber";
-            this.comboMatchNumber.Size = new System.Drawing.Size(138, 34);
-            this.comboMatchNumber.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Team Number";
-            // 
-            // comboTeamNumber
-            // 
-            this.comboTeamNumber.BackColor = System.Drawing.Color.Black;
-            this.comboTeamNumber.FormattingEnabled = true;
-            this.comboTeamNumber.Location = new System.Drawing.Point(8, 38);
-            this.comboTeamNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboTeamNumber.Name = "comboTeamNumber";
-            this.comboTeamNumber.Size = new System.Drawing.Size(138, 34);
-            this.comboTeamNumber.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboTeamNumber);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.comboMatchNumber);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(122, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(335, 94);
-            this.panel2.TabIndex = 344;
-            // 
             // UpdateDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1210,8 +1246,11 @@ namespace ScoutingCodeRedo.Dynamic
             this.Text = "UpdateDatabase";
             this.Load += new System.EventHandler(this.UpdateDatabase_Load);
             this.panel10.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1225,15 +1264,12 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.updatePreviewsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updatePreviewsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

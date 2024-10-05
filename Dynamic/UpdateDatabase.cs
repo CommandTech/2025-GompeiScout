@@ -10,6 +10,8 @@ namespace ScoutingCodeRedo.Dynamic
         public UpdateDatabase(List<string> teamlist, List<int> MatchNumbers)
         {
             InitializeComponent();
+            this.comboStageAtt.Items.AddRange(Enumerable.Range(-1, 3).Select(i => i.ToString()).ToArray());
+            this.comboAcqCenter.Items.AddRange(Enumerable.Range(1, 5).Select(i => i.ToString()).ToArray());
             this.comboTeamNumber.DataSource = teamlist;
             this.comboMatchNumber.DataSource = MatchNumbers;
         }
