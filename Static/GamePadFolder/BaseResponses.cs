@@ -75,34 +75,37 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         public void readStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
-            gamepad.Update();
+            if (gamepad != null)
+            {
+                gamepad.Update();
 
-            //Match events
-            if (gamepad.RTHRight_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
-            {
-                BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Up);
-            }
-            else if (gamepad.RTHLeft_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
-            {
-                BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
-            }
-            else if (gamepad.R3_Press && BackgroundCode.Robots[controllerNumber].match_event != RobotState.MATCHEVENT_NAME.Match_Event)
-            {
-                DynamicResponses.transactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
-                BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
-            }
+                //Match events
+                if (gamepad.RTHRight_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
+                {
+                    BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Up);
+                }
+                else if (gamepad.RTHLeft_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
+                {
+                    BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
+                }
+                else if (gamepad.R3_Press && BackgroundCode.Robots[controllerNumber].match_event != RobotState.MATCHEVENT_NAME.Match_Event)
+                {
+                    DynamicResponses.transactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
+                    BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+                }
 
-            //Scouter names
-            if (gamepad.LTHRight_Press)
-            {
-                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
-            }
-            if (gamepad.LTHLeft_Press)
-            {
-                BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
-            }
+                //Scouter names
+                if (gamepad.LTHRight_Press && !gamepad.XButton_Down)
+                {
+                    BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
+                }
+                if (gamepad.LTHLeft_Press && !gamepad.XButton_Down)
+                {
+                    BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
+                }
 
-            dynamicGamepad.readStick(gpArray, controllerNumber);
+                dynamicGamepad.readStick(gpArray, controllerNumber);
+            }
         }
     }
 }

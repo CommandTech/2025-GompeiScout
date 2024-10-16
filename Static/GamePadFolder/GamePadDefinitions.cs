@@ -72,49 +72,57 @@ namespace ScoutingCodeRedo.Static
             //save old values before overwritten.
             RecordOldValues();
 
-            //reads all digital buttons 
-            _a = _js.GetCurrentState().Buttons[0];
-            _b = _js.GetCurrentState().Buttons[1];
-            _x = _js.GetCurrentState().Buttons[2];
-            _y = _js.GetCurrentState().Buttons[3];
-            _lb = _js.GetCurrentState().Buttons[4];
-            _rb = _js.GetCurrentState().Buttons[5];
-            _startButton = _js.GetCurrentState().Buttons[7];
-            _backButton = _js.GetCurrentState().Buttons[6];
+            try
+            {
+                //reads all digital buttons
+                _a = _js.GetCurrentState().Buttons[0];
+                _b = _js.GetCurrentState().Buttons[1];
+                _x = _js.GetCurrentState().Buttons[2];
+                _y = _js.GetCurrentState().Buttons[3];
+                _lb = _js.GetCurrentState().Buttons[4];
+                _rb = _js.GetCurrentState().Buttons[5];
+                _startButton = _js.GetCurrentState().Buttons[7];
+                _backButton = _js.GetCurrentState().Buttons[6];
 
-            _l3 = _js.GetCurrentState().Buttons[8];
-            _r3 = _js.GetCurrentState().Buttons[9];
+                _l3 = _js.GetCurrentState().Buttons[8];
+                _r3 = _js.GetCurrentState().Buttons[9];
 
-            //reads which dpad directions are pressed
-            int pov = _js.GetCurrentState().PointOfViewControllers[0];
-            _dpadup = ((pov > 27000 || pov < 9000) && pov != -1);
-            _dpaddown = (9000 < pov && pov < 27000);
-            _dpadright = (0 < pov && pov < 18000);
-            _dpadleft = (18000 < pov);
+                //reads which dpad directions are pressed
+                int pov = _js.GetCurrentState().PointOfViewControllers[0];
+                _dpadup = ((pov > 27000 || pov < 9000) && pov != -1);
+                _dpaddown = (9000 < pov && pov < 27000);
+                _dpadright = (0 < pov && pov < 18000);
+                _dpadleft = (18000 < pov);
 
-            //reads the direction of the left hand anolog stick
-            int X = _js.GetCurrentState().X;
-            int Y = _js.GetCurrentState().Y;
-            _lTHUp = (-100 < X) && (X < 100) && (Y < -90);
-            _lTHDown = (-100 < X) && (X < 100) && (Y > 90);
-            _lTHRight = (-100 < Y) && (Y < 100) && (X < 90);
-            _lTHLeft = (-100 < Y) && (Y < 100) && (X > -90);
+                //reads the direction of the left hand anolog stick
+                int X = _js.GetCurrentState().X;
+                int Y = _js.GetCurrentState().Y;
+                _lTHUp = (-100 < X) && (X < 100) && (Y < -90);
+                _lTHDown = (-100 < X) && (X < 100) && (Y > 90);
+                _lTHRight = (-100 < Y) && (Y < 100) && (X < 90);
+                _lTHLeft = (-100 < Y) && (Y < 100) && (X > -90);
 
-            //reads direction of left hand analog stick
-            int RotationX = _js.GetCurrentState().RotationX;
-            int RotationY = _js.GetCurrentState().RotationY;
-            _rTHUp = (-100 < RotationX) && (RotationX < 100) && (RotationY < -90);
-            _rTHDown = (-100 < RotationX) && (RotationX < 190) && (RotationY > 90);
-            _rTHLeft = (-100 < RotationY) && (RotationY < 100) && (RotationX < -90);
-            _rTHRight = (-100 < RotationY) && (RotationY < 100) && (RotationX > 90);
+                //reads direction of left hand analog stick
+                int RotationX = _js.GetCurrentState().RotationX;
+                int RotationY = _js.GetCurrentState().RotationY;
+                _rTHUp = (-100 < RotationX) && (RotationX < 100) && (RotationY < -90);
+                _rTHDown = (-100 < RotationX) && (RotationX < 190) && (RotationY > 90);
+                _rTHLeft = (-100 < RotationY) && (RotationY < 100) && (RotationX < -90);
+                _rTHRight = (-100 < RotationY) && (RotationY < 100) && (RotationX > 90);
 
-            //reads which trigger is pressed
-            int Z = _js.GetCurrentState().Z;
-            _rt = (Z < -99);
-            _lt = (Z > 98);
+                //reads which trigger is pressed
+                int Z = _js.GetCurrentState().Z;
+                _rt = (Z < -99);
+                _lt = (Z > 98);
 
-            //read device info
-            _deviceInfo = _js.Information.InstanceName;
+                //read device info
+                _deviceInfo = _js.Information.InstanceName;
+            }
+            catch (Exception e)
+            {
+
+            }
+            
         }
 
         public JoystickState GetCurrentState()

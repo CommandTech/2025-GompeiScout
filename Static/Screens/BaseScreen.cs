@@ -91,6 +91,10 @@ namespace ScoutingCodeRedo.Static
                 }
                 else
                 {
+                    if (wasPractice)
+                    {
+                        UpdateJoysticks();
+                    }
                     wasPractice = false;
                     BackgroundCode.soundCue.Dispose();
                 }
@@ -204,7 +208,14 @@ namespace ScoutingCodeRedo.Static
                 }
 
                 BackgroundCode.seasonframework.Database.Connection.Close();
-                BuildInitialDatabase(true);
+                if (comboBoxSelectRegional.SelectedItem.ToString() == "manualEvent")
+                {
+                    BuildInitialDatabase(true);
+                }
+                else
+                {
+                    BuildInitialDatabase(false);
+                }
 
                 btnpopulateForEvent_Click(null, null);
             }

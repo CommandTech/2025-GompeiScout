@@ -217,6 +217,8 @@ namespace ScoutingCodeRedo.Dynamic
                         query = "UPDATE Activities SET Strategy = '" + comboStrategy.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
                     }
+
+                    MessageBox.Show("Database Updated");
                 }
                 else
                 {
