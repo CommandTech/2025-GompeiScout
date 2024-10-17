@@ -293,7 +293,6 @@ namespace ScoutingCodeRedo.Static
         private void nextMatch()
         {
             Settings.Default.currentMatch++;
-            this.lblMatch.Text = $"{Settings.Default.currentMatch.ToString()}/{bgc.UnSortedMatchList.Count}";
             loadMatch();
         }
 
@@ -312,6 +311,7 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
+            this.lblMatch.Text = $"{Settings.Default.currentMatch}/{bgc.UnSortedMatchList.Count}";
             List<string> teamPrioList = null;
             if (Settings.Default.teamPrio != null)
             {

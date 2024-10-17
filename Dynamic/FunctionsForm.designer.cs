@@ -80,10 +80,11 @@ namespace ScoutingCodeRedo.Dynamic
             this.cbxPractice.Location = new System.Drawing.Point(261, 99);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
-            this.cbxPractice.Size = new System.Drawing.Size(136, 24);
+            this.cbxPractice.Size = new System.Drawing.Size(116, 20);
             this.cbxPractice.TabIndex = 356;
             this.cbxPractice.Text = "Practice Mode";
             this.cbxPractice.UseVisualStyleBackColor = false;
+            this.cbxPractice.CheckedChanged += new System.EventHandler(this.cbxPractice_CheckedChanged);
             // 
             // btnRefresh
             // 

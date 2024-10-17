@@ -16,7 +16,6 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void FuncOK_Click(object sender, EventArgs e)
         {
-            Settings.Default.practiceMode = cbxPractice.Checked;
             this.Hide();
         }
 
@@ -52,6 +51,11 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
             }
+        }
+
+        private void cbxPractice_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.practiceMode = cbxPractice.Checked;
         }
     }
 }
