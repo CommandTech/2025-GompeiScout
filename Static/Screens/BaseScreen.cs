@@ -340,7 +340,10 @@ namespace ScoutingCodeRedo.Static
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
-            Settings.Default.currentMatch = 0;
+            if (sender != null)
+            {
+                Settings.Default.currentMatch = 0;
+            }
             bgc.UnSortedMatchList.Clear();
             bgc.InMemoryMatchList.Clear();
             if (Settings.Default.manualMatchList != null)
