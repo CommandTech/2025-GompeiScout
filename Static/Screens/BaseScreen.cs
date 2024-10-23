@@ -495,6 +495,7 @@ namespace ScoutingCodeRedo.Static
 
                                 //Console.Write(match_record);
                                 bgc.UnSortedMatchList.Add(match_record);
+                                BackgroundCode.seasonframework.Matchset.Add(match_record);
                             }
                         }
                         Log($"{bgc.UnSortedMatchList.Count} matches");

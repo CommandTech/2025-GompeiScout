@@ -20,7 +20,6 @@ namespace ScoutingCodeRedo.Static
         private async void BuildInitialDatabase(bool isManual)
         {
             BackgroundCode.seasonframework.Database.CreateIfNotExists();
-            DatabaseExists(BackgroundCode.seasonframework.Database.Exists());
             BackgroundCode.seasonframework.Database.Connection.Open();
 
             Log("Cleaning databases...");
@@ -76,10 +75,6 @@ namespace ScoutingCodeRedo.Static
                     }
                 }
             }
-        }
-        public void DatabaseExists(bool DatabaseExists)
-        {
-            Settings.Default.DBExists = DatabaseExists;
         }
 
         public void loadManualMatches()
