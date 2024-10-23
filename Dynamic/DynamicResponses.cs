@@ -750,8 +750,7 @@ namespace ScoutingCodeRedo.Dynamic
                 robot.ScouterError = robot.ScouterError + 100000;
             }
 
-
-            // 2023 Changing modes
+            // 2024 Changing modes
             if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.AUTO && !robot.NoSho)
             {
                 robot.Desired_Mode = RobotState.ROBOT_MODE.Showtime;
@@ -1749,6 +1748,7 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
                 BackgroundCode.Robots[i].Leave = 0;
+                BackgroundCode.Robots[i].AUTO = true;
                 BackgroundCode.Robots[i].HP_Amp = RobotState.HP_AMP.Select;
                 BackgroundCode.Robots[i].Robot_Set = RobotState.ROBOT_SET.Select;
                 BackgroundCode.Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
