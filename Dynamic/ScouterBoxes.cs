@@ -1,6 +1,7 @@
 ﻿using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             for (int i = 0; i < BackgroundCode.Robots.Length; i++)
             {
-                switch (BackgroundCode.Robots[i].Current_Mode)
+                switch (BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode)
                 {
 
                     case RobotState.ROBOT_MODE.Auto:
@@ -287,6 +288,7 @@ namespace ScoutingCodeRedo.Dynamic
 
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position2", true)[0]).Text = "Climb:";
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position2", true)[0]).Visible = (Controller_Number == 0) || !Settings.Default.practiceMode;
+
             BackgroundCode.Robots[Controller_Number].ClimbTDouble = BackgroundCode.Robots[Controller_Number].ClimbT_StopWatch.Elapsed.TotalSeconds;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position2Value", true)[0]).Text = BackgroundCode.Robots[Controller_Number].ClimbTDouble.ToString("0.#");
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position2Value", true)[0]).Visible = (Controller_Number == 0) || !Settings.Default.practiceMode;

@@ -14,7 +14,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             GamePad gamepad = gpArray[controllerNumber];
 
-            var robot = BackgroundCode.Robots[BackgroundCode.Robots[controllerNumber].ScouterBox];
+            var robot = BackgroundCode.Robots[controllerNumber];
 
             if (robot.OpptT_StopWatch == null) robot.OpptT_StopWatch = new Stopwatch();
             if (robot.NeutT_StopWatch == null) robot.NeutT_StopWatch = new Stopwatch();
