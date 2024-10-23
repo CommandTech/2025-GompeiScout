@@ -311,6 +311,7 @@ namespace ScoutingCodeRedo.Static
 
         private void loadMatch()
         {
+            DynamicResponses.resetValues();
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{bgc.UnSortedMatchList.Count}";
             List<string> teamPrioList = null;
             if (Settings.Default.teamPrio != null)
@@ -336,6 +337,11 @@ namespace ScoutingCodeRedo.Static
             {
                 label.ForeColor = Color.Orange;
             }
+        }
+
+        private void resetValues()
+        {
+
         }
 
         private async void btnpopulateForEvent_Click(object sender, EventArgs e)
