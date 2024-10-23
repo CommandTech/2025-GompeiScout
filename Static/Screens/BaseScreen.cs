@@ -1,16 +1,12 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
-using ScoutingCodeRedo.Static.GamePadFolder;
-using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
-using static ScoutingCodeRedo.Dynamic.RobotState;
 
 namespace ScoutingCodeRedo.Static
 {

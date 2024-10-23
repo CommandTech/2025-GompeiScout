@@ -3,8 +3,6 @@ using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Globalization;
 using System.IO;
 using System.Net.Http;
 using System.Windows.Forms;

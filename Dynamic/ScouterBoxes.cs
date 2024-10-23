@@ -1,12 +1,6 @@
 ﻿using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
 using System;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Dynamic
@@ -23,25 +17,24 @@ namespace ScoutingCodeRedo.Dynamic
         {
             for (int i = 0; i < BackgroundCode.Robots.Length; i++)
             {
+                int o = BackgroundCode.Robots[i].ScouterBox;
                 switch (BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode)
                 {
-
                     case RobotState.ROBOT_MODE.Auto:
-                        InAutoMode(i);
+                        InAutoMode(i,o);
                         break;
                     case RobotState.ROBOT_MODE.Teleop:
-                        InTeleopMode(i);
+                        InTeleopMode(i,o);
                         break;
                     case RobotState.ROBOT_MODE.Showtime:
-                        InShowtimeMode(i);
+                        InShowtimeMode(i,o);
                         break;
                 }
             }
         }
 
-        private void InAutoMode(int Controller_Number)
+        private void InAutoMode(int Controller_Number, int o)
         {
-            int o = BackgroundCode.Robots[Controller_Number].ScouterBox;
             // Acquire
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0", true)[0]).Text = "Acq:";
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0", true)[0]).Visible = (Controller_Number == 0) || !Settings.Default.practiceMode;
@@ -183,9 +176,8 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position10", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position10Value", true)[0]).Visible = false;
         }
-        private void InTeleopMode(int Controller_Number)
+        private void InTeleopMode(int Controller_Number, int o)
         {
-            int o = BackgroundCode.Robots[Controller_Number].ScouterBox;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0", true)[0]).Text = "Acq:";
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0", true)[0]).Visible = (Controller_Number == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0Value", true)[0]).Text = BackgroundCode.Robots[o].Acq_Loc.ToString();
@@ -262,9 +254,8 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position10", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position10Value", true)[0]).Visible = false;
         }
-        private void InShowtimeMode(int Controller_Number)
+        private void InShowtimeMode(int Controller_Number, int o)
         {
-            int o = BackgroundCode.Robots[Controller_Number].ScouterBox;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0", true)[0]).Text = "Del:";
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0", true)[0]).Visible = (Controller_Number == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{Controller_Number}Position0Value", true)[0]).Text = BackgroundCode.Robots[o].Del_Dest.ToString();

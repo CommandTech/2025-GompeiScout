@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Media;
 using System.Windows.Forms;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
-using SharpDX.XInput;
 
 namespace ScoutingCodeRedo.Dynamic
 {
