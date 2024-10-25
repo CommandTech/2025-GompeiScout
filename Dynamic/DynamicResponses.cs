@@ -40,7 +40,8 @@ namespace ScoutingCodeRedo.Dynamic
 
                     robot.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
 
-                    //Reset Match Event
+                    //
+                    //Match Event
                     robot.match_event = 0;
                 }
                 else if (robot.match_event == RobotState.MATCHEVENT_NAME.Match_Event)
@@ -1748,8 +1749,8 @@ namespace ScoutingCodeRedo.Dynamic
                 BackgroundCode.Robots[i].Leave = 0;
                 BackgroundCode.Robots[i].AUTO = true;
                 BackgroundCode.Robots[i].HP_Amp = RobotState.HP_AMP.Select;
-                BackgroundCode.Robots[i].Robot_Set = RobotState.ROBOT_SET.Select;
-                BackgroundCode.Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
+                BackgroundCode.Robots[i].Robot_Set = RobotState.ROBOT_SET.SubW;
+                BackgroundCode.Robots[i].Current_Loc = RobotState.CURRENT_LOC.SubW;
 
                 BackgroundCode.Robots[i].Acq_Center = 0;
                 BackgroundCode.Robots[i].Acq_Center_Temp = 0;
