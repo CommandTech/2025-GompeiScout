@@ -228,9 +228,7 @@ namespace ScoutingCodeRedo.Static
             {
                 BackgroundCode.seasonframework.Database.Connection.Close();
                 BuildInitialDatabase(false);
-                //  Logic for setting left/right and near/far based on side of field scouters are sitting on
-                DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
-                Settings.Default.redRight = (red == DialogResult.Yes);
+                setRedRight();
 
                 Log("SQL start time is " + DateTime.Now.TimeOfDay);
             }
@@ -239,6 +237,7 @@ namespace ScoutingCodeRedo.Static
                 DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Please Confirm", MessageBoxButtons.YesNo);
                 if (manualMatches == DialogResult.Yes)
                 {
+                    setRedRight();
                     Log("Loading manual matches.");
                     loadManualMatches();
                     comboBoxSelectRegional.Items.Clear();
@@ -246,6 +245,12 @@ namespace ScoutingCodeRedo.Static
                     comboBoxSelectRegional.SelectedItem = "manualEvent";
                 }
             }
+        }
+        private void setRedRight()
+        {
+            //  Logic for setting left/right and near/far based on side of field scouters are sitting on
+            DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
+            Settings.Default.redRight = (red == DialogResult.Yes);
         }
 
         private void btnNextMatch_Click(object sender, EventArgs e)
