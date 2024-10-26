@@ -94,11 +94,11 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                 }
 
                 //Scouter names
-                if (gamepad.LTHRight_Press && !gamepad.XButton_Down)
+                if (gamepad.LTHRight_Press && !gamepad.XButton_Down && !gamepad.AButton_Down && !gamepad.YButton_Down && !gamepad.BButton_Down)
                 {
                     BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
                 }
-                if (gamepad.LTHLeft_Press && !gamepad.XButton_Down)
+                if (gamepad.LTHLeft_Press && !gamepad.XButton_Down && !gamepad.AButton_Down && !gamepad.YButton_Down && !gamepad.BButton_Down)
                 {
                     BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
                 }
