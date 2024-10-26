@@ -1755,7 +1755,7 @@ namespace ScoutingCodeRedo.Dynamic
                 BackgroundCode.Robots[i].Acq_Center = 0;
                 BackgroundCode.Robots[i].Acq_Center_Temp = 0;
                 BackgroundCode.Robots[i].Acq_Loc = "Select";
-                BackgroundCode.Robots[i].Acq_Loc_Temp = "Select";
+                BackgroundCode.Robots[i].Acq_Loc_Temp = "Pre";
 
                 BackgroundCode.Robots[i].NoSho = false;
 

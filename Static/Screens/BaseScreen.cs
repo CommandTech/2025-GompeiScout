@@ -261,12 +261,12 @@ namespace ScoutingCodeRedo.Static
                 }
                 else
                 {
-                    nextMatch();
-
                     for (int i = 0; i < 6; i++)
                     {
                         DynamicResponses.transactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
                     }
+
+                    nextMatch();
                 }
             }
             else
