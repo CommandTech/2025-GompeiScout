@@ -8,10 +8,6 @@ namespace ScoutingCodeRedo.Static
 {
     public partial class SwapScouters : Form
     {
-        // RIVERRAGE: MAke sure when scouters are swapped, the alliance color is correct with what box they are in
-        // i.e. Someone on red switches to blue, should be blue relative instead of staying red relative
-        // Changes might not be in SwapScouters but somewhere else
-
         public List<ComboBox> scoutDrops = new List<ComboBox>();
         public bool wasReset = false;
         public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new Dictionary<RobotState.SCOUTER_NAME, int>();
@@ -49,7 +45,6 @@ namespace ScoutingCodeRedo.Static
                     if (scoutDrops[i].SelectedIndex != -1)
                     {
                         Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
-                        var keyList = scouterDict.Keys.ToList();
 
                         BackgroundCode.Robots[i].ScouterBox = scouterDict[name];
                         scouterDict[name] = i;
@@ -67,6 +62,12 @@ namespace ScoutingCodeRedo.Static
                     catch { }
                 }
             }
+
+            for (int i = 0; i < 6; i++)
+            {
+                Console.Write(BackgroundCode.Robots[i].ScouterBox + " ");
+            }
+            Console.WriteLine();
 
             this.Hide();
         }

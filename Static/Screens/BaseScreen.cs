@@ -320,12 +320,12 @@ namespace ScoutingCodeRedo.Static
                 teamPrioList = Settings.Default.teamPrio.Cast<string>().ToList();
             }
 
-            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[BackgroundCode.Robots[0].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, teamPrioList);
-            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[BackgroundCode.Robots[1].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, teamPrioList);
-            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[BackgroundCode.Robots[2].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, teamPrioList);
-            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[BackgroundCode.Robots[3].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, teamPrioList);
-            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[BackgroundCode.Robots[4].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, teamPrioList);
-            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[BackgroundCode.Robots[5].ScouterBox], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, teamPrioList);
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {

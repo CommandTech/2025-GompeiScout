@@ -34,11 +34,11 @@ namespace ScoutingCodeRedo.Static
         {
             seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
 
-            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
+            Settings.Default.DBExists = seasonframework.Database.Exists();
 
             for (int i = 0; i < 6; i++)
             {
-                BackgroundCode.Robots[i] = new RobotState
+                Robots[i] = new RobotState
                 {
                     ScouterBox = i,
                     _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
