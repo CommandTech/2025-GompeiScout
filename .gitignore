@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /Static/BackgroundCode.cs
 /config.ini
+/Dynamic/ManualMatchList.csv
