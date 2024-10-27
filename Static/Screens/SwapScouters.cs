@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using ScoutingCodeRedo.Dynamic;
 using System;
-using System.Drawing;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -56,7 +55,7 @@ namespace ScoutingCodeRedo.Static
                         scouterDict[name] = i;
                     }
 
-                    //BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
+                    BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
                 }
 
                 foreach (var robot in BackgroundCode.Robots)
