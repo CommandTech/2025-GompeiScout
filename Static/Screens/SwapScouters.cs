@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using ScoutingCodeRedo.Dynamic;
 using System;
+using System.Drawing;
 
 namespace ScoutingCodeRedo.Static
 {
     public partial class SwapScouters : Form
     {
+        // RIVERRAGE: MAke sure when scouters are swapped, the alliance color is correct with what box they are in
+        // i.e. Someone on red switches to blue, should be blue relative instead of staying red relative
+        // Changes might not be in SwapScouters but somewhere else
+
         public List<ComboBox> scoutDrops = new List<ComboBox>();
         public bool wasReset = false;
         public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new Dictionary<RobotState.SCOUTER_NAME, int>();
@@ -50,6 +55,8 @@ namespace ScoutingCodeRedo.Static
                         BackgroundCode.Robots[i].ScouterBox = scouterDict[name];
                         scouterDict[name] = i;
                     }
+
+                    //BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
                 }
 
                 foreach (var robot in BackgroundCode.Robots)
