@@ -106,12 +106,12 @@ namespace ScoutingCodeRedo.Static
         {
             for (int i = 0; i < 6; i++)
             {
-                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Text = BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox]._ScouterName.ToString();
-                ((Label)this.Controls.Find($"lbl{i}ScoutName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
-                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Text = BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].match_event.ToString();
-                ((Label)this.Controls.Find($"lbl{i}MatchEvent", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
-                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Text = BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode.ToString() + " Mode";
-                ((Label)this.Controls.Find($"lbl{i}ModeValue", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].match_event.ToString();
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
 
                 ((Label)this.Controls.Find($"lbl{i}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
             }

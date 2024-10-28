@@ -46,20 +46,18 @@ namespace ScoutingCodeRedo.Static
                     {
                         Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
 
-                        BackgroundCode.Robots[i].ScouterBox = scouterDict[name];
-                        scouterDict[name] = i;
+                        for (int j = 0; j < 6; j++)
+                        {
+                            BackgroundCode.Robots[j].ScouterBox = 0;
+                            if (BackgroundCode.Robots[j].getScouterName(RobotState.SCOUTER_NAME.Select_Name) == name)
+                            {
+                                BackgroundCode.Robots[j].ScouterBox = i;
+                                //BackgroundCode.Robots[i].ScouterBox = j;
+                            }
+                        }
                     }
 
-                    BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
-                }
-
-                foreach (var robot in BackgroundCode.Robots)
-                {
-                    try
-                    {
-                        robot.ScouterBox = scouterDict[robot.getScouterName(RobotState.SCOUTER_NAME.Select_Name)];
-                    }
-                    catch { }
+                    //BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
                 }
             }
 
