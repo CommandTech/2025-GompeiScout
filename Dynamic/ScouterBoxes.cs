@@ -218,7 +218,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
             else
             {
-                ((Label)this.Controls.Find($"lbl{Controller_Number}Position2Value", true)[0]).Visible = false;
+                ((Label)this.Controls.Find($"lbl{o}Position2Value", true)[0]).Visible = false;
             }
             ((Label)this.Controls.Find($"lbl{o}Position2Flag", true)[0]).Text = "M";
             if (BackgroundCode.Robots[Controller_Number].Flag == 1 && BackgroundCode.Robots[Controller_Number].Del_Dest != RobotState.DEL_DEST.Select)
@@ -227,7 +227,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
             else if (BackgroundCode.Robots[Controller_Number].Flag == 0)
             {
-                ((Label)this.Controls.Find($"lbl{Controller_Number}Position2Flag", true)[0]).Visible = false;
+                ((Label)this.Controls.Find($"lbl{o}Position2Flag", true)[0]).Visible = false;
             }
 
             ((Label)this.Controls.Find($"lbl{o}Position3", true)[0]).Visible = false;
