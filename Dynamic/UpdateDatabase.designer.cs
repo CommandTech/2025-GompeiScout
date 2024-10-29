@@ -114,6 +114,39 @@ namespace ScoutingCodeRedo.Dynamic
             this.checkMatchEvent = new System.Windows.Forms.CheckBox();
             this.updatePreviewsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recordTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acqLocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acqCenterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acqDisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acqDrpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delOrigDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delDestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delMissDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driveStaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.robotStaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPAmpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stageStatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stageAttDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stageLocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harmonyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spotlitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.climbTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oZTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nZTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aZTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.defenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avoidanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strategyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.micsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scouterNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scouterErrorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matcheventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -1208,14 +1241,313 @@ namespace ScoutingCodeRedo.Dynamic
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.teamDataGridViewTextBoxColumn,
+            this.matchDataGridViewTextBoxColumn,
+            this.timeDataGridViewTextBoxColumn,
+            this.recordTypeDataGridViewTextBoxColumn,
+            this.modeDataGridViewTextBoxColumn,
+            this.leaveDataGridViewTextBoxColumn,
+            this.acqLocDataGridViewTextBoxColumn,
+            this.acqCenterDataGridViewTextBoxColumn,
+            this.acqDisDataGridViewTextBoxColumn,
+            this.acqDrpDataGridViewTextBoxColumn,
+            this.delOrigDataGridViewTextBoxColumn,
+            this.delDestDataGridViewTextBoxColumn,
+            this.delMissDataGridViewTextBoxColumn,
+            this.driveStaDataGridViewTextBoxColumn,
+            this.robotStaDataGridViewTextBoxColumn,
+            this.hPAmpDataGridViewTextBoxColumn,
+            this.stageStatDataGridViewTextBoxColumn,
+            this.stageAttDataGridViewTextBoxColumn,
+            this.stageLocDataGridViewTextBoxColumn,
+            this.harmonyDataGridViewTextBoxColumn,
+            this.spotlitDataGridViewTextBoxColumn,
+            this.climbTDataGridViewTextBoxColumn,
+            this.oZTimeDataGridViewTextBoxColumn,
+            this.nZTimeDataGridViewTextBoxColumn,
+            this.aZTimeDataGridViewTextBoxColumn,
+            this.defenseDataGridViewTextBoxColumn,
+            this.avoidanceDataGridViewTextBoxColumn,
+            this.strategyDataGridViewTextBoxColumn,
+            this.micsDataGridViewTextBoxColumn,
+            this.scouterNameDataGridViewTextBoxColumn,
+            this.scouterErrorDataGridViewTextBoxColumn,
+            this.matcheventDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.updatePreviewsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 7);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1263, 169);
+            this.dataGridView1.Size = new System.Drawing.Size(837, 169);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teamDataGridViewTextBoxColumn
+            // 
+            this.teamDataGridViewTextBoxColumn.DataPropertyName = "Team";
+            this.teamDataGridViewTextBoxColumn.HeaderText = "Team";
+            this.teamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
+            this.teamDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matchDataGridViewTextBoxColumn
+            // 
+            this.matchDataGridViewTextBoxColumn.DataPropertyName = "Match";
+            this.matchDataGridViewTextBoxColumn.HeaderText = "Match";
+            this.matchDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.matchDataGridViewTextBoxColumn.Name = "matchDataGridViewTextBoxColumn";
+            this.matchDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // timeDataGridViewTextBoxColumn
+            // 
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // recordTypeDataGridViewTextBoxColumn
+            // 
+            this.recordTypeDataGridViewTextBoxColumn.DataPropertyName = "RecordType";
+            this.recordTypeDataGridViewTextBoxColumn.HeaderText = "RecordType";
+            this.recordTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.recordTypeDataGridViewTextBoxColumn.Name = "recordTypeDataGridViewTextBoxColumn";
+            this.recordTypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modeDataGridViewTextBoxColumn
+            // 
+            this.modeDataGridViewTextBoxColumn.DataPropertyName = "Mode";
+            this.modeDataGridViewTextBoxColumn.HeaderText = "Mode";
+            this.modeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modeDataGridViewTextBoxColumn.Name = "modeDataGridViewTextBoxColumn";
+            this.modeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // leaveDataGridViewTextBoxColumn
+            // 
+            this.leaveDataGridViewTextBoxColumn.DataPropertyName = "Leave";
+            this.leaveDataGridViewTextBoxColumn.HeaderText = "Leave";
+            this.leaveDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.leaveDataGridViewTextBoxColumn.Name = "leaveDataGridViewTextBoxColumn";
+            this.leaveDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // acqLocDataGridViewTextBoxColumn
+            // 
+            this.acqLocDataGridViewTextBoxColumn.DataPropertyName = "AcqLoc";
+            this.acqLocDataGridViewTextBoxColumn.HeaderText = "AcqLoc";
+            this.acqLocDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.acqLocDataGridViewTextBoxColumn.Name = "acqLocDataGridViewTextBoxColumn";
+            this.acqLocDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // acqCenterDataGridViewTextBoxColumn
+            // 
+            this.acqCenterDataGridViewTextBoxColumn.DataPropertyName = "AcqCenter";
+            this.acqCenterDataGridViewTextBoxColumn.HeaderText = "AcqCenter";
+            this.acqCenterDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.acqCenterDataGridViewTextBoxColumn.Name = "acqCenterDataGridViewTextBoxColumn";
+            this.acqCenterDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // acqDisDataGridViewTextBoxColumn
+            // 
+            this.acqDisDataGridViewTextBoxColumn.DataPropertyName = "AcqDis";
+            this.acqDisDataGridViewTextBoxColumn.HeaderText = "AcqDis";
+            this.acqDisDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.acqDisDataGridViewTextBoxColumn.Name = "acqDisDataGridViewTextBoxColumn";
+            this.acqDisDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // acqDrpDataGridViewTextBoxColumn
+            // 
+            this.acqDrpDataGridViewTextBoxColumn.DataPropertyName = "AcqDrp";
+            this.acqDrpDataGridViewTextBoxColumn.HeaderText = "AcqDrp";
+            this.acqDrpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.acqDrpDataGridViewTextBoxColumn.Name = "acqDrpDataGridViewTextBoxColumn";
+            this.acqDrpDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // delOrigDataGridViewTextBoxColumn
+            // 
+            this.delOrigDataGridViewTextBoxColumn.DataPropertyName = "DelOrig";
+            this.delOrigDataGridViewTextBoxColumn.HeaderText = "DelOrig";
+            this.delOrigDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.delOrigDataGridViewTextBoxColumn.Name = "delOrigDataGridViewTextBoxColumn";
+            this.delOrigDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // delDestDataGridViewTextBoxColumn
+            // 
+            this.delDestDataGridViewTextBoxColumn.DataPropertyName = "DelDest";
+            this.delDestDataGridViewTextBoxColumn.HeaderText = "DelDest";
+            this.delDestDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.delDestDataGridViewTextBoxColumn.Name = "delDestDataGridViewTextBoxColumn";
+            this.delDestDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // delMissDataGridViewTextBoxColumn
+            // 
+            this.delMissDataGridViewTextBoxColumn.DataPropertyName = "DelMiss";
+            this.delMissDataGridViewTextBoxColumn.HeaderText = "DelMiss";
+            this.delMissDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.delMissDataGridViewTextBoxColumn.Name = "delMissDataGridViewTextBoxColumn";
+            this.delMissDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // driveStaDataGridViewTextBoxColumn
+            // 
+            this.driveStaDataGridViewTextBoxColumn.DataPropertyName = "DriveSta";
+            this.driveStaDataGridViewTextBoxColumn.HeaderText = "DriveSta";
+            this.driveStaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.driveStaDataGridViewTextBoxColumn.Name = "driveStaDataGridViewTextBoxColumn";
+            this.driveStaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // robotStaDataGridViewTextBoxColumn
+            // 
+            this.robotStaDataGridViewTextBoxColumn.DataPropertyName = "RobotSta";
+            this.robotStaDataGridViewTextBoxColumn.HeaderText = "RobotSta";
+            this.robotStaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.robotStaDataGridViewTextBoxColumn.Name = "robotStaDataGridViewTextBoxColumn";
+            this.robotStaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hPAmpDataGridViewTextBoxColumn
+            // 
+            this.hPAmpDataGridViewTextBoxColumn.DataPropertyName = "HPAmp";
+            this.hPAmpDataGridViewTextBoxColumn.HeaderText = "HPAmp";
+            this.hPAmpDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hPAmpDataGridViewTextBoxColumn.Name = "hPAmpDataGridViewTextBoxColumn";
+            this.hPAmpDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // stageStatDataGridViewTextBoxColumn
+            // 
+            this.stageStatDataGridViewTextBoxColumn.DataPropertyName = "StageStat";
+            this.stageStatDataGridViewTextBoxColumn.HeaderText = "StageStat";
+            this.stageStatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stageStatDataGridViewTextBoxColumn.Name = "stageStatDataGridViewTextBoxColumn";
+            this.stageStatDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // stageAttDataGridViewTextBoxColumn
+            // 
+            this.stageAttDataGridViewTextBoxColumn.DataPropertyName = "StageAtt";
+            this.stageAttDataGridViewTextBoxColumn.HeaderText = "StageAtt";
+            this.stageAttDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stageAttDataGridViewTextBoxColumn.Name = "stageAttDataGridViewTextBoxColumn";
+            this.stageAttDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // stageLocDataGridViewTextBoxColumn
+            // 
+            this.stageLocDataGridViewTextBoxColumn.DataPropertyName = "StageLoc";
+            this.stageLocDataGridViewTextBoxColumn.HeaderText = "StageLoc";
+            this.stageLocDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stageLocDataGridViewTextBoxColumn.Name = "stageLocDataGridViewTextBoxColumn";
+            this.stageLocDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // harmonyDataGridViewTextBoxColumn
+            // 
+            this.harmonyDataGridViewTextBoxColumn.DataPropertyName = "Harmony";
+            this.harmonyDataGridViewTextBoxColumn.HeaderText = "Harmony";
+            this.harmonyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.harmonyDataGridViewTextBoxColumn.Name = "harmonyDataGridViewTextBoxColumn";
+            this.harmonyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // spotlitDataGridViewTextBoxColumn
+            // 
+            this.spotlitDataGridViewTextBoxColumn.DataPropertyName = "Spotlit";
+            this.spotlitDataGridViewTextBoxColumn.HeaderText = "Spotlit";
+            this.spotlitDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.spotlitDataGridViewTextBoxColumn.Name = "spotlitDataGridViewTextBoxColumn";
+            this.spotlitDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // climbTDataGridViewTextBoxColumn
+            // 
+            this.climbTDataGridViewTextBoxColumn.DataPropertyName = "ClimbT";
+            this.climbTDataGridViewTextBoxColumn.HeaderText = "ClimbT";
+            this.climbTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.climbTDataGridViewTextBoxColumn.Name = "climbTDataGridViewTextBoxColumn";
+            this.climbTDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // oZTimeDataGridViewTextBoxColumn
+            // 
+            this.oZTimeDataGridViewTextBoxColumn.DataPropertyName = "OZTime";
+            this.oZTimeDataGridViewTextBoxColumn.HeaderText = "OZTime";
+            this.oZTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.oZTimeDataGridViewTextBoxColumn.Name = "oZTimeDataGridViewTextBoxColumn";
+            this.oZTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nZTimeDataGridViewTextBoxColumn
+            // 
+            this.nZTimeDataGridViewTextBoxColumn.DataPropertyName = "NZTime";
+            this.nZTimeDataGridViewTextBoxColumn.HeaderText = "NZTime";
+            this.nZTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nZTimeDataGridViewTextBoxColumn.Name = "nZTimeDataGridViewTextBoxColumn";
+            this.nZTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aZTimeDataGridViewTextBoxColumn
+            // 
+            this.aZTimeDataGridViewTextBoxColumn.DataPropertyName = "AZTime";
+            this.aZTimeDataGridViewTextBoxColumn.HeaderText = "AZTime";
+            this.aZTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aZTimeDataGridViewTextBoxColumn.Name = "aZTimeDataGridViewTextBoxColumn";
+            this.aZTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // defenseDataGridViewTextBoxColumn
+            // 
+            this.defenseDataGridViewTextBoxColumn.DataPropertyName = "Defense";
+            this.defenseDataGridViewTextBoxColumn.HeaderText = "Defense";
+            this.defenseDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.defenseDataGridViewTextBoxColumn.Name = "defenseDataGridViewTextBoxColumn";
+            this.defenseDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // avoidanceDataGridViewTextBoxColumn
+            // 
+            this.avoidanceDataGridViewTextBoxColumn.DataPropertyName = "Avoidance";
+            this.avoidanceDataGridViewTextBoxColumn.HeaderText = "Avoidance";
+            this.avoidanceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.avoidanceDataGridViewTextBoxColumn.Name = "avoidanceDataGridViewTextBoxColumn";
+            this.avoidanceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // strategyDataGridViewTextBoxColumn
+            // 
+            this.strategyDataGridViewTextBoxColumn.DataPropertyName = "Strategy";
+            this.strategyDataGridViewTextBoxColumn.HeaderText = "Strategy";
+            this.strategyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.strategyDataGridViewTextBoxColumn.Name = "strategyDataGridViewTextBoxColumn";
+            this.strategyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // micsDataGridViewTextBoxColumn
+            // 
+            this.micsDataGridViewTextBoxColumn.DataPropertyName = "Mics";
+            this.micsDataGridViewTextBoxColumn.HeaderText = "Mics";
+            this.micsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.micsDataGridViewTextBoxColumn.Name = "micsDataGridViewTextBoxColumn";
+            this.micsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // scouterNameDataGridViewTextBoxColumn
+            // 
+            this.scouterNameDataGridViewTextBoxColumn.DataPropertyName = "ScouterName";
+            this.scouterNameDataGridViewTextBoxColumn.HeaderText = "ScouterName";
+            this.scouterNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.scouterNameDataGridViewTextBoxColumn.Name = "scouterNameDataGridViewTextBoxColumn";
+            this.scouterNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // scouterErrorDataGridViewTextBoxColumn
+            // 
+            this.scouterErrorDataGridViewTextBoxColumn.DataPropertyName = "ScouterError";
+            this.scouterErrorDataGridViewTextBoxColumn.HeaderText = "ScouterError";
+            this.scouterErrorDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.scouterErrorDataGridViewTextBoxColumn.Name = "scouterErrorDataGridViewTextBoxColumn";
+            this.scouterErrorDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matcheventDataGridViewTextBoxColumn
+            // 
+            this.matcheventDataGridViewTextBoxColumn.DataPropertyName = "match_event";
+            this.matcheventDataGridViewTextBoxColumn.HeaderText = "match_event";
+            this.matcheventDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.matcheventDataGridViewTextBoxColumn.Name = "matcheventDataGridViewTextBoxColumn";
+            this.matcheventDataGridViewTextBoxColumn.Width = 125;
             // 
             // panel1
             // 

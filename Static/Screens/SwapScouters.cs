@@ -1,8 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using ScoutingCodeRedo.Dynamic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ScoutingCodeRedo.Dynamic;
-using System;
+using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -110,11 +110,11 @@ namespace ScoutingCodeRedo.Static
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void BtnReset_Click(object sender, EventArgs e)
         {
             wasReset = true;
             ClearScouters(null, null);
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 BackgroundCode.Robots[i].ScouterBox = i;
             }

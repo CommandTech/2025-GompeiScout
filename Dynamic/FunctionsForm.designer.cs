@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ScoutingCodeRedo.Dynamic
+﻿namespace ScoutingCodeRedo.Dynamic
 {
     partial class FunctionsForm
     {
-        private System.ComponentModel.IContainer components = null;
         #region
         private void InitializeComponent()
         {
@@ -57,7 +50,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnPriority.TabIndex = 354;
             this.btnPriority.Text = "Priority";
             this.btnPriority.UseVisualStyleBackColor = true;
-            this.btnPriority.Click += new System.EventHandler(this.btnPriority_Click);
+            this.btnPriority.Click += new System.EventHandler(this.BtnPriority_Click);
             // 
             // btnSwapScouters
             // 
@@ -70,7 +63,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnSwapScouters.TabIndex = 355;
             this.btnSwapScouters.Text = "Swap Scouters";
             this.btnSwapScouters.UseVisualStyleBackColor = true;
-            this.btnSwapScouters.Click += new System.EventHandler(this.btnSwapScouters_Click);
+            this.btnSwapScouters.Click += new System.EventHandler(this.BtnSwapScouters_Click);
             // 
             // cbxPractice
             // 
@@ -84,7 +77,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.cbxPractice.TabIndex = 356;
             this.cbxPractice.Text = "Practice Mode";
             this.cbxPractice.UseVisualStyleBackColor = false;
-            this.cbxPractice.CheckedChanged += new System.EventHandler(this.cbxPractice_CheckedChanged);
+            this.cbxPractice.CheckedChanged += new System.EventHandler(this.CbxPractice_CheckedChanged);
             // 
             // btnRefresh
             // 
@@ -97,7 +90,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnRefresh.TabIndex = 357;
             this.btnRefresh.Text = "Refresh Controllers";
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // btnUpdateDatabase
             // 
@@ -110,7 +103,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnUpdateDatabase.TabIndex = 358;
             this.btnUpdateDatabase.Text = "Update Database";
             this.btnUpdateDatabase.UseVisualStyleBackColor = true;
-            this.btnUpdateDatabase.Click += new System.EventHandler(this.btnUpdateDatabase_Click);
+            this.btnUpdateDatabase.Click += new System.EventHandler(this.BtnUpdateDatabase_Click);
             // 
             // FunctionsForm
             // 

@@ -1632,7 +1632,7 @@ namespace ScoutingCodeRedo.Static
             this.btnInitialDBLoad.TabIndex = 287;
             this.btnInitialDBLoad.Text = "Load >";
             this.btnInitialDBLoad.UseVisualStyleBackColor = true;
-            this.btnInitialDBLoad.Click += new System.EventHandler(this.btnInitialDBLoad_Click);
+            this.btnInitialDBLoad.Click += new System.EventHandler(this.BtnInitialDBLoad_Click);
             // 
             // btnNextMatch
             // 
@@ -1645,7 +1645,7 @@ namespace ScoutingCodeRedo.Static
             this.btnNextMatch.TabIndex = 289;
             this.btnNextMatch.Text = ">>";
             this.btnNextMatch.UseVisualStyleBackColor = true;
-            this.btnNextMatch.Click += new System.EventHandler(this.btnNextMatch_Click);
+            this.btnNextMatch.Click += new System.EventHandler(this.BtnNextMatch_Click);
             // 
             // label14
             // 
@@ -1668,7 +1668,7 @@ namespace ScoutingCodeRedo.Static
             this.btnPreviousMatch.TabIndex = 286;
             this.btnPreviousMatch.Text = "<<";
             this.btnPreviousMatch.UseVisualStyleBackColor = true;
-            this.btnPreviousMatch.Click += new System.EventHandler(this.btnPrevMatch_Click);
+            this.btnPreviousMatch.Click += new System.EventHandler(this.BtnPrevMatch_Click);
             // 
             // btnpopulateForEvent
             // 
@@ -1681,7 +1681,7 @@ namespace ScoutingCodeRedo.Static
             this.btnpopulateForEvent.TabIndex = 285;
             this.btnpopulateForEvent.Text = "Get Matches";
             this.btnpopulateForEvent.UseVisualStyleBackColor = true;
-            this.btnpopulateForEvent.Click += new System.EventHandler(this.btnpopulateForEvent_Click);
+            this.btnpopulateForEvent.Click += new System.EventHandler(this.BtnpopulateForEvent_Click);
             // 
             // btnExit
             // 
@@ -1694,7 +1694,7 @@ namespace ScoutingCodeRedo.Static
             this.btnExit.TabIndex = 284;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // panel1
             // 
@@ -2281,7 +2281,7 @@ namespace ScoutingCodeRedo.Static
             this.btnFunctions.TabIndex = 304;
             this.btnFunctions.Text = "Functions";
             this.btnFunctions.UseVisualStyleBackColor = false;
-            this.btnFunctions.Click += new System.EventHandler(this.btnFunctions_Click);
+            this.btnFunctions.Click += new System.EventHandler(this.BtnFunctions_Click);
             // 
             // BaseScreen
             // 

@@ -7,7 +7,8 @@ namespace ScoutingCodeRedo.Dynamic
 {
     internal partial class ScouterBoxes : Form
     {
-       public ScouterBoxes() {
+        public ScouterBoxes()
+        {
             InitializeComponent();
 
             updateScreen.Enabled = true;

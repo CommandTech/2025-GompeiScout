@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ScoutingCodeRedo.Static
+﻿namespace ScoutingCodeRedo.Static
 {
     partial class PriorityForm
     {
-        private System.ComponentModel.IContainer components = null;
         #region
         private void InitializeComponent()
         {

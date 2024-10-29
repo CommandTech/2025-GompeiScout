@@ -7,7 +7,6 @@ namespace ScoutingCodeRedo.Dynamic
 {
     internal partial class FunctionsForm : Form
     {
-        BackgroundCode bgc;
         public FunctionsForm()
         {
             InitializeComponent();
@@ -19,27 +18,27 @@ namespace ScoutingCodeRedo.Dynamic
             this.Hide();
         }
 
-        private void btnPriority_Click(object sender, EventArgs e)
+        private void BtnPriority_Click(object sender, EventArgs e)
         {
             PriorityForm frm = new PriorityForm();
             this.Hide();
             frm.Show();
         }
 
-        private void btnSwapScouters_Click(object sender, EventArgs e)
+        private void BtnSwapScouters_Click(object sender, EventArgs e)
         {
             SwapScouters frm = new SwapScouters();
             this.Hide();
             frm.Show();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void BtnRefresh_Click(object sender, EventArgs e)
         {
             BaseScreen.UpdateJoysticks();
             this.Hide();
         }
 
-        private void btnUpdateDatabase_Click(object sender, EventArgs e)
+        private void BtnUpdateDatabase_Click(object sender, EventArgs e)
         {
             if (Settings.Default.DBExists)
             {
@@ -53,7 +52,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        private void cbxPractice_CheckedChanged(object sender, EventArgs e)
+        private void CbxPractice_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.practiceMode = cbxPractice.Checked;
         }

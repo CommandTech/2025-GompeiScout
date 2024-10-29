@@ -30,7 +30,7 @@ namespace ScoutingCodeRedo.Static
         private bool _startButton = false;
         private bool _r3 = false;
         private bool _l3 = false;
-        private string _deviceInfo;
+        //private string _deviceInfo;
 
         //previous values
 
@@ -59,7 +59,7 @@ namespace ScoutingCodeRedo.Static
         private bool _r3Prev = false;
         private bool _l3Prev = false;
 
-        Joystick _js;
+        readonly Joystick _js;
 
         public GamePad(Joystick js)
         {
@@ -116,13 +116,13 @@ namespace ScoutingCodeRedo.Static
                 _lt = (Z > 98);
 
                 //read device info
-                _deviceInfo = _js.Information.InstanceName;
+                //_deviceInfo = _js.Information.InstanceName;
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
-            
+
         }
 
         public JoystickState GetCurrentState()

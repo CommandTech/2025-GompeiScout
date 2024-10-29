@@ -13,8 +13,8 @@ namespace ScoutingCodeRedo.Static
     public partial class BaseScreen : Form
     {
 
-        private bool initializing = true;
-        BackgroundCode bgc;
+        private readonly bool initializing = true;
+        readonly BackgroundCode bgc;
 
         public string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
         public string projectBaseDirectory;
@@ -39,7 +39,7 @@ namespace ScoutingCodeRedo.Static
                 DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
                 if (loadPrevData == DialogResult.Yes)
                 {
-                    loadData();
+                    LoadData();
                 }
             }
 
@@ -116,7 +116,7 @@ namespace ScoutingCodeRedo.Static
                 ((Label)this.Controls.Find($"lbl{i}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
             }
         }
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
             if (confirmExit == DialogResult.Yes)
@@ -126,7 +126,7 @@ namespace ScoutingCodeRedo.Static
                     confirmExit = MessageBox.Show("Do you want to save the current data?", "Please Confirm", MessageBoxButtons.YesNo);
                     if (confirmExit == DialogResult.Yes)
                     {
-                        saveData();
+                        SaveData();
                     }
                 }
 
@@ -134,7 +134,7 @@ namespace ScoutingCodeRedo.Static
                 Environment.Exit(0);
             }
         }
-        public void saveData()
+        public void SaveData()
         {
             if ((Settings.Default.loadedEvent != null || Settings.Default.manualMatchList != null) && Settings.Default.currentMatch != 0)
             {
@@ -158,15 +158,15 @@ namespace ScoutingCodeRedo.Static
                     {
                         if (scouterNames.Length != 0)
                         {
-                            scouterNames = scouterNames + ",";
+                            scouterNames += ",";
                         }
-                        scouterNames = scouterNames + robot._ScouterName;
+                        scouterNames += robot._ScouterName;
 
                         if (scouterLocations.Length != 0)
                         {
-                            scouterLocations = scouterLocations + ",";
+                            scouterLocations += ",";
                         }
-                        scouterLocations = scouterLocations + robot.ScouterBox;
+                        scouterLocations += robot.ScouterBox;
                     }
                     iniFile.Write("MatchData", "scouterNames", scouterNames);
                     iniFile.Write("MatchData", "scouterLocations", scouterLocations);
@@ -181,7 +181,7 @@ namespace ScoutingCodeRedo.Static
                 MessageBox.Show("No data to save.");
             }
         }
-        private void loadData()
+        private void LoadData()
         {
             try
             {
@@ -213,22 +213,22 @@ namespace ScoutingCodeRedo.Static
                     BuildInitialDatabase(false);
                 }
 
-                btnpopulateForEvent_Click(null, null);
+                BtnpopulateForEvent_Click(null, null);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("Could not load data.", "Error: " + e);
             }
 
         }
-        private void btnInitialDBLoad_Click(object sender, EventArgs e)
+        private void BtnInitialDBLoad_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to load The Blue Alliance data?", "Please Confirm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 BackgroundCode.seasonframework.Database.Connection.Close();
                 BuildInitialDatabase(false);
-                setRedRight();
+                SetRedRight();
 
                 Log("SQL start time is " + DateTime.Now.TimeOfDay);
             }
@@ -237,7 +237,7 @@ namespace ScoutingCodeRedo.Static
                 DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Please Confirm", MessageBoxButtons.YesNo);
                 if (manualMatches == DialogResult.Yes)
                 {
-                    setRedRight();
+                    SetRedRight();
                     Log("Loading manual matches.");
                     loadManualMatches();
                     comboBoxSelectRegional.Items.Clear();
@@ -246,16 +246,15 @@ namespace ScoutingCodeRedo.Static
                 }
             }
         }
-        private void setRedRight()
+        private void SetRedRight()
         {
             //  Logic for setting left/right and near/far based on side of field scouters are sitting on
             DialogResult red = MessageBox.Show("Is the Red Alliance on your right?", "Please Confirm", MessageBoxButtons.YesNo);
             Settings.Default.redRight = (red == DialogResult.Yes);
         }
 
-        private void btnNextMatch_Click(object sender, EventArgs e)
+        private void BtnNextMatch_Click(object sender, EventArgs e)
         {
-            List<string> ScoutList = new List<string>();
             if (cbxEndMatch.Checked)
             {
                 cbxEndMatch.Checked = false;
@@ -271,7 +270,7 @@ namespace ScoutingCodeRedo.Static
                         DynamicResponses.transactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
                     }
 
-                    nextMatch();
+                    NextMatch();
                 }
             }
             else
@@ -279,7 +278,7 @@ namespace ScoutingCodeRedo.Static
                 DialogResult dialogResult = MessageBox.Show("All unsaved data will be lost.  Continue?", "Next Match", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes && Settings.Default.currentMatch != bgc.InMemoryMatchList.Count)
                 {
-                    nextMatch();
+                    NextMatch();
                 }
                 else if (dialogResult == DialogResult.Yes)
                 {
@@ -291,13 +290,13 @@ namespace ScoutingCodeRedo.Static
             UpdateJoysticks();
         }
 
-        private void nextMatch()
+        private void NextMatch()
         {
             Settings.Default.currentMatch++;
-            loadMatch();
+            LoadMatch();
         }
 
-        private void btnPrevMatch_Click(object sender, EventArgs e)
+        private void BtnPrevMatch_Click(object sender, EventArgs e)
         {
             if (Settings.Default.currentMatch == 0)
             {
@@ -306,11 +305,11 @@ namespace ScoutingCodeRedo.Static
             else
             {
                 Settings.Default.currentMatch--;
-                loadMatch();
+                LoadMatch();
             }
         }
 
-        private void loadMatch()
+        private void LoadMatch()
         {
             DynamicResponses.resetValues();
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{bgc.UnSortedMatchList.Count}";
@@ -340,12 +339,7 @@ namespace ScoutingCodeRedo.Static
             }
         }
 
-        private void resetValues()
-        {
-
-        }
-
-        private async void btnpopulateForEvent_Click(object sender, EventArgs e)
+        private async void BtnpopulateForEvent_Click(object sender, EventArgs e)
         {
             if (sender != null)
             {
@@ -357,15 +351,16 @@ namespace ScoutingCodeRedo.Static
             {
                 for (int i = 0; i < Settings.Default.manualMatchList.Count; i++)
                 {
-                    Match matchData = new Match();
-
-                    matchData.match_number = i;
-                    matchData.redteam1 = "frc" + Settings.Default.manualMatchList[i][0];
-                    matchData.redteam2 = "frc" + Settings.Default.manualMatchList[i][1];
-                    matchData.redteam3 = "frc" + Settings.Default.manualMatchList[i][2];
-                    matchData.blueteam1 = "frc" + Settings.Default.manualMatchList[i][3];
-                    matchData.blueteam2 = "frc" + Settings.Default.manualMatchList[i][4];
-                    matchData.blueteam3 = "frc" + Settings.Default.manualMatchList[i][5];
+                    Match matchData = new Match
+                    {
+                        match_number = i,
+                        redteam1 = "frc" + Settings.Default.manualMatchList[i][0],
+                        redteam2 = "frc" + Settings.Default.manualMatchList[i][1],
+                        redteam3 = "frc" + Settings.Default.manualMatchList[i][2],
+                        blueteam1 = "frc" + Settings.Default.manualMatchList[i][3],
+                        blueteam2 = "frc" + Settings.Default.manualMatchList[i][4],
+                        blueteam3 = "frc" + Settings.Default.manualMatchList[i][5]
+                    };
 
                     bgc.UnSortedMatchList.Add(matchData);
                     bgc.InMemoryMatchList.Add(matchData);
@@ -430,11 +425,13 @@ namespace ScoutingCodeRedo.Static
                                     var result2 = db.Teamset.FirstOrDefault(b => b.team_key == team_key);
                                     if (result2 == null)
                                     {
-                                        TeamSummary team_record = new TeamSummary();
-                                        team_record.team_key = objt[i].key;
-                                        team_record.team_number = objt[i].team_number;
-                                        team_record.event_key = regional;
-                                        team_record.nickname = objt[i].nickname;
+                                        TeamSummary team_record = new TeamSummary
+                                        {
+                                            team_key = objt[i].key,
+                                            team_number = objt[i].team_number,
+                                            event_key = regional,
+                                            nickname = objt[i].nickname
+                                        };
 
                                         //Save changes
                                         BackgroundCode.seasonframework.Teamset.Add(team_record);
@@ -516,7 +513,7 @@ namespace ScoutingCodeRedo.Static
 
                 bgc.InMemoryMatchList = bgc.UnSortedMatchList.OrderBy(o => o.match_number).ToList();
             }
-            nextMatch();
+            NextMatch();
         }
         public void Log(string m)
         {
@@ -534,7 +531,7 @@ namespace ScoutingCodeRedo.Static
             catch { }
         }
 
-        private void btnFunctions_Click(object sender, EventArgs e)
+        private void BtnFunctions_Click(object sender, EventArgs e)
         {
             FunctionsForm frm = new FunctionsForm();
             frm.Show();

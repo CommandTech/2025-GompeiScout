@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ScoutingCodeRedo.Static
+﻿namespace ScoutingCodeRedo.Static
 {
     partial class SwapScouters
     {
-        private System.ComponentModel.IContainer components = null;
         #region
         private void InitializeComponent()
         {
@@ -146,7 +139,7 @@ namespace ScoutingCodeRedo.Static
             this.btnReset.TabIndex = 355;
             this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // SwapScouters
             // 

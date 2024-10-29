@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ScoutingCodeRedo.Properties;
+using ScoutingCodeRedo.Static;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using ScoutingCodeRedo.Properties;
-using ScoutingCodeRedo.Static;
 
 namespace ScoutingCodeRedo.Dynamic
 {
@@ -1115,7 +1115,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.AcqLoc = controller.Acq_Loc_Temp.ToString();
                                 BackgroundCode.activity_record.AcqCenter = controller.Acq_Center_Temp;
                                 BackgroundCode.activity_record.Time = controller.CenteNoteTimeTemp;
-                                
+
                                 BackgroundCode.activity_record.AcqDrp = 0;
                                 BackgroundCode.activity_record.AcqDis = 1;
                                 BackgroundCode.activity_record.DelMiss = 0;

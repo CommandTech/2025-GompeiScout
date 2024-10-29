@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Media;
-using ScoutingCodeRedo.Dynamic;
+﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static.GamePadFolder;
 using SharpDX.DirectInput;
+using System;
+using System.Collections.Generic;
+using System.Media;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -25,7 +25,7 @@ namespace ScoutingCodeRedo.Static
         public static Activity activity_record = new Activity();
         public static SeasonContext seasonframework = new SeasonContext();
 
-        private static string soundFilePath = System.IO.Path.Combine(
+        private static readonly string soundFilePath = System.IO.Path.Combine(
             System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,
             "errorSound.wav"
         );
