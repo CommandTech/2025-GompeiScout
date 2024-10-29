@@ -48,16 +48,15 @@ namespace ScoutingCodeRedo.Static
 
                         for (int j = 0; j < 6; j++)
                         {
-                            BackgroundCode.Robots[j].ScouterBox = 0;
                             if (BackgroundCode.Robots[j].getScouterName(RobotState.SCOUTER_NAME.Select_Name) == name)
                             {
+                                BackgroundCode.Robots[i].ScouterBox = BackgroundCode.Robots[j].ScouterBox;
                                 BackgroundCode.Robots[j].ScouterBox = i;
-                                //BackgroundCode.Robots[i].ScouterBox = j;
                             }
                         }
                     }
 
-                    //BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
+                    BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
                 }
             }
 
