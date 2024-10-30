@@ -30,11 +30,11 @@ namespace ScoutingCodeRedo.Static
 
             if (isManual)
             {
-                loadManualMatches();
+                LoadManualMatches();
             }
             else
             {
-                string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year.ToString()}?X-TBA-Auth-Key={Settings.Default.API_Key}";
+                string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year}?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -66,7 +66,7 @@ namespace ScoutingCodeRedo.Static
                         if (manualMatches == DialogResult.Yes)
                         {
                             Log("Loading manual matches.");
-                            loadManualMatches();
+                            LoadManualMatches();
                             comboBoxSelectRegional.Items.Add("manualEvent");
                             comboBoxSelectRegional.SelectedItem = "manualEvent";
                         }
@@ -75,7 +75,7 @@ namespace ScoutingCodeRedo.Static
             }
         }
 
-        public void loadManualMatches()
+        public void LoadManualMatches()
         {
 
             string csvBaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -83,6 +83,7 @@ namespace ScoutingCodeRedo.Static
             string csvPath = Path.Combine(csvProjectBaseDirectory, "Dynamic\\ManualMatchList.csv");
 
             Settings.Default.manualMatchList = ReadCsvFile(csvPath);
+
             Log($"{Settings.Default.manualMatchList.Count} matches");
         }
         public static List<List<String>> ReadCsvFile(string filePath)

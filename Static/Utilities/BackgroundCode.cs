@@ -1,7 +1,6 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static.GamePadFolder;
-using SharpDX.DirectInput;
 using System;
 using System.Collections.Generic;
 using System.Media;
@@ -10,7 +9,6 @@ namespace ScoutingCodeRedo.Static
 {
     internal class BackgroundCode
     {
-        public DirectInput Input = new DirectInput();
         public static GamePad[] gamePads;
         public static Controllers controllers = new Controllers();
 

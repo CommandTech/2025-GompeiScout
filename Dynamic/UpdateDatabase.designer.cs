@@ -202,7 +202,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnFetchValues.TabIndex = 11;
             this.btnFetchValues.Text = "Fetch Values";
             this.btnFetchValues.UseVisualStyleBackColor = false;
-            this.btnFetchValues.Click += new System.EventHandler(this.btnFetchValues_Click);
+            this.btnFetchValues.Click += new System.EventHandler(this.BtnFetchValues_Click);
             // 
             // panel5
             // 
@@ -261,7 +261,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnUpdateDatabase.TabIndex = 11;
             this.btnUpdateDatabase.Text = "Update Database";
             this.btnUpdateDatabase.UseVisualStyleBackColor = false;
-            this.btnUpdateDatabase.Click += new System.EventHandler(this.btnUpdateDatabase_Click);
+            this.btnUpdateDatabase.Click += new System.EventHandler(this.BtnUpdateDatabase_Click);
             // 
             // button2
             // 
@@ -1127,7 +1127,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.btnCreateTable.TabIndex = 11;
             this.btnCreateTable.Text = "Create Table";
             this.btnCreateTable.UseVisualStyleBackColor = false;
-            this.btnCreateTable.Click += new System.EventHandler(this.btnCreateTable_Click);
+            this.btnCreateTable.Click += new System.EventHandler(this.BtnCreateTable_Click);
             // 
             // label37
             // 
@@ -1576,7 +1576,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateDatabase";
             this.Text = "UpdateDatabase";
-            this.Load += new System.EventHandler(this.UpdateDatabase_Load);
             this.panel10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

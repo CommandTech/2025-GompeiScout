@@ -16,7 +16,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.comboMatchNumber.DataSource = MatchNumbers;
         }
 
-        private void btnCreateTable_Click(object sender, EventArgs e)
+        private void BtnCreateTable_Click(object sender, EventArgs e)
         {
             if (checkEndAuto.Checked || checkActivities.Checked || checkEndMatch.Checked || checkMatchEvent.Checked)
             {
@@ -70,13 +70,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        private void UpdateDatabase_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the '_2024seasondbDataSet.UpdatePreviews' table. You can move, or remove it, as needed.
-
-        }
-
-        private void btnFetchValues_Click(object sender, EventArgs e)
+        private void BtnFetchValues_Click(object sender, EventArgs e)
         {
             using (var db = new SeasonContext())
             {
@@ -130,7 +124,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        private void btnUpdateDatabase_Click(object sender, EventArgs e)
+        private void BtnUpdateDatabase_Click(object sender, EventArgs e)
         {
             using (var db = new SeasonContext())
             {

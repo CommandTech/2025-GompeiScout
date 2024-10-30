@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
@@ -239,10 +240,11 @@ namespace ScoutingCodeRedo.Static
                 {
                     SetRedRight();
                     Log("Loading manual matches.");
-                    loadManualMatches();
+                    LoadManualMatches();
                     comboBoxSelectRegional.Items.Clear();
                     comboBoxSelectRegional.Items.Add("manualEvent");
                     comboBoxSelectRegional.SelectedItem = "manualEvent";
+                    BtnpopulateForEvent_Click(null, null);
                 }
             }
         }
@@ -349,11 +351,18 @@ namespace ScoutingCodeRedo.Static
             bgc.InMemoryMatchList.Clear();
             if (Settings.Default.manualMatchList != null)
             {
+                List<string> manualTeams = new List<string>();
+
                 for (int i = 0; i < Settings.Default.manualMatchList.Count; i++)
                 {
                     Match matchData = new Match
                     {
                         match_number = i,
+                        set_number = i,
+                        key = "manualevent",
+                        comp_level = "qm",
+                        event_key = "manualevent",
+
                         redteam1 = "frc" + Settings.Default.manualMatchList[i][0],
                         redteam2 = "frc" + Settings.Default.manualMatchList[i][1],
                         redteam3 = "frc" + Settings.Default.manualMatchList[i][2],
@@ -364,6 +373,29 @@ namespace ScoutingCodeRedo.Static
 
                     bgc.UnSortedMatchList.Add(matchData);
                     bgc.InMemoryMatchList.Add(matchData);
+                    BackgroundCode.seasonframework.Matchset.Add(matchData);
+                    BackgroundCode.seasonframework.SaveChanges();
+
+                    for (int j = 0; j < Settings.Default.manualMatchList[i].Count; j++)
+                    {
+                        if (!manualTeams.Contains(Settings.Default.manualMatchList[i][j]))
+                        {
+                            manualTeams.Add(Settings.Default.manualMatchList[i][j]);
+                        }
+                    }
+                }
+
+                foreach (var team in manualTeams)
+                {
+                    TeamSummary teamData = new TeamSummary
+                    {
+                        team_key = "frc" + team,
+                        team_number = team,
+                        event_key = "manualevent",
+                        nickname = "manualevent"
+                    };
+                    BackgroundCode.seasonframework.Teamset.Add(teamData);
+                    BackgroundCode.seasonframework.SaveChanges();
                 }
             }
             else if (this.comboBoxSelectRegional.Text == "Please press the Load Events Button...")
