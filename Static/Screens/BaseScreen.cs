@@ -114,7 +114,7 @@ namespace ScoutingCodeRedo.Static
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
 
-                ((Label)this.Controls.Find($"lbl{i}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = (i == 0) || !Settings.Default.practiceMode;
             }
         }
         private void BtnExit_Click(object sender, EventArgs e)

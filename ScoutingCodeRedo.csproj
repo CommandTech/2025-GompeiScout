@@ -73,17 +73,17 @@
   <ItemGroup>
     <Compile Include="Dynamic\DynamicDatabase.cs" />
     <Compile Include="Dynamic\DynamicResponses.cs" />
-    <Compile Include="Dynamic\FunctionsForm.cs">
+    <Compile Include="Dynamic\Screens\FunctionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dynamic\FunctionsForm.designer.cs">
+    <Compile Include="Dynamic\Screens\FunctionsForm.designer.cs">
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dynamic\RobotState.cs" />
-    <Compile Include="Dynamic\ScouterBoxes.cs">
+    <Compile Include="Dynamic\Screens\ScouterBoxes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dynamic\ScouterBoxes.designer.cs">
+    <Compile Include="Dynamic\Screens\ScouterBoxes.designer.cs">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,16 +121,16 @@
     <Compile Include="Static\Screens\SwapScouters.designer.cs">
       <DependentUpon>SwapScouters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dynamic\UpdateDatabase.cs">
+    <Compile Include="Dynamic\Screens\UpdateDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dynamic\UpdateDatabase.designer.cs">
+    <Compile Include="Dynamic\Screens\UpdateDatabase.designer.cs">
       <DependentUpon>UpdateDatabase.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dynamic\FunctionsForm.resx">
+    <EmbeddedResource Include="Dynamic\Screens\FunctionsForm.resx">
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic\ScouterBoxes.resx">
+    <EmbeddedResource Include="Dynamic\Screens\ScouterBoxes.resx">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -152,7 +152,7 @@
     <EmbeddedResource Include="Static\Screens\SwapScouters.resx">
       <DependentUpon>SwapScouters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic\UpdateDatabase.resx">
+    <EmbeddedResource Include="Dynamic\Screens\UpdateDatabase.resx">
       <DependentUpon>UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Dynamic\ManualMatchList.csv" />

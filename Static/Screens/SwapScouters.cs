@@ -52,6 +52,10 @@ namespace ScoutingCodeRedo.Static
                             {
                                 BackgroundCode.Robots[i].ScouterBox = BackgroundCode.Robots[j].ScouterBox;
                                 BackgroundCode.Robots[j].ScouterBox = i;
+
+                                string tempTeam = BackgroundCode.Robots[i].TeamName;
+                                BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[j].TeamName;
+                                BackgroundCode.Robots[j].TeamName = tempTeam;
                             }
                         }
                     }
@@ -59,12 +63,6 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
                 }
             }
-
-            for (int i = 0; i < 6; i++)
-            {
-                Console.Write(BackgroundCode.Robots[i].ScouterBox + " ");
-            }
-            Console.WriteLine();
 
             this.Hide();
         }

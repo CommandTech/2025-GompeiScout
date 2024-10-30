@@ -170,8 +170,6 @@ namespace ScoutingCodeRedo.Dynamic
             set { _Drive_Sta = value; }
         }
 
-        public static object ACQ_LOC { get; internal set; }
-
 
         ///Scouter Name
         public SCOUTER_NAME getScouterName(SCOUTER_NAME ScouterName)
