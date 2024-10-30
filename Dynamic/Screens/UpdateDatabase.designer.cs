@@ -112,7 +112,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.label7 = new System.Windows.Forms.Label();
             this.checkActivities = new System.Windows.Forms.CheckBox();
             this.checkMatchEvent = new System.Windows.Forms.CheckBox();
+            this.scoutingDBDataSet = new ScoutingCodeRedo.scoutingdbDataSet();
             this.updatePreviewsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.updatePreviewsTableAdapter = new ScoutingCodeRedo._2023seasondbDataSet1TableAdapters.UpdatePreviewsTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1614,6 +1616,9 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkEndMatch;
         private System.Windows.Forms.CheckBox checkEndAuto;
+        private scoutingdbDataSet scoutingDBDataSet;
+        private System.Windows.Forms.BindingSource updatePreviewsBindingSource;
+        private _2023seasondbDataSet1TableAdapters.UpdatePreviewsTableAdapter updatePreviewsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teamDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matchDataGridViewTextBoxColumn;
