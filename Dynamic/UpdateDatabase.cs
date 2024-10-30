@@ -7,6 +7,7 @@ namespace ScoutingCodeRedo.Dynamic
 {
     public partial class UpdateDatabase : Form
     {
+        //Fix issue with manual matches and updating database.
         public UpdateDatabase(List<string> teamlist, List<int> MatchNumbers)
         {
             InitializeComponent();
