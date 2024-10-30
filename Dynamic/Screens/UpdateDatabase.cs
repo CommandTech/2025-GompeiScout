@@ -58,6 +58,7 @@ namespace ScoutingCodeRedo.Dynamic
                         SeasonContext seasonframework = new SeasonContext();
                         seasonframework.Database.ExecuteSqlCommand("IF OBJECT_ID ('UpdatePreviews') IS NOT NULL DROP TABLE UpdatePreviews");
                         seasonframework.Database.ExecuteSqlCommand(Query);
+                        this.updatePreviewsTableAdapter.Fill(this.scoutingDBDataSet.UpdatePreviews);
                     }
                     else
                     {

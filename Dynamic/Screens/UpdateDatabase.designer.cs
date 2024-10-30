@@ -114,7 +114,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.checkMatchEvent = new System.Windows.Forms.CheckBox();
             this.scoutingDBDataSet = new ScoutingCodeRedo.scoutingdbDataSet();
             this.updatePreviewsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.updatePreviewsTableAdapter = new ScoutingCodeRedo._2023seasondbDataSet1TableAdapters.UpdatePreviewsTableAdapter();
+            this.updatePreviewsTableAdapter = new ScoutingCodeRedo.scoutingdbDataSetTableAdapters.UpdatePreviewsTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -166,9 +166,24 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updatePreviewsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoutingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // updatePreviewsBindingSource
+            // 
+            this.updatePreviewsBindingSource.DataMember = "UpdatePreviews";
+            this.updatePreviewsBindingSource.DataSource = this.scoutingDBDataSet;
+            // 
+            // scoutingdbDataSet
+            // 
+            this.scoutingDBDataSet.DataSetName = "scoutingdbDataSet";
+            this.scoutingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // updatePreviewsTableAdapter
+            // 
+            this.updatePreviewsTableAdapter.ClearBeforeFill = true;
             // 
             // panel10
             // 
@@ -1235,10 +1250,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.checkMatchEvent.Text = "MatchEvent";
             this.checkMatchEvent.UseVisualStyleBackColor = false;
             // 
-            // updatePreviewsBindingSource
-            // 
-            this.updatePreviewsBindingSource.DataMember = "UpdatePreviews";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -1578,6 +1589,8 @@ namespace ScoutingCodeRedo.Dynamic
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateDatabase";
             this.Text = "UpdateDatabase";
+            ((System.ComponentModel.ISupportInitialize)(this.updatePreviewsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoutingDBDataSet)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -1600,7 +1613,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel14.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updatePreviewsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1609,7 +1621,6 @@ namespace ScoutingCodeRedo.Dynamic
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource updatePreviewsBindingSource;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -1618,7 +1629,7 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.CheckBox checkEndAuto;
         private scoutingdbDataSet scoutingDBDataSet;
         private System.Windows.Forms.BindingSource updatePreviewsBindingSource;
-        private _2023seasondbDataSet1TableAdapters.UpdatePreviewsTableAdapter updatePreviewsTableAdapter;
+        private scoutingdbDataSetTableAdapters.UpdatePreviewsTableAdapter updatePreviewsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teamDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matchDataGridViewTextBoxColumn;
