@@ -378,6 +378,8 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.seasonframework.Matchset.Add(matchData);
                     BackgroundCode.seasonframework.SaveChanges();
 
+                    BackgroundCode.MatchNumbers.Add(i + 1);
+
                     for (int j = 0; j < Settings.Default.manualMatchList[i].Count; j++)
                     {
                         if (!manualTeams.Contains(Settings.Default.manualMatchList[i][j]))
@@ -398,6 +400,8 @@ namespace ScoutingCodeRedo.Static
                     };
                     BackgroundCode.seasonframework.Teamset.Add(teamData);
                     BackgroundCode.seasonframework.SaveChanges();
+
+                    BackgroundCode.teamlist.Add(team);
                 }
             }
             else if (this.comboBoxSelectRegional.Text == "Please press the Load Events Button...")
