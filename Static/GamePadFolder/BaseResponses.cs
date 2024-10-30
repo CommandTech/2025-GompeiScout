@@ -11,7 +11,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         public Stopwatch stopwatch = new Stopwatch();
         public TimeSpan Zero { get; private set; }
 
-        private DynamicResponses dynamicGamepad = new DynamicResponses();
+        private readonly DynamicResponses dynamicGamepad = new DynamicResponses();
 
         private bool IsAxis(Guid objectType)
         {
@@ -51,14 +51,14 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
             return sticks.ToArray();
         }
 
-        public RobotState getRobotState(int state)
+        public RobotState GetRobotState(int state)
         {
             state = Math.Max(0, state);
             state = Math.Min(5, state);
             return BackgroundCode.Robots[state]; //Shouldn't crash here but if it does, you do not have a controller connected
         }
 
-        public GamePad[] getGamePads()
+        public GamePad[] GetGamePads()
         {
             DirectInput input = new DirectInput();
             List<GamePad> gamepads = new List<GamePad>();
@@ -71,7 +71,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
 
             return gamepads.ToArray();
         }
-        public void readStick(GamePad[] gpArray, int controllerNumber)
+        public void ReadStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
             if (gamepad != null)
@@ -89,7 +89,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                 }
                 else if (gamepad.R3_Press && BackgroundCode.Robots[controllerNumber].match_event != RobotState.MATCHEVENT_NAME.Match_Event)
                 {
-                    DynamicResponses.transactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
+                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
                     BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
                 }
 
@@ -103,7 +103,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                     BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
                 }
 
-                dynamicGamepad.readStick(gpArray, controllerNumber);
+                dynamicGamepad.ReadStick(gpArray, controllerNumber);
             }
         }
     }

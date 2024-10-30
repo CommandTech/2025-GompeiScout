@@ -30,9 +30,9 @@ namespace ScoutingCodeRedo.Static
             ScouterBoxes scouterBoxes = new ScouterBoxes
             {
                 Owner = baseScreen,
-                TopMost = false
+                TopMost = false,
+                Location = baseScreen.Location
             };
-            scouterBoxes.Location = baseScreen.Location;
             scouterBoxes.Show();
 
             Application.Run(baseScreen);
@@ -91,15 +91,15 @@ namespace ScoutingCodeRedo.Static
                 {
                     if (scouterNames.Length != 0)
                     {
-                        scouterNames = scouterNames + ",";
+                        scouterNames += ",";
                     }
-                    scouterNames = scouterNames + robot._ScouterName;
+                    scouterNames += robot._ScouterName;
 
                     if (scouterLocations.Length != 0)
                     {
-                        scouterLocations = scouterLocations + ",";
+                        scouterLocations += ",";
                     }
-                    scouterLocations = scouterLocations + robot.ScouterBox;
+                    scouterLocations += robot.ScouterBox;
                 }
                 iniFile.Write("MatchData", "scouterNames", scouterNames);
                 iniFile.Write("MatchData", "scouterLocations", scouterLocations);

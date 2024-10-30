@@ -53,9 +53,7 @@ namespace ScoutingCodeRedo.Static
                                 BackgroundCode.Robots[i].ScouterBox = BackgroundCode.Robots[j].ScouterBox;
                                 BackgroundCode.Robots[j].ScouterBox = i;
 
-                                string tempTeam = BackgroundCode.Robots[i].TeamName;
-                                BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[j].TeamName;
-                                BackgroundCode.Robots[j].TeamName = tempTeam;
+                                (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);
                             }
                         }
                     }

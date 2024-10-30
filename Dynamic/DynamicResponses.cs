@@ -8,7 +8,7 @@ namespace ScoutingCodeRedo.Dynamic
 {
     class DynamicResponses
     {
-        public void readStick(GamePad[] gpArray, int controllerNumber)
+        public void ReadStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
 
@@ -46,7 +46,7 @@ namespace ScoutingCodeRedo.Dynamic
                 }
                 else if (robot.match_event == RobotState.MATCHEVENT_NAME.Match_Event)
                 {
-                    robot.ScouterError = robot.ScouterError + 100000;
+                    robot.ScouterError += 100000;
                 }
             }
 
@@ -734,7 +734,7 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.AllyT_StopWatch_running = true;
                 }
 
-                transactToDatabase(robot, "StartMatch");
+                TransactToDatabase(robot, "StartMatch");
                 robot.AUTO = false;
                 robot.Acq_Center_Temp = 0;
                 robot.Acq_Center = 0;
@@ -742,11 +742,11 @@ namespace ScoutingCodeRedo.Dynamic
             }
             else if (gamepad.RightTrigger_Press && !robot.NoSho && robot.TransactionCheck == true)
             {
-                transactToDatabase(robot, "Activities");
+                TransactToDatabase(robot, "Activities");
             }
             else if (gamepad.RightTrigger_Press && !robot.NoSho && robot.TransactionCheck == false)
             {
-                robot.ScouterError = robot.ScouterError + 100000;
+                robot.ScouterError += 100000;
             }
 
             // 2024 Changing modes
@@ -788,7 +788,7 @@ namespace ScoutingCodeRedo.Dynamic
                 robot.ClimbT_StopWatch_running = false;
             }
         }
-        public static void transactToDatabase(RobotState controller, string recordType)
+        public static void TransactToDatabase(RobotState controller, string recordType)
         {
             if (controller._ScouterName != RobotState.SCOUTER_NAME.Select_Name && controller.TeamName != null)
             {
@@ -1021,7 +1021,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 if (controller.Acq_Center_Temp != 0 && controller.Acq_Loc_Temp != "Neutral")
                                 {
                                     controller.Acq_Loc_Temp = "Neutral";
-                                    controller.ScouterError = controller.ScouterError + 1000;
+                                    controller.ScouterError += 1000;
                                 }
                                 BackgroundCode.activity_record.AcqLoc = controller.Acq_Loc_Temp.ToString();
                                 BackgroundCode.activity_record.AcqCenter = controller.Acq_Center_Temp;
@@ -1109,7 +1109,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 if (controller.Acq_Loc_Temp != "Neutral")
                                 {
                                     controller.Acq_Loc_Temp = "Neutral";
-                                    controller.ScouterError = controller.ScouterError + 1000;
+                                    controller.ScouterError += 1000;
                                 }
 
                                 BackgroundCode.activity_record.AcqLoc = controller.Acq_Loc_Temp.ToString();
@@ -1265,7 +1265,7 @@ namespace ScoutingCodeRedo.Dynamic
                             if (controller.Acq_Loc_Temp == "Select")
                             {
                                 BackgroundCode.activity_record.AcqLoc = "Z";
-                                controller.ScouterError = controller.ScouterError + 10000000;
+                                controller.ScouterError += 10000000;
                             }
                             else
                             {
@@ -1392,7 +1392,7 @@ namespace ScoutingCodeRedo.Dynamic
                             if (controller.App_Strat == RobotState.APP_STRAT.Select)
                             {
                                 BackgroundCode.activity_record.Strategy = "Z";
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
                             else
                             {
@@ -1420,7 +1420,7 @@ namespace ScoutingCodeRedo.Dynamic
                             if (controller.Stage_Stat == RobotState.STAGE_STAT.Select)
                             {
                                 BackgroundCode.activity_record.StageStat = "Z";
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
                             else if (controller.Stage_Stat == RobotState.STAGE_STAT.Onstage)
                             {
@@ -1444,7 +1444,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 else
                                 {
                                     BackgroundCode.activity_record.StageLoc = "Z";
-                                    controller.ScouterError = controller.ScouterError + 10;
+                                    controller.ScouterError += 10;
                                 }
                             }
                             else
@@ -1461,7 +1461,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 if (controller.Stage_Att == RobotState.STAGE_ATT.Select)
                                 {
                                     BackgroundCode.activity_record.StageAtt = 10;
-                                    controller.ScouterError = controller.ScouterError + 10;
+                                    controller.ScouterError += 10;
                                 }
                                 else if (controller.Stage_Att == RobotState.STAGE_ATT.Y)
                                 {
@@ -1477,7 +1477,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 if (controller.Stage_Att == RobotState.STAGE_ATT.Select)
                                 {
                                     BackgroundCode.activity_record.StageAtt = 10;
-                                    controller.ScouterError = controller.ScouterError + 10;
+                                    controller.ScouterError += 10;
                                 }
                                 else if (controller.Stage_Att == RobotState.STAGE_ATT.Y)
                                 {
@@ -1501,7 +1501,7 @@ namespace ScoutingCodeRedo.Dynamic
                             else if (controller.Harm == 10)
                             {
                                 BackgroundCode.activity_record.Harmony = controller.Harm;
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
                             else
                             {
@@ -1516,7 +1516,7 @@ namespace ScoutingCodeRedo.Dynamic
                             else if (controller.Lit == RobotState.LIT.Select)
                             {
                                 BackgroundCode.activity_record.Spotlit = 10;
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
                             else if (controller.Lit == RobotState.LIT.Y)
                             {
@@ -1551,18 +1551,18 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             else if (controller.Mic == 10)
                             {
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
 
                             BackgroundCode.activity_record.Defense = controller.Def_Rat;
                             if (controller.Def_Rat == 10)
                             {
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
                             BackgroundCode.activity_record.Avoidance = controller.Avo_Rat;
                             if (controller.Avo_Rat == 10)
                             {
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
 
                             BackgroundCode.activity_record.ScouterError = controller.ScouterError;
@@ -1643,7 +1643,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             else if (controller.Mic == 10)
                             {
-                                controller.ScouterError = controller.ScouterError + 10;
+                                controller.ScouterError += 10;
                             }
 
                             BackgroundCode.activity_record.Defense = 9;
@@ -1741,7 +1741,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        public static void resetValues()
+        public static void ResetValues()
         {
             for (int i = 0; i < 6; i++)
             {

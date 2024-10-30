@@ -26,7 +26,9 @@ namespace ScoutingCodeRedo.Static
         public BaseScreen()
         {
             InitializeComponent();
-            this.lblkey.Text = "";
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.btnInitialDBLoad.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
             bgc = new BackgroundCode();
 
             projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
@@ -58,13 +60,13 @@ namespace ScoutingCodeRedo.Static
                 //Loop through all connected gamepads
                 for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
                 {
-                    BackgroundCode.controllers.readStick(BackgroundCode.gamePads, gamepad_ctr);
+                    BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
                 }
 
                 // Loop through all Scouters/Robots
                 for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
                 {
-                    BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.getRobotState(robot_ctr);  //Initialize all six robots
+                    BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
                 }
 
                 if (Settings.Default.practiceMode)
@@ -100,8 +102,8 @@ namespace ScoutingCodeRedo.Static
 
         public static void UpdateJoysticks()
         {
-            BackgroundCode.controllers.getGamePads();
-            BackgroundCode.gamePads = BackgroundCode.controllers.getGamePads();
+            BackgroundCode.controllers.GetGamePads();
+            BackgroundCode.gamePads = BackgroundCode.controllers.GetGamePads();
         }
         private void UpdateScreen()
         {
@@ -269,7 +271,7 @@ namespace ScoutingCodeRedo.Static
                 {
                     for (int i = 0; i < 6; i++)
                     {
-                        DynamicResponses.transactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
+                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
                     }
 
                     NextMatch();
@@ -313,7 +315,7 @@ namespace ScoutingCodeRedo.Static
 
         private void LoadMatch()
         {
-            DynamicResponses.resetValues();
+            DynamicResponses.ResetValues();
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{bgc.UnSortedMatchList.Count}";
             List<string> teamPrioList = null;
             if (Settings.Default.teamPrio != null)
@@ -552,7 +554,7 @@ namespace ScoutingCodeRedo.Static
             //cross-thread Logging
             Func<int> del = delegate ()
             {
-                this.lblkey.Text = this.lblkey.Text + m + System.Environment.NewLine;
+                bgc.print.UpdateLbl(m);
                 lstLog.TopIndex = lstLog.Items.Add(m + System.Environment.NewLine);
                 return 0;
             };

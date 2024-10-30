@@ -23,6 +23,8 @@ namespace ScoutingCodeRedo.Static
         public static Activity activity_record = new Activity();
         public static SeasonContext seasonframework = new SeasonContext();
 
+        public PrintOut print = new PrintOut();
+
         private static readonly string soundFilePath = System.IO.Path.Combine(
             System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,
             "errorSound.wav"
@@ -30,6 +32,7 @@ namespace ScoutingCodeRedo.Static
         public static SoundPlayer soundCue = new SoundPlayer(soundFilePath);
         public BackgroundCode()
         {
+            print.Show();
             seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
 
             Settings.Default.DBExists = seasonframework.Database.Exists();
