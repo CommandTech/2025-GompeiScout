@@ -108,7 +108,7 @@ namespace ScoutingCodeRedo.Dynamic
                         txtLeave.Text = result.Leave.ToString();
 
                         comboMode.Text = result.Mode.ToString();
-                        comboMatchEvent.Text = result.match_event.ToString();
+                        comboMatchEvent.Text = result.Match_event.ToString();
 
                         txtDefense.Text = result.Defense.ToString();
                         txtAvoidance.Text = result.Avoidance.ToString();

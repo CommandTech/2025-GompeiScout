@@ -323,12 +323,12 @@ namespace ScoutingCodeRedo.Static
                 teamPrioList = Settings.Default.teamPrio.Cast<string>().ToList();
             }
 
-            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam1, teamPrioList);
-            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam2, teamPrioList);
-            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].redteam3, teamPrioList);
-            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam1, teamPrioList);
-            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam2, teamPrioList);
-            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].blueteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3, teamPrioList);
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
@@ -359,18 +359,18 @@ namespace ScoutingCodeRedo.Static
                 {
                     Match matchData = new Match
                     {
-                        match_number = i,
-                        set_number = i,
-                        key = "manualevent",
-                        comp_level = "qm",
-                        event_key = "manualevent",
+                        Match_number = i,
+                        Set_number = i,
+                        Key = "manualevent",
+                        Comp_level = "qm",
+                        Event_key = "manualevent",
 
-                        redteam1 = "frc" + Settings.Default.manualMatchList[i][0],
-                        redteam2 = "frc" + Settings.Default.manualMatchList[i][1],
-                        redteam3 = "frc" + Settings.Default.manualMatchList[i][2],
-                        blueteam1 = "frc" + Settings.Default.manualMatchList[i][3],
-                        blueteam2 = "frc" + Settings.Default.manualMatchList[i][4],
-                        blueteam3 = "frc" + Settings.Default.manualMatchList[i][5]
+                        Redteam1 = "frc" + Settings.Default.manualMatchList[i][0],
+                        Redteam2 = "frc" + Settings.Default.manualMatchList[i][1],
+                        Redteam3 = "frc" + Settings.Default.manualMatchList[i][2],
+                        Blueteam1 = "frc" + Settings.Default.manualMatchList[i][3],
+                        Blueteam2 = "frc" + Settings.Default.manualMatchList[i][4],
+                        Blueteam3 = "frc" + Settings.Default.manualMatchList[i][5]
                     };
 
                     bgc.UnSortedMatchList.Add(matchData);
@@ -393,10 +393,10 @@ namespace ScoutingCodeRedo.Static
                 {
                     TeamSummary teamData = new TeamSummary
                     {
-                        team_key = "frc" + team,
-                        team_number = team,
-                        event_key = "manualevent",
-                        nickname = "manualevent"
+                        Team_key = "frc" + team,
+                        Team_number = team,
+                        Event_key = "manualevent",
+                        Nickname = "manualevent"
                     };
                     BackgroundCode.seasonframework.Teamset.Add(teamData);
                     BackgroundCode.seasonframework.SaveChanges();
@@ -433,7 +433,7 @@ namespace ScoutingCodeRedo.Static
                         Log("Received " + JSONteams.Count + " teams for " + regional + ".");
 
                         var teamquery = from b in BackgroundCode.seasonframework.Teamset
-                                        orderby b.team_key
+                                        orderby b.Team_key
                                         select b;
 
                         // Clear the existing team list
@@ -441,14 +441,14 @@ namespace ScoutingCodeRedo.Static
 
                         foreach (var item in JSONteams)
                         {
-                            BackgroundCode.teamlist.Add(item.team_number);
+                            BackgroundCode.teamlist.Add(item.Team_number);
                         }
-                        Log("Teams -> " + string.Join(", ", JSONteams.Select(item => item.team_number)));
+                        Log("Teams -> " + string.Join(", ", JSONteams.Select(item => item.Team_number)));
 
                         using (var db = new SeasonContext())
                         {
                             var teamNumber = BackgroundCode.Robots[0].TeamName;
-                            var result = db.Teamset.FirstOrDefault(b => b.team_key == teamNumber);
+                            var result = db.Teamset.FirstOrDefault(b => b.Team_key == teamNumber);
                             if (result == null)
                             {
                                 //Recording a list of teams to the database
@@ -460,15 +460,15 @@ namespace ScoutingCodeRedo.Static
                                 for (int i = 0; i < JSONteams.Count; i++)
                                 {
                                     team_key = objt[i].key;
-                                    var result2 = db.Teamset.FirstOrDefault(b => b.team_key == team_key);
+                                    var result2 = db.Teamset.FirstOrDefault(b => b.Team_key == team_key);
                                     if (result2 == null)
                                     {
                                         TeamSummary team_record = new TeamSummary
                                         {
-                                            team_key = objt[i].key,
-                                            team_number = objt[i].team_number,
-                                            event_key = regional,
-                                            nickname = objt[i].nickname
+                                            Team_key = objt[i].key,
+                                            Team_number = objt[i].team_number,
+                                            Event_key = regional,
+                                            Nickname = objt[i].nickname
                                         };
 
                                         //Save changes
@@ -506,7 +506,7 @@ namespace ScoutingCodeRedo.Static
 
                         for (int i = 0; i < JSONmatches.Count; i++)
                         {
-                            if (JSONmatches[i].comp_level == "qm")
+                            if (JSONmatches[i].Comp_level == "qm")
                             {
                                 Match match_record = new Match();
 
@@ -521,19 +521,19 @@ namespace ScoutingCodeRedo.Static
                                 dynamic blueteamsobj = bluealliance.team_keys;
                                 dynamic redteamsobj = redalliance.team_keys;
 
-                                match_record.match_number = (int)obj[i].match_number;
+                                match_record.Match_number = (int)obj[i].match_number;
 
-                                match_record.set_number = obj[i].match_number;
+                                match_record.Set_number = obj[i].match_number;
 
-                                match_record.key = obj[i].key;
-                                match_record.comp_level = obj[i].comp_level;
-                                match_record.event_key = obj[i].event_key;
-                                match_record.blueteam1 = blueteamsobj[0];
-                                match_record.blueteam2 = blueteamsobj[1];
-                                match_record.blueteam3 = blueteamsobj[2];
-                                match_record.redteam1 = redteamsobj[0];
-                                match_record.redteam2 = redteamsobj[1];
-                                match_record.redteam3 = redteamsobj[2];
+                                match_record.Key = obj[i].key;
+                                match_record.Comp_level = obj[i].comp_level;
+                                match_record.Event_key = obj[i].event_key;
+                                match_record.Blueteam1 = blueteamsobj[0];
+                                match_record.Blueteam2 = blueteamsobj[1];
+                                match_record.Blueteam3 = blueteamsobj[2];
+                                match_record.Redteam1 = redteamsobj[0];
+                                match_record.Redteam2 = redteamsobj[1];
+                                match_record.Redteam3 = redteamsobj[2];
 
                                 //Console.Write(match_record);
                                 bgc.UnSortedMatchList.Add(match_record);
@@ -549,7 +549,7 @@ namespace ScoutingCodeRedo.Static
                     }
                 }
 
-                bgc.InMemoryMatchList = bgc.UnSortedMatchList.OrderBy(o => o.match_number).ToList();
+                bgc.InMemoryMatchList = bgc.UnSortedMatchList.OrderBy(o => o.Match_number).ToList();
             }
             NextMatch();
         }

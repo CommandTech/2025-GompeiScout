@@ -60,7 +60,7 @@ namespace ScoutingCodeRedo.Dynamic
         public int Mics { get; set; }
         public string ScouterName { get; set; }
         public int ScouterError { get; set; }
-        public string match_event { get; set; }
+        public string Match_event { get; set; }
 
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
@@ -103,30 +103,30 @@ namespace ScoutingCodeRedo.Dynamic
         public int Mics { get; set; }
         public string ScouterName { get; set; }
         public int ScouterError { get; set; }
-        public string match_event { get; set; }
+        public string Match_event { get; set; }
     }
     public class EventSummary : BaseEntity
     {
-        public string key { get; set; }
-        public string website { get; set; }
-        public bool official { get; set; }
-        public string end_date { get; set; }
-        public string name { get; set; }
-        public string short_name { get; set; }
-        public string facebook_eid { get; set; }
-        public string event_district_string { get; set; }
-        public string venue_address { get; set; }
-        public int event_district { get; set; }
-        public String week { get; set; }
-        public string location { get; set; }
-        public string event_code { get; set; }
-        public int year { get; set; }
-        public List<object> webcast { get; set; }
-        public string timezone { get; set; }
-        public List<object> alliances { get; set; }
-        public string event_type_string { get; set; }
-        public string start_date { get; set; }
-        public int event_type { get; set; }
+        public string Key { get; set; }
+        public string Website { get; set; }
+        public bool Official { get; set; }
+        public string End_date { get; set; }
+        public string Name { get; set; }
+        public string Short_name { get; set; }
+        public string Facebook_eid { get; set; }
+        public string Event_district_string { get; set; }
+        public string Venue_address { get; set; }
+        public int Event_district { get; set; }
+        public String Week { get; set; }
+        public string Location { get; set; }
+        public string Event_code { get; set; }
+        public int Year { get; set; }
+        public List<object> Webcast { get; set; }
+        public string Timezone { get; set; }
+        public List<object> Alliances { get; set; }
+        public string Event_type_string { get; set; }
+        public string Start_date { get; set; }
+        public int Event_type { get; set; }
     }
 
     public class TeamSummary : BaseEntity
@@ -148,37 +148,37 @@ namespace ScoutingCodeRedo.Dynamic
         public string school_name { get; set; }
         public string state_prov { get; set; }
         public string website { get; set; }         */
-        public string event_key { get; set; }
-        public string team_key { get; set; }
-        public string team_number { get; set; }
-        public string nickname { get; set; }
+        public string Event_key { get; set; }
+        public string Team_key { get; set; }
+        public string Team_number { get; set; }
+        public string Nickname { get; set; }
     }
 
     public class Match : BaseEntity
     {
-        public string comp_level { get; set; }
-        public int match_number { get; set; }
-        public List<object> videos { get; set; }
-        public object time_string { get; set; }
-        public int set_number { get; set; }
-        public string key { get; set; }
-        public string time { get; set; }
-        public string blueteam1 { get; set; }
-        public string blueteam2 { get; set; }
-        public string blueteam3 { get; set; }
-        public string redteam1 { get; set; }
-        public string redteam2 { get; set; }
-        public string redteam3 { get; set; }
-        public string event_key { get; set; }
-        public int pointscorered { get; set; }
-        public int redfouls { get; set; }
-        public int pointscoreblue { get; set; }
-        public int bluefouls { get; set; }
-        public int blueauto { get; set; }
-        public int redauto { get; set; }
-        public int bluecharge { get; set; }
-        public int redcharge { get; set; }
-        public int bluetotaldel { get; set; }
-        public int redtotaldel { get; set; }
+        public string Comp_level { get; set; }
+        public int Match_number { get; set; }
+        public List<object> Videos { get; set; }
+        public object Time_string { get; set; }
+        public int Set_number { get; set; }
+        public string Key { get; set; }
+        public string Time { get; set; }
+        public string Blueteam1 { get; set; }
+        public string Blueteam2 { get; set; }
+        public string Blueteam3 { get; set; }
+        public string Redteam1 { get; set; }
+        public string Redteam2 { get; set; }
+        public string Redteam3 { get; set; }
+        public string Event_key { get; set; }
+        public int Pointscorered { get; set; }
+        public int Redfouls { get; set; }
+        public int Pointscoreblue { get; set; }
+        public int Bluefouls { get; set; }
+        public int Blueauto { get; set; }
+        public int Redauto { get; set; }
+        public int Bluecharge { get; set; }
+        public int Redcharge { get; set; }
+        public int Bluetotaldel { get; set; }
+        public int Redtotaldel { get; set; }
     }
 }

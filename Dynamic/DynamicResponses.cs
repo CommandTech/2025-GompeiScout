@@ -31,7 +31,7 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     else
                     {
-                        BackgroundCode.activity_record.match_event = robot.match_event.ToString().ToString(); //If you crash here you didn't load matches
+                        BackgroundCode.activity_record.Match_event = robot.match_event.ToString().ToString(); //If you crash here you didn't load matches
                     }
 
                     //Save Record to the database
@@ -805,7 +805,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                         BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
 
-                        BackgroundCode.activity_record.match_event = "-";
+                        BackgroundCode.activity_record.Match_event = "-";
                         BackgroundCode.activity_record.Leave = 0;
                         BackgroundCode.activity_record.AcqLoc = "-";
                         BackgroundCode.activity_record.AcqCenter = 0;
@@ -867,7 +867,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                         BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                         BackgroundCode.activity_record.RecordType = "EndAuto";
-                        BackgroundCode.activity_record.match_event = "-";
+                        BackgroundCode.activity_record.Match_event = "-";
                         BackgroundCode.activity_record.Leave = controller.Leave;
                         BackgroundCode.activity_record.AcqLoc = "-";
                         BackgroundCode.activity_record.AcqCenter = 0;
@@ -1092,7 +1092,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.Mode = "Auto";
                                 BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                                 BackgroundCode.activity_record.RecordType = "Activities";
-                                BackgroundCode.activity_record.match_event = "-";
+                                BackgroundCode.activity_record.Match_event = "-";
                                 BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                                 //Save Record to the database
@@ -1165,7 +1165,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.Mode = "Auto";
                                 BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                                 BackgroundCode.activity_record.RecordType = "Activities";
-                                BackgroundCode.activity_record.match_event = "-";
+                                BackgroundCode.activity_record.Match_event = "-";
                                 BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                                 //Save Record to the database
@@ -1318,7 +1318,7 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                             BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                             BackgroundCode.activity_record.RecordType = "Activities";
-                            BackgroundCode.activity_record.match_event = "-";
+                            BackgroundCode.activity_record.Match_event = "-";
                             BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                             //Save Record to the database
@@ -1347,7 +1347,7 @@ namespace ScoutingCodeRedo.Dynamic
                             controller.Current_Mode = RobotState.ROBOT_MODE.Auto;
                             BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                             BackgroundCode.activity_record.RecordType = "EndMatch";
-                            BackgroundCode.activity_record.match_event = "-";
+                            BackgroundCode.activity_record.Match_event = "-";
                             BackgroundCode.activity_record.Leave = controller.Leave;
                             if (controller.Acq_Loc_Temp != "Select" && controller.Acq_Loc_Temp != "Pre")
                             {
@@ -1580,7 +1580,7 @@ namespace ScoutingCodeRedo.Dynamic
                             controller.Current_Mode = RobotState.ROBOT_MODE.Auto;
                             BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
                             BackgroundCode.activity_record.RecordType = "EndMatch";
-                            BackgroundCode.activity_record.match_event = "-";
+                            BackgroundCode.activity_record.Match_event = "-";
                             BackgroundCode.activity_record.Leave = 0;
                             BackgroundCode.activity_record.AcqLoc = "-";
                             BackgroundCode.activity_record.AcqCenter = 0;
@@ -1658,12 +1658,12 @@ namespace ScoutingCodeRedo.Dynamic
                     case ("Match_Event"):
                         if (controller.match_event == RobotState.MATCHEVENT_NAME.NoShow)
                         {
-                            BackgroundCode.activity_record.match_event = controller.match_event.ToString().ToString();
+                            BackgroundCode.activity_record.Match_event = controller.match_event.ToString().ToString();
                             controller.NoSho = true;
                         }
                         else
                         {
-                            BackgroundCode.activity_record.match_event = controller.match_event.ToString().ToString(); //If you crash here you didn't load matches
+                            BackgroundCode.activity_record.Match_event = controller.match_event.ToString().ToString(); //If you crash here you didn't load matches
                         }
                         BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;

@@ -55,7 +55,7 @@ namespace ScoutingCodeRedo.Static
 
                         foreach (var item in JSONevents)
                         {
-                            elist.Add(new KeyValuePair<string, string>(item.event_code, item.name));
+                            elist.Add(new KeyValuePair<string, string>(item.Event_code, item.Name));
                         }
                         this.comboBoxSelectRegional.DataSource = elist;
                     }
