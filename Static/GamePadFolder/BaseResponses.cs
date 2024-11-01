@@ -87,10 +87,17 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                 {
                     BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
                 }
-                else if (gamepad.R3_Press && BackgroundCode.Robots[controllerNumber].match_event != RobotState.MATCHEVENT_NAME.Match_Event)
+                else if (gamepad.R3_Press)
                 {
-                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
-                    BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+                    if (BackgroundCode.Robots[controllerNumber].match_event == RobotState.MATCHEVENT_NAME.Match_Event)
+                    {
+                        BackgroundCode.Robots[controllerNumber].ScouterError += 100000;
+                    }
+                    else
+                    {
+                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
+                        BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+                    }
                 }
 
                 //Scouter names
