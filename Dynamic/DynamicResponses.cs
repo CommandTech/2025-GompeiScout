@@ -23,32 +23,6 @@ namespace ScoutingCodeRedo.Dynamic
             //ANY MODE
             if (!robot.NoSho && robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
             {
-                //Match events
-                if (gamepad.R3_Press && !gamepad.XButton_Down)
-                {
-                    if (robot.match_event != RobotState.MATCHEVENT_NAME.Match_Event)
-                    {
-                        if (robot.match_event == RobotState.MATCHEVENT_NAME.NoShow)
-                        {
-                            robot.NoSho = true;
-                        }
-                        else
-                        {
-                            BackgroundCode.activity_record.Match_event = robot.match_event.ToString().ToString(); //If you crash here you didn't load matches
-                        }
-
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                        BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-
-                        robot.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
-                    }
-                    else if (robot.match_event == RobotState.MATCHEVENT_NAME.Match_Event)
-                    {
-                        robot.ScouterError += 100000;
-                    }
-                }
-
                 // 2024 Changing modes
                 if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.AUTO)
                 {
