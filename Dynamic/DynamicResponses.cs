@@ -20,88 +20,8 @@ namespace ScoutingCodeRedo.Dynamic
             if (robot.ClimbT_StopWatch == null) robot.ClimbT_StopWatch = new Stopwatch();
 
 
-            //ANY MODE
             if (!robot.NoSho && robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
             {
-                // 2024 Changing modes
-                if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.AUTO)
-                {
-                    robot.Desired_Mode = RobotState.ROBOT_MODE.Showtime;
-                    robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
-                }
-                else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Teleop)
-
-                {
-                    robot.Desired_Mode = RobotState.ROBOT_MODE.Teleop;
-                    robot.Current_Mode = RobotState.ROBOT_MODE.Showtime;
-                    if (robot.ClimbTDouble == 0)
-                    {
-                        robot.ClimbT_StopWatch.Start();
-                        robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
-                        robot.ClimbT_StopWatch_running = true;
-                    }
-                    robot.AllyT_StopWatch.Stop();
-                    robot.AllyT = robot.AllyT_StopWatch.Elapsed;
-                    robot.AllyT_StopWatch_running = false;
-
-                    robot.OpptT_StopWatch.Stop();
-                    robot.OpptT = robot.OpptT_StopWatch.Elapsed;
-                    robot.OpptT_StopWatch_running = false;
-
-                    robot.NeutT_StopWatch.Stop();
-                    robot.NeutT = robot.NeutT_StopWatch.Elapsed;
-                    robot.NeutT_StopWatch_running = false;
-                }
-                else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Showtime)
-                {
-                    robot.Desired_Mode = RobotState.ROBOT_MODE.Showtime;
-                    robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
-
-                    robot.ClimbT_StopWatch.Stop();
-                    robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
-                    robot.ClimbT_StopWatch_running = false;
-                }
-
-                //2024 Acquire transaction
-                if (robot.Acq_Loc != "Select" || robot.Del_Dest != RobotState.DEL_DEST.Select || robot.Acq_Center != 0)
-                {
-                    robot.TransactionCheck = true;
-                }
-                else
-                {
-                    robot.TransactionCheck = false;
-                }
-
-                //2024 EndAuto End of Autonomous transaction
-                if (robot.AUTO && gamepad.BackButton_Press)
-                {
-                    if (robot.Current_Loc == RobotState.CURRENT_LOC.Source)
-                    {
-                        robot.OpptT_StopWatch.Start();
-                        robot.OpptT_StopWatch_running = true;
-                    }
-                    else if (robot.Current_Loc == RobotState.CURRENT_LOC.SubW)
-                    {
-                        robot.AllyT_StopWatch.Start();
-                        robot.AllyT_StopWatch_running = true;
-                    }
-
-                    TransactToDatabase(robot, "StartMatch");
-                    robot.AUTO = false;
-                    robot.Acq_Center_Temp = 0;
-                    robot.Acq_Center = 0;
-                }
-                else if (gamepad.RightTrigger_Press && robot.TransactionCheck == true)
-                {
-                    TransactToDatabase(robot, "Activities");
-                }
-                else if (gamepad.RightTrigger_Press && robot.TransactionCheck == false)
-                {
-                    robot.ScouterError += 100000;
-                }
-
-
-
                 //AUTO MODE
                 if (robot.Current_Mode == RobotState.ROBOT_MODE.Auto)
                 {
@@ -715,87 +635,15 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                     }
                 }
-
-                // Values if robot is NoSho
-
-                if (robot.NoSho == true)
-                {
-                    if (gamepad.XButton_Down)
-                    {
-                        if (gamepad.L3_Press)
-                        {
-                            robot.changeHP_Amp(RobotState.CYCLE_DIRECTION.Up);
-                        }
-                    }
-
-                    if (gamepad.DpadUp_Press)
-                    {
-                        robot.Mic++;
-                        if (robot.Mic == 11)
-                        {
-                            robot.Mic = 0;
-                        }
-                        if (robot.Mic == 4)
-                        {
-                            robot.Mic = 0;
-                        }
-                    }
-
-                }
-
-                // #Transact
-                // **************************************************************
-                // ***  TRANSACT TO DATABASE  ***
-                // **************************************************************
-                if (robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name &&
-                    (robot.Acq_Loc != "Select" ||
-                    robot.Del_Dest != RobotState.DEL_DEST.Select ||
-                    robot.Acq_Center != 0))
-                {
-                    robot.TransactionCheck = true;
-                }
-                else
-                {
-                    robot.TransactionCheck = false;
-                }
-
-                //2023 EndAuto End of Autonomous transaction
-                if (robot.AUTO && gamepad.BackButton_Press && !robot.NoSho &&
-                    robot._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
-                {
-                    if (robot.Current_Loc == RobotState.CURRENT_LOC.Source)
-                    {
-                        robot.OpptT_StopWatch.Start();
-                        robot.OpptT_StopWatch_running = true;
-                    }
-                    else if (robot.Current_Loc == RobotState.CURRENT_LOC.SubW)
-                    {
-                        robot.AllyT_StopWatch.Start();
-                        robot.AllyT_StopWatch_running = true;
-                    }
-
-                    TransactToDatabase(robot, "StartMatch");
-                    robot.AUTO = false;
-                    robot.Acq_Center_Temp = 0;
-                    robot.Acq_Center = 0;
-
-                }
-                else if (gamepad.RightTrigger_Press && !robot.NoSho && robot.TransactionCheck == true)
-                {
-                    TransactToDatabase(robot, "Activities");
-                }
-                else if (gamepad.RightTrigger_Press && !robot.NoSho && robot.TransactionCheck == false)
-                {
-                    robot.ScouterError += 100000;
-                }
+                //Any mode
 
                 // 2024 Changing modes
-                if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.AUTO && !robot.NoSho)
+                if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto && !robot.AUTO)
                 {
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Showtime;
                     robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
                 }
-                else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Teleop && !robot.NoSho)
+                else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Teleop)
 
                 {
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Teleop;
@@ -818,7 +666,7 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.NeutT = robot.NeutT_StopWatch.Elapsed;
                     robot.NeutT_StopWatch_running = false;
                 }
-                else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Showtime && !robot.NoSho)
+                else if (gamepad.BackButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Showtime)
                 {
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Showtime;
                     robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
@@ -827,11 +675,70 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
                     robot.ClimbT_StopWatch_running = false;
                 }
+
+                //2024 Acquire transaction
+                if (robot.Acq_Loc != "Select" || robot.Del_Dest != RobotState.DEL_DEST.Select || robot.Acq_Center != 0)
+                {
+                    robot.TransactionCheck = true;
+                }
+                else
+                {
+                    robot.TransactionCheck = false;
+                }
+
+                //2024 EndAuto End of Autonomous transaction
+                if (robot.AUTO && gamepad.BackButton_Press)
+                {
+                    if (robot.Current_Loc == RobotState.CURRENT_LOC.Source)
+                    {
+                        robot.OpptT_StopWatch.Start();
+                        robot.OpptT_StopWatch_running = true;
+                    }
+                    else if (robot.Current_Loc == RobotState.CURRENT_LOC.SubW)
+                    {
+                        robot.AllyT_StopWatch.Start();
+                        robot.AllyT_StopWatch_running = true;
+                    }
+
+                    TransactToDatabase(robot, "StartMatch");
+                    robot.AUTO = false;
+                    robot.Acq_Center_Temp = 0;
+                    robot.Acq_Center = 0;
+                }
+                else if (gamepad.RightTrigger_Press && robot.TransactionCheck == true)
+                {
+                    TransactToDatabase(robot, "Activities");
+                }
+                else if (gamepad.RightTrigger_Press && robot.TransactionCheck == false)
+                {
+                    robot.ScouterError += 100000;
+                }
             }
 
+            // Values if robot is NoSho
+            else if (robot.NoSho)
+            {
+                if (gamepad.XButton_Down)
+                {
+                    if (gamepad.L3_Press)
+                    {
+                        robot.changeHP_Amp(RobotState.CYCLE_DIRECTION.Up);
+                    }
+                }
 
-
-
+                if (gamepad.DpadUp_Press)
+                {
+                    robot.Mic++;
+                    if (robot.Mic == 11)
+                    {
+                        robot.Mic = 0;
+                    }
+                    if (robot.Mic == 4)
+                    {
+                        robot.Mic = 0;
+                    }
+                }
+            }
 
 
 
