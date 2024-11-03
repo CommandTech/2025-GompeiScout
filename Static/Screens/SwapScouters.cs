@@ -50,10 +50,7 @@ namespace ScoutingCodeRedo.Static
                         {
                             if (BackgroundCode.Robots[j].getScouterName(RobotState.SCOUTER_NAME.Select_Name) == name)
                             {
-                                BackgroundCode.Robots[i].ScouterBox = BackgroundCode.Robots[j].ScouterBox;
-                                BackgroundCode.Robots[j].ScouterBox = i;
-
-                                (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);
+                                (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
                             }
                         }
                     }
@@ -61,12 +58,6 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].color = i < 3 ? "Red" : "Blue";
                 }
             }
-
-            for (int i = 0; i < 6; i++)
-            {
-                Console.Write(BackgroundCode.Robots[i].ScouterBox + " ");
-            }
-            Console.WriteLine("");
 
             this.Hide();
         }
