@@ -51,6 +51,7 @@ namespace ScoutingCodeRedo.Static
                             if (BackgroundCode.Robots[j].getScouterName(RobotState.SCOUTER_NAME.Select_Name) == name)
                             {
                                 (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
+                                (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);
                             }
                         }
                     }
