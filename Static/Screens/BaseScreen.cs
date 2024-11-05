@@ -271,7 +271,7 @@ namespace ScoutingCodeRedo.Static
                 {
                     for (int i = 0; i < 6; i++)
                     {
-                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
+                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch", false);
                     }
 
                     NextMatch();
