@@ -817,7 +817,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            VerifyData();
+                            VerifyData(controller, "StartMatch");
                         }
 
                         // End Auto line
@@ -910,7 +910,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            VerifyData();
+                            VerifyData(controller, "EndAuto");
                         }
                         break;
                     case ("Activities"):
@@ -1070,7 +1070,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 }
                                 else
                                 {
-                                    VerifyData();
+                                    VerifyData(controller, "Activities");
                                 }
 
                                 //Reset Temp Variables
@@ -1150,7 +1150,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 }
                                 else
                                 {
-                                    VerifyData();
+                                    VerifyData(controller, "Activities");
                                 }
                             }
                         }
@@ -1310,7 +1310,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             else
                             {
-                                VerifyData();
+                                VerifyData(controller, "Activities");
                             }
 
                             //Reset Temp Variables
@@ -1563,7 +1563,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             else
                             {
-                                VerifyData();
+                                VerifyData(controller, "EndMatch");
                             }
                         }
                         else if (controller.NoSho == true)
@@ -1654,7 +1654,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             else
                             {
-                                VerifyData();
+                                VerifyData(controller, "EndMatch");
                             }
                         }
                         break;
@@ -1735,7 +1735,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            VerifyData();
+                            VerifyData(controller, "Match_Event");
                         }
 
                         controller.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
@@ -1820,9 +1820,10 @@ namespace ScoutingCodeRedo.Dynamic
 
         public static void TestTransact()
         {
-            RobotState testRobot = new RobotState();
-
-            testRobot._ScouterName = RobotState.SCOUTER_NAME.Scouter1;
+            RobotState testRobot = new RobotState
+            {
+                _ScouterName = RobotState.SCOUTER_NAME.Scouter1
+            };
 
             TransactToDatabase(testRobot, "EndAuto", true);
             TransactToDatabase(testRobot, "Activities", true);
@@ -1830,7 +1831,7 @@ namespace ScoutingCodeRedo.Dynamic
             TransactToDatabase(testRobot, "Match_Event", true);
         }
 
-        public static void VerifyData()
+        public static void VerifyData(RobotState robot, string recordType)
         {
 
         }
