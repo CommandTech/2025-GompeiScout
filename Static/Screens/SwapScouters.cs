@@ -16,9 +16,9 @@ namespace ScoutingCodeRedo.Static
             InitializeComponent();
             for (int i = 0; i < 6; i++)
             {
-                if (BackgroundCode.Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name) != RobotState.SCOUTER_NAME.Select_Name)
+                if (BackgroundCode.Robots[i].GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
                 {
-                    scouterDict.Add(BackgroundCode.Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name), BackgroundCode.Robots[i].ScouterBox);
+                    scouterDict.Add(BackgroundCode.Robots[i].GetScouterName(), BackgroundCode.Robots[i].ScouterBox);
                 }
             }
 
@@ -48,7 +48,7 @@ namespace ScoutingCodeRedo.Static
 
                         for (int j = 0; j < 6; j++)
                         {
-                            if (BackgroundCode.Robots[j].getScouterName(RobotState.SCOUTER_NAME.Select_Name) == name)
+                            if (BackgroundCode.Robots[j].GetScouterName() == name)
                             {
                                 (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
                                 (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);

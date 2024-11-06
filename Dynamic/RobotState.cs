@@ -112,7 +112,7 @@ namespace ScoutingCodeRedo.Dynamic
             get { return _TeamName; }
             set { _TeamName = value; }
         }
-        public MATCHEVENT_NAME match_event
+        public MATCHEVENT_NAME Match_event
         {
             get { return _match_event; }
             set { _match_event = value; }
@@ -172,8 +172,8 @@ namespace ScoutingCodeRedo.Dynamic
 
 
         ///Scouter Name
-        public SCOUTER_NAME getScouterName(SCOUTER_NAME ScouterName)
-        { return ScouterName = _ScouterName; }
+        public SCOUTER_NAME GetScouterName()
+        { return _ScouterName; }
 
         ///<summary>
         ///Resets all values to the default
@@ -181,7 +181,7 @@ namespace ScoutingCodeRedo.Dynamic
         ///
 
         //Scouter Name
-        public void changeScouterName(CYCLE_DIRECTION CycleDirection)
+        public void ChangeScouterName(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _ScouterName = (SCOUTER_NAME)GetNextEnum<SCOUTER_NAME>(_ScouterName);
@@ -192,7 +192,7 @@ namespace ScoutingCodeRedo.Dynamic
         }
 
         //2024 cycles
-        public void changeDel_Dest(CYCLE_DIRECTION CycleDirection)
+        public void ChangeDel_Dest(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Del_Dest = (DEL_DEST)GetNextEnum<DEL_DEST>(_Del_Dest);
@@ -202,7 +202,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        public void changeRobot_Set(CYCLE_DIRECTION CycleDirection)
+        public void ChangeRobot_Set(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Robot_Set = (ROBOT_SET)GetNextEnum<ROBOT_SET>(_Robot_Set);
@@ -212,7 +212,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        public void changeHP_Amp(CYCLE_DIRECTION CycleDirection)
+        public void ChangeHP_Amp(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _HP_Amp = (HP_AMP)GetNextEnum<HP_AMP>(_HP_Amp);
@@ -221,7 +221,7 @@ namespace ScoutingCodeRedo.Dynamic
                 _HP_Amp = (HP_AMP)GetPreviousEnum<HP_AMP>(_HP_Amp);
             }
         }
-        public void changeStage_Stat(CYCLE_DIRECTION CycleDirection)
+        public void ChangeStage_Stat(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Stage_Stat = (STAGE_STAT)GetNextEnum<STAGE_STAT>(_Stage_Stat);
@@ -230,7 +230,7 @@ namespace ScoutingCodeRedo.Dynamic
                 _Stage_Stat = (STAGE_STAT)GetPreviousEnum<STAGE_STAT>(_Stage_Stat);
             }
         }
-        public void changeStage_Att(CYCLE_DIRECTION CycleDirection)
+        public void ChangeStage_Att(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Stage_Att = (STAGE_ATT)GetNextEnum<STAGE_ATT>(_Stage_Att);
@@ -239,7 +239,7 @@ namespace ScoutingCodeRedo.Dynamic
                 _Stage_Att = (STAGE_ATT)GetPreviousEnum<STAGE_ATT>(_Stage_Att);
             }
         }
-        public void changeStage_Loc(CYCLE_DIRECTION CycleDirection)
+        public void ChangeStage_Loc(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Stage_Loc = (STAGE_LOC)GetNextEnum<STAGE_LOC>(_Stage_Loc);
@@ -248,7 +248,7 @@ namespace ScoutingCodeRedo.Dynamic
                 _Stage_Loc = (STAGE_LOC)GetPreviousEnum<STAGE_LOC>(_Stage_Loc);
             }
         }
-        public void changeLit(CYCLE_DIRECTION CycleDirection)
+        public void ChangeLit(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Lit = (LIT)GetNextEnum<LIT>(_Lit);
@@ -257,7 +257,7 @@ namespace ScoutingCodeRedo.Dynamic
                 _Lit = (LIT)GetPreviousEnum<LIT>(_Lit);
             }
         }
-        public void changeApp_Strat(CYCLE_DIRECTION CycleDirection)
+        public void ChangeApp_Strat(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _App_Strat = (APP_STRAT)GetNextEnum<APP_STRAT>(_App_Strat);
@@ -266,7 +266,7 @@ namespace ScoutingCodeRedo.Dynamic
                 _App_Strat = (APP_STRAT)GetPreviousEnum<APP_STRAT>(_App_Strat);
             }
         }
-        public void changeCurrent_Loc(CYCLE_DIRECTION CycleDirection)
+        public void ChangeCurrent_Loc(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
                 _Current_Loc = (CURRENT_LOC)GetNextEnum<CURRENT_LOC>(_Current_Loc);
@@ -278,7 +278,7 @@ namespace ScoutingCodeRedo.Dynamic
 
 
         //Cycle Event Name
-        public void cycleEventName(CYCLE_DIRECTION CycleDirection)
+        public void CycleEventName(CYCLE_DIRECTION CycleDirection)
         {
             if (CycleDirection == CYCLE_DIRECTION.Up)
             {

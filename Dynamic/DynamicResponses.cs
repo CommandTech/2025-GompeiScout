@@ -2,6 +2,7 @@
 using ScoutingCodeRedo.Static;
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Dynamic
@@ -30,11 +31,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (gamepad.LTHRight_Press)
                         {
-                            robot.changeRobot_Set(RobotState.CYCLE_DIRECTION.Up);
+                            robot.ChangeRobot_Set(RobotState.CYCLE_DIRECTION.Up);
                         }
                         if (gamepad.LTHLeft_Press)
                         {
-                            robot.changeRobot_Set(RobotState.CYCLE_DIRECTION.Down);
+                            robot.ChangeRobot_Set(RobotState.CYCLE_DIRECTION.Down);
                         }
                     }
 
@@ -54,7 +55,7 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (gamepad.L3_Press)
                         {
-                            robot.changeHP_Amp(RobotState.CYCLE_DIRECTION.Up);
+                            robot.ChangeHP_Amp(RobotState.CYCLE_DIRECTION.Up);
                         }
                     }
 
@@ -506,11 +507,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (gamepad.LTHRight_Press)
                         {
-                            robot.changeStage_Stat(RobotState.CYCLE_DIRECTION.Up);
+                            robot.ChangeStage_Stat(RobotState.CYCLE_DIRECTION.Up);
                         }
                         else if (gamepad.LTHLeft_Press)
                         {
-                            robot.changeStage_Stat(RobotState.CYCLE_DIRECTION.Down);
+                            robot.ChangeStage_Stat(RobotState.CYCLE_DIRECTION.Down);
                         }
                     }
 
@@ -520,12 +521,12 @@ namespace ScoutingCodeRedo.Dynamic
                         if (gamepad.LTHRight_Press)
                         {
                             robot.Stage_Att = RobotState.STAGE_ATT.Select;
-                            robot.changeStage_Loc(RobotState.CYCLE_DIRECTION.Up);
+                            robot.ChangeStage_Loc(RobotState.CYCLE_DIRECTION.Up);
                         }
                         else if (gamepad.LTHLeft_Press)
                         {
                             robot.Stage_Att = RobotState.STAGE_ATT.Select;
-                            robot.changeStage_Loc(RobotState.CYCLE_DIRECTION.Down);
+                            robot.ChangeStage_Loc(RobotState.CYCLE_DIRECTION.Down);
                         }
                     }
 
@@ -534,12 +535,12 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (gamepad.LTHRight_Press)
                         {
-                            robot.changeStage_Att(RobotState.CYCLE_DIRECTION.Up);
+                            robot.ChangeStage_Att(RobotState.CYCLE_DIRECTION.Up);
                             robot.Stage_Loc = RobotState.STAGE_LOC.Select;
                         }
                         else if (gamepad.LTHLeft_Press)
                         {
-                            robot.changeStage_Att(RobotState.CYCLE_DIRECTION.Down);
+                            robot.ChangeStage_Att(RobotState.CYCLE_DIRECTION.Down);
                             robot.Stage_Loc = RobotState.STAGE_LOC.Select;
 
                         }
@@ -550,11 +551,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (gamepad.LTHRight_Press)
                         {
-                            robot.changeApp_Strat(RobotState.CYCLE_DIRECTION.Up);
+                            robot.ChangeApp_Strat(RobotState.CYCLE_DIRECTION.Up);
                         }
                         else if (gamepad.LTHLeft_Press)
                         {
-                            robot.changeApp_Strat(RobotState.CYCLE_DIRECTION.Down);
+                            robot.ChangeApp_Strat(RobotState.CYCLE_DIRECTION.Down);
                         }
                     }
 
@@ -605,7 +606,7 @@ namespace ScoutingCodeRedo.Dynamic
                     //2024 Spotlit 
                     if (gamepad.DpadDown_Press)
                     {
-                        robot.changeLit(RobotState.CYCLE_DIRECTION.Up);
+                        robot.ChangeLit(RobotState.CYCLE_DIRECTION.Up);
                     }
 
                     // 2024 Def / avo
@@ -722,7 +723,7 @@ namespace ScoutingCodeRedo.Dynamic
                 {
                     if (gamepad.L3_Press)
                     {
-                        robot.changeHP_Amp(RobotState.CYCLE_DIRECTION.Up);
+                        robot.ChangeHP_Amp(RobotState.CYCLE_DIRECTION.Up);
                     }
                 }
 
@@ -756,7 +757,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
-                        BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
 
                         BackgroundCode.activity_record.Match_event = "-";
                         BackgroundCode.activity_record.Leave = 0;
@@ -809,23 +810,18 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Strategy = "-";
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                        if (!isTest)
-                        {
-                            //Save Record to the database
-                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                            BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                        }
-                        else
-                        {
-                            VerifyData(controller, "StartMatch");
-                        }
+                        //Save Record to the database
+                        BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                        BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
+
+
 
                         // End Auto line
                         BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                         BackgroundCode.activity_record.Time = controller.Auto_Time;
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
-                        BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                         BackgroundCode.activity_record.RecordType = "EndAuto";
                         BackgroundCode.activity_record.Match_event = "-";
                         BackgroundCode.activity_record.Leave = controller.Leave;
@@ -902,16 +898,9 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.Acq_Center = 0;
 
 
-                        if (!isTest)
-                        {
-                            //Save Record to the database
-                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                            BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                        }
-                        else
-                        {
-                            VerifyData(controller, "EndAuto");
-                        }
+                        //Save Record to the database
+                        BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                        BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
                         break;
                     case ("Activities"):
                         if (controller.Acq_Loc != RobotState.CURRENT_LOC.Select.ToString() || controller.Acq_Center != 0)
@@ -1057,21 +1046,16 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                                 BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                                 BackgroundCode.activity_record.Mode = "Auto";
-                                BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                                BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                                 BackgroundCode.activity_record.RecordType = "Activities";
                                 BackgroundCode.activity_record.Match_event = "-";
                                 BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                                if (!isTest)
-                                {
-                                    //Save Record to the database
-                                    BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                                    BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                                }
-                                else
-                                {
-                                    VerifyData(controller, "Activities");
-                                }
+
+                                //Save Record to the database
+                                BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                                BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
+
 
                                 //Reset Temp Variables
                                 controller.Acq_Loc_Temp = "Select";
@@ -1137,21 +1121,14 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                                 BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                                 BackgroundCode.activity_record.Mode = "Auto";
-                                BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                                BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                                 BackgroundCode.activity_record.RecordType = "Activities";
                                 BackgroundCode.activity_record.Match_event = "-";
                                 BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                                if (!isTest)
-                                {
-                                    //Save Record to the database
-                                    BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                                    BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                                }
-                                else
-                                {
-                                    VerifyData(controller, "Activities");
-                                }
+                                //Save Record to the database
+                                BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                                BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
                             }
                         }
                         else if (controller.Del_Dest != RobotState.DEL_DEST.Select)
@@ -1297,21 +1274,14 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                             BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                             BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
-                            BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                            BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                             BackgroundCode.activity_record.RecordType = "Activities";
                             BackgroundCode.activity_record.Match_event = "-";
                             BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                            if (!isTest)
-                            {
-                                //Save Record to the database
-                                BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                                BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                            }
-                            else
-                            {
-                                VerifyData(controller, "Activities");
-                            }
+                            //Save Record to the database
+                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                            BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
 
                             //Reset Temp Variables
                             controller.Acq_Center_Temp = 0;
@@ -1333,7 +1303,7 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.Time = DateTime.Now;
                             BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                             controller.Current_Mode = RobotState.ROBOT_MODE.Auto;
-                            BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                            BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                             BackgroundCode.activity_record.RecordType = "EndMatch";
                             BackgroundCode.activity_record.Match_event = "-";
                             BackgroundCode.activity_record.Leave = controller.Leave;
@@ -1555,16 +1525,9 @@ namespace ScoutingCodeRedo.Dynamic
 
                             BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                            if (!isTest)
-                            {
-                                //Save Record to the database
-                                BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                                BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                            }
-                            else
-                            {
-                                VerifyData(controller, "EndMatch");
-                            }
+                            //Save Record to the database
+                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                            BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
                         }
                         else if (controller.NoSho == true)
                         {
@@ -1573,7 +1536,7 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.Time = DateTime.Now;
                             BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
                             controller.Current_Mode = RobotState.ROBOT_MODE.Auto;
-                            BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                            BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                             BackgroundCode.activity_record.RecordType = "EndMatch";
                             BackgroundCode.activity_record.Match_event = "-";
                             BackgroundCode.activity_record.Leave = 0;
@@ -1646,33 +1609,26 @@ namespace ScoutingCodeRedo.Dynamic
                             BackgroundCode.activity_record.Strategy = "-";
                             BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                            if (!isTest)
-                            {
-                                //Save Record to the database
-                                BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                                BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                            }
-                            else
-                            {
-                                VerifyData(controller, "EndMatch");
-                            }
+                            //Save Record to the database
+                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                            BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
                         }
                         break;
                     case ("Match_Event"):
-                        if (controller.match_event == RobotState.MATCHEVENT_NAME.NoShow)
+                        if (controller.Match_event == RobotState.MATCHEVENT_NAME.NoShow)
                         {
-                            BackgroundCode.activity_record.Match_event = controller.match_event.ToString().ToString();
+                            BackgroundCode.activity_record.Match_event = controller.Match_event.ToString().ToString();
                             controller.NoSho = true;
                         }
                         else
                         {
-                            BackgroundCode.activity_record.Match_event = controller.match_event.ToString().ToString(); //If you crash here you didn't load matches
+                            BackgroundCode.activity_record.Match_event = controller.Match_event.ToString().ToString(); //If you crash here you didn't load matches
                         }
                         BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
                         BackgroundCode.activity_record.Time = DateTime.Now;
                         BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
-                        BackgroundCode.activity_record.ScouterName = controller.getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
                         BackgroundCode.activity_record.RecordType = "Match_Event";
 
                         //2024
@@ -1727,21 +1683,14 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Avoidance = 9;
                         BackgroundCode.activity_record.Strategy = "-";
 
-                        if (!isTest)
-                        {
-                            //Save Record to the database
-                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                            BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
-                        }
-                        else
-                        {
-                            VerifyData(controller, "Match_Event");
-                        }
+                        //Save Record to the database
+                        BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                        BackgroundCode.seasonframework.SaveChanges(); // If you crash here migration isn't working
 
-                        controller.match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+                        controller.Match_event = RobotState.MATCHEVENT_NAME.Match_Event;
 
                         //Reset Match Event
-                        controller.match_event = 0;
+                        controller.Match_event = 0;
                         break;
                     default:
                         MessageBox.Show("Error: Record Type not found");
@@ -1818,22 +1767,5 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        public static void TestTransact()
-        {
-            RobotState testRobot = new RobotState
-            {
-                _ScouterName = RobotState.SCOUTER_NAME.Scouter1
-            };
-
-            TransactToDatabase(testRobot, "EndAuto", true);
-            TransactToDatabase(testRobot, "Activities", true);
-            TransactToDatabase(testRobot, "EndMatch", true);
-            TransactToDatabase(testRobot, "Match_Event", true);
-        }
-
-        public static void VerifyData(RobotState robot, string recordType)
-        {
-
-        }
     }
 }

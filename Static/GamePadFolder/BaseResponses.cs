@@ -81,33 +81,33 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                 //Match events
                 if (gamepad.RTHRight_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
                 {
-                    BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Up);
+                    BackgroundCode.Robots[controllerNumber].CycleEventName(RobotState.CYCLE_DIRECTION.Up);
                 }
                 else if (gamepad.RTHLeft_Press && !BackgroundCode.Robots[controllerNumber].NoSho && !gamepad.XButton_Down)
                 {
-                    BackgroundCode.Robots[controllerNumber].cycleEventName(RobotState.CYCLE_DIRECTION.Down);
+                    BackgroundCode.Robots[controllerNumber].CycleEventName(RobotState.CYCLE_DIRECTION.Down);
                 }
                 else if (gamepad.R3_Press)
                 {
-                    if (BackgroundCode.Robots[controllerNumber].match_event == RobotState.MATCHEVENT_NAME.Match_Event)
+                    if (BackgroundCode.Robots[controllerNumber].Match_event == RobotState.MATCHEVENT_NAME.Match_Event)
                     {
                         BackgroundCode.Robots[controllerNumber].ScouterError += 100000;
                     }
                     else
                     {
                         DynamicResponses.TransactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event", false);
-                        BackgroundCode.Robots[controllerNumber].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
+                        BackgroundCode.Robots[controllerNumber].Match_event = RobotState.MATCHEVENT_NAME.Match_Event;
                     }
                 }
 
                 //Scouter names
                 if (gamepad.LTHRight_Press && gamepad.XButton_Down && gamepad.AButton_Down && !gamepad.YButton_Down && !gamepad.BButton_Down)
                 {
-                    BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
+                    BackgroundCode.Robots[controllerNumber].ChangeScouterName(RobotState.CYCLE_DIRECTION.Up);
                 }
                 if (gamepad.LTHLeft_Press && gamepad.XButton_Down && gamepad.AButton_Down && !gamepad.YButton_Down && !gamepad.BButton_Down)
                 {
-                    BackgroundCode.Robots[controllerNumber].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
+                    BackgroundCode.Robots[controllerNumber].ChangeScouterName(RobotState.CYCLE_DIRECTION.Down);
                 }
 
                 dynamicGamepad.ReadStick(gpArray, controllerNumber);

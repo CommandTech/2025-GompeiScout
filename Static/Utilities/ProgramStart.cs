@@ -1,6 +1,7 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Static
@@ -13,6 +14,7 @@ namespace ScoutingCodeRedo.Static
         [STAThread]
         static void Main()
         {
+
             Settings.Default.loadedEvent = null;
             Settings.Default.manualMatchList = null;
             Settings.Default.DBExists = false;

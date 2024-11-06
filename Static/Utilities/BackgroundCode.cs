@@ -3,6 +3,7 @@ using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static.GamePadFolder;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Media;
 
 namespace ScoutingCodeRedo.Static
@@ -32,7 +33,11 @@ namespace ScoutingCodeRedo.Static
         public static SoundPlayer soundCue = new SoundPlayer(soundFilePath);
         public BackgroundCode()
         {
-            print.Show();
+            if (Debugger.IsAttached)
+            {
+                print.Show();
+            }
+
             seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
 
             Settings.Default.DBExists = seasonframework.Database.Exists();
