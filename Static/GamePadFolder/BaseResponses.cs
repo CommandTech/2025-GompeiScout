@@ -30,6 +30,9 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                 try
                 {
                     var stick = new Joystick(input, device.InstanceGuid);
+                    //Work on identifying controllers when getting the sticks, helps when a controller is disconnected
+                    //and reconnected, try to not change the other controllers when this happens
+
                     stick.Acquire();
 
                     foreach (DeviceObjectInstance deviceObject in stick.GetObjects())
