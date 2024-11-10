@@ -53,7 +53,6 @@ namespace ScoutingCodeRedo.Static
 
         private void JoyStickReader(object sender, EventArgs e)
         {
-            //UpdateJoysticks();
             if (!initializing)
             {
                 UpdateScreen();
@@ -103,8 +102,6 @@ namespace ScoutingCodeRedo.Static
 
         public static void UpdateJoysticks()
         {
-            //try to make this more efficient or quicker
-            BackgroundCode.controllers.GetGamePads();
             BackgroundCode.gamePads = BackgroundCode.controllers.GetGamePads();
         }
         private void UpdateScreen()
@@ -112,13 +109,13 @@ namespace ScoutingCodeRedo.Static
             for (int i = 0; i < 6; i++)
             {
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.controllers.GetGamePads().Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].Match_event.ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.controllers.GetGamePads().Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i < BackgroundCode.controllers.GetGamePads().Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
 
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = (i < BackgroundCode.controllers.GetGamePads().Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
             }
         }
         private void BtnExit_Click(object sender, EventArgs e)
@@ -292,8 +289,6 @@ namespace ScoutingCodeRedo.Static
                     Settings.Default.currentMatch--;
                 }
             }
-
-            UpdateJoysticks();
         }
 
         private void NextMatch()
