@@ -25,18 +25,24 @@ namespace ScoutingCodeRedo.Static
         bool wasPractice = false;
         public BaseScreen()
         {
+            //Initialization of the screen
             InitializeComponent();
+            //Scales the screen to the resolution of the display
             this.AutoScaleMode = AutoScaleMode.Dpi;
             this.btnInitialDBLoad.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
+            //Initialization of the background variables
             bgc = new BackgroundCode();
 
+            //Sets the base directory for the ini file
             projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
             iniPath = System.IO.Path.Combine(projectBaseDirectory, "config.ini");
             iniFile = new INIFile(iniPath);
 
+            //timerJoysticks updates every 20 ms
             timerJoysticks.Enabled = true;
 
+            //If there is previous data, ask if the user wants to load it
             if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
             {
                 DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
@@ -46,15 +52,19 @@ namespace ScoutingCodeRedo.Static
                 }
             }
 
+            //Grabs all connected joysticks
             UpdateJoysticks();
 
+            //Turns off initialization
             initializing = false;
         }
 
         private void JoyStickReader(object sender, EventArgs e)
         {
+            //Checks if the program is initializing
             if (!initializing)
             {
+                //Updates the screen with the current data
                 UpdateScreen();
 
                 //Loop through all connected gamepads
@@ -69,32 +79,42 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
                 }
 
+                //If the program is in practice mode
                 if (Settings.Default.practiceMode)
                 {
+                    //Checks if it was just not in practice mode
                     if (!wasPractice)
                     {
+                        //Updates the joysticks
                         UpdateJoysticks();
                     }
 
+                    //Changes gamepads 1 to 5 to null
                     for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
                     {
                         BackgroundCode.gamePads[i] = null;
                     }
 
+                    //If the scouter error increases, play the sound
                     if (BackgroundCode.Robots[0].prevScouterError != BackgroundCode.Robots[0].ScouterError)
                     {
                         BackgroundCode.soundCue.Play();
                         BackgroundCode.Robots[0].prevScouterError = BackgroundCode.Robots[0].ScouterError;
                     }
+                    //Sets that it was in practice mode
                     wasPractice = true;
                 }
                 else
                 {
+                    //If it was just in practice mode
                     if (wasPractice)
                     {
+                        //Update joysticks
                         UpdateJoysticks();
                     }
+                    //Sets that it was not in practice mode
                     wasPractice = false;
+                    //Removes the sound player
                     BackgroundCode.soundCue.Dispose();
                 }
             }
@@ -102,10 +122,12 @@ namespace ScoutingCodeRedo.Static
 
         public static void UpdateJoysticks()
         {
+            //Updates the list of currently connected gamepads
             BackgroundCode.gamePads = BackgroundCode.controllers.GetGamePads();
         }
         private void UpdateScreen()
         {
+            //Loops through all 6 boxes to update the text to be based on the RobotState
             for (int i = 0; i < 6; i++)
             {
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i]._ScouterName.ToString();
@@ -120,18 +142,22 @@ namespace ScoutingCodeRedo.Static
         }
         private void BtnExit_Click(object sender, EventArgs e)
         {
+            //Makes sure the user wants to exit
             DialogResult confirmExit = MessageBox.Show("Are you sure you want to exit?", "Please Confirm", MessageBoxButtons.YesNo);
             if (confirmExit == DialogResult.Yes)
             {
+                //If the event is loaded or manual matches are loaded, ask if the user wants to save the data
                 if (Settings.Default.loadedEvent != null || Settings.Default.manualMatchList != null)
                 {
                     confirmExit = MessageBox.Show("Do you want to save the current data?", "Please Confirm", MessageBoxButtons.YesNo);
                     if (confirmExit == DialogResult.Yes)
                     {
+                        //Save the data
                         SaveData();
                     }
                 }
 
+                //Close the connection then exit
                 BackgroundCode.seasonframework.Database.Connection.Close();
                 Environment.Exit(0);
             }
