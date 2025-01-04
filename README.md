@@ -1,32 +1,8 @@
-2024 Scouting Code Redone from scratch.
-Rewritten to help make it easier for new users to understand, modify, and use.
+2025 Scouting System for FRC 190: Gompei and The H.E.R.D.
 
 
-Wants:
 
---Code Changes--
-- [x] Modular design (Code that doesn't change stays in a folder that doesn't get touched. Code that changes every year is in a different folder.)
 
-- [x] See if you can overlay different screens on top of each other
-
-- [x] Make a way to refresh the amount of controllers connected while running. (Either always looking or a button on the screen to look)
-
-- [x] Make the API key in 1 spot in the entire code
-
-- [x] Have a save/load option (Try out ini files)
-
-~~- [ ] Event checklist screen (Not having to load excess events that you don't care about)~~
-
-- [x] Select where controllers are located in base program (the addon made in 2024 but better and designed from the start)
-
-- [x] Training mode or interface with sound cues
-
---Match Preview Report\Website--
-- [ ] Modular data interface (be able to see what other teams also are looking at for data)
-
-- [ ] Alliance selection stuff (show the strengths of each alliance during alliance selection and hide teams that have been selected already)
-
-- [ ] Paper scouting and drive team notes that only show up for our team
 
 
 # Scouting Code Redo
@@ -58,7 +34,7 @@ At the end of the match, when every scouter is ready to go to the next match. Th
 In case of code exiting during an event, the code should automatically save the current data (match number, event code, red right, priority scouting) just re-open the code, click on load previous data.
 If it does not save the data, just load events and get matches and use the arrow at the top until you get to the match
 
-## Controls
+## 2024 Controls
 ![Auto Mode Controls](https://i.imgur.com/aaHGLxW.png?1)
 ![Teleop Mode Controls](https://i.imgur.com/SaYmYmg.png)
 ![Endgame Mode Controls](https://i.imgur.com/8mVOZt8.png)
