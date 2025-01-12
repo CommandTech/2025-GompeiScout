@@ -36,10 +36,38 @@ namespace ScoutingCodeRedo.Dynamic
         public string Mode { get; set; }
         public string DriveSta { get; set; }
         public int Defense { get; set; }
+        public int DefenseValue { get; set; }
         public int Avoidance { get; set; }
         public string ScouterName { get; set; }
         public int ScouterError { get; set; }
         public string Match_event { get; set; }
+
+        public string Strategy { get; set; }
+        public int Coop { get; set; }
+        public TimeSpan DZTime { get; set; }
+        public bool Near_Far { get; set; }
+
+        public string Starting_Loc { get; set; }
+        public string Leave { get; set; }
+
+        public int AcqCoralS { get; set; }
+        public int AcqCoralF { get; set; }
+        public int AcqAlgaeR { get; set; }
+        public int AcqAlgaeF { get; set; }
+
+        public int DelCoralL1 { get; set; }
+        public int DelCoralL2 { get; set; }
+        public int DelCoralL3 { get; set; }
+        public int DelCoralL4 { get; set; }
+        public int DelCoralF { get; set; }
+
+        public int DelAlgaeP { get; set; }
+        public int DelAlgaeN { get; set; }
+        public int DelAlgaeF { get; set; }
+
+        public TimeSpan ClimbT { get; set; }
+        public string EndState { get; set; }
+        public string CageAttept { get; set; }
 
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
@@ -58,10 +86,38 @@ namespace ScoutingCodeRedo.Dynamic
         public string Mode { get; set; }
         public string DriveSta { get; set; }
         public int Defense { get; set; }
+        public int DefenseValue { get; set; }
         public int Avoidance { get; set; }
         public string ScouterName { get; set; }
         public int ScouterError { get; set; }
         public string Match_event { get; set; }
+
+        public string Strategy { get; set; }
+        public int Coop { get; set; }
+        public TimeSpan DZTime { get; set; }
+        public bool Near_Far { get; set; }
+
+        public string Starting_Loc { get; set; }
+        public string Leave { get; set; }
+
+        public int AcqCoralS { get; set; }
+        public int AcqCoralF { get; set; }
+        public int AcqAlgaeR { get; set; }
+        public int AcqAlgaeF { get; set; }
+
+        public int DelCoralL1 { get; set; }
+        public int DelCoralL2 { get; set; }
+        public int DelCoralL3 { get; set; }
+        public int DelCoralL4 { get; set; }
+        public int DelCoralF { get; set; }
+
+        public int DelAlgaeP { get; set; }
+        public int DelAlgaeN { get; set; }
+        public int DelAlgaeF { get; set; }
+
+        public TimeSpan ClimbT { get; set; }
+        public string EndState { get; set; }
+        public string CageAttept { get; set; }
     }
     public class EventSummary : BaseEntity
     {

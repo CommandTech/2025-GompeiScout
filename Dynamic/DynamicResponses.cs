@@ -158,67 +158,67 @@ namespace ScoutingCodeRedo.Dynamic
         {
             for (int i = 0; i < 6; i++)
             {
-                BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
-                BackgroundCode.Robots[i].Leave = 0;
-                BackgroundCode.Robots[i].AUTO = true;
-                BackgroundCode.Robots[i].HP_Amp = RobotState.HP_AMP.Select;
-                BackgroundCode.Robots[i].Robot_Set = RobotState.ROBOT_SET.SubW;
-                BackgroundCode.Robots[i].Current_Loc = RobotState.CURRENT_LOC.SubW;
+                //BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
+                //BackgroundCode.Robots[i].Leave = 0;
+                //BackgroundCode.Robots[i].AUTO = true;
+                //BackgroundCode.Robots[i].HP_Amp = RobotState.HP_AMP.Select;
+                //BackgroundCode.Robots[i].Robot_Set = RobotState.ROBOT_SET.SubW;
+                //BackgroundCode.Robots[i].Current_Loc = RobotState.CURRENT_LOC.SubW;
 
-                BackgroundCode.Robots[i].Acq_Center = 0;
-                BackgroundCode.Robots[i].Acq_Center_Temp = 0;
-                BackgroundCode.Robots[i].Acq_Loc = "Select";
-                BackgroundCode.Robots[i].Acq_Loc_Temp = "Pre";
+                //BackgroundCode.Robots[i].Acq_Center = 0;
+                //BackgroundCode.Robots[i].Acq_Center_Temp = 0;
+                //BackgroundCode.Robots[i].Acq_Loc = "Select";
+                //BackgroundCode.Robots[i].Acq_Loc_Temp = "Pre";
 
-                BackgroundCode.Robots[i].NoSho = false;
+                //BackgroundCode.Robots[i].NoSho = false;
 
-                BackgroundCode.Robots[i].Flag = 0;
-                BackgroundCode.Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
-                BackgroundCode.Robots[i].TransactionCheck = false;
+                //BackgroundCode.Robots[i].Flag = 0;
+                //BackgroundCode.Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
+                //BackgroundCode.Robots[i].TransactionCheck = false;
 
-                BackgroundCode.Robots[i].App_Strat = RobotState.APP_STRAT.Select;
-                BackgroundCode.Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
-                BackgroundCode.Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
-                BackgroundCode.Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
-                BackgroundCode.Robots[i].Harm = 0;
-                BackgroundCode.Robots[i].Lit = RobotState.LIT.Select;
+                //BackgroundCode.Robots[i].App_Strat = RobotState.APP_STRAT.Select;
+                //BackgroundCode.Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
+                //BackgroundCode.Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
+                //BackgroundCode.Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
+                //BackgroundCode.Robots[i].Harm = 0;
+                //BackgroundCode.Robots[i].Lit = RobotState.LIT.Select;
 
-                if (BackgroundCode.Robots[i].ClimbT_StopWatch != null)
-                {
-                    BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
-                    BackgroundCode.Robots[i].ClimbT_StopWatch.Reset();
-                    BackgroundCode.Robots[i].ClimbT = TimeSpan.Zero;
-                }
+                //if (BackgroundCode.Robots[i].ClimbT_StopWatch != null)
+                //{
+                //    BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
+                //    BackgroundCode.Robots[i].ClimbT_StopWatch.Reset();
+                //    BackgroundCode.Robots[i].ClimbT = TimeSpan.Zero;
+                //}
 
-                if (BackgroundCode.Robots[i].AllyT_StopWatch != null)
-                {
-                    BackgroundCode.Robots[i].AllyT_StopWatch.Stop();
-                    BackgroundCode.Robots[i].AllyT_StopWatch.Reset();
-                    BackgroundCode.Robots[i].AllyT = TimeSpan.Zero;
-                }
-                if (BackgroundCode.Robots[i].OpptT_StopWatch != null)
-                {
-                    BackgroundCode.Robots[i].OpptT_StopWatch.Stop();
-                    BackgroundCode.Robots[i].OpptT_StopWatch.Reset();
-                    BackgroundCode.Robots[i].OpptT = TimeSpan.Zero;
-                }
-                if (BackgroundCode.Robots[i].NeutT_StopWatch != null)
-                {
-                    BackgroundCode.Robots[i].NeutT_StopWatch.Stop();
-                    BackgroundCode.Robots[i].NeutT_StopWatch.Reset();
-                    BackgroundCode.Robots[i].NeutT = TimeSpan.Zero;
-                }
+                //if (BackgroundCode.Robots[i].AllyT_StopWatch != null)
+                //{
+                //    BackgroundCode.Robots[i].AllyT_StopWatch.Stop();
+                //    BackgroundCode.Robots[i].AllyT_StopWatch.Reset();
+                //    BackgroundCode.Robots[i].AllyT = TimeSpan.Zero;
+                //}
+                //if (BackgroundCode.Robots[i].OpptT_StopWatch != null)
+                //{
+                //    BackgroundCode.Robots[i].OpptT_StopWatch.Stop();
+                //    BackgroundCode.Robots[i].OpptT_StopWatch.Reset();
+                //    BackgroundCode.Robots[i].OpptT = TimeSpan.Zero;
+                //}
+                //if (BackgroundCode.Robots[i].NeutT_StopWatch != null)
+                //{
+                //    BackgroundCode.Robots[i].NeutT_StopWatch.Stop();
+                //    BackgroundCode.Robots[i].NeutT_StopWatch.Reset();
+                //    BackgroundCode.Robots[i].NeutT = TimeSpan.Zero;
+                //}
 
-                BackgroundCode.Robots[i].ClimbTDouble = 0;
-                BackgroundCode.Robots[i].AllyTDouble = 0;
-                BackgroundCode.Robots[i].OpptTDouble = 0;
-                BackgroundCode.Robots[i].NeutTDouble = 0;
+                //BackgroundCode.Robots[i].ClimbTDouble = 0;
+                //BackgroundCode.Robots[i].AllyTDouble = 0;
+                //BackgroundCode.Robots[i].OpptTDouble = 0;
+                //BackgroundCode.Robots[i].NeutTDouble = 0;
 
-                BackgroundCode.Robots[i].Mic = 0;
-                BackgroundCode.Robots[i].Def_Rat = 0;
-                BackgroundCode.Robots[i].Avo_Rat = 0;
-                BackgroundCode.Robots[i].ScouterError = 0;
-                BackgroundCode.Robots[i].Coop = 0;
+                //BackgroundCode.Robots[i].Mic = 0;
+                //BackgroundCode.Robots[i].Def_Rat = 0;
+                //BackgroundCode.Robots[i].Avo_Rat = 0;
+                //BackgroundCode.Robots[i].ScouterError = 0;
+                //BackgroundCode.Robots[i].Coop = 0;
             }
         }
 
