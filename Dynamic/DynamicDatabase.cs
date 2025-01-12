@@ -72,6 +72,8 @@ namespace ScoutingCodeRedo.Dynamic
         public int CoralRate { get; set; }
         public int AlgaeRate { get; set; }
 
+        public string SelectedCage { get; set; }
+
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
         //public DateTime AcquireTime { get; set; }
@@ -124,6 +126,7 @@ namespace ScoutingCodeRedo.Dynamic
         public int DriveRate { get; set; }
         public int CoralRate { get; set; }
         public int AlgaeRate { get; set; }
+        public string SelectedCage { get; set; }
     }
     public class EventSummary : BaseEntity
     {

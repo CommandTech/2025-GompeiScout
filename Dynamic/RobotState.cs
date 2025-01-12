@@ -63,6 +63,12 @@ namespace ScoutingCodeRedo.Dynamic
         public int DelAlgaeN;
         public int DelAlgaeF;
 
+        public string lastAlgaeLoc;
+        public string lastCoralLoc;
+
+        public string lastAlgaeAcqLoc;
+        public string lastCoralAcqLoc;
+
         public TimeSpan ClimbT = TimeSpan.Zero;
         public Stopwatch ClimbT_StopWatch;
         public bool ClimbT_StopWatch_running;
@@ -73,6 +79,7 @@ namespace ScoutingCodeRedo.Dynamic
         public bool DefTime_StopWatch_running;
         public double DefTimeDouble;
 
+        public string Selected_Cage;
 
 
         // These are the standard types...
@@ -81,7 +88,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         //LOCAL VARIABLES SECTION.  All underscored variables indicate local variables for one controller/scouter
 
-        private SCOUTER_NAME _ScouterName;          //ScouterName
+        public SCOUTER_NAME _ScouterName;          //ScouterName
         private string _TeamName;                   //TeamName
         private MATCHEVENT_NAME _match_event;       //Match Event
         private ROBOT_MODE _RobotMode;              //Control
@@ -103,11 +110,13 @@ namespace ScoutingCodeRedo.Dynamic
             set { _match_event = value; }
         }
 
-        public SCOUTER_NAME ScouterName
-        {
-            get { return _ScouterName; }
-            set { _ScouterName = value; }
-        }
+        //public SCOUTER_NAME ScouterName
+        //{
+        //    get { return _ScouterName; }
+        //    set { _ScouterName = value; }
+        //}
+        public SCOUTER_NAME GetScouterName()
+        { return _ScouterName; }
 
 
         //Scouter Name

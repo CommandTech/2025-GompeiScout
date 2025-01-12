@@ -73,6 +73,12 @@
   <ItemGroup>
     <Compile Include="Dynamic\DynamicDatabase.cs" />
     <Compile Include="Dynamic\DynamicResponses.cs" />
+    <Compile Include="Dynamic\Screens\CagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dynamic\Screens\CagesForm.designer.cs">
+      <DependentUpon>CagesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dynamic\Screens\FunctionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Dynamic\Screens\UpdateDatabase.designer.cs">
       <DependentUpon>UpdateDatabase.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dynamic\Screens\CagesForm.resx">
+      <DependentUpon>CagesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dynamic\Screens\FunctionsForm.resx">
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </EmbeddedResource>

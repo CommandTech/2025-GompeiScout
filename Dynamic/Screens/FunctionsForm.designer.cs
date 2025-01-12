@@ -12,6 +12,7 @@
             this.cbxPractice = new System.Windows.Forms.CheckBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdateDatabase = new System.Windows.Forms.Button();
+            this.btnCages = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -105,10 +106,24 @@
             this.btnUpdateDatabase.UseVisualStyleBackColor = true;
             this.btnUpdateDatabase.Click += new System.EventHandler(this.BtnUpdateDatabase_Click);
             // 
+            // btnCages
+            // 
+            this.btnCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCages.ForeColor = System.Drawing.Color.Black;
+            this.btnCages.Location = new System.Drawing.Point(24, 278);
+            this.btnCages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCages.Name = "btnCages";
+            this.btnCages.Size = new System.Drawing.Size(74, 35);
+            this.btnCages.TabIndex = 359;
+            this.btnCages.Text = "Cages";
+            this.btnCages.UseVisualStyleBackColor = true;
+            this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
+            // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(408, 362);
+            this.Controls.Add(this.btnCages);
             this.Controls.Add(this.btnUpdateDatabase);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbxPractice);
@@ -131,5 +146,6 @@
         private System.Windows.Forms.CheckBox cbxPractice;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdateDatabase;
+        private System.Windows.Forms.Button btnCages;
     }
 }

@@ -1,4 +1,5 @@
-﻿using ScoutingCodeRedo.Properties;
+﻿using ScoutingCodeRedo.Dynamic.Screens;
+using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
 using System;
 using System.Windows.Forms;
@@ -55,6 +56,13 @@ namespace ScoutingCodeRedo.Dynamic
         private void CbxPractice_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.practiceMode = cbxPractice.Checked;
+        }
+
+        private void btnCages_Click(object sender, EventArgs e)
+        {
+            CagesForm frm = new CagesForm();
+            this.Hide();
+            frm.Show();
         }
     }
 }

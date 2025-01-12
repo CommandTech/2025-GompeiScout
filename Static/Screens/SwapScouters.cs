@@ -48,7 +48,7 @@ namespace ScoutingCodeRedo.Static
 
                         for (int j = 0; j < 6; j++)
                         {
-                            if (BackgroundCode.Robots[j].GetScouterName() == name)
+                            if (BackgroundCode.Robots[j]._ScouterName == name)
                             {
                                 (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
                                 (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);

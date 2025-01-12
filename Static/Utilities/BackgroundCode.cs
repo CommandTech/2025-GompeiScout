@@ -32,6 +32,8 @@ namespace ScoutingCodeRedo.Static
         );                                                                  //Sound file for practice mode error
 
         public static SoundPlayer soundCue = new SoundPlayer(soundFilePath);//Sound player for practice mode error
+
+        public static List<string> cages = new List<string>();
         public BackgroundCode()
         {
             //If the program is in debug mode, show the print out form
@@ -55,6 +57,8 @@ namespace ScoutingCodeRedo.Static
                     _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
                     color = i < 3 ? "Red" : "Blue"
                 };
+
+                cages.Add("Select");
             }
         }
     }
