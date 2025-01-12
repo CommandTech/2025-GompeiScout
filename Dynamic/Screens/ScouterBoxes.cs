@@ -27,8 +27,8 @@ namespace ScoutingCodeRedo.Dynamic
                     case RobotState.ROBOT_MODE.Teleop:
                         InTeleopMode(i, o);
                         break;
-                    case RobotState.ROBOT_MODE.Showtime:
-                        InShowtimeMode(i, o);
+                    case RobotState.ROBOT_MODE.Surfacing:
+                        InSurfacingMode(i, o);
                         break;
                 }
             }
@@ -54,7 +54,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             
         }
-        private void InShowtimeMode(int Box_Number, int ScouterBox)
+        private void InSurfacingMode(int Box_Number, int ScouterBox)
         {
             //BackgroundCode.Robots[Box_Number].ClimbTDouble = BackgroundCode.Robots[Box_Number].ClimbT_StopWatch.Elapsed.TotalSeconds;
             //((Label)this.Controls.Find($"lbl{ScouterBox}Position2Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].ClimbTDouble.ToString("0.#");

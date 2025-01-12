@@ -44,7 +44,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public string Strategy { get; set; }
         public int Coop { get; set; }
-        public TimeSpan DZTime { get; set; }
+        public double DZTime { get; set; }
         public bool Near_Far { get; set; }
 
         public string Starting_Loc { get; set; }
@@ -65,9 +65,12 @@ namespace ScoutingCodeRedo.Dynamic
         public int DelAlgaeN { get; set; }
         public int DelAlgaeF { get; set; }
 
-        public TimeSpan ClimbT { get; set; }
+        public double ClimbT { get; set; }
         public string EndState { get; set; }
         public string CageAttept { get; set; }
+        public int DriveRate { get; set; }
+        public int CoralRate { get; set; }
+        public int AlgaeRate { get; set; }
 
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
@@ -118,6 +121,9 @@ namespace ScoutingCodeRedo.Dynamic
         public TimeSpan ClimbT { get; set; }
         public string EndState { get; set; }
         public string CageAttept { get; set; }
+        public int DriveRate { get; set; }
+        public int CoralRate { get; set; }
+        public int AlgaeRate { get; set; }
     }
     public class EventSummary : BaseEntity
     {

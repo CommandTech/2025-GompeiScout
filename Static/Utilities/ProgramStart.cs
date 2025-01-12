@@ -99,7 +99,7 @@ namespace ScoutingCodeRedo.Static
                     {
                         scouterNames += ",";
                     }
-                    scouterNames += robot._ScouterName;
+                    scouterNames += robot.GetScouterName();
 
                     if (scouterLocations.Length != 0)
                     {
