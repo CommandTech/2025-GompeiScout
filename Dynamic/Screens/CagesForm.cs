@@ -15,12 +15,12 @@ namespace ScoutingCodeRedo.Dynamic.Screens
         {
             InitializeComponent();
 
-            Cages.Add(Blue1);
-            Cages.Add(Blue2);
-            Cages.Add(Blue3);
             Cages.Add(Red1);
             Cages.Add(Red2);
             Cages.Add(Red3);
+            Cages.Add(Blue1);
+            Cages.Add(Blue2);
+            Cages.Add(Blue3);
 
             for (int i = 0; i < 6; i++)
             {

@@ -70,7 +70,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position1.AutoSize = true;
             this.lbl0Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position1.Location = new System.Drawing.Point(276, 114);
+            this.lbl0Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl0Position1.Name = "lbl0Position1";
             this.lbl0Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl0Position1.TabIndex = 342;
@@ -136,6 +136,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.team1.BackColor = System.Drawing.Color.Black;
             this.team1.Controls.Add(this.lbl0Position3Source);
             this.team1.Controls.Add(this.lbl0Position2Source);
+            this.team1.Controls.Add(this.lbl0Position1);
             this.team1.Controls.Add(this.lbl0Position9Value);
             this.team1.Controls.Add(this.lbl0Position9);
             this.team1.Controls.Add(this.lbl0Position8Value);
@@ -442,7 +443,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl0Position0);
-            this.Controls.Add(this.lbl0Position1);
             this.Controls.Add(this.panel31);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScouterBoxes";

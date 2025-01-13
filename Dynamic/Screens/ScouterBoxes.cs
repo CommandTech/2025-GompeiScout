@@ -113,11 +113,11 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Des", true)[0]).Text = BackgroundCode.Robots[Box_Number].lastAlgaeLoc;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Des", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
 
-            //Defense
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Def:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Def_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = false;
+            //Starting Location
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Start:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Starting_Location.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = true;
 
             //Defense Effectiveness
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Text = "Eff:";

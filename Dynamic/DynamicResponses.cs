@@ -32,13 +32,13 @@ namespace ScoutingCodeRedo.Dynamic
                     }
 
                     //Cycle Starting Location
-                    if (gamepad.LTHLeft_Press)
-                    {
-                        robot.CycleStart(RobotState.CYCLE_DIRECTION.Up);
-                    }
-                    else if (gamepad.LTHRight_Press)
+                    if (gamepad.LTHDown_Press && !gamepad.LeftTrigger_Down)
                     {
                         robot.CycleStart(RobotState.CYCLE_DIRECTION.Down);
+                    }
+                    else if (gamepad.LTHUp_Press && !gamepad.LeftTrigger_Down)
+                    {
+                        robot.CycleStart(RobotState.CYCLE_DIRECTION.Up);
                     }
 
                     //Acquire Coral/Algae from Station/Reef
@@ -85,6 +85,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL4++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L4";
@@ -100,6 +105,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L1";
@@ -115,6 +125,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L3";
@@ -130,6 +145,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L2";
@@ -138,6 +158,11 @@ namespace ScoutingCodeRedo.Dynamic
 
                     if (gamepad.XButton_Press || gamepad.BButton_Press)
                     {
+                        if (robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral++;
+                        }
+                        robot.totalCoralDeliveries++;
                         robot.DelCoralF++;
                         robot.hasCoral--;
                         robot.lastCoralLoc = "Floor";
@@ -200,6 +225,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL4++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L4";
@@ -215,6 +245,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L1";
@@ -230,6 +265,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L3";
@@ -245,6 +285,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "L2";
@@ -253,6 +298,11 @@ namespace ScoutingCodeRedo.Dynamic
 
                     if (gamepad.XButton_Press || gamepad.BButton_Press)
                     {
+                        if (robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral++;
+                        }
+                        robot.totalCoralDeliveries++;
                         robot.DelCoralF++;
                         robot.hasCoral--;
                         robot.lastCoralLoc = "Floor";
@@ -315,6 +365,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralF++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "Floor";
@@ -330,6 +385,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralF++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "Floor";
@@ -345,6 +405,11 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0)
+                            {
+                                robot.hasCoral++;
+                            }
+                            robot.totalCoralDeliveries++;
                             robot.DelCoralF++;
                             robot.hasCoral--;
                             robot.lastCoralLoc = "Floor";
@@ -353,6 +418,11 @@ namespace ScoutingCodeRedo.Dynamic
 
                     if (gamepad.XButton_Press || gamepad.BButton_Press)
                     {
+                        if (robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral++;
+                        }
+                        robot.totalCoralDeliveries++;
                         robot.DelCoralF++;
                         robot.hasCoral--;
                         robot.lastCoralLoc = "Floor";
@@ -408,6 +478,11 @@ namespace ScoutingCodeRedo.Dynamic
                     //Deliver Coral to the Floor
                     if (gamepad.AButton_Press)
                     {
+                        if (robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral++;
+                        }
+                        robot.totalCoralDeliveries++;
                         robot.DelCoralF++;
                         robot.hasCoral--;
                         robot.lastCoralLoc = "Floor";
@@ -593,7 +668,8 @@ namespace ScoutingCodeRedo.Dynamic
             
         public static void TransactToDatabase(RobotState controller, string recordType, bool isTest)
         {
-            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TeamName != null)
+            //if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TeamName != null)
+            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
             {
                 switch (recordType)
                 {
@@ -639,7 +715,14 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.DefTimeDouble = controller.DefTime_StopWatch.Elapsed.TotalSeconds;
                         BackgroundCode.activity_record.DZTime = controller.DefTimeDouble;
 
-
+                        if (controller.Leave == RobotState.LEAVE.Z)
+                        {
+                            controller.ScouterError++;
+                        }
+                        if (controller.Starting_Location == RobotState.STARTING_LOC.Select)
+                        {
+                            controller.ScouterError++;
+                        }
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                         BackgroundCode.activity_record.AcqAlgaeF = controller.AcqAlgaeF;
@@ -669,6 +752,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.AlgaeRate = '-';
                         BackgroundCode.activity_record.Avoidance = '-';
 
+                        BackgroundCode.activity_record.SelectedCage = "-";
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -746,6 +830,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.AlgaeRate = '-';
                         BackgroundCode.activity_record.Avoidance = '-';
 
+                        BackgroundCode.activity_record.SelectedCage = "-";
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -793,7 +878,30 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.DefTimeDouble = controller.DefTime_StopWatch.Elapsed.TotalSeconds;
                         BackgroundCode.activity_record.DZTime = controller.DefTimeDouble;
 
-
+                        if (controller.Def_Rat == 9)
+                        {
+                            controller.ScouterError++;
+                        }
+                        if (controller.Def_Eff == 9)
+                        {
+                            controller.ScouterError++;
+                        }
+                        if (controller.Avo_Rat == 9)
+                        {
+                            controller.ScouterError++;
+                        }
+                        if (controller.Dri_Rat == 9)
+                        {
+                            controller.ScouterError++;
+                        }
+                        if (controller.Alg_Rat == 9)
+                        {
+                            controller.ScouterError++;
+                        }
+                        if (controller.Cor_Rat == 9)
+                        {
+                            controller.ScouterError++;
+                        }
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                         BackgroundCode.activity_record.AcqAlgaeF = controller.AcqAlgaeF;
@@ -825,6 +933,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.AlgaeRate = controller.Alg_Rat;
                         BackgroundCode.activity_record.Avoidance = controller.Avo_Rat;
 
+                        BackgroundCode.activity_record.SelectedCage = controller.Selected_Cage;
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -902,6 +1011,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.AlgaeRate = '-';
                         BackgroundCode.activity_record.Avoidance = '-';
 
+                        BackgroundCode.activity_record.SelectedCage = "-";
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);

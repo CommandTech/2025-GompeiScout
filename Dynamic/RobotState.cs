@@ -59,6 +59,8 @@ namespace ScoutingCodeRedo.Dynamic
         public int DelCoralL4;
         public int DelCoralF;
 
+        public int totalCoralDeliveries;
+
         public int DelAlgaeP;
         public int DelAlgaeN;
         public int DelAlgaeF;

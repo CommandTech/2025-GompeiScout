@@ -45,7 +45,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             "Select",
             "Shallow",
             "Deep"});
-            this.Blue1.Location = new System.Drawing.Point(22, 119);
+            this.Blue1.Location = new System.Drawing.Point(22, 225);
             this.Blue1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Blue1.Name = "Blue1";
             this.Blue1.Size = new System.Drawing.Size(163, 24);
@@ -61,7 +61,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             "Select",
             "Shallow",
             "Deep"});
-            this.Blue2.Location = new System.Drawing.Point(193, 119);
+            this.Blue2.Location = new System.Drawing.Point(193, 225);
             this.Blue2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Blue2.Name = "Blue2";
             this.Blue2.Size = new System.Drawing.Size(163, 24);
@@ -77,7 +77,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             "Select",
             "Shallow",
             "Deep"});
-            this.Blue3.Location = new System.Drawing.Point(364, 119);
+            this.Blue3.Location = new System.Drawing.Point(364, 225);
             this.Blue3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Blue3.Name = "Blue3";
             this.Blue3.Size = new System.Drawing.Size(163, 24);
@@ -93,7 +93,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             "Select",
             "Shallow",
             "Deep"});
-            this.Red3.Location = new System.Drawing.Point(364, 234);
+            this.Red3.Location = new System.Drawing.Point(364, 119);
             this.Red3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Red3.Name = "Red3";
             this.Red3.Size = new System.Drawing.Size(163, 24);
@@ -109,7 +109,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             "Select",
             "Shallow",
             "Deep"});
-            this.Red2.Location = new System.Drawing.Point(193, 234);
+            this.Red2.Location = new System.Drawing.Point(193, 119);
             this.Red2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Red2.Name = "Red2";
             this.Red2.Size = new System.Drawing.Size(163, 24);
@@ -125,7 +125,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             "Select",
             "Shallow",
             "Deep"});
-            this.Red1.Location = new System.Drawing.Point(22, 234);
+            this.Red1.Location = new System.Drawing.Point(22, 119);
             this.Red1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Red1.Name = "Red1";
             this.Red1.Size = new System.Drawing.Size(163, 24);
@@ -137,7 +137,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(230, 170);
+            this.label1.Location = new System.Drawing.Point(230, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 57);
             this.label1.TabIndex = 361;
@@ -149,7 +149,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(226, 55);
+            this.label2.Location = new System.Drawing.Point(226, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 57);
             this.label2.TabIndex = 362;
