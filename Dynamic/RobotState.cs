@@ -32,7 +32,7 @@ namespace ScoutingCodeRedo.Dynamic
         //2025
         public enum STARTING_LOC { Select, C1, C2, C3, Center, C4, C5, C6 };
         public enum LEAVE { Z, Y, N};
-        public enum APP_STRAT { Select };
+        public enum APP_STRAT { Select, test};
         public enum END_STATE { Select, Elsewhere, Park, Shallow, Deep };
         public enum CAGE_ATTEMPT { Select, Y, N };
 

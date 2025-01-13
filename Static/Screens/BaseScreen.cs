@@ -301,6 +301,12 @@ namespace ScoutingCodeRedo.Static
             if (cbxEndMatch.Checked)
             {
                 cbxEndMatch.Checked = false;
+                for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+                {
+                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch", false);
+                }
+                DynamicResponses.ResetValues();
+
                 if (Settings.Default.currentMatch == bgc.InMemoryMatchList.Count)
                 {
                     MessageBox.Show("You are at the last match.");
@@ -308,11 +314,6 @@ namespace ScoutingCodeRedo.Static
                 }
                 else
                 {
-                    for (int i = 0; i < 6; i++)
-                    {
-                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch", false);
-                    }
-
                     NextMatch();
                 }
             }

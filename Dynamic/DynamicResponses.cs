@@ -101,7 +101,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -121,12 +121,12 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
                             robot.totalCoralDeliveries++;
-                            robot.DelCoralL1++;
+                            robot.DelCoralL2++;
                             robot.lastCoralLoc = "L2";
                             robot.TransactionCheck = true;
                         }
@@ -141,7 +141,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -161,12 +161,12 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
                             robot.totalCoralDeliveries++;
-                            robot.DelCoralL2++;
+                            robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
                             robot.TransactionCheck = true;
                         }
@@ -174,7 +174,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                     if (gamepad.XButton_Press || gamepad.BButton_Press)
                     {
-                        if (robot.totalCoralDeliveries == 0)
+                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                         {
                             robot.hasCoral++;
                         }
@@ -241,7 +241,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -256,17 +256,17 @@ namespace ScoutingCodeRedo.Dynamic
                         if (robot.Flag)
                         {
                             robot.DelAlgaeP++;
-                            robot.lastAlgaeLoc = "Floor";
+                            robot.lastAlgaeLoc = "Processor";
                             robot.TransactionCheck = true;
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
                             robot.totalCoralDeliveries++;
-                            robot.DelCoralL1++;
+                            robot.DelCoralL2++;
                             robot.lastCoralLoc = "L2";
                             robot.TransactionCheck = true;
                         }
@@ -281,7 +281,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -301,12 +301,12 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
                             robot.totalCoralDeliveries++;
-                            robot.DelCoralL2++;
+                            robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
                             robot.TransactionCheck = true;
                         }
@@ -314,7 +314,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                     if (gamepad.XButton_Press || gamepad.BButton_Press)
                     {
-                        if (robot.totalCoralDeliveries == 0)
+                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                         {
                             robot.hasCoral++;
                         }
@@ -381,7 +381,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -401,7 +401,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -421,7 +421,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
@@ -434,7 +434,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                     if (gamepad.XButton_Press || gamepad.BButton_Press)
                     {
-                        if (robot.totalCoralDeliveries == 0)
+                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                         {
                             robot.hasCoral++;
                         }
@@ -502,6 +502,10 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                            {
+                                robot.hasCoral++;
+                            }
                             robot.DelAlgaeN++;
                             robot.lastAlgaeLoc = "Net";
                             robot.TransactionCheck = true;
@@ -717,7 +721,7 @@ namespace ScoutingCodeRedo.Dynamic
         public static void TransactToDatabase(RobotState controller, string recordType, bool isTest)
         {
             //if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TransactionCheck && controller.TeamName != null)
-            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TransactionCheck)
+            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
             {
                 switch (recordType)
                 {
@@ -793,14 +797,15 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = 0;
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = '-';
-                        BackgroundCode.activity_record.DefenseValue = '-';
-                        BackgroundCode.activity_record.DriveRate = '-';
-                        BackgroundCode.activity_record.CoralRate = '-';
-                        BackgroundCode.activity_record.AlgaeRate = '-';
-                        BackgroundCode.activity_record.Avoidance = '-';
+                        BackgroundCode.activity_record.Defense = 9;
+                        BackgroundCode.activity_record.DefenseValue = 9;
+                        BackgroundCode.activity_record.DriveRate = 9;
+                        BackgroundCode.activity_record.CoralRate = 9;
+                        BackgroundCode.activity_record.AlgaeRate = 9;
+                        BackgroundCode.activity_record.Avoidance = 9;
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.RedRight = Settings.Default.redRight;
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -821,6 +826,102 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.TransactionCheck = false;
                         break;
                     case ("Activities"):
+                        if (controller.TransactionCheck)
+                        {
+                            BackgroundCode.activity_record.RecordType = recordType;
+                            BackgroundCode.activity_record.Time = DateTime.Now;
+                            BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
+                            BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
+                            BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
+                            BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
+
+                            BackgroundCode.activity_record.Match_event = "-";
+                            BackgroundCode.activity_record.Leave = "-";
+                            BackgroundCode.activity_record.Starting_Loc = "-";
+                            BackgroundCode.activity_record.Near_Far = controller.Near_Far;
+
+
+                            if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
+                            {
+                                BackgroundCode.activity_record.DriveSta = "red0";
+                            }
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
+                            {
+                                BackgroundCode.activity_record.DriveSta = "red1";
+                            }
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
+                            {
+                                BackgroundCode.activity_record.DriveSta = "red2";
+                            }
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
+                            {
+                                BackgroundCode.activity_record.DriveSta = "blue0";
+                            }
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
+                            {
+                                BackgroundCode.activity_record.DriveSta = "blue1";
+                            }
+                            else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
+                            {
+                                BackgroundCode.activity_record.DriveSta = "blue2";
+                            }
+
+                            controller.DefTimeDouble = controller.DefTime_StopWatch.Elapsed.TotalSeconds;
+                            BackgroundCode.activity_record.DZTime = controller.DefTimeDouble;
+
+
+                            BackgroundCode.activity_record.ScouterError = controller.ScouterError;
+
+                            BackgroundCode.activity_record.AcqAlgaeF = controller.AcqAlgaeF;
+                            BackgroundCode.activity_record.AcqAlgaeR = controller.AcqAlgaeR;
+                            BackgroundCode.activity_record.AcqCoralS = controller.AcqCoralS;
+                            BackgroundCode.activity_record.AcqCoralF = controller.AcqCoralF;
+
+                            BackgroundCode.activity_record.DelAlgaeF = controller.DelAlgaeF;
+                            BackgroundCode.activity_record.DelAlgaeN = controller.DelAlgaeN;
+                            BackgroundCode.activity_record.DelAlgaeP = controller.DelAlgaeP;
+
+                            BackgroundCode.activity_record.DelCoralF = controller.DelCoralF;
+                            BackgroundCode.activity_record.DelCoralL1 = controller.DelCoralL1;
+                            BackgroundCode.activity_record.DelCoralL2 = controller.DelCoralL2;
+                            BackgroundCode.activity_record.DelCoralL3 = controller.DelCoralL3;
+                            BackgroundCode.activity_record.DelCoralL4 = controller.DelCoralL4;
+
+                            BackgroundCode.activity_record.CageAttept = "-";
+                            BackgroundCode.activity_record.EndState = "-";
+                            BackgroundCode.activity_record.ClimbT = 0;
+
+                            BackgroundCode.activity_record.Strategy = "-";
+                            BackgroundCode.activity_record.Defense = 9;
+                            BackgroundCode.activity_record.DefenseValue = 9;
+                            BackgroundCode.activity_record.DriveRate = 9;
+                            BackgroundCode.activity_record.CoralRate = 9;
+                            BackgroundCode.activity_record.AlgaeRate = 9;
+                            BackgroundCode.activity_record.Avoidance = 9;
+
+                            BackgroundCode.activity_record.SelectedCage = "-";
+                            BackgroundCode.activity_record.RedRight = Settings.Default.redRight;
+
+                            //Save Record to the database
+                            BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
+                            BackgroundCode.seasonframework.SaveChanges();
+
+                            if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
+                            {
+                                controller.hasCoral = 0;
+                                controller.lastCoralLoc = " ";
+                                controller.lastCoralAcqLoc = " ";
+                            }
+                            if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
+                            {
+                                controller.hasAlgae = 0;
+                                controller.lastAlgaeLoc = " ";
+                                controller.lastAlgaeAcqLoc = " ";
+                            }
+                            controller.TransactionCheck = false;
+                        }
+                        break;
+                    case ("EndMatch"):
                         BackgroundCode.activity_record.RecordType = recordType;
                         BackgroundCode.activity_record.Time = DateTime.Now;
                         BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
@@ -830,7 +931,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         BackgroundCode.activity_record.Match_event = "-";
                         BackgroundCode.activity_record.Leave = "-";
-                        BackgroundCode.activity_record.Starting_Loc = controller.GetStart().ToString();
+                        BackgroundCode.activity_record.Starting_Loc = "-";
                         BackgroundCode.activity_record.Near_Far = controller.Near_Far;
 
 
@@ -861,9 +962,6 @@ namespace ScoutingCodeRedo.Dynamic
 
                         controller.DefTimeDouble = controller.DefTime_StopWatch.Elapsed.TotalSeconds;
                         BackgroundCode.activity_record.DZTime = controller.DefTimeDouble;
-
-
-                        BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                         BackgroundCode.activity_record.AcqAlgaeF = controller.AcqAlgaeF;
                         BackgroundCode.activity_record.AcqAlgaeR = controller.AcqAlgaeR;
@@ -880,79 +978,24 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.DelCoralL3 = controller.DelCoralL3;
                         BackgroundCode.activity_record.DelCoralL4 = controller.DelCoralL4;
 
-                        BackgroundCode.activity_record.CageAttept = "-";
-                        BackgroundCode.activity_record.EndState = "-";
-                        BackgroundCode.activity_record.ClimbT = 0;
+                        BackgroundCode.activity_record.CageAttept = controller.GetAttempt().ToString();
+                        BackgroundCode.activity_record.EndState = controller.GetState().ToString();
 
-                        BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = '-';
-                        BackgroundCode.activity_record.DefenseValue = '-';
-                        BackgroundCode.activity_record.DriveRate = '-';
-                        BackgroundCode.activity_record.CoralRate = '-';
-                        BackgroundCode.activity_record.AlgaeRate = '-';
-                        BackgroundCode.activity_record.Avoidance = '-';
+                        controller.ClimbTDouble = controller.ClimbT_StopWatch.Elapsed.TotalSeconds;
+                        BackgroundCode.activity_record.ClimbT = controller.ClimbTDouble;
 
-                        BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.Strategy = controller.GetStrat().ToString();
+                        BackgroundCode.activity_record.DefenseValue = controller.Def_Eff;
+                        BackgroundCode.activity_record.Defense = controller.Def_Rat;
+                        if (controller.Def_Rat == 0 || controller.Def_Rat == 9) {
+                            BackgroundCode.activity_record.DefenseValue = 0;
+                            controller.Def_Eff = 0;
+                        }
+                        BackgroundCode.activity_record.DriveRate = controller.Dri_Rat;
+                        BackgroundCode.activity_record.CoralRate = controller.Cor_Rat;
+                        BackgroundCode.activity_record.AlgaeRate = controller.Alg_Rat;
+                        BackgroundCode.activity_record.Avoidance = controller.Avo_Rat;
 
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
-                        BackgroundCode.seasonframework.SaveChanges();
-
-                        if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
-                        {
-                            controller.hasCoral = 0;
-                            controller.lastCoralLoc = " ";
-                            controller.lastCoralAcqLoc = " ";
-                        }
-                        if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
-                        {
-                            controller.hasAlgae = 0;
-                            controller.lastAlgaeLoc = " ";
-                            controller.lastAlgaeAcqLoc = " ";
-                        }
-                        controller.TransactionCheck = false;
-                        break;
-                    case ("EndMatch"):
-                        BackgroundCode.activity_record.RecordType = recordType;
-                        BackgroundCode.activity_record.Time = DateTime.Now;
-                        BackgroundCode.activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
-                        BackgroundCode.activity_record.Match = Settings.Default.currentMatch;
-                        BackgroundCode.activity_record.Mode = controller.Current_Mode.ToString();
-                        BackgroundCode.activity_record.ScouterName = controller.GetScouterName().ToString();
-
-                        BackgroundCode.activity_record.Match_event = controller.Match_event.ToString();
-                        BackgroundCode.activity_record.Leave = "-";
-                        BackgroundCode.activity_record.Starting_Loc = controller.GetStart().ToString();
-                        BackgroundCode.activity_record.Near_Far = controller.Near_Far;
-
-
-                        if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
-                        {
-                            BackgroundCode.activity_record.DriveSta = "red0";
-                        }
-                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[1])
-                        {
-                            BackgroundCode.activity_record.DriveSta = "red1";
-                        }
-                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[2])
-                        {
-                            BackgroundCode.activity_record.DriveSta = "red2";
-                        }
-                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[3])
-                        {
-                            BackgroundCode.activity_record.DriveSta = "blue0";
-                        }
-                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[4])
-                        {
-                            BackgroundCode.activity_record.DriveSta = "blue1";
-                        }
-                        else if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[5])
-                        {
-                            BackgroundCode.activity_record.DriveSta = "blue2";
-                        }
-
-                        controller.DefTimeDouble = controller.DefTime_StopWatch.Elapsed.TotalSeconds;
-                        BackgroundCode.activity_record.DZTime = controller.DefTimeDouble;
 
                         if (controller.Def_Rat == 9)
                         {
@@ -980,36 +1023,8 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
-                        BackgroundCode.activity_record.AcqAlgaeF = controller.AcqAlgaeF;
-                        BackgroundCode.activity_record.AcqAlgaeR = controller.AcqAlgaeR;
-                        BackgroundCode.activity_record.AcqCoralS = controller.AcqCoralS;
-                        BackgroundCode.activity_record.AcqCoralF = controller.AcqCoralF;
-
-                        BackgroundCode.activity_record.DelAlgaeF = controller.DelAlgaeF;
-                        BackgroundCode.activity_record.DelAlgaeN = controller.DelAlgaeN;
-                        BackgroundCode.activity_record.DelAlgaeP = controller.DelAlgaeP;
-
-                        BackgroundCode.activity_record.DelCoralF = controller.DelCoralF;
-                        BackgroundCode.activity_record.DelCoralL1 = controller.DelCoralL1;
-                        BackgroundCode.activity_record.DelCoralL2 = controller.DelCoralL2;
-                        BackgroundCode.activity_record.DelCoralL3 = controller.DelCoralL3;
-                        BackgroundCode.activity_record.DelCoralL4 = controller.DelCoralL4;
-
-                        BackgroundCode.activity_record.CageAttept = controller.GetAttempt().ToString();
-                        BackgroundCode.activity_record.EndState = controller.GetState().ToString();
-
-                        controller.ClimbTDouble = controller.ClimbT_StopWatch.Elapsed.TotalSeconds;
-                        BackgroundCode.activity_record.ClimbT = controller.ClimbTDouble;
-
-                        BackgroundCode.activity_record.Strategy = controller.GetStrat().ToString();
-                        BackgroundCode.activity_record.Defense = controller.Def_Rat;
-                        BackgroundCode.activity_record.DefenseValue = controller.Def_Eff;
-                        BackgroundCode.activity_record.DriveRate = controller.Dri_Rat;
-                        BackgroundCode.activity_record.CoralRate = controller.Cor_Rat;
-                        BackgroundCode.activity_record.AlgaeRate = controller.Alg_Rat;
-                        BackgroundCode.activity_record.Avoidance = controller.Avo_Rat;
-
                         BackgroundCode.activity_record.SelectedCage = controller.Selected_Cage;
+                        BackgroundCode.activity_record.RedRight = Settings.Default.redRight;
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1094,14 +1109,15 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = '-';
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = '-';
-                        BackgroundCode.activity_record.DefenseValue = '-';
-                        BackgroundCode.activity_record.DriveRate = '-';
-                        BackgroundCode.activity_record.CoralRate = '-';
-                        BackgroundCode.activity_record.AlgaeRate = '-';
-                        BackgroundCode.activity_record.Avoidance = '-';
+                        BackgroundCode.activity_record.Defense = 9;
+                        BackgroundCode.activity_record.DefenseValue = 9;
+                        BackgroundCode.activity_record.DriveRate = 9;
+                        BackgroundCode.activity_record.CoralRate = 9;
+                        BackgroundCode.activity_record.AlgaeRate = 9;
+                        BackgroundCode.activity_record.Avoidance = 9;
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.RedRight = Settings.Default.redRight;
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1178,14 +1194,15 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = '-';
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = '-';
-                        BackgroundCode.activity_record.DefenseValue = '-';
-                        BackgroundCode.activity_record.DriveRate = '-';
-                        BackgroundCode.activity_record.CoralRate = '-';
-                        BackgroundCode.activity_record.AlgaeRate = '-';
-                        BackgroundCode.activity_record.Avoidance = '-';
+                        BackgroundCode.activity_record.Defense = 9;
+                        BackgroundCode.activity_record.DefenseValue = 9;
+                        BackgroundCode.activity_record.DriveRate = 9;
+                        BackgroundCode.activity_record.CoralRate = 9;
+                        BackgroundCode.activity_record.AlgaeRate = 9;
+                        BackgroundCode.activity_record.Avoidance = 9;
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.RedRight = Settings.Default.redRight;
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1200,7 +1217,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public static void ResetValues()
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
             {
                 BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
                 BackgroundCode.Robots[i].Leave = RobotState.LEAVE.Z;
