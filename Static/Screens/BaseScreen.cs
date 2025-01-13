@@ -198,6 +198,16 @@ namespace ScoutingCodeRedo.Static
                     }
                     iniFile.Write("MatchData", "scouterNames", scouterNames);
                     iniFile.Write("MatchData", "scouterLocations", scouterLocations);
+                    string cages = "";
+                    foreach (var robot in BackgroundCode.Robots)
+                    {
+                        if (cages.Length != 0)
+                        {
+                            cages += ",";
+                        }
+                        cages += robot.Selected_Cage;
+                    }
+                    iniFile.Write("MatchData", "cages", cages);
                 }
                 catch (Exception ex)
                 {
@@ -224,12 +234,16 @@ namespace ScoutingCodeRedo.Static
 
                 List<string> scouterNames = new List<string>(iniFile.Read("MatchData", "scouterNames", "").Split(','));
                 List<string> scouterLocations = new List<string>(iniFile.Read("MatchData", "scouterLocations", "").Split(','));
+                List<string> cages = new List<string>(iniFile.Read("MatchData", "cages", "").Split(','));
 
                 for (int i = 0; i < 6; i++)
                 {
                     BackgroundCode.Robots[i]._ScouterName = (RobotState.SCOUTER_NAME)Enum.Parse(typeof(RobotState.SCOUTER_NAME), scouterNames[i]);
                     BackgroundCode.Robots[i].ScouterBox = int.Parse(scouterLocations[i]);
+                    BackgroundCode.Robots[i].Selected_Cage = cages[i];
                 }
+
+
 
                 BackgroundCode.seasonframework.Database.Connection.Close();
                 if (comboBoxSelectRegional.SelectedItem.ToString() == "manualEvent")

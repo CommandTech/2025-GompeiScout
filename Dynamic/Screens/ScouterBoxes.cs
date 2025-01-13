@@ -63,11 +63,11 @@ namespace ScoutingCodeRedo.Dynamic
             //Near Far
             if (BackgroundCode.Robots[Box_Number].Near_Far)
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
             else
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
             }
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
 
@@ -159,11 +159,11 @@ namespace ScoutingCodeRedo.Dynamic
             //Near Far
             if (BackgroundCode.Robots[Box_Number].Near_Far)
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
             else
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
             }
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
 
@@ -256,11 +256,11 @@ namespace ScoutingCodeRedo.Dynamic
             //Near Far
             if (BackgroundCode.Robots[Box_Number].Near_Far)
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
             else
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
             }
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
 
@@ -353,11 +353,11 @@ namespace ScoutingCodeRedo.Dynamic
             //Near Far
             if (BackgroundCode.Robots[Box_Number].Near_Far)
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
             else
             {
-                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
+                ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Near Side";
             }
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Visible = false;
 
