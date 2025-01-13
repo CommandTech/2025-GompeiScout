@@ -7,7 +7,7 @@ namespace ScoutingCodeRedo.Dynamic
     {
         public enum ROBOT_MODE { Auto, Teleop, Defense, Surfacing };
         public enum CYCLE_DIRECTION { Up, Down }
-        public enum MATCHEVENT_NAME { Match_Event, Fumbled, BrokeDown, CrossedCenter, LostParts, RingToss, AdditionalNote, MultiClimb, NoShow, StageInt, TippedOver, JammedPiece }
+        public enum MATCHEVENT_NAME { Match_Event, DropCoral, BrokeDown, CrossedCenter, LostParts, AdditionPiece, MultiClimb, NoShow, TippedOver, JammedPiece, WentUnderCages, YellowCard }
         public enum SCOUTER_NAME { Select_Name, Ayush, Logan, Marzuq, Milan, William, Scouter1, Scouter2, Scouter3, Scouter4 }
 
         // Year to Year ints
@@ -66,8 +66,8 @@ namespace ScoutingCodeRedo.Dynamic
         public int DelAlgaeN;
         public int DelAlgaeF;
 
-        public string lastAlgaeLoc;
-        public string lastCoralLoc;
+        public string lastAlgaeLoc = " ";
+        public string lastCoralLoc = " ";
 
         public string lastAlgaeAcqLoc;
         public string lastCoralAcqLoc;
@@ -221,6 +221,10 @@ namespace ScoutingCodeRedo.Dynamic
             else
             {
                 _Leave = (LEAVE)GetPreviousEnum<LEAVE>(_Leave);
+            }
+            if (_Leave == LEAVE.Z)
+            {
+                CycleLeave(CycleDirection);
             }
         }
 
