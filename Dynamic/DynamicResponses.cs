@@ -487,21 +487,9 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.CycleState(RobotState.CYCLE_DIRECTION.Up);
                     }
                     //Cycle Robot Strat
-                    if (gamepad.XButton_Press)
-                    {
-                        robot.CycleStrat(RobotState.CYCLE_DIRECTION.Up);
-                    }
-                    //Deliver Coral to the Floor
                     if (gamepad.AButton_Press)
                     {
-                        if (robot.totalCoralDeliveries == 0)
-                        {
-                            robot.hasCoral++;
-                        }
-                        robot.totalCoralDeliveries++;
-                        robot.DelCoralF++;
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
+                        robot.CycleStrat(RobotState.CYCLE_DIRECTION.Up);
                     }
                     //Deliver Algae to the Floor or Net
                     if (gamepad.BButton_Press)
@@ -601,6 +589,7 @@ namespace ScoutingCodeRedo.Dynamic
                 //***********************************
 
                 // Changing modes
+                //Leaving Auto
                 if (gamepad.StartButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto)
                 {
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Surfacing;
@@ -608,6 +597,7 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.AUTO = false;
                     TransactToDatabase(robot, "EndAuto", false);
                 }
+                //Leaving Teleop into Surfacing
                 else if (gamepad.StartButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Teleop)
 
                 {
@@ -618,6 +608,7 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.ClimbT_StopWatch_running = true;
                     robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
                 }
+                //Leaving Surfacing into Teleop
                 else if (gamepad.StartButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Surfacing)
                 {
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Surfacing;
@@ -628,30 +619,32 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.ClimbT_StopWatch_running = false;
                     robot.ClimbT_StopWatch.Reset();
                 }
+                //Leaving Defense into Surfacing
                 else if (gamepad.StartButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Defense)
                 {
-                    robot.Desired_Mode = RobotState.ROBOT_MODE.Surfacing;
-                    robot.Current_Mode = RobotState.ROBOT_MODE.Defense;
-
-                    robot.DefTime_StopWatch.Stop();
-                    robot.DefTime = robot.DefTime_StopWatch.Elapsed;
-                    robot.DefTime_StopWatch_running = false;
+                    robot.Current_Mode = RobotState.ROBOT_MODE.Surfacing;
+                    robot.Desired_Mode = RobotState.ROBOT_MODE.Defense;
 
                     TransactToDatabase(robot, "Defense", false);
 
                     robot.DefTime_StopWatch.Reset();
 
-                    robot.ClimbT_StopWatch.Stop();
+                    robot.ClimbT_StopWatch.Start();
                     robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
-                    robot.ClimbT_StopWatch_running = false;
-                    robot.ClimbT_StopWatch.Reset();
+                    robot.ClimbT_StopWatch_running = true;
                 }
                 else if (gamepad.L3_Press)
                 {
+                    //Leaving previous mode into Defense
                     if (robot.Current_Mode != RobotState.ROBOT_MODE.Defense)
                     {
-                        robot.Desired_Mode = robot.Current_Mode;
+                        robot.Desired_Mode = RobotState.ROBOT_MODE.Teleop;
                         robot.Current_Mode = RobotState.ROBOT_MODE.Defense;
+
+                        robot.ClimbT_StopWatch.Stop();
+                        robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
+                        robot.ClimbT_StopWatch_running = false;
+                        robot.ClimbT_StopWatch.Reset();
 
                         robot.DefTime_StopWatch.Start();
                         robot.DefTime = robot.DefTime_StopWatch.Elapsed;
@@ -659,8 +652,8 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     else
                     {
-                        robot.Current_Mode = robot.Desired_Mode;
-                        robot.Desired_Mode = RobotState.ROBOT_MODE.Teleop;
+                        robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
+                        robot.Desired_Mode = RobotState.ROBOT_MODE.Defense;
 
                         robot.DefTime_StopWatch.Stop();
                         robot.DefTime = robot.DefTime_StopWatch.Elapsed;
