@@ -127,7 +127,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
-                            robot.lastCoralLoc = "L1";
+                            robot.lastCoralLoc = "L2";
                             robot.TransactionCheck = true;
                         }
                     }
@@ -167,7 +167,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
-                            robot.lastCoralLoc = "L2";
+                            robot.lastCoralLoc = "L1";
                             robot.TransactionCheck = true;
                         }
                     }
@@ -267,7 +267,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
-                            robot.lastCoralLoc = "L1";
+                            robot.lastCoralLoc = "L2";
                             robot.TransactionCheck = true;
                         }
                     }
@@ -307,7 +307,7 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
-                            robot.lastCoralLoc = "L2";
+                            robot.lastCoralLoc = "L1";
                             robot.TransactionCheck = true;
                         }
                     }

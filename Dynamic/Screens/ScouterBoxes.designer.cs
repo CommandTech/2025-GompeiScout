@@ -250,7 +250,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position0.ForeColor = System.Drawing.Color.White;
             this.lbl0Position0.Location = new System.Drawing.Point(7, 61);
             this.lbl0Position0.Name = "lbl0Position0";
-            this.lbl0Position0.Size = new System.Drawing.Size(99, 33);
+            this.lbl0Position0.Size = new System.Drawing.Size(83, 29);
             this.lbl0Position0.TabIndex = 341;
             this.lbl0Position0.Text = "Leave";
             // 
@@ -261,7 +261,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position1.ForeColor = System.Drawing.Color.White;
             this.lbl0Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl0Position1.Name = "lbl0Position1";
-            this.lbl0Position1.Size = new System.Drawing.Size(153, 33);
+            this.lbl0Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl0Position1.TabIndex = 342;
             this.lbl0Position1.Text = "Near Side";
             // 
@@ -324,7 +324,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position0Value.Location = new System.Drawing.Point(73, 61);
             this.lbl2Position0Value.Name = "lbl2Position0Value";
-            this.lbl2Position0Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl2Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position0Value.TabIndex = 355;
             this.lbl2Position0Value.Text = ".";
             this.lbl2Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -336,7 +336,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position0.ForeColor = System.Drawing.Color.White;
             this.lbl2Position0.Location = new System.Drawing.Point(7, 61);
             this.lbl2Position0.Name = "lbl2Position0";
-            this.lbl2Position0.Size = new System.Drawing.Size(99, 33);
+            this.lbl2Position0.Size = new System.Drawing.Size(83, 29);
             this.lbl2Position0.TabIndex = 341;
             this.lbl2Position0.Text = "Leave";
             // 
@@ -347,7 +347,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position12Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position12Value.Location = new System.Drawing.Point(57, 279);
             this.lbl2Position12Value.Name = "lbl2Position12Value";
-            this.lbl2Position12Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position12Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position12Value.TabIndex = 386;
             this.lbl2Position12Value.Text = "9";
             // 
@@ -358,7 +358,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position12.ForeColor = System.Drawing.Color.White;
             this.lbl2Position12.Location = new System.Drawing.Point(7, 278);
             this.lbl2Position12.Name = "lbl2Position12";
-            this.lbl2Position12.Size = new System.Drawing.Size(90, 33);
+            this.lbl2Position12.Size = new System.Drawing.Size(74, 29);
             this.lbl2Position12.TabIndex = 385;
             this.lbl2Position12.Text = "Strat:";
             // 
@@ -369,7 +369,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position11Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position11Value.Location = new System.Drawing.Point(111, 251);
             this.lbl2Position11Value.Name = "lbl2Position11Value";
-            this.lbl2Position11Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position11Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position11Value.TabIndex = 384;
             this.lbl2Position11Value.Text = "9";
             // 
@@ -380,7 +380,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position11.ForeColor = System.Drawing.Color.White;
             this.lbl2Position11.Location = new System.Drawing.Point(7, 251);
             this.lbl2Position11.Name = "lbl2Position11";
-            this.lbl2Position11.Size = new System.Drawing.Size(159, 33);
+            this.lbl2Position11.Size = new System.Drawing.Size(133, 29);
             this.lbl2Position11.TabIndex = 383;
             this.lbl2Position11.Text = "End State:";
             // 
@@ -389,9 +389,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position10Value.AutoSize = true;
             this.lbl2Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position10Value.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position10Value.Location = new System.Drawing.Point(384, 274);
+            this.lbl2Position10Value.Location = new System.Drawing.Point(394, 274);
             this.lbl2Position10Value.Name = "lbl2Position10Value";
-            this.lbl2Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position10Value.TabIndex = 382;
             this.lbl2Position10Value.Text = "9";
             // 
@@ -402,7 +402,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position10.ForeColor = System.Drawing.Color.White;
             this.lbl2Position10.Location = new System.Drawing.Point(325, 274);
             this.lbl2Position10.Name = "lbl2Position10";
-            this.lbl2Position10.Size = new System.Drawing.Size(99, 33);
+            this.lbl2Position10.Size = new System.Drawing.Size(83, 29);
             this.lbl2Position10.TabIndex = 381;
             this.lbl2Position10.Text = "Coral:";
             // 
@@ -413,7 +413,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position9Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position9Value.Location = new System.Drawing.Point(305, 275);
             this.lbl2Position9Value.Name = "lbl2Position9Value";
-            this.lbl2Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position9Value.TabIndex = 376;
             this.lbl2Position9Value.Text = "9";
             // 
@@ -424,7 +424,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position9.ForeColor = System.Drawing.Color.White;
             this.lbl2Position9.Location = new System.Drawing.Point(241, 274);
             this.lbl2Position9.Name = "lbl2Position9";
-            this.lbl2Position9.Size = new System.Drawing.Size(103, 33);
+            this.lbl2Position9.Size = new System.Drawing.Size(87, 29);
             this.lbl2Position9.TabIndex = 375;
             this.lbl2Position9.Text = "Algae:";
             // 
@@ -435,7 +435,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position8Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position8Value.Location = new System.Drawing.Point(444, 229);
             this.lbl2Position8Value.Name = "lbl2Position8Value";
-            this.lbl2Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position8Value.TabIndex = 372;
             this.lbl2Position8Value.Text = "9";
             // 
@@ -446,7 +446,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position8.ForeColor = System.Drawing.Color.White;
             this.lbl2Position8.Location = new System.Drawing.Point(380, 228);
             this.lbl2Position8.Name = "lbl2Position8";
-            this.lbl2Position8.Size = new System.Drawing.Size(102, 33);
+            this.lbl2Position8.Size = new System.Drawing.Size(85, 29);
             this.lbl2Position8.TabIndex = 371;
             this.lbl2Position8.Text = "Avoid:";
             // 
@@ -457,7 +457,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position7Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position7Value.Location = new System.Drawing.Point(234, 224);
             this.lbl2Position7Value.Name = "lbl2Position7Value";
-            this.lbl2Position7Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position7Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position7Value.TabIndex = 380;
             this.lbl2Position7Value.Text = "9";
             // 
@@ -468,7 +468,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position7.ForeColor = System.Drawing.Color.White;
             this.lbl2Position7.Location = new System.Drawing.Point(199, 223);
             this.lbl2Position7.Name = "lbl2Position7";
-            this.lbl2Position7.Size = new System.Drawing.Size(62, 33);
+            this.lbl2Position7.Size = new System.Drawing.Size(51, 29);
             this.lbl2Position7.TabIndex = 379;
             this.lbl2Position7.Text = "Eff:";
             // 
@@ -479,7 +479,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position6Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position6Value.Location = new System.Drawing.Point(442, 187);
             this.lbl2Position6Value.Name = "lbl2Position6Value";
-            this.lbl2Position6Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position6Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position6Value.TabIndex = 368;
             this.lbl2Position6Value.Text = "9";
             // 
@@ -490,7 +490,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position6.ForeColor = System.Drawing.Color.White;
             this.lbl2Position6.Location = new System.Drawing.Point(376, 187);
             this.lbl2Position6.Name = "lbl2Position6";
-            this.lbl2Position6.Size = new System.Drawing.Size(109, 33);
+            this.lbl2Position6.Size = new System.Drawing.Size(90, 29);
             this.lbl2Position6.TabIndex = 367;
             this.lbl2Position6.Text = "Driver:";
             // 
@@ -501,7 +501,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position5Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position5Value.Location = new System.Drawing.Point(242, 191);
             this.lbl2Position5Value.Name = "lbl2Position5Value";
-            this.lbl2Position5Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position5Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position5Value.TabIndex = 370;
             this.lbl2Position5Value.Text = "9";
             this.lbl2Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -513,7 +513,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position5.ForeColor = System.Drawing.Color.White;
             this.lbl2Position5.Location = new System.Drawing.Point(189, 190);
             this.lbl2Position5.Name = "lbl2Position5";
-            this.lbl2Position5.Size = new System.Drawing.Size(72, 33);
+            this.lbl2Position5.Size = new System.Drawing.Size(60, 29);
             this.lbl2Position5.TabIndex = 369;
             this.lbl2Position5.Text = "Def:";
             this.lbl2Position5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -525,7 +525,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position4Value.ForeColor = System.Drawing.Color.White;
             this.lbl2Position4Value.Location = new System.Drawing.Point(345, 142);
             this.lbl2Position4Value.Name = "lbl2Position4Value";
-            this.lbl2Position4Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl2Position4Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position4Value.TabIndex = 366;
             this.lbl2Position4Value.Text = "9";
             // 
@@ -536,7 +536,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position4.ForeColor = System.Drawing.Color.White;
             this.lbl2Position4.Location = new System.Drawing.Point(263, 141);
             this.lbl2Position4.Name = "lbl2Position4";
-            this.lbl2Position4.Size = new System.Drawing.Size(131, 33);
+            this.lbl2Position4.Size = new System.Drawing.Size(108, 29);
             this.lbl2Position4.TabIndex = 365;
             this.lbl2Position4.Text = "Attempt:";
             // 
@@ -547,7 +547,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position3Des.ForeColor = System.Drawing.Color.White;
             this.lbl2Position3Des.Location = new System.Drawing.Point(181, 156);
             this.lbl2Position3Des.Name = "lbl2Position3Des";
-            this.lbl2Position3Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl2Position3Des.Size = new System.Drawing.Size(75, 29);
             this.lbl2Position3Des.TabIndex = 364;
             this.lbl2Position3Des.Text = "Floor";
             // 
@@ -558,7 +558,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position3Source.ForeColor = System.Drawing.Color.White;
             this.lbl2Position3Source.Location = new System.Drawing.Point(108, 156);
             this.lbl2Position3Source.Name = "lbl2Position3Source";
-            this.lbl2Position3Source.Size = new System.Drawing.Size(87, 33);
+            this.lbl2Position3Source.Size = new System.Drawing.Size(75, 29);
             this.lbl2Position3Source.TabIndex = 378;
             this.lbl2Position3Source.Text = "Floor";
             // 
@@ -569,7 +569,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position2Des.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2Des.Location = new System.Drawing.Point(181, 118);
             this.lbl2Position2Des.Name = "lbl2Position2Des";
-            this.lbl2Position2Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl2Position2Des.Size = new System.Drawing.Size(75, 29);
             this.lbl2Position2Des.TabIndex = 363;
             this.lbl2Position2Des.Text = "Floor";
             // 
@@ -580,7 +580,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position2Source.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2Source.Location = new System.Drawing.Point(108, 118);
             this.lbl2Position2Source.Name = "lbl2Position2Source";
-            this.lbl2Position2Source.Size = new System.Drawing.Size(112, 33);
+            this.lbl2Position2Source.Size = new System.Drawing.Size(94, 29);
             this.lbl2Position2Source.TabIndex = 377;
             this.lbl2Position2Source.Text = "Station";
             // 
@@ -591,7 +591,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position1.ForeColor = System.Drawing.Color.White;
             this.lbl2Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl2Position1.Name = "lbl2Position1";
-            this.lbl2Position1.Size = new System.Drawing.Size(153, 33);
+            this.lbl2Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl2Position1.TabIndex = 342;
             this.lbl2Position1.Text = "Near Side";
             // 
@@ -604,7 +604,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position3Value.Location = new System.Drawing.Point(80, 156);
             this.lbl2Position3Value.Name = "lbl2Position3Value";
-            this.lbl2Position3Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl2Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position3Value.TabIndex = 359;
             this.lbl2Position3Value.Text = ".";
             this.lbl2Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -616,7 +616,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position3.ForeColor = System.Drawing.Color.White;
             this.lbl2Position3.Location = new System.Drawing.Point(7, 154);
             this.lbl2Position3.Name = "lbl2Position3";
-            this.lbl2Position3.Size = new System.Drawing.Size(103, 33);
+            this.lbl2Position3.Size = new System.Drawing.Size(87, 29);
             this.lbl2Position3.TabIndex = 356;
             this.lbl2Position3.Text = "Algae:";
             // 
@@ -629,7 +629,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position2Value.Location = new System.Drawing.Point(80, 115);
             this.lbl2Position2Value.Name = "lbl2Position2Value";
-            this.lbl2Position2Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl2Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position2Value.TabIndex = 354;
             this.lbl2Position2Value.Text = ".";
             this.lbl2Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -641,7 +641,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position2.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2.Location = new System.Drawing.Point(7, 116);
             this.lbl2Position2.Name = "lbl2Position2";
-            this.lbl2Position2.Size = new System.Drawing.Size(99, 33);
+            this.lbl2Position2.Size = new System.Drawing.Size(83, 29);
             this.lbl2Position2.TabIndex = 352;
             this.lbl2Position2.Text = "Coral:";
             // 
@@ -662,7 +662,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label64.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label64.Location = new System.Drawing.Point(418, 214);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(55, 37);
+            this.label64.Size = new System.Drawing.Size(46, 31);
             this.label64.TabIndex = 277;
             this.label64.Text = "00";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -684,7 +684,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label65.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label65.Location = new System.Drawing.Point(418, 214);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(55, 37);
+            this.label65.Size = new System.Drawing.Size(46, 31);
             this.label65.TabIndex = 277;
             this.label65.Text = "00";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -737,7 +737,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position0Value.Location = new System.Drawing.Point(73, 61);
             this.lbl1Position0Value.Name = "lbl1Position0Value";
-            this.lbl1Position0Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl1Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position0Value.TabIndex = 355;
             this.lbl1Position0Value.Text = ".";
             this.lbl1Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -749,7 +749,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position0.ForeColor = System.Drawing.Color.White;
             this.lbl1Position0.Location = new System.Drawing.Point(7, 61);
             this.lbl1Position0.Name = "lbl1Position0";
-            this.lbl1Position0.Size = new System.Drawing.Size(99, 33);
+            this.lbl1Position0.Size = new System.Drawing.Size(83, 29);
             this.lbl1Position0.TabIndex = 341;
             this.lbl1Position0.Text = "Leave";
             // 
@@ -760,7 +760,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position12Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position12Value.Location = new System.Drawing.Point(57, 279);
             this.lbl1Position12Value.Name = "lbl1Position12Value";
-            this.lbl1Position12Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position12Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position12Value.TabIndex = 386;
             this.lbl1Position12Value.Text = "9";
             // 
@@ -771,7 +771,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position12.ForeColor = System.Drawing.Color.White;
             this.lbl1Position12.Location = new System.Drawing.Point(7, 278);
             this.lbl1Position12.Name = "lbl1Position12";
-            this.lbl1Position12.Size = new System.Drawing.Size(90, 33);
+            this.lbl1Position12.Size = new System.Drawing.Size(74, 29);
             this.lbl1Position12.TabIndex = 385;
             this.lbl1Position12.Text = "Strat:";
             // 
@@ -782,7 +782,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position11Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position11Value.Location = new System.Drawing.Point(111, 251);
             this.lbl1Position11Value.Name = "lbl1Position11Value";
-            this.lbl1Position11Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position11Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position11Value.TabIndex = 384;
             this.lbl1Position11Value.Text = "9";
             // 
@@ -793,7 +793,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position11.ForeColor = System.Drawing.Color.White;
             this.lbl1Position11.Location = new System.Drawing.Point(7, 251);
             this.lbl1Position11.Name = "lbl1Position11";
-            this.lbl1Position11.Size = new System.Drawing.Size(159, 33);
+            this.lbl1Position11.Size = new System.Drawing.Size(133, 29);
             this.lbl1Position11.TabIndex = 383;
             this.lbl1Position11.Text = "End State:";
             // 
@@ -802,9 +802,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position10Value.AutoSize = true;
             this.lbl1Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position10Value.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position10Value.Location = new System.Drawing.Point(384, 274);
+            this.lbl1Position10Value.Location = new System.Drawing.Point(394, 274);
             this.lbl1Position10Value.Name = "lbl1Position10Value";
-            this.lbl1Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position10Value.TabIndex = 382;
             this.lbl1Position10Value.Text = "9";
             // 
@@ -815,7 +815,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position10.ForeColor = System.Drawing.Color.White;
             this.lbl1Position10.Location = new System.Drawing.Point(325, 274);
             this.lbl1Position10.Name = "lbl1Position10";
-            this.lbl1Position10.Size = new System.Drawing.Size(99, 33);
+            this.lbl1Position10.Size = new System.Drawing.Size(83, 29);
             this.lbl1Position10.TabIndex = 381;
             this.lbl1Position10.Text = "Coral:";
             // 
@@ -826,7 +826,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position9Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position9Value.Location = new System.Drawing.Point(305, 275);
             this.lbl1Position9Value.Name = "lbl1Position9Value";
-            this.lbl1Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position9Value.TabIndex = 376;
             this.lbl1Position9Value.Text = "9";
             // 
@@ -837,7 +837,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position9.ForeColor = System.Drawing.Color.White;
             this.lbl1Position9.Location = new System.Drawing.Point(241, 274);
             this.lbl1Position9.Name = "lbl1Position9";
-            this.lbl1Position9.Size = new System.Drawing.Size(103, 33);
+            this.lbl1Position9.Size = new System.Drawing.Size(87, 29);
             this.lbl1Position9.TabIndex = 375;
             this.lbl1Position9.Text = "Algae:";
             // 
@@ -848,7 +848,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position8Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position8Value.Location = new System.Drawing.Point(444, 229);
             this.lbl1Position8Value.Name = "lbl1Position8Value";
-            this.lbl1Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position8Value.TabIndex = 372;
             this.lbl1Position8Value.Text = "9";
             // 
@@ -859,7 +859,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position8.ForeColor = System.Drawing.Color.White;
             this.lbl1Position8.Location = new System.Drawing.Point(380, 228);
             this.lbl1Position8.Name = "lbl1Position8";
-            this.lbl1Position8.Size = new System.Drawing.Size(102, 33);
+            this.lbl1Position8.Size = new System.Drawing.Size(85, 29);
             this.lbl1Position8.TabIndex = 371;
             this.lbl1Position8.Text = "Avoid:";
             // 
@@ -870,7 +870,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position7Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position7Value.Location = new System.Drawing.Point(234, 224);
             this.lbl1Position7Value.Name = "lbl1Position7Value";
-            this.lbl1Position7Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position7Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position7Value.TabIndex = 380;
             this.lbl1Position7Value.Text = "9";
             // 
@@ -881,7 +881,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position7.ForeColor = System.Drawing.Color.White;
             this.lbl1Position7.Location = new System.Drawing.Point(199, 223);
             this.lbl1Position7.Name = "lbl1Position7";
-            this.lbl1Position7.Size = new System.Drawing.Size(62, 33);
+            this.lbl1Position7.Size = new System.Drawing.Size(51, 29);
             this.lbl1Position7.TabIndex = 379;
             this.lbl1Position7.Text = "Eff:";
             // 
@@ -892,7 +892,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position6Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position6Value.Location = new System.Drawing.Point(442, 187);
             this.lbl1Position6Value.Name = "lbl1Position6Value";
-            this.lbl1Position6Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position6Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position6Value.TabIndex = 368;
             this.lbl1Position6Value.Text = "9";
             // 
@@ -903,7 +903,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position6.ForeColor = System.Drawing.Color.White;
             this.lbl1Position6.Location = new System.Drawing.Point(376, 187);
             this.lbl1Position6.Name = "lbl1Position6";
-            this.lbl1Position6.Size = new System.Drawing.Size(109, 33);
+            this.lbl1Position6.Size = new System.Drawing.Size(90, 29);
             this.lbl1Position6.TabIndex = 367;
             this.lbl1Position6.Text = "Driver:";
             // 
@@ -914,7 +914,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position5Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position5Value.Location = new System.Drawing.Point(242, 191);
             this.lbl1Position5Value.Name = "lbl1Position5Value";
-            this.lbl1Position5Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position5Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position5Value.TabIndex = 370;
             this.lbl1Position5Value.Text = "9";
             this.lbl1Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -926,7 +926,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position5.ForeColor = System.Drawing.Color.White;
             this.lbl1Position5.Location = new System.Drawing.Point(189, 190);
             this.lbl1Position5.Name = "lbl1Position5";
-            this.lbl1Position5.Size = new System.Drawing.Size(72, 33);
+            this.lbl1Position5.Size = new System.Drawing.Size(60, 29);
             this.lbl1Position5.TabIndex = 369;
             this.lbl1Position5.Text = "Def:";
             this.lbl1Position5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -938,7 +938,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position4Value.ForeColor = System.Drawing.Color.White;
             this.lbl1Position4Value.Location = new System.Drawing.Point(345, 142);
             this.lbl1Position4Value.Name = "lbl1Position4Value";
-            this.lbl1Position4Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl1Position4Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position4Value.TabIndex = 366;
             this.lbl1Position4Value.Text = "9";
             // 
@@ -949,7 +949,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position4.ForeColor = System.Drawing.Color.White;
             this.lbl1Position4.Location = new System.Drawing.Point(263, 141);
             this.lbl1Position4.Name = "lbl1Position4";
-            this.lbl1Position4.Size = new System.Drawing.Size(131, 33);
+            this.lbl1Position4.Size = new System.Drawing.Size(108, 29);
             this.lbl1Position4.TabIndex = 365;
             this.lbl1Position4.Text = "Attempt:";
             // 
@@ -960,7 +960,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position3Des.ForeColor = System.Drawing.Color.White;
             this.lbl1Position3Des.Location = new System.Drawing.Point(181, 156);
             this.lbl1Position3Des.Name = "lbl1Position3Des";
-            this.lbl1Position3Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl1Position3Des.Size = new System.Drawing.Size(75, 29);
             this.lbl1Position3Des.TabIndex = 364;
             this.lbl1Position3Des.Text = "Floor";
             // 
@@ -971,7 +971,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position3Source.ForeColor = System.Drawing.Color.White;
             this.lbl1Position3Source.Location = new System.Drawing.Point(108, 156);
             this.lbl1Position3Source.Name = "lbl1Position3Source";
-            this.lbl1Position3Source.Size = new System.Drawing.Size(87, 33);
+            this.lbl1Position3Source.Size = new System.Drawing.Size(75, 29);
             this.lbl1Position3Source.TabIndex = 378;
             this.lbl1Position3Source.Text = "Floor";
             // 
@@ -982,7 +982,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position2Des.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2Des.Location = new System.Drawing.Point(181, 118);
             this.lbl1Position2Des.Name = "lbl1Position2Des";
-            this.lbl1Position2Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl1Position2Des.Size = new System.Drawing.Size(75, 29);
             this.lbl1Position2Des.TabIndex = 363;
             this.lbl1Position2Des.Text = "Floor";
             // 
@@ -993,7 +993,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position2Source.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2Source.Location = new System.Drawing.Point(108, 118);
             this.lbl1Position2Source.Name = "lbl1Position2Source";
-            this.lbl1Position2Source.Size = new System.Drawing.Size(112, 33);
+            this.lbl1Position2Source.Size = new System.Drawing.Size(94, 29);
             this.lbl1Position2Source.TabIndex = 377;
             this.lbl1Position2Source.Text = "Station";
             // 
@@ -1004,7 +1004,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position1.ForeColor = System.Drawing.Color.White;
             this.lbl1Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl1Position1.Name = "lbl1Position1";
-            this.lbl1Position1.Size = new System.Drawing.Size(153, 33);
+            this.lbl1Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl1Position1.TabIndex = 342;
             this.lbl1Position1.Text = "Near Side";
             // 
@@ -1017,7 +1017,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position3Value.Location = new System.Drawing.Point(80, 156);
             this.lbl1Position3Value.Name = "lbl1Position3Value";
-            this.lbl1Position3Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl1Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position3Value.TabIndex = 359;
             this.lbl1Position3Value.Text = ".";
             this.lbl1Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1029,7 +1029,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position3.ForeColor = System.Drawing.Color.White;
             this.lbl1Position3.Location = new System.Drawing.Point(7, 154);
             this.lbl1Position3.Name = "lbl1Position3";
-            this.lbl1Position3.Size = new System.Drawing.Size(103, 33);
+            this.lbl1Position3.Size = new System.Drawing.Size(87, 29);
             this.lbl1Position3.TabIndex = 356;
             this.lbl1Position3.Text = "Algae:";
             // 
@@ -1042,7 +1042,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position2Value.Location = new System.Drawing.Point(80, 115);
             this.lbl1Position2Value.Name = "lbl1Position2Value";
-            this.lbl1Position2Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl1Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position2Value.TabIndex = 354;
             this.lbl1Position2Value.Text = ".";
             this.lbl1Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1054,7 +1054,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position2.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2.Location = new System.Drawing.Point(7, 116);
             this.lbl1Position2.Name = "lbl1Position2";
-            this.lbl1Position2.Size = new System.Drawing.Size(99, 33);
+            this.lbl1Position2.Size = new System.Drawing.Size(83, 29);
             this.lbl1Position2.TabIndex = 352;
             this.lbl1Position2.Text = "Coral:";
             // 
@@ -1075,7 +1075,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label32.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label32.Location = new System.Drawing.Point(418, 214);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 37);
+            this.label32.Size = new System.Drawing.Size(46, 31);
             this.label32.TabIndex = 277;
             this.label32.Text = "00";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1097,7 +1097,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label33.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label33.Location = new System.Drawing.Point(418, 214);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(55, 37);
+            this.label33.Size = new System.Drawing.Size(46, 31);
             this.label33.TabIndex = 277;
             this.label33.Text = "00";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1150,7 +1150,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position0Value.Location = new System.Drawing.Point(73, 61);
             this.lbl0Position0Value.Name = "lbl0Position0Value";
-            this.lbl0Position0Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl0Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position0Value.TabIndex = 355;
             this.lbl0Position0Value.Text = ".";
             this.lbl0Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1162,7 +1162,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position12Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position12Value.Location = new System.Drawing.Point(57, 279);
             this.lbl0Position12Value.Name = "lbl0Position12Value";
-            this.lbl0Position12Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position12Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position12Value.TabIndex = 386;
             this.lbl0Position12Value.Text = "9";
             // 
@@ -1173,7 +1173,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position12.ForeColor = System.Drawing.Color.White;
             this.lbl0Position12.Location = new System.Drawing.Point(7, 278);
             this.lbl0Position12.Name = "lbl0Position12";
-            this.lbl0Position12.Size = new System.Drawing.Size(90, 33);
+            this.lbl0Position12.Size = new System.Drawing.Size(74, 29);
             this.lbl0Position12.TabIndex = 385;
             this.lbl0Position12.Text = "Strat:";
             // 
@@ -1184,7 +1184,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position11Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position11Value.Location = new System.Drawing.Point(111, 251);
             this.lbl0Position11Value.Name = "lbl0Position11Value";
-            this.lbl0Position11Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position11Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position11Value.TabIndex = 384;
             this.lbl0Position11Value.Text = "9";
             // 
@@ -1195,7 +1195,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position11.ForeColor = System.Drawing.Color.White;
             this.lbl0Position11.Location = new System.Drawing.Point(7, 251);
             this.lbl0Position11.Name = "lbl0Position11";
-            this.lbl0Position11.Size = new System.Drawing.Size(159, 33);
+            this.lbl0Position11.Size = new System.Drawing.Size(133, 29);
             this.lbl0Position11.TabIndex = 383;
             this.lbl0Position11.Text = "End State:";
             // 
@@ -1204,9 +1204,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position10Value.AutoSize = true;
             this.lbl0Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position10Value.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position10Value.Location = new System.Drawing.Point(384, 274);
+            this.lbl0Position10Value.Location = new System.Drawing.Point(394, 274);
             this.lbl0Position10Value.Name = "lbl0Position10Value";
-            this.lbl0Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position10Value.TabIndex = 382;
             this.lbl0Position10Value.Text = "9";
             // 
@@ -1217,7 +1217,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position10.ForeColor = System.Drawing.Color.White;
             this.lbl0Position10.Location = new System.Drawing.Point(325, 274);
             this.lbl0Position10.Name = "lbl0Position10";
-            this.lbl0Position10.Size = new System.Drawing.Size(99, 33);
+            this.lbl0Position10.Size = new System.Drawing.Size(83, 29);
             this.lbl0Position10.TabIndex = 381;
             this.lbl0Position10.Text = "Coral:";
             // 
@@ -1228,7 +1228,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position9Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position9Value.Location = new System.Drawing.Point(305, 275);
             this.lbl0Position9Value.Name = "lbl0Position9Value";
-            this.lbl0Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position9Value.TabIndex = 376;
             this.lbl0Position9Value.Text = "9";
             // 
@@ -1239,7 +1239,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position9.ForeColor = System.Drawing.Color.White;
             this.lbl0Position9.Location = new System.Drawing.Point(241, 274);
             this.lbl0Position9.Name = "lbl0Position9";
-            this.lbl0Position9.Size = new System.Drawing.Size(103, 33);
+            this.lbl0Position9.Size = new System.Drawing.Size(87, 29);
             this.lbl0Position9.TabIndex = 375;
             this.lbl0Position9.Text = "Algae:";
             // 
@@ -1250,7 +1250,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position8Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position8Value.Location = new System.Drawing.Point(444, 229);
             this.lbl0Position8Value.Name = "lbl0Position8Value";
-            this.lbl0Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position8Value.TabIndex = 372;
             this.lbl0Position8Value.Text = "9";
             // 
@@ -1261,7 +1261,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position8.ForeColor = System.Drawing.Color.White;
             this.lbl0Position8.Location = new System.Drawing.Point(380, 228);
             this.lbl0Position8.Name = "lbl0Position8";
-            this.lbl0Position8.Size = new System.Drawing.Size(102, 33);
+            this.lbl0Position8.Size = new System.Drawing.Size(85, 29);
             this.lbl0Position8.TabIndex = 371;
             this.lbl0Position8.Text = "Avoid:";
             // 
@@ -1272,7 +1272,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position7Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position7Value.Location = new System.Drawing.Point(234, 224);
             this.lbl0Position7Value.Name = "lbl0Position7Value";
-            this.lbl0Position7Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position7Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position7Value.TabIndex = 380;
             this.lbl0Position7Value.Text = "9";
             // 
@@ -1283,7 +1283,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position7.ForeColor = System.Drawing.Color.White;
             this.lbl0Position7.Location = new System.Drawing.Point(199, 223);
             this.lbl0Position7.Name = "lbl0Position7";
-            this.lbl0Position7.Size = new System.Drawing.Size(62, 33);
+            this.lbl0Position7.Size = new System.Drawing.Size(51, 29);
             this.lbl0Position7.TabIndex = 379;
             this.lbl0Position7.Text = "Eff:";
             // 
@@ -1294,7 +1294,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position6Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position6Value.Location = new System.Drawing.Point(442, 187);
             this.lbl0Position6Value.Name = "lbl0Position6Value";
-            this.lbl0Position6Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position6Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position6Value.TabIndex = 368;
             this.lbl0Position6Value.Text = "9";
             // 
@@ -1305,7 +1305,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position6.ForeColor = System.Drawing.Color.White;
             this.lbl0Position6.Location = new System.Drawing.Point(376, 187);
             this.lbl0Position6.Name = "lbl0Position6";
-            this.lbl0Position6.Size = new System.Drawing.Size(109, 33);
+            this.lbl0Position6.Size = new System.Drawing.Size(90, 29);
             this.lbl0Position6.TabIndex = 367;
             this.lbl0Position6.Text = "Driver:";
             // 
@@ -1316,7 +1316,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position5Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position5Value.Location = new System.Drawing.Point(242, 191);
             this.lbl0Position5Value.Name = "lbl0Position5Value";
-            this.lbl0Position5Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position5Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position5Value.TabIndex = 370;
             this.lbl0Position5Value.Text = "9";
             this.lbl0Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1328,7 +1328,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position5.ForeColor = System.Drawing.Color.White;
             this.lbl0Position5.Location = new System.Drawing.Point(189, 190);
             this.lbl0Position5.Name = "lbl0Position5";
-            this.lbl0Position5.Size = new System.Drawing.Size(72, 33);
+            this.lbl0Position5.Size = new System.Drawing.Size(60, 29);
             this.lbl0Position5.TabIndex = 369;
             this.lbl0Position5.Text = "Def:";
             this.lbl0Position5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1340,7 +1340,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position4Value.ForeColor = System.Drawing.Color.White;
             this.lbl0Position4Value.Location = new System.Drawing.Point(345, 142);
             this.lbl0Position4Value.Name = "lbl0Position4Value";
-            this.lbl0Position4Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl0Position4Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position4Value.TabIndex = 366;
             this.lbl0Position4Value.Text = "9";
             // 
@@ -1351,7 +1351,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position4.ForeColor = System.Drawing.Color.White;
             this.lbl0Position4.Location = new System.Drawing.Point(263, 141);
             this.lbl0Position4.Name = "lbl0Position4";
-            this.lbl0Position4.Size = new System.Drawing.Size(131, 33);
+            this.lbl0Position4.Size = new System.Drawing.Size(108, 29);
             this.lbl0Position4.TabIndex = 365;
             this.lbl0Position4.Text = "Attempt:";
             // 
@@ -1362,7 +1362,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position3Des.ForeColor = System.Drawing.Color.White;
             this.lbl0Position3Des.Location = new System.Drawing.Point(181, 156);
             this.lbl0Position3Des.Name = "lbl0Position3Des";
-            this.lbl0Position3Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl0Position3Des.Size = new System.Drawing.Size(75, 29);
             this.lbl0Position3Des.TabIndex = 364;
             this.lbl0Position3Des.Text = "Floor";
             // 
@@ -1373,7 +1373,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position3Source.ForeColor = System.Drawing.Color.White;
             this.lbl0Position3Source.Location = new System.Drawing.Point(108, 156);
             this.lbl0Position3Source.Name = "lbl0Position3Source";
-            this.lbl0Position3Source.Size = new System.Drawing.Size(87, 33);
+            this.lbl0Position3Source.Size = new System.Drawing.Size(75, 29);
             this.lbl0Position3Source.TabIndex = 378;
             this.lbl0Position3Source.Text = "Floor";
             // 
@@ -1384,7 +1384,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position2Des.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2Des.Location = new System.Drawing.Point(181, 118);
             this.lbl0Position2Des.Name = "lbl0Position2Des";
-            this.lbl0Position2Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl0Position2Des.Size = new System.Drawing.Size(75, 29);
             this.lbl0Position2Des.TabIndex = 363;
             this.lbl0Position2Des.Text = "Floor";
             // 
@@ -1395,7 +1395,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position2Source.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2Source.Location = new System.Drawing.Point(108, 118);
             this.lbl0Position2Source.Name = "lbl0Position2Source";
-            this.lbl0Position2Source.Size = new System.Drawing.Size(112, 33);
+            this.lbl0Position2Source.Size = new System.Drawing.Size(94, 29);
             this.lbl0Position2Source.TabIndex = 377;
             this.lbl0Position2Source.Text = "Station";
             // 
@@ -1408,7 +1408,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position3Value.Location = new System.Drawing.Point(80, 156);
             this.lbl0Position3Value.Name = "lbl0Position3Value";
-            this.lbl0Position3Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl0Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position3Value.TabIndex = 359;
             this.lbl0Position3Value.Text = ".";
             this.lbl0Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1420,7 +1420,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position3.ForeColor = System.Drawing.Color.White;
             this.lbl0Position3.Location = new System.Drawing.Point(7, 154);
             this.lbl0Position3.Name = "lbl0Position3";
-            this.lbl0Position3.Size = new System.Drawing.Size(103, 33);
+            this.lbl0Position3.Size = new System.Drawing.Size(87, 29);
             this.lbl0Position3.TabIndex = 356;
             this.lbl0Position3.Text = "Algae:";
             // 
@@ -1433,7 +1433,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position2Value.Location = new System.Drawing.Point(80, 115);
             this.lbl0Position2Value.Name = "lbl0Position2Value";
-            this.lbl0Position2Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl0Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position2Value.TabIndex = 354;
             this.lbl0Position2Value.Text = ".";
             this.lbl0Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1445,7 +1445,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position2.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2.Location = new System.Drawing.Point(7, 116);
             this.lbl0Position2.Name = "lbl0Position2";
-            this.lbl0Position2.Size = new System.Drawing.Size(99, 33);
+            this.lbl0Position2.Size = new System.Drawing.Size(83, 29);
             this.lbl0Position2.TabIndex = 352;
             this.lbl0Position2.Text = "Coral:";
             // 
@@ -1466,7 +1466,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label28.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label28.Location = new System.Drawing.Point(418, 214);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(55, 37);
+            this.label28.Size = new System.Drawing.Size(46, 31);
             this.label28.TabIndex = 277;
             this.label28.Text = "00";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1488,7 +1488,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label1.Location = new System.Drawing.Point(418, 214);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 37);
+            this.label1.Size = new System.Drawing.Size(46, 31);
             this.label1.TabIndex = 277;
             this.label1.Text = "00";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1552,7 +1552,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position0Value.Location = new System.Drawing.Point(73, 61);
             this.lbl5Position0Value.Name = "lbl5Position0Value";
-            this.lbl5Position0Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl5Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position0Value.TabIndex = 355;
             this.lbl5Position0Value.Text = ".";
             this.lbl5Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1564,7 +1564,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position0.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0.Location = new System.Drawing.Point(7, 61);
             this.lbl5Position0.Name = "lbl5Position0";
-            this.lbl5Position0.Size = new System.Drawing.Size(99, 33);
+            this.lbl5Position0.Size = new System.Drawing.Size(83, 29);
             this.lbl5Position0.TabIndex = 341;
             this.lbl5Position0.Text = "Leave";
             // 
@@ -1575,7 +1575,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position12Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position12Value.Location = new System.Drawing.Point(57, 279);
             this.lbl5Position12Value.Name = "lbl5Position12Value";
-            this.lbl5Position12Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position12Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position12Value.TabIndex = 386;
             this.lbl5Position12Value.Text = "9";
             // 
@@ -1586,7 +1586,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position12.ForeColor = System.Drawing.Color.White;
             this.lbl5Position12.Location = new System.Drawing.Point(7, 278);
             this.lbl5Position12.Name = "lbl5Position12";
-            this.lbl5Position12.Size = new System.Drawing.Size(90, 33);
+            this.lbl5Position12.Size = new System.Drawing.Size(74, 29);
             this.lbl5Position12.TabIndex = 385;
             this.lbl5Position12.Text = "Strat:";
             // 
@@ -1597,7 +1597,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position11Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position11Value.Location = new System.Drawing.Point(111, 251);
             this.lbl5Position11Value.Name = "lbl5Position11Value";
-            this.lbl5Position11Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position11Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position11Value.TabIndex = 384;
             this.lbl5Position11Value.Text = "9";
             // 
@@ -1608,7 +1608,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position11.ForeColor = System.Drawing.Color.White;
             this.lbl5Position11.Location = new System.Drawing.Point(7, 251);
             this.lbl5Position11.Name = "lbl5Position11";
-            this.lbl5Position11.Size = new System.Drawing.Size(159, 33);
+            this.lbl5Position11.Size = new System.Drawing.Size(133, 29);
             this.lbl5Position11.TabIndex = 383;
             this.lbl5Position11.Text = "End State:";
             // 
@@ -1617,9 +1617,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position10Value.AutoSize = true;
             this.lbl5Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position10Value.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position10Value.Location = new System.Drawing.Point(384, 274);
+            this.lbl5Position10Value.Location = new System.Drawing.Point(394, 274);
             this.lbl5Position10Value.Name = "lbl5Position10Value";
-            this.lbl5Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position10Value.TabIndex = 382;
             this.lbl5Position10Value.Text = "9";
             // 
@@ -1630,7 +1630,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position10.ForeColor = System.Drawing.Color.White;
             this.lbl5Position10.Location = new System.Drawing.Point(325, 274);
             this.lbl5Position10.Name = "lbl5Position10";
-            this.lbl5Position10.Size = new System.Drawing.Size(99, 33);
+            this.lbl5Position10.Size = new System.Drawing.Size(83, 29);
             this.lbl5Position10.TabIndex = 381;
             this.lbl5Position10.Text = "Coral:";
             // 
@@ -1641,7 +1641,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position9Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position9Value.Location = new System.Drawing.Point(305, 275);
             this.lbl5Position9Value.Name = "lbl5Position9Value";
-            this.lbl5Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position9Value.TabIndex = 376;
             this.lbl5Position9Value.Text = "9";
             // 
@@ -1652,7 +1652,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position9.ForeColor = System.Drawing.Color.White;
             this.lbl5Position9.Location = new System.Drawing.Point(241, 274);
             this.lbl5Position9.Name = "lbl5Position9";
-            this.lbl5Position9.Size = new System.Drawing.Size(103, 33);
+            this.lbl5Position9.Size = new System.Drawing.Size(87, 29);
             this.lbl5Position9.TabIndex = 375;
             this.lbl5Position9.Text = "Algae:";
             // 
@@ -1663,7 +1663,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position8Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position8Value.Location = new System.Drawing.Point(444, 229);
             this.lbl5Position8Value.Name = "lbl5Position8Value";
-            this.lbl5Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position8Value.TabIndex = 372;
             this.lbl5Position8Value.Text = "9";
             // 
@@ -1674,7 +1674,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position8.ForeColor = System.Drawing.Color.White;
             this.lbl5Position8.Location = new System.Drawing.Point(380, 228);
             this.lbl5Position8.Name = "lbl5Position8";
-            this.lbl5Position8.Size = new System.Drawing.Size(102, 33);
+            this.lbl5Position8.Size = new System.Drawing.Size(85, 29);
             this.lbl5Position8.TabIndex = 371;
             this.lbl5Position8.Text = "Avoid:";
             // 
@@ -1685,7 +1685,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position7Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position7Value.Location = new System.Drawing.Point(234, 224);
             this.lbl5Position7Value.Name = "lbl5Position7Value";
-            this.lbl5Position7Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position7Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position7Value.TabIndex = 380;
             this.lbl5Position7Value.Text = "9";
             // 
@@ -1696,7 +1696,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position7.ForeColor = System.Drawing.Color.White;
             this.lbl5Position7.Location = new System.Drawing.Point(199, 223);
             this.lbl5Position7.Name = "lbl5Position7";
-            this.lbl5Position7.Size = new System.Drawing.Size(62, 33);
+            this.lbl5Position7.Size = new System.Drawing.Size(51, 29);
             this.lbl5Position7.TabIndex = 379;
             this.lbl5Position7.Text = "Eff:";
             // 
@@ -1707,7 +1707,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position6Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position6Value.Location = new System.Drawing.Point(442, 187);
             this.lbl5Position6Value.Name = "lbl5Position6Value";
-            this.lbl5Position6Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position6Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position6Value.TabIndex = 368;
             this.lbl5Position6Value.Text = "9";
             // 
@@ -1718,7 +1718,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position6.ForeColor = System.Drawing.Color.White;
             this.lbl5Position6.Location = new System.Drawing.Point(376, 187);
             this.lbl5Position6.Name = "lbl5Position6";
-            this.lbl5Position6.Size = new System.Drawing.Size(109, 33);
+            this.lbl5Position6.Size = new System.Drawing.Size(90, 29);
             this.lbl5Position6.TabIndex = 367;
             this.lbl5Position6.Text = "Driver:";
             // 
@@ -1729,7 +1729,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position5Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position5Value.Location = new System.Drawing.Point(242, 191);
             this.lbl5Position5Value.Name = "lbl5Position5Value";
-            this.lbl5Position5Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position5Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position5Value.TabIndex = 370;
             this.lbl5Position5Value.Text = "9";
             this.lbl5Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1741,7 +1741,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position5.ForeColor = System.Drawing.Color.White;
             this.lbl5Position5.Location = new System.Drawing.Point(189, 190);
             this.lbl5Position5.Name = "lbl5Position5";
-            this.lbl5Position5.Size = new System.Drawing.Size(72, 33);
+            this.lbl5Position5.Size = new System.Drawing.Size(60, 29);
             this.lbl5Position5.TabIndex = 369;
             this.lbl5Position5.Text = "Def:";
             this.lbl5Position5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1753,7 +1753,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position4Value.ForeColor = System.Drawing.Color.White;
             this.lbl5Position4Value.Location = new System.Drawing.Point(345, 142);
             this.lbl5Position4Value.Name = "lbl5Position4Value";
-            this.lbl5Position4Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position4Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position4Value.TabIndex = 366;
             this.lbl5Position4Value.Text = "9";
             // 
@@ -1764,7 +1764,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position4.ForeColor = System.Drawing.Color.White;
             this.lbl5Position4.Location = new System.Drawing.Point(263, 141);
             this.lbl5Position4.Name = "lbl5Position4";
-            this.lbl5Position4.Size = new System.Drawing.Size(131, 33);
+            this.lbl5Position4.Size = new System.Drawing.Size(108, 29);
             this.lbl5Position4.TabIndex = 365;
             this.lbl5Position4.Text = "Attempt:";
             // 
@@ -1775,7 +1775,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position3Des.ForeColor = System.Drawing.Color.White;
             this.lbl5Position3Des.Location = new System.Drawing.Point(181, 156);
             this.lbl5Position3Des.Name = "lbl5Position3Des";
-            this.lbl5Position3Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl5Position3Des.Size = new System.Drawing.Size(75, 29);
             this.lbl5Position3Des.TabIndex = 364;
             this.lbl5Position3Des.Text = "Floor";
             // 
@@ -1786,7 +1786,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position3Source.ForeColor = System.Drawing.Color.White;
             this.lbl5Position3Source.Location = new System.Drawing.Point(108, 156);
             this.lbl5Position3Source.Name = "lbl5Position3Source";
-            this.lbl5Position3Source.Size = new System.Drawing.Size(87, 33);
+            this.lbl5Position3Source.Size = new System.Drawing.Size(75, 29);
             this.lbl5Position3Source.TabIndex = 378;
             this.lbl5Position3Source.Text = "Floor";
             // 
@@ -1797,7 +1797,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2Des.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2Des.Location = new System.Drawing.Point(181, 118);
             this.lbl5Position2Des.Name = "lbl5Position2Des";
-            this.lbl5Position2Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl5Position2Des.Size = new System.Drawing.Size(75, 29);
             this.lbl5Position2Des.TabIndex = 363;
             this.lbl5Position2Des.Text = "Floor";
             // 
@@ -1808,7 +1808,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2Source.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2Source.Location = new System.Drawing.Point(108, 118);
             this.lbl5Position2Source.Name = "lbl5Position2Source";
-            this.lbl5Position2Source.Size = new System.Drawing.Size(112, 33);
+            this.lbl5Position2Source.Size = new System.Drawing.Size(94, 29);
             this.lbl5Position2Source.TabIndex = 377;
             this.lbl5Position2Source.Text = "Station";
             // 
@@ -1819,7 +1819,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position1.ForeColor = System.Drawing.Color.White;
             this.lbl5Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl5Position1.Name = "lbl5Position1";
-            this.lbl5Position1.Size = new System.Drawing.Size(153, 33);
+            this.lbl5Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl5Position1.TabIndex = 342;
             this.lbl5Position1.Text = "Near Side";
             // 
@@ -1832,7 +1832,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position3Value.Location = new System.Drawing.Point(80, 156);
             this.lbl5Position3Value.Name = "lbl5Position3Value";
-            this.lbl5Position3Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl5Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position3Value.TabIndex = 359;
             this.lbl5Position3Value.Text = ".";
             this.lbl5Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1844,7 +1844,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position3.ForeColor = System.Drawing.Color.White;
             this.lbl5Position3.Location = new System.Drawing.Point(7, 154);
             this.lbl5Position3.Name = "lbl5Position3";
-            this.lbl5Position3.Size = new System.Drawing.Size(103, 33);
+            this.lbl5Position3.Size = new System.Drawing.Size(87, 29);
             this.lbl5Position3.TabIndex = 356;
             this.lbl5Position3.Text = "Algae:";
             // 
@@ -1857,7 +1857,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position2Value.Location = new System.Drawing.Point(80, 115);
             this.lbl5Position2Value.Name = "lbl5Position2Value";
-            this.lbl5Position2Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl5Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position2Value.TabIndex = 354;
             this.lbl5Position2Value.Text = ".";
             this.lbl5Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1869,7 +1869,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2.Location = new System.Drawing.Point(7, 116);
             this.lbl5Position2.Name = "lbl5Position2";
-            this.lbl5Position2.Size = new System.Drawing.Size(99, 33);
+            this.lbl5Position2.Size = new System.Drawing.Size(83, 29);
             this.lbl5Position2.TabIndex = 352;
             this.lbl5Position2.Text = "Coral:";
             // 
@@ -1890,7 +1890,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label96.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label96.Location = new System.Drawing.Point(418, 214);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(55, 37);
+            this.label96.Size = new System.Drawing.Size(46, 31);
             this.label96.TabIndex = 277;
             this.label96.Text = "00";
             this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1912,7 +1912,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label97.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label97.Location = new System.Drawing.Point(418, 214);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(55, 37);
+            this.label97.Size = new System.Drawing.Size(46, 31);
             this.label97.TabIndex = 277;
             this.label97.Text = "00";
             this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1965,7 +1965,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position0Value.Location = new System.Drawing.Point(73, 61);
             this.lbl4Position0Value.Name = "lbl4Position0Value";
-            this.lbl4Position0Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl4Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position0Value.TabIndex = 355;
             this.lbl4Position0Value.Text = ".";
             this.lbl4Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1977,7 +1977,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position0.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0.Location = new System.Drawing.Point(7, 61);
             this.lbl4Position0.Name = "lbl4Position0";
-            this.lbl4Position0.Size = new System.Drawing.Size(99, 33);
+            this.lbl4Position0.Size = new System.Drawing.Size(83, 29);
             this.lbl4Position0.TabIndex = 341;
             this.lbl4Position0.Text = "Leave";
             // 
@@ -1988,7 +1988,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position12Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position12Value.Location = new System.Drawing.Point(57, 279);
             this.lbl4Position12Value.Name = "lbl4Position12Value";
-            this.lbl4Position12Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position12Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position12Value.TabIndex = 386;
             this.lbl4Position12Value.Text = "9";
             // 
@@ -1999,7 +1999,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position12.ForeColor = System.Drawing.Color.White;
             this.lbl4Position12.Location = new System.Drawing.Point(7, 278);
             this.lbl4Position12.Name = "lbl4Position12";
-            this.lbl4Position12.Size = new System.Drawing.Size(90, 33);
+            this.lbl4Position12.Size = new System.Drawing.Size(74, 29);
             this.lbl4Position12.TabIndex = 385;
             this.lbl4Position12.Text = "Strat:";
             // 
@@ -2010,7 +2010,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position11Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position11Value.Location = new System.Drawing.Point(111, 251);
             this.lbl4Position11Value.Name = "lbl4Position11Value";
-            this.lbl4Position11Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position11Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position11Value.TabIndex = 384;
             this.lbl4Position11Value.Text = "9";
             // 
@@ -2021,7 +2021,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position11.ForeColor = System.Drawing.Color.White;
             this.lbl4Position11.Location = new System.Drawing.Point(7, 251);
             this.lbl4Position11.Name = "lbl4Position11";
-            this.lbl4Position11.Size = new System.Drawing.Size(159, 33);
+            this.lbl4Position11.Size = new System.Drawing.Size(133, 29);
             this.lbl4Position11.TabIndex = 383;
             this.lbl4Position11.Text = "End State:";
             // 
@@ -2030,9 +2030,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position10Value.AutoSize = true;
             this.lbl4Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position10Value.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position10Value.Location = new System.Drawing.Point(384, 274);
+            this.lbl4Position10Value.Location = new System.Drawing.Point(394, 274);
             this.lbl4Position10Value.Name = "lbl4Position10Value";
-            this.lbl4Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position10Value.TabIndex = 382;
             this.lbl4Position10Value.Text = "9";
             // 
@@ -2043,7 +2043,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position10.ForeColor = System.Drawing.Color.White;
             this.lbl4Position10.Location = new System.Drawing.Point(325, 274);
             this.lbl4Position10.Name = "lbl4Position10";
-            this.lbl4Position10.Size = new System.Drawing.Size(99, 33);
+            this.lbl4Position10.Size = new System.Drawing.Size(83, 29);
             this.lbl4Position10.TabIndex = 381;
             this.lbl4Position10.Text = "Coral:";
             // 
@@ -2054,7 +2054,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position9Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position9Value.Location = new System.Drawing.Point(305, 275);
             this.lbl4Position9Value.Name = "lbl4Position9Value";
-            this.lbl4Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position9Value.TabIndex = 376;
             this.lbl4Position9Value.Text = "9";
             // 
@@ -2065,7 +2065,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position9.ForeColor = System.Drawing.Color.White;
             this.lbl4Position9.Location = new System.Drawing.Point(241, 274);
             this.lbl4Position9.Name = "lbl4Position9";
-            this.lbl4Position9.Size = new System.Drawing.Size(103, 33);
+            this.lbl4Position9.Size = new System.Drawing.Size(87, 29);
             this.lbl4Position9.TabIndex = 375;
             this.lbl4Position9.Text = "Algae:";
             // 
@@ -2076,7 +2076,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position8Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position8Value.Location = new System.Drawing.Point(444, 229);
             this.lbl4Position8Value.Name = "lbl4Position8Value";
-            this.lbl4Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position8Value.TabIndex = 372;
             this.lbl4Position8Value.Text = "9";
             // 
@@ -2087,7 +2087,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position8.ForeColor = System.Drawing.Color.White;
             this.lbl4Position8.Location = new System.Drawing.Point(380, 228);
             this.lbl4Position8.Name = "lbl4Position8";
-            this.lbl4Position8.Size = new System.Drawing.Size(102, 33);
+            this.lbl4Position8.Size = new System.Drawing.Size(85, 29);
             this.lbl4Position8.TabIndex = 371;
             this.lbl4Position8.Text = "Avoid:";
             // 
@@ -2098,7 +2098,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position7Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position7Value.Location = new System.Drawing.Point(234, 224);
             this.lbl4Position7Value.Name = "lbl4Position7Value";
-            this.lbl4Position7Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position7Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position7Value.TabIndex = 380;
             this.lbl4Position7Value.Text = "9";
             // 
@@ -2109,7 +2109,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position7.ForeColor = System.Drawing.Color.White;
             this.lbl4Position7.Location = new System.Drawing.Point(199, 223);
             this.lbl4Position7.Name = "lbl4Position7";
-            this.lbl4Position7.Size = new System.Drawing.Size(62, 33);
+            this.lbl4Position7.Size = new System.Drawing.Size(51, 29);
             this.lbl4Position7.TabIndex = 379;
             this.lbl4Position7.Text = "Eff:";
             // 
@@ -2120,7 +2120,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position6Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position6Value.Location = new System.Drawing.Point(442, 187);
             this.lbl4Position6Value.Name = "lbl4Position6Value";
-            this.lbl4Position6Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position6Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position6Value.TabIndex = 368;
             this.lbl4Position6Value.Text = "9";
             // 
@@ -2131,7 +2131,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position6.ForeColor = System.Drawing.Color.White;
             this.lbl4Position6.Location = new System.Drawing.Point(376, 187);
             this.lbl4Position6.Name = "lbl4Position6";
-            this.lbl4Position6.Size = new System.Drawing.Size(109, 33);
+            this.lbl4Position6.Size = new System.Drawing.Size(90, 29);
             this.lbl4Position6.TabIndex = 367;
             this.lbl4Position6.Text = "Driver:";
             // 
@@ -2142,7 +2142,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position5Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position5Value.Location = new System.Drawing.Point(242, 191);
             this.lbl4Position5Value.Name = "lbl4Position5Value";
-            this.lbl4Position5Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position5Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position5Value.TabIndex = 370;
             this.lbl4Position5Value.Text = "9";
             this.lbl4Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2154,7 +2154,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position5.ForeColor = System.Drawing.Color.White;
             this.lbl4Position5.Location = new System.Drawing.Point(189, 190);
             this.lbl4Position5.Name = "lbl4Position5";
-            this.lbl4Position5.Size = new System.Drawing.Size(72, 33);
+            this.lbl4Position5.Size = new System.Drawing.Size(60, 29);
             this.lbl4Position5.TabIndex = 369;
             this.lbl4Position5.Text = "Def:";
             this.lbl4Position5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2166,7 +2166,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position4Value.ForeColor = System.Drawing.Color.White;
             this.lbl4Position4Value.Location = new System.Drawing.Point(345, 142);
             this.lbl4Position4Value.Name = "lbl4Position4Value";
-            this.lbl4Position4Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position4Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position4Value.TabIndex = 366;
             this.lbl4Position4Value.Text = "9";
             // 
@@ -2177,7 +2177,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position4.ForeColor = System.Drawing.Color.White;
             this.lbl4Position4.Location = new System.Drawing.Point(263, 141);
             this.lbl4Position4.Name = "lbl4Position4";
-            this.lbl4Position4.Size = new System.Drawing.Size(131, 33);
+            this.lbl4Position4.Size = new System.Drawing.Size(108, 29);
             this.lbl4Position4.TabIndex = 365;
             this.lbl4Position4.Text = "Attempt:";
             // 
@@ -2188,7 +2188,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position3Des.ForeColor = System.Drawing.Color.White;
             this.lbl4Position3Des.Location = new System.Drawing.Point(181, 156);
             this.lbl4Position3Des.Name = "lbl4Position3Des";
-            this.lbl4Position3Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl4Position3Des.Size = new System.Drawing.Size(75, 29);
             this.lbl4Position3Des.TabIndex = 364;
             this.lbl4Position3Des.Text = "Floor";
             // 
@@ -2199,7 +2199,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position3Source.ForeColor = System.Drawing.Color.White;
             this.lbl4Position3Source.Location = new System.Drawing.Point(108, 156);
             this.lbl4Position3Source.Name = "lbl4Position3Source";
-            this.lbl4Position3Source.Size = new System.Drawing.Size(87, 33);
+            this.lbl4Position3Source.Size = new System.Drawing.Size(75, 29);
             this.lbl4Position3Source.TabIndex = 378;
             this.lbl4Position3Source.Text = "Floor";
             // 
@@ -2210,7 +2210,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position2Des.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2Des.Location = new System.Drawing.Point(181, 118);
             this.lbl4Position2Des.Name = "lbl4Position2Des";
-            this.lbl4Position2Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl4Position2Des.Size = new System.Drawing.Size(75, 29);
             this.lbl4Position2Des.TabIndex = 363;
             this.lbl4Position2Des.Text = "Floor";
             // 
@@ -2221,7 +2221,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position2Source.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2Source.Location = new System.Drawing.Point(108, 118);
             this.lbl4Position2Source.Name = "lbl4Position2Source";
-            this.lbl4Position2Source.Size = new System.Drawing.Size(112, 33);
+            this.lbl4Position2Source.Size = new System.Drawing.Size(94, 29);
             this.lbl4Position2Source.TabIndex = 377;
             this.lbl4Position2Source.Text = "Station";
             // 
@@ -2232,7 +2232,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position1.ForeColor = System.Drawing.Color.White;
             this.lbl4Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl4Position1.Name = "lbl4Position1";
-            this.lbl4Position1.Size = new System.Drawing.Size(153, 33);
+            this.lbl4Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl4Position1.TabIndex = 342;
             this.lbl4Position1.Text = "Near Side";
             // 
@@ -2245,7 +2245,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position3Value.Location = new System.Drawing.Point(80, 156);
             this.lbl4Position3Value.Name = "lbl4Position3Value";
-            this.lbl4Position3Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl4Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position3Value.TabIndex = 359;
             this.lbl4Position3Value.Text = ".";
             this.lbl4Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2257,7 +2257,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position3.ForeColor = System.Drawing.Color.White;
             this.lbl4Position3.Location = new System.Drawing.Point(7, 154);
             this.lbl4Position3.Name = "lbl4Position3";
-            this.lbl4Position3.Size = new System.Drawing.Size(103, 33);
+            this.lbl4Position3.Size = new System.Drawing.Size(87, 29);
             this.lbl4Position3.TabIndex = 356;
             this.lbl4Position3.Text = "Algae:";
             // 
@@ -2270,7 +2270,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position2Value.Location = new System.Drawing.Point(80, 115);
             this.lbl4Position2Value.Name = "lbl4Position2Value";
-            this.lbl4Position2Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl4Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position2Value.TabIndex = 354;
             this.lbl4Position2Value.Text = ".";
             this.lbl4Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2282,7 +2282,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position2.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2.Location = new System.Drawing.Point(7, 116);
             this.lbl4Position2.Name = "lbl4Position2";
-            this.lbl4Position2.Size = new System.Drawing.Size(99, 33);
+            this.lbl4Position2.Size = new System.Drawing.Size(83, 29);
             this.lbl4Position2.TabIndex = 352;
             this.lbl4Position2.Text = "Coral:";
             // 
@@ -2303,7 +2303,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label129.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label129.Location = new System.Drawing.Point(418, 214);
             this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(55, 37);
+            this.label129.Size = new System.Drawing.Size(46, 31);
             this.label129.TabIndex = 277;
             this.label129.Text = "00";
             this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2325,7 +2325,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label130.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label130.Location = new System.Drawing.Point(418, 214);
             this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(55, 37);
+            this.label130.Size = new System.Drawing.Size(46, 31);
             this.label130.TabIndex = 277;
             this.label130.Text = "00";
             this.label130.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2378,7 +2378,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position0Value.Location = new System.Drawing.Point(73, 61);
             this.lbl3Position0Value.Name = "lbl3Position0Value";
-            this.lbl3Position0Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl3Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position0Value.TabIndex = 355;
             this.lbl3Position0Value.Text = ".";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2390,7 +2390,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position0.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0.Location = new System.Drawing.Point(7, 61);
             this.lbl3Position0.Name = "lbl3Position0";
-            this.lbl3Position0.Size = new System.Drawing.Size(99, 33);
+            this.lbl3Position0.Size = new System.Drawing.Size(83, 29);
             this.lbl3Position0.TabIndex = 341;
             this.lbl3Position0.Text = "Leave";
             // 
@@ -2401,7 +2401,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position12Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position12Value.Location = new System.Drawing.Point(57, 279);
             this.lbl3Position12Value.Name = "lbl3Position12Value";
-            this.lbl3Position12Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position12Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position12Value.TabIndex = 386;
             this.lbl3Position12Value.Text = "9";
             // 
@@ -2412,7 +2412,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position12.ForeColor = System.Drawing.Color.White;
             this.lbl3Position12.Location = new System.Drawing.Point(7, 278);
             this.lbl3Position12.Name = "lbl3Position12";
-            this.lbl3Position12.Size = new System.Drawing.Size(90, 33);
+            this.lbl3Position12.Size = new System.Drawing.Size(74, 29);
             this.lbl3Position12.TabIndex = 385;
             this.lbl3Position12.Text = "Strat:";
             // 
@@ -2423,7 +2423,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position11Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position11Value.Location = new System.Drawing.Point(111, 251);
             this.lbl3Position11Value.Name = "lbl3Position11Value";
-            this.lbl3Position11Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position11Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position11Value.TabIndex = 384;
             this.lbl3Position11Value.Text = "9";
             // 
@@ -2434,7 +2434,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position11.ForeColor = System.Drawing.Color.White;
             this.lbl3Position11.Location = new System.Drawing.Point(7, 251);
             this.lbl3Position11.Name = "lbl3Position11";
-            this.lbl3Position11.Size = new System.Drawing.Size(159, 33);
+            this.lbl3Position11.Size = new System.Drawing.Size(133, 29);
             this.lbl3Position11.TabIndex = 383;
             this.lbl3Position11.Text = "End State:";
             // 
@@ -2443,9 +2443,9 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position10Value.AutoSize = true;
             this.lbl3Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position10Value.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position10Value.Location = new System.Drawing.Point(384, 274);
+            this.lbl3Position10Value.Location = new System.Drawing.Point(394, 274);
             this.lbl3Position10Value.Name = "lbl3Position10Value";
-            this.lbl3Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position10Value.TabIndex = 382;
             this.lbl3Position10Value.Text = "9";
             // 
@@ -2456,7 +2456,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position10.ForeColor = System.Drawing.Color.White;
             this.lbl3Position10.Location = new System.Drawing.Point(325, 274);
             this.lbl3Position10.Name = "lbl3Position10";
-            this.lbl3Position10.Size = new System.Drawing.Size(99, 33);
+            this.lbl3Position10.Size = new System.Drawing.Size(83, 29);
             this.lbl3Position10.TabIndex = 381;
             this.lbl3Position10.Text = "Coral:";
             // 
@@ -2467,7 +2467,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position9Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position9Value.Location = new System.Drawing.Point(305, 275);
             this.lbl3Position9Value.Name = "lbl3Position9Value";
-            this.lbl3Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position9Value.TabIndex = 376;
             this.lbl3Position9Value.Text = "9";
             // 
@@ -2478,7 +2478,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position9.ForeColor = System.Drawing.Color.White;
             this.lbl3Position9.Location = new System.Drawing.Point(241, 274);
             this.lbl3Position9.Name = "lbl3Position9";
-            this.lbl3Position9.Size = new System.Drawing.Size(103, 33);
+            this.lbl3Position9.Size = new System.Drawing.Size(87, 29);
             this.lbl3Position9.TabIndex = 375;
             this.lbl3Position9.Text = "Algae:";
             // 
@@ -2489,7 +2489,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position8Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position8Value.Location = new System.Drawing.Point(444, 229);
             this.lbl3Position8Value.Name = "lbl3Position8Value";
-            this.lbl3Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position8Value.TabIndex = 372;
             this.lbl3Position8Value.Text = "9";
             // 
@@ -2500,7 +2500,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position8.ForeColor = System.Drawing.Color.White;
             this.lbl3Position8.Location = new System.Drawing.Point(380, 228);
             this.lbl3Position8.Name = "lbl3Position8";
-            this.lbl3Position8.Size = new System.Drawing.Size(102, 33);
+            this.lbl3Position8.Size = new System.Drawing.Size(85, 29);
             this.lbl3Position8.TabIndex = 371;
             this.lbl3Position8.Text = "Avoid:";
             // 
@@ -2511,7 +2511,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position7Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position7Value.Location = new System.Drawing.Point(234, 224);
             this.lbl3Position7Value.Name = "lbl3Position7Value";
-            this.lbl3Position7Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position7Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position7Value.TabIndex = 380;
             this.lbl3Position7Value.Text = "9";
             // 
@@ -2522,7 +2522,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position7.ForeColor = System.Drawing.Color.White;
             this.lbl3Position7.Location = new System.Drawing.Point(199, 223);
             this.lbl3Position7.Name = "lbl3Position7";
-            this.lbl3Position7.Size = new System.Drawing.Size(62, 33);
+            this.lbl3Position7.Size = new System.Drawing.Size(51, 29);
             this.lbl3Position7.TabIndex = 379;
             this.lbl3Position7.Text = "Eff:";
             // 
@@ -2533,7 +2533,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position6Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position6Value.Location = new System.Drawing.Point(442, 187);
             this.lbl3Position6Value.Name = "lbl3Position6Value";
-            this.lbl3Position6Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position6Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position6Value.TabIndex = 368;
             this.lbl3Position6Value.Text = "9";
             // 
@@ -2544,7 +2544,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position6.ForeColor = System.Drawing.Color.White;
             this.lbl3Position6.Location = new System.Drawing.Point(376, 187);
             this.lbl3Position6.Name = "lbl3Position6";
-            this.lbl3Position6.Size = new System.Drawing.Size(109, 33);
+            this.lbl3Position6.Size = new System.Drawing.Size(90, 29);
             this.lbl3Position6.TabIndex = 367;
             this.lbl3Position6.Text = "Driver:";
             // 
@@ -2555,7 +2555,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position5Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position5Value.Location = new System.Drawing.Point(242, 191);
             this.lbl3Position5Value.Name = "lbl3Position5Value";
-            this.lbl3Position5Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position5Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position5Value.TabIndex = 370;
             this.lbl3Position5Value.Text = "9";
             this.lbl3Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2567,7 +2567,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position5.ForeColor = System.Drawing.Color.White;
             this.lbl3Position5.Location = new System.Drawing.Point(189, 190);
             this.lbl3Position5.Name = "lbl3Position5";
-            this.lbl3Position5.Size = new System.Drawing.Size(72, 33);
+            this.lbl3Position5.Size = new System.Drawing.Size(60, 29);
             this.lbl3Position5.TabIndex = 369;
             this.lbl3Position5.Text = "Def:";
             this.lbl3Position5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2579,7 +2579,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position4Value.ForeColor = System.Drawing.Color.White;
             this.lbl3Position4Value.Location = new System.Drawing.Point(345, 142);
             this.lbl3Position4Value.Name = "lbl3Position4Value";
-            this.lbl3Position4Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position4Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position4Value.TabIndex = 366;
             this.lbl3Position4Value.Text = "9";
             // 
@@ -2590,7 +2590,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position4.ForeColor = System.Drawing.Color.White;
             this.lbl3Position4.Location = new System.Drawing.Point(263, 141);
             this.lbl3Position4.Name = "lbl3Position4";
-            this.lbl3Position4.Size = new System.Drawing.Size(131, 33);
+            this.lbl3Position4.Size = new System.Drawing.Size(108, 29);
             this.lbl3Position4.TabIndex = 365;
             this.lbl3Position4.Text = "Attempt:";
             // 
@@ -2601,7 +2601,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position3Des.ForeColor = System.Drawing.Color.White;
             this.lbl3Position3Des.Location = new System.Drawing.Point(181, 156);
             this.lbl3Position3Des.Name = "lbl3Position3Des";
-            this.lbl3Position3Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl3Position3Des.Size = new System.Drawing.Size(75, 29);
             this.lbl3Position3Des.TabIndex = 364;
             this.lbl3Position3Des.Text = "Floor";
             // 
@@ -2612,7 +2612,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position3Source.ForeColor = System.Drawing.Color.White;
             this.lbl3Position3Source.Location = new System.Drawing.Point(108, 156);
             this.lbl3Position3Source.Name = "lbl3Position3Source";
-            this.lbl3Position3Source.Size = new System.Drawing.Size(87, 33);
+            this.lbl3Position3Source.Size = new System.Drawing.Size(75, 29);
             this.lbl3Position3Source.TabIndex = 378;
             this.lbl3Position3Source.Text = "Floor";
             // 
@@ -2623,7 +2623,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position2Des.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2Des.Location = new System.Drawing.Point(181, 118);
             this.lbl3Position2Des.Name = "lbl3Position2Des";
-            this.lbl3Position2Des.Size = new System.Drawing.Size(87, 33);
+            this.lbl3Position2Des.Size = new System.Drawing.Size(75, 29);
             this.lbl3Position2Des.TabIndex = 363;
             this.lbl3Position2Des.Text = "Floor";
             // 
@@ -2634,7 +2634,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position2Source.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2Source.Location = new System.Drawing.Point(108, 118);
             this.lbl3Position2Source.Name = "lbl3Position2Source";
-            this.lbl3Position2Source.Size = new System.Drawing.Size(112, 33);
+            this.lbl3Position2Source.Size = new System.Drawing.Size(94, 29);
             this.lbl3Position2Source.TabIndex = 377;
             this.lbl3Position2Source.Text = "Station";
             // 
@@ -2645,7 +2645,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position1.ForeColor = System.Drawing.Color.White;
             this.lbl3Position1.Location = new System.Drawing.Point(250, 62);
             this.lbl3Position1.Name = "lbl3Position1";
-            this.lbl3Position1.Size = new System.Drawing.Size(153, 33);
+            this.lbl3Position1.Size = new System.Drawing.Size(131, 29);
             this.lbl3Position1.TabIndex = 342;
             this.lbl3Position1.Text = "Near Side";
             // 
@@ -2658,7 +2658,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position3Value.Location = new System.Drawing.Point(80, 156);
             this.lbl3Position3Value.Name = "lbl3Position3Value";
-            this.lbl3Position3Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl3Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position3Value.TabIndex = 359;
             this.lbl3Position3Value.Text = ".";
             this.lbl3Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2670,7 +2670,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position3.ForeColor = System.Drawing.Color.White;
             this.lbl3Position3.Location = new System.Drawing.Point(7, 154);
             this.lbl3Position3.Name = "lbl3Position3";
-            this.lbl3Position3.Size = new System.Drawing.Size(103, 33);
+            this.lbl3Position3.Size = new System.Drawing.Size(87, 29);
             this.lbl3Position3.TabIndex = 356;
             this.lbl3Position3.Text = "Algae:";
             // 
@@ -2683,7 +2683,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position2Value.Location = new System.Drawing.Point(80, 115);
             this.lbl3Position2Value.Name = "lbl3Position2Value";
-            this.lbl3Position2Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl3Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position2Value.TabIndex = 354;
             this.lbl3Position2Value.Text = ".";
             this.lbl3Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2695,7 +2695,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position2.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2.Location = new System.Drawing.Point(7, 116);
             this.lbl3Position2.Name = "lbl3Position2";
-            this.lbl3Position2.Size = new System.Drawing.Size(99, 33);
+            this.lbl3Position2.Size = new System.Drawing.Size(83, 29);
             this.lbl3Position2.TabIndex = 352;
             this.lbl3Position2.Text = "Coral:";
             // 
@@ -2716,7 +2716,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label161.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label161.Location = new System.Drawing.Point(418, 214);
             this.label161.Name = "label161";
-            this.label161.Size = new System.Drawing.Size(55, 37);
+            this.label161.Size = new System.Drawing.Size(46, 31);
             this.label161.TabIndex = 277;
             this.label161.Text = "00";
             this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2738,7 +2738,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.label162.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label162.Location = new System.Drawing.Point(418, 214);
             this.label162.Name = "label162";
-            this.label162.Size = new System.Drawing.Size(55, 37);
+            this.label162.Size = new System.Drawing.Size(46, 31);
             this.label162.TabIndex = 277;
             this.label162.Text = "00";
             this.label162.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
