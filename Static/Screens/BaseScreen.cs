@@ -128,7 +128,7 @@ namespace ScoutingCodeRedo.Static
         private void UpdateScreen()
         {
             //Loops through all 6 boxes to update the text to be based on the RobotState
-            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i].GetScouterName().ToString();
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;

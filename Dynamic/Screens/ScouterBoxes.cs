@@ -25,7 +25,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void UpdateScreen(object sender, EventArgs e)
         {
-            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
                 int o = BackgroundCode.Robots[i].ScouterBox;
                 switch (BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode)
@@ -135,9 +135,9 @@ namespace ScoutingCodeRedo.Dynamic
 
             //Starting Location
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Text = "Start:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Starting_Location.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Driver Rating
@@ -163,16 +163,16 @@ namespace ScoutingCodeRedo.Dynamic
 
             //Coral Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Text = "Coral:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cor_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Algae Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Text = "Algae:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Alg_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
@@ -290,16 +290,16 @@ namespace ScoutingCodeRedo.Dynamic
 
             //Coral Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Text = "Coral:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cor_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Algae Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Text = "Algae:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = true;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Alg_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
@@ -321,7 +321,7 @@ namespace ScoutingCodeRedo.Dynamic
             //Defense Timer
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0", true)[0]).Text = BackgroundCode.Robots[Box_Number].DefTime_StopWatch.Elapsed.ToString(@"m\:ss\.fff");
 
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position0", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position0", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0Value", true)[0]).Visible = false;
 
             //Near Far
@@ -418,16 +418,16 @@ namespace ScoutingCodeRedo.Dynamic
 
             //Coral Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Text = "Coral:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cor_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Algae Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Text = "Algae:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Alg_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
@@ -510,23 +510,23 @@ namespace ScoutingCodeRedo.Dynamic
 
             //Attempt
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Attempt:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Defense Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Text = "Def:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Text = DefenseEquality[BackgroundCode.Robots[Box_Number].Def_Rat];
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Def_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Def_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Driver Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position6", true)[0]).Text = "Driver:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position6", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position6", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position6Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Dri_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position6Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Dri_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position6Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Dri_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position6Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Defense Effectiveness
@@ -538,37 +538,37 @@ namespace ScoutingCodeRedo.Dynamic
 
             //Avoidance Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Text = "Avoid:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Avo_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Avo_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Avo_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Coral Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Text = "Coral:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cor_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Cor_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position9Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Algae Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Text = "Algae:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Alg_Rat.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Alg_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position10Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "End State:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Robot Strategy
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12", true)[0]).Text = "Strat:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position12", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position12", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = true;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
     }
