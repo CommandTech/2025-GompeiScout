@@ -322,7 +322,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position0Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position0Value.ForeColor = System.Drawing.Color.Red;
             this.lbl2Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position0Value.Location = new System.Drawing.Point(73, 61);
+            this.lbl2Position0Value.Location = new System.Drawing.Point(77, 61);
             this.lbl2Position0Value.Name = "lbl2Position0Value";
             this.lbl2Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position0Value.TabIndex = 355;
@@ -602,7 +602,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position3Value.ForeColor = System.Drawing.Color.Red;
             this.lbl2Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position3Value.Location = new System.Drawing.Point(80, 156);
+            this.lbl2Position3Value.Location = new System.Drawing.Point(77, 156);
             this.lbl2Position3Value.Name = "lbl2Position3Value";
             this.lbl2Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position3Value.TabIndex = 359;
@@ -627,7 +627,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl2Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position2Value.ForeColor = System.Drawing.Color.Red;
             this.lbl2Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position2Value.Location = new System.Drawing.Point(80, 115);
+            this.lbl2Position2Value.Location = new System.Drawing.Point(77, 115);
             this.lbl2Position2Value.Name = "lbl2Position2Value";
             this.lbl2Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position2Value.TabIndex = 354;
@@ -735,7 +735,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position0Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position0Value.ForeColor = System.Drawing.Color.Red;
             this.lbl1Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position0Value.Location = new System.Drawing.Point(73, 61);
+            this.lbl1Position0Value.Location = new System.Drawing.Point(77, 61);
             this.lbl1Position0Value.Name = "lbl1Position0Value";
             this.lbl1Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position0Value.TabIndex = 355;
@@ -1015,7 +1015,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position3Value.ForeColor = System.Drawing.Color.Red;
             this.lbl1Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position3Value.Location = new System.Drawing.Point(80, 156);
+            this.lbl1Position3Value.Location = new System.Drawing.Point(77, 156);
             this.lbl1Position3Value.Name = "lbl1Position3Value";
             this.lbl1Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position3Value.TabIndex = 359;
@@ -1040,7 +1040,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl1Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position2Value.ForeColor = System.Drawing.Color.Red;
             this.lbl1Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position2Value.Location = new System.Drawing.Point(80, 115);
+            this.lbl1Position2Value.Location = new System.Drawing.Point(77, 115);
             this.lbl1Position2Value.Name = "lbl1Position2Value";
             this.lbl1Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position2Value.TabIndex = 354;
@@ -1148,7 +1148,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position0Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position0Value.ForeColor = System.Drawing.Color.Red;
             this.lbl0Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position0Value.Location = new System.Drawing.Point(73, 61);
+            this.lbl0Position0Value.Location = new System.Drawing.Point(77, 61);
             this.lbl0Position0Value.Name = "lbl0Position0Value";
             this.lbl0Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position0Value.TabIndex = 355;
@@ -1406,7 +1406,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position3Value.ForeColor = System.Drawing.Color.Red;
             this.lbl0Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position3Value.Location = new System.Drawing.Point(80, 156);
+            this.lbl0Position3Value.Location = new System.Drawing.Point(77, 156);
             this.lbl0Position3Value.Name = "lbl0Position3Value";
             this.lbl0Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position3Value.TabIndex = 359;
@@ -1431,7 +1431,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl0Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position2Value.ForeColor = System.Drawing.Color.Red;
             this.lbl0Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position2Value.Location = new System.Drawing.Point(80, 115);
+            this.lbl0Position2Value.Location = new System.Drawing.Point(77, 115);
             this.lbl0Position2Value.Name = "lbl0Position2Value";
             this.lbl0Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position2Value.TabIndex = 354;
@@ -1550,7 +1550,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position0Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position0Value.ForeColor = System.Drawing.Color.Red;
             this.lbl5Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position0Value.Location = new System.Drawing.Point(73, 61);
+            this.lbl5Position0Value.Location = new System.Drawing.Point(77, 61);
             this.lbl5Position0Value.Name = "lbl5Position0Value";
             this.lbl5Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position0Value.TabIndex = 355;
@@ -1830,7 +1830,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position3Value.ForeColor = System.Drawing.Color.Red;
             this.lbl5Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position3Value.Location = new System.Drawing.Point(80, 156);
+            this.lbl5Position3Value.Location = new System.Drawing.Point(77, 156);
             this.lbl5Position3Value.Name = "lbl5Position3Value";
             this.lbl5Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position3Value.TabIndex = 359;
@@ -1855,7 +1855,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl5Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position2Value.ForeColor = System.Drawing.Color.Red;
             this.lbl5Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position2Value.Location = new System.Drawing.Point(80, 115);
+            this.lbl5Position2Value.Location = new System.Drawing.Point(77, 115);
             this.lbl5Position2Value.Name = "lbl5Position2Value";
             this.lbl5Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position2Value.TabIndex = 354;
@@ -1963,7 +1963,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position0Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position0Value.ForeColor = System.Drawing.Color.Red;
             this.lbl4Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position0Value.Location = new System.Drawing.Point(73, 61);
+            this.lbl4Position0Value.Location = new System.Drawing.Point(77, 61);
             this.lbl4Position0Value.Name = "lbl4Position0Value";
             this.lbl4Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position0Value.TabIndex = 355;
@@ -2243,7 +2243,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position3Value.ForeColor = System.Drawing.Color.Red;
             this.lbl4Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position3Value.Location = new System.Drawing.Point(80, 156);
+            this.lbl4Position3Value.Location = new System.Drawing.Point(77, 156);
             this.lbl4Position3Value.Name = "lbl4Position3Value";
             this.lbl4Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position3Value.TabIndex = 359;
@@ -2268,7 +2268,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl4Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position2Value.ForeColor = System.Drawing.Color.Red;
             this.lbl4Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position2Value.Location = new System.Drawing.Point(80, 115);
+            this.lbl4Position2Value.Location = new System.Drawing.Point(77, 115);
             this.lbl4Position2Value.Name = "lbl4Position2Value";
             this.lbl4Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position2Value.TabIndex = 354;
@@ -2376,7 +2376,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position0Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position0Value.ForeColor = System.Drawing.Color.Red;
             this.lbl3Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position0Value.Location = new System.Drawing.Point(73, 61);
+            this.lbl3Position0Value.Location = new System.Drawing.Point(77, 61);
             this.lbl3Position0Value.Name = "lbl3Position0Value";
             this.lbl3Position0Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position0Value.TabIndex = 355;
@@ -2656,7 +2656,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position3Value.ForeColor = System.Drawing.Color.Red;
             this.lbl3Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position3Value.Location = new System.Drawing.Point(80, 156);
+            this.lbl3Position3Value.Location = new System.Drawing.Point(77, 156);
             this.lbl3Position3Value.Name = "lbl3Position3Value";
             this.lbl3Position3Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position3Value.TabIndex = 359;
@@ -2681,7 +2681,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.lbl3Position2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position2Value.ForeColor = System.Drawing.Color.Red;
             this.lbl3Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position2Value.Location = new System.Drawing.Point(80, 115);
+            this.lbl3Position2Value.Location = new System.Drawing.Point(77, 115);
             this.lbl3Position2Value.Name = "lbl3Position2Value";
             this.lbl3Position2Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position2Value.TabIndex = 354;

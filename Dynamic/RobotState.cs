@@ -11,8 +11,8 @@ namespace ScoutingCodeRedo.Dynamic
         public enum SCOUTER_NAME { Select_Name, Ayush, Logan, Marzuq, Milan, William, Scouter1, Scouter2, Scouter3, Scouter4 }
 
         // Year to Year ints
-        public int ScouterError;
-        public int prevScouterError;
+        public long ScouterError;
+        public long prevScouterError;
         public int ScouterBox;
         public bool TransactionCheck;
 

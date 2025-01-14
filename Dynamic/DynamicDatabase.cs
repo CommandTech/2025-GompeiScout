@@ -39,7 +39,7 @@ namespace ScoutingCodeRedo.Dynamic
         public int DefenseValue { get; set; }
         public int Avoidance { get; set; }
         public string ScouterName { get; set; }
-        public int ScouterError { get; set; }
+        public long ScouterError { get; set; }
         public string Match_event { get; set; }
 
         public string Strategy { get; set; }
@@ -95,7 +95,7 @@ namespace ScoutingCodeRedo.Dynamic
         public int DefenseValue { get; set; }
         public int Avoidance { get; set; }
         public string ScouterName { get; set; }
-        public int ScouterError { get; set; }
+        public long ScouterError { get; set; }
         public string Match_event { get; set; }
 
         public string Strategy { get; set; }

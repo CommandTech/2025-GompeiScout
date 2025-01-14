@@ -25,7 +25,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void UpdateScreen(object sender, EventArgs e)
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
             {
                 int o = BackgroundCode.Robots[i].ScouterBox;
                 switch (BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode)

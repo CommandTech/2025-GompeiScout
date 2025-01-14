@@ -42,7 +42,6 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Blue1.ForeColor = System.Drawing.Color.Yellow;
             this.Blue1.FormattingEnabled = true;
             this.Blue1.Items.AddRange(new object[] {
-            "Select",
             "Shallow",
             "Deep"});
             this.Blue1.Location = new System.Drawing.Point(22, 225);
@@ -58,7 +57,6 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Blue2.ForeColor = System.Drawing.Color.Yellow;
             this.Blue2.FormattingEnabled = true;
             this.Blue2.Items.AddRange(new object[] {
-            "Select",
             "Shallow",
             "Deep"});
             this.Blue2.Location = new System.Drawing.Point(193, 225);
@@ -74,7 +72,6 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Blue3.ForeColor = System.Drawing.Color.Yellow;
             this.Blue3.FormattingEnabled = true;
             this.Blue3.Items.AddRange(new object[] {
-            "Select",
             "Shallow",
             "Deep"});
             this.Blue3.Location = new System.Drawing.Point(364, 225);
@@ -90,7 +87,6 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Red3.ForeColor = System.Drawing.Color.Yellow;
             this.Red3.FormattingEnabled = true;
             this.Red3.Items.AddRange(new object[] {
-            "Select",
             "Shallow",
             "Deep"});
             this.Red3.Location = new System.Drawing.Point(364, 119);
@@ -106,7 +102,6 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Red2.ForeColor = System.Drawing.Color.Yellow;
             this.Red2.FormattingEnabled = true;
             this.Red2.Items.AddRange(new object[] {
-            "Select",
             "Shallow",
             "Deep"});
             this.Red2.Location = new System.Drawing.Point(193, 119);
@@ -122,7 +117,6 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Red1.ForeColor = System.Drawing.Color.Yellow;
             this.Red1.FormattingEnabled = true;
             this.Red1.Items.AddRange(new object[] {
-            "Select",
             "Shallow",
             "Deep"});
             this.Red1.Location = new System.Drawing.Point(22, 119);
