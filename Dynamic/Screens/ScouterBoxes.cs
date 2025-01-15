@@ -167,6 +167,13 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
+
+            //Points Scored
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
         private void InTeleopMode(int Box_Number, int ScouterBox)
         {
@@ -273,6 +280,13 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
+
+            //Points Scored
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
         private void InDefenseMode(int Box_Number, int ScouterBox)
         {
@@ -380,6 +394,13 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
+
+            //Points Scored
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
         private void InSurfacingMode(int Box_Number, int ScouterBox)
         {
@@ -486,6 +507,13 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
+
+            //Points Scored
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
     }
 }
