@@ -66,11 +66,15 @@ namespace ScoutingCodeRedo.Dynamic
         public int DelAlgaeN;
         public int DelAlgaeF;
 
+        public string prevlastAlgaeLoc = " ";
+        public string prevlastCoralLoc = " ";
         public string lastAlgaeLoc = " ";
         public string lastCoralLoc = " ";
 
-        public string lastAlgaeAcqLoc;
-        public string lastCoralAcqLoc;
+        public string prevlastAlgaeAcqLoc = " ";
+        public string prevlastCoralAcqLoc = " ";
+        public string lastAlgaeAcqLoc = " ";
+        public string lastCoralAcqLoc = " ";
 
         public TimeSpan ClimbT = TimeSpan.Zero;
         public Stopwatch ClimbT_StopWatch;

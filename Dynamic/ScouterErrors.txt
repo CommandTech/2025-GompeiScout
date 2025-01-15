@@ -1,17 +1,17 @@
-Removing more ALGAE then held:	1
-Removing more CORAL then held:	10
-Holding multiple ALGAE:			100
-Holding multiple CORAL:			1000
+Doesn't Leave:					1
+Doesn't Set Start:				1
 
-Doesn't Leave:					10000
-Doesn't Set Start:				100000
+Doesn't Set End:				10
+Doesn't Set Def_Rat:			10
+Doesn't Set Def_Eff:			10
+Doesn't Set Avo_Rat:			10
+Doesn't Set Alg_Rat:			10
+Doesn't Set Cor_Rat:			10
+Doesn't Set Dri_Rat:			10
 
-Doesn't Set End:				1000000
-Doesn't Set Def_Rat:			10000000
-Doesn't Set Def_Eff:			100000000
-Doesn't Set Avo_Rat:			1000000000
-Doesn't Set Alg_Rat:			10000000000
-Doesn't Set Cor_Rat:			100000000000
-Doesn't Set Dri_Rat:			1000000000000
+Removing more ALGAE then held:	100
+Removing more CORAL then held:	10000
+Holding multiple ALGAE:			1000000
+Holding multiple CORAL:			100000000
 
-Transacting when you shouldn't:	10000000000000
+Transacting when you shouldn't:	10000000000

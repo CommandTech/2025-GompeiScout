@@ -9,6 +9,12 @@ namespace ScoutingCodeRedo.Dynamic
 {
     class DynamicResponses
     {
+        /* MR STEVE CHANGE:
+         * Floor delivers can be removed from a dedicated button.
+         * Floor can be right bumper press with nothing else then transact for algae floor (!gamepad.RightButton_Press && robot.lastAlgaeLoc == " ")
+         * Floor can transact for coral floor (gamepad.RightTriiger_Press && robot.lastCoralLoc == " ")
+         */
+
         public void ReadStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
@@ -20,6 +26,11 @@ namespace ScoutingCodeRedo.Dynamic
 
             if (!robot.NoSho && robot.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
             {
+                robot.prevlastAlgaeLoc = robot.lastAlgaeLoc;
+                robot.prevlastCoralLoc = robot.lastCoralLoc;
+                robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
+                robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
+
                 //***********************************
                 //AUTO MODE
                 //***********************************
@@ -65,12 +76,14 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqAlgaeR++;
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
+                            robot.TransactionCheck = true;
                         }
                         else
                         {
                             robot.AcqCoralS++;
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Station";
+                            robot.TransactionCheck = true;
                         }
                     }
                     //Acquire Coral/Algae from Floor
@@ -81,23 +94,29 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqAlgaeF++;
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Floor";
+                            robot.TransactionCheck = true;
                         }
                         else
                         {
                             robot.AcqCoralF++;
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Floor";
+                            robot.TransactionCheck = true;
                         }
                     }
 
                     //Deliveries
+                    if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
+                    {
+                        robot.DelAlgaeF++;
+                        robot.lastAlgaeLoc = "Floor";
+                    }
                     if (gamepad.DpadUp_Press)
                     {
                         if (robot.Flag)
                         {
                             robot.DelAlgaeN++;
                             robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
                         }
                         else
                         {
@@ -108,7 +127,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL4++;
                             robot.lastCoralLoc = "L4";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
@@ -117,7 +135,6 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             robot.DelAlgaeP++;
                             robot.lastAlgaeLoc = "Processor";
-                            robot.TransactionCheck = true;
                         }
                         else
                         {
@@ -128,18 +145,11 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
                             robot.lastCoralLoc = "L2";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadRight_Press)
                     {
-                        if (robot.Flag)
-                        {
-                            robot.DelAlgaeF++;
-                            robot.lastAlgaeLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                        else
+                        if (!robot.Flag)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -148,18 +158,11 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.lastCoralLoc = "L3";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadLeft_Press)
                     {
-                        if (robot.Flag)
-                        {
-                            robot.DelAlgaeF++;
-                            robot.lastAlgaeLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                        else
+                        if (!robot.Flag)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -168,21 +171,9 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
-                            robot.TransactionCheck = true;
                         }
                     }
 
-                    if (gamepad.XButton_Press || gamepad.BButton_Press)
-                    {
-                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                        {
-                            robot.hasCoral++;
-                        }
-                        robot.totalCoralDeliveries++;
-                        robot.DelCoralF++;
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
-                    }
                     if (gamepad.YButton_Press)
                     {
                         robot.Near_Far = true;
@@ -205,12 +196,14 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqAlgaeR++;
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
+                            robot.TransactionCheck = true;
                         }
                         else
                         {
                             robot.AcqCoralS++;
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Station";
+                            robot.TransactionCheck = true;
                         }
                     }
                     //Acquire Coral/Algae from Floor
@@ -221,23 +214,29 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqAlgaeF++;
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Floor";
+                            robot.TransactionCheck = true;
                         }
                         else
                         {
                             robot.AcqCoralF++;
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Floor";
+                            robot.TransactionCheck = true;
                         }
                     }
 
                     //Deliveries
+                    if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
+                    {
+                        robot.DelAlgaeF++;
+                        robot.lastAlgaeLoc = "Floor";
+                    }
                     if (gamepad.DpadUp_Press)
                     {
                         if (robot.Flag)
                         {
                             robot.DelAlgaeN++;
                             robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
                         }
                         else
                         {
@@ -248,7 +247,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL4++;
                             robot.lastCoralLoc = "L4";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
@@ -257,7 +255,6 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             robot.DelAlgaeP++;
                             robot.lastAlgaeLoc = "Processor";
-                            robot.TransactionCheck = true;
                         }
                         else
                         {
@@ -268,18 +265,11 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
                             robot.lastCoralLoc = "L2";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadRight_Press)
                     {
-                        if (robot.Flag)
-                        {
-                            robot.DelAlgaeF++;
-                            robot.lastAlgaeLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                        else
+                        if (!robot.Flag)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -288,18 +278,11 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.lastCoralLoc = "L3";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadLeft_Press)
                     {
-                        if (robot.Flag)
-                        {
-                            robot.DelAlgaeF++;
-                            robot.lastAlgaeLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                        else
+                        if (!robot.Flag)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -308,21 +291,9 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
-                            robot.TransactionCheck = true;
                         }
                     }
 
-                    if (gamepad.XButton_Press || gamepad.BButton_Press)
-                    {
-                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                        {
-                            robot.hasCoral++;
-                        }
-                        robot.totalCoralDeliveries++;
-                        robot.DelCoralF++;
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
-                    }
                     if (gamepad.YButton_Press)
                     {
                         robot.Near_Far = true;
@@ -345,12 +316,14 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqAlgaeR++;
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
+                            robot.TransactionCheck = true;
                         }
                         else
                         {
                             robot.AcqCoralS++;
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Station";
+                            robot.TransactionCheck = true;
                         }
                     }
                     //Acquire Coral/Algae from Floor
@@ -361,34 +334,29 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqAlgaeF++;
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Floor";
+                            robot.TransactionCheck = true;
                         }
                         else
                         {
                             robot.AcqCoralF++;
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Floor";
+                            robot.TransactionCheck = true;
                         }
                     }
 
                     //Deliveries
+                    if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
+                    {
+                        robot.DelAlgaeF++;
+                        robot.lastAlgaeLoc = "Floor";
+                    }
                     if (gamepad.DpadUp_Press)
                     {
                         if (robot.Flag)
                         {
                             robot.DelAlgaeN++;
                             robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
-                        }
-                        else
-                        {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                            {
-                                robot.hasCoral++;
-                            }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralF++;
-                            robot.lastCoralLoc = "Floor";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
@@ -397,51 +365,7 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             robot.DelAlgaeP++;
                             robot.lastAlgaeLoc = "Processor";
-                            robot.TransactionCheck = true;
                         }
-                        else
-                        {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                            {
-                                robot.hasCoral++;
-                            }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralF++;
-                            robot.lastCoralLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                    }
-                    if (gamepad.DpadLeft_Press || gamepad.DpadRight_Press)
-                    {
-                        if (robot.Flag)
-                        {
-                            robot.DelAlgaeF++;
-                            robot.lastAlgaeLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                        else
-                        {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                            {
-                                robot.hasCoral++;
-                            }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralF++;
-                            robot.lastCoralLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                    }
-
-                    if (gamepad.XButton_Press || gamepad.BButton_Press)
-                    {
-                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                        {
-                            robot.hasCoral++;
-                        }
-                        robot.totalCoralDeliveries++;
-                        robot.DelCoralF++;
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
                     }
                     if (gamepad.YButton_Press)
                     {
@@ -492,25 +416,24 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.CycleStrat(RobotState.CYCLE_DIRECTION.Up);
                     }
                     //Deliver Algae to the Floor or Net
-                    if (gamepad.BButton_Press)
+                    if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
                     {
-                        if (robot.Flag)
-                        {
-                            robot.DelAlgaeF++;
-                            robot.lastAlgaeLoc = "Floor";
-                            robot.TransactionCheck = true;
-                        }
-                        else
-                        {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                            {
-                                robot.hasCoral++;
-                            }
-                            robot.DelAlgaeN++;
-                            robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
-                        }
+                        robot.DelAlgaeF++;
+                        robot.lastAlgaeLoc = "Floor";
                     }
+                    //if (gamepad.BButton_Press)
+                    //{
+                    //    if (robot.Flag)
+                    //    {
+                    //        robot.DelAlgaeF++;
+                    //        robot.lastAlgaeLoc = "Floor";
+                    //    }
+                    //    else
+                    //    {
+                    //        robot.DelAlgaeN++;
+                    //        robot.lastAlgaeLoc = "Net";
+                    //    }
+                    //}
 
                     //Cycle Cage Attempt
                     if (gamepad.DpadUp_Press && !robot.Flag)
@@ -680,22 +603,22 @@ namespace ScoutingCodeRedo.Dynamic
 
                 if (robot.hasCoral > 1)
                 {
-                    robot.ScouterError += 1000;
+                    robot.ScouterError += 100000000;
                     robot.hasCoral = 1;
                 }
                 else if (robot.hasCoral < 0)
                 {
-                    robot.ScouterError += 10;
+                    robot.ScouterError += 10000;
                     robot.hasCoral = 0;
                 }
                 if (robot.hasAlgae > 1)
                 {
-                    robot.ScouterError += 100;
+                    robot.ScouterError += 1000000;
                     robot.hasAlgae = 1;
                 }
                 else if (robot.hasAlgae < 0)
                 {
-                    robot.ScouterError += 1;
+                    robot.ScouterError += 100;
                     robot.hasAlgae = 0;
                 }
 
@@ -703,11 +626,21 @@ namespace ScoutingCodeRedo.Dynamic
                 //2025 Transaction
                 if (gamepad.RightTrigger_Press && robot.TransactionCheck)
                 {
+                    if (robot.lastCoralLoc == " " && robot.hasCoral == 1 && robot.lastAlgaeLoc == " ")
+                    {
+                        if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                        {
+                            robot.hasCoral++;
+                        }
+                        robot.totalCoralDeliveries++;
+                        robot.DelCoralF++;
+                        robot.lastCoralLoc = "Floor";
+                    }
                     TransactToDatabase(robot, "Activities", false);
                 }
                 else if (gamepad.RightTrigger_Press)
                 {
-                    robot.ScouterError += 10000000000000;
+                    robot.ScouterError += 10000000000;
                 }
             }
 
@@ -769,11 +702,11 @@ namespace ScoutingCodeRedo.Dynamic
 
                         if (controller.Leave == RobotState.LEAVE.Z)
                         {
-                            controller.ScouterError += 10000;
+                            controller.ScouterError += 1;
                         }
                         if (controller.Starting_Location == RobotState.STARTING_LOC.Select)
                         {
-                            controller.ScouterError += 100000;
+                            controller.ScouterError += 1;
                         }
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
@@ -996,27 +929,27 @@ namespace ScoutingCodeRedo.Dynamic
 
                         if (controller.Def_Rat == 9)
                         {
-                            controller.ScouterError += 10000000;
+                            controller.ScouterError += 10;
                         }
                         if (controller.Def_Eff == 9)
                         {
-                            controller.ScouterError += 100000000;
+                            controller.ScouterError += 10;
                         }
                         if (controller.Avo_Rat == 9)
                         {
-                            controller.ScouterError += 1000000000;
+                            controller.ScouterError += 10;
                         }
                         if (controller.Dri_Rat == 9)
                         {
-                            controller.ScouterError += 1000000000000;
+                            controller.ScouterError += 10;
                         }
                         if (controller.Alg_Rat == 9)
                         {
-                            controller.ScouterError += 10000000000;
+                            controller.ScouterError += 10;
                         }
                         if (controller.Cor_Rat == 9)
                         {
-                            controller.ScouterError += 100000000000;
+                            controller.ScouterError += 10;
                         }
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 

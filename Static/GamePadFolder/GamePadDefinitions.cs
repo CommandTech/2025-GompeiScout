@@ -201,6 +201,79 @@ namespace ScoutingCodeRedo.Static
         public bool StartButton_Press
         { get { return IsPressed(_startButton, _startButtonPrev); } }
 
+        // Released only triggers once per state
+        public bool AButton_Release
+        { get { return IsReleased(_a, _aPrev); } }
+
+        public bool BButton_Release
+        { get { return IsReleased(_b, _bPrev); } }
+
+        public bool XButton_Release
+        { get { return IsReleased(_x, _xPrev); } }
+
+        public bool YButton_Release
+        { get { return IsReleased(_y, _yPrev); } }
+
+        public bool R3_Release
+        { get { return IsReleased(_r3, _r3Prev); } }
+
+        public bool L3_Release
+        { get { return IsReleased(_l3, _l3Prev); } }
+
+        public bool RightTrigger_Release
+        { get { return IsReleased(_rt, _rtPrev); } }
+
+        public bool LeftTrigger_Release
+        { get { return IsReleased(_lt, _ltPrev); } }
+
+        public bool RightButton_Release
+        { get { return IsReleased(_rb, _rbPrev); } }
+
+        public bool LeftButton_Release
+        { get { return IsReleased(_lb, _lbPrev); } }
+
+        public bool DpadUp_Release
+        { get { return IsReleased(_dpadup, _dpadupPrev); } }
+
+        public bool DpadRight_Release
+        { get { return IsReleased(_dpadright, _dpadrightPrev); } }
+
+        public bool DpadDown_Release
+        { get { return IsReleased(_dpaddown, _dpaddownPrev); } }
+
+        public bool DpadLeft_Release
+        { get { return IsReleased(_dpadleft, _dpadleftPrev); } }
+
+        public bool LTHUp_Release
+        { get { return IsReleased(_lTHUp, _lTHUpPrev); } }
+
+        public bool LTHRight_Release
+        { get { return IsReleased(_lTHRight, _lTHRightPrev); } }
+
+        public bool LTHDown_Release
+        { get { return IsReleased(_lTHDown, _lTHDownPrev); } }
+
+        public bool LTHLeft_Release
+        { get { return IsReleased(_lTHLeft, _lTHLeftPrev); } }
+
+        public bool RTHUp_Release
+        { get { return IsReleased(_rTHUp, _rTHUpPrev); } }
+
+        public bool RTHRight_Release
+        { get { return IsReleased(_rTHRight, _rTHRightPrev); } }
+
+        public bool RTHDown_Release
+        { get { return IsReleased(_rTHDown, _rTHDownPrev); } }
+
+        public bool RTHLeft_Release
+        { get { return IsReleased(_rTHLeft, _rTHLeftPrev); } }
+
+        public bool BackButton_Release
+        { get { return IsReleased(_backButton, _backButtonPrev); } }
+
+        public bool StartButton_Release
+        { get { return IsReleased(_startButton, _startButtonPrev); } }
+
         //Down State - Triggers any time the button is held down (more than once per button press)
         public bool AButton_Down
         { get { return _a; } }
@@ -305,6 +378,18 @@ namespace ScoutingCodeRedo.Static
         private bool IsPressed(bool currentValue, bool prevValue)
         {
             if (prevValue == false && currentValue == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool IsReleased(bool currentValue, bool prevValue)
+        {
+            if (prevValue == true && currentValue == false)
             {
                 return true;
             }
