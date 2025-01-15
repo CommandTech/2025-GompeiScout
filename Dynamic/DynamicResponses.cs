@@ -130,6 +130,7 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL4++;
                             robot.lastCoralLoc = "L4";
+                            robot.autoCoralPoints += 7;
                         }
                     }
                     if (gamepad.DpadDown_Press)
@@ -148,6 +149,7 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL2++;
                             robot.lastCoralLoc = "L2";
+                            robot.autoCoralPoints += 4;
                         }
                     }
                     if (gamepad.DpadRight_Press)
@@ -161,6 +163,7 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.lastCoralLoc = "L3";
+                            robot.autoCoralPoints += 6;
                         }
                     }
                     if (gamepad.DpadLeft_Press)
@@ -174,6 +177,7 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
+                            robot.autoCoralPoints += 3;
                         }
                     }
 
@@ -604,72 +608,101 @@ namespace ScoutingCodeRedo.Dynamic
                 
             }
 
+            //Totaling up points
+            int leavePoints = 0;
+            if (robot.Leave == RobotState.LEAVE.Y)
+            {
+                leavePoints = 3;
+            }
+            else
+            {
+                leavePoints = 0;
+            }
+
+            int endGamePoints = 0;
+            if (robot.End_State == RobotState.END_STATE.Park)
+            {
+                endGamePoints = 2;
+            }
+            else if (robot.End_State == RobotState.END_STATE.Shallow)
+            {
+                endGamePoints = 6;
+            }
+            else if (robot.End_State == RobotState.END_STATE.Deep)
+            {
+                endGamePoints = 12;
+            }
+
+            int algaePoints = robot.DelAlgaeN * 4 + robot.DelAlgaeP * 6;
+
+            int coralPoints = robot.DelCoralL1 * 2 + robot.DelCoralL2 * 3 + robot.DelCoralL3 * 4 + robot.DelCoralL4 * 5;
+
+            robot.PointsScored = leavePoints + endGamePoints + algaePoints + robot.autoCoralPoints + coralPoints;
         }
             
         public static void TransactToDatabase(RobotState controller, string recordType, bool isTest)
         {
-            //Totaling up points
-            if (controller.Leave == RobotState.LEAVE.Y && controller.Current_Mode == RobotState.ROBOT_MODE.Auto)
-            {
-                controller.PointsScored += 3;
-            }
-            if (controller.lastAlgaeLoc == "Net")
-            {
-                controller.PointsScored += 4;
-            }else if (controller.lastAlgaeLoc == "Processor")
-            {
-                controller.PointsScored += 6;
-            }
+            //if (controller.Leave == RobotState.LEAVE.Y && controller.Current_Mode == RobotState.ROBOT_MODE.Auto)
+            //{
+            //    controller.PointsScored += 3;
+            //}
+            //if (controller.lastAlgaeLoc == "Net")
+            //{
+            //    controller.PointsScored += 4;
+            //}else if (controller.lastAlgaeLoc == "Processor")
+            //{
+            //    controller.PointsScored += 6;
+            //}
 
-            if (controller.Current_Mode == RobotState.ROBOT_MODE.Auto)
-            {
-                if (controller.lastCoralLoc == "L4")
-                {
-                    controller.PointsScored += 7;
-                }
-                else if (controller.lastCoralLoc == "L3")
-                {
-                    controller.PointsScored += 6;
-                }else if (controller.lastCoralLoc == "L2")
-                {
-                    controller.PointsScored += 4;
-                }
-                else if (controller.lastCoralLoc == "L1")
-                {
-                    controller.PointsScored += 3;
-                }
-            }
-            else
-            {
-                if (controller.lastCoralLoc == "L4")
-                {
-                    controller.PointsScored += 5;
-                }
-                else if (controller.lastCoralLoc == "L3")
-                {
-                    controller.PointsScored += 4;
-                }
-                else if (controller.lastCoralLoc == "L2")
-                {
-                    controller.PointsScored += 3;
-                }
-                else if (controller.lastCoralLoc == "L1")
-                {
-                    controller.PointsScored += 2;
-                }
-            }
-            if (controller.End_State == RobotState.END_STATE.Park)
-            {
-                controller.PointsScored += 2;
-            }
-            else if (controller.End_State == RobotState.END_STATE.Shallow)
-            {
-                controller.PointsScored += 6;
-            }
-            else if (controller.End_State == RobotState.END_STATE.Deep)
-            {
-                controller.PointsScored += 12;
-            }
+            //if (controller.Current_Mode == RobotState.ROBOT_MODE.Auto)
+            //{
+            //    if (controller.lastCoralLoc == "L4")
+            //    {
+            //        controller.PointsScored += 7;
+            //    }
+            //    else if (controller.lastCoralLoc == "L3")
+            //    {
+            //        controller.PointsScored += 6;
+            //    }else if (controller.lastCoralLoc == "L2")
+            //    {
+            //        controller.PointsScored += 4;
+            //    }
+            //    else if (controller.lastCoralLoc == "L1")
+            //    {
+            //        controller.PointsScored += 3;
+            //    }
+            //}
+            //else
+            //{
+            //    if (controller.lastCoralLoc == "L4")
+            //    {
+            //        controller.PointsScored += 5;
+            //    }
+            //    else if (controller.lastCoralLoc == "L3")
+            //    {
+            //        controller.PointsScored += 4;
+            //    }
+            //    else if (controller.lastCoralLoc == "L2")
+            //    {
+            //        controller.PointsScored += 3;
+            //    }
+            //    else if (controller.lastCoralLoc == "L1")
+            //    {
+            //        controller.PointsScored += 2;
+            //    }
+            //}
+            //if (controller.End_State == RobotState.END_STATE.Park)
+            //{
+            //    controller.PointsScored += 2;
+            //}
+            //else if (controller.End_State == RobotState.END_STATE.Shallow)
+            //{
+            //    controller.PointsScored += 6;
+            //}
+            //else if (controller.End_State == RobotState.END_STATE.Deep)
+            //{
+            //    controller.PointsScored += 12;
+            //}
 
             //if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TransactionCheck && controller.TeamName != null)
             if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)

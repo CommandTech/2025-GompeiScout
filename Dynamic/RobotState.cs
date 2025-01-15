@@ -88,6 +88,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public string Selected_Cage;
 
+        public int autoCoralPoints;
         public int PointsScored;
 
         // These are the standard types...
