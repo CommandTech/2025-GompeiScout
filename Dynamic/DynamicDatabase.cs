@@ -68,12 +68,8 @@ namespace ScoutingCodeRedo.Dynamic
         public double ClimbT { get; set; }
         public string EndState { get; set; }
         public string CageAttept { get; set; }
-        public int DriveRate { get; set; }
-        public int CoralRate { get; set; }
-        public int AlgaeRate { get; set; }
-
         public string SelectedCage { get; set; }
-        public bool RedRight { get; set; }
+        public int PointScored { get; set; }
 
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
@@ -124,11 +120,8 @@ namespace ScoutingCodeRedo.Dynamic
         public TimeSpan ClimbT { get; set; }
         public string EndState { get; set; }
         public string CageAttept { get; set; }
-        public int DriveRate { get; set; }
-        public int CoralRate { get; set; }
-        public int AlgaeRate { get; set; }
         public string SelectedCage { get; set; }
-        public bool RedRight { get; set; }
+        public int PointScored { get; set; }
     }
     public class EventSummary : BaseEntity
     {

@@ -31,6 +31,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         //2025
         public enum STARTING_LOC { Select, C1, C2, C3, Center, C4, C5, C6 };
+        public enum STARTING_LOC_FIELD { C6, C5, C4, Center, C3, C2, C1 , Select};
         public enum LEAVE { Z, Y, N};
         public enum APP_STRAT { Select, test};
         public enum END_STATE { Select, Elsewhere, Park, Shallow, Deep };
@@ -39,12 +40,11 @@ namespace ScoutingCodeRedo.Dynamic
         public bool Flag = false;
         //False is near, True is far
         public bool Near_Far = false;
+        public bool Near_Far_Field = false;
+
         public int Def_Rat = 9;
         public int Def_Eff = 9;
         public int Avo_Rat = 9;
-        public int Dri_Rat = 9;
-        public int Cor_Rat = 9;
-        public int Alg_Rat = 9;
 
         public int hasCoral;
         public int hasAlgae;
@@ -88,6 +88,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public string Selected_Cage;
 
+        public int PointsScored;
 
         // These are the standard types...
 
@@ -177,6 +178,7 @@ namespace ScoutingCodeRedo.Dynamic
         //2025
         private LEAVE _Leave;
         private STARTING_LOC _StartLoc;
+        private STARTING_LOC_FIELD _StartLocField;
         private APP_STRAT _Strategy;
         private END_STATE _EndState;
         private CAGE_ATTEMPT _CageAttempt;
@@ -186,6 +188,8 @@ namespace ScoutingCodeRedo.Dynamic
         { return _Leave; }
         public STARTING_LOC GetStart()
         { return _StartLoc; }
+        public STARTING_LOC_FIELD GetStartField()
+        { return _StartLocField; }
         public APP_STRAT GetStrat()
         { return _Strategy; }
         public END_STATE GetState()
@@ -203,6 +207,11 @@ namespace ScoutingCodeRedo.Dynamic
         {
             get { return _StartLoc; }
             set { _StartLoc = value; }
+        }
+        public STARTING_LOC_FIELD Starting_Location_Field
+        {
+            get { return _StartLocField; }
+            set { _StartLocField = value; }
         }
         public CAGE_ATTEMPT Cage_Attempt
         {
@@ -241,6 +250,17 @@ namespace ScoutingCodeRedo.Dynamic
             else
             {
                 _StartLoc = (STARTING_LOC)GetPreviousEnum<STARTING_LOC>(_StartLoc);
+            }
+        }
+        public void CycleStartField(CYCLE_DIRECTION CycleDirection)
+        {
+            if (CycleDirection == CYCLE_DIRECTION.Up)
+            {
+                _StartLocField = (STARTING_LOC_FIELD)GetNextEnum<STARTING_LOC_FIELD>(_StartLocField);
+            }
+            else
+            {
+                _StartLocField = (STARTING_LOC_FIELD)GetPreviousEnum<STARTING_LOC_FIELD>(_StartLocField);
             }
         }
         public void CycleStrat(CYCLE_DIRECTION CycleDirection)

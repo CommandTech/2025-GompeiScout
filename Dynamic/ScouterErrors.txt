@@ -5,9 +5,6 @@ Doesn't Set End:				10
 Doesn't Set Def_Rat:			10
 Doesn't Set Def_Eff:			10
 Doesn't Set Avo_Rat:			10
-Doesn't Set Alg_Rat:			10
-Doesn't Set Cor_Rat:			10
-Doesn't Set Dri_Rat:			10
 
 Removing more ALGAE then held:	100
 Removing more CORAL then held:	10000
