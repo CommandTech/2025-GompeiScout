@@ -134,15 +134,18 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                             {
-                                robot.hasCoral++;
+                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                                {
+                                    robot.hasCoral++;
+                                }
+                                robot.totalCoralDeliveries++;
+                                robot.DelCoralL4++;
+                                robot.lastCoralLoc = "L4";
+                                robot.autoCoralPoints += 7;
+                                robot.TransactionCheck = true;
                             }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralL4++;
-                            robot.lastCoralLoc = "L4";
-                            robot.autoCoralPoints += 7;
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
@@ -155,20 +158,23 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                             {
-                                robot.hasCoral++;
+                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                                {
+                                    robot.hasCoral++;
+                                }
+                                robot.totalCoralDeliveries++;
+                                robot.DelCoralL2++;
+                                robot.lastCoralLoc = "L2";
+                                robot.autoCoralPoints += 4;
+                                robot.TransactionCheck = true;
                             }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralL2++;
-                            robot.lastCoralLoc = "L2";
-                            robot.autoCoralPoints += 4;
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadRight_Press)
                     {
-                        if (!robot.Flag)
+                        if (!robot.Flag && robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -183,7 +189,7 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.DpadLeft_Press)
                     {
-                        if (!robot.Flag)
+                        if (!robot.Flag && robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -273,14 +279,17 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                             {
-                                robot.hasCoral++;
+                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                                {
+                                    robot.hasCoral++;
+                                }
+                                robot.totalCoralDeliveries++;
+                                robot.DelCoralL4++;
+                                robot.lastCoralLoc = "L4";
+                                robot.TransactionCheck = true;
                             }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralL4++;
-                            robot.lastCoralLoc = "L4";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
@@ -293,19 +302,22 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else
                         {
-                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                             {
-                                robot.hasCoral++;
+                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
+                                {
+                                    robot.hasCoral++;
+                                }
+                                robot.totalCoralDeliveries++;
+                                robot.DelCoralL2++;
+                                robot.lastCoralLoc = "L2";
+                                robot.TransactionCheck = true;
                             }
-                            robot.totalCoralDeliveries++;
-                            robot.DelCoralL2++;
-                            robot.lastCoralLoc = "L2";
-                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadRight_Press)
                     {
-                        if (!robot.Flag)
+                        if (!robot.Flag && robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
@@ -319,7 +331,7 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.DpadLeft_Press)
                     {
-                        if (!robot.Flag)
+                        if (!robot.Flag && robot.lastCoralAcqLoc == " " || robot.totalCoralDeliveries == 0)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
