@@ -31,7 +31,7 @@ namespace ScoutingCodeRedo.Static
             BaseScreen baseScreen = new BaseScreen();
 
             //Creates the scouter boxes overlaying the base screen
-            ScouterBoxes scouterBoxes = new ScouterBoxes
+            ScouterBoxes2 scouterBoxes = new ScouterBoxes2
             {
                 Owner = baseScreen,
                 TopMost = false,

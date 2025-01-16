@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Dynamic
 {
-    internal partial class ScouterBoxes : Form
+    internal partial class ScouterBoxes2 : Form
     {
         readonly Dictionary<int, string> DefenseEquality = new Dictionary<int, string>
         {
@@ -16,7 +16,7 @@ namespace ScoutingCodeRedo.Dynamic
             { 3, "Chasing" },
             { 9, "Scouter Error" }
         };
-        public ScouterBoxes()
+        public ScouterBoxes2()
         {
             InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             int redScore = 0;
             int blueScore = 0;
-            for (int i = 0; i < 6 - BackgroundCode.gamePads.Length; i++)
+            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
             {
                 int o = BackgroundCode.Robots[i].ScouterBox;
                 switch (BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode)

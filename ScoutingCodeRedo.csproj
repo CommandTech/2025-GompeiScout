@@ -86,6 +86,12 @@
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dynamic\RobotState.cs" />
+    <Compile Include="Dynamic\Screens\ScouterBoxes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dynamic\Screens\ScouterBoxes2.designer.cs">
+      <DependentUpon>ScouterBoxes2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dynamic\Screens\ScouterBoxes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="Dynamic\Screens\FunctionsForm.resx">
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic\Screens\ScouterBoxes2.resx">
+      <DependentUpon>ScouterBoxes2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dynamic\Screens\ScouterBoxes.resx">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Static\Screens\BaseScreen.resx">
       <DependentUpon>BaseScreen.cs</DependentUpon>
@@ -199,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dynamic\ScouterErrors.txt" />
+    <Content Include="Dynamic\Screens\Hexagons.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

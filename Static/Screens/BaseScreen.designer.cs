@@ -1688,6 +1688,7 @@ namespace ScoutingCodeRedo.Static
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1486, 399);
             this.panel1.TabIndex = 300;
+            this.panel1.Visible = false;
             // 
             // panel3
             // 
@@ -1955,6 +1956,7 @@ namespace ScoutingCodeRedo.Static
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(1485, 400);
             this.panel31.TabIndex = 299;
+            this.panel31.Visible = false;
             // 
             // panel32
             // 
