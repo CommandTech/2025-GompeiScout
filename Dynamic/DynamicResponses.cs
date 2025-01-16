@@ -442,6 +442,19 @@ namespace ScoutingCodeRedo.Dynamic
                 //***********************************
                 else if (robot.Current_Mode == RobotState.ROBOT_MODE.Surfacing)
                 {
+                    if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
+                    {
+                        robot.DelAlgaeF++;
+                        robot.lastAlgaeLoc = "Floor";
+                        robot.TransactionCheck = true;
+                    }
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " ")
+                    {
+                        robot.DelCoralF++;
+                        robot.lastCoralLoc = "Floor";
+                        robot.TransactionCheck = true;
+                    }
+
                     //Stop / Resume Climb Time
                     if (gamepad.BackButton_Press)
                     {
@@ -459,7 +472,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                     }
                     //Reset Climb Time
-                    if (gamepad.LeftButton_Press)
+                    if (gamepad.LeftTrigger_Press)
                     {
                         robot.ClimbT = TimeSpan.Zero;
                         robot.ClimbT_StopWatch.Reset();
