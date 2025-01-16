@@ -47,6 +47,7 @@ namespace ScoutingCodeRedo.Static
 
             //Checks if the database exists
             Settings.Default.DBExists = seasonframework.Database.Exists();
+            seasonframework.Database.Initialize(true);
 
             //Sets the default values for the robots
             for (int i = 0; i < 6; i++)
