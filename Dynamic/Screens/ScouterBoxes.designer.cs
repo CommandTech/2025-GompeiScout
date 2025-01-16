@@ -185,8 +185,8 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel19 = new System.Windows.Forms.Panel();
             this.label162 = new System.Windows.Forms.Label();
             this.updateScreen = new System.Windows.Forms.Timer(this.components);
-            this.lbl0Position13Value = new System.Windows.Forms.Label();
-            this.lbl0Position13 = new System.Windows.Forms.Label();
+            this.lblRedScore = new System.Windows.Forms.Label();
+            this.lblBlueScore = new System.Windows.Forms.Label();
             this.redPanel.SuspendLayout();
             this.red3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -927,8 +927,6 @@ namespace ScoutingCodeRedo.Dynamic
             // red1
             // 
             this.red1.BackColor = System.Drawing.Color.Black;
-            this.red1.Controls.Add(this.lbl0Position13Value);
-            this.red1.Controls.Add(this.lbl0Position13);
             this.red1.Controls.Add(this.lbl0Position0Value);
             this.red1.Controls.Add(this.lbl0Position0);
             this.red1.Controls.Add(this.lbl0Position12Value);
@@ -2284,32 +2282,34 @@ namespace ScoutingCodeRedo.Dynamic
             this.updateScreen.Interval = 50;
             this.updateScreen.Tick += new System.EventHandler(this.UpdateScreen);
             // 
-            // lbl0Position13Value
+            // lblRedScore
             // 
-            this.lbl0Position13Value.AutoSize = true;
-            this.lbl0Position13Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl0Position13Value.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position13Value.Location = new System.Drawing.Point(203, 322);
-            this.lbl0Position13Value.Name = "lbl0Position13Value";
-            this.lbl0Position13Value.Size = new System.Drawing.Size(27, 29);
-            this.lbl0Position13Value.TabIndex = 388;
-            this.lbl0Position13Value.Text = "9";
+            this.lblRedScore.AutoSize = true;
+            this.lblRedScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedScore.ForeColor = System.Drawing.Color.Red;
+            this.lblRedScore.Location = new System.Drawing.Point(1009, 18);
+            this.lblRedScore.Name = "lblRedScore";
+            this.lblRedScore.Size = new System.Drawing.Size(27, 29);
+            this.lblRedScore.TabIndex = 387;
+            this.lblRedScore.Text = "0";
             // 
-            // lbl0Position13
+            // lblBlueScore
             // 
-            this.lbl0Position13.AutoSize = true;
-            this.lbl0Position13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl0Position13.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position13.Location = new System.Drawing.Point(153, 321);
-            this.lbl0Position13.Name = "lbl0Position13";
-            this.lbl0Position13.Size = new System.Drawing.Size(74, 29);
-            this.lbl0Position13.TabIndex = 387;
-            this.lbl0Position13.Text = "Strat:";
+            this.lblBlueScore.AutoSize = true;
+            this.lblBlueScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBlueScore.ForeColor = System.Drawing.Color.Blue;
+            this.lblBlueScore.Location = new System.Drawing.Point(1053, 18);
+            this.lblBlueScore.Name = "lblBlueScore";
+            this.lblBlueScore.Size = new System.Drawing.Size(27, 29);
+            this.lblBlueScore.TabIndex = 388;
+            this.lblBlueScore.Text = "0";
             // 
             // ScouterBoxes
             // 
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.lblBlueScore);
+            this.Controls.Add(this.lblRedScore);
             this.Controls.Add(this.bluePanel);
             this.Controls.Add(this.redPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2356,6 +2356,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion
@@ -2531,7 +2532,7 @@ namespace ScoutingCodeRedo.Dynamic
         private Label label161;
         private Panel panel19;
         private Label label162;
-        private Label lbl0Position13Value;
-        private Label lbl0Position13;
+        private Label lblRedScore;
+        private Label lblBlueScore;
     }
 }

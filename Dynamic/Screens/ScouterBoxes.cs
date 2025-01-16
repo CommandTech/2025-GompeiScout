@@ -8,7 +8,7 @@ namespace ScoutingCodeRedo.Dynamic
 {
     internal partial class ScouterBoxes : Form
     {
-        Dictionary<int, string> DefenseEquality = new Dictionary<int, string>
+        readonly Dictionary<int, string> DefenseEquality = new Dictionary<int, string>
         {
             { 0, "None" },
             { 1, "1 Station" },
@@ -25,6 +25,8 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void UpdateScreen(object sender, EventArgs e)
         {
+            int redScore = 0;
+            int blueScore = 0;
             for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
             {
                 int o = BackgroundCode.Robots[i].ScouterBox;
@@ -43,7 +45,19 @@ namespace ScoutingCodeRedo.Dynamic
                         InSurfacingMode(i, o);
                         break;
                 }
+
+                if (i < 3)
+                {
+                    redScore += BackgroundCode.Robots[i].PointsScored;
+                }
+                else
+                {
+                    blueScore += BackgroundCode.Robots[i].PointsScored;
+                }
             }
+
+            ((Label)this.Controls.Find($"lblRedScore", true)[0]).Text = redScore.ToString();
+            ((Label)this.Controls.Find($"lblBlueScore", true)[0]).Text = blueScore.ToString();
         }
 
         private void InAutoMode(int Box_Number, int ScouterBox)
@@ -70,7 +84,7 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
 
             //Near Far
-            if (BackgroundCode.Robots[Box_Number].Near_Far)
+            if (BackgroundCode.Robots[Box_Number].DelNearFar)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
@@ -167,13 +181,6 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
-
-            //Points Scored
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
         private void InTeleopMode(int Box_Number, int ScouterBox)
         {
@@ -183,7 +190,7 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0Value", true)[0]).Visible = false;
 
             //Near Far
-            if (BackgroundCode.Robots[Box_Number].Near_Far)
+            if (BackgroundCode.Robots[Box_Number].DelNearFar)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
@@ -280,13 +287,6 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
-
-            //Points Scored
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
         private void InDefenseMode(int Box_Number, int ScouterBox)
         {
@@ -297,7 +297,7 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0Value", true)[0]).Visible = false;
 
             //Near Far
-            if (BackgroundCode.Robots[Box_Number].Near_Far)
+            if (BackgroundCode.Robots[Box_Number].DelNearFar)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
@@ -394,13 +394,6 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
-
-            //Points Scored
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
         private void InSurfacingMode(int Box_Number, int ScouterBox)
         {
@@ -410,7 +403,7 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0Value", true)[0]).Visible = false;
 
             //Near Far
-            if (BackgroundCode.Robots[Box_Number].Near_Far)
+            if (BackgroundCode.Robots[Box_Number].DelNearFar)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position1", true)[0]).Text = "Far Side";
             }
@@ -507,13 +500,6 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].GetStrat().ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position12Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
-
-            //Points Scored
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Text = "Score:";
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].PointsScored.ToString();
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).Visible = (ScouterBox == 0) || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position13Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
         }
     }
 }

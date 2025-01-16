@@ -7,7 +7,7 @@ namespace ScoutingCodeRedo.Dynamic
     {
         public enum ROBOT_MODE { Auto, Teleop, Defense, Surfacing };
         public enum CYCLE_DIRECTION { Up, Down }
-        public enum MATCHEVENT_NAME { Match_Event, DropCoral, BrokeDown, CrossedCenter, LostParts, AdditionPiece, MultiClimb, NoShow, TippedOver, JammedPiece, WentUnderCages, YellowCard }
+        public enum MATCHEVENT_NAME { Match_Event, DropCoral, BrokeDown, CrossedCenter, LostParts, AdditionPiece, MultiClimb, NoShow, TippedOver, JammedPiece, WentUnderCages }
         public enum SCOUTER_NAME { Select_Name, Ayush, Logan, Marzuq, Milan, William, Scouter1, Scouter2, Scouter3, Scouter4 }
 
         // Year to Year ints
@@ -39,7 +39,9 @@ namespace ScoutingCodeRedo.Dynamic
 
         public bool Flag = false;
         //False is near, True is far
-        public bool Near_Far = false;
+        public bool DelNearFar = false;
+        public bool AcqAlgaeNearFar = false;
+        public bool AcqCoralNearFar = false;
         public bool Near_Far_Field = false;
 
         public int Def_Rat = 9;
