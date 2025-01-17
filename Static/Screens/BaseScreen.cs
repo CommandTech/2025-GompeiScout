@@ -92,15 +92,18 @@ namespace ScoutingCodeRedo.Static
                     //Changes gamepads 1 to 5 to null
                     for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
                     {
-                        BackgroundCode.gamePads[i] = null;
+                        BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[0].TeamName;
+
+                        //If the scouter error increases, play the sound
+                        if (BackgroundCode.Robots[i].prevScouterError != BackgroundCode.Robots[i].ScouterError)
+                        {
+                            BackgroundCode.soundCue.Play();
+                            BackgroundCode.Robots[i].prevScouterError = BackgroundCode.Robots[i].ScouterError;
+                        }
                     }
 
-                    //If the scouter error increases, play the sound
-                    if (BackgroundCode.Robots[0].prevScouterError != BackgroundCode.Robots[0].ScouterError)
-                    {
-                        BackgroundCode.soundCue.Play();
-                        BackgroundCode.Robots[0].prevScouterError = BackgroundCode.Robots[0].ScouterError;
-                    }
+                    LoadMatch();
+
                     //Sets that it was in practice mode
                     wasPractice = true;
                 }
@@ -111,11 +114,13 @@ namespace ScoutingCodeRedo.Static
                     {
                         //Update joysticks
                         UpdateJoysticks();
+                        LoadMatch();
                     }
                     //Sets that it was not in practice mode
                     wasPractice = false;
                     //Removes the sound player
                     BackgroundCode.soundCue.Dispose();
+
                 }
             }
         }

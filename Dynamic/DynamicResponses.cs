@@ -88,7 +88,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Station";
                             robot.AcqCoralNearFar = robot.DelNearFar;
-                            robot.TransactionCheck = true;
                         }
                     }
                     //Acquire Coral/Algae from Floor
@@ -107,7 +106,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Floor";
                             robot.AcqCoralNearFar = robot.DelNearFar;
-                            robot.TransactionCheck = true;
                         }
                     }
 
@@ -140,7 +138,6 @@ namespace ScoutingCodeRedo.Dynamic
                                 {
                                     robot.hasCoral++;
                                 }
-                                robot.totalCoralDeliveries++;
                                 robot.DelCoralL4++;
                                 robot.lastCoralLoc = "L4";
                                 robot.autoCoralPoints += 7;
@@ -164,7 +161,6 @@ namespace ScoutingCodeRedo.Dynamic
                                 {
                                     robot.hasCoral++;
                                 }
-                                robot.totalCoralDeliveries++;
                                 robot.DelCoralL2++;
                                 robot.lastCoralLoc = "L2";
                                 robot.autoCoralPoints += 4;
@@ -180,7 +176,6 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 robot.hasCoral++;
                             }
-                            robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.lastCoralLoc = "L3";
                             robot.autoCoralPoints += 6;
@@ -195,7 +190,6 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 robot.hasCoral++;
                             }
-                            robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
                             robot.autoCoralPoints += 3;
@@ -233,7 +227,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Station";
                             robot.AcqCoralNearFar = robot.DelNearFar;
-                            robot.TransactionCheck = true;
                         }
                     }
                     //Acquire Coral/Algae from Floor
@@ -252,7 +245,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Floor";
                             robot.AcqCoralNearFar = robot.DelNearFar;
-                            robot.TransactionCheck = true;
                         }
                     }
 
@@ -285,7 +277,6 @@ namespace ScoutingCodeRedo.Dynamic
                                 {
                                     robot.hasCoral++;
                                 }
-                                robot.totalCoralDeliveries++;
                                 robot.DelCoralL4++;
                                 robot.lastCoralLoc = "L4";
                                 robot.TransactionCheck = true;
@@ -308,7 +299,6 @@ namespace ScoutingCodeRedo.Dynamic
                                 {
                                     robot.hasCoral++;
                                 }
-                                robot.totalCoralDeliveries++;
                                 robot.DelCoralL2++;
                                 robot.lastCoralLoc = "L2";
                                 robot.TransactionCheck = true;
@@ -323,7 +313,6 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 robot.hasCoral++;
                             }
-                            robot.totalCoralDeliveries++;
                             robot.DelCoralL3++;
                             robot.lastCoralLoc = "L3";
                             robot.TransactionCheck = true;
@@ -331,13 +320,12 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.DpadLeft_Press)
                     {
-                        if (!robot.Flag && robot.lastCoralAcqLoc == " " || robot.totalCoralDeliveries == 0)
+                        if (!robot.Flag && robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
                             if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
                                 robot.hasCoral++;
                             }
-                            robot.totalCoralDeliveries++;
                             robot.DelCoralL1++;
                             robot.lastCoralLoc = "L1";
                             robot.TransactionCheck = true;
@@ -374,7 +362,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Station";
                             robot.AcqCoralNearFar = robot.DelNearFar;
-                            robot.TransactionCheck = true;
                         }
                     }
                     //Acquire Coral/Algae from Floor
@@ -393,7 +380,6 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasCoral++;
                             robot.lastCoralAcqLoc = "Floor";
                             robot.AcqCoralNearFar = robot.DelNearFar;
-                            robot.TransactionCheck = true;
                         }
                     }
 
@@ -848,6 +834,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
+                            controller.totalCoralDeliveries++;
                             controller.hasCoral = 0;
                             controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
@@ -874,10 +861,14 @@ namespace ScoutingCodeRedo.Dynamic
                         if (Settings.Default.redRight)
                         {
                             BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
                         }
                         else
                         {
                             BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
                         }
 
 
@@ -943,18 +934,19 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
                         BackgroundCode.seasonframework.SaveChanges();
 
-                        //if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
-                        //{
+                        if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
+                        {
+                            controller.totalCoralDeliveries++;
                             controller.hasCoral = 0;
                             controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
-                        //}
-                        //if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
-                        //{
+                        }
+                        if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
+                        {
                             controller.hasAlgae = 0;
                             controller.lastAlgaeLoc = " ";
                             controller.lastAlgaeAcqLoc = " ";
-                        //}
+                        }
                         controller.TransactionCheck = false;
                         break;
                     case ("EndMatch"):
@@ -971,10 +963,14 @@ namespace ScoutingCodeRedo.Dynamic
                         if (Settings.Default.redRight)
                         {
                             BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
                         }
                         else
                         {
                             BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
                         }
 
 
@@ -1059,6 +1055,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
+                            controller.totalCoralDeliveries++;
                             controller.hasCoral = 0;
                             controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
@@ -1165,10 +1162,14 @@ namespace ScoutingCodeRedo.Dynamic
                         if (Settings.Default.redRight)
                         {
                             BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
                         }
                         else
                         {
                             BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
                         }
 
 
@@ -1267,6 +1268,13 @@ namespace ScoutingCodeRedo.Dynamic
                 BackgroundCode.Robots[i].DelCoralL2 = 0;
                 BackgroundCode.Robots[i].DelCoralL3 = 0;
                 BackgroundCode.Robots[i].DelCoralL4 = 0;
+
+                BackgroundCode.Robots[i].lastAlgaeAcqLoc = " ";
+                BackgroundCode.Robots[i].prevlastAlgaeAcqLoc = " ";
+                BackgroundCode.Robots[i].lastCoralAcqLoc = " ";
+                BackgroundCode.Robots[i].prevlastCoralAcqLoc = " ";
+
+                BackgroundCode.Robots[i].totalCoralDeliveries = 0;
 
                 BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Select;
                 BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Select;

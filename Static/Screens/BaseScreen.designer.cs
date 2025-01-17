@@ -115,19 +115,19 @@ namespace ScoutingCodeRedo.Static
         private Button btnPreviousMatch;
         private Button btnpopulateForEvent;
         private Button btnExit;
-        private Panel panel1;
-        private Panel panel3;
+        private Panel blueTeams;
+        private Panel team6;
         private Panel panel6;
         private Label label19;
-        private Panel panel7;
-        private Panel panel11;
-        private Panel panel31;
-        private Panel panel32;
+        private Panel team5;
+        private Panel team4;
+        private Panel redTeams;
+        private Panel team3;
         private Label lbl2MatchEvent;
         private Label lbl2TeamName;
         private Label lbl2ScoutName;
         private Label lbl2ModeValue;
-        private Panel panel36;
+        private Panel team2;
         private Label lbl1MatchEvent;
         private Label lbl1TeamName;
         private Label lbl1ScoutName;
@@ -261,37 +261,37 @@ namespace ScoutingCodeRedo.Static
             this.btnPreviousMatch = new System.Windows.Forms.Button();
             this.btnpopulateForEvent = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.blueTeams = new System.Windows.Forms.Panel();
+            this.team6 = new System.Windows.Forms.Panel();
             this.lbl5MatchEvent = new System.Windows.Forms.Label();
             this.lbl5TeamName = new System.Windows.Forms.Label();
             this.lbl5ScoutName = new System.Windows.Forms.Label();
             this.lbl5ModeValue = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.team5 = new System.Windows.Forms.Panel();
             this.lbl4MatchEvent = new System.Windows.Forms.Label();
             this.lbl4TeamName = new System.Windows.Forms.Label();
             this.lbl4ScoutName = new System.Windows.Forms.Label();
             this.lbl4ModeValue = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label54 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.team4 = new System.Windows.Forms.Panel();
             this.lbl3MatchEvent = new System.Windows.Forms.Label();
             this.lbl3TeamName = new System.Windows.Forms.Label();
             this.lbl3ScoutName = new System.Windows.Forms.Label();
             this.lbl3ModeValue = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
             this.label89 = new System.Windows.Forms.Label();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.panel32 = new System.Windows.Forms.Panel();
+            this.redTeams = new System.Windows.Forms.Panel();
+            this.team3 = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
             this.label106 = new System.Windows.Forms.Label();
             this.lbl2MatchEvent = new System.Windows.Forms.Label();
             this.lbl2TeamName = new System.Windows.Forms.Label();
             this.lbl2ScoutName = new System.Windows.Forms.Label();
             this.lbl2ModeValue = new System.Windows.Forms.Label();
-            this.panel36 = new System.Windows.Forms.Panel();
+            this.team2 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
             this.label111 = new System.Windows.Forms.Label();
             this.lbl1MatchEvent = new System.Windows.Forms.Label();
@@ -324,17 +324,17 @@ namespace ScoutingCodeRedo.Static
             this.panel25.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.blueTeams.SuspendLayout();
+            this.team6.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.team5.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.team4.SuspendLayout();
             this.panel30.SuspendLayout();
-            this.panel31.SuspendLayout();
-            this.panel32.SuspendLayout();
+            this.redTeams.SuspendLayout();
+            this.team3.SuspendLayout();
             this.panel35.SuspendLayout();
-            this.panel36.SuspendLayout();
+            this.team2.SuspendLayout();
             this.panel39.SuspendLayout();
             this.panel41.SuspendLayout();
             this.team1.SuspendLayout();
@@ -346,7 +346,7 @@ namespace ScoutingCodeRedo.Static
             this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstLog.ForeColor = System.Drawing.Color.White;
             this.lstLog.FormattingEnabled = true;
-            this.lstLog.ItemHeight = 20;
+            this.lstLog.ItemHeight = 16;
             this.lstLog.Location = new System.Drawing.Point(8, 728);
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(1010, 0);
@@ -358,7 +358,7 @@ namespace ScoutingCodeRedo.Static
             this.comboBoxSelectRegional.FormattingEnabled = true;
             this.comboBoxSelectRegional.Location = new System.Drawing.Point(169, 21);
             this.comboBoxSelectRegional.Name = "comboBoxSelectRegional";
-            this.comboBoxSelectRegional.Size = new System.Drawing.Size(290, 28);
+            this.comboBoxSelectRegional.Size = new System.Drawing.Size(290, 24);
             this.comboBoxSelectRegional.TabIndex = 290;
             this.comboBoxSelectRegional.Text = "Please press the Load Events Button...";
             this.comboBoxSelectRegional.ValueMember = "event_code";
@@ -426,7 +426,7 @@ namespace ScoutingCodeRedo.Static
             this.label34.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label34.Location = new System.Drawing.Point(418, 214);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(55, 37);
+            this.label34.Size = new System.Drawing.Size(46, 31);
             this.label34.TabIndex = 277;
             this.label34.Text = "00";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -439,7 +439,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position6Value.Location = new System.Drawing.Point(290, 177);
             this.lbl5Position6Value.Name = "lbl5Position6Value";
-            this.lbl5Position6Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl5Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position6Value.TabIndex = 345;
             this.lbl5Position6Value.Text = "$$";
             this.lbl5Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -452,7 +452,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position10Value.Location = new System.Drawing.Point(273, 268);
             this.lbl5Position10Value.Name = "lbl5Position10Value";
-            this.lbl5Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position10Value.TabIndex = 344;
             this.lbl5Position10Value.Text = "0";
             this.lbl5Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -464,7 +464,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position10.ForeColor = System.Drawing.Color.White;
             this.lbl5Position10.Location = new System.Drawing.Point(229, 267);
             this.lbl5Position10.Name = "lbl5Position10";
-            this.lbl5Position10.Size = new System.Drawing.Size(77, 33);
+            this.lbl5Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl5Position10.TabIndex = 343;
             this.lbl5Position10.Text = "Avo:";
             // 
@@ -477,7 +477,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position7Value.Location = new System.Drawing.Point(97, 232);
             this.lbl5Position7Value.Name = "lbl5Position7Value";
-            this.lbl5Position7Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl5Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position7Value.TabIndex = 342;
             this.lbl5Position7Value.Text = ".";
             this.lbl5Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -490,7 +490,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position9Value.Location = new System.Drawing.Point(68, 276);
             this.lbl5Position9Value.Name = "lbl5Position9Value";
-            this.lbl5Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position9Value.TabIndex = 341;
             this.lbl5Position9Value.Text = "#";
             this.lbl5Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -502,7 +502,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position9.ForeColor = System.Drawing.Color.White;
             this.lbl5Position9.Location = new System.Drawing.Point(3, 276);
             this.lbl5Position9.Name = "lbl5Position9";
-            this.lbl5Position9.Size = new System.Drawing.Size(89, 33);
+            this.lbl5Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl5Position9.TabIndex = 340;
             this.lbl5Position9.Text = "Mics:";
             // 
@@ -513,7 +513,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position7.ForeColor = System.Drawing.Color.White;
             this.lbl5Position7.Location = new System.Drawing.Point(2, 232);
             this.lbl5Position7.Name = "lbl5Position7";
-            this.lbl5Position7.Size = new System.Drawing.Size(112, 33);
+            this.lbl5Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl5Position7.TabIndex = 339;
             this.lbl5Position7.Text = "Spotlit:";
             // 
@@ -524,7 +524,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl5Position2Flag.Name = "lbl5Position2Flag";
-            this.lbl5Position2Flag.Size = new System.Drawing.Size(40, 33);
+            this.lbl5Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl5Position2Flag.TabIndex = 338;
             this.lbl5Position2Flag.Text = "M";
             // 
@@ -535,7 +535,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl5Position0Flag.Name = "lbl5Position0Flag";
-            this.lbl5Position0Flag.Size = new System.Drawing.Size(37, 33);
+            this.lbl5Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl5Position0Flag.TabIndex = 337;
             this.lbl5Position0Flag.Text = "D";
             // 
@@ -548,7 +548,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position4Value.Location = new System.Drawing.Point(301, 124);
             this.lbl5Position4Value.Name = "lbl5Position4Value";
-            this.lbl5Position4Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl5Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position4Value.TabIndex = 336;
             this.lbl5Position4Value.Text = ".";
             this.lbl5Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -562,7 +562,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position5Value.Location = new System.Drawing.Point(97, 181);
             this.lbl5Position5Value.Name = "lbl5Position5Value";
-            this.lbl5Position5Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl5Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position5Value.TabIndex = 334;
             this.lbl5Position5Value.Text = ".";
             this.lbl5Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -574,7 +574,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position6.ForeColor = System.Drawing.Color.White;
             this.lbl5Position6.Location = new System.Drawing.Point(229, 176);
             this.lbl5Position6.Name = "lbl5Position6";
-            this.lbl5Position6.Size = new System.Drawing.Size(90, 33);
+            this.lbl5Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl5Position6.TabIndex = 331;
             this.lbl5Position6.Text = "Strat:";
             // 
@@ -586,7 +586,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl5Position2Value.Name = "lbl5Position2Value";
-            this.lbl5Position2Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl5Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position2Value.TabIndex = 330;
             this.lbl5Position2Value.Text = "$$";
             this.lbl5Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -599,7 +599,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position1Value.Location = new System.Drawing.Point(284, 50);
             this.lbl5Position1Value.Name = "lbl5Position1Value";
-            this.lbl5Position1Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl5Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position1Value.TabIndex = 329;
             this.lbl5Position1Value.Text = "$$";
             this.lbl5Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -621,7 +621,7 @@ namespace ScoutingCodeRedo.Static
             this.label139.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label139.Location = new System.Drawing.Point(418, 214);
             this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(55, 37);
+            this.label139.Size = new System.Drawing.Size(46, 31);
             this.label139.TabIndex = 277;
             this.label139.Text = "00";
             this.label139.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -643,7 +643,7 @@ namespace ScoutingCodeRedo.Static
             this.label140.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label140.Location = new System.Drawing.Point(418, 214);
             this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(55, 37);
+            this.label140.Size = new System.Drawing.Size(46, 31);
             this.label140.TabIndex = 277;
             this.label140.Text = "00";
             this.label140.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -655,7 +655,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position5.ForeColor = System.Drawing.Color.White;
             this.lbl5Position5.Location = new System.Drawing.Point(2, 182);
             this.lbl5Position5.Name = "lbl5Position5";
-            this.lbl5Position5.Size = new System.Drawing.Size(147, 33);
+            this.lbl5Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl5Position5.TabIndex = 328;
             this.lbl5Position5.Text = "HP Amp: ";
             // 
@@ -666,7 +666,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position4.ForeColor = System.Drawing.Color.White;
             this.lbl5Position4.Location = new System.Drawing.Point(229, 124);
             this.lbl5Position4.Name = "lbl5Position4";
-            this.lbl5Position4.Size = new System.Drawing.Size(108, 33);
+            this.lbl5Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl5Position4.TabIndex = 322;
             this.lbl5Position4.Text = "Leave:";
             // 
@@ -678,7 +678,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position8Value.Location = new System.Drawing.Point(273, 227);
             this.lbl5Position8Value.Name = "lbl5Position8Value";
-            this.lbl5Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position8Value.TabIndex = 324;
             this.lbl5Position8Value.Text = "0";
             this.lbl5Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -690,7 +690,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position0.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl5Position0.Name = "lbl5Position0";
-            this.lbl5Position0.Size = new System.Drawing.Size(77, 33);
+            this.lbl5Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl5Position0.TabIndex = 322;
             this.lbl5Position0.Text = "Acq:";
             // 
@@ -702,7 +702,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl5Position3Value.Name = "lbl5Position3Value";
-            this.lbl5Position3Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl5Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position3Value.TabIndex = 317;
             this.lbl5Position3Value.Text = "#";
             this.lbl5Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -714,7 +714,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position3.ForeColor = System.Drawing.Color.White;
             this.lbl5Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl5Position3.Name = "lbl5Position3";
-            this.lbl5Position3.Size = new System.Drawing.Size(104, 33);
+            this.lbl5Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl5Position3.TabIndex = 321;
             this.lbl5Position3.Text = "Setup:";
             // 
@@ -725,7 +725,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position8.ForeColor = System.Drawing.Color.White;
             this.lbl5Position8.Location = new System.Drawing.Point(229, 226);
             this.lbl5Position8.Name = "lbl5Position8";
-            this.lbl5Position8.Size = new System.Drawing.Size(72, 33);
+            this.lbl5Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl5Position8.TabIndex = 266;
             this.lbl5Position8.Text = "Def:";
             // 
@@ -736,7 +736,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position1.ForeColor = System.Drawing.Color.White;
             this.lbl5Position1.Location = new System.Drawing.Point(229, 50);
             this.lbl5Position1.Name = "lbl5Position1";
-            this.lbl5Position1.Size = new System.Drawing.Size(84, 33);
+            this.lbl5Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl5Position1.TabIndex = 327;
             this.lbl5Position1.Text = "Orig:";
             // 
@@ -747,7 +747,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position2.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl5Position2.Name = "lbl5Position2";
-            this.lbl5Position2.Size = new System.Drawing.Size(71, 33);
+            this.lbl5Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl5Position2.TabIndex = 318;
             this.lbl5Position2.Text = "Del:";
             // 
@@ -759,7 +759,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl5Position0Value.Name = "lbl5Position0Value";
-            this.lbl5Position0Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl5Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position0Value.TabIndex = 274;
             this.lbl5Position0Value.Text = "$$";
             this.lbl5Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -816,7 +816,7 @@ namespace ScoutingCodeRedo.Static
             this.label33.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label33.Location = new System.Drawing.Point(418, 214);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(55, 37);
+            this.label33.Size = new System.Drawing.Size(46, 31);
             this.label33.TabIndex = 277;
             this.label33.Text = "00";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -829,7 +829,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position6Value.Location = new System.Drawing.Point(304, 180);
             this.lbl4Position6Value.Name = "lbl4Position6Value";
-            this.lbl4Position6Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl4Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position6Value.TabIndex = 345;
             this.lbl4Position6Value.Text = "$$";
             this.lbl4Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -842,7 +842,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position10Value.Location = new System.Drawing.Point(287, 274);
             this.lbl4Position10Value.Name = "lbl4Position10Value";
-            this.lbl4Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position10Value.TabIndex = 344;
             this.lbl4Position10Value.Text = "0";
             this.lbl4Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -854,7 +854,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position10.ForeColor = System.Drawing.Color.White;
             this.lbl4Position10.Location = new System.Drawing.Point(243, 273);
             this.lbl4Position10.Name = "lbl4Position10";
-            this.lbl4Position10.Size = new System.Drawing.Size(77, 33);
+            this.lbl4Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl4Position10.TabIndex = 343;
             this.lbl4Position10.Text = "Avo:";
             // 
@@ -867,7 +867,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position7Value.Location = new System.Drawing.Point(101, 230);
             this.lbl4Position7Value.Name = "lbl4Position7Value";
-            this.lbl4Position7Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl4Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position7Value.TabIndex = 342;
             this.lbl4Position7Value.Text = ".";
             this.lbl4Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -880,7 +880,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position9Value.Location = new System.Drawing.Point(68, 275);
             this.lbl4Position9Value.Name = "lbl4Position9Value";
-            this.lbl4Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position9Value.TabIndex = 341;
             this.lbl4Position9Value.Text = "#";
             this.lbl4Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -892,7 +892,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position9.ForeColor = System.Drawing.Color.White;
             this.lbl4Position9.Location = new System.Drawing.Point(3, 275);
             this.lbl4Position9.Name = "lbl4Position9";
-            this.lbl4Position9.Size = new System.Drawing.Size(89, 33);
+            this.lbl4Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl4Position9.TabIndex = 340;
             this.lbl4Position9.Text = "Mics:";
             // 
@@ -903,7 +903,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position7.ForeColor = System.Drawing.Color.White;
             this.lbl4Position7.Location = new System.Drawing.Point(6, 230);
             this.lbl4Position7.Name = "lbl4Position7";
-            this.lbl4Position7.Size = new System.Drawing.Size(112, 33);
+            this.lbl4Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl4Position7.TabIndex = 339;
             this.lbl4Position7.Text = "Spotlit:";
             // 
@@ -914,7 +914,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl4Position2Flag.Name = "lbl4Position2Flag";
-            this.lbl4Position2Flag.Size = new System.Drawing.Size(40, 33);
+            this.lbl4Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl4Position2Flag.TabIndex = 338;
             this.lbl4Position2Flag.Text = "M";
             // 
@@ -925,7 +925,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl4Position0Flag.Name = "lbl4Position0Flag";
-            this.lbl4Position0Flag.Size = new System.Drawing.Size(37, 33);
+            this.lbl4Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl4Position0Flag.TabIndex = 337;
             this.lbl4Position0Flag.Text = "D";
             // 
@@ -938,7 +938,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position4Value.Location = new System.Drawing.Point(315, 131);
             this.lbl4Position4Value.Name = "lbl4Position4Value";
-            this.lbl4Position4Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl4Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position4Value.TabIndex = 336;
             this.lbl4Position4Value.Text = ".";
             this.lbl4Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -952,7 +952,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position5Value.Location = new System.Drawing.Point(101, 179);
             this.lbl4Position5Value.Name = "lbl4Position5Value";
-            this.lbl4Position5Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl4Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position5Value.TabIndex = 334;
             this.lbl4Position5Value.Text = ".";
             this.lbl4Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -964,7 +964,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position6.ForeColor = System.Drawing.Color.White;
             this.lbl4Position6.Location = new System.Drawing.Point(243, 179);
             this.lbl4Position6.Name = "lbl4Position6";
-            this.lbl4Position6.Size = new System.Drawing.Size(90, 33);
+            this.lbl4Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl4Position6.TabIndex = 331;
             this.lbl4Position6.Text = "Strat:";
             // 
@@ -976,7 +976,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl4Position2Value.Name = "lbl4Position2Value";
-            this.lbl4Position2Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl4Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position2Value.TabIndex = 330;
             this.lbl4Position2Value.Text = "$$";
             this.lbl4Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -989,7 +989,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position1Value.Location = new System.Drawing.Point(298, 49);
             this.lbl4Position1Value.Name = "lbl4Position1Value";
-            this.lbl4Position1Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl4Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position1Value.TabIndex = 329;
             this.lbl4Position1Value.Text = "$$";
             this.lbl4Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1011,7 +1011,7 @@ namespace ScoutingCodeRedo.Static
             this.label109.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label109.Location = new System.Drawing.Point(418, 214);
             this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(55, 37);
+            this.label109.Size = new System.Drawing.Size(46, 31);
             this.label109.TabIndex = 277;
             this.label109.Text = "00";
             this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1033,7 +1033,7 @@ namespace ScoutingCodeRedo.Static
             this.label110.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label110.Location = new System.Drawing.Point(418, 214);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(55, 37);
+            this.label110.Size = new System.Drawing.Size(46, 31);
             this.label110.TabIndex = 277;
             this.label110.Text = "00";
             this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1045,7 +1045,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position5.ForeColor = System.Drawing.Color.White;
             this.lbl4Position5.Location = new System.Drawing.Point(6, 180);
             this.lbl4Position5.Name = "lbl4Position5";
-            this.lbl4Position5.Size = new System.Drawing.Size(147, 33);
+            this.lbl4Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl4Position5.TabIndex = 328;
             this.lbl4Position5.Text = "HP Amp: ";
             // 
@@ -1056,7 +1056,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position4.ForeColor = System.Drawing.Color.White;
             this.lbl4Position4.Location = new System.Drawing.Point(243, 131);
             this.lbl4Position4.Name = "lbl4Position4";
-            this.lbl4Position4.Size = new System.Drawing.Size(108, 33);
+            this.lbl4Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl4Position4.TabIndex = 322;
             this.lbl4Position4.Text = "Leave:";
             // 
@@ -1068,7 +1068,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position8Value.Location = new System.Drawing.Point(287, 231);
             this.lbl4Position8Value.Name = "lbl4Position8Value";
-            this.lbl4Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position8Value.TabIndex = 324;
             this.lbl4Position8Value.Text = "0";
             this.lbl4Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1080,7 +1080,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position0.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl4Position0.Name = "lbl4Position0";
-            this.lbl4Position0.Size = new System.Drawing.Size(77, 33);
+            this.lbl4Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl4Position0.TabIndex = 322;
             this.lbl4Position0.Text = "Acq:";
             // 
@@ -1092,7 +1092,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl4Position3Value.Name = "lbl4Position3Value";
-            this.lbl4Position3Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl4Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position3Value.TabIndex = 317;
             this.lbl4Position3Value.Text = "#";
             this.lbl4Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1104,7 +1104,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position3.ForeColor = System.Drawing.Color.White;
             this.lbl4Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl4Position3.Name = "lbl4Position3";
-            this.lbl4Position3.Size = new System.Drawing.Size(104, 33);
+            this.lbl4Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl4Position3.TabIndex = 321;
             this.lbl4Position3.Text = "Setup:";
             // 
@@ -1115,7 +1115,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position8.ForeColor = System.Drawing.Color.White;
             this.lbl4Position8.Location = new System.Drawing.Point(243, 230);
             this.lbl4Position8.Name = "lbl4Position8";
-            this.lbl4Position8.Size = new System.Drawing.Size(72, 33);
+            this.lbl4Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl4Position8.TabIndex = 266;
             this.lbl4Position8.Text = "Def:";
             // 
@@ -1126,7 +1126,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position1.ForeColor = System.Drawing.Color.White;
             this.lbl4Position1.Location = new System.Drawing.Point(243, 49);
             this.lbl4Position1.Name = "lbl4Position1";
-            this.lbl4Position1.Size = new System.Drawing.Size(84, 33);
+            this.lbl4Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl4Position1.TabIndex = 327;
             this.lbl4Position1.Text = "Orig:";
             // 
@@ -1137,7 +1137,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position2.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl4Position2.Name = "lbl4Position2";
-            this.lbl4Position2.Size = new System.Drawing.Size(71, 33);
+            this.lbl4Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl4Position2.TabIndex = 318;
             this.lbl4Position2.Text = "Del:";
             // 
@@ -1149,7 +1149,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl4Position0Value.Name = "lbl4Position0Value";
-            this.lbl4Position0Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl4Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position0Value.TabIndex = 274;
             this.lbl4Position0Value.Text = "$$";
             this.lbl4Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1208,7 +1208,7 @@ namespace ScoutingCodeRedo.Static
             this.label11.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label11.Location = new System.Drawing.Point(418, 214);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 37);
+            this.label11.Size = new System.Drawing.Size(46, 31);
             this.label11.TabIndex = 277;
             this.label11.Text = "00";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1230,7 +1230,7 @@ namespace ScoutingCodeRedo.Static
             this.label31.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label31.Location = new System.Drawing.Point(418, 214);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(55, 37);
+            this.label31.Size = new System.Drawing.Size(46, 31);
             this.label31.TabIndex = 277;
             this.label31.Text = "00";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1243,7 +1243,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position6Value.Location = new System.Drawing.Point(304, 182);
             this.lbl3Position6Value.Name = "lbl3Position6Value";
-            this.lbl3Position6Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl3Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position6Value.TabIndex = 345;
             this.lbl3Position6Value.Text = "$$";
             this.lbl3Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1265,7 +1265,7 @@ namespace ScoutingCodeRedo.Static
             this.label32.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label32.Location = new System.Drawing.Point(418, 214);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 37);
+            this.label32.Size = new System.Drawing.Size(46, 31);
             this.label32.TabIndex = 277;
             this.label32.Text = "00";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1278,7 +1278,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position10Value.Location = new System.Drawing.Point(288, 277);
             this.lbl3Position10Value.Name = "lbl3Position10Value";
-            this.lbl3Position10Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position10Value.TabIndex = 344;
             this.lbl3Position10Value.Text = "0";
             this.lbl3Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1290,7 +1290,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position10.ForeColor = System.Drawing.Color.White;
             this.lbl3Position10.Location = new System.Drawing.Point(244, 276);
             this.lbl3Position10.Name = "lbl3Position10";
-            this.lbl3Position10.Size = new System.Drawing.Size(77, 33);
+            this.lbl3Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl3Position10.TabIndex = 343;
             this.lbl3Position10.Text = "Avo:";
             // 
@@ -1303,7 +1303,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position7Value.Location = new System.Drawing.Point(99, 231);
             this.lbl3Position7Value.Name = "lbl3Position7Value";
-            this.lbl3Position7Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl3Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position7Value.TabIndex = 342;
             this.lbl3Position7Value.Text = ".";
             this.lbl3Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1316,7 +1316,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position9Value.Location = new System.Drawing.Point(69, 276);
             this.lbl3Position9Value.Name = "lbl3Position9Value";
-            this.lbl3Position9Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position9Value.TabIndex = 341;
             this.lbl3Position9Value.Text = "#";
             this.lbl3Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1328,7 +1328,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position9.ForeColor = System.Drawing.Color.White;
             this.lbl3Position9.Location = new System.Drawing.Point(4, 276);
             this.lbl3Position9.Name = "lbl3Position9";
-            this.lbl3Position9.Size = new System.Drawing.Size(89, 33);
+            this.lbl3Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl3Position9.TabIndex = 340;
             this.lbl3Position9.Text = "Mics:";
             // 
@@ -1339,7 +1339,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position7.ForeColor = System.Drawing.Color.White;
             this.lbl3Position7.Location = new System.Drawing.Point(4, 231);
             this.lbl3Position7.Name = "lbl3Position7";
-            this.lbl3Position7.Size = new System.Drawing.Size(112, 33);
+            this.lbl3Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl3Position7.TabIndex = 339;
             this.lbl3Position7.Text = "Spotlit:";
             // 
@@ -1350,7 +1350,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl3Position2Flag.Name = "lbl3Position2Flag";
-            this.lbl3Position2Flag.Size = new System.Drawing.Size(40, 33);
+            this.lbl3Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl3Position2Flag.TabIndex = 338;
             this.lbl3Position2Flag.Text = "M";
             // 
@@ -1361,7 +1361,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl3Position0Flag.Name = "lbl3Position0Flag";
-            this.lbl3Position0Flag.Size = new System.Drawing.Size(37, 33);
+            this.lbl3Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl3Position0Flag.TabIndex = 337;
             this.lbl3Position0Flag.Text = "D";
             // 
@@ -1374,7 +1374,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position4Value.Location = new System.Drawing.Point(313, 130);
             this.lbl3Position4Value.Name = "lbl3Position4Value";
-            this.lbl3Position4Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl3Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position4Value.TabIndex = 336;
             this.lbl3Position4Value.Text = ".";
             this.lbl3Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1388,7 +1388,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position5Value.Location = new System.Drawing.Point(98, 181);
             this.lbl3Position5Value.Name = "lbl3Position5Value";
-            this.lbl3Position5Value.Size = new System.Drawing.Size(24, 33);
+            this.lbl3Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position5Value.TabIndex = 334;
             this.lbl3Position5Value.Text = ".";
             this.lbl3Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1400,7 +1400,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position6.ForeColor = System.Drawing.Color.White;
             this.lbl3Position6.Location = new System.Drawing.Point(243, 181);
             this.lbl3Position6.Name = "lbl3Position6";
-            this.lbl3Position6.Size = new System.Drawing.Size(90, 33);
+            this.lbl3Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl3Position6.TabIndex = 331;
             this.lbl3Position6.Text = "Strat:";
             // 
@@ -1412,7 +1412,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl3Position2Value.Name = "lbl3Position2Value";
-            this.lbl3Position2Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl3Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position2Value.TabIndex = 330;
             this.lbl3Position2Value.Text = "$$";
             this.lbl3Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1425,7 +1425,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position1Value.Location = new System.Drawing.Point(296, 50);
             this.lbl3Position1Value.Name = "lbl3Position1Value";
-            this.lbl3Position1Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl3Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position1Value.TabIndex = 329;
             this.lbl3Position1Value.Text = "$$";
             this.lbl3Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1447,7 +1447,7 @@ namespace ScoutingCodeRedo.Static
             this.label79.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label79.Location = new System.Drawing.Point(418, 214);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(55, 37);
+            this.label79.Size = new System.Drawing.Size(46, 31);
             this.label79.TabIndex = 277;
             this.label79.Text = "00";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1469,7 +1469,7 @@ namespace ScoutingCodeRedo.Static
             this.label80.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label80.Location = new System.Drawing.Point(418, 214);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(55, 37);
+            this.label80.Size = new System.Drawing.Size(46, 31);
             this.label80.TabIndex = 277;
             this.label80.Text = "00";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1481,7 +1481,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position5.ForeColor = System.Drawing.Color.White;
             this.lbl3Position5.Location = new System.Drawing.Point(3, 182);
             this.lbl3Position5.Name = "lbl3Position5";
-            this.lbl3Position5.Size = new System.Drawing.Size(147, 33);
+            this.lbl3Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl3Position5.TabIndex = 328;
             this.lbl3Position5.Text = "HP Amp: ";
             // 
@@ -1492,7 +1492,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position4.ForeColor = System.Drawing.Color.White;
             this.lbl3Position4.Location = new System.Drawing.Point(241, 130);
             this.lbl3Position4.Name = "lbl3Position4";
-            this.lbl3Position4.Size = new System.Drawing.Size(108, 33);
+            this.lbl3Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl3Position4.TabIndex = 322;
             this.lbl3Position4.Text = "Leave:";
             // 
@@ -1504,7 +1504,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position8Value.Location = new System.Drawing.Point(288, 231);
             this.lbl3Position8Value.Name = "lbl3Position8Value";
-            this.lbl3Position8Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position8Value.TabIndex = 324;
             this.lbl3Position8Value.Text = "0";
             this.lbl3Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1516,7 +1516,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position0.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl3Position0.Name = "lbl3Position0";
-            this.lbl3Position0.Size = new System.Drawing.Size(77, 33);
+            this.lbl3Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl3Position0.TabIndex = 322;
             this.lbl3Position0.Text = "Acq:";
             // 
@@ -1528,7 +1528,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl3Position3Value.Name = "lbl3Position3Value";
-            this.lbl3Position3Value.Size = new System.Drawing.Size(32, 33);
+            this.lbl3Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position3Value.TabIndex = 317;
             this.lbl3Position3Value.Text = "#";
             this.lbl3Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1540,7 +1540,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position3.ForeColor = System.Drawing.Color.White;
             this.lbl3Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl3Position3.Name = "lbl3Position3";
-            this.lbl3Position3.Size = new System.Drawing.Size(104, 33);
+            this.lbl3Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl3Position3.TabIndex = 321;
             this.lbl3Position3.Text = "Setup:";
             // 
@@ -1551,7 +1551,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position8.ForeColor = System.Drawing.Color.White;
             this.lbl3Position8.Location = new System.Drawing.Point(244, 230);
             this.lbl3Position8.Name = "lbl3Position8";
-            this.lbl3Position8.Size = new System.Drawing.Size(72, 33);
+            this.lbl3Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl3Position8.TabIndex = 266;
             this.lbl3Position8.Text = "Def:";
             // 
@@ -1562,7 +1562,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position1.ForeColor = System.Drawing.Color.White;
             this.lbl3Position1.Location = new System.Drawing.Point(241, 50);
             this.lbl3Position1.Name = "lbl3Position1";
-            this.lbl3Position1.Size = new System.Drawing.Size(84, 33);
+            this.lbl3Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl3Position1.TabIndex = 327;
             this.lbl3Position1.Text = "Orig:";
             // 
@@ -1573,7 +1573,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position2.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl3Position2.Name = "lbl3Position2";
-            this.lbl3Position2.Size = new System.Drawing.Size(71, 33);
+            this.lbl3Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl3Position2.TabIndex = 318;
             this.lbl3Position2.Text = "Del:";
             // 
@@ -1585,7 +1585,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl3Position0Value.Name = "lbl3Position0Value";
-            this.lbl3Position0Value.Size = new System.Drawing.Size(49, 33);
+            this.lbl3Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position0Value.TabIndex = 274;
             this.lbl3Position0Value.Text = "$$";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1598,7 +1598,7 @@ namespace ScoutingCodeRedo.Static
             this.cbxEndMatch.Location = new System.Drawing.Point(802, 27);
             this.cbxEndMatch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEndMatch.Name = "cbxEndMatch";
-            this.cbxEndMatch.Size = new System.Drawing.Size(112, 24);
+            this.cbxEndMatch.Size = new System.Drawing.Size(92, 20);
             this.cbxEndMatch.TabIndex = 296;
             this.cbxEndMatch.Text = "End Match";
             this.cbxEndMatch.UseVisualStyleBackColor = false;
@@ -1635,7 +1635,7 @@ namespace ScoutingCodeRedo.Static
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label14.Location = new System.Drawing.Point(130, 26);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 40);
+            this.label14.Size = new System.Drawing.Size(44, 32);
             this.label14.TabIndex = 288;
             this.label14.Text = "Event:\r\n\r\n";
             // 
@@ -1678,30 +1678,29 @@ namespace ScoutingCodeRedo.Static
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // panel1
+            // blueTeams
             // 
-            this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Location = new System.Drawing.Point(19, 462);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1486, 399);
-            this.panel1.TabIndex = 300;
-            this.panel1.Visible = false;
+            this.blueTeams.BackColor = System.Drawing.Color.Blue;
+            this.blueTeams.Controls.Add(this.team6);
+            this.blueTeams.Controls.Add(this.team5);
+            this.blueTeams.Controls.Add(this.team4);
+            this.blueTeams.Location = new System.Drawing.Point(19, 462);
+            this.blueTeams.Name = "blueTeams";
+            this.blueTeams.Size = new System.Drawing.Size(1486, 399);
+            this.blueTeams.TabIndex = 300;
             // 
-            // panel3
+            // team6
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.lbl5MatchEvent);
-            this.panel3.Controls.Add(this.lbl5TeamName);
-            this.panel3.Controls.Add(this.lbl5ScoutName);
-            this.panel3.Controls.Add(this.lbl5ModeValue);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Location = new System.Drawing.Point(991, 8);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(484, 388);
-            this.panel3.TabIndex = 349;
+            this.team6.BackColor = System.Drawing.Color.Black;
+            this.team6.Controls.Add(this.lbl5MatchEvent);
+            this.team6.Controls.Add(this.lbl5TeamName);
+            this.team6.Controls.Add(this.lbl5ScoutName);
+            this.team6.Controls.Add(this.lbl5ModeValue);
+            this.team6.Controls.Add(this.panel6);
+            this.team6.Location = new System.Drawing.Point(991, 8);
+            this.team6.Name = "team6";
+            this.team6.Size = new System.Drawing.Size(484, 388);
+            this.team6.TabIndex = 349;
             // 
             // lbl5MatchEvent
             // 
@@ -1710,7 +1709,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5MatchEvent.ForeColor = System.Drawing.Color.White;
             this.lbl5MatchEvent.Location = new System.Drawing.Point(7, 325);
             this.lbl5MatchEvent.Name = "lbl5MatchEvent";
-            this.lbl5MatchEvent.Size = new System.Drawing.Size(187, 33);
+            this.lbl5MatchEvent.Size = new System.Drawing.Size(154, 29);
             this.lbl5MatchEvent.TabIndex = 295;
             this.lbl5MatchEvent.Text = "Match Event";
             // 
@@ -1749,7 +1748,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl5ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl5ModeValue.Location = new System.Drawing.Point(2, 4);
             this.lbl5ModeValue.Name = "lbl5ModeValue";
-            this.lbl5ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl5ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl5ModeValue.TabIndex = 292;
             this.lbl5ModeValue.Text = "Auto:";
             // 
@@ -1770,23 +1769,23 @@ namespace ScoutingCodeRedo.Static
             this.label19.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label19.Location = new System.Drawing.Point(418, 214);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(55, 37);
+            this.label19.Size = new System.Drawing.Size(46, 31);
             this.label19.TabIndex = 277;
             this.label19.Text = "00";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel7
+            // team5
             // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Controls.Add(this.lbl4MatchEvent);
-            this.panel7.Controls.Add(this.lbl4TeamName);
-            this.panel7.Controls.Add(this.lbl4ScoutName);
-            this.panel7.Controls.Add(this.lbl4ModeValue);
-            this.panel7.Controls.Add(this.panel10);
-            this.panel7.Location = new System.Drawing.Point(499, 8);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(484, 388);
-            this.panel7.TabIndex = 348;
+            this.team5.BackColor = System.Drawing.Color.Black;
+            this.team5.Controls.Add(this.lbl4MatchEvent);
+            this.team5.Controls.Add(this.lbl4TeamName);
+            this.team5.Controls.Add(this.lbl4ScoutName);
+            this.team5.Controls.Add(this.lbl4ModeValue);
+            this.team5.Controls.Add(this.panel10);
+            this.team5.Location = new System.Drawing.Point(499, 8);
+            this.team5.Name = "team5";
+            this.team5.Size = new System.Drawing.Size(484, 388);
+            this.team5.TabIndex = 348;
             // 
             // lbl4MatchEvent
             // 
@@ -1795,7 +1794,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4MatchEvent.ForeColor = System.Drawing.Color.White;
             this.lbl4MatchEvent.Location = new System.Drawing.Point(6, 325);
             this.lbl4MatchEvent.Name = "lbl4MatchEvent";
-            this.lbl4MatchEvent.Size = new System.Drawing.Size(187, 33);
+            this.lbl4MatchEvent.Size = new System.Drawing.Size(154, 29);
             this.lbl4MatchEvent.TabIndex = 295;
             this.lbl4MatchEvent.Text = "Match Event";
             // 
@@ -1834,7 +1833,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl4ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl4ModeValue.Location = new System.Drawing.Point(1, 5);
             this.lbl4ModeValue.Name = "lbl4ModeValue";
-            this.lbl4ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl4ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl4ModeValue.TabIndex = 292;
             this.lbl4ModeValue.Text = "Auto:";
             // 
@@ -1855,23 +1854,23 @@ namespace ScoutingCodeRedo.Static
             this.label54.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label54.Location = new System.Drawing.Point(418, 214);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(55, 37);
+            this.label54.Size = new System.Drawing.Size(46, 31);
             this.label54.TabIndex = 277;
             this.label54.Text = "00";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel11
+            // team4
             // 
-            this.panel11.BackColor = System.Drawing.Color.Black;
-            this.panel11.Controls.Add(this.lbl3MatchEvent);
-            this.panel11.Controls.Add(this.lbl3TeamName);
-            this.panel11.Controls.Add(this.lbl3ScoutName);
-            this.panel11.Controls.Add(this.lbl3ModeValue);
-            this.panel11.Controls.Add(this.panel30);
-            this.panel11.Location = new System.Drawing.Point(7, 8);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(484, 388);
-            this.panel11.TabIndex = 347;
+            this.team4.BackColor = System.Drawing.Color.Black;
+            this.team4.Controls.Add(this.lbl3MatchEvent);
+            this.team4.Controls.Add(this.lbl3TeamName);
+            this.team4.Controls.Add(this.lbl3ScoutName);
+            this.team4.Controls.Add(this.lbl3ModeValue);
+            this.team4.Controls.Add(this.panel30);
+            this.team4.Location = new System.Drawing.Point(7, 8);
+            this.team4.Name = "team4";
+            this.team4.Size = new System.Drawing.Size(484, 388);
+            this.team4.TabIndex = 347;
             // 
             // lbl3MatchEvent
             // 
@@ -1880,7 +1879,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3MatchEvent.ForeColor = System.Drawing.Color.White;
             this.lbl3MatchEvent.Location = new System.Drawing.Point(6, 325);
             this.lbl3MatchEvent.Name = "lbl3MatchEvent";
-            this.lbl3MatchEvent.Size = new System.Drawing.Size(187, 33);
+            this.lbl3MatchEvent.Size = new System.Drawing.Size(154, 29);
             this.lbl3MatchEvent.TabIndex = 295;
             this.lbl3MatchEvent.Text = "Match Event";
             // 
@@ -1919,7 +1918,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl3ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl3ModeValue.Location = new System.Drawing.Point(3, 4);
             this.lbl3ModeValue.Name = "lbl3ModeValue";
-            this.lbl3ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl3ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl3ModeValue.TabIndex = 292;
             this.lbl3ModeValue.Text = "Auto:";
             // 
@@ -1940,36 +1939,35 @@ namespace ScoutingCodeRedo.Static
             this.label89.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label89.Location = new System.Drawing.Point(418, 214);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(55, 37);
+            this.label89.Size = new System.Drawing.Size(46, 31);
             this.label89.TabIndex = 277;
             this.label89.Text = "00";
             this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel31
+            // redTeams
             // 
-            this.panel31.BackColor = System.Drawing.Color.Red;
-            this.panel31.Controls.Add(this.panel32);
-            this.panel31.Controls.Add(this.panel36);
-            this.panel31.Controls.Add(this.panel41);
-            this.panel31.Controls.Add(this.team1);
-            this.panel31.Location = new System.Drawing.Point(20, 56);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(1485, 400);
-            this.panel31.TabIndex = 299;
-            this.panel31.Visible = false;
+            this.redTeams.BackColor = System.Drawing.Color.Red;
+            this.redTeams.Controls.Add(this.team3);
+            this.redTeams.Controls.Add(this.team2);
+            this.redTeams.Controls.Add(this.panel41);
+            this.redTeams.Controls.Add(this.team1);
+            this.redTeams.Location = new System.Drawing.Point(20, 56);
+            this.redTeams.Name = "redTeams";
+            this.redTeams.Size = new System.Drawing.Size(1485, 400);
+            this.redTeams.TabIndex = 299;
             // 
-            // panel32
+            // team3
             // 
-            this.panel32.BackColor = System.Drawing.Color.Black;
-            this.panel32.Controls.Add(this.panel35);
-            this.panel32.Controls.Add(this.lbl2MatchEvent);
-            this.panel32.Controls.Add(this.lbl2TeamName);
-            this.panel32.Controls.Add(this.lbl2ScoutName);
-            this.panel32.Controls.Add(this.lbl2ModeValue);
-            this.panel32.Location = new System.Drawing.Point(991, 3);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(484, 394);
-            this.panel32.TabIndex = 347;
+            this.team3.BackColor = System.Drawing.Color.Black;
+            this.team3.Controls.Add(this.panel35);
+            this.team3.Controls.Add(this.lbl2MatchEvent);
+            this.team3.Controls.Add(this.lbl2TeamName);
+            this.team3.Controls.Add(this.lbl2ScoutName);
+            this.team3.Controls.Add(this.lbl2ModeValue);
+            this.team3.Location = new System.Drawing.Point(991, 3);
+            this.team3.Name = "team3";
+            this.team3.Size = new System.Drawing.Size(484, 394);
+            this.team3.TabIndex = 347;
             // 
             // panel35
             // 
@@ -1988,7 +1986,7 @@ namespace ScoutingCodeRedo.Static
             this.label106.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label106.Location = new System.Drawing.Point(418, 214);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(55, 37);
+            this.label106.Size = new System.Drawing.Size(46, 31);
             this.label106.TabIndex = 277;
             this.label106.Text = "00";
             this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2000,7 +1998,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl2MatchEvent.ForeColor = System.Drawing.Color.White;
             this.lbl2MatchEvent.Location = new System.Drawing.Point(6, 328);
             this.lbl2MatchEvent.Name = "lbl2MatchEvent";
-            this.lbl2MatchEvent.Size = new System.Drawing.Size(187, 33);
+            this.lbl2MatchEvent.Size = new System.Drawing.Size(154, 29);
             this.lbl2MatchEvent.TabIndex = 291;
             this.lbl2MatchEvent.Text = "Match Event";
             // 
@@ -2039,22 +2037,22 @@ namespace ScoutingCodeRedo.Static
             this.lbl2ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl2ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl2ModeValue.Name = "lbl2ModeValue";
-            this.lbl2ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl2ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl2ModeValue.TabIndex = 2;
             this.lbl2ModeValue.Text = "Auto:";
             // 
-            // panel36
+            // team2
             // 
-            this.panel36.BackColor = System.Drawing.Color.Black;
-            this.panel36.Controls.Add(this.panel39);
-            this.panel36.Controls.Add(this.lbl1MatchEvent);
-            this.panel36.Controls.Add(this.lbl1TeamName);
-            this.panel36.Controls.Add(this.lbl1ScoutName);
-            this.panel36.Controls.Add(this.lbl1ModeValue);
-            this.panel36.Location = new System.Drawing.Point(499, 3);
-            this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(484, 394);
-            this.panel36.TabIndex = 280;
+            this.team2.BackColor = System.Drawing.Color.Black;
+            this.team2.Controls.Add(this.panel39);
+            this.team2.Controls.Add(this.lbl1MatchEvent);
+            this.team2.Controls.Add(this.lbl1TeamName);
+            this.team2.Controls.Add(this.lbl1ScoutName);
+            this.team2.Controls.Add(this.lbl1ModeValue);
+            this.team2.Location = new System.Drawing.Point(499, 3);
+            this.team2.Name = "team2";
+            this.team2.Size = new System.Drawing.Size(484, 394);
+            this.team2.TabIndex = 280;
             // 
             // panel39
             // 
@@ -2073,7 +2071,7 @@ namespace ScoutingCodeRedo.Static
             this.label111.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label111.Location = new System.Drawing.Point(418, 214);
             this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(55, 37);
+            this.label111.Size = new System.Drawing.Size(46, 31);
             this.label111.TabIndex = 277;
             this.label111.Text = "00";
             this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2085,7 +2083,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl1MatchEvent.ForeColor = System.Drawing.Color.White;
             this.lbl1MatchEvent.Location = new System.Drawing.Point(2, 328);
             this.lbl1MatchEvent.Name = "lbl1MatchEvent";
-            this.lbl1MatchEvent.Size = new System.Drawing.Size(187, 33);
+            this.lbl1MatchEvent.Size = new System.Drawing.Size(154, 29);
             this.lbl1MatchEvent.TabIndex = 291;
             this.lbl1MatchEvent.Text = "Match Event";
             // 
@@ -2124,7 +2122,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl1ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl1ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl1ModeValue.Name = "lbl1ModeValue";
-            this.lbl1ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl1ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl1ModeValue.TabIndex = 2;
             this.lbl1ModeValue.Text = "Auto:";
             // 
@@ -2145,7 +2143,7 @@ namespace ScoutingCodeRedo.Static
             this.label113.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label113.Location = new System.Drawing.Point(418, 214);
             this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(55, 37);
+            this.label113.Size = new System.Drawing.Size(46, 31);
             this.label113.TabIndex = 277;
             this.label113.Text = "00";
             this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2169,7 +2167,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl0MatchEvent.ForeColor = System.Drawing.Color.White;
             this.lbl0MatchEvent.Location = new System.Drawing.Point(2, 328);
             this.lbl0MatchEvent.Name = "lbl0MatchEvent";
-            this.lbl0MatchEvent.Size = new System.Drawing.Size(187, 33);
+            this.lbl0MatchEvent.Size = new System.Drawing.Size(154, 29);
             this.lbl0MatchEvent.TabIndex = 291;
             this.lbl0MatchEvent.Text = "Match Event";
             // 
@@ -2208,7 +2206,7 @@ namespace ScoutingCodeRedo.Static
             this.lbl0ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl0ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl0ModeValue.Name = "lbl0ModeValue";
-            this.lbl0ModeValue.Size = new System.Drawing.Size(101, 40);
+            this.lbl0ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl0ModeValue.TabIndex = 2;
             this.lbl0ModeValue.Text = "Auto:";
             // 
@@ -2220,7 +2218,7 @@ namespace ScoutingCodeRedo.Static
             this.labelMatch.ForeColor = System.Drawing.Color.LimeGreen;
             this.labelMatch.Location = new System.Drawing.Point(605, 22);
             this.labelMatch.Name = "labelMatch";
-            this.labelMatch.Size = new System.Drawing.Size(99, 32);
+            this.labelMatch.Size = new System.Drawing.Size(83, 29);
             this.labelMatch.TabIndex = 291;
             this.labelMatch.Text = "Match:";
             // 
@@ -2231,7 +2229,7 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.ForeColor = System.Drawing.Color.White;
             this.lblMatch.Location = new System.Drawing.Point(671, 23);
             this.lblMatch.Name = "lblMatch";
-            this.lblMatch.Size = new System.Drawing.Size(32, 33);
+            this.lblMatch.Size = new System.Drawing.Size(27, 29);
             this.lblMatch.TabIndex = 292;
             this.lblMatch.Text = "0";
             // 
@@ -2261,8 +2259,8 @@ namespace ScoutingCodeRedo.Static
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnFunctions);
             this.Controls.Add(this.lblMatch);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel31);
+            this.Controls.Add(this.blueTeams);
+            this.Controls.Add(this.redTeams);
             this.Controls.Add(this.cbxEndMatch);
             this.Controls.Add(this.labelMatch);
             this.Controls.Add(this.btnInitialDBLoad);
@@ -2304,26 +2302,26 @@ namespace ScoutingCodeRedo.Static
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.blueTeams.ResumeLayout(false);
+            this.team6.ResumeLayout(false);
+            this.team6.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.team5.ResumeLayout(false);
+            this.team5.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.team4.ResumeLayout(false);
+            this.team4.PerformLayout();
             this.panel30.ResumeLayout(false);
             this.panel30.PerformLayout();
-            this.panel31.ResumeLayout(false);
-            this.panel32.ResumeLayout(false);
-            this.panel32.PerformLayout();
+            this.redTeams.ResumeLayout(false);
+            this.team3.ResumeLayout(false);
+            this.team3.PerformLayout();
             this.panel35.ResumeLayout(false);
             this.panel35.PerformLayout();
-            this.panel36.ResumeLayout(false);
-            this.panel36.PerformLayout();
+            this.team2.ResumeLayout(false);
+            this.team2.PerformLayout();
             this.panel39.ResumeLayout(false);
             this.panel39.PerformLayout();
             this.panel41.ResumeLayout(false);
