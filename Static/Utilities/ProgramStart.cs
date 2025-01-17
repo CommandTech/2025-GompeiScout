@@ -1,7 +1,6 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Static

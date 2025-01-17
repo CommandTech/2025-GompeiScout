@@ -1,10 +1,7 @@
 ﻿using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static;
-using ScoutingCodeRedo.Static.GamePadFolder;
-using SharpDX.XInput;
 using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Dynamic
@@ -656,7 +653,7 @@ namespace ScoutingCodeRedo.Dynamic
             // Values if robot is NoSho
             else if (robot.NoSho)
             {
-                
+
             }
 
             //Totaling end game
@@ -676,7 +673,7 @@ namespace ScoutingCodeRedo.Dynamic
 
             robot.PointsScored += endgamePoints;
         }
-            
+
         public static void TransactToDatabase(RobotState controller, string recordType)
         {
             if (controller.Leave == RobotState.LEAVE.Y && controller.Current_Mode == RobotState.ROBOT_MODE.Auto && recordType == "EndAuto")
@@ -730,7 +727,7 @@ namespace ScoutingCodeRedo.Dynamic
                     controller.PointsScored += 2;
                 }
             }
-            
+
 
             //if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TransactionCheck && controller.TeamName != null)
             if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
@@ -827,6 +824,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.PointScored = controller.PointsScored.ToString();
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -929,6 +927,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.PointScored = controller.PointsScored.ToString();
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1026,7 +1025,8 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Strategy = controller.GetStrat().ToString();
                         BackgroundCode.activity_record.DefenseValue = controller.Def_Eff.ToString();
                         BackgroundCode.activity_record.Defense = controller.Def_Rat.ToString();
-                        if (controller.Def_Rat == 0 || controller.Def_Rat == 9) {
+                        if (controller.Def_Rat == 0 || controller.Def_Rat == 9)
+                        {
                             BackgroundCode.activity_record.DefenseValue = "0";
                             controller.Def_Eff = 0;
                         }
@@ -1048,6 +1048,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ScouterError = controller.ScouterError;
 
                         BackgroundCode.activity_record.SelectedCage = controller.Selected_Cage;
+                        BackgroundCode.activity_record.PointScored = controller.PointsScored.ToString();
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1138,6 +1139,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.PointScored = "-";
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1230,6 +1232,7 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
+                        BackgroundCode.activity_record.PointScored = controller.PointsScored.ToString();
 
                         //Save Record to the database
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
@@ -1286,7 +1289,7 @@ namespace ScoutingCodeRedo.Dynamic
                     BackgroundCode.Robots[i].ClimbTDouble = 0;
                     BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
                 }
-                catch {}
+                catch { }
 
                 try
                 {
@@ -1296,7 +1299,7 @@ namespace ScoutingCodeRedo.Dynamic
                     BackgroundCode.Robots[i].DefTimeDouble = 0;
                     BackgroundCode.Robots[i].DefTime_StopWatch_running = false;
                 }
-                catch {}
+                catch { }
 
                 BackgroundCode.Robots[i].ScouterError = 0;
                 BackgroundCode.Robots[i].NoSho = false;

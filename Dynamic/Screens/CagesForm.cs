@@ -1,9 +1,6 @@
 ﻿using ScoutingCodeRedo.Static;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Dynamic.Screens
@@ -35,7 +32,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
                 BackgroundCode.cages[i] = Cages[i].Text;
                 BackgroundCode.Robots[i].Selected_Cage = BackgroundCode.cages[i];
             }
-            
+
             this.Hide();
         }
     }

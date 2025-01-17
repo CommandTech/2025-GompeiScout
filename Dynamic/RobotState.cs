@@ -31,9 +31,9 @@ namespace ScoutingCodeRedo.Dynamic
 
         //2025
         public enum STARTING_LOC { Select, C1, C2, C3, Center, C4, C5, C6 };
-        public enum STARTING_LOC_FIELD { C6, C5, C4, Center, C3, C2, C1 , Select};
-        public enum LEAVE { Z, Y, N};
-        public enum APP_STRAT { Select, Defense, CoralScorer, AlgaeScorer, Hybrid};
+        public enum STARTING_LOC_FIELD { C6, C5, C4, Center, C3, C2, C1, Select };
+        public enum LEAVE { Z, Y, N };
+        public enum APP_STRAT { Select, Defense, CoralScorer, AlgaeScorer, Hybrid };
         public enum END_STATE { Select, Elsewhere, Park, Shallow, Deep };
         public enum CAGE_ATTEMPT { Select, Y, N };
 
