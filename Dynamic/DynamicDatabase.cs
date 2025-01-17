@@ -35,9 +35,9 @@ namespace ScoutingCodeRedo.Dynamic
         public string RecordType { get; set; }
         public string Mode { get; set; }
         public string DriveSta { get; set; }
-        public int Defense { get; set; }
-        public int DefenseValue { get; set; }
-        public int Avoidance { get; set; }
+        public string Defense { get; set; }
+        public string DefenseValue { get; set; }
+        public string Avoidance { get; set; }
         public string ScouterName { get; set; }
         public long ScouterError { get; set; }
         public string Match_event { get; set; }

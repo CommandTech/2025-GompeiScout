@@ -822,9 +822,9 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = 0;
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = 9;
-                        BackgroundCode.activity_record.DefenseValue = 9;
-                        BackgroundCode.activity_record.Avoidance = 9;
+                        BackgroundCode.activity_record.Defense = "-";
+                        BackgroundCode.activity_record.DefenseValue = "-";
+                        BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
 
@@ -924,9 +924,9 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = 0;
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = 9;
-                        BackgroundCode.activity_record.DefenseValue = 9;
-                        BackgroundCode.activity_record.Avoidance = 9;
+                        BackgroundCode.activity_record.Defense = "-";
+                        BackgroundCode.activity_record.DefenseValue = "-";
+                        BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
 
@@ -1024,13 +1024,13 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = controller.ClimbTDouble;
 
                         BackgroundCode.activity_record.Strategy = controller.GetStrat().ToString();
-                        BackgroundCode.activity_record.DefenseValue = controller.Def_Eff;
-                        BackgroundCode.activity_record.Defense = controller.Def_Rat;
+                        BackgroundCode.activity_record.DefenseValue = controller.Def_Eff.ToString();
+                        BackgroundCode.activity_record.Defense = controller.Def_Rat.ToString();
                         if (controller.Def_Rat == 0 || controller.Def_Rat == 9) {
-                            BackgroundCode.activity_record.DefenseValue = 0;
+                            BackgroundCode.activity_record.DefenseValue = "0";
                             controller.Def_Eff = 0;
                         }
-                        BackgroundCode.activity_record.Avoidance = controller.Avo_Rat;
+                        BackgroundCode.activity_record.Avoidance = controller.Avo_Rat.ToString();
 
 
                         if (controller.Def_Rat == 9)
@@ -1133,9 +1133,9 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = '-';
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = 9;
-                        BackgroundCode.activity_record.DefenseValue = 9;
-                        BackgroundCode.activity_record.Avoidance = 9;
+                        BackgroundCode.activity_record.Defense = "-";
+                        BackgroundCode.activity_record.DefenseValue = "-";
+                        BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
 
@@ -1225,9 +1225,9 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.ClimbT = '-';
 
                         BackgroundCode.activity_record.Strategy = "-";
-                        BackgroundCode.activity_record.Defense = 9;
-                        BackgroundCode.activity_record.DefenseValue = 9;
-                        BackgroundCode.activity_record.Avoidance = 9;
+                        BackgroundCode.activity_record.Defense = "-";
+                        BackgroundCode.activity_record.DefenseValue = "-";
+                        BackgroundCode.activity_record.Avoidance = "-";
 
                         BackgroundCode.activity_record.SelectedCage = "-";
 
