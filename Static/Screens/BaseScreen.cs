@@ -314,7 +314,6 @@ namespace ScoutingCodeRedo.Static
                 if (Settings.Default.currentMatch == bgc.InMemoryMatchList.Count)
                 {
                     MessageBox.Show("You are at the last match.");
-                    Settings.Default.currentMatch--;
                 }
                 else
                 {
@@ -331,7 +330,6 @@ namespace ScoutingCodeRedo.Static
                 else if (dialogResult == DialogResult.Yes)
                 {
                     MessageBox.Show("You are at the last match.");
-                    Settings.Default.currentMatch--;
                 }
             }
         }
@@ -351,6 +349,7 @@ namespace ScoutingCodeRedo.Static
             else
             {
                 Settings.Default.currentMatch--;
+
                 LoadMatch();
             }
         }
