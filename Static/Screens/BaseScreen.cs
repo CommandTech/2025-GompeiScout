@@ -325,7 +325,7 @@ namespace ScoutingCodeRedo.Static
 
         private void BtnPrevMatch_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.currentMatch == 0)
+            if (Settings.Default.currentMatch == 0 || Settings.Default.currentMatch == 1)
             {
                 MessageBox.Show("You are at the first match.");
             }
@@ -346,7 +346,6 @@ namespace ScoutingCodeRedo.Static
             {
                 teamPrioList = Settings.Default.teamPrio.Cast<string>().ToList();
             }
-
             SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
             SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
             SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3, teamPrioList);

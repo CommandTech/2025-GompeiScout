@@ -99,9 +99,9 @@ namespace ScoutingCodeRedo.Dynamic
         public string Strategy { get; set; }
         public int Coop { get; set; }
         public double DZTime { get; set; }
-        public bool Del_Near_Far { get; set; }
-        public bool AcqAlgae_Near_Far { get; set; }
-        public bool AcqCoral_Near_Far { get; set; }
+        public string Del_Near_Far { get; set; }
+        public string AcqAlgae_Near_Far { get; set; }
+        public string AcqCoral_Near_Far { get; set; }
 
         public string Starting_Loc { get; set; }
         public string Leave { get; set; }

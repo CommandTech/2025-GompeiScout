@@ -86,12 +86,6 @@
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dynamic\RobotState.cs" />
-    <Compile Include="Dynamic\Screens\ScouterBoxes2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dynamic\Screens\ScouterBoxes2.designer.cs">
-      <DependentUpon>ScouterBoxes2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dynamic\Screens\ScouterBoxes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,9 +141,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dynamic\Screens\FunctionsForm.resx">
       <DependentUpon>FunctionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dynamic\Screens\ScouterBoxes2.resx">
-      <DependentUpon>ScouterBoxes2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dynamic\Screens\ScouterBoxes.resx">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>

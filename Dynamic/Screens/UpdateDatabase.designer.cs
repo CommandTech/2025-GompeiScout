@@ -86,20 +86,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.updatePreviewsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.updatePreviewsTableAdapter = new ScoutingCodeRedo.scoutingdbDataSetTableAdapters.UpdatePreviewsTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leaveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driveStaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.climbTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.defenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avoidanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strategyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scouterNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scouterErrorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboAlgaeAcqLoc = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -121,6 +107,44 @@ namespace ScoutingCodeRedo.Dynamic
             this.txtDefense = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recordTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriveSta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Defense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DefenseValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avoidance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScouterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScouterError = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Match_event = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Strategy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DZTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Del_Near_Far = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcqAlgae_Near_Far = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcqCoral_Near_Far = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Starting_Loc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Leave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcqCoralS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcqCoralF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcqAlgaeR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcqAlgaeF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelCoralL1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelCoralL2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelCoralL3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelCoralL4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelCoralF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelAlgaeP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelAlgaeN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelAlgaeF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClimbT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CageAttept = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectedCage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PointScored = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -876,14 +900,38 @@ namespace ScoutingCodeRedo.Dynamic
             this.timeDataGridViewTextBoxColumn,
             this.recordTypeDataGridViewTextBoxColumn,
             this.modeDataGridViewTextBoxColumn,
-            this.leaveDataGridViewTextBoxColumn,
-            this.driveStaDataGridViewTextBoxColumn,
-            this.climbTDataGridViewTextBoxColumn,
-            this.defenseDataGridViewTextBoxColumn,
-            this.avoidanceDataGridViewTextBoxColumn,
-            this.strategyDataGridViewTextBoxColumn,
-            this.scouterNameDataGridViewTextBoxColumn,
-            this.scouterErrorDataGridViewTextBoxColumn});
+            this.DriveSta,
+            this.Defense,
+            this.DefenseValue,
+            this.Avoidance,
+            this.ScouterName,
+            this.ScouterError,
+            this.Match_event,
+            this.Strategy,
+            this.Coop,
+            this.DZTime,
+            this.Del_Near_Far,
+            this.AcqAlgae_Near_Far,
+            this.AcqCoral_Near_Far,
+            this.Starting_Loc,
+            this.Leave,
+            this.AcqCoralS,
+            this.AcqCoralF,
+            this.AcqAlgaeR,
+            this.AcqAlgaeF,
+            this.DelCoralL1,
+            this.DelCoralL2,
+            this.DelCoralL3,
+            this.DelCoralL4,
+            this.DelCoralF,
+            this.DelAlgaeP,
+            this.DelAlgaeN,
+            this.DelAlgaeF,
+            this.ClimbT,
+            this.EndState,
+            this.CageAttept,
+            this.SelectedCage,
+            this.PointScored});
             this.dataGridView1.DataSource = this.updatePreviewsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(11, 6);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -892,119 +940,6 @@ namespace ScoutingCodeRedo.Dynamic
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1125, 220);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // teamDataGridViewTextBoxColumn
-            // 
-            this.teamDataGridViewTextBoxColumn.DataPropertyName = "Team";
-            this.teamDataGridViewTextBoxColumn.HeaderText = "Team";
-            this.teamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
-            this.teamDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // matchDataGridViewTextBoxColumn
-            // 
-            this.matchDataGridViewTextBoxColumn.DataPropertyName = "Match";
-            this.matchDataGridViewTextBoxColumn.HeaderText = "Match";
-            this.matchDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.matchDataGridViewTextBoxColumn.Name = "matchDataGridViewTextBoxColumn";
-            this.matchDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
-            this.timeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
-            this.timeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // recordTypeDataGridViewTextBoxColumn
-            // 
-            this.recordTypeDataGridViewTextBoxColumn.DataPropertyName = "RecordType";
-            this.recordTypeDataGridViewTextBoxColumn.HeaderText = "RecordType";
-            this.recordTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.recordTypeDataGridViewTextBoxColumn.Name = "recordTypeDataGridViewTextBoxColumn";
-            this.recordTypeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // modeDataGridViewTextBoxColumn
-            // 
-            this.modeDataGridViewTextBoxColumn.DataPropertyName = "Mode";
-            this.modeDataGridViewTextBoxColumn.HeaderText = "Mode";
-            this.modeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.modeDataGridViewTextBoxColumn.Name = "modeDataGridViewTextBoxColumn";
-            this.modeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // leaveDataGridViewTextBoxColumn
-            // 
-            this.leaveDataGridViewTextBoxColumn.DataPropertyName = "Leave";
-            this.leaveDataGridViewTextBoxColumn.HeaderText = "Leave";
-            this.leaveDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.leaveDataGridViewTextBoxColumn.Name = "leaveDataGridViewTextBoxColumn";
-            this.leaveDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // driveStaDataGridViewTextBoxColumn
-            // 
-            this.driveStaDataGridViewTextBoxColumn.DataPropertyName = "DriveSta";
-            this.driveStaDataGridViewTextBoxColumn.HeaderText = "DriveSta";
-            this.driveStaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.driveStaDataGridViewTextBoxColumn.Name = "driveStaDataGridViewTextBoxColumn";
-            this.driveStaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // climbTDataGridViewTextBoxColumn
-            // 
-            this.climbTDataGridViewTextBoxColumn.DataPropertyName = "ClimbT";
-            this.climbTDataGridViewTextBoxColumn.HeaderText = "ClimbT";
-            this.climbTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.climbTDataGridViewTextBoxColumn.Name = "climbTDataGridViewTextBoxColumn";
-            this.climbTDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // defenseDataGridViewTextBoxColumn
-            // 
-            this.defenseDataGridViewTextBoxColumn.DataPropertyName = "Defense";
-            this.defenseDataGridViewTextBoxColumn.HeaderText = "Defense";
-            this.defenseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.defenseDataGridViewTextBoxColumn.Name = "defenseDataGridViewTextBoxColumn";
-            this.defenseDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // avoidanceDataGridViewTextBoxColumn
-            // 
-            this.avoidanceDataGridViewTextBoxColumn.DataPropertyName = "Avoidance";
-            this.avoidanceDataGridViewTextBoxColumn.HeaderText = "Avoidance";
-            this.avoidanceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.avoidanceDataGridViewTextBoxColumn.Name = "avoidanceDataGridViewTextBoxColumn";
-            this.avoidanceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // strategyDataGridViewTextBoxColumn
-            // 
-            this.strategyDataGridViewTextBoxColumn.DataPropertyName = "Strategy";
-            this.strategyDataGridViewTextBoxColumn.HeaderText = "Strategy";
-            this.strategyDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.strategyDataGridViewTextBoxColumn.Name = "strategyDataGridViewTextBoxColumn";
-            this.strategyDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // scouterNameDataGridViewTextBoxColumn
-            // 
-            this.scouterNameDataGridViewTextBoxColumn.DataPropertyName = "ScouterName";
-            this.scouterNameDataGridViewTextBoxColumn.HeaderText = "ScouterName";
-            this.scouterNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.scouterNameDataGridViewTextBoxColumn.Name = "scouterNameDataGridViewTextBoxColumn";
-            this.scouterNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // scouterErrorDataGridViewTextBoxColumn
-            // 
-            this.scouterErrorDataGridViewTextBoxColumn.DataPropertyName = "ScouterError";
-            this.scouterErrorDataGridViewTextBoxColumn.HeaderText = "ScouterError";
-            this.scouterErrorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.scouterErrorDataGridViewTextBoxColumn.Name = "scouterErrorDataGridViewTextBoxColumn";
-            this.scouterErrorDataGridViewTextBoxColumn.Width = 125;
             // 
             // panel1
             // 
@@ -1275,6 +1210,311 @@ namespace ScoutingCodeRedo.Dynamic
             this.textBox1.TabIndex = 47;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teamDataGridViewTextBoxColumn
+            // 
+            this.teamDataGridViewTextBoxColumn.DataPropertyName = "Team";
+            this.teamDataGridViewTextBoxColumn.HeaderText = "Team";
+            this.teamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
+            this.teamDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matchDataGridViewTextBoxColumn
+            // 
+            this.matchDataGridViewTextBoxColumn.DataPropertyName = "Match";
+            this.matchDataGridViewTextBoxColumn.HeaderText = "Match";
+            this.matchDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.matchDataGridViewTextBoxColumn.Name = "matchDataGridViewTextBoxColumn";
+            this.matchDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // timeDataGridViewTextBoxColumn
+            // 
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // recordTypeDataGridViewTextBoxColumn
+            // 
+            this.recordTypeDataGridViewTextBoxColumn.DataPropertyName = "RecordType";
+            this.recordTypeDataGridViewTextBoxColumn.HeaderText = "RecordType";
+            this.recordTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.recordTypeDataGridViewTextBoxColumn.Name = "recordTypeDataGridViewTextBoxColumn";
+            this.recordTypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modeDataGridViewTextBoxColumn
+            // 
+            this.modeDataGridViewTextBoxColumn.DataPropertyName = "Mode";
+            this.modeDataGridViewTextBoxColumn.HeaderText = "Mode";
+            this.modeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modeDataGridViewTextBoxColumn.Name = "modeDataGridViewTextBoxColumn";
+            this.modeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // DriveSta
+            // 
+            this.DriveSta.DataPropertyName = "DriveSta";
+            this.DriveSta.HeaderText = "DriveSta";
+            this.DriveSta.MinimumWidth = 6;
+            this.DriveSta.Name = "DriveSta";
+            this.DriveSta.Width = 125;
+            // 
+            // Defense
+            // 
+            this.Defense.DataPropertyName = "Defense";
+            this.Defense.HeaderText = "Defense";
+            this.Defense.MinimumWidth = 6;
+            this.Defense.Name = "Defense";
+            this.Defense.Width = 125;
+            // 
+            // DefenseValue
+            // 
+            this.DefenseValue.DataPropertyName = "DefenseValue";
+            this.DefenseValue.HeaderText = "DefenseValue";
+            this.DefenseValue.MinimumWidth = 6;
+            this.DefenseValue.Name = "DefenseValue";
+            this.DefenseValue.Width = 125;
+            // 
+            // Avoidance
+            // 
+            this.Avoidance.DataPropertyName = "Avoidance";
+            this.Avoidance.HeaderText = "Avoidance";
+            this.Avoidance.MinimumWidth = 6;
+            this.Avoidance.Name = "Avoidance";
+            this.Avoidance.Width = 125;
+            // 
+            // ScouterName
+            // 
+            this.ScouterName.DataPropertyName = "ScouterName";
+            this.ScouterName.HeaderText = "ScouterName";
+            this.ScouterName.MinimumWidth = 6;
+            this.ScouterName.Name = "ScouterName";
+            this.ScouterName.Width = 125;
+            // 
+            // ScouterError
+            // 
+            this.ScouterError.DataPropertyName = "ScouterError";
+            this.ScouterError.HeaderText = "ScouterError";
+            this.ScouterError.MinimumWidth = 6;
+            this.ScouterError.Name = "ScouterError";
+            this.ScouterError.Width = 125;
+            // 
+            // Match_event
+            // 
+            this.Match_event.DataPropertyName = "Match_event";
+            this.Match_event.HeaderText = "Match_event";
+            this.Match_event.MinimumWidth = 6;
+            this.Match_event.Name = "Match_event";
+            this.Match_event.Width = 125;
+            // 
+            // Strategy
+            // 
+            this.Strategy.DataPropertyName = "Strategy";
+            this.Strategy.HeaderText = "Strategy";
+            this.Strategy.MinimumWidth = 6;
+            this.Strategy.Name = "Strategy";
+            this.Strategy.Width = 125;
+            // 
+            // Coop
+            // 
+            this.Coop.DataPropertyName = "Coop";
+            this.Coop.HeaderText = "Coop";
+            this.Coop.MinimumWidth = 6;
+            this.Coop.Name = "Coop";
+            this.Coop.Width = 125;
+            // 
+            // DZTime
+            // 
+            this.DZTime.DataPropertyName = "DZTime";
+            this.DZTime.HeaderText = "DZTime";
+            this.DZTime.MinimumWidth = 6;
+            this.DZTime.Name = "DZTime";
+            this.DZTime.Width = 125;
+            // 
+            // Del_Near_Far
+            // 
+            this.Del_Near_Far.DataPropertyName = "Del_Near_Far";
+            this.Del_Near_Far.HeaderText = "Del_Near_Far";
+            this.Del_Near_Far.MinimumWidth = 6;
+            this.Del_Near_Far.Name = "Del_Near_Far";
+            this.Del_Near_Far.Width = 125;
+            // 
+            // AcqAlgae_Near_Far
+            // 
+            this.AcqAlgae_Near_Far.DataPropertyName = "AcqAlgae_Near_Far";
+            this.AcqAlgae_Near_Far.HeaderText = "AcqAlgae_Near_Far";
+            this.AcqAlgae_Near_Far.MinimumWidth = 6;
+            this.AcqAlgae_Near_Far.Name = "AcqAlgae_Near_Far";
+            this.AcqAlgae_Near_Far.Width = 125;
+            // 
+            // AcqCoral_Near_Far
+            // 
+            this.AcqCoral_Near_Far.DataPropertyName = "AcqCoral_Near_Far";
+            this.AcqCoral_Near_Far.HeaderText = "AcqCoral_Near_Far";
+            this.AcqCoral_Near_Far.MinimumWidth = 6;
+            this.AcqCoral_Near_Far.Name = "AcqCoral_Near_Far";
+            this.AcqCoral_Near_Far.Width = 125;
+            // 
+            // Starting_Loc
+            // 
+            this.Starting_Loc.DataPropertyName = "Starting_Loc";
+            this.Starting_Loc.HeaderText = "Starting_Loc";
+            this.Starting_Loc.MinimumWidth = 6;
+            this.Starting_Loc.Name = "Starting_Loc";
+            this.Starting_Loc.Width = 125;
+            // 
+            // Leave
+            // 
+            this.Leave.DataPropertyName = "Leave";
+            this.Leave.HeaderText = "Leave";
+            this.Leave.MinimumWidth = 6;
+            this.Leave.Name = "Leave";
+            this.Leave.Width = 125;
+            // 
+            // AcqCoralS
+            // 
+            this.AcqCoralS.DataPropertyName = "AcqCoralS";
+            this.AcqCoralS.HeaderText = "AcqCoralS";
+            this.AcqCoralS.MinimumWidth = 6;
+            this.AcqCoralS.Name = "AcqCoralS";
+            this.AcqCoralS.Width = 125;
+            // 
+            // AcqCoralF
+            // 
+            this.AcqCoralF.DataPropertyName = "AcqCoralF";
+            this.AcqCoralF.HeaderText = "AcqCoralF";
+            this.AcqCoralF.MinimumWidth = 6;
+            this.AcqCoralF.Name = "AcqCoralF";
+            this.AcqCoralF.Width = 125;
+            // 
+            // AcqAlgaeR
+            // 
+            this.AcqAlgaeR.DataPropertyName = "AcqAlgaeR";
+            this.AcqAlgaeR.HeaderText = "AcqAlgaeR";
+            this.AcqAlgaeR.MinimumWidth = 6;
+            this.AcqAlgaeR.Name = "AcqAlgaeR";
+            this.AcqAlgaeR.Width = 125;
+            // 
+            // AcqAlgaeF
+            // 
+            this.AcqAlgaeF.DataPropertyName = "AcqAlgaeF";
+            this.AcqAlgaeF.HeaderText = "AcqAlgaeF";
+            this.AcqAlgaeF.MinimumWidth = 6;
+            this.AcqAlgaeF.Name = "AcqAlgaeF";
+            this.AcqAlgaeF.Width = 125;
+            // 
+            // DelCoralL1
+            // 
+            this.DelCoralL1.DataPropertyName = "DelCoralL1";
+            this.DelCoralL1.HeaderText = "DelCoralL1";
+            this.DelCoralL1.MinimumWidth = 6;
+            this.DelCoralL1.Name = "DelCoralL1";
+            this.DelCoralL1.Width = 125;
+            // 
+            // DelCoralL2
+            // 
+            this.DelCoralL2.DataPropertyName = "DelCoralL2";
+            this.DelCoralL2.HeaderText = "DelCoralL2";
+            this.DelCoralL2.MinimumWidth = 6;
+            this.DelCoralL2.Name = "DelCoralL2";
+            this.DelCoralL2.Width = 125;
+            // 
+            // DelCoralL3
+            // 
+            this.DelCoralL3.DataPropertyName = "DelCoralL3";
+            this.DelCoralL3.HeaderText = "DelCoralL3";
+            this.DelCoralL3.MinimumWidth = 6;
+            this.DelCoralL3.Name = "DelCoralL3";
+            this.DelCoralL3.Width = 125;
+            // 
+            // DelCoralL4
+            // 
+            this.DelCoralL4.DataPropertyName = "DelCoralL4";
+            this.DelCoralL4.HeaderText = "DelCoralL4";
+            this.DelCoralL4.MinimumWidth = 6;
+            this.DelCoralL4.Name = "DelCoralL4";
+            this.DelCoralL4.Width = 125;
+            // 
+            // DelCoralF
+            // 
+            this.DelCoralF.DataPropertyName = "DelCoralF";
+            this.DelCoralF.HeaderText = "DelCoralF";
+            this.DelCoralF.MinimumWidth = 6;
+            this.DelCoralF.Name = "DelCoralF";
+            this.DelCoralF.Width = 125;
+            // 
+            // DelAlgaeP
+            // 
+            this.DelAlgaeP.DataPropertyName = "DelAlgaeP";
+            this.DelAlgaeP.HeaderText = "DelAlgaeP";
+            this.DelAlgaeP.MinimumWidth = 6;
+            this.DelAlgaeP.Name = "DelAlgaeP";
+            this.DelAlgaeP.Width = 125;
+            // 
+            // DelAlgaeN
+            // 
+            this.DelAlgaeN.DataPropertyName = "DelAlgaeN";
+            this.DelAlgaeN.HeaderText = "DelAlgaeN";
+            this.DelAlgaeN.MinimumWidth = 6;
+            this.DelAlgaeN.Name = "DelAlgaeN";
+            this.DelAlgaeN.Width = 125;
+            // 
+            // DelAlgaeF
+            // 
+            this.DelAlgaeF.DataPropertyName = "DelAlgaeF";
+            this.DelAlgaeF.HeaderText = "DelAlgaeF";
+            this.DelAlgaeF.MinimumWidth = 6;
+            this.DelAlgaeF.Name = "DelAlgaeF";
+            this.DelAlgaeF.Width = 125;
+            // 
+            // ClimbT
+            // 
+            this.ClimbT.DataPropertyName = "ClimbT";
+            this.ClimbT.HeaderText = "ClimbT";
+            this.ClimbT.MinimumWidth = 6;
+            this.ClimbT.Name = "ClimbT";
+            this.ClimbT.Width = 125;
+            // 
+            // EndState
+            // 
+            this.EndState.DataPropertyName = "EndState";
+            this.EndState.HeaderText = "EndState";
+            this.EndState.MinimumWidth = 6;
+            this.EndState.Name = "EndState";
+            this.EndState.Width = 125;
+            // 
+            // CageAttept
+            // 
+            this.CageAttept.DataPropertyName = "CageAttept";
+            this.CageAttept.HeaderText = "CageAttept";
+            this.CageAttept.MinimumWidth = 6;
+            this.CageAttept.Name = "CageAttept";
+            this.CageAttept.Width = 125;
+            // 
+            // SelectedCage
+            // 
+            this.SelectedCage.DataPropertyName = "SelectedCage";
+            this.SelectedCage.HeaderText = "SelectedCage";
+            this.SelectedCage.MinimumWidth = 6;
+            this.SelectedCage.Name = "SelectedCage";
+            this.SelectedCage.Width = 125;
+            // 
+            // PointScored
+            // 
+            this.PointScored.DataPropertyName = "PointScored";
+            this.PointScored.HeaderText = "PointScored";
+            this.PointScored.MinimumWidth = 6;
+            this.PointScored.Name = "PointScored";
+            this.PointScored.Width = 125;
+            // 
             // UpdateDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1332,13 +1572,6 @@ namespace ScoutingCodeRedo.Dynamic
         private scoutingdbDataSet scoutingDBDataSet;
         private System.Windows.Forms.BindingSource updatePreviewsBindingSource;
         private scoutingdbDataSetTableAdapters.UpdatePreviewsTableAdapter updatePreviewsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matchDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recordTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn leaveDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn acqLocDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn acqCenterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn acqDisDataGridViewTextBoxColumn;
@@ -1346,7 +1579,6 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.DataGridViewTextBoxColumn delOrigDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn delDestDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn delMissDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn driveStaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn robotStaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hPAmpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stageStatDataGridViewTextBoxColumn;
@@ -1354,16 +1586,10 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.DataGridViewTextBoxColumn stageLocDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn harmonyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn spotlitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn climbTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oZTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nZTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aZTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn defenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn avoidanceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn strategyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn micsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scouterNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scouterErrorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matcheventDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1431,5 +1657,43 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.TextBox txtDefense;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matchDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recordTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriveSta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Defense;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DefenseValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Avoidance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScouterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScouterError;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Match_event;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Strategy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DZTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Del_Near_Far;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcqAlgae_Near_Far;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcqCoral_Near_Far;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Starting_Loc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Leave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcqCoralS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcqCoralF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcqAlgaeR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcqAlgaeF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelCoralL1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelCoralL2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelCoralL3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelCoralL4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelCoralF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelAlgaeP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelAlgaeN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelAlgaeF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClimbT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CageAttept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SelectedCage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PointScored;
     }
 }

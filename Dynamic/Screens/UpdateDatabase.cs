@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScoutingCodeRedo.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -81,8 +82,46 @@ namespace ScoutingCodeRedo.Dynamic
                     var result = db.UpdatePreviewSet.FirstOrDefault(b => b.Id == IDNumber);
                     if (result != null)
                     {
-                        //comboCoralAcqLoc.Text = result.ToString();
-                        //comboAlgaeAcqLoc.Text = result.AcqCenter.ToString();
+                        //if (prevResult != null)
+                        //{
+                        //    if (result.AcqCoralS - prevResult.AcqCoralS == 1)
+                        //    {
+                        //        comboCoralAcqLoc.Text = "Station";
+                        //    }
+                        //    else if (result.AcqCoralF - prevResult.AcqCoralF == 1)
+                        //    {
+                        //        comboCoralAcqLoc.Text = "Floor";
+                        //    }
+
+                        //    if (result.AcqAlgaeR - prevResult.AcqAlgaeR == 1)
+                        //    {
+                        //        comboAlgaeAcqLoc.Text = "Reef";
+                        //    }
+                        //    else if (result.AcqAlgaeF - prevResult.AcqAlgaeF == 1)
+                        //    {
+                        //        comboAlgaeAcqLoc.Text = "Floor";
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    if (result.AcqCoralS == 1)
+                        //    {
+                        //        comboCoralAcqLoc.Text = "Station";
+                        //    }
+                        //    else if (result.AcqCoralF == 1)
+                        //    {
+                        //        comboCoralAcqLoc.Text = "Floor";
+                        //    }
+
+                        //    if (result.AcqAlgaeR == 1)
+                        //    {
+                        //        comboAlgaeAcqLoc.Text = "Reef";
+                        //    }
+                        //    else if (result.AcqAlgaeF == 1)
+                        //    {
+                        //        comboAlgaeAcqLoc.Text = "Floor";
+                        //    }
+                        //}
                         //txtAcqDis.Text = result.AcqDis.ToString();
                         //txtAcqDrp.Text = result.AcqDrp.ToString();
 
