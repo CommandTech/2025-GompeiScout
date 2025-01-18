@@ -109,6 +109,8 @@ namespace ScoutingCodeRedo.Static
                 }
                 iniFile.Write("MatchData", "scouterNames", scouterNames);
                 iniFile.Write("MatchData", "scouterLocations", scouterLocations);
+
+                iniFile = null;
             }
             catch (Exception ex)
             {

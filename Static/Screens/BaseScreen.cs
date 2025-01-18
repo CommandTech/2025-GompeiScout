@@ -50,6 +50,7 @@ namespace ScoutingCodeRedo.Static
                     LoadData();
                 }
             }
+            iniFile = null;
 
             //Grabs all connected joysticks
             UpdateJoysticks();
@@ -212,6 +213,8 @@ namespace ScoutingCodeRedo.Static
                         cages += robot.Selected_Cage;
                     }
                     iniFile.Write("MatchData", "cages", cages);
+
+                    iniFile = null;
                 }
                 catch (Exception ex)
                 {
@@ -246,6 +249,8 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.Robots[i].ScouterBox = int.Parse(scouterLocations[i]);
                     BackgroundCode.Robots[i].Selected_Cage = cages[i];
                 }
+
+                iniFile = null;
 
 
 
