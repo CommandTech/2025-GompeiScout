@@ -498,7 +498,7 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         //Cycle Avoidance Rating
                         robot.Avo_Rat++;
-                        if (robot.Avo_Rat > 5)
+                        if (robot.Avo_Rat > 3)
                         {
                             robot.Avo_Rat = 0;
                         }

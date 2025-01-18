@@ -16,6 +16,14 @@ namespace ScoutingCodeRedo.Dynamic
             { 3, "Chasing" },
             { 9, "Scouter Error" }
         };
+        readonly Dictionary<int, string> AvoidanceEquality = new Dictionary<int, string>
+        {
+            { 0, "None" },
+            { 1, "1 Station" },
+            { 2, "2 Stations" },
+            { 3, "Chasing" },
+            { 9, "Scouter Error" }
+        };
         public ScouterBoxes()
         {
             InitializeComponent();
@@ -483,7 +491,7 @@ namespace ScoutingCodeRedo.Dynamic
             //Avoidance Rating
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Text = "Avoid:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Avo_Rat.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Text = AvoidanceEquality[BackgroundCode.Robots[Box_Number].Avo_Rat];
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Avo_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
