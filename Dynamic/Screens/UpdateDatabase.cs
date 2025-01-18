@@ -11,8 +11,6 @@ namespace ScoutingCodeRedo.Dynamic
         public UpdateDatabase(List<string> teamlist, List<int> MatchNumbers)
         {
             InitializeComponent();
-            this.comboStageAtt.Items.AddRange(Enumerable.Range(-1, 3).Select(i => i.ToString()).ToArray());
-            this.comboAcqCenter.Items.AddRange(Enumerable.Range(1, 5).Select(i => i.ToString()).ToArray());
             this.comboTeamNumber.DataSource = teamlist;
             this.comboMatchNumber.DataSource = MatchNumbers;
         }
@@ -83,8 +81,8 @@ namespace ScoutingCodeRedo.Dynamic
                     var result = db.UpdatePreviewSet.FirstOrDefault(b => b.Id == IDNumber);
                     if (result != null)
                     {
-                        //comboAcqLoc.Text = result.AcqLoc.ToString();
-                        //comboAcqCenter.Text = result.AcqCenter.ToString();
+                        //comboCoralAcqLoc.Text = result.ToString();
+                        //comboAlgaeAcqLoc.Text = result.AcqCenter.ToString();
                         //txtAcqDis.Text = result.AcqDis.ToString();
                         //txtAcqDrp.Text = result.AcqDrp.ToString();
 

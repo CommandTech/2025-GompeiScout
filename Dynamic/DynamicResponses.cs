@@ -108,7 +108,7 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.lastAlgaeLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " ")
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
@@ -117,8 +117,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag)
                         {
-                            robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
+                            if (robot.lastAlgaeAcqLoc != " ")
+                            {
+                                robot.lastAlgaeLoc = "Net";
+                                robot.TransactionCheck = true;
+                            }
                         }
                         else
                         {
@@ -138,8 +141,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag)
                         {
-                            robot.lastAlgaeLoc = "Processor";
-                            robot.TransactionCheck = true;
+                            if (robot.lastAlgaeAcqLoc != " ")
+                            {
+                                robot.lastAlgaeLoc = "Processor";
+                                robot.TransactionCheck = true;
+                            }
                         }
                         else
                         {
@@ -235,7 +241,7 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.lastAlgaeLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " ")
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
@@ -244,8 +250,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag)
                         {
-                            robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
+                            if (robot.lastAlgaeAcqLoc != " ")
+                            {
+                                robot.lastAlgaeLoc = "Net";
+                                robot.TransactionCheck = true;
+                            }
                         }
                         else
                         {
@@ -264,8 +273,11 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag)
                         {
-                            robot.lastAlgaeLoc = "Processor";
-                            robot.TransactionCheck = true;
+                            if (robot.lastAlgaeAcqLoc != " ")
+                            {
+                                robot.lastAlgaeLoc = "Processor";
+                                robot.TransactionCheck = true;
+                            }
                         }
                         else
                         {
@@ -358,7 +370,7 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.lastAlgaeLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " ")
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
@@ -367,16 +379,22 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag)
                         {
-                            robot.lastAlgaeLoc = "Net";
-                            robot.TransactionCheck = true;
+                            if (robot.lastAlgaeAcqLoc != " ")
+                            {
+                                robot.lastAlgaeLoc = "Net";
+                                robot.TransactionCheck = true;
+                            }
                         }
                     }
                     if (gamepad.DpadDown_Press)
                     {
                         if (robot.Flag)
                         {
-                            robot.lastAlgaeLoc = "Processor";
-                            robot.TransactionCheck = true;
+                            if (robot.lastAlgaeAcqLoc != " ")
+                            {
+                                robot.lastAlgaeLoc = "Processor";
+                                robot.TransactionCheck = true;
+                            }
                         }
                     }
                     if (gamepad.YButton_Press)
@@ -398,7 +416,7 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.lastAlgaeLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " ")
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
@@ -465,7 +483,7 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.TransactionCheck = true;
                     }
                     //Deliver Coral to the Floor
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " ")
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
@@ -645,19 +663,19 @@ namespace ScoutingCodeRedo.Dynamic
 
         public static void TransactToDatabase(RobotState controller, string recordType)
         {
-            if (controller.lastCoralLoc == "Station")
+            if (controller.lastCoralAcqLoc == "Station" && controller.lastTransCoralLoc != "Station")
             {
                 controller.AcqCoralS++;
             }
-            else if (controller.lastCoralLoc == "Floor")
+            else if (controller.lastCoralAcqLoc == "Floor" && controller.lastTransCoralLoc != "Floor")
             {
                 controller.AcqCoralF++;
             }
-            if (controller.lastAlgaeLoc == "Reef")
+            if (controller.lastAlgaeAcqLoc == "Reef" && controller.lastTransAlgaeLoc != "Reef")
             {
                 controller.AcqAlgaeR++;
             }
-            else if (controller.lastAlgaeLoc == "Floor")
+            else if (controller.lastAlgaeAcqLoc == "Floor" && controller.lastTransAlgaeLoc != "Floor")
             {
                 controller.AcqAlgaeF++;
             }
@@ -756,16 +774,28 @@ namespace ScoutingCodeRedo.Dynamic
                         if (Settings.Default.redRight)
                         {
                             BackgroundCode.activity_record.Starting_Loc = controller.GetStart().ToString();
-                            BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.Del_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
                         else
                         {
                             BackgroundCode.activity_record.Starting_Loc = controller.GetStartField().ToString();
-                            BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.Del_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
 
 
@@ -866,15 +896,31 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Starting_Loc = "-";
                         if (Settings.Default.redRight)
                         {
-                            BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar ? "Far" : "Near";
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
                         else
                         {
-                            BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                            BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar ? "Far" : "Near";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
 
 
@@ -941,6 +987,9 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
                         BackgroundCode.seasonframework.SaveChanges();
 
+                        controller.lastTransAlgaeLoc = controller.lastAlgaeAcqLoc;
+                        controller.lastTransCoralLoc = controller.lastCoralAcqLoc;
+
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
                             controller.totalCoralDeliveries++;
@@ -969,15 +1018,31 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Starting_Loc = "-";
                         if (Settings.Default.redRight)
                         {
-                            BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.Del_Near_Far = "-";
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
                         else
                         {
-                            BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                            BackgroundCode.activity_record.Del_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
 
 
@@ -1088,7 +1153,9 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Match_event = controller.Match_event.ToString();
                         BackgroundCode.activity_record.Leave = "-";
                         BackgroundCode.activity_record.Starting_Loc = "-";
-                        BackgroundCode.activity_record.Del_Near_Far = false;
+                        BackgroundCode.activity_record.Del_Near_Far = "-";
+                        BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                        BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
 
 
                         if (BackgroundCode.Robots[controller.ScouterBox] == BackgroundCode.Robots[0])
@@ -1171,15 +1238,31 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.activity_record.Starting_Loc = "-";
                         if (Settings.Default.redRight)
                         {
-                            BackgroundCode.activity_record.Del_Near_Far = controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                            BackgroundCode.activity_record.Del_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
                         else
                         {
-                            BackgroundCode.activity_record.Del_Near_Far = !controller.DelNearFar;
-                            BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar;
-                            BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar;
+                            BackgroundCode.activity_record.AcqAlgae_Near_Far = "-";
+                            BackgroundCode.activity_record.Del_Near_Far = "-";
+                            if (controller.lastAlgaeLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar ? "Far" : "Near";
+                            }
+                            BackgroundCode.activity_record.AcqCoral_Near_Far = "-";
+                            if (controller.lastCoralLoc != " ")
+                            {
+                                BackgroundCode.activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar ? "Far" : "Near";
+                            }
                         }
 
 

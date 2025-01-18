@@ -72,6 +72,8 @@ namespace ScoutingCodeRedo.Dynamic
         public string prevlastCoralLoc = " ";
         public string lastAlgaeLoc = " ";
         public string lastCoralLoc = " ";
+        public string lastTransAlgaeLoc = " ";
+        public string lastTransCoralLoc = " ";
 
         public string prevlastAlgaeAcqLoc = " ";
         public string prevlastCoralAcqLoc = " ";

@@ -45,9 +45,9 @@ namespace ScoutingCodeRedo.Dynamic
         public string Strategy { get; set; }
         public int Coop { get; set; }
         public double DZTime { get; set; }
-        public bool Del_Near_Far { get; set; }
-        public bool AcqAlgae_Near_Far { get; set; }
-        public bool AcqCoral_Near_Far { get; set; }
+        public string Del_Near_Far { get; set; }
+        public string AcqAlgae_Near_Far { get; set; }
+        public string AcqCoral_Near_Far { get; set; }
 
         public string Starting_Loc { get; set; }
         public string Leave { get; set; }
@@ -98,7 +98,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public string Strategy { get; set; }
         public int Coop { get; set; }
-        public TimeSpan DZTime { get; set; }
+        public double DZTime { get; set; }
         public bool Del_Near_Far { get; set; }
         public bool AcqAlgae_Near_Far { get; set; }
         public bool AcqCoral_Near_Far { get; set; }
@@ -121,7 +121,7 @@ namespace ScoutingCodeRedo.Dynamic
         public int DelAlgaeN { get; set; }
         public int DelAlgaeF { get; set; }
 
-        public TimeSpan ClimbT { get; set; }
+        public double ClimbT { get; set; }
         public string EndState { get; set; }
         public string CageAttept { get; set; }
         public string SelectedCage { get; set; }

@@ -41,6 +41,9 @@ namespace ScoutingCodeRedo.Static
             //timerJoysticks updates every 20 ms
             timerJoysticks.Enabled = true;
 
+            //Grabs all connected joysticks
+            UpdateJoysticks();
+
             //If there is previous data, ask if the user wants to load it
             if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
             {
@@ -50,10 +53,6 @@ namespace ScoutingCodeRedo.Static
                     LoadData();
                 }
             }
-            iniFile = null;
-
-            //Grabs all connected joysticks
-            UpdateJoysticks();
 
             //Turns off initialization
             initializing = false;
@@ -61,67 +60,48 @@ namespace ScoutingCodeRedo.Static
 
         private void JoyStickReader(object sender, EventArgs e)
         {
-            //Checks if the program is initializing
-            if (!initializing)
+            //Updates the screen with the current data
+            UpdateScreen();
+
+            //Loop through all connected gamepads
+            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
             {
-                //Updates the screen with the current data
-                UpdateScreen();
+                BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
+            }
 
-                //Loop through all connected gamepads
-                for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
+            // Loop through all Scouters/Robots
+            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
+            {
+                BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
+            }
+
+            //If the program is in practice mode
+            if (Settings.Default.practiceMode)
+            {
+                //Checks if it was just not in practice mode
+                if (!wasPractice)
                 {
-                    BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
+                    //Updates the joysticks
+                    UpdateJoysticks();
                 }
 
-                // Loop through all Scouters/Robots
-                for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
+                //Changes gamepads 1 to 5 to null
+                for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
                 {
-                    BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
-                }
+                    BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[0].TeamName;
 
-                //If the program is in practice mode
-                if (Settings.Default.practiceMode)
-                {
-                    //Checks if it was just not in practice mode
-                    if (!wasPractice)
+                    //If the scouter error increases, play the sound
+                    if (BackgroundCode.Robots[i].prevScouterError != BackgroundCode.Robots[i].ScouterError)
                     {
-                        //Updates the joysticks
-                        UpdateJoysticks();
+                        BackgroundCode.soundCue.Play();
+                        BackgroundCode.Robots[i].prevScouterError = BackgroundCode.Robots[i].ScouterError;
                     }
-
-                    //Changes gamepads 1 to 5 to null
-                    for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
-                    {
-                        BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[0].TeamName;
-
-                        //If the scouter error increases, play the sound
-                        if (BackgroundCode.Robots[i].prevScouterError != BackgroundCode.Robots[i].ScouterError)
-                        {
-                            BackgroundCode.soundCue.Play();
-                            BackgroundCode.Robots[i].prevScouterError = BackgroundCode.Robots[i].ScouterError;
-                        }
-                    }
-
-                    LoadMatch();
-
-                    //Sets that it was in practice mode
-                    wasPractice = true;
                 }
-                else
-                {
-                    //If it was just in practice mode
-                    if (wasPractice)
-                    {
-                        //Update joysticks
-                        UpdateJoysticks();
-                        LoadMatch();
-                    }
-                    //Sets that it was not in practice mode
-                    wasPractice = false;
-                    //Removes the sound player
-                    BackgroundCode.soundCue.Dispose();
 
-                }
+                LoadMatch();
+
+                //Sets that it was in practice mode
+                wasPractice = true;
             }
         }
 
@@ -214,7 +194,6 @@ namespace ScoutingCodeRedo.Static
                     }
                     iniFile.Write("MatchData", "cages", cages);
 
-                    iniFile = null;
                 }
                 catch (Exception ex)
                 {
@@ -248,9 +227,8 @@ namespace ScoutingCodeRedo.Static
                     BackgroundCode.Robots[i]._ScouterName = (RobotState.SCOUTER_NAME)Enum.Parse(typeof(RobotState.SCOUTER_NAME), scouterNames[i]);
                     BackgroundCode.Robots[i].ScouterBox = int.Parse(scouterLocations[i]);
                     BackgroundCode.Robots[i].Selected_Cage = cages[i];
+                    BackgroundCode.cages[i] = BackgroundCode.Robots[i].Selected_Cage;
                 }
-
-                iniFile = null;
 
 
 
