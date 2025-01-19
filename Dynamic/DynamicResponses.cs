@@ -498,7 +498,7 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         //Cycle Avoidance Rating
                         robot.Avo_Rat++;
-                        if (robot.Avo_Rat > 5)
+                        if (robot.Avo_Rat > 3)
                         {
                             robot.Avo_Rat = 0;
                         }
@@ -1406,6 +1406,7 @@ namespace ScoutingCodeRedo.Dynamic
                 BackgroundCode.Robots[i].lastAlgaeAcqLoc = " ";
 
                 BackgroundCode.Robots[i].PointsScored = 0;
+                BackgroundCode.Robots[i].App_Strategy = RobotState.APP_STRAT.Select;
             }
         }
     }
