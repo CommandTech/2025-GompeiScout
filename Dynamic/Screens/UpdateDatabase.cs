@@ -278,39 +278,39 @@ namespace ScoutingCodeRedo.Dynamic
                         seasonframework.Database.ExecuteSqlCommand(query);
                     }
                     //Loop through the rest of the selected match and team until it hits the endMatch and changes all the acquires and delivers to match the changed record
-                    var result2 = db.UpdatePreviewSet.Where(b => b.Team == result.Team && b.Match == result.Match && b.Id > IDNumber && (b.RecordType == "EndMatch" || b.RecordType == "Activities" || b.RecordType == "EndAuto")).ToList();
+                    var result2 = db.ActivitySet.Where(b => b.Team == result.Team && b.Match == result.Match && b.Id > IDNumber && b.RecordType != "Match_Event").ToList();
                     foreach (var line in result2)
                     {
                         line.DelCoralL1 += L1ChangeAmount;
-                        string query = "UPDATE Activities SET DelCoralL1 = '" + line.DelCoralL1 + "' WHERE Id = '" + result.Id + "';";
+                        string query = "UPDATE Activities SET DelCoralL1 = '" + line.DelCoralL1 + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelCoralL2 += L2ChangeAmount;
-                        query = "UPDATE Activities SET DelCoralL2 = '" + line.DelCoralL2 + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelCoralL2 = '" + line.DelCoralL2 + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelCoralL3 += L3ChangeAmount;
-                        query = "UPDATE Activities SET DelCoralL3 = '" + line.DelCoralL3 + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelCoralL3 = '" + line.DelCoralL3 + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelCoralL4 += L4ChangeAmount;
-                        query = "UPDATE Activities SET DelCoralL4 = '" + line.DelCoralL4 + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelCoralL4 = '" + line.DelCoralL4 + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelCoralF += CFChangeAmount;
-                        query = "UPDATE Activities SET DelCoralF = '" + line.DelCoralF + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelCoralF = '" + line.DelCoralF + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelAlgaeP += PChangeAmount;
-                        query = "UPDATE Activities SET DelAlgaeP = '" + line.DelAlgaeP + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelAlgaeP = '" + line.DelAlgaeP + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelAlgaeN += NChangeAmount;
-                        query = "UPDATE Activities SET DelAlgaeN = '" + line.DelAlgaeN + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelAlgaeN = '" + line.DelAlgaeN + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         line.DelAlgaeF += AFChangeAmount;
-                        query = "UPDATE Activities SET DelAlgaeF = '" + line.DelAlgaeF + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET DelAlgaeF = '" + line.DelAlgaeF + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
                     }
 
