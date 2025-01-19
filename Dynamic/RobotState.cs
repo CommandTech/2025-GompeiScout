@@ -228,6 +228,11 @@ namespace ScoutingCodeRedo.Dynamic
             get { return _EndState; }
             set { _EndState = value; }
         }
+        public APP_STRAT App_Strategy
+        {
+            get { return _Strategy; }
+            set { _Strategy = value; }
+        }
 
         //2025 cycles
         public void CycleLeave(CYCLE_DIRECTION CycleDirection)

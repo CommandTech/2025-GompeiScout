@@ -1406,6 +1406,7 @@ namespace ScoutingCodeRedo.Dynamic
                 BackgroundCode.Robots[i].lastAlgaeAcqLoc = " ";
 
                 BackgroundCode.Robots[i].PointsScored = 0;
+                BackgroundCode.Robots[i].App_Strategy = RobotState.APP_STRAT.Select;
             }
         }
     }
