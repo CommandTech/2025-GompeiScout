@@ -12,8 +12,6 @@ namespace ScoutingCodeRedo.Static
 {
     public partial class BaseScreen : Form
     {
-
-        private readonly bool initializing = true;
         readonly BackgroundCode bgc;
 
         public string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -53,9 +51,6 @@ namespace ScoutingCodeRedo.Static
                     LoadData();
                 }
             }
-
-            //Turns off initialization
-            initializing = false;
         }
 
         private void JoyStickReader(object sender, EventArgs e)

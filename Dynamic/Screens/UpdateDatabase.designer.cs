@@ -1602,7 +1602,7 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.DataGridViewTextBoxColumn AcqAlgae_Near_Far;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcqCoral_Near_Far;
         private System.Windows.Forms.DataGridViewTextBoxColumn Starting_Loc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Leave;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Leave;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcqCoralS;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcqCoralF;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcqAlgaeR;
