@@ -82,48 +82,34 @@ namespace ScoutingCodeRedo.Dynamic
                     var result = db.UpdatePreviewSet.FirstOrDefault(b => b.Id == IDNumber);
                     if (result != null)
                     {
-                        //if (prevResult != null)
-                        //{
-                        //    if (result.AcqCoralS - prevResult.AcqCoralS == 1)
-                        //    {
-                        //        comboCoralAcqLoc.Text = "Station";
-                        //    }
-                        //    else if (result.AcqCoralF - prevResult.AcqCoralF == 1)
-                        //    {
-                        //        comboCoralAcqLoc.Text = "Floor";
-                        //    }
+                        comboAlgaeAcqLoc.Text = result.AcqAlgae_Near_Far.ToString();
+                        comboCoralAcqLoc.Text = result.AcqCoral_Near_Far.ToString();
 
-                        //    if (result.AcqAlgaeR - prevResult.AcqAlgaeR == 1)
-                        //    {
-                        //        comboAlgaeAcqLoc.Text = "Reef";
-                        //    }
-                        //    else if (result.AcqAlgaeF - prevResult.AcqAlgaeF == 1)
-                        //    {
-                        //        comboAlgaeAcqLoc.Text = "Floor";
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    if (result.AcqCoralS == 1)
-                        //    {
-                        //        comboCoralAcqLoc.Text = "Station";
-                        //    }
-                        //    else if (result.AcqCoralF == 1)
-                        //    {
-                        //        comboCoralAcqLoc.Text = "Floor";
-                        //    }
+                        comboCoralDelSide.Text = result.Del_Near_Far.ToString();
+                        comboAlgaeDelSide.Text = result.Del_Near_Far.ToString();
 
-                        //    if (result.AcqAlgaeR == 1)
-                        //    {
-                        //        comboAlgaeAcqLoc.Text = "Reef";
-                        //    }
-                        //    else if (result.AcqAlgaeF == 1)
-                        //    {
-                        //        comboAlgaeAcqLoc.Text = "Floor";
-                        //    }
-                        //}
-                        //txtAcqDis.Text = result.AcqDis.ToString();
-                        //txtAcqDrp.Text = result.AcqDrp.ToString();
+                        txtDelCoralF.Text = result.DelCoralF.ToString();
+                        txtDelCoralL1.Text = result.DelCoralL1.ToString();
+                        txtDelCoralL2.Text = result.DelCoralL2.ToString();
+                        txtDelCoralL3.Text = result.DelCoralL3.ToString();
+                        txtDelCoralL4.Text = result.DelCoralL4.ToString();
+
+                        txtDelAlgaeF.Text = result.DelAlgaeF.ToString();
+                        txtDelAlgaeP.Text = result.DelAlgaeP.ToString();
+                        txtDelAlgaeN.Text = result.DelAlgaeN.ToString();
+
+                        comboStrategy.Text = result.Strategy.ToString();
+                        comboEndState.Text = result.EndState.ToString();
+                        comboClimbAttempt.Text = result.CageAttept.ToString();                        
+                        txtClimbTime.Text = result.ClimbT.ToString();
+
+                        comboMode.Text = result.Mode.ToString();
+                        comboStart.Text = result.Starting_Loc.ToString();
+                        comboMatchEvent.Text = result.Match_event.ToString();
+
+                        txtDefense.Text = result.Defense.ToString();
+                        txtEffectiveness.Text = result.DefenseValue.ToString();
+                        txtAvoidance.Text = result.Avoidance.ToString();
 
                         //comboDelDest.Text = result.DelDest.ToString();
                         //comboDelOrg.Text = result.DelOrig.ToString();

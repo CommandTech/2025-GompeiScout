@@ -1220,10 +1220,6 @@ namespace ScoutingCodeRedo.Dynamic
                         BackgroundCode.seasonframework.ActivitySet.Add(BackgroundCode.activity_record);
                         BackgroundCode.seasonframework.SaveChanges();
 
-                        if (controller.Match_event == RobotState.MATCHEVENT_NAME.DropCoral)
-                        {
-                            controller.hasCoral = 0;
-                        }
                         break;
                     case "Defense":
                         BackgroundCode.activity_record.RecordType = recordType;
