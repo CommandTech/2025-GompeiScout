@@ -1,5 +1,6 @@
 ﻿using SharpDX.DirectInput;
 using System;
+using static ScoutingCodeRedo.Dynamic.RobotState;
 
 namespace ScoutingCodeRedo.Static
 {
@@ -415,5 +416,77 @@ namespace ScoutingCodeRedo.Static
                 field.SetValue(this, true);
             }
         }
+
+        public bool setAButton
+        { set { _a = value; } }
+
+        public bool setBButton
+        { set { _b = value; } }
+
+        public bool setXButton
+        { set { _x = value; } }
+
+        public bool setYButton
+        { set { _y = value; } }
+
+        public bool setR3
+        { set { _r3 = value; } }
+
+        public bool setL3
+        { set { _l3 = value; } }
+
+        public bool setRightTrigger
+        { set { _rt = value; } }
+
+        public bool setLeftTrigger
+        { set { _lt = value; } }
+
+        public bool setRightButton
+        { set { _rb = value; } }
+
+        public bool setLeftButton
+        { set { _lb = value; } }
+
+        public bool setDpadUp
+        { set { _dpadup = value; } }
+
+        public bool setDpadRight
+        { set { _dpadright = value; } }
+
+        public bool setDpadDown
+        { set { _dpaddown = value; } }
+
+        public bool setDpadLeft
+        { set { _dpadleft = value; } }
+
+        public bool setLTHUp
+        { set { _lTHUp = value; } }
+
+        public bool setLTHRight
+        { set { _lTHRight = value; } }
+
+        public bool setLTHDown
+        { set { _lTHDown = value; } }
+
+        public bool setLTHLeft
+        { set { _lTHLeft = value; } }
+
+        public bool setRTHUp
+        { set { _rTHUp = value; } }
+
+        public bool setRTHRight
+        { set { _rTHRight = value; } }
+
+        public bool setRTHDown
+        { set { _rTHDown = value; } }
+
+        public bool setRTHLeft
+        { set { _rTHLeft = value; } }
+
+        public bool setBackButton
+        { set { _backButton = value; } }
+
+        public bool setStartButton
+        { set { _startButton = value; } }
     }
 }
