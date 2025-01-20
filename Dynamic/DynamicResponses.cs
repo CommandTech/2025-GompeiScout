@@ -8,12 +8,6 @@ namespace ScoutingCodeRedo.Dynamic
 {
     class DynamicResponses
     {
-        /* MR STEVE CHANGE:
-         * Floor delivers can be removed from a dedicated button.
-         * Floor can be right bumper press with nothing else then transact for algae floor (!gamepad.RightButton_Press && robot.lastAlgaeLoc == " ")
-         * Floor can transact for coral floor (gamepad.RightTriiger_Press && robot.lastCoralLoc == " ")
-         */
-
         public void ReadStick(GamePad[] gpArray, int controllerNumber)
         {
             GamePad gamepad = gpArray[controllerNumber];
@@ -22,6 +16,17 @@ namespace ScoutingCodeRedo.Dynamic
 
             if (robot.ClimbT_StopWatch == null) robot.ClimbT_StopWatch = new Stopwatch();
             if (robot.DefTime_StopWatch == null) robot.DefTime_StopWatch = new Stopwatch();
+
+            if (Settings.Default.generateFakeData)
+            {
+                Random random = new Random();
+
+                if (random.Next(100) < 50)
+                {
+                    FakeDataCreator fakeData = new FakeDataCreator();
+                    fakeData.GenerateFakeData();
+                }
+            }
 
             if (!robot.NoSho && robot.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
             {

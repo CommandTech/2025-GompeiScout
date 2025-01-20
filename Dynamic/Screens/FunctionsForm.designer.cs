@@ -13,6 +13,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdateDatabase = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
+            this.btnFakeData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -74,7 +75,7 @@
             this.cbxPractice.Location = new System.Drawing.Point(261, 99);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
-            this.cbxPractice.Size = new System.Drawing.Size(116, 20);
+            this.cbxPractice.Size = new System.Drawing.Size(136, 24);
             this.cbxPractice.TabIndex = 356;
             this.cbxPractice.Text = "Practice Mode";
             this.cbxPractice.UseVisualStyleBackColor = false;
@@ -119,10 +120,24 @@
             this.btnCages.UseVisualStyleBackColor = true;
             this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
             // 
+            // btnFakeData
+            // 
+            this.btnFakeData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFakeData.ForeColor = System.Drawing.Color.Black;
+            this.btnFakeData.Location = new System.Drawing.Point(269, 234);
+            this.btnFakeData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFakeData.Name = "btnFakeData";
+            this.btnFakeData.Size = new System.Drawing.Size(128, 35);
+            this.btnFakeData.TabIndex = 360;
+            this.btnFakeData.Text = "Fake Data";
+            this.btnFakeData.UseVisualStyleBackColor = true;
+            this.btnFakeData.Click += new System.EventHandler(this.btnFakeData_Click);
+            // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(408, 362);
+            this.Controls.Add(this.btnFakeData);
             this.Controls.Add(this.btnCages);
             this.Controls.Add(this.btnUpdateDatabase);
             this.Controls.Add(this.btnRefresh);
@@ -147,5 +162,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdateDatabase;
         private System.Windows.Forms.Button btnCages;
+        private System.Windows.Forms.Button btnFakeData;
     }
 }
