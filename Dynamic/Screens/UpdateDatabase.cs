@@ -8,7 +8,6 @@ namespace ScoutingCodeRedo.Dynamic
 {
     public partial class UpdateDatabase : Form
     {
-        //Fix issue with manual matches and updating database.
         public UpdateDatabase(List<string> teamlist, List<int> MatchNumbers)
         {
             InitializeComponent();
@@ -85,8 +84,54 @@ namespace ScoutingCodeRedo.Dynamic
                 {
                     var IDNumber = int.Parse(txtID.Text);
                     var result = db.UpdatePreviewSet.FirstOrDefault(b => b.Id == IDNumber);
+
+                    var resultPrev = db.ActivitySet.FirstOrDefault(b => b.Id == IDNumber);
+                    if (IDNumber > 1)
+                    {
+                        resultPrev = db.ActivitySet.FirstOrDefault(b => b.Id == IDNumber - 1);
+                    }
                     if (result != null)
                     {
+                        if (IDNumber > 1 && result.Team == resultPrev.Team)
+                        {
+                            if (result.AcqCoralS > resultPrev.AcqCoralS)
+                            {
+                                comboCoralAcqLoc.Text = "Station";
+                            }
+                            else if (result.AcqCoralF > resultPrev.AcqCoralF)
+                            {
+                                comboCoralAcqLoc.Text = "Floor";
+                            }
+                            if (result.AcqAlgaeR > resultPrev.AcqAlgaeR)
+                            {
+                                comboAlgaeAcqLoc.Text = "Reef";
+                            }
+                            else if (result.AcqAlgaeF > resultPrev.AcqAlgaeF)
+                            {
+                                comboAlgaeAcqLoc.Text = "Floor";
+                            }
+                        }
+                        else
+                        {
+                            if (result.AcqCoralS == 1)
+                            {
+                                comboCoralAcqLoc.Text = "Station";
+                            }
+                            else if (result.AcqCoralF == 1)
+                            {
+                                comboCoralAcqLoc.Text = "Floor";
+                            }
+                            if (result.AcqAlgaeR == 1)
+                            {
+                                comboAlgaeAcqLoc.Text = "Reef";
+                            }
+                            else if (result.AcqAlgaeF == 1)
+                            {
+                                comboAlgaeAcqLoc.Text = "Floor";
+                            }
+                        }
+                        
+
                         comboAlgaeAcqSide.Text = result.AcqAlgae_Near_Far.ToString();
                         comboCoralAcqSide.Text = result.AcqCoral_Near_Far.ToString();
 
@@ -149,8 +194,16 @@ namespace ScoutingCodeRedo.Dynamic
                     int NChangeAmount = 0;
                     int AFChangeAmount = 0;
 
+                    string AcqChange = "";
+
                     var IDNumber = int.Parse(txtID.Text);
                     var result = db.UpdatePreviewSet.FirstOrDefault(b => b.Id == IDNumber);
+
+                    var resultPrev = db.ActivitySet.FirstOrDefault(b => b.Id == IDNumber);
+                    if (IDNumber > 1)
+                    {
+                        resultPrev = db.ActivitySet.FirstOrDefault(b => b.Id == IDNumber - 1);
+                    }
                     if (result != null)
                     {
                         string query = "UPDATE Activities SET Defense = '" + txtDefense.Text + "' WHERE Id = '" + result.Id + "';";
@@ -194,20 +247,177 @@ namespace ScoutingCodeRedo.Dynamic
                         query = "UPDATE Activities SET Leave = '" + comboLeave.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqCoralS = '" + comboCoralAcqLoc.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        string prevCoralAcq = "";
+                        string prevAlgaeAcq = "";
+                        if (IDNumber > 1 && result.Team == resultPrev.Team)
+                        {
+                            if (result.AcqCoralS > resultPrev.AcqCoralS)
+                            {
+                                prevCoralAcq = "Station";
+                            }
+                            else if (result.AcqCoralF > resultPrev.AcqCoralF)
+                            {
+                                prevCoralAcq = "Floor";
+                            }
+                            if (result.AcqAlgaeR > resultPrev.AcqAlgaeR)
+                            {
+                                prevAlgaeAcq = "Reef";
+                            }
+                            else if (result.AcqAlgaeF > resultPrev.AcqAlgaeF)
+                            {
+                                prevAlgaeAcq = "Floor";
+                            }
+                        }
+                        else
+                        {
+                            if (result.AcqCoralS == 1)
+                            {
+                                prevCoralAcq = "Station";
+                            }
+                            else if (result.AcqCoralF == 1)
+                            {
+                                prevCoralAcq = "Floor";
+                            }
+                            if (result.AcqAlgaeR == 1)
+                            {
+                                prevAlgaeAcq = "Reef";
+                            }
+                            else if (result.AcqAlgaeF == 1)
+                            {
+                                prevAlgaeAcq = "Floor";
+                            }
+                        }
 
-                        //query = "UPDATE Activities SET AcqCoralF = '" + comboCoralAcqLoc.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        if (prevCoralAcq == "Station" && comboCoralAcqLoc.Text == "Floor")
+                        {
+                            if (result.AcqCoralS > 0)
+                            {
+                                result.AcqCoralS--;
+                                query = "UPDATE Activities SET AcqCoralS = " + result.AcqCoralS + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
 
-                        //query = "UPDATE Activities SET AcqAlgaeR = '" + comboAlgaeAcqLoc.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                            result.AcqCoralF++;
+                            query = "UPDATE Activities SET AcqCoralF = " + result.AcqCoralF + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "SF";
+                        }
+                        else if (prevCoralAcq == "Station" && comboCoralAcqLoc.Text == "-")
+                        {
+                            if (result.AcqCoralS > 0)
+                            {
+                                result.AcqCoralS--;
+                                query = "UPDATE Activities SET AcqCoralS = " + result.AcqCoralS + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
+                            AcqChange = "SN";
+                        }
+                        else if (prevCoralAcq == "Floor" && comboCoralAcqLoc.Text == "Station")
+                        {
+                            if (result.AcqCoralF > 0)
+                            {
+                                result.AcqCoralF--;
+                                query = "UPDATE Activities SET AcqCoralF = " + result.AcqCoralF + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
 
-                        //query = "UPDATE Activities SET AcqAlgaeF = '" + comboAlgaeAcqLoc.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                            result.AcqCoralS++;
+                            query = "UPDATE Activities SET AcqCoralS = " + result.AcqCoralS + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "FS";
+                        }
+                        else if (prevCoralAcq == "Floor" && comboCoralAcqLoc.Text == "-")
+                        {
+                            if (result.AcqCoralF > 0)
+                            {
+                                result.AcqCoralF--;
+                                query = "UPDATE Activities SET AcqCoralF = " + result.AcqCoralF + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
+                            AcqChange = "CFN";
+                        }
+                        else if (prevCoralAcq == "-" && comboCoralAcqLoc.Text == "Floor")
+                        {
+                            result.AcqCoralF++;
+                            query = "UPDATE Activities SET AcqCoralF = " + result.AcqCoralF + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "CNF";
+                        }
+                        else if (prevCoralAcq == "-" && comboCoralAcqLoc.Text == "Station")
+                        {
+                            result.AcqCoralS++;
+                            query = "UPDATE Activities SET AcqCoralS = " + result.AcqCoralS + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "NS";
+                        }
 
-                        int delCoral;
-                        if (int.TryParse(txtDelCoralL1.Text, out delCoral))
+
+
+                        if (prevAlgaeAcq == "Reef" && comboAlgaeAcqLoc.Text == "Floor")
+                        {
+                            if (result.AcqAlgaeR > 0)
+                            {
+                                result.AcqAlgaeR--;
+                                query = "UPDATE Activities SET AcqAlgaeR = " + result.AcqAlgaeR + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
+
+                            result.AcqAlgaeF++;
+                            query = "UPDATE Activities SET AcqAlgaeF = " + result.AcqAlgaeF + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "RF";
+                        }
+                        else if (prevAlgaeAcq == "Reef" && comboAlgaeAcqLoc.Text == "-")
+                        {
+                            if (result.AcqAlgaeR > 0)
+                            {
+                                result.AcqAlgaeR--;
+                                query = "UPDATE Activities SET AcqAlgaeR = " + result.AcqAlgaeR + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
+                            AcqChange = "RN";
+                        }
+                        else if (prevAlgaeAcq == "Floor" && comboAlgaeAcqLoc.Text == "Reef")
+                        {
+                            if (result.AcqAlgaeF > 0)
+                            {
+                                result.AcqAlgaeF--;
+                                query = "UPDATE Activities SET AcqAlgaeF = " + result.AcqAlgaeF + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
+
+                            result.AcqAlgaeR++;
+                            query = "UPDATE Activities SET AcqAlgaeR = " + result.AcqAlgaeR + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "FR";
+                        }
+                        else if (prevAlgaeAcq == "Floor" && comboAlgaeAcqLoc.Text == "-")
+                        {
+                            if (result.AcqAlgaeF > 0)
+                            {
+                                result.AcqAlgaeF--;
+                                query = "UPDATE Activities SET AcqAlgaeF = " + result.AcqAlgaeF + " WHERE Id = '" + result.Id + "';";
+                                seasonframework.Database.ExecuteSqlCommand(query);
+                            }
+                            AcqChange = "AFN";
+                        }
+                        else if (prevAlgaeAcq == "-" && comboAlgaeAcqLoc.Text == "Floor")
+                        {
+                            result.AcqAlgaeF++;
+                            query = "UPDATE Activities SET AcqAlgaeF = " + result.AcqAlgaeF + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "ANF";
+                        }
+                        else if (prevAlgaeAcq == "-" && comboAlgaeAcqLoc.Text == "Reef")
+                        {
+                            result.AcqAlgaeR++;
+                            query = "UPDATE Activities SET AcqAlgaeR = " + result.AcqAlgaeR + " WHERE Id = '" + result.Id + "';";
+                            seasonframework.Database.ExecuteSqlCommand(query);
+                            AcqChange = "NR";
+                        }
+
+
+                        if (int.TryParse(txtDelCoralL1.Text, out int delCoral))
                         {
                             L1ChangeAmount = delCoral - result.DelCoralL1;
                         }
@@ -241,9 +451,9 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         query = "UPDATE Activities SET DelCoralF = '" + txtDelCoralF.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
+                        
 
-                        int delAlgae;
-                        if (int.TryParse(txtDelAlgaeP.Text, out delAlgae))
+                        if (int.TryParse(txtDelAlgaeP.Text, out int delAlgae))
                         {
                             PChangeAmount = delAlgae - result.DelAlgaeP;
                         }
@@ -311,6 +521,62 @@ namespace ScoutingCodeRedo.Dynamic
 
                         line.DelAlgaeF += AFChangeAmount;
                         query = "UPDATE Activities SET DelAlgaeF = '" + line.DelAlgaeF + "' WHERE Id = '" + line.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+
+                        switch (AcqChange)
+                        {
+                            case "SF":
+                                line.AcqCoralS--;
+                                line.AcqCoralF++;
+                                break;
+                            case "SN":
+                                line.AcqCoralS--;
+                                break;
+                            case "FS":
+                                line.AcqCoralF--;
+                                line.AcqCoralS++;
+                                break;
+                            case "CFN":
+                                line.AcqCoralF--;
+                                break;
+                            case "CNF":
+                                line.AcqCoralF++;
+                                break;
+                            case "NS":
+                                line.AcqCoralS++;
+                                break;
+                            case "RF":
+                                line.AcqAlgaeF++;
+                                line.AcqAlgaeR--;
+                                break;
+                            case "RN":
+                                line.AcqAlgaeR--;
+                                break;
+                            case "FR":
+                                line.AcqAlgaeF--;
+                                line.AcqAlgaeR++;
+                                break;
+                            case "AFN":
+                                line.AcqAlgaeF--;
+                                break;
+                            case "ANF":
+                                line.AcqAlgaeF++;
+                                break;
+                            case "NR":
+                                line.AcqAlgaeR++;
+                                break;
+                        }
+
+                        query = "UPDATE Activities SET AcqCoralS = " + line.AcqCoralS + " WHERE Id = '" + line.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+
+                        query = "UPDATE Activities SET AcqCoralF = " + line.AcqCoralF + " WHERE Id = '" + line.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+
+                        query = "UPDATE Activities SET AcqAlgaeR = " + line.AcqAlgaeR + " WHERE Id = '" + line.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+
+                        query = "UPDATE Activities SET AcqAlgaeF = " + line.AcqAlgaeF + " WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
                     }
 
