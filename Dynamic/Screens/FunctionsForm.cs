@@ -64,11 +64,5 @@ namespace ScoutingCodeRedo.Dynamic
             this.Hide();
             frm.Show();
         }
-
-        private void btnFakeData_Click(object sender, EventArgs e)
-        {
-            Settings.Default.a = !Settings.Default.a;
-            this.Hide();
-        }
     }
 }

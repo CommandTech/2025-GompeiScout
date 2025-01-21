@@ -120,19 +120,6 @@
             this.btnCages.UseVisualStyleBackColor = true;
             this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
             // 
-            // btnFakeData
-            // 
-            this.btnFakeData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFakeData.ForeColor = System.Drawing.Color.Black;
-            this.btnFakeData.Location = new System.Drawing.Point(269, 234);
-            this.btnFakeData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnFakeData.Name = "btnFakeData";
-            this.btnFakeData.Size = new System.Drawing.Size(128, 35);
-            this.btnFakeData.TabIndex = 360;
-            this.btnFakeData.Text = "Fake Data";
-            this.btnFakeData.UseVisualStyleBackColor = true;
-            this.btnFakeData.Click += new System.EventHandler(this.btnFakeData_Click);
-            // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;

@@ -15,8 +15,8 @@ namespace ScoutingCodeRedo.Static
 
         public static RobotState[] Robots = new RobotState[6];              //Contains the state of each Scout's match tracking
 
-        public List<Match> InMemoryMatchList = new List<Match>();           //The list of all the matches at the selected event.
-        public List<Match> UnSortedMatchList = new List<Match>();           //This is just the list of all matches, not yet sorted
+        public static List<Match> InMemoryMatchList = new List<Match>();           //The list of all the matches at the selected event.
+        public static List<Match> UnSortedMatchList = new List<Match>();           //This is just the list of all matches, not yet sorted
         public static List<int> MatchNumbers = new List<int>();             //The list of match numbers for the event selected
 
         public static List<string> teamlist = new List<string>();           //The list of teams for the event selected
