@@ -219,20 +219,35 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             for (int i = 0; i < 6; i++)
                             {
-                                if (BackgroundCode.Robots[i].Current_Mode == RobotState.ROBOT_MODE.Surfacing)
+                                BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
+                                BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
+                                if (robot != BackgroundCode.Robots[i])
                                 {
-                                    BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
-                                    BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
-                                }
-                                else if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Surfacing)
-                                {
-                                    BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Surfacing;
-                                    BackgroundCode.Robots[i].Def_Rat = random.Next(4);
-                                    if (BackgroundCode.Robots[i].Def_Rat != 0)
+                                    if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Surfacing)
                                     {
-                                        BackgroundCode.Robots[i].Def_Eff = random.Next(6);
+                                        BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Surfacing;
+                                        BackgroundCode.Robots[i].Def_Rat = random.Next(4);
+                                        if (BackgroundCode.Robots[i].Def_Rat != 0)
+                                        {
+                                            BackgroundCode.Robots[i].Def_Eff = random.Next(6);
+                                        }
+                                        BackgroundCode.Robots[i].Avo_Rat = random.Next(4);
                                     }
-                                    BackgroundCode.Robots[i].Avo_Rat = random.Next(4);
+                                    int temp = random.Next(2)+1;
+                                    for (int j = 0; j < temp; j++)
+                                    {
+                                        BackgroundCode.Robots[i].CycleCage(RobotState.CYCLE_DIRECTION.Up);
+                                    }
+                                    temp = random.Next(6)+1;
+                                    for (int j = 0; j < temp; j++)
+                                    {
+                                        BackgroundCode.Robots[i].CycleStrat(RobotState.CYCLE_DIRECTION.Up);
+                                    }
+                                    temp = random.Next(3) + 1;
+                                    for (int j = 0; j < temp; j++)
+                                    {
+                                        BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Up);
+                                    }
                                 }
                             }
                             Settings.Default.generateFakeData = !Settings.Default.generateFakeData;
