@@ -12,7 +12,15 @@ namespace ScoutingCodeRedo.Dynamic
         {
             //FIX LATER
             //GamePad gamepad = gpArray[controllerNumber];
-            GamePad gamepad = gpArray[0];
+            GamePad gamepad;
+            try
+            {
+                gamepad = gpArray[controllerNumber];
+            }
+            catch
+            {
+                gamepad = gpArray[0];
+            }
 
             var robot = BackgroundCode.Robots[controllerNumber];
 
