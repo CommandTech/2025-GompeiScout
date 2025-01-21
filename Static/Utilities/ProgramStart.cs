@@ -11,16 +11,16 @@ namespace ScoutingCodeRedo.Static
         [STAThread]
         static void Main()
         {
-            //Defaults some settings
-            Settings.Default.loadedEvent = null;
-            Settings.Default.manualMatchList = null;
-            Settings.Default.DBExists = false;
+            //Handles code crashes, used for saving data when the code crashes during events
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Handles code crashes, used for saving data when the code crashes during events
-            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+            //Defaults some settings
+            Settings.Default.loadedEvent = null;
+            Settings.Default.manualMatchList = null;
+            Settings.Default.DBExists = false;
 
             //Determines what functions to run when different exceptions are thrown
             Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
