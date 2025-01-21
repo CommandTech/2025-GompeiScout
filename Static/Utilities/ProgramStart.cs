@@ -29,6 +29,8 @@ namespace ScoutingCodeRedo.Static
             //Creates the base screen
             BaseScreen baseScreen = new BaseScreen();
 
+            BackgroundCode.baseScreen = baseScreen;
+
             //Creates the scouter boxes overlaying the base screen
             ScouterBoxes scouterBoxes = new ScouterBoxes
             {

@@ -250,8 +250,9 @@ namespace ScoutingCodeRedo.Dynamic
                                     }
                                 }
                             }
-                            Settings.Default.generateFakeData = !Settings.Default.generateFakeData;
-                            MessageBox.Show("Fake data generation stopped.");
+                            //Settings.Default.generateFakeData = !Settings.Default.generateFakeData;
+                            //MessageBox.Show("Fake data generation stopped.");
+                            BackgroundCode.baseScreen.BtnNextMatch_Click(null,null);
                         }
                     }
                     break;

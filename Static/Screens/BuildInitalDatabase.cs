@@ -34,7 +34,7 @@ namespace ScoutingCodeRedo.Static
             }
             else
             {
-                string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year}?X-TBA-Auth-Key={Settings.Default.API_Key}";
+                string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year-1}?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
                 using (HttpClient client = new HttpClient())
                 {

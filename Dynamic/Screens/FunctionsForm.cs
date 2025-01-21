@@ -13,7 +13,6 @@ namespace ScoutingCodeRedo.Dynamic
         {
             InitializeComponent();
             cbxPractice.Checked = Settings.Default.practiceMode;
-            btnFakeData.Visible = Debugger.IsAttached;
         }
 
         private void FuncOK_Click(object sender, EventArgs e)

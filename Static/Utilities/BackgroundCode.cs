@@ -10,6 +10,7 @@ namespace ScoutingCodeRedo.Static
 {
     internal class BackgroundCode
     {
+        public static BaseScreen baseScreen;
         public static GamePad[] gamePads;                                   //List of all the gamepads connected to the computer
         public static Controllers controllers = new Controllers();          //The controller class that handles all the gamepad stuff
 

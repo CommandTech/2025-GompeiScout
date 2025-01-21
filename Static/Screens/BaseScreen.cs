@@ -286,7 +286,7 @@ namespace ScoutingCodeRedo.Static
 
         public void BtnNextMatch_Click(object sender, EventArgs e)
         {
-            if (cbxEndMatch.Checked)
+            if (cbxEndMatch.Checked || sender == null)
             {
                 cbxEndMatch.Checked = false;
                 for (int i = 0; i < 6; i++)
@@ -449,7 +449,7 @@ namespace ScoutingCodeRedo.Static
                 int index = regional.IndexOf(",");
                 if (index > 0) regional = regional.Substring(0, index);
 
-                string uri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{regional}/teams?X-TBA-Auth-Key={Settings.Default.API_Key}";
+                string uri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year-1}{regional}/teams?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -518,7 +518,7 @@ namespace ScoutingCodeRedo.Static
                     }
                 }
 
-                string matchesuri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{regional}/matches?X-TBA-Auth-Key={Settings.Default.API_Key}";
+                string matchesuri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year-1}{regional}/matches?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
                 using (HttpClient client = new HttpClient())
                 {
