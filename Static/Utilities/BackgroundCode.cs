@@ -55,7 +55,7 @@ namespace ScoutingCodeRedo.Static
                 Robots[i] = new RobotState
                 {
                     ScouterBox = i,
-                    _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
+                    _ScouterName = RobotState.SCOUTER_NAME.Scouter1,
                     color = i < 3 ? "Red" : "Blue"
                 };
 

@@ -10,7 +10,9 @@ namespace ScoutingCodeRedo.Dynamic
     {
         public void ReadStick(GamePad[] gpArray, int controllerNumber)
         {
-            GamePad gamepad = gpArray[controllerNumber];
+            //FIX LATER
+            //GamePad gamepad = gpArray[controllerNumber];
+            GamePad gamepad = gpArray[0];
 
             var robot = BackgroundCode.Robots[controllerNumber];
 
@@ -19,13 +21,8 @@ namespace ScoutingCodeRedo.Dynamic
 
             if (Settings.Default.generateFakeData)
             {
-                Random random = new Random();
-
-                if (random.Next(100) < 50)
-                {
-                    FakeDataCreator fakeData = new FakeDataCreator();
-                    fakeData.GenerateFakeData();
-                }
+                FakeDataCreator fakeData = new FakeDataCreator();
+                fakeData.GenerateFakeData(gamepad, robot);
             }
 
             if (!robot.NoSho && robot.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
@@ -1339,7 +1336,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public static void ResetValues()
         {
-            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
                 BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
                 BackgroundCode.Robots[i].Leave = RobotState.LEAVE.Z;

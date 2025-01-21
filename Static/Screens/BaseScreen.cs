@@ -58,8 +58,10 @@ namespace ScoutingCodeRedo.Static
             //Updates the screen with the current data
             UpdateScreen();
 
+            //FIX LATER
             //Loop through all connected gamepads
-            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
+            //for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
+                for (int gamepad_ctr = 0; gamepad_ctr < 6; gamepad_ctr++)
             {
                 BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
             }
@@ -107,17 +109,20 @@ namespace ScoutingCodeRedo.Static
         }
         private void UpdateScreen()
         {
-            //Loops through all 6 boxes to update the text to be based on the RobotState
-            for (int i = 0; i < 6; i++)
+            if (BackgroundCode.gamePads != null)
             {
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i].GetScouterName().ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].Match_event.ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                //Loops through all 6 boxes to update the text to be based on the RobotState
+                for (int i = 0; i < 6; i++)
+                {
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i].GetScouterName().ToString();
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].Match_event.ToString();
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
 
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                    ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                }
             }
         }
         private void BtnExit_Click(object sender, EventArgs e)
@@ -278,12 +283,12 @@ namespace ScoutingCodeRedo.Static
             Settings.Default.redRight = (red == DialogResult.Yes);
         }
 
-        private void BtnNextMatch_Click(object sender, EventArgs e)
+        public void BtnNextMatch_Click(object sender, EventArgs e)
         {
             if (cbxEndMatch.Checked)
             {
                 cbxEndMatch.Checked = false;
-                for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
                 }
