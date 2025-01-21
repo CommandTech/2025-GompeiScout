@@ -250,8 +250,14 @@ namespace ScoutingCodeRedo.Dynamic
                                     }
                                 }
                             }
-
-                            BackgroundCode.baseScreen.BtnNextMatch_Click(null,null);
+                            if (Settings.Default.currentMatch != BackgroundCode.UnSortedMatchList.Count)
+                            {
+                                BackgroundCode.baseScreen.BtnNextMatch_Click(null, null);
+                            }
+                            else
+                            {
+                                Settings.Default.generateFakeData = false;
+                            }
                         }
                     }
                     break;
