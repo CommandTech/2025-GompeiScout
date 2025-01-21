@@ -127,17 +127,5 @@ namespace ScoutingCodeRedo.Properties {
                 this["teamPrio"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool generateFakeData {
-            get {
-                return ((bool)(this["generateFakeData"]));
-            }
-            set {
-                this["generateFakeData"] = value;
-            }
-        }
     }
 }

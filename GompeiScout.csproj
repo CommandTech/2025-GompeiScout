@@ -73,7 +73,6 @@
   <ItemGroup>
     <Compile Include="Dynamic\DynamicDatabase.cs" />
     <Compile Include="Dynamic\DynamicResponses.cs" />
-    <Compile Include="Dynamic\FakeDataCreator.cs" />
     <Compile Include="Dynamic\Screens\CagesForm.cs">
       <SubType>Form</SubType>
     </Compile>
