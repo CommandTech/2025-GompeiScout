@@ -16,6 +16,18 @@ namespace ScoutingCodeRedo.Dynamic
         private static readonly Random random = new Random();
         public void GenerateFakeData(GamePad gamepad, RobotState robot)
         {
+            if (robot.Current_Mode == RobotState.ROBOT_MODE.Auto)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Auto)
+                    {
+                        gamepad.SimulateButtonPress("startButton");
+                        return;
+                    }
+                }
+            }
+
             string[] actions = { "intake", "deliver", "changeMode", "modeAction"};
             
             string action = actions[random.Next(actions.Length)];
@@ -26,14 +38,23 @@ namespace ScoutingCodeRedo.Dynamic
             bool DefSurf = random.Next(2) == 0;
             int modeAction = random.Next(7);
             int startingLoc = random.Next(7);
+            bool cageSelected = random.Next(2) == 0;
 
             if (robot.Starting_Location == RobotState.STARTING_LOC.Select)
             {
+                if (cageSelected)
+                {
+                    robot.Selected_Cage = "Deep";
+                }
+                else
+                {
+                    robot.Selected_Cage = "Shallow";
+                }
+
                 if (Settings.Default.redRight)
                 {
                     while (startingLoc >= 0)
                     {
-                        Thread.Sleep(100);
                         robot.CycleStart(RobotState.CYCLE_DIRECTION.Up);
                         robot.CycleStartField(RobotState.CYCLE_DIRECTION.Up);
                         startingLoc--;
@@ -43,7 +64,6 @@ namespace ScoutingCodeRedo.Dynamic
                 {
                     while (startingLoc >= 0)
                     {
-                        Thread.Sleep(100);
                         robot.CycleStart(RobotState.CYCLE_DIRECTION.Up);
                         robot.CycleStartField(RobotState.CYCLE_DIRECTION.Down);
                         startingLoc--;
@@ -51,7 +71,6 @@ namespace ScoutingCodeRedo.Dynamic
                 }
             }
 
-            Thread.Sleep(random.Next(100));
             switch (action)
             {
                 case "intake":
@@ -112,7 +131,6 @@ namespace ScoutingCodeRedo.Dynamic
                                     break;
                             }
 
-                            Thread.Sleep(50);
                             gamepad.SimulateButtonPress("rt");
                         }
                         if (robot.hasAlgae == 1 && !coralAlgae)
@@ -132,7 +150,6 @@ namespace ScoutingCodeRedo.Dynamic
                                     break;
                             }
 
-                            Thread.Sleep(50);
                             gamepad.SimulateButtonPress("rt");
                         }
                     }
@@ -144,7 +161,6 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 gamepad.SimulateButtonPress("lb");
 
-                                Thread.Sleep(50);
                                 gamepad.SimulateButtonPress("rt");
                             }
                         }
@@ -154,7 +170,6 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 gamepad.SimulateButtonPress("rb");
 
-                                Thread.Sleep(50);
                                 gamepad.SimulateButtonPress("rt");
                             }
                         }
@@ -171,7 +186,29 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             if (DefSurf)
                             {
-                                gamepad.SimulateButtonPress("l3");
+                                if (robot.color == "red")
+                                {
+                                    for (int i = 0; i < 3; i++)
+                                    {
+                                        if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Defense)
+                                        {
+                                            return;
+                                        }
+                                        gamepad.SimulateButtonPress("l3");
+                                    }
+                                }
+                                else
+                                {
+                                    for (int i = 3; i < 6; i++)
+                                    {
+                                        if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Defense)
+                                        {
+                                            return;
+                                        }
+                                        gamepad.SimulateButtonPress("l3");
+                                    }
+                                }
+
                             }
                             else
                             {
@@ -180,6 +217,24 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         else if (robot.Current_Mode == RobotState.ROBOT_MODE.Surfacing && robot.End_State != RobotState.END_STATE.Select && robot.Def_Rat != 9 && robot.Def_Eff != 9 && robot.Avo_Rat != 9 && robot.Cage_Attempt != RobotState.CAGE_ATTEMPT.Select && robot.App_Strategy != RobotState.APP_STRAT.Select)
                         {
+                            for (int i = 0; i < 6; i++)
+                            {
+                                if (BackgroundCode.Robots[i].Current_Mode == RobotState.ROBOT_MODE.Surfacing)
+                                {
+                                    BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
+                                    BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
+                                }
+                                else if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Surfacing)
+                                {
+                                    BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Surfacing;
+                                    BackgroundCode.Robots[i].Def_Rat = random.Next(4);
+                                    if (BackgroundCode.Robots[i].Def_Rat != 0)
+                                    {
+                                        BackgroundCode.Robots[i].Def_Eff = random.Next(6);
+                                    }
+                                    BackgroundCode.Robots[i].Avo_Rat = random.Next(4);
+                                }
+                            }
                             Settings.Default.generateFakeData = !Settings.Default.generateFakeData;
                             MessageBox.Show("Fake data generation stopped.");
                         }
@@ -229,7 +284,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 gamepad.SimulateButtonPress("a");
                                 break;
                             case 6:
-                                if (robot.ClimbT_StopWatch_running)
+                                if (robot.ClimbT_StopWatch_running && random.Next(1000) < 100)
                                 {
                                     gamepad.SimulateButtonPress("backButton");
                                 }

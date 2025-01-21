@@ -269,6 +269,7 @@ namespace ScoutingCodeRedo.Static
                     SetRedRight();
                     Log("Loading manual matches.");
                     LoadManualMatches();
+                    comboBoxSelectRegional.DataSource = null;
                     comboBoxSelectRegional.Items.Clear();
                     comboBoxSelectRegional.Items.Add("manualEvent");
                     comboBoxSelectRegional.SelectedItem = "manualEvent";

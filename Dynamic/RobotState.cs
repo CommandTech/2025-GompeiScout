@@ -8,7 +8,7 @@ namespace ScoutingCodeRedo.Dynamic
         public enum ROBOT_MODE { Auto, Teleop, Defense, Surfacing };
         public enum CYCLE_DIRECTION { Up, Down }
         public enum MATCHEVENT_NAME { Match_Event, BrokeDown, CrossedCenter, LostParts, AdditionPiece, MultiClimb, NoShow, TippedOver, JammedPiece, WentUnderCages }
-        public enum SCOUTER_NAME { Select_Name, Ayush, Logan, Marzuq, Milan, William, Scouter1, Scouter2, Scouter3, Scouter4 }
+        public enum SCOUTER_NAME { Select_Name, Ayush, Logan, Marzuq, Milan, William, Scouter1, Scouter2, Scouter3, Scouter4, Fake}
 
         // Year to Year ints
         public long ScouterError;
