@@ -295,7 +295,7 @@ namespace ScoutingCodeRedo.Static
                 }
                 DynamicResponses.ResetValues();
 
-                if (Settings.Default.currentMatch == bgc.InMemoryMatchList.Count)
+                if (Settings.Default.currentMatch == BackgroundCode.InMemoryMatchList.Count)
                 {
                     MessageBox.Show("You are at the last match.");
                 }
@@ -307,7 +307,7 @@ namespace ScoutingCodeRedo.Static
             else
             {
                 DialogResult dialogResult = MessageBox.Show("All unsaved data will be lost.  Continue?", "Next Match", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes && Settings.Default.currentMatch != bgc.InMemoryMatchList.Count)
+                if (dialogResult == DialogResult.Yes && Settings.Default.currentMatch != BackgroundCode.InMemoryMatchList.Count)
                 {
                     NextMatch();
                 }
@@ -341,24 +341,24 @@ namespace ScoutingCodeRedo.Static
         private void LoadMatch()
         {
             DynamicResponses.ResetValues();
-            this.lblMatch.Text = $"{Settings.Default.currentMatch}/{bgc.UnSortedMatchList.Count}";
+            this.lblMatch.Text = $"{Settings.Default.currentMatch}/{BackgroundCode.UnSortedMatchList.Count}";
             List<string> teamPrioList = null;
             if (Settings.Default.teamPrio != null)
             {
                 teamPrioList = Settings.Default.teamPrio.Cast<string>().ToList();
             }
-            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
-            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
-            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3, teamPrioList);
-            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1, teamPrioList);
-            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2, teamPrioList);
-            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3, teamPrioList);
+            SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1, teamPrioList);
+            SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2, teamPrioList);
+            SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3, teamPrioList);
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
             if (Settings.Default.practiceMode)
             {
-                label.Text = robot.TeamName = bgc.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1;
+                label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1;
             }
             else
             {
@@ -382,8 +382,8 @@ namespace ScoutingCodeRedo.Static
             {
                 Settings.Default.currentMatch = 0;
             }
-            bgc.UnSortedMatchList.Clear();
-            bgc.InMemoryMatchList.Clear();
+            BackgroundCode.UnSortedMatchList.Clear();
+            BackgroundCode.InMemoryMatchList.Clear();
             if (Settings.Default.manualMatchList != null)
             {
                 List<string> manualTeams = new List<string>();
@@ -406,8 +406,8 @@ namespace ScoutingCodeRedo.Static
                         Blueteam3 = "frc" + Settings.Default.manualMatchList[i][5]
                     };
 
-                    bgc.UnSortedMatchList.Add(matchData);
-                    bgc.InMemoryMatchList.Add(matchData);
+                    BackgroundCode.UnSortedMatchList.Add(matchData);
+                    BackgroundCode.InMemoryMatchList.Add(matchData);
                     BackgroundCode.seasonframework.Matchset.Add(matchData);
                     BackgroundCode.seasonframework.SaveChanges();
 
@@ -545,7 +545,7 @@ namespace ScoutingCodeRedo.Static
 
                                 MatchCount++;
                                 BackgroundCode.MatchNumbers.Add(MatchCount);
-                                bgc.InMemoryMatchList.Add(JSONmatches[i]);
+                                BackgroundCode.InMemoryMatchList.Add(JSONmatches[i]);
 
                                 dynamic alliances = obj[i].alliances;
                                 dynamic bluealliance = alliances.blue;
@@ -569,11 +569,11 @@ namespace ScoutingCodeRedo.Static
                                 match_record.Redteam3 = redteamsobj[2];
 
                                 //Console.Write(match_record);
-                                bgc.UnSortedMatchList.Add(match_record);
+                                BackgroundCode.UnSortedMatchList.Add(match_record);
                                 BackgroundCode.seasonframework.Matchset.Add(match_record);
                             }
                         }
-                        Log($"{bgc.UnSortedMatchList.Count} matches");
+                        Log($"{BackgroundCode.UnSortedMatchList.Count} matches");
 
                     }
                     catch (HttpRequestException e2)
@@ -582,7 +582,7 @@ namespace ScoutingCodeRedo.Static
                     }
                 }
 
-                bgc.InMemoryMatchList = bgc.UnSortedMatchList.OrderBy(o => o.Match_number).ToList();
+                BackgroundCode.InMemoryMatchList = BackgroundCode.UnSortedMatchList.OrderBy(o => o.Match_number).ToList();
             }
             NextMatch();
         }
