@@ -22,6 +22,17 @@ namespace ScoutingCodeRedo.Dynamic
                 {
                     if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Auto)
                     {
+                        if (robot.Leave == RobotState.LEAVE.Z)
+                        {
+                            if (random.Next(2) == 0)
+                            {
+                                robot.CycleLeave(RobotState.CYCLE_DIRECTION.Up);
+                            }
+                            else
+                            {
+                                robot.CycleLeave(RobotState.CYCLE_DIRECTION.Down);
+                            }
+                        }
                         gamepad.SimulateButtonPress("startButton");
                         return;
                     }
