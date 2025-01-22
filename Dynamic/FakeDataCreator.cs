@@ -39,7 +39,7 @@ namespace ScoutingCodeRedo.Dynamic
                 }
             }
 
-            string[] actions = { "intake", "deliver", "changeMode", "modeAction"};
+            string[] actions = { "intake", "deliver", "intake", "deliver", "changeMode", "modeAction"};
             
             string action = actions[random.Next(actions.Length)];
 

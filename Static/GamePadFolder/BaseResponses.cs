@@ -76,8 +76,6 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         }
         public void ReadStick(GamePad[] gpArray, int controllerNumber)
         {
-            //FIX LATER
-            // GamePad gamepad = gpArray[controllerNumber];
             GamePad gamepad;
             try
             {

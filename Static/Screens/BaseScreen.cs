@@ -58,10 +58,7 @@ namespace ScoutingCodeRedo.Static
             //Updates the screen with the current data
             UpdateScreen();
 
-            //FIX LATER
-            //Loop through all connected gamepads
-            //for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
-                for (int gamepad_ctr = 0; gamepad_ctr < 6; gamepad_ctr++)
+            for (int gamepad_ctr = 0; gamepad_ctr < 6; gamepad_ctr++)
             {
                 BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
             }
