@@ -102,8 +102,7 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqCoralNearFar = robot.DelNearFar;
                         }
                     }
-
-                    //FIX THIS
+                    
                     //Deliveries
                     if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
                     {
