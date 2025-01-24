@@ -3,21 +3,22 @@ using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Net.NetworkInformation;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Static
 {
     public partial class BaseScreen : Form
     {
-        readonly BackgroundCode bgc;
-
-        public string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        public string projectBaseDirectory;
-        public string iniPath;
-        public INIFile iniFile;
+        public readonly string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        public readonly string projectBaseDirectory;
+        public readonly string iniPath;
+        public readonly INIFile iniFile;
 
         bool wasPractice = false;
         public BaseScreen()
@@ -27,9 +28,6 @@ namespace ScoutingCodeRedo.Static
             //Scales the screen to the resolution of the display
             this.AutoScaleMode = AutoScaleMode.Dpi;
             this.btnInitialDBLoad.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-
-            //Initialization of the background variables
-            bgc = new BackgroundCode();
 
             //Sets the base directory for the ini file
             projectBaseDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, @"..\..\"));
@@ -51,6 +49,53 @@ namespace ScoutingCodeRedo.Static
                     LoadData();
                 }
             }
+
+            //If the program is in debug mode, show the print out form
+            if (Debugger.IsAttached)
+            {
+                BackgroundCode.print.Show();
+            }
+
+            //Sets the connection string to the database
+            BackgroundCode.seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
+
+            //Checks if the database exists
+            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
+            BackgroundCode.seasonframework.Database.Initialize(true);
+
+            //Sets the default values for the robots
+            for (int i = 0; i < 6; i++)
+            {
+                BackgroundCode.Robots[i] = new RobotState
+                {
+                    ScouterBox = i,
+                    _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
+                    color = i < 3 ? "Red" : "Blue"
+                };
+
+                BackgroundCode.cages.Add("Select");
+
+                BackgroundCode.activity_record[i] = new Activity();
+            }
+
+            // Create and start a new thread for each controller
+            foreach (var gamePad in BackgroundCode.gamePads)
+            {
+                Thread controllerThread = new Thread(() => ControllerThreadMethod(gamePad));
+                controllerThread.Start();
+            }
+
+            this.timerJoysticks.Tick += new EventHandler(this.JoyStickReader);
+        }
+
+        private void ControllerThreadMethod(object gamePad)
+        {
+            // Logic to handle the controller
+            while (true)
+            {
+                // Read and process the controller input
+                BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, Array.IndexOf(BackgroundCode.gamePads, gamePad));
+            }
         }
 
         private void JoyStickReader(object sender, EventArgs e)
@@ -59,45 +104,39 @@ namespace ScoutingCodeRedo.Static
             UpdateScreen();
 
             //Loop through all connected gamepads
-            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
-            {
-                BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
-            }
+            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
 
             // Loop through all Scouters/Robots
-            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
-            {
-                BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
-            }
+            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
 
-            //If the program is in practice mode
-            if (Settings.Default.practiceMode)
-            {
-                //Checks if it was just not in practice mode
-                if (!wasPractice)
-                {
-                    //Updates the joysticks
-                    UpdateJoysticks();
-                }
+            ////If the program is in practice mode
+            //if (Settings.Default.practiceMode)
+            //{
+            //    //Checks if it was just not in practice mode
+            //    if (!wasPractice)
+            //    {
+            //        //Updates the joysticks
+            //        UpdateJoysticks();
+            //    }
 
-                //Changes gamepads 1 to 5 to null
-                for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
-                {
-                    BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[0].TeamName;
+            //    //Changes gamepads 1 to 5 to null
+            //    for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
+            //    {
+            //        BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[0].TeamName;
 
-                    //If the scouter error increases, play the sound
-                    if (BackgroundCode.Robots[i].prevScouterError != BackgroundCode.Robots[i].ScouterError)
-                    {
-                        BackgroundCode.soundCue.Play();
-                        BackgroundCode.Robots[i].prevScouterError = BackgroundCode.Robots[i].ScouterError;
-                    }
-                }
+            //        //If the scouter error increases, play the sound
+            //        if (BackgroundCode.Robots[i].prevScouterError != BackgroundCode.Robots[i].ScouterError)
+            //        {
+            //            BackgroundCode.soundCue.Play();
+            //            BackgroundCode.Robots[i].prevScouterError = BackgroundCode.Robots[i].ScouterError;
+            //        }
+            //    }
 
-                LoadMatch();
+            //    LoadMatch();
 
-                //Sets that it was in practice mode
-                wasPractice = true;
-            }
+            //    //Sets that it was in practice mode
+            //    wasPractice = true;
+            //}
         }
 
         public static void UpdateJoysticks()
@@ -113,7 +152,7 @@ namespace ScoutingCodeRedo.Static
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i].GetScouterName().ToString();
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].Match_event.ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.gamePads.Length+1) || !Settings.Default.practiceMode;
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
 
@@ -285,9 +324,9 @@ namespace ScoutingCodeRedo.Static
                 cbxEndMatch.Checked = false;
                 for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
                 {
-                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch");
+                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch", i);
+                    DynamicResponses.ResetValues(i);
                 }
-                DynamicResponses.ResetValues();
 
                 if (Settings.Default.currentMatch == BackgroundCode.InMemoryMatchList.Count)
                 {
@@ -334,7 +373,11 @@ namespace ScoutingCodeRedo.Static
 
         private void LoadMatch()
         {
-            DynamicResponses.ResetValues();
+            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+            {
+                DynamicResponses.ResetValues(i);
+            }
+
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{BackgroundCode.UnSortedMatchList.Count}";
             List<string> teamPrioList = null;
             if (Settings.Default.teamPrio != null)
@@ -585,7 +628,7 @@ namespace ScoutingCodeRedo.Static
             //cross-thread Logging
             Func<int> del = delegate ()
             {
-                bgc.print.UpdateLbl(m);
+                BackgroundCode.print.UpdateLbl(m);
                 lstLog.TopIndex = lstLog.Items.Add(m + System.Environment.NewLine);
                 return 0;
             };

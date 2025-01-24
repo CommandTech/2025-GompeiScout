@@ -98,7 +98,7 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                     }
                     else
                     {
-                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event");
+                        DynamicResponses.TransactToDatabase(BackgroundCode.Robots[controllerNumber], "Match_Event", controllerNumber);
                         BackgroundCode.Robots[controllerNumber].Match_event = RobotState.MATCHEVENT_NAME.Match_Event;
                     }
                 }

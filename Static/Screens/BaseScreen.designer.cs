@@ -2235,7 +2235,7 @@ namespace ScoutingCodeRedo.Static
             // timerJoysticks
             // 
             this.timerJoysticks.Interval = 20;
-            this.timerJoysticks.Tick += new System.EventHandler(this.JoyStickReader);
+
             // 
             // btnFunctions
             // 
