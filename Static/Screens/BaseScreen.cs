@@ -1,5 +1,6 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
+using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -56,12 +57,8 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.print.Show();
             }
 
-            //Sets the connection string to the database
-            BackgroundCode.seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
-
-            //Checks if the database exists
-            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
-            BackgroundCode.seasonframework.Database.Initialize(true);
+            Thread dbThread = new Thread(() => InitalizeDB());
+            dbThread.Start();
 
             //Sets the default values for the robots
             for (int i = 0; i < 6; i++)
@@ -86,6 +83,16 @@ namespace ScoutingCodeRedo.Static
             }
 
             this.timerJoysticks.Tick += new EventHandler(this.JoyStickReader);
+        }
+
+        private void InitalizeDB()
+        {
+            //Sets the connection string to the database
+            BackgroundCode.seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
+
+            //Checks if the database exists
+            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
+            BackgroundCode.seasonframework.Database.Initialize(true);
         }
 
         private void ControllerThreadMethod(object gamePad)
