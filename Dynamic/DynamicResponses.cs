@@ -21,8 +21,14 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 robot.prevlastAlgaeLoc = robot.lastAlgaeLoc;
                 robot.prevlastCoralLoc = robot.lastCoralLoc;
-                robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
-                robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
+                if (gamepad.RightButton_Release)
+                {
+                    robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
+                }
+                if (gamepad.LeftButton_Release)
+                {
+                    robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
+                }
 
                 //***********************************
                 //AUTO MODE
