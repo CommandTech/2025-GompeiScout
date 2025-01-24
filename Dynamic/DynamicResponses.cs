@@ -21,8 +21,15 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 robot.prevlastAlgaeLoc = robot.lastAlgaeLoc;
                 robot.prevlastCoralLoc = robot.lastCoralLoc;
-                robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
-                robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
+                if (gamepad.RightButton_Release)
+                {
+                    robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
+                }
+                if (gamepad.LeftButton_Release)
+                {
+                    robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
+                }
+
 
                 //***********************************
                 //AUTO MODE
@@ -96,13 +103,14 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                     }
 
+                    //FIX THIS
                     //Deliveries
-                    if (gamepad.RightButton_Release && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
+                    if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
                     {
                         robot.lastAlgaeLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
-                    if (gamepad.LeftButton_Release && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
+                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
