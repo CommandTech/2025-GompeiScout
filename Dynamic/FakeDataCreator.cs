@@ -310,7 +310,18 @@ namespace ScoutingCodeRedo.Dynamic
                                 gamepad.SimulateButtonPress("dpadright");
                                 break;
                             case 4:
-                                gamepad.SimulateButtonPress("y");
+                                if (robot.End_State == RobotState.END_STATE.Shallow || robot.End_State == RobotState.END_STATE.Deep)
+                                {
+                                    robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                }
+                                else if (robot.End_State == RobotState.END_STATE.Park)
+                                {
+                                    gamepad.SimulateButtonPress("y");
+                                }
+                                else
+                                {
+                                    robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                }
                                 break;
                             case 5:
                                 gamepad.SimulateButtonPress("a");
@@ -319,6 +330,10 @@ namespace ScoutingCodeRedo.Dynamic
                                 if (robot.ClimbT_StopWatch_running && random.Next(1000) < 100)
                                 {
                                     gamepad.SimulateButtonPress("backButton");
+                                }
+                                else if (robot.End_State == RobotState.END_STATE.Elsewhere)
+                                {
+                                    gamepad.SimulateButtonPress("lt");
                                 }
                                 break;
                         }

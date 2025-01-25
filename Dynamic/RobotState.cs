@@ -261,6 +261,10 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 _StartLoc = (STARTING_LOC)GetPreviousEnum<STARTING_LOC>(_StartLoc);
             }
+            if (_StartLoc == STARTING_LOC.Select)
+            {
+                CycleStart(CycleDirection);
+            }
         }
         public void CycleStartField(CYCLE_DIRECTION CycleDirection)
         {
@@ -271,6 +275,10 @@ namespace ScoutingCodeRedo.Dynamic
             else
             {
                 _StartLocField = (STARTING_LOC_FIELD)GetPreviousEnum<STARTING_LOC_FIELD>(_StartLocField);
+            }
+            if (_StartLocField == STARTING_LOC_FIELD.Select)
+            {
+                CycleStartField(CycleDirection);
             }
         }
         public void CycleStrat(CYCLE_DIRECTION CycleDirection)
@@ -283,6 +291,10 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 _Strategy = (APP_STRAT)GetPreviousEnum<APP_STRAT>(_Strategy);
             }
+            if (_Strategy == APP_STRAT.Select)
+            {
+                CycleStrat(CycleDirection);
+            }
         }
         public void CycleState(CYCLE_DIRECTION CycleDirection)
         {
@@ -294,6 +306,10 @@ namespace ScoutingCodeRedo.Dynamic
             {
                 _EndState = (END_STATE)GetPreviousEnum<END_STATE>(_EndState);
             }
+            if (_EndState == END_STATE.Select)
+            {
+                CycleState(CycleDirection);
+            }
         }
         public void CycleCage(CYCLE_DIRECTION CycleDirection)
         {
@@ -304,6 +320,10 @@ namespace ScoutingCodeRedo.Dynamic
             else
             {
                 _CageAttempt = (CAGE_ATTEMPT)GetPreviousEnum<CAGE_ATTEMPT>(_CageAttempt);
+            }
+            if (_CageAttempt == CAGE_ATTEMPT.Select)
+            {
+                CycleCage(CycleDirection);
             }
         }
     }
