@@ -30,7 +30,6 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
                 }
 
-
                 //***********************************
                 //AUTO MODE
                 //***********************************
