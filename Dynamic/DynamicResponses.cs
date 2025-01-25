@@ -998,12 +998,14 @@ namespace ScoutingCodeRedo.Dynamic
                             controller.hasCoral = 0;
                             controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
+                            controller.prevlastCoralAcqLoc = " ";
                         }
                         if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
                         {
                             controller.hasAlgae = 0;
                             controller.lastAlgaeLoc = " ";
                             controller.lastAlgaeAcqLoc = " ";
+                            controller.prevlastAlgaeAcqLoc = " ";
                         }
                         controller.TransactionCheck = false;
                         break;

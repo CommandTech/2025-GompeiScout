@@ -93,6 +93,7 @@ namespace ScoutingCodeRedo.Static
             //Checks if the database exists
             Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
             BackgroundCode.seasonframework.Database.Initialize(true);
+            Settings.Default.DBExists = true;
         }
 
         private void ControllerThreadMethod(object gamePad)
@@ -153,6 +154,8 @@ namespace ScoutingCodeRedo.Static
         }
         private void UpdateScreen()
         {
+            lblDatabaseExist.ForeColor = Settings.Default.DBExists ? Color.Green : Color.Red;
+            lblDatabaseExist.BackColor = Settings.Default.DBExists ? Color.Green : Color.Red;
             //Loops through all 6 boxes to update the text to be based on the RobotState
             for (int i = 0; i < 6; i++)
             {
@@ -293,28 +296,35 @@ namespace ScoutingCodeRedo.Static
         }
         private void BtnInitialDBLoad_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to load The Blue Alliance data?", "Please Confirm", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (Settings.Default.DBExists)
             {
-                BackgroundCode.seasonframework.Database.Connection.Close();
-                BuildInitialDatabase(false);
-                SetRedRight();
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to load The Blue Alliance data?", "Please Confirm", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    BackgroundCode.seasonframework.Database.Connection.Close();
+                    BuildInitialDatabase(false);
+                    SetRedRight();
 
-                Log("SQL start time is " + DateTime.Now.TimeOfDay);
+                    Log("SQL start time is " + DateTime.Now.TimeOfDay);
+                }
+                else
+                {
+                    DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Please Confirm", MessageBoxButtons.YesNo);
+                    if (manualMatches == DialogResult.Yes)
+                    {
+                        SetRedRight();
+                        Log("Loading manual matches.");
+                        LoadManualMatches();
+                        comboBoxSelectRegional.Items.Clear();
+                        comboBoxSelectRegional.Items.Add("manualEvent");
+                        comboBoxSelectRegional.SelectedItem = "manualEvent";
+                        BtnpopulateForEvent_Click(null, null);
+                    }
+                }
             }
             else
             {
-                DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Please Confirm", MessageBoxButtons.YesNo);
-                if (manualMatches == DialogResult.Yes)
-                {
-                    SetRedRight();
-                    Log("Loading manual matches.");
-                    LoadManualMatches();
-                    comboBoxSelectRegional.Items.Clear();
-                    comboBoxSelectRegional.Items.Add("manualEvent");
-                    comboBoxSelectRegional.SelectedItem = "manualEvent";
-                    BtnpopulateForEvent_Click(null, null);
-                }
+                MessageBox.Show("Database is not created yet. Please wait.");
             }
         }
         private void SetRedRight()
