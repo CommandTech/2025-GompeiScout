@@ -21,10 +21,10 @@ namespace ScoutingCodeRedo.Static
 
         public static List<string> teamlist = new List<string>();           //The list of teams for the event selected
 
-        public static Activity activity_record = new Activity();            //The activity record being sent to the database
+        public static Activity[] activity_record = new Activity[6];            //The activity record being sent to the database
         public static SeasonContext seasonframework = new SeasonContext();  //The database context
 
-        public PrintOut print = new PrintOut();                             //Print out form for debugging
+        public static PrintOut print = new PrintOut();                             //Print out form for debugging
 
         private static readonly string soundFilePath = System.IO.Path.Combine(
             System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,
@@ -36,31 +36,7 @@ namespace ScoutingCodeRedo.Static
         public static List<string> cages = new List<string>();
         public BackgroundCode()
         {
-            //If the program is in debug mode, show the print out form
-            if (Debugger.IsAttached)
-            {
-                print.Show();
-            }
 
-            //Sets the connection string to the database
-            seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
-
-            //Checks if the database exists
-            Settings.Default.DBExists = seasonframework.Database.Exists();
-            seasonframework.Database.Initialize(true);
-
-            //Sets the default values for the robots
-            for (int i = 0; i < 6; i++)
-            {
-                Robots[i] = new RobotState
-                {
-                    ScouterBox = i,
-                    _ScouterName = RobotState.SCOUTER_NAME.Select_Name,
-                    color = i < 3 ? "Red" : "Blue"
-                };
-
-                cages.Add("Select");
-            }
         }
     }
 }

@@ -35,7 +35,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             int redScore = 0;
             int blueScore = 0;
-            for (int i = 0; i < 6 - BackgroundCode.gamePads.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
                 int o = BackgroundCode.Robots[i].ScouterBox;
                 switch (BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox].Current_Mode)
