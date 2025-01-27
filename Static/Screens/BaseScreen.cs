@@ -183,10 +183,7 @@ namespace ScoutingCodeRedo.Static
                     string cages = "";
                     foreach (var robot in BackgroundCode.Robots)
                     {
-                        if (cages.Length != 0)
-                        {
-                            cages += ",";
-                        }
+                        cages += ",";
                         cages += robot.Selected_Cage;
                     }
                     iniFile.Write("MatchData", "cages", cages);

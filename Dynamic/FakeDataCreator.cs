@@ -234,17 +234,15 @@ namespace ScoutingCodeRedo.Dynamic
                                 BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
                                 if (robot != BackgroundCode.Robots[i])
                                 {
-                                    if (BackgroundCode.Robots[i].Current_Mode != RobotState.ROBOT_MODE.Surfacing)
+                                    BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Surfacing;
+                                    BackgroundCode.Robots[i].Def_Rat = random.Next(4);
+                                    if (BackgroundCode.Robots[i].Def_Rat != 0)
                                     {
-                                        BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Surfacing;
-                                        BackgroundCode.Robots[i].Def_Rat = random.Next(4);
-                                        if (BackgroundCode.Robots[i].Def_Rat != 0)
-                                        {
-                                            BackgroundCode.Robots[i].Def_Eff = random.Next(6);
-                                        }
-                                        BackgroundCode.Robots[i].Avo_Rat = random.Next(4);
+                                        BackgroundCode.Robots[i].Def_Eff = random.Next(6);
                                     }
-                                    int temp = random.Next(2)+1;
+                                    BackgroundCode.Robots[i].Avo_Rat = random.Next(4);
+                                 
+                                    int temp = random.Next(2) + 1;
                                     if (BackgroundCode.Robots[i].End_State == RobotState.END_STATE.Park)
                                     {
                                         for (int j = 0; j < temp; j++)
@@ -254,7 +252,10 @@ namespace ScoutingCodeRedo.Dynamic
                                     }
                                     else if (BackgroundCode.Robots[i].End_State == RobotState.END_STATE.Elsewhere)
                                     {
-                                        BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                        if (BackgroundCode.Robots[i].Cage_Attempt != RobotState.CAGE_ATTEMPT.N)
+                                        {
+                                            BackgroundCode.Robots[i].CycleCage(RobotState.CYCLE_DIRECTION.Down);
+                                        }
                                         BackgroundCode.Robots[i].ClimbTDouble = 0;
                                         BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
                                         BackgroundCode.Robots[i].ClimbT_StopWatch.Reset();
@@ -262,7 +263,20 @@ namespace ScoutingCodeRedo.Dynamic
                                     }
                                     else
                                     {
-                                        BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                        bool tempBool = random.Next(2) == 0;
+                                        if (tempBool)
+                                        {
+                                            BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Down);
+                                        }
+                                        else
+                                        {
+                                            BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Down);
+                                            BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Down);
+                                        }
+                                        if (BackgroundCode.Robots[i].Cage_Attempt != RobotState.CAGE_ATTEMPT.Y)
+                                        {
+                                            BackgroundCode.Robots[i].CycleCage(RobotState.CYCLE_DIRECTION.Up);
+                                        }
                                     }
 
                                     temp = random.Next(6)+1;
@@ -283,11 +297,18 @@ namespace ScoutingCodeRedo.Dynamic
                             }
                             if (robot.End_State == RobotState.END_STATE.Shallow || robot.End_State == RobotState.END_STATE.Deep)
                             {
-                                robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                if (robot.Cage_Attempt != RobotState.CAGE_ATTEMPT.Y)
+                                {
+                                    robot.CycleCage(RobotState.CYCLE_DIRECTION.Up);
+                                }
                             }
                             else if (robot.End_State == RobotState.END_STATE.Elsewhere)
                             {
-                                robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+
+                                if (robot.Cage_Attempt != RobotState.CAGE_ATTEMPT.N)
+                                {
+                                    robot.CycleCage(RobotState.CYCLE_DIRECTION.Down);
+                                }
                             }
 
                             if (Settings.Default.currentMatch != BackgroundCode.UnSortedMatchList.Count)
@@ -297,6 +318,7 @@ namespace ScoutingCodeRedo.Dynamic
                             else
                             {
                                 Settings.Default.generateFakeData = false;
+                                BackgroundCode.baseScreen.BtnNextMatch_Click(null, null);
                             }
                         }
                     }
