@@ -119,10 +119,10 @@ namespace ScoutingCodeRedo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("frc842")]
-        public string practiceTeam {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int practiceTeam {
             get {
-                return ((string)(this["practiceTeam"]));
+                return ((int)(this["practiceTeam"]));
             }
             set {
                 this["practiceTeam"] = value;

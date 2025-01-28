@@ -31,8 +31,8 @@
     <Setting Name="currentMatch" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="practiceTeam" Type="System.String" Scope="User">
-      <Value Profile="(Default)">frc842</Value>
+    <Setting Name="practiceTeam" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

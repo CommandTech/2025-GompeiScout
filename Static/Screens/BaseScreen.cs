@@ -115,34 +115,11 @@ namespace ScoutingCodeRedo.Static
             // Loop through all Scouters/Robots
             for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
 
-            ////If the program is in practice mode
-            //if (Settings.Default.practiceMode)
-            //{
-            //    //Checks if it was just not in practice mode
-            //    if (!wasPractice)
-            //    {
-            //        //Updates the joysticks
-            //        UpdateJoysticks();
-            //    }
-
-            //    //Changes gamepads 1 to 5 to null
-            //    for (int i = 1; i < BackgroundCode.gamePads.Length; i++)
-            //    {
-            //        BackgroundCode.Robots[i].TeamName = BackgroundCode.Robots[0].TeamName;
-
-            //        //If the scouter error increases, play the sound
-            //        if (BackgroundCode.Robots[i].prevScouterError != BackgroundCode.Robots[i].ScouterError)
-            //        {
-            //            BackgroundCode.soundCue.Play();
-            //            BackgroundCode.Robots[i].prevScouterError = BackgroundCode.Robots[i].ScouterError;
-            //        }
-            //    }
-
-            //    LoadMatch();
-
-            //    //Sets that it was in practice mode
-            //    wasPractice = true;
-            //}
+            //If the program is in practice mode
+            if (Settings.Default.practiceMode)
+            {
+                LoadMatch();
+            }
         }
 
         public static void UpdateJoysticks()
@@ -403,8 +380,27 @@ namespace ScoutingCodeRedo.Static
             //HERE
             if (Settings.Default.practiceMode)
             {
-                //label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1;
-                label.Text = robot.TeamName = Settings.Default.practiceTeam;
+                switch (Settings.Default.practiceTeam)
+                {
+                    case 0:
+                        label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1;
+                        break;
+                    case 1:
+                        label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2;
+                        break;
+                    case 2:
+                        label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3;
+                        break;
+                    case 3:
+                        label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1;
+                        break;
+                    case 4:
+                        label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2;
+                        break;
+                    case 5:
+                        label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3;
+                        break;
+                }
             }
             else
             {

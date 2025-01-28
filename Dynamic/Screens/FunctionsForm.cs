@@ -22,17 +22,20 @@ namespace ScoutingCodeRedo.Dynamic
                 comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam2);
                 comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam3);
 
-                comboPracticeTeams.SelectedItem = Settings.Default.practiceTeam;
+                comboPracticeTeams.SelectedIndex = Settings.Default.practiceTeam;
             }
             catch
             {
 
             }
         }
+        private void ComboPracticeTeams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Settings.Default.practiceTeam = comboPracticeTeams.SelectedIndex;
+        }
 
         private void FuncOK_Click(object sender, EventArgs e)
         {
-            Settings.Default.practiceTeam = comboPracticeTeams.SelectedItem.ToString();
             this.Hide();
         }
 

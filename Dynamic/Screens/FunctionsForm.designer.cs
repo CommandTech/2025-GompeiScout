@@ -131,6 +131,7 @@
             this.comboPracticeTeams.Name = "comboPracticeTeams";
             this.comboPracticeTeams.Size = new System.Drawing.Size(116, 24);
             this.comboPracticeTeams.TabIndex = 361;
+            this.comboPracticeTeams.SelectedIndexChanged += new System.EventHandler(this.ComboPracticeTeams_SelectedIndexChanged);
             // 
             // FunctionsForm
             // 
