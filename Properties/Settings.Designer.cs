@@ -128,5 +128,17 @@ namespace ScoutingCodeRedo.Properties {
                 this["practiceTeam"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool practiceChanged {
+            get {
+                return ((bool)(this["practiceChanged"]));
+            }
+            set {
+                this["practiceChanged"] = value;
+            }
+        }
     }
 }

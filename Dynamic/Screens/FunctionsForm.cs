@@ -13,6 +13,8 @@ namespace ScoutingCodeRedo.Dynamic
             InitializeComponent();
             cbxPractice.Checked = Settings.Default.practiceMode;
 
+            comboPracticeTeams.Visible = Settings.Default.practiceMode;
+
             try
             {
                 comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam1);
@@ -31,6 +33,7 @@ namespace ScoutingCodeRedo.Dynamic
         }
         private void ComboPracticeTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Settings.Default.practiceChanged = true;
             Settings.Default.practiceTeam = comboPracticeTeams.SelectedIndex;
         }
 
@@ -76,6 +79,8 @@ namespace ScoutingCodeRedo.Dynamic
         private void CbxPractice_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.practiceMode = cbxPractice.Checked;
+            comboPracticeTeams.Visible = Settings.Default.practiceMode;
+            Settings.Default.practiceChanged = true;
         }
 
         private void BtnCages_Click(object sender, EventArgs e)

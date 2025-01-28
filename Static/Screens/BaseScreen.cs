@@ -116,9 +116,10 @@ namespace ScoutingCodeRedo.Static
             for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
 
             //If the program is in practice mode
-            if (Settings.Default.practiceMode)
+            if (Settings.Default.practiceMode || Settings.Default.practiceChanged)
             {
                 LoadMatch();
+                Settings.Default.practiceChanged = false;
             }
         }
 
@@ -377,7 +378,6 @@ namespace ScoutingCodeRedo.Static
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
-            //HERE
             if (Settings.Default.practiceMode)
             {
                 switch (Settings.Default.practiceTeam)
