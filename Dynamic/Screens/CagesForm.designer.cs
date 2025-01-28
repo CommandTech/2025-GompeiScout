@@ -19,6 +19,12 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CagesOK = new System.Windows.Forms.Button();
+            this.lblRed0 = new System.Windows.Forms.Label();
+            this.lblRed1 = new System.Windows.Forms.Label();
+            this.lblRed2 = new System.Windows.Forms.Label();
+            this.lblBlue2 = new System.Windows.Forms.Label();
+            this.lblBlue1 = new System.Windows.Forms.Label();
+            this.lblBlue0 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -27,7 +33,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.UpdateScouterText.BackColor = System.Drawing.Color.Transparent;
             this.UpdateScouterText.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateScouterText.ForeColor = System.Drawing.Color.FloralWhite;
-            this.UpdateScouterText.Location = new System.Drawing.Point(14, 7);
+            this.UpdateScouterText.Location = new System.Drawing.Point(14, 19);
             this.UpdateScouterText.Name = "UpdateScouterText";
             this.UpdateScouterText.Size = new System.Drawing.Size(136, 74);
             this.UpdateScouterText.TabIndex = 354;
@@ -42,7 +48,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Blue1.Items.AddRange(new object[] {
             "Shallow",
             "Deep"});
-            this.Blue1.Location = new System.Drawing.Point(22, 225);
+            this.Blue1.Location = new System.Drawing.Point(22, 245);
             this.Blue1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Blue1.Name = "Blue1";
             this.Blue1.Size = new System.Drawing.Size(163, 24);
@@ -57,7 +63,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Blue2.Items.AddRange(new object[] {
             "Shallow",
             "Deep"});
-            this.Blue2.Location = new System.Drawing.Point(193, 225);
+            this.Blue2.Location = new System.Drawing.Point(193, 245);
             this.Blue2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Blue2.Name = "Blue2";
             this.Blue2.Size = new System.Drawing.Size(163, 24);
@@ -72,7 +78,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.Blue3.Items.AddRange(new object[] {
             "Shallow",
             "Deep"});
-            this.Blue3.Location = new System.Drawing.Point(364, 225);
+            this.Blue3.Location = new System.Drawing.Point(364, 245);
             this.Blue3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Blue3.Name = "Blue3";
             this.Blue3.Size = new System.Drawing.Size(163, 24);
@@ -129,7 +135,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(230, 55);
+            this.label1.Location = new System.Drawing.Point(218, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 57);
             this.label1.TabIndex = 361;
@@ -141,7 +147,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(226, 161);
+            this.label2.Location = new System.Drawing.Point(226, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 57);
             this.label2.TabIndex = 362;
@@ -151,7 +157,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             // 
             this.CagesOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CagesOK.ForeColor = System.Drawing.Color.Black;
-            this.CagesOK.Location = new System.Drawing.Point(549, 240);
+            this.CagesOK.Location = new System.Drawing.Point(549, 281);
             this.CagesOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CagesOK.Name = "CagesOK";
             this.CagesOK.Size = new System.Drawing.Size(66, 35);
@@ -160,10 +166,88 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.CagesOK.UseVisualStyleBackColor = true;
             this.CagesOK.Click += new System.EventHandler(this.CagesOK_Click);
             // 
+            // lblRed0
+            // 
+            this.lblRed0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRed0.BackColor = System.Drawing.Color.Transparent;
+            this.lblRed0.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRed0.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblRed0.Location = new System.Drawing.Point(65, 85);
+            this.lblRed0.Name = "lblRed0";
+            this.lblRed0.Size = new System.Drawing.Size(103, 31);
+            this.lblRed0.TabIndex = 364;
+            this.lblRed0.Text = "red0";
+            // 
+            // lblRed1
+            // 
+            this.lblRed1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRed1.BackColor = System.Drawing.Color.Transparent;
+            this.lblRed1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRed1.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblRed1.Location = new System.Drawing.Point(235, 85);
+            this.lblRed1.Name = "lblRed1";
+            this.lblRed1.Size = new System.Drawing.Size(100, 31);
+            this.lblRed1.TabIndex = 365;
+            this.lblRed1.Text = "red1";
+            // 
+            // lblRed2
+            // 
+            this.lblRed2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRed2.BackColor = System.Drawing.Color.Transparent;
+            this.lblRed2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRed2.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblRed2.Location = new System.Drawing.Point(407, 83);
+            this.lblRed2.Name = "lblRed2";
+            this.lblRed2.Size = new System.Drawing.Size(103, 31);
+            this.lblRed2.TabIndex = 366;
+            this.lblRed2.Text = "red2";
+            // 
+            // lblBlue2
+            // 
+            this.lblBlue2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBlue2.BackColor = System.Drawing.Color.Transparent;
+            this.lblBlue2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBlue2.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblBlue2.Location = new System.Drawing.Point(407, 209);
+            this.lblBlue2.Name = "lblBlue2";
+            this.lblBlue2.Size = new System.Drawing.Size(103, 31);
+            this.lblBlue2.TabIndex = 369;
+            this.lblBlue2.Text = "blue2";
+            // 
+            // lblBlue1
+            // 
+            this.lblBlue1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBlue1.BackColor = System.Drawing.Color.Transparent;
+            this.lblBlue1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBlue1.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblBlue1.Location = new System.Drawing.Point(235, 211);
+            this.lblBlue1.Name = "lblBlue1";
+            this.lblBlue1.Size = new System.Drawing.Size(100, 31);
+            this.lblBlue1.TabIndex = 368;
+            this.lblBlue1.Text = "blue1";
+            // 
+            // lblBlue0
+            // 
+            this.lblBlue0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBlue0.BackColor = System.Drawing.Color.Transparent;
+            this.lblBlue0.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBlue0.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblBlue0.Location = new System.Drawing.Point(65, 211);
+            this.lblBlue0.Name = "lblBlue0";
+            this.lblBlue0.Size = new System.Drawing.Size(103, 31);
+            this.lblBlue0.TabIndex = 367;
+            this.lblBlue0.Text = "blue0";
+            // 
             // CagesForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(628, 289);
+            this.ClientSize = new System.Drawing.Size(628, 329);
+            this.Controls.Add(this.lblBlue2);
+            this.Controls.Add(this.lblBlue1);
+            this.Controls.Add(this.lblBlue0);
+            this.Controls.Add(this.lblRed2);
+            this.Controls.Add(this.lblRed1);
+            this.Controls.Add(this.lblRed0);
             this.Controls.Add(this.CagesOK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -191,5 +275,11 @@ namespace ScoutingCodeRedo.Dynamic.Screens
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CagesOK;
+        private System.Windows.Forms.Label lblRed0;
+        private System.Windows.Forms.Label lblRed1;
+        private System.Windows.Forms.Label lblRed2;
+        private System.Windows.Forms.Label lblBlue2;
+        private System.Windows.Forms.Label lblBlue1;
+        private System.Windows.Forms.Label lblBlue0;
     }
 }

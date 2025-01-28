@@ -19,6 +19,14 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             Cages.Add(Blue2);
             Cages.Add(Blue3);
 
+            lblRed0.Text = BackgroundCode.UnSortedMatchList[0].Redteam1;
+            lblRed1.Text = BackgroundCode.UnSortedMatchList[0].Redteam2;
+            lblRed2.Text = BackgroundCode.UnSortedMatchList[0].Redteam3;
+
+            lblBlue0.Text = BackgroundCode.UnSortedMatchList[0].Blueteam1;
+            lblBlue1.Text = BackgroundCode.UnSortedMatchList[0].Blueteam2;
+            lblBlue2.Text = BackgroundCode.UnSortedMatchList[0].Blueteam3;
+
             for (int i = 0; i < 6; i++)
             {
                 Cages[i].SelectedIndex = Cages[i].Items.IndexOf(BackgroundCode.cages[i]);
