@@ -34,8 +34,8 @@ At the end of the match, when every scouter is ready to go to the next match. Th
 In case of code exiting during an event, the code should automatically save the current data (match number, event code, red right, priority scouting) just re-open the code, click on load previous data.
 If it does not save the data, just load events and get matches and use the arrow at the top until you get to the match
 
-## 2024 Controls
-![Auto Mode Controls](https://imgur.com/a/ToLluo7)
-![Teleop Mode Controls](https://imgur.com/0vDOqkX)
-![Defense Mode Controls](https://imgur.com/Gn8Pd11)
-![Surfacing Mode Controls](https://imgur.com/OWMkUOq)
+## 2025 Controls
+![Auto Mode Controls](https://i.imgur.com/m4PdY1t.png)
+![Teleop Mode Controls](https://i.imgur.com/0vDOqkX.png)
+![Defense Mode Controls](https://i.imgur.com/Gn8Pd11.png)
+![Surfacing Mode Controls](https://i.imgur.com/OWMkUOq.png)
