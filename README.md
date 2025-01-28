@@ -35,6 +35,7 @@ In case of code exiting during an event, the code should automatically save the 
 If it does not save the data, just load events and get matches and use the arrow at the top until you get to the match
 
 ## 2024 Controls
-![Auto Mode Controls](https://i.imgur.com/aaHGLxW.png?1)
-![Teleop Mode Controls](https://i.imgur.com/SaYmYmg.png)
-![Endgame Mode Controls](https://i.imgur.com/8mVOZt8.png)
+![Auto Mode Controls](https://imgur.com/a/ToLluo7)
+![Teleop Mode Controls](https://imgur.com/0vDOqkX)
+![Defense Mode Controls](https://imgur.com/Gn8Pd11)
+![Surfacing Mode Controls](https://imgur.com/OWMkUOq)
