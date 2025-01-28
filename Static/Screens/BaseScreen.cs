@@ -20,6 +20,7 @@ namespace ScoutingCodeRedo.Static
         public readonly string projectBaseDirectory;
         public readonly string iniPath;
         public readonly INIFile iniFile;
+        public static bool wasPractice = false;
         public BaseScreen()
         {
             //Initialization of the screen
@@ -116,10 +117,11 @@ namespace ScoutingCodeRedo.Static
             for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
 
             //If the program is in practice mode
-            if (Settings.Default.practiceMode || Settings.Default.practiceChanged)
+            if ((Settings.Default.practiceMode && Settings.Default.practiceChanged) || wasPractice)
             {
                 LoadMatch();
                 Settings.Default.practiceChanged = false;
+                wasPractice = false;
             }
         }
 

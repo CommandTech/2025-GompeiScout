@@ -80,7 +80,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             Settings.Default.practiceMode = cbxPractice.Checked;
             comboPracticeTeams.Visible = Settings.Default.practiceMode;
-            Settings.Default.practiceChanged = true;
+            if (!Settings.Default.practiceMode) BaseScreen.wasPractice = true;
         }
 
         private void BtnCages_Click(object sender, EventArgs e)
