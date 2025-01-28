@@ -44,7 +44,7 @@ If it does not save the data, just load events and get matches and use the arrow
 
 The function form in the top right opens up a new window for more options.
 
-Priority: To select what teams you want to prioritize scouting at an event. This will highlight the team when they appear in the match (Format is frc#####)
+Priority: To select what teams you want to prioritize scouting at an event. This will highlight the team when they appear in the match (Format is just team number)
 
 Swap Scouters: If the scouter wants to swap to a different box to scout, they can input their name into the box they want to scout.
 

@@ -13,7 +13,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdateDatabase = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
-            this.btnFakeData = new System.Windows.Forms.Button();
+            this.comboPracticeTeams = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -75,7 +75,7 @@
             this.cbxPractice.Location = new System.Drawing.Point(261, 99);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
-            this.cbxPractice.Size = new System.Drawing.Size(136, 24);
+            this.cbxPractice.Size = new System.Drawing.Size(116, 20);
             this.cbxPractice.TabIndex = 356;
             this.cbxPractice.Text = "Practice Mode";
             this.cbxPractice.UseVisualStyleBackColor = false;
@@ -118,13 +118,25 @@
             this.btnCages.TabIndex = 359;
             this.btnCages.Text = "Cages";
             this.btnCages.UseVisualStyleBackColor = true;
-            this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
+            this.btnCages.Click += new System.EventHandler(this.BtnCages_Click);
+            // 
+            // comboPracticeTeams
+            // 
+            this.comboPracticeTeams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.comboPracticeTeams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPracticeTeams.ForeColor = System.Drawing.Color.Yellow;
+            this.comboPracticeTeams.FormattingEnabled = true;
+            this.comboPracticeTeams.Location = new System.Drawing.Point(261, 126);
+            this.comboPracticeTeams.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboPracticeTeams.Name = "comboPracticeTeams";
+            this.comboPracticeTeams.Size = new System.Drawing.Size(116, 24);
+            this.comboPracticeTeams.TabIndex = 361;
             // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(408, 362);
-            this.Controls.Add(this.btnFakeData);
+            this.Controls.Add(this.comboPracticeTeams);
             this.Controls.Add(this.btnCages);
             this.Controls.Add(this.btnUpdateDatabase);
             this.Controls.Add(this.btnRefresh);
@@ -149,6 +161,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdateDatabase;
         private System.Windows.Forms.Button btnCages;
-        private System.Windows.Forms.Button btnFakeData;
+        private System.Windows.Forms.ComboBox comboPracticeTeams;
     }
 }

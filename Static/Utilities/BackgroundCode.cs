@@ -26,6 +26,8 @@ namespace ScoutingCodeRedo.Static
 
         public static PrintOut print = new PrintOut();                             //Print out form for debugging
 
+        public static List<string> teamPrio = new List<string>();           //List of teams to prioritize scouting
+
         private static readonly string soundFilePath = System.IO.Path.Combine(
             System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,
             "errorSound.wav"

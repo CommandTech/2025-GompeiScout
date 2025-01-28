@@ -20,8 +20,6 @@ namespace ScoutingCodeRedo.Static
         public readonly string projectBaseDirectory;
         public readonly string iniPath;
         public readonly INIFile iniFile;
-
-        bool wasPractice = false;
         public BaseScreen()
         {
             //Initialization of the screen
@@ -160,13 +158,13 @@ namespace ScoutingCodeRedo.Static
             for (int i = 0; i < 6; i++)
             {
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Text = BackgroundCode.Robots[i].GetScouterName().ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ScoutName", true)[0]).Visible = true;
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Text = BackgroundCode.Robots[i].Match_event.ToString();
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = (i < BackgroundCode.gamePads.Length+1) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}MatchEvent", true)[0]).Visible = true;
                 ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Text = BackgroundCode.Robots[i].Current_Mode.ToString() + " Mode";
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}ModeValue", true)[0]).Visible = true;
 
-                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = (i < BackgroundCode.gamePads.Length) || !Settings.Default.practiceMode;
+                ((Label)this.Controls.Find($"lbl{BackgroundCode.Robots[i].ScouterBox}TeamName", true)[0]).Visible = true;
             }
         }
         private void BtnExit_Click(object sender, EventArgs e)
@@ -208,7 +206,7 @@ namespace ScoutingCodeRedo.Static
                     }
                     iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                     iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
-                    iniFile.Write("MatchData", "teamPrio", string.Join(",", Settings.Default.teamPrio));
+                    iniFile.Write("MatchData", "teamPrio", string.Join(",", BackgroundCode.teamPrio));
                     string scouterNames = "";
                     string scouterLocations = "";
                     foreach (var robot in BackgroundCode.Robots)
@@ -255,8 +253,7 @@ namespace ScoutingCodeRedo.Static
                 Settings.Default.currentMatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
                 Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
                 var teamPrioList = new List<string>(iniFile.Read("MatchData", "teamPrio", "").Split(','));
-                Settings.Default.teamPrio = new StringCollection();
-                Settings.Default.teamPrio.AddRange(teamPrioList.ToArray());
+                BackgroundCode.teamPrio.AddRange(teamPrioList.ToArray());
 
 
                 List<string> scouterNames = new List<string>(iniFile.Read("MatchData", "scouterNames", "").Split(','));
@@ -384,7 +381,6 @@ namespace ScoutingCodeRedo.Static
                 LoadMatch();
             }
         }
-
         private void LoadMatch()
         {
             for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
@@ -393,11 +389,8 @@ namespace ScoutingCodeRedo.Static
             }
 
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{BackgroundCode.UnSortedMatchList.Count}";
-            List<string> teamPrioList = null;
-            if (Settings.Default.teamPrio != null)
-            {
-                teamPrioList = Settings.Default.teamPrio.Cast<string>().ToList();
-            }
+            List<string> teamPrioList = BackgroundCode.teamPrio.Cast<string>().ToList();
+            
             SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
             SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
             SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3, teamPrioList);
@@ -407,9 +400,11 @@ namespace ScoutingCodeRedo.Static
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
+            //HERE
             if (Settings.Default.practiceMode)
             {
-                label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1;
+                //label.Text = robot.TeamName = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1;
+                label.Text = robot.TeamName = Settings.Default.practiceTeam;
             }
             else
             {

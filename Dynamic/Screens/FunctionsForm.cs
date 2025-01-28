@@ -12,10 +12,27 @@ namespace ScoutingCodeRedo.Dynamic
         {
             InitializeComponent();
             cbxPractice.Checked = Settings.Default.practiceMode;
+
+            try
+            {
+                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam1);
+                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam2);
+                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam3);
+                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam1);
+                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam2);
+                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam3);
+
+                comboPracticeTeams.SelectedItem = Settings.Default.practiceTeam;
+            }
+            catch
+            {
+
+            }
         }
 
         private void FuncOK_Click(object sender, EventArgs e)
         {
+            Settings.Default.practiceTeam = comboPracticeTeams.SelectedItem.ToString();
             this.Hide();
         }
 
@@ -58,7 +75,7 @@ namespace ScoutingCodeRedo.Dynamic
             Settings.Default.practiceMode = cbxPractice.Checked;
         }
 
-        private void btnCages_Click(object sender, EventArgs e)
+        private void BtnCages_Click(object sender, EventArgs e)
         {
             CagesForm frm = new CagesForm();
             this.Hide();

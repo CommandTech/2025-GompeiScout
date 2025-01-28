@@ -12,7 +12,7 @@ namespace ScoutingCodeRedo.Static
         {
             InitializeComponent();
 
-            if (Settings.Default.teamPrio != null) TeamList.Text = string.Join(", ", Settings.Default.teamPrio);
+            TeamList.Text = string.Join(", ", BackgroundCode.teamPrio);
         }
 
         private void ScoutOK_Click(object sender, EventArgs e)
@@ -21,8 +21,8 @@ namespace ScoutingCodeRedo.Static
                                 .Select(team => team.Trim())
                                 .ToArray();
 
-            Settings.Default.teamPrio = new StringCollection();
-            Settings.Default.teamPrio.AddRange(teamPrioList);
+            BackgroundCode.teamPrio.Clear();
+            BackgroundCode.teamPrio.AddRange(teamPrioList);
 
             this.Hide();
         }

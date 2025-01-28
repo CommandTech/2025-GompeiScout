@@ -88,7 +88,7 @@ namespace ScoutingCodeRedo.Static
                 }
                 iniFile.Write("MatchData", "match_number", Settings.Default.currentMatch.ToString());
                 iniFile.Write("MatchData", "redRight", Settings.Default.redRight.ToString());
-                iniFile.Write("MatchData", "teamPrio", string.Join(",", Settings.Default.teamPrio));
+                iniFile.Write("MatchData", "teamPrio", string.Join(",", BackgroundCode.teamPrio));
                 //Gets the current scouter names and locations to save
                 string scouterNames = "";
                 string scouterLocations = "";
