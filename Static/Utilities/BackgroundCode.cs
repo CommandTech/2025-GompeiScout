@@ -26,7 +26,7 @@ namespace ScoutingCodeRedo.Static
 
         public static List<string> teamPrio = new List<string>();           //List of teams to prioritize scouting
         public static string homeTeam = "frc842";                           //Your team number
-        public static List<string> homePrio = new List<string>();           //List your next match teams to prioritize
+        public static List<string> homePrio = new List<string>();
 
         private static readonly string soundFilePath = System.IO.Path.Combine(
             System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,

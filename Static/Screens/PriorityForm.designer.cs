@@ -10,6 +10,7 @@
             this.TeamList = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.combohomeTeam = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -45,7 +46,7 @@
             this.TeamList.Location = new System.Drawing.Point(185, 124);
             this.TeamList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TeamList.Name = "TeamList";
-            this.TeamList.Size = new System.Drawing.Size(163, 22);
+            this.TeamList.Size = new System.Drawing.Size(163, 26);
             this.TeamList.TabIndex = 351;
             // 
             // label1
@@ -70,13 +71,27 @@
             this.combohomeTeam.Location = new System.Drawing.Point(185, 179);
             this.combohomeTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.combohomeTeam.Name = "combohomeTeam";
-            this.combohomeTeam.Size = new System.Drawing.Size(163, 24);
+            this.combohomeTeam.Size = new System.Drawing.Size(163, 28);
             this.combohomeTeam.TabIndex = 361;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FloralWhite;
+            this.label2.Location = new System.Drawing.Point(57, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 26);
+            this.label2.TabIndex = 362;
+            this.label2.Text = "Your Team:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PriorityForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(535, 231);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.combohomeTeam);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UpdateScouterText);
@@ -95,5 +110,6 @@
         private System.Windows.Forms.TextBox TeamList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox combohomeTeam;
+        private System.Windows.Forms.Label label2;
     }
 }

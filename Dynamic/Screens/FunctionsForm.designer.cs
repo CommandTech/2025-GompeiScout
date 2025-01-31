@@ -48,9 +48,9 @@
             this.btnPriority.Location = new System.Drawing.Point(24, 99);
             this.btnPriority.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPriority.Name = "btnPriority";
-            this.btnPriority.Size = new System.Drawing.Size(97, 35);
+            this.btnPriority.Size = new System.Drawing.Size(132, 35);
             this.btnPriority.TabIndex = 354;
-            this.btnPriority.Text = "Priority";
+            this.btnPriority.Text = "Priority v2";
             this.btnPriority.UseVisualStyleBackColor = true;
             this.btnPriority.Click += new System.EventHandler(this.BtnPriority_Click);
             // 
@@ -75,7 +75,7 @@
             this.cbxPractice.Location = new System.Drawing.Point(261, 99);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
-            this.cbxPractice.Size = new System.Drawing.Size(116, 20);
+            this.cbxPractice.Size = new System.Drawing.Size(136, 24);
             this.cbxPractice.TabIndex = 356;
             this.cbxPractice.Text = "Practice Mode";
             this.cbxPractice.UseVisualStyleBackColor = false;
@@ -114,7 +114,7 @@
             this.btnCages.Location = new System.Drawing.Point(24, 278);
             this.btnCages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCages.Name = "btnCages";
-            this.btnCages.Size = new System.Drawing.Size(74, 35);
+            this.btnCages.Size = new System.Drawing.Size(80, 35);
             this.btnCages.TabIndex = 359;
             this.btnCages.Text = "Cages";
             this.btnCages.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.comboPracticeTeams.Location = new System.Drawing.Point(261, 126);
             this.comboPracticeTeams.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboPracticeTeams.Name = "comboPracticeTeams";
-            this.comboPracticeTeams.Size = new System.Drawing.Size(116, 24);
+            this.comboPracticeTeams.Size = new System.Drawing.Size(116, 28);
             this.comboPracticeTeams.TabIndex = 361;
             this.comboPracticeTeams.SelectedIndexChanged += new System.EventHandler(this.ComboPracticeTeams_SelectedIndexChanged);
             // 

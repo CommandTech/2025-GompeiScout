@@ -45,6 +45,7 @@ If it does not save the data, just load events and get matches and use the arrow
 The function form in the top right opens up a new window for more options.
 
 Priority: To select what teams you want to prioritize scouting at an event. This will highlight the team when they appear in the match (Format is just team number)
+v2: Now allows you to input your team and it will highlight robots in matches that appear in your next match.
 
 Swap Scouters: If the scouter wants to swap to a different box to scout, they can input their name into the box they want to scout.
 
@@ -54,4 +55,4 @@ Update Database: Opens the update database form. Allows the user to fix data if 
 
 Cages: Form to input the selected cages for the match.
 
-Practice Mode: Enables or disables practice mode. Practice mode will only allow one controller to work. (Still a work in progress, will change in the future)
+Practice Mode: Enables or disables practice mode. This will allow all 6 scouters to scout 1 robot to easily compare data.

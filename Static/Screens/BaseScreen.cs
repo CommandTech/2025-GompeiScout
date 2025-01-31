@@ -351,9 +351,11 @@ namespace ScoutingCodeRedo.Static
             {
                 DynamicResponses.ResetValues(i);
             }
+            RefreshPrio();
 
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{BackgroundCode.UnSortedMatchList.Count}";
             List<string> teamPrioList = BackgroundCode.teamPrio.Cast<string>().ToList();
+            teamPrioList.AddRange(BackgroundCode.homePrio);
 
             SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
             SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
@@ -361,6 +363,7 @@ namespace ScoutingCodeRedo.Static
             SetTeamNameAndColor(this.lbl3TeamName, BackgroundCode.Robots[3], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1, teamPrioList);
             SetTeamNameAndColor(this.lbl4TeamName, BackgroundCode.Robots[4], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2, teamPrioList);
             SetTeamNameAndColor(this.lbl5TeamName, BackgroundCode.Robots[5], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3, teamPrioList);
+
         }
         void SetTeamNameAndColor(Label label, RobotState robot, string teamName, List<string> teamPrioList)
         {
@@ -611,6 +614,31 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.InMemoryMatchList = BackgroundCode.UnSortedMatchList.OrderBy(o => o.Match_number).ToList();
             }
             NextMatch();
+        }
+        public static void RefreshPrio()
+        {
+            if (BackgroundCode.homeTeam != "None")
+            {
+                for (int i = Settings.Default.currentMatch - 1; i < BackgroundCode.InMemoryMatchList.Count; i++)
+                {
+                    List<string> teams = new List<string>
+                {
+                    BackgroundCode.InMemoryMatchList[i].Redteam1.Substring(3),
+                    BackgroundCode.InMemoryMatchList[i].Redteam2.Substring(3),
+                    BackgroundCode.InMemoryMatchList[i].Redteam3.Substring(3),
+                    BackgroundCode.InMemoryMatchList[i].Blueteam1.Substring(3),
+                    BackgroundCode.InMemoryMatchList[i].Blueteam2.Substring(3),
+                    BackgroundCode.InMemoryMatchList[i].Blueteam3.Substring(3)
+                };
+
+                    if (teams.Contains(BackgroundCode.homeTeam))
+                    {
+                        BackgroundCode.homePrio.Clear();
+                        BackgroundCode.homePrio.AddRange(teams);
+                        break;
+                    }
+                }
+            }
         }
         public void Log(string m)
         {
