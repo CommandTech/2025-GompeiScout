@@ -275,6 +275,7 @@ namespace ScoutingCodeRedo.Static
                         SetRedRight();
                         Log("Loading manual matches.");
                         LoadManualMatches();
+                        comboBoxSelectRegional.DataSource = null;
                         comboBoxSelectRegional.Items.Clear();
                         comboBoxSelectRegional.Items.Add("manualEvent");
                         comboBoxSelectRegional.SelectedItem = "manualEvent";
@@ -408,10 +409,8 @@ namespace ScoutingCodeRedo.Static
 
         private async void BtnpopulateForEvent_Click(object sender, EventArgs e)
         {
-            if (sender != null)
-            {
-                Settings.Default.currentMatch = 0;
-            }
+            Settings.Default.currentMatch = 0;
+
             BackgroundCode.UnSortedMatchList.Clear();
             BackgroundCode.InMemoryMatchList.Clear();
             if (Settings.Default.manualMatchList != null)
