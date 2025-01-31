@@ -31,9 +31,9 @@ namespace ScoutingCodeRedo.Static
         private static readonly string soundFilePath = System.IO.Path.Combine(
             System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName,
             "errorSound.wav"
-        );                                                                  //Sound file for practice mode error
+        );                                                                      //Sound file for practice mode error
 
-        public static SoundPlayer soundCue = new SoundPlayer(soundFilePath);//Sound player for practice mode error
+        public static SoundPlayer soundCue = new SoundPlayer(soundFilePath);    //Sound player for practice mode error
 
         public static List<string> cages = new List<string>();
         public BackgroundCode()

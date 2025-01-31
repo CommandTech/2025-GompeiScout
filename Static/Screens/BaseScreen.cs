@@ -56,9 +56,6 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.print.Show();
             }
 
-            Thread dbThread = new Thread(() => InitalizeDB());
-            dbThread.Start();
-
             //Sets the default values for the robots
             for (int i = 0; i < 6; i++)
             {
@@ -82,17 +79,6 @@ namespace ScoutingCodeRedo.Static
             }
 
             this.timerJoysticks.Tick += new EventHandler(this.JoyStickReader);
-        }
-
-        private void InitalizeDB()
-        {
-            //Sets the connection string to the database
-            BackgroundCode.seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
-
-            //Checks if the database exists
-            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
-            BackgroundCode.seasonframework.Database.Initialize(true);
-            Settings.Default.DBExists = true;
         }
 
         private void ControllerThreadMethod(object gamePad)
