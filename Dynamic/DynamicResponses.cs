@@ -101,7 +101,7 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.AcqCoralNearFar = robot.DelNearFar;
                         }
                     }
-                    
+
                     //Deliveries
                     if (gamepad.RightButton_Press && robot.lastAlgaeAcqLoc == robot.prevlastAlgaeAcqLoc && robot.lastAlgaeAcqLoc != " ")
                     {
@@ -538,7 +538,7 @@ namespace ScoutingCodeRedo.Dynamic
                 if (gamepad.StartButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto)
                 {
                     robot.AUTO = false;
-                    TransactToDatabase(robot, "EndAuto",controllerNumber);
+                    TransactToDatabase(robot, "EndAuto", controllerNumber);
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Surfacing;
                     robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
                 }

@@ -1,7 +1,6 @@
 ﻿using ScoutingCodeRedo.Properties;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -28,7 +27,7 @@ namespace ScoutingCodeRedo.Static
 
             BackgroundCode.teamPrio.Clear();
             BackgroundCode.teamPrio.AddRange(teamPrioList);
-            
+
             BackgroundCode.homeTeam = combohomeTeam.SelectedItem.ToString();
 
             for (int i = Settings.Default.currentMatch + 1; i < BackgroundCode.InMemoryMatchList.Count; i++)

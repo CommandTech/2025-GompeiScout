@@ -1,5 +1,4 @@
-﻿using ScoutingCodeRedo.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -130,7 +129,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 comboAlgaeAcqLoc.Text = "Floor";
                             }
                         }
-                        
+
 
                         comboAlgaeAcqSide.Text = result.AcqAlgae_Near_Far.ToString();
                         comboCoralAcqSide.Text = result.AcqCoral_Near_Far.ToString();
@@ -150,7 +149,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         comboStrategy.Text = result.Strategy.ToString();
                         comboEndState.Text = result.EndState.ToString();
-                        comboClimbAttempt.Text = result.CageAttept.ToString();                        
+                        comboClimbAttempt.Text = result.CageAttept.ToString();
                         txtClimbTime.Text = result.ClimbT.ToString();
 
                         comboMode.Text = result.Mode.ToString();
@@ -451,7 +450,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
                         query = "UPDATE Activities SET DelCoralF = '" + txtDelCoralF.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
-                        
+
 
                         if (int.TryParse(txtDelAlgaeP.Text, out int delAlgae))
                         {

@@ -1,9 +1,7 @@
 ﻿using ScoutingCodeRedo.Dynamic;
-using ScoutingCodeRedo.Properties;
 using ScoutingCodeRedo.Static.GamePadFolder;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Media;
 
 namespace ScoutingCodeRedo.Static

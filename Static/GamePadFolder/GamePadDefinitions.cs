@@ -1,6 +1,5 @@
 ﻿using SharpDX.DirectInput;
 using System;
-using static ScoutingCodeRedo.Dynamic.RobotState;
 
 namespace ScoutingCodeRedo.Static
 {

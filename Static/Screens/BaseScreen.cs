@@ -1,14 +1,11 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
-using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -357,7 +354,7 @@ namespace ScoutingCodeRedo.Static
 
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{BackgroundCode.UnSortedMatchList.Count}";
             List<string> teamPrioList = BackgroundCode.teamPrio.Cast<string>().ToList();
-            
+
             SetTeamNameAndColor(this.lbl0TeamName, BackgroundCode.Robots[0], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1, teamPrioList);
             SetTeamNameAndColor(this.lbl1TeamName, BackgroundCode.Robots[1], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2, teamPrioList);
             SetTeamNameAndColor(this.lbl2TeamName, BackgroundCode.Robots[2], BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3, teamPrioList);
