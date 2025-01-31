@@ -13,6 +13,11 @@ namespace ScoutingCodeRedo.Static
             InitializeComponent();
 
             TeamList.Text = string.Join(", ", BackgroundCode.teamPrio);
+            //Make a new drop down that has all the teams from BackgroundCode.teamList
+            //Automatically select the last selected team on the drop down if any
+            //When the team is saved, find the next match of that team and prioritize the other 5 teams in that match
+            //Highlight those teams when the show up
+
         }
 
         private void ScoutOK_Click(object sender, EventArgs e)
