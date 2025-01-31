@@ -13,8 +13,7 @@ namespace ScoutingCodeRedo.Static
             InitializeComponent();
 
             TeamList.Text = string.Join(", ", BackgroundCode.teamPrio);
-            //When the team is saved, find the next match of that team and prioritize the other 5 teams in that match
-            //Highlight those teams when the show up
+
             combohomeTeam.Items.Add("None");
             combohomeTeam.Items.AddRange(BackgroundCode.teamlist.ToArray());
             combohomeTeam.SelectedItem = BackgroundCode.homeTeam;
