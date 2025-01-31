@@ -9,6 +9,7 @@
             this.PrioOK = new System.Windows.Forms.Button();
             this.TeamList = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.combohomeTeam = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -44,7 +45,7 @@
             this.TeamList.Location = new System.Drawing.Point(185, 124);
             this.TeamList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TeamList.Name = "TeamList";
-            this.TeamList.Size = new System.Drawing.Size(163, 26);
+            this.TeamList.Size = new System.Drawing.Size(163, 22);
             this.TeamList.TabIndex = 351;
             // 
             // label1
@@ -60,10 +61,23 @@
             this.label1.Text = "Team List:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // combohomeTeam
+            // 
+            this.combohomeTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.combohomeTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combohomeTeam.ForeColor = System.Drawing.Color.Yellow;
+            this.combohomeTeam.FormattingEnabled = true;
+            this.combohomeTeam.Location = new System.Drawing.Point(185, 179);
+            this.combohomeTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.combohomeTeam.Name = "combohomeTeam";
+            this.combohomeTeam.Size = new System.Drawing.Size(163, 24);
+            this.combohomeTeam.TabIndex = 361;
+            // 
             // PriorityForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(535, 231);
+            this.Controls.Add(this.combohomeTeam);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UpdateScouterText);
             this.Controls.Add(this.PrioOK);
@@ -80,5 +94,6 @@
         private System.Windows.Forms.Button PrioOK;
         private System.Windows.Forms.TextBox TeamList;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox combohomeTeam;
     }
 }
