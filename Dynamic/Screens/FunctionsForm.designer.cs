@@ -14,7 +14,6 @@
             this.btnUpdateDatabase = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
             this.comboPracticeTeams = new System.Windows.Forms.ComboBox();
-            this.btnSchedule = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -33,7 +32,7 @@
             // 
             this.FuncOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FuncOK.ForeColor = System.Drawing.Color.Black;
-            this.FuncOK.Location = new System.Drawing.Point(269, 296);
+            this.FuncOK.Location = new System.Drawing.Point(329, 313);
             this.FuncOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FuncOK.Name = "FuncOK";
             this.FuncOK.Size = new System.Drawing.Size(66, 35);
@@ -73,7 +72,7 @@
             this.cbxPractice.AutoSize = true;
             this.cbxPractice.BackColor = System.Drawing.Color.Black;
             this.cbxPractice.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxPractice.Location = new System.Drawing.Point(261, 147);
+            this.cbxPractice.Location = new System.Drawing.Point(279, 106);
             this.cbxPractice.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPractice.Name = "cbxPractice";
             this.cbxPractice.Size = new System.Drawing.Size(116, 20);
@@ -127,31 +126,17 @@
             this.comboPracticeTeams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPracticeTeams.ForeColor = System.Drawing.Color.Yellow;
             this.comboPracticeTeams.FormattingEnabled = true;
-            this.comboPracticeTeams.Location = new System.Drawing.Point(261, 174);
+            this.comboPracticeTeams.Location = new System.Drawing.Point(279, 133);
             this.comboPracticeTeams.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboPracticeTeams.Name = "comboPracticeTeams";
             this.comboPracticeTeams.Size = new System.Drawing.Size(116, 24);
             this.comboPracticeTeams.TabIndex = 361;
             this.comboPracticeTeams.SelectedIndexChanged += new System.EventHandler(this.ComboPracticeTeams_SelectedIndexChanged);
             // 
-            // btnSchedule
-            // 
-            this.btnSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnSchedule.Location = new System.Drawing.Point(269, 105);
-            this.btnSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(101, 35);
-            this.btnSchedule.TabIndex = 362;
-            this.btnSchedule.Text = "Schedule";
-            this.btnSchedule.UseVisualStyleBackColor = true;
-            this.btnSchedule.Click += new System.EventHandler(this.BtnSchedule_Click);
-            // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(408, 362);
-            this.Controls.Add(this.btnSchedule);
             this.Controls.Add(this.comboPracticeTeams);
             this.Controls.Add(this.btnCages);
             this.Controls.Add(this.btnUpdateDatabase);
@@ -164,7 +149,6 @@
             this.Name = "FunctionsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -178,6 +162,5 @@
         private System.Windows.Forms.Button btnUpdateDatabase;
         private System.Windows.Forms.Button btnCages;
         private System.Windows.Forms.ComboBox comboPracticeTeams;
-        private System.Windows.Forms.Button btnSchedule;
     }
 }

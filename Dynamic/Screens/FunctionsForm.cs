@@ -89,12 +89,5 @@ namespace ScoutingCodeRedo.Dynamic
             this.Hide();
             frm.Show();
         }
-
-        private void BtnSchedule_Click(object sender, EventArgs e)
-        {
-            Schedule frm = new Schedule();
-            this.Hide();
-            frm.Show();
-        }
     }
 }
