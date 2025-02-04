@@ -11,6 +11,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.combohomeTeam = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblNextTeams = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -30,7 +32,7 @@
             // 
             this.PrioOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrioOK.ForeColor = System.Drawing.Color.Navy;
-            this.PrioOK.Location = new System.Drawing.Point(452, 179);
+            this.PrioOK.Location = new System.Drawing.Point(456, 236);
             this.PrioOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PrioOK.Name = "PrioOK";
             this.PrioOK.Size = new System.Drawing.Size(66, 35);
@@ -46,7 +48,7 @@
             this.TeamList.Location = new System.Drawing.Point(185, 124);
             this.TeamList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TeamList.Name = "TeamList";
-            this.TeamList.Size = new System.Drawing.Size(163, 26);
+            this.TeamList.Size = new System.Drawing.Size(163, 22);
             this.TeamList.TabIndex = 351;
             // 
             // label1
@@ -71,8 +73,9 @@
             this.combohomeTeam.Location = new System.Drawing.Point(185, 179);
             this.combohomeTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.combohomeTeam.Name = "combohomeTeam";
-            this.combohomeTeam.Size = new System.Drawing.Size(163, 28);
+            this.combohomeTeam.Size = new System.Drawing.Size(163, 24);
             this.combohomeTeam.TabIndex = 361;
+            this.combohomeTeam.SelectedIndexChanged += new System.EventHandler(this.CombohomeTeam_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -87,10 +90,37 @@
             this.label2.Text = "Your Team:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FloralWhite;
+            this.label3.Location = new System.Drawing.Point(62, 217);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 54);
+            this.label3.TabIndex = 363;
+            this.label3.Text = "Teams in Your Next Match:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNextTeams
+            // 
+            this.lblNextTeams.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNextTeams.BackColor = System.Drawing.Color.Transparent;
+            this.lblNextTeams.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNextTeams.ForeColor = System.Drawing.Color.FloralWhite;
+            this.lblNextTeams.Location = new System.Drawing.Point(180, 217);
+            this.lblNextTeams.Name = "lblNextTeams";
+            this.lblNextTeams.Size = new System.Drawing.Size(239, 54);
+            this.lblNextTeams.TabIndex = 364;
+            this.lblNextTeams.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PriorityForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(535, 231);
+            this.ClientSize = new System.Drawing.Size(535, 285);
+            this.Controls.Add(this.lblNextTeams);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.combohomeTeam);
             this.Controls.Add(this.label1);
@@ -111,5 +141,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox combohomeTeam;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNextTeams;
     }
 }

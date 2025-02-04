@@ -28,11 +28,16 @@ namespace ScoutingCodeRedo.Static
             BackgroundCode.teamPrio.Clear();
             BackgroundCode.teamPrio.AddRange(teamPrioList);
 
+
+            this.Hide();
+        }
+
+        private void CombohomeTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
             BackgroundCode.homeTeam = combohomeTeam.SelectedItem.ToString();
 
             BaseScreen.RefreshPrio();
-
-            this.Hide();
+            lblNextTeams.Text = string.Join(", ", BackgroundCode.homePrio);
         }
     }
 }

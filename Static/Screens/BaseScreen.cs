@@ -635,6 +635,7 @@ namespace ScoutingCodeRedo.Static
                     {
                         BackgroundCode.homePrio.Clear();
                         BackgroundCode.homePrio.AddRange(teams);
+                        BackgroundCode.homePrio.Remove(BackgroundCode.homeTeam);
                         break;
                     }
                 }
