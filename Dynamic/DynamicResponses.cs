@@ -115,50 +115,38 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.DpadUp_Press)
                     {
-                        if (robot.Flag)
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != " ")
                         {
-                            if (robot.lastAlgaeAcqLoc != " ")
-                            {
-                                robot.lastAlgaeLoc = "Net";
-                                robot.TransactionCheck = true;
-                            }
+                            robot.lastAlgaeLoc = "Net";
+                            robot.TransactionCheck = true;
                         }
-                        else
+                        else if (!robot.Flag && (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0))
                         {
-                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
-                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                                {
-                                    robot.hasCoral++;
-                                }
-                                robot.lastCoralLoc = "L4";
-                                robot.autoCoralPoints += 7;
-                                robot.TransactionCheck = true;
+                                robot.hasCoral++;
                             }
+                            robot.lastCoralLoc = "L4";
+                            robot.autoCoralPoints += 7;
+                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
                     {
-                        if (robot.Flag)
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != " ")
                         {
-                            if (robot.lastAlgaeAcqLoc != " ")
-                            {
-                                robot.lastAlgaeLoc = "Processor";
-                                robot.TransactionCheck = true;
-                            }
+                            robot.lastAlgaeLoc = "Processor";
+                            robot.TransactionCheck = true;
                         }
-                        else
+                        else if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
-                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
-                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                                {
-                                    robot.hasCoral++;
-                                }
-                                robot.lastCoralLoc = "L2";
-                                robot.autoCoralPoints += 4;
-                                robot.TransactionCheck = true;
+                                robot.hasCoral++;
                             }
+                            robot.lastCoralLoc = "L2";
+                            robot.autoCoralPoints += 4;
+                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadRight_Press)
@@ -248,48 +236,36 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.DpadUp_Press)
                     {
-                        if (robot.Flag)
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != " ")
                         {
-                            if (robot.lastAlgaeAcqLoc != " ")
-                            {
-                                robot.lastAlgaeLoc = "Net";
-                                robot.TransactionCheck = true;
-                            }
+                            robot.lastAlgaeLoc = "Net";
+                            robot.TransactionCheck = true;
                         }
-                        else
+                        else if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
-                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
-                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                                {
-                                    robot.hasCoral++;
-                                }
-                                robot.lastCoralLoc = "L4";
-                                robot.TransactionCheck = true;
+                                robot.hasCoral++;
                             }
+                            robot.lastCoralLoc = "L4";
+                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadDown_Press)
                     {
-                        if (robot.Flag)
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != " ")
                         {
-                            if (robot.lastAlgaeAcqLoc != " ")
-                            {
-                                robot.lastAlgaeLoc = "Processor";
-                                robot.TransactionCheck = true;
-                            }
+                            robot.lastAlgaeLoc = "Processor";
+                            robot.TransactionCheck = true;
                         }
-                        else
+                        else if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
                         {
-                            if (robot.lastCoralAcqLoc != " " || robot.totalCoralDeliveries == 0)
+                            if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
                             {
-                                if (robot.totalCoralDeliveries == 0 && robot.hasCoral == 0)
-                                {
-                                    robot.hasCoral++;
-                                }
-                                robot.lastCoralLoc = "L2";
-                                robot.TransactionCheck = true;
+                                robot.hasCoral++;
                             }
+                            robot.lastCoralLoc = "L2";
+                            robot.TransactionCheck = true;
                         }
                     }
                     if (gamepad.DpadRight_Press)
