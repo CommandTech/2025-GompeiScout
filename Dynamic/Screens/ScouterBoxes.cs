@@ -14,6 +14,7 @@ namespace ScoutingCodeRedo.Dynamic
             { 1, "1 Station" },
             { 2, "2 Stations" },
             { 3, "Chasing" },
+            { 4, "Counter" },
             { 9, "Scouter Error" }
         };
         readonly Dictionary<int, string> AvoidanceEquality = new Dictionary<int, string>
@@ -22,6 +23,7 @@ namespace ScoutingCodeRedo.Dynamic
             { 1, "1 Station" },
             { 2, "2 Stations" },
             { 3, "Chasing" },
+            { 4, "Counter" },
             { 9, "Scouter Error" }
         };
         public ScouterBoxes()
