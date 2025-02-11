@@ -55,6 +55,7 @@ namespace ScoutingCodeRedo.Dynamic
         public int AcqCoralF;
         public int AcqAlgaeR;
         public int AcqAlgaeF;
+        public int DisAlgae;
 
         public int DelCoralL1;
         public int DelCoralL2;

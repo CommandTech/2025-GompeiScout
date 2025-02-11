@@ -72,6 +72,7 @@ namespace ScoutingCodeRedo.Dynamic
         public string CageAttept { get; set; }
         public string SelectedCage { get; set; }
         public string PointScored { get; set; }
+        public int DisAlgae { get; set; }
 
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
@@ -126,6 +127,7 @@ namespace ScoutingCodeRedo.Dynamic
         public string CageAttept { get; set; }
         public string SelectedCage { get; set; }
         public string PointScored { get; set; }
+        public int DisAlgae { get; set; }
     }
     public class EventSummary : BaseEntity
     {
