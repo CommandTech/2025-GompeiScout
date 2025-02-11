@@ -398,22 +398,5 @@ namespace ScoutingCodeRedo.Static
                 return false;
             }
         }
-
-        internal void SimulateButtonPress(string button)
-        {
-            var field = this.GetType().GetField("_" + button, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            if (field != null && field.FieldType == typeof(bool))
-            {
-                field.SetValue(this, true);
-            }
-        }
-        internal void SimulateButtonDown(string button)
-        {
-            var field = this.GetType().GetField("_" + button, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            if (field != null && field.FieldType == typeof(bool))
-            {
-                field.SetValue(this, true);
-            }
-        }
     }
 }

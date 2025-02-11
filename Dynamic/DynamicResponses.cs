@@ -19,16 +19,6 @@ namespace ScoutingCodeRedo.Dynamic
 
             if (!robot.NoSho && robot.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
             {
-                robot.prevlastAlgaeLoc = robot.lastAlgaeLoc;
-                robot.prevlastCoralLoc = robot.lastCoralLoc;
-                if (gamepad.RightButton_Release)
-                {
-                    robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
-                }
-                if (gamepad.LeftButton_Release)
-                {
-                    robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
-                }
 
                 //***********************************
                 //AUTO MODE
@@ -77,6 +67,15 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
                             robot.AcqAlgaeNearFar = robot.DelNearFar;
+                        }
+                        else if (robot.Flag && robot.lastAlgaeAcqLoc == "Reef")
+                        {
+                            robot.hasAlgae--;
+                            robot.lastAlgaeAcqLoc = "Reef";
+                            robot.lastAlgaeLoc = "Disrupt";
+                            robot.DisAlgae++;
+                            robot.AcqAlgaeNearFar = robot.DelNearFar;
+                            robot.TransactionCheck = true;
                         }
                         else if (robot.lastCoralAcqLoc == " ")
                         {
@@ -195,9 +194,27 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
                         {
-                            robot.hasAlgae++;
-                            robot.lastAlgaeAcqLoc = "Reef";
-                            robot.AcqAlgaeNearFar = robot.DelNearFar;
+                            if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
+                            {
+                                robot.hasAlgae++;
+                                robot.lastAlgaeAcqLoc = "Reef";
+                                robot.AcqAlgaeNearFar = robot.DelNearFar;
+                            }
+                            else if (robot.Flag && robot.lastAlgaeAcqLoc == "Reef")
+                            {
+                                robot.hasAlgae--;
+                                robot.lastAlgaeAcqLoc = "Reef";
+                                robot.lastAlgaeLoc = "Disrupt";
+                                robot.DisAlgae++;
+                                robot.AcqAlgaeNearFar = robot.DelNearFar;
+                                robot.TransactionCheck = true;
+                            }
+                            else if (robot.lastCoralAcqLoc == " ")
+                            {
+                                robot.hasCoral++;
+                                robot.lastCoralAcqLoc = "Station";
+                                robot.AcqCoralNearFar = robot.DelNearFar;
+                            }
                         }
                         else if (robot.lastCoralAcqLoc == " ")
                         {
@@ -315,6 +332,15 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
                             robot.AcqAlgaeNearFar = robot.DelNearFar;
+                        }
+                        else if (robot.Flag && robot.lastAlgaeAcqLoc == "Reef")
+                        {
+                            robot.hasAlgae--;
+                            robot.lastAlgaeAcqLoc = "Reef";
+                            robot.lastAlgaeLoc = "Disrupt";
+                            robot.DisAlgae++;
+                            robot.AcqAlgaeNearFar = robot.DelNearFar;
+                            robot.TransactionCheck = true;
                         }
                         else if (robot.lastCoralAcqLoc == " ")
                         {
@@ -596,6 +622,17 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.Flag = false;
                 }
 
+                if (gamepad.RightButton_Press)
+                {
+                    robot.prevlastAlgaeLoc = robot.lastAlgaeLoc;
+                    robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
+                }
+                if (gamepad.LeftButton_Press)
+                {
+                    robot.prevlastCoralLoc = robot.lastCoralLoc;
+                    robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
+                }
+
                 //Correcting Errors
                 if (robot.hasCoral > 1)
                 {
@@ -816,6 +853,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.AcqAlgaeF = controller.AcqAlgaeF;
                         activity_record.AcqAlgaeR = controller.AcqAlgaeR;
+                        activity_record.DisAlg = controller.DisAlgae;
                         activity_record.AcqCoralS = controller.AcqCoralS;
                         activity_record.AcqCoralF = controller.AcqCoralF;
 
@@ -934,6 +972,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.AcqAlgaeF = controller.AcqAlgaeF;
                         activity_record.AcqAlgaeR = controller.AcqAlgaeR;
+                        activity_record.DisAlg = controller.DisAlgae;
                         activity_record.AcqCoralS = controller.AcqCoralS;
                         activity_record.AcqCoralF = controller.AcqCoralF;
 
@@ -1055,6 +1094,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.AcqAlgaeF = controller.AcqAlgaeF;
                         activity_record.AcqAlgaeR = controller.AcqAlgaeR;
+                        activity_record.DisAlg = controller.DisAlgae;
                         activity_record.AcqCoralS = controller.AcqCoralS;
                         activity_record.AcqCoralF = controller.AcqCoralF;
 
@@ -1169,6 +1209,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.AcqAlgaeF = '-';
                         activity_record.AcqAlgaeR = '-';
+                        activity_record.DisAlg = '-';
                         activity_record.AcqCoralS = '-';
                         activity_record.AcqCoralF = '-';
 
@@ -1274,6 +1315,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.AcqAlgaeF = controller.AcqAlgaeF;
                         activity_record.AcqAlgaeR = controller.AcqAlgaeR;
+                        activity_record.DisAlg = controller.DisAlgae;
                         activity_record.AcqCoralS = controller.AcqCoralS;
                         activity_record.AcqCoralF = controller.AcqCoralF;
 
@@ -1322,6 +1364,7 @@ namespace ScoutingCodeRedo.Dynamic
 
             robot.AcqAlgaeF = 0;
             robot.AcqAlgaeR = 0;
+            robot.DisAlgae = 0;
             robot.AcqCoralS = 0;
             robot.AcqCoralF = 0;
             robot.hasCoral = 0;
