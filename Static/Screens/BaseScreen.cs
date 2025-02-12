@@ -37,16 +37,6 @@ namespace ScoutingCodeRedo.Static
             //Grabs all connected joysticks
             UpdateJoysticks();
 
-            //If there is previous data, ask if the user wants to load it
-            if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
-            {
-                DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
-                if (loadPrevData == DialogResult.Yes)
-                {
-                    LoadData();
-                }
-            }
-
             //If the program is in debug mode, show the print out form
             if (Debugger.IsAttached)
             {
@@ -73,6 +63,16 @@ namespace ScoutingCodeRedo.Static
             {
                 Thread controllerThread = new Thread(() => ControllerThreadMethod(gamePad));
                 controllerThread.Start();
+            }
+
+            //If there is previous data, ask if the user wants to load it
+            if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
+            {
+                DialogResult loadPrevData = MessageBox.Show("Do you want to load previous data?", "Please Confirm", MessageBoxButtons.YesNo);
+                if (loadPrevData == DialogResult.Yes)
+                {
+                    LoadData();
+                }
             }
 
             this.timerJoysticks.Tick += new EventHandler(this.JoyStickReader);
@@ -276,7 +276,8 @@ namespace ScoutingCodeRedo.Static
                         comboBoxSelectRegional.Items.Clear();
                         comboBoxSelectRegional.Items.Add("manualEvent");
                         comboBoxSelectRegional.SelectedItem = "manualEvent";
-                        BtnpopulateForEvent_Click(null, null);
+                        object loadManual = "manual";
+                        BtnpopulateForEvent_Click(loadManual, null);
                     }
                 }
             }
@@ -409,7 +410,10 @@ namespace ScoutingCodeRedo.Static
 
         private async void BtnpopulateForEvent_Click(object sender, EventArgs e)
         {
-            Settings.Default.currentMatch = 0;
+            if (sender != null)
+            {
+                Settings.Default.currentMatch = 0;
+            }
 
             BackgroundCode.UnSortedMatchList.Clear();
             BackgroundCode.InMemoryMatchList.Clear();
