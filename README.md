@@ -12,9 +12,13 @@ https://www.chiefdelphi.com/t/falcon-scouting-system-release/126808
 ## Software
 Coded and run inside Microsoft Visual Studio
 
+Visual Studio can be found at: https://visualstudio.microsoft.com/
+
 Database using SQLite and SQL Server Management Studio
 
-Match Preview Report and data visualization using Excel
+SQL Server Management Studio can be found at: https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16#download-ssms
+
+Match Preview Report and data visualization using React on our website
 
 ## Setup
 To use the software, you need at least one Xbox Controller plugged into the laptop running the software, a maximum of 6 controllers. Need SQL server installed onto the laptop for the code to connect to and Excel getting the data from the database.
