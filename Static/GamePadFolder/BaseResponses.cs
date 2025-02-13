@@ -25,7 +25,8 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
         public Joystick[] GetSticks(DirectInput input)
         {
             List<Joystick> sticks = new List<Joystick>();
-            foreach (DeviceInstance device in input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
+            //foreach (DeviceInstance device in input.GetDevices(DeviceClass.GameControl, DeviceEnumerationFlags.AttachedOnly))
+            foreach (DeviceInstance device in input.GetDevices(DeviceClass.Keyboard, DeviceEnumerationFlags.AttachedOnly))
             {
                 try
                 {
@@ -37,14 +38,14 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
 
                     foreach (DeviceObjectInstance deviceObject in stick.GetObjects())
                     {
-                        if (IsAxis(deviceObject.ObjectType))
-                        {
-                            var properties = stick.GetObjectPropertiesById(deviceObject.ObjectId);
-                            if (properties != null)
-                            {
-                                properties.Range = new InputRange(-100, 100);
-                            }
-                        }
+                        //if (IsAxis(deviceObject.ObjectType))
+                        //{
+                        //var properties = stick.GetObjectPropertiesById(deviceObject.ObjectId);
+                        //if (properties != null)
+                        //{
+                        //    properties.Range = new InputRange(-100, 100);
+                        //}
+                        //}
                     }
 
                     sticks.Add(stick);
