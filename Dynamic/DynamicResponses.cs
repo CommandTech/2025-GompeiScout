@@ -192,25 +192,16 @@ namespace ScoutingCodeRedo.Dynamic
                     {
                         if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
                         {
-                            if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
-                            {
-                                robot.hasAlgae++;
-                                robot.lastAlgaeAcqLoc = "Reef";
-                                robot.AcqAlgaeNearFar = robot.DelNearFar;
-                            }
-                            else if (robot.Flag && robot.lastAlgaeAcqLoc == "Reef")
-                            {
-                                robot.hasAlgae--;
-                                robot.lastAlgaeAcqLoc = " ";
-                                robot.DisAlgae++;
-                                robot.DisFlag = true;
-                            }
-                            else if (robot.lastCoralAcqLoc == " ")
-                            {
-                                robot.hasCoral++;
-                                robot.lastCoralAcqLoc = "Station";
-                                robot.AcqCoralNearFar = robot.DelNearFar;
-                            }
+                            robot.hasAlgae++;
+                            robot.lastAlgaeAcqLoc = "Reef";
+                            robot.AcqAlgaeNearFar = robot.DelNearFar;
+                        }
+                        else if (robot.Flag && robot.lastAlgaeAcqLoc == "Reef")
+                        {
+                            robot.hasAlgae--;
+                            robot.lastAlgaeAcqLoc = " ";
+                            robot.DisAlgae++;
+                            robot.DisFlag = true;
                         }
                         else if (robot.lastCoralAcqLoc == " ")
                         {
