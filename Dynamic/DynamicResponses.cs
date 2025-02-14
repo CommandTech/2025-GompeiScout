@@ -753,7 +753,7 @@ namespace ScoutingCodeRedo.Dynamic
             }
 
 
-            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && controller.TransactionCheck && controller.TeamName != null)
+            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && (controller.TransactionCheck || recordType != "Activities") && controller.TeamName != null)
             {
                 var activity_record = BackgroundCode.activity_record[id];
                 switch (recordType)
