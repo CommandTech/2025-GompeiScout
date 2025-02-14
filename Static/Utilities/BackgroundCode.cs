@@ -21,6 +21,7 @@ namespace ScoutingCodeRedo.Static
         public static List<int> MatchNumbers = new List<int>();             //The list of match numbers for the event selected
 
         public static List<string> teamlist = new List<string>();           //The list of teams for the event selected
+        public static List<TeamState> teamStates = new List<TeamState>();
 
         public static Activity activity_record = new Activity();            //The activity record being sent to the database
         public static SeasonContext seasonframework = new SeasonContext();  //The database context

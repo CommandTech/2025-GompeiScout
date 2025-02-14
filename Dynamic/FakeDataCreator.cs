@@ -16,6 +16,16 @@ namespace ScoutingCodeRedo.Dynamic
         private static readonly Random random = new Random();
         public void GenerateFakeData(GamePad gamepad, RobotState robot)
         {
+            TeamState thisTeam = new TeamState();
+
+            foreach (var team in BackgroundCode.teamStates)
+            {
+                if (team.TeamName == robot.TeamName.Substring(3)) {
+                    thisTeam = team;
+                    break;
+                }
+            }
+
             if (robot.Current_Mode == RobotState.ROBOT_MODE.Auto)
             {
                 for (int i = 0; i < 6; i++)
@@ -87,34 +97,54 @@ namespace ScoutingCodeRedo.Dynamic
                 case "intake":
                     if (robot.Current_Mode != RobotState.ROBOT_MODE.Surfacing && robot.Leave == RobotState.LEAVE.Y)
                     {
-                        if (coralAlgae)
+                        if (coralAlgae && thisTeam.canHoldCoral)
                         {
                             if (robot.lastCoralAcqLoc == " ")
                             {
                                 if (AcqLoc)
                                 {
-                                    gamepad.SimulateButtonPress("lb");
+
+                                    if (thisTeam.canPickupStation)
+                                    {
+                                        gamepad.SimulateButtonPress("lb");
+                                    }
                                 }
                                 else
                                 {
-                                    gamepad.SimulateButtonPress("lt");
+
+                                    if (thisTeam.canPickupFloorCoral)
+                                    {
+                                        gamepad.SimulateButtonPress("lt");
+                                    }
                                 }
                             }
                         }
-                        else
+                        else if (thisTeam.canHoldAlgae)
                         {
                             if (robot.lastAlgaeAcqLoc == " ")
                             {
                                 robot.Flag = true;
                                 if (AcqLoc)
                                 {
-                                    gamepad.SimulateButtonPress("lb");
+                                    if (thisTeam.canPickupReef)
+                                    {
+                                        gamepad.SimulateButtonPress("lb");
+                                    }
                                 }
                                 else
                                 {
-                                    gamepad.SimulateButtonPress("lt");
+                                    if (thisTeam.canPickupFloorAlgae)
+                                    {
+                                        gamepad.SimulateButtonPress("lt");
+                                    }
                                 }
                             }
+                        }
+                        else if (thisTeam.canDislodgeAlgae)
+                        {
+                            robot.Flag = true;
+                            gamepad.SimulateButtonPress("lb");
+                            gamepad.SimulateButtonPress("lb");
                         }
                     }
                     break;
@@ -129,16 +159,28 @@ namespace ScoutingCodeRedo.Dynamic
                                     gamepad.SimulateButtonPress("lb");
                                     break;
                                 case 1:
-                                    gamepad.SimulateButtonPress("dpadleft");
+                                    if (thisTeam.canScoreL1)
+                                    {
+                                        gamepad.SimulateButtonPress("dpadleft");
+                                    }
                                     break;
                                 case 2:
-                                    gamepad.SimulateButtonPress("dpaddown");
+                                    if (thisTeam.canScoreL2)
+                                    {
+                                        gamepad.SimulateButtonPress("dpaddown");
+                                    }
                                     break;
                                 case 3:
-                                    gamepad.SimulateButtonPress("dpadright");
+                                    if (thisTeam.canScoreL3)
+                                    {
+                                        gamepad.SimulateButtonPress("dpadright");
+                                    }
                                     break;
                                 case 4:
-                                    gamepad.SimulateButtonPress("dpadup");
+                                    if (thisTeam.canScoreL4)
+                                    {
+                                        gamepad.SimulateButtonPress("dpadup");
+                                    }
                                     break;
                             }
 
@@ -154,10 +196,16 @@ namespace ScoutingCodeRedo.Dynamic
                                 case 0:
                                     break;
                                 case 1:
-                                    gamepad.SimulateButtonPress("dpadup");
+                                    if (thisTeam.canScoreNet)
+                                    {
+                                        gamepad.SimulateButtonPress("dpadup");
+                                    }
                                     break;
                                 case 2:
-                                    gamepad.SimulateButtonPress("dpaddown");
+                                    if (thisTeam.canScoreProcessor)
+                                    {
+                                        gamepad.SimulateButtonPress("dpaddown");
+                                    }
                                     break;
                             }
 
@@ -230,84 +278,163 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             for (int i = 0; i < 6; i++)
                             {
-                                BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
-                                BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
-                                if (robot != BackgroundCode.Robots[i])
+                                TeamState otherTeam = new TeamState();
+                                foreach (var team in BackgroundCode.teamStates)
                                 {
-                                    BackgroundCode.Robots[i].Current_Mode = RobotState.ROBOT_MODE.Surfacing;
-                                    BackgroundCode.Robots[i].Def_Rat = random.Next(4);
-                                    if (BackgroundCode.Robots[i].Def_Rat != 0)
+                                    if (team.TeamName == BackgroundCode.Robots[i].TeamName)
                                     {
-                                        BackgroundCode.Robots[i].Def_Eff = random.Next(6);
+                                        otherTeam = team;
+                                        break;
                                     }
-                                    BackgroundCode.Robots[i].Avo_Rat = random.Next(4);
-                                 
-                                    int temp = random.Next(2) + 1;
-                                    if (BackgroundCode.Robots[i].End_State == RobotState.END_STATE.Park)
+                                }
+
+
+                                if (!otherTeam.canClimbDeep || !otherTeam.canClimbShallow)
+                                {
+                                    bool endLoc = random.Next(2) == 0;
+
+                                    if (endLoc)
                                     {
-                                        for (int j = 0; j < temp; j++)
-                                        {
-                                            BackgroundCode.Robots[i].CycleCage(RobotState.CYCLE_DIRECTION.Up);
-                                        }
-                                    }
-                                    else if (BackgroundCode.Robots[i].End_State == RobotState.END_STATE.Elsewhere)
-                                    {
-                                        if (BackgroundCode.Robots[i].Cage_Attempt != RobotState.CAGE_ATTEMPT.N)
-                                        {
-                                            BackgroundCode.Robots[i].CycleCage(RobotState.CYCLE_DIRECTION.Down);
-                                        }
-                                        BackgroundCode.Robots[i].ClimbTDouble = 0;
+                                        BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Park;
+
                                         BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
-                                        BackgroundCode.Robots[i].ClimbT_StopWatch.Reset();
                                         BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
                                     }
                                     else
                                     {
-                                        bool tempBool = random.Next(2) == 0;
-                                        if (tempBool)
+                                        BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Elsewhere;
+
+                                        BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
+                                        BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
+                                        BackgroundCode.Robots[i].ClimbT_StopWatch.Reset();
+                                    }
+                                }
+                                else
+                                {
+                                    if (otherTeam.canClimbDeep && otherTeam.canClimbShallow)
+                                    {
+                                        int endLoc = random.Next(4);
+
+                                        if (endLoc == 0)
                                         {
-                                            BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Down);
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Deep;
+                                            BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                        }
+                                        else if (endLoc == 1)
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Shallow;
+                                            BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                        }
+                                        else if (endLoc == 2)
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Park;
+                                            if (random.Next(2) == 0)
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                            }
+                                            else
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                            }
                                         }
                                         else
                                         {
-                                            BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Down);
-                                            BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Down);
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Elsewhere;
+                                            if (random.Next(2) == 0)
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                            }
+                                            else
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                            }
                                         }
-                                        if (BackgroundCode.Robots[i].Cage_Attempt != RobotState.CAGE_ATTEMPT.Y)
+                                    }
+                                    else if (otherTeam.canClimbDeep)
+                                    {
+                                        int endLoc = random.Next(3);
+
+                                        if (endLoc == 0)
                                         {
-                                            BackgroundCode.Robots[i].CycleCage(RobotState.CYCLE_DIRECTION.Up);
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Deep;
+                                            BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                        }
+                                        else if (endLoc == 1)
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Park;
+                                            if (random.Next(2) == 0)
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                            }
+                                            else
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Elsewhere;
+                                            if (random.Next(2) == 0)
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                            }
+                                            else
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        int endLoc = random.Next(3);
+
+                                        if (endLoc == 0)
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Shallow;
+                                            BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                        }
+                                        else if (endLoc == 1)
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Park;
+                                            if (random.Next(2) == 0)
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                            }
+                                            else
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            BackgroundCode.Robots[i].End_State = RobotState.END_STATE.Elsewhere;
+                                            if (random.Next(2) == 0)
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+                                            }
+                                            else
+                                            {
+                                                BackgroundCode.Robots[i].Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
+                                            }
                                         }
                                     }
 
-                                    temp = random.Next(6)+1;
+                                    BackgroundCode.Robots[i].ClimbT_StopWatch.Stop();
+                                    BackgroundCode.Robots[i].ClimbT_StopWatch_running = false;
+
+
+                                    BackgroundCode.Robots[i].Def_Rat = random.Next(5);
+                                        if (BackgroundCode.Robots[i].Def_Rat != 0)
+                                    {
+                                        BackgroundCode.Robots[i].Def_Eff = random.Next(6);
+                                    }
+                                    BackgroundCode.Robots[i].Avo_Rat = random.Next(5);
+
+                                    int temp = random.Next(6) + 1;
                                     for (int j = 0; j < temp; j++)
                                     {
                                         BackgroundCode.Robots[i].CycleStrat(RobotState.CYCLE_DIRECTION.Up);
                                     }
-                                    temp = random.Next(3) + 1;
-                                    for (int j = 0; j < temp; j++)
-                                    {
-                                        BackgroundCode.Robots[i].CycleState(RobotState.CYCLE_DIRECTION.Up);
-                                    }
-                                }
-                            }
-                            if (robot.End_State == RobotState.END_STATE.Elsewhere || robot.Cage_Attempt == RobotState.CAGE_ATTEMPT.N)
-                            {
-                                gamepad.SimulateButtonPress("lt");
-                            }
-                            if (robot.End_State == RobotState.END_STATE.Shallow || robot.End_State == RobotState.END_STATE.Deep)
-                            {
-                                if (robot.Cage_Attempt != RobotState.CAGE_ATTEMPT.Y)
-                                {
-                                    robot.CycleCage(RobotState.CYCLE_DIRECTION.Up);
-                                }
-                            }
-                            else if (robot.End_State == RobotState.END_STATE.Elsewhere)
-                            {
-
-                                if (robot.Cage_Attempt != RobotState.CAGE_ATTEMPT.N)
-                                {
-                                    robot.CycleCage(RobotState.CYCLE_DIRECTION.Down);
                                 }
                             }
 
@@ -331,7 +458,7 @@ namespace ScoutingCodeRedo.Dynamic
                         switch (modeAction)
                         {
                             case 0:
-                                if (robot.totalCoralDeliveries == 0 && robot.Starting_Location != RobotState.STARTING_LOC.Select)
+                                if (robot.totalCoralDeliveries == 0 && robot.Starting_Location != RobotState.STARTING_LOC.Select && thisTeam.canLeave)
                                 {
                                     gamepad.SimulateButtonPress("backButton");
                                 }
@@ -361,7 +488,7 @@ namespace ScoutingCodeRedo.Dynamic
                                 gamepad.SimulateButtonPress("dpadright");
                                 break;
                             case 4:
-                                
+
                                 gamepad.SimulateButtonPress("y");
                                 break;
                             case 5:

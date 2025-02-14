@@ -130,6 +130,7 @@ namespace ScoutingCodeRedo.Dynamic
             //Algae
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Text = "Algae:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).ForeColor = BackgroundCode.Robots[Box_Number].DisFlag ? System.Drawing.Color.Yellow : System.Drawing.Color.White;
             if (BackgroundCode.Robots[Box_Number].hasAlgae == 1)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Value", true)[0]).ForeColor = System.Drawing.Color.Green;
@@ -236,6 +237,7 @@ namespace ScoutingCodeRedo.Dynamic
             //Algae
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Text = "Algae:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).ForeColor = BackgroundCode.Robots[Box_Number].DisFlag ? System.Drawing.Color.Yellow : System.Drawing.Color.White;
             if (BackgroundCode.Robots[Box_Number].hasAlgae == 1)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Value", true)[0]).ForeColor = System.Drawing.Color.Green;
@@ -343,6 +345,7 @@ namespace ScoutingCodeRedo.Dynamic
             //Algae
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Text = "Algae:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).ForeColor = BackgroundCode.Robots[Box_Number].DisFlag ? System.Drawing.Color.Yellow : System.Drawing.Color.White;
             if (BackgroundCode.Robots[Box_Number].hasAlgae == 1)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Value", true)[0]).ForeColor = System.Drawing.Color.Green;
@@ -449,6 +452,7 @@ namespace ScoutingCodeRedo.Dynamic
             //Algae
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Text = "Algae:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position3", true)[0]).ForeColor = BackgroundCode.Robots[Box_Number].DisFlag ? System.Drawing.Color.Yellow : System.Drawing.Color.White;
             if (BackgroundCode.Robots[Box_Number].hasAlgae == 1)
             {
                 ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Value", true)[0]).ForeColor = System.Drawing.Color.Green;
