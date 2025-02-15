@@ -431,12 +431,12 @@ namespace ScoutingCodeRedo.Static
                         Comp_level = "qm",
                         Event_key = "manualevent",
 
-                        Redteam1 = "frc" + Settings.Default.manualMatchList[i][0],
-                        Redteam2 = "frc" + Settings.Default.manualMatchList[i][1],
-                        Redteam3 = "frc" + Settings.Default.manualMatchList[i][2],
-                        Blueteam1 = "frc" + Settings.Default.manualMatchList[i][3],
-                        Blueteam2 = "frc" + Settings.Default.manualMatchList[i][4],
-                        Blueteam3 = "frc" + Settings.Default.manualMatchList[i][5]
+                        Redteam1 = "frc" + Settings.Default.manualMatchList[i][3],
+                        Redteam2 = "frc" + Settings.Default.manualMatchList[i][4],
+                        Redteam3 = "frc" + Settings.Default.manualMatchList[i][5],
+                        Blueteam1 = "frc" + Settings.Default.manualMatchList[i][0],
+                        Blueteam2 = "frc" + Settings.Default.manualMatchList[i][1],
+                        Blueteam3 = "frc" + Settings.Default.manualMatchList[i][2]
                     };
 
                     BackgroundCode.UnSortedMatchList.Add(matchData);
