@@ -412,13 +412,12 @@ namespace ScoutingCodeRedo.Dynamic
                     //Stop / Resume Climb Time
                     if (gamepad.BackButton_Press)
                     {
-                        robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
-
                         if (robot.ClimbT_StopWatch_running)
                         {
                             robot.ClimbT_StopWatch.Stop();
                             robot.ClimbT_StopWatch_running = false;
                             robot.ClimbT = robot.ClimbT_StopWatch.Elapsed;
+                            robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
                         }
                         else
                         {
@@ -458,8 +457,13 @@ namespace ScoutingCodeRedo.Dynamic
                     //Cycle End State
                     if (gamepad.DpadUp_Press)
                     {
-                        robot.CycleState(RobotState.CYCLE_DIRECTION.Up);
+                        if (robot.End_State == RobotState.END_STATE.Deep)
+                        {
+                            robot.PointsScored -= 12;
+                        }
 
+                        robot.CycleState(RobotState.CYCLE_DIRECTION.Up);
+                        
                         //Totaling end game
                         if (robot.End_State == RobotState.END_STATE.Park)
                         {
@@ -474,10 +478,6 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             robot.PointsScored -= 6;
                             robot.PointsScored += 12;
-                        }
-                        else if (robot.End_State == RobotState.END_STATE.Elsewhere)
-                        {
-                            robot.PointsScored -= 12;
                         }
                     }
                     if (gamepad.DpadRight_Press)

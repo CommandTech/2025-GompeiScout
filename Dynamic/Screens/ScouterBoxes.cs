@@ -152,9 +152,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Des", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Attempt
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Attempt:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "End State:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -180,9 +180,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "End State:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "Attempt:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -259,9 +259,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Des", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Attempt
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Attempt:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "End State:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -287,9 +287,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "End State:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "Attempt:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -367,9 +367,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Des", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Attempt
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Attempt:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "End State:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -395,9 +395,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "End State:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "Attempt:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Visible = false;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Visible = false;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -474,9 +474,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position3Des", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Attempt
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "Attempt:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Text = "End State:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position4Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
@@ -502,9 +502,9 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "End State:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Text = "Attempt:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].End_State.ToString();
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Text = BackgroundCode.Robots[Box_Number].Cage_Attempt.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position11Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
