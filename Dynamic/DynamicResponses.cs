@@ -412,6 +412,8 @@ namespace ScoutingCodeRedo.Dynamic
                     //Stop / Resume Climb Time
                     if (gamepad.BackButton_Press)
                     {
+                        robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Y;
+
                         if (robot.ClimbT_StopWatch_running)
                         {
                             robot.ClimbT_StopWatch.Stop();
@@ -431,33 +433,10 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.ClimbT = TimeSpan.Zero;
                         robot.ClimbT_StopWatch.Reset();
                         robot.ClimbT_StopWatch_running = false;
+
+                        robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.N;
                     }
 
-                    //Cycle End State
-                    if (gamepad.YButton_Press)
-                    {
-                        robot.CycleState(RobotState.CYCLE_DIRECTION.Up);
-
-                        //Totaling end game
-                        if (robot.End_State == RobotState.END_STATE.Park)
-                        {
-                            robot.PointsScored += 2;
-                        }
-                        else if (robot.End_State == RobotState.END_STATE.Shallow)
-                        {
-                            robot.PointsScored -= 2;
-                            robot.PointsScored += 6;
-                        }
-                        else if (robot.End_State == RobotState.END_STATE.Deep)
-                        {
-                            robot.PointsScored -= 6;
-                            robot.PointsScored += 12;
-                        }
-                        else if (robot.End_State == RobotState.END_STATE.Select)
-                        {
-                            robot.PointsScored -= 12;
-                        }
-                    }
                     //Cycle Robot Strat
                     if (gamepad.AButton_Press)
                     {
@@ -476,10 +455,30 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.TransactionCheck = true;
                     }
 
-                    //Cycle Cage Attempt
+                    //Cycle End State
                     if (gamepad.DpadUp_Press)
                     {
-                        robot.CycleCage(RobotState.CYCLE_DIRECTION.Up);
+                        robot.CycleState(RobotState.CYCLE_DIRECTION.Up);
+
+                        //Totaling end game
+                        if (robot.End_State == RobotState.END_STATE.Park)
+                        {
+                            robot.PointsScored += 2;
+                        }
+                        else if (robot.End_State == RobotState.END_STATE.Shallow)
+                        {
+                            robot.PointsScored -= 2;
+                            robot.PointsScored += 6;
+                        }
+                        else if (robot.End_State == RobotState.END_STATE.Deep)
+                        {
+                            robot.PointsScored -= 6;
+                            robot.PointsScored += 12;
+                        }
+                        else if (robot.End_State == RobotState.END_STATE.Elsewhere)
+                        {
+                            robot.PointsScored -= 12;
+                        }
                     }
                     if (gamepad.DpadRight_Press)
                     {
@@ -1092,7 +1091,15 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL3 = controller.DelCoralL3;
                         activity_record.DelCoralL4 = controller.DelCoralL4;
 
-                        activity_record.CageAttept = controller.GetAttempt().ToString();
+                        //activity_record.CageAttept = controller.GetAttempt().ToString();
+                        if (controller.ClimbTDouble == 0)
+                        {
+                            activity_record.CageAttept = "N";
+                        }
+                        else
+                        {
+                            activity_record.CageAttept = "Y";
+                        }
                         activity_record.EndState = controller.GetState().ToString();
 
                         controller.ClimbTDouble = controller.ClimbT_StopWatch.Elapsed.TotalSeconds;

@@ -42,7 +42,7 @@ If it does not save the data, just load events and get matches and use the arrow
 ![Auto Mode Controls](https://i.imgur.com/m4PdY1t.png)
 ![Teleop Mode Controls](https://i.imgur.com/0vDOqkX.png)
 ![Defense Mode Controls](https://i.imgur.com/Gn8Pd11.png)
-![Surfacing Mode Controls](https://i.imgur.com/OWMkUOq.png)
+![Surfacing Mode Controls](https://i.imgur.com/GiciLmS.png)
 
 ## More Usage Information
 
