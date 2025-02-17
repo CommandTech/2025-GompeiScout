@@ -17,9 +17,6 @@ namespace ScoutingCodeRedo.Static
         //     then all of the events globally.
         private async void BuildInitialDatabase(bool isManual)
         {
-            BackgroundCode.seasonframework.Database.CreateIfNotExists();
-            BackgroundCode.seasonframework.Database.Connection.Open();
-
             Log("Cleaning databases...");
             //seasonframework.Database.Initialize(true);
             BackgroundCode.seasonframework.Database.ExecuteSqlCommand("DELETE FROM [EventSummaries]");  // If you crash here, the database structure has been changed, delete DB and retry
