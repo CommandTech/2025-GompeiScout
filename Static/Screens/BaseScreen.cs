@@ -58,7 +58,7 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.activity_record[i] = new Activity();
             }
 
-            Thread transactThread = new Thread(BackgroundCode.recordToDatabase);
+            Thread transactThread = new Thread(BackgroundCode.RecordToDatabase);
             transactThread.Start();
 
             // Create and start a new thread for each controller
@@ -67,6 +67,8 @@ namespace ScoutingCodeRedo.Static
                 Thread controllerThread = new Thread(() => ControllerThreadMethod(gamePad));
                 controllerThread.Start();
             }
+
+            InitalizeDB();
 
             //If there is previous data, ask if the user wants to load it
             if (iniFile.Read("MatchData", "event", "") != null || iniFile.Read("MatchData", "event", "") != "")
@@ -89,6 +91,17 @@ namespace ScoutingCodeRedo.Static
                 // Read and process the controller input
                 BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, Array.IndexOf(BackgroundCode.gamePads, gamePad));
             }
+        }
+
+        private static void InitalizeDB()
+        {
+            //Sets the connection string to the database
+            BackgroundCode.seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
+
+            //Checks if the database exists
+            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
+            BackgroundCode.seasonframework.Database.Initialize(true);
+            Settings.Default.DBExists = true;
         }
 
         private void JoyStickReader(object sender, EventArgs e)
@@ -118,8 +131,6 @@ namespace ScoutingCodeRedo.Static
         }
         private void UpdateScreen()
         {
-            lblDatabaseExist.ForeColor = Settings.Default.DBExists ? Color.Green : Color.Red;
-            lblDatabaseExist.BackColor = Settings.Default.DBExists ? Color.Green : Color.Red;
             //Loops through all 6 boxes to update the text to be based on the RobotState
             for (int i = 0; i < 6; i++)
             {

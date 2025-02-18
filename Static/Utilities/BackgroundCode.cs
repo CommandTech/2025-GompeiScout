@@ -41,7 +41,7 @@ namespace ScoutingCodeRedo.Static
 
         }
 
-        public static void recordToDatabase()
+        public static void RecordToDatabase()
         {
             while (1 == 1)
             {

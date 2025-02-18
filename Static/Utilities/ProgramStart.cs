@@ -1,7 +1,6 @@
 ﻿using ScoutingCodeRedo.Dynamic;
 using ScoutingCodeRedo.Properties;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace ScoutingCodeRedo.Static
@@ -12,12 +11,6 @@ namespace ScoutingCodeRedo.Static
         [STAThread]
         static void Main()
         {
-            Thread dbThread = new Thread(() => InitalizeDB())
-            {
-                Priority = ThreadPriority.Highest,
-                IsBackground = true
-            };
-            dbThread.Start();
 
             //Handles code crashes, used for saving data when the code crashes during events
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
@@ -47,16 +40,6 @@ namespace ScoutingCodeRedo.Static
             scouterBoxes.Show();
 
             Application.Run(baseScreen);
-        }
-        private static void InitalizeDB()
-        {
-            //Sets the connection string to the database
-            BackgroundCode.seasonframework.Database.Connection.ConnectionString = Settings.Default._scoutingdbConnectionString;
-
-            //Checks if the database exists
-            Settings.Default.DBExists = BackgroundCode.seasonframework.Database.Exists();
-            BackgroundCode.seasonframework.Database.Initialize(true);
-            Settings.Default.DBExists = true;
         }
 
         // Handle UI thread exceptions

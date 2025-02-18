@@ -308,7 +308,6 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch = new System.Windows.Forms.Label();
             this.timerJoysticks = new System.Windows.Forms.Timer(this.components);
             this.btnFunctions = new System.Windows.Forms.Button();
-            this.lblDatabaseExist = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -356,7 +355,7 @@ namespace ScoutingCodeRedo.Static
             // 
             this.comboBoxSelectRegional.DisplayMember = "event_code";
             this.comboBoxSelectRegional.FormattingEnabled = true;
-            this.comboBoxSelectRegional.Location = new System.Drawing.Point(198, 21);
+            this.comboBoxSelectRegional.Location = new System.Drawing.Point(163, 21);
             this.comboBoxSelectRegional.Name = "comboBoxSelectRegional";
             this.comboBoxSelectRegional.Size = new System.Drawing.Size(290, 24);
             this.comboBoxSelectRegional.TabIndex = 290;
@@ -1595,7 +1594,7 @@ namespace ScoutingCodeRedo.Static
             this.cbxEndMatch.AutoSize = true;
             this.cbxEndMatch.BackColor = System.Drawing.Color.Black;
             this.cbxEndMatch.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxEndMatch.Location = new System.Drawing.Point(831, 27);
+            this.cbxEndMatch.Location = new System.Drawing.Point(796, 27);
             this.cbxEndMatch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEndMatch.Name = "cbxEndMatch";
             this.cbxEndMatch.Size = new System.Drawing.Size(92, 20);
@@ -1608,7 +1607,7 @@ namespace ScoutingCodeRedo.Static
             this.btnInitialDBLoad.BackColor = System.Drawing.Color.Black;
             this.btnInitialDBLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInitialDBLoad.ForeColor = System.Drawing.Color.Navy;
-            this.btnInitialDBLoad.Location = new System.Drawing.Point(57, 23);
+            this.btnInitialDBLoad.Location = new System.Drawing.Point(22, 23);
             this.btnInitialDBLoad.Name = "btnInitialDBLoad";
             this.btnInitialDBLoad.Size = new System.Drawing.Size(100, 22);
             this.btnInitialDBLoad.TabIndex = 287;
@@ -1621,7 +1620,7 @@ namespace ScoutingCodeRedo.Static
             this.btnNextMatch.BackColor = System.Drawing.Color.Black;
             this.btnNextMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextMatch.ForeColor = System.Drawing.Color.Navy;
-            this.btnNextMatch.Location = new System.Drawing.Point(793, 24);
+            this.btnNextMatch.Location = new System.Drawing.Point(758, 24);
             this.btnNextMatch.Name = "btnNextMatch";
             this.btnNextMatch.Size = new System.Drawing.Size(36, 23);
             this.btnNextMatch.TabIndex = 289;
@@ -1633,7 +1632,7 @@ namespace ScoutingCodeRedo.Static
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(159, 26);
+            this.label14.Location = new System.Drawing.Point(124, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 32);
             this.label14.TabIndex = 288;
@@ -1644,7 +1643,7 @@ namespace ScoutingCodeRedo.Static
             this.btnPreviousMatch.BackColor = System.Drawing.Color.Black;
             this.btnPreviousMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreviousMatch.ForeColor = System.Drawing.Color.Navy;
-            this.btnPreviousMatch.Location = new System.Drawing.Point(598, 22);
+            this.btnPreviousMatch.Location = new System.Drawing.Point(563, 22);
             this.btnPreviousMatch.Name = "btnPreviousMatch";
             this.btnPreviousMatch.Size = new System.Drawing.Size(36, 23);
             this.btnPreviousMatch.TabIndex = 286;
@@ -1657,7 +1656,7 @@ namespace ScoutingCodeRedo.Static
             this.btnpopulateForEvent.BackColor = System.Drawing.Color.Black;
             this.btnpopulateForEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpopulateForEvent.ForeColor = System.Drawing.Color.Navy;
-            this.btnpopulateForEvent.Location = new System.Drawing.Point(494, 22);
+            this.btnpopulateForEvent.Location = new System.Drawing.Point(459, 22);
             this.btnpopulateForEvent.Name = "btnpopulateForEvent";
             this.btnpopulateForEvent.Size = new System.Drawing.Size(102, 23);
             this.btnpopulateForEvent.TabIndex = 285;
@@ -1670,7 +1669,7 @@ namespace ScoutingCodeRedo.Static
             this.btnExit.BackColor = System.Drawing.Color.Black;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Crimson;
-            this.btnExit.Location = new System.Drawing.Point(917, 25);
+            this.btnExit.Location = new System.Drawing.Point(882, 25);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 23);
             this.btnExit.TabIndex = 284;
@@ -2216,7 +2215,7 @@ namespace ScoutingCodeRedo.Static
             this.labelMatch.BackColor = System.Drawing.Color.Black;
             this.labelMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMatch.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labelMatch.Location = new System.Drawing.Point(634, 22);
+            this.labelMatch.Location = new System.Drawing.Point(599, 22);
             this.labelMatch.Name = "labelMatch";
             this.labelMatch.Size = new System.Drawing.Size(83, 29);
             this.labelMatch.TabIndex = 291;
@@ -2227,7 +2226,7 @@ namespace ScoutingCodeRedo.Static
             this.lblMatch.AutoSize = true;
             this.lblMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatch.ForeColor = System.Drawing.Color.White;
-            this.lblMatch.Location = new System.Drawing.Point(700, 23);
+            this.lblMatch.Location = new System.Drawing.Point(665, 23);
             this.lblMatch.Name = "lblMatch";
             this.lblMatch.Size = new System.Drawing.Size(27, 29);
             this.lblMatch.TabIndex = 292;
@@ -2250,26 +2249,11 @@ namespace ScoutingCodeRedo.Static
             this.btnFunctions.UseVisualStyleBackColor = false;
             this.btnFunctions.Click += new System.EventHandler(this.BtnFunctions_Click);
             // 
-            // lblDatabaseExist
-            // 
-            this.lblDatabaseExist.AutoSize = true;
-            this.lblDatabaseExist.BackColor = System.Drawing.Color.Red;
-            this.lblDatabaseExist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblDatabaseExist.ForeColor = System.Drawing.Color.Red;
-            this.lblDatabaseExist.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblDatabaseExist.Location = new System.Drawing.Point(28, 19);
-            this.lblDatabaseExist.Name = "lblDatabaseExist";
-            this.lblDatabaseExist.Size = new System.Drawing.Size(20, 29);
-            this.lblDatabaseExist.TabIndex = 356;
-            this.lblDatabaseExist.Text = ".";
-            this.lblDatabaseExist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // BaseScreen
             // 
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.lblDatabaseExist);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnFunctions);
             this.Controls.Add(this.lblMatch);
@@ -2366,6 +2350,5 @@ namespace ScoutingCodeRedo.Static
         private Label label106;
         private Panel panel39;
         private Label label111;
-        private Label lblDatabaseExist;
     }
 }
