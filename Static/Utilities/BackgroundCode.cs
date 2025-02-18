@@ -40,5 +40,23 @@ namespace ScoutingCodeRedo.Static
         {
 
         }
+
+        public static void recordToDatabase()
+        {
+            while (1 == 1)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if (activity_record[i].RecordType != null)
+                    {
+                        //Save Record to the database
+                        seasonframework.ActivitySet.Add(activity_record[i]);
+                        seasonframework.SaveChanges();
+
+                        activity_record[i].RecordType = "";
+                    }
+                }
+            }
+        }
     }
 }

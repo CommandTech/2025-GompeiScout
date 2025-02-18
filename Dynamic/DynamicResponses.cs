@@ -62,7 +62,7 @@ namespace ScoutingCodeRedo.Dynamic
                     //Acquire Coral/Algae from Station/Reef
                     if (gamepad.LeftButton_Press)
                     {
-                        if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != "Reef")
                         {
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
@@ -73,6 +73,8 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasAlgae--;
                             robot.lastAlgaeAcqLoc = " ";
                             robot.DisAlgae++;
+                            robot.lastAlgaeLoc = " ";
+                            robot.TransactionCheck = false;
                             robot.DisFlag = true;
                         }
                         else if (robot.lastCoralAcqLoc == " ")
@@ -190,7 +192,7 @@ namespace ScoutingCodeRedo.Dynamic
                     //Acquire Coral/Algae from Station/Reef
                     if (gamepad.LeftButton_Press)
                     {
-                        if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != "Reef")
                         {
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
@@ -201,6 +203,8 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasAlgae--;
                             robot.lastAlgaeAcqLoc = " ";
                             robot.DisAlgae++;
+                            robot.lastAlgaeLoc = " ";
+                            robot.TransactionCheck = false;
                             robot.DisFlag = true;
                         }
                         else if (robot.lastCoralAcqLoc == " ")
@@ -314,7 +318,7 @@ namespace ScoutingCodeRedo.Dynamic
                     //Acquire Coral/Algae from Station/Reef
                     if (gamepad.LeftButton_Press)
                     {
-                        if (robot.Flag && robot.lastAlgaeAcqLoc == " ")
+                        if (robot.Flag && robot.lastAlgaeAcqLoc != "Reef")
                         {
                             robot.hasAlgae++;
                             robot.lastAlgaeAcqLoc = "Reef";
@@ -325,6 +329,8 @@ namespace ScoutingCodeRedo.Dynamic
                             robot.hasAlgae--;
                             robot.lastAlgaeAcqLoc = " ";
                             robot.DisAlgae++;
+                            robot.lastAlgaeLoc = " ";
+                            robot.TransactionCheck = false;
                             robot.DisFlag = true;
                         }
                         else if (robot.lastCoralAcqLoc == " ")
@@ -463,7 +469,7 @@ namespace ScoutingCodeRedo.Dynamic
                         }
 
                         robot.CycleState(RobotState.CYCLE_DIRECTION.Up);
-                        
+
                         //Totaling end game
                         if (robot.End_State == RobotState.END_STATE.Park)
                         {
@@ -862,9 +868,6 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = controller.PointsScored.ToString();
 
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(activity_record);
-                        BackgroundCode.seasonframework.SaveChanges();
 
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
@@ -981,10 +984,6 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = controller.PointsScored.ToString();
-
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(activity_record);
-                        BackgroundCode.seasonframework.SaveChanges();
 
                         controller.lastTransAlgaeLoc = controller.lastAlgaeAcqLoc;
                         controller.lastTransCoralLoc = controller.lastCoralAcqLoc;
@@ -1133,10 +1132,6 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.SelectedCage = controller.Selected_Cage;
                         activity_record.PointScored = controller.PointsScored.ToString();
 
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(activity_record);
-                        BackgroundCode.seasonframework.SaveChanges();
-
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
                             controller.totalCoralDeliveries++;
@@ -1226,10 +1221,6 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = "-";
-
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(activity_record);
-                        BackgroundCode.seasonframework.SaveChanges();
 
                         break;
                     case "Defense":
@@ -1332,10 +1323,6 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = controller.PointsScored.ToString();
-
-                        //Save Record to the database
-                        BackgroundCode.seasonframework.ActivitySet.Add(activity_record);
-                        BackgroundCode.seasonframework.SaveChanges();
                         break;
                     default:
                         MessageBox.Show("Error: Record Type not found");

@@ -7,7 +7,7 @@ namespace ScoutingCodeRedo.Dynamic
     {
         public enum ROBOT_MODE { Auto, Teleop, Defense, Surfacing };
         public enum CYCLE_DIRECTION { Up, Down }
-        public enum MATCHEVENT_NAME { Match_Event, BrokeDown, CrossedCenter, LostParts, AdditionPiece, MultiClimb, NoShow, TippedOver, JammedPiece, WentUnderCages }
+        public enum MATCHEVENT_NAME { Match_Event, GotStuck, BrokeDown, CrossedCenter, LostParts, AdditionPiece, MultiClimb, NoShow, TippedOver, JammedPiece, WentUnderCages }
         public enum SCOUTER_NAME { Select_Name, Adnan, Alex, Alyssa, Andrew, Anshu, Avani, Ayush, Grace, Grant, Hasini, Jasmin, Kate, Katie, Logan, Marzuq, Milan, Sri, William, Scouter1, Scouter2, Scouter3, Scouter4, Scouter5, Scouter6 }
 
         // Year to Year ints
@@ -33,7 +33,7 @@ namespace ScoutingCodeRedo.Dynamic
         public enum STARTING_LOC { Select, C1, C2, C3, Center, C4, C5, C6 };
         public enum STARTING_LOC_FIELD { C6, C5, C4, Center, C3, C2, C1, Select };
         public enum LEAVE { Z, Y, N };
-        public enum APP_STRAT { Select, Defense, CoralScorer, AlgaeScorer, Hybrid, Surfacing };
+        public enum APP_STRAT { Select, None, Defense, Coral, Algae, Hybrid, Surfacing };
         public enum END_STATE { Select, Elsewhere, Park, Shallow, Deep };
         public enum CAGE_ATTEMPT { Select, Y, N };
 

@@ -484,7 +484,7 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Text = "Def:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Text = DefenseEquality[BackgroundCode.Robots[Box_Number].Def_Rat];
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Def_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Def_Rat != 9;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position5Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //Defense Effectiveness
@@ -498,7 +498,7 @@ namespace ScoutingCodeRedo.Dynamic
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Text = "Avoid:";
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8", true)[0]).Visible = Box_Number < BackgroundCode.gamePads.Length || !Settings.Default.practiceMode;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Text = AvoidanceEquality[BackgroundCode.Robots[Box_Number].Avo_Rat];
-            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Avo_Rat != 9 && (ScouterBox == 0 || !Settings.Default.practiceMode);
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).Visible = BackgroundCode.Robots[Box_Number].Avo_Rat != 9;
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position8Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
 
             //End State

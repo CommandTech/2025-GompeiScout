@@ -58,6 +58,9 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.activity_record[i] = new Activity();
             }
 
+            Thread transactThread = new Thread(BackgroundCode.recordToDatabase);
+            transactThread.Start();
+
             // Create and start a new thread for each controller
             foreach (var gamePad in BackgroundCode.gamePads)
             {
