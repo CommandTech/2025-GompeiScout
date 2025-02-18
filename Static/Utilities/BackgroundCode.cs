@@ -53,7 +53,7 @@ namespace ScoutingCodeRedo.Static
                         seasonframework.ActivitySet.Add(activity_record[i]);
                         seasonframework.SaveChanges();
 
-                        activity_record[i].RecordType = "";
+                        activity_record[i].RecordType = null;
                     }
                 }
             }
