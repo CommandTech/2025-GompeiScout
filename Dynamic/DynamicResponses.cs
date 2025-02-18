@@ -612,12 +612,12 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.Flag = false;
                 }
 
-                if (gamepad.RightButton_Press)
+                if (gamepad.RightButton_Release)
                 {
                     robot.prevlastAlgaeLoc = robot.lastAlgaeLoc;
                     robot.prevlastAlgaeAcqLoc = robot.lastAlgaeAcqLoc;
                 }
-                if (gamepad.LeftButton_Press)
+                if (gamepad.LeftButton_Press || gamepad.LeftTrigger_Press)
                 {
                     robot.prevlastCoralLoc = robot.lastCoralLoc;
                     robot.prevlastCoralAcqLoc = robot.lastCoralAcqLoc;
@@ -875,12 +875,14 @@ namespace ScoutingCodeRedo.Dynamic
                             controller.hasCoral = 0;
                             controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
+                            controller.prevlastCoralAcqLoc = " ";
                         }
                         if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
                         {
                             controller.hasAlgae = 0;
                             controller.lastAlgaeLoc = " ";
                             controller.lastAlgaeAcqLoc = " ";
+                            controller.prevlastAlgaeAcqLoc = " ";
                         }
                         controller.TransactionCheck = false;
                         break;
@@ -1138,12 +1140,14 @@ namespace ScoutingCodeRedo.Dynamic
                             controller.hasCoral = 0;
                             controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
+                            controller.prevlastCoralAcqLoc = " ";
                         }
                         if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
                         {
                             controller.hasAlgae = 0;
                             controller.lastAlgaeLoc = " ";
                             controller.lastAlgaeAcqLoc = " ";
+                            controller.prevlastAlgaeAcqLoc = " ";
                         }
                         controller.TransactionCheck = false;
                         break;
