@@ -17,12 +17,12 @@ namespace ScoutingCodeRedo.Dynamic
 
             try
             {
-                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam1);
-                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam2);
-                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Redteam3);
-                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam1);
-                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam2);
-                comboPracticeTeams.Items.Add(BackgroundCode.UnSortedMatchList[Settings.Default.currentMatch - 1].Blueteam3);
+                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1);
+                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2);
+                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3);
+                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1);
+                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2);
+                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3);
 
                 comboPracticeTeams.SelectedIndex = Settings.Default.practiceTeam;
             }
