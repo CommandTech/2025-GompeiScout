@@ -109,8 +109,17 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral--;
+                            robot.lastCoralAcqLoc = " ";
+                            robot.AcqCoralNearFar = false;
+                        }
+                        else
+                        {
+                            robot.lastCoralLoc = "Floor";
+                            robot.TransactionCheck = true;
+                        }
                     }
                     if (gamepad.DpadUp_Press)
                     {
@@ -239,8 +248,17 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral--;
+                            robot.lastCoralAcqLoc = " ";
+                            robot.AcqCoralNearFar = false;
+                        }
+                        else
+                        {
+                            robot.lastCoralLoc = "Floor";
+                            robot.TransactionCheck = true;
+                        }
                     }
                     if (gamepad.DpadUp_Press)
                     {
@@ -365,8 +383,17 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral--;
+                            robot.lastCoralAcqLoc = " ";
+                            robot.AcqCoralNearFar = false;
+                        }
+                        else
+                        {
+                            robot.lastCoralLoc = "Floor";
+                            robot.TransactionCheck = true;
+                        }
                     }
                     if (gamepad.DpadUp_Press)
                     {
@@ -411,8 +438,17 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        robot.lastCoralLoc = "Floor";
-                        robot.TransactionCheck = true;
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        {
+                            robot.hasCoral--;
+                            robot.lastCoralAcqLoc = " ";
+                            robot.AcqCoralNearFar = false;
+                        }
+                        else
+                        {
+                            robot.lastCoralLoc = "Floor";
+                            robot.TransactionCheck = true;
+                        }
                     }
 
                     //Stop / Resume Climb Time
