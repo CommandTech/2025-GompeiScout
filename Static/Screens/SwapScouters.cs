@@ -9,7 +9,6 @@ namespace ScoutingCodeRedo.Static
     public partial class SwapScouters : Form
     {
         public List<ComboBox> scoutDrops = new List<ComboBox>();
-        public bool wasReset = false;
         public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new Dictionary<RobotState.SCOUTER_NAME, int>();
         public SwapScouters()
         {
@@ -38,22 +37,19 @@ namespace ScoutingCodeRedo.Static
 
         private void ScoutOK_Click(object sender, EventArgs e)
         {
-            if (!wasReset)
+            for (int i = 0; i < 6; i++)
             {
-                for (int i = 0; i < 6; i++)
+                if (scoutDrops[i].SelectedIndex != -1)
                 {
-                    if (scoutDrops[i].SelectedIndex != -1)
-                    {
-                        Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
+                    Enum.TryParse(scoutDrops[i].SelectedItem.ToString(), out RobotState.SCOUTER_NAME name);
 
-                        for (int j = 0; j < 6; j++)
+                    for (int j = 0; j < 6; j++)
+                    {
+                        if (BackgroundCode.Robots[j]._ScouterName == name)
                         {
-                            if (BackgroundCode.Robots[j]._ScouterName == name)
-                            {
-                                (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
-                                (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);
-                                (BackgroundCode.Robots[j].color, BackgroundCode.Robots[i].color) = (BackgroundCode.Robots[i].color, BackgroundCode.Robots[j].color);
-                            }
+                            (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
+                            (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);
+                            (BackgroundCode.Robots[j].color, BackgroundCode.Robots[i].color) = (BackgroundCode.Robots[i].color, BackgroundCode.Robots[j].color);
                         }
                     }
                 }
@@ -105,12 +101,12 @@ namespace ScoutingCodeRedo.Static
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            wasReset = true;
             ClearScouters(null, null);
             for (int i = 0; i < 6; i++)
             {
                 BackgroundCode.Robots[i].ScouterBox = i;
             }
+            this.Hide();
         }
     }
 }
