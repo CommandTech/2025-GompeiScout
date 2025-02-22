@@ -73,6 +73,7 @@ namespace ScoutingCodeRedo.Dynamic
         {
             //Leave
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0", true)[0]).Text = "Leave:";
+            ((Label)this.Controls.Find($"lbl{ScouterBox}Position0", true)[0]).Text = Box_Number.ToString();
             ((Label)this.Controls.Find($"lbl{ScouterBox}Position0", true)[0]).Visible = true;
 
             if (BackgroundCode.Robots[Box_Number].Leave == RobotState.LEAVE.Y)
