@@ -800,7 +800,6 @@ namespace ScoutingCodeRedo.Dynamic
                 switch (recordType)
                 {
                     case ("EndAuto"):
-                        activity_record.RecordType = recordType;
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         activity_record.Match = Settings.Default.currentMatch;
@@ -903,6 +902,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = controller.PointsScored.ToString();
+                        activity_record.RecordType = recordType;
 
 
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
@@ -923,7 +923,6 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.TransactionCheck = false;
                         break;
                     case ("Activities"):
-                        activity_record.RecordType = recordType;
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         activity_record.Match = Settings.Default.currentMatch;
@@ -1022,29 +1021,30 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = controller.PointsScored.ToString();
+                        activity_record.RecordType = recordType;
 
                         controller.lastTransAlgaeLoc = controller.lastAlgaeAcqLoc;
                         controller.lastTransCoralLoc = controller.lastCoralAcqLoc;
+
 
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
                             controller.totalCoralDeliveries++;
                             controller.hasCoral = 0;
-                            controller.lastCoralLoc = " ";
                             controller.lastCoralAcqLoc = " ";
                             controller.prevlastCoralAcqLoc = " ";
                         }
                         if (controller.hasAlgae == 1 && controller.lastAlgaeLoc != " ")
                         {
                             controller.hasAlgae = 0;
-                            controller.lastAlgaeLoc = " ";
                             controller.lastAlgaeAcqLoc = " ";
                             controller.prevlastAlgaeAcqLoc = " ";
                         }
+                        controller.lastCoralLoc = " ";
+                        controller.lastAlgaeLoc = " ";
                         controller.TransactionCheck = false;
                         break;
                     case ("EndMatch"):
-                        activity_record.RecordType = recordType;
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         activity_record.Match = Settings.Default.currentMatch;
@@ -1169,6 +1169,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = controller.Selected_Cage;
                         activity_record.PointScored = controller.PointsScored.ToString();
+                        activity_record.RecordType = recordType;
 
                         if (controller.hasCoral == 1 && controller.lastCoralLoc != " ")
                         {
@@ -1188,7 +1189,6 @@ namespace ScoutingCodeRedo.Dynamic
                         controller.TransactionCheck = false;
                         break;
                     case ("Match_Event"):
-                        activity_record.RecordType = recordType;
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         activity_record.Match = Settings.Default.currentMatch;
@@ -1261,10 +1261,10 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = "-";
+                        activity_record.RecordType = recordType;
 
                         break;
                     case "Defense":
-                        activity_record.RecordType = recordType;
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
                         activity_record.Match = Settings.Default.currentMatch;
@@ -1363,6 +1363,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         activity_record.SelectedCage = "-";
                         activity_record.PointScored = controller.PointsScored.ToString();
+                        activity_record.RecordType = recordType;
                         break;
                     default:
                         MessageBox.Show("Error: Record Type not found");

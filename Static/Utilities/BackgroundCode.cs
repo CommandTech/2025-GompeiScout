@@ -47,13 +47,13 @@ namespace ScoutingCodeRedo.Static
             {
                 for (int i = 0; i < 6; i++)
                 {
-                    if (activity_record[i].RecordType != null)
+                    if (activity_record[i].RecordType == "EndAuto" || activity_record[i].RecordType == "Activities" || activity_record[i].RecordType == "Defense" || activity_record[i].RecordType == "EndMatch" || activity_record[i].RecordType == "Match_Event")
                     {
                         //Save Record to the database
                         seasonframework.ActivitySet.Add(activity_record[i]);
                         seasonframework.SaveChanges();
 
-                        activity_record[i].RecordType = null;
+                        activity_record[i].RecordType = "None";
                     }
                 }
             }
