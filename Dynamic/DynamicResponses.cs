@@ -1415,6 +1415,9 @@ namespace ScoutingCodeRedo.Dynamic
 
             robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Select;
             robot.End_State = RobotState.END_STATE.Select;
+
+            if (robot.ClimbT_StopWatch == null) robot.ClimbT_StopWatch = new Stopwatch();
+            if (robot.DefTime_StopWatch == null) robot.DefTime_StopWatch = new Stopwatch();
             try
             {
                 robot.ClimbT_StopWatch.Stop();
