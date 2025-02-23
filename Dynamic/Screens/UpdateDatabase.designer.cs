@@ -156,7 +156,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.DelAlgaeF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClimbT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CageAttept = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CageAttempt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectedCage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PointScored = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -1424,7 +1424,7 @@ namespace ScoutingCodeRedo.Dynamic
             this.DelAlgaeF,
             this.ClimbT,
             this.EndState,
-            this.CageAttept,
+            this.CageAttempt,
             this.SelectedCage,
             this.PointScored});
             this.dataGridView1.DataSource = this.updatePreviewsBindingSource;
@@ -1717,13 +1717,13 @@ namespace ScoutingCodeRedo.Dynamic
             this.EndState.Name = "EndState";
             this.EndState.Width = 125;
             // 
-            // CageAttept
+            // CageAttempt
             // 
-            this.CageAttept.DataPropertyName = "CageAttept";
-            this.CageAttept.HeaderText = "CageAttept";
-            this.CageAttept.MinimumWidth = 6;
-            this.CageAttept.Name = "CageAttept";
-            this.CageAttept.Width = 125;
+            this.CageAttempt.DataPropertyName = "CageAttempt";
+            this.CageAttempt.HeaderText = "CageAttempt";
+            this.CageAttempt.MinimumWidth = 6;
+            this.CageAttempt.Name = "CageAttempt";
+            this.CageAttempt.Width = 125;
             // 
             // SelectedCage
             // 
@@ -1904,7 +1904,7 @@ namespace ScoutingCodeRedo.Dynamic
         private System.Windows.Forms.DataGridViewTextBoxColumn DelAlgaeF;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClimbT;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CageAttept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CageAttempt;
         private System.Windows.Forms.DataGridViewTextBoxColumn SelectedCage;
         private System.Windows.Forms.DataGridViewTextBoxColumn PointScored;
         private System.Windows.Forms.GroupBox groupBox3;

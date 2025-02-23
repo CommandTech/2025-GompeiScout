@@ -71,6 +71,10 @@ namespace ScoutingCodeRedo.Static.GamePadFolder
                 gamepads.Add(new GamePad(stick));
                 Console.WriteLine(stick.Information.InstanceName);
             }
+            while (gamepads.Count < 6)
+            {
+                gamepads.Add(null);
+            }
 
             return gamepads.ToArray();
         }

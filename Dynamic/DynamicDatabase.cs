@@ -69,7 +69,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public double ClimbT { get; set; }
         public string EndState { get; set; }
-        public string CageAttept { get; set; }
+        public string CageAttempt { get; set; }
         public string SelectedCage { get; set; }
         public string PointScored { get; set; }
         public int DisAlg { get; set; }
@@ -124,7 +124,7 @@ namespace ScoutingCodeRedo.Dynamic
 
         public double ClimbT { get; set; }
         public string EndState { get; set; }
-        public string CageAttept { get; set; }
+        public string CageAttempt { get; set; }
         public string SelectedCage { get; set; }
         public string PointScored { get; set; }
         public int DisAlg { get; set; }

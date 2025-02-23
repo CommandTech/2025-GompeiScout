@@ -47,9 +47,13 @@ namespace ScoutingCodeRedo.Static
                     {
                         if (BackgroundCode.Robots[j]._ScouterName == name)
                         {
+                            (BackgroundCode.Robots[j], BackgroundCode.Robots[i]) = (BackgroundCode.Robots[i], BackgroundCode.Robots[j]);
                             (BackgroundCode.Robots[j].ScouterBox, BackgroundCode.Robots[i].ScouterBox) = (BackgroundCode.Robots[i].ScouterBox, BackgroundCode.Robots[j].ScouterBox);
                             (BackgroundCode.Robots[j].TeamName, BackgroundCode.Robots[i].TeamName) = (BackgroundCode.Robots[i].TeamName, BackgroundCode.Robots[j].TeamName);
                             (BackgroundCode.Robots[j].color, BackgroundCode.Robots[i].color) = (BackgroundCode.Robots[i].color, BackgroundCode.Robots[j].color);
+
+                            (BackgroundCode.gamePads[j], BackgroundCode.gamePads[i]) = (BackgroundCode.gamePads[i], BackgroundCode.gamePads[j]);
+                            break;
                         }
                     }
                 }

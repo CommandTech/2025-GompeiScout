@@ -892,7 +892,7 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL3 = controller.DelCoralL3;
                         activity_record.DelCoralL4 = controller.DelCoralL4;
 
-                        activity_record.CageAttept = "-";
+                        activity_record.CageAttempt = "-";
                         activity_record.EndState = "-";
                         activity_record.ClimbT = 0;
 
@@ -1011,7 +1011,7 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL4 = controller.DelCoralL4;
 
 
-                        activity_record.CageAttept = "-";
+                        activity_record.CageAttempt = "-";
                         activity_record.EndState = "-";
                         activity_record.ClimbT = 0;
 
@@ -1129,14 +1129,14 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL3 = controller.DelCoralL3;
                         activity_record.DelCoralL4 = controller.DelCoralL4;
 
-                        //activity_record.CageAttept = controller.GetAttempt().ToString();
+                        //activity_record.CageAttempt = controller.GetAttempt().ToString();
                         if (controller.ClimbTDouble == 0)
                         {
-                            activity_record.CageAttept = "N";
+                            activity_record.CageAttempt = "N";
                         }
                         else
                         {
-                            activity_record.CageAttept = "Y";
+                            activity_record.CageAttempt = "Y";
                         }
                         activity_record.EndState = controller.GetState().ToString();
 
@@ -1250,7 +1250,7 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL3 = '-';
                         activity_record.DelCoralL4 = '-';
 
-                        activity_record.CageAttept = "-";
+                        activity_record.CageAttempt = "-";
                         activity_record.EndState = "-";
 
                         activity_record.ClimbT = '-';
@@ -1352,7 +1352,7 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL3 = controller.DelCoralL3;
                         activity_record.DelCoralL4 = controller.DelCoralL4;
 
-                        activity_record.CageAttept = "-";
+                        activity_record.CageAttempt = "-";
                         activity_record.EndState = "-";
 
                         activity_record.ClimbT = '-';

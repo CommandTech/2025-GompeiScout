@@ -149,7 +149,7 @@ namespace ScoutingCodeRedo.Dynamic
 
                         comboStrategy.Text = result.Strategy.ToString();
                         comboEndState.Text = result.EndState.ToString();
-                        comboClimbAttempt.Text = result.CageAttept.ToString();
+                        comboClimbAttempt.Text = result.CageAttempt.ToString();
                         txtClimbTime.Text = result.ClimbT.ToString();
 
                         comboMode.Text = result.Mode.ToString();
@@ -480,7 +480,7 @@ namespace ScoutingCodeRedo.Dynamic
                         query = "UPDATE Activities SET EndState = '" + comboEndState.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
-                        query = "UPDATE Activities SET CageAttept = '" + comboClimbAttempt.Text + "' WHERE Id = '" + result.Id + "';";
+                        query = "UPDATE Activities SET CageAttempt = '" + comboClimbAttempt.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         query = "UPDATE Activities SET SelectedCage = '" + comboSelectedCage.Text + "' WHERE Id = '" + result.Id + "';";

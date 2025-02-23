@@ -831,7 +831,7 @@ namespace ScoutingCodeRedo {
             
             private global::System.Data.DataColumn columnEndState;
             
-            private global::System.Data.DataColumn columnCageAttept;
+            private global::System.Data.DataColumn columnCageAttempt;
             
             private global::System.Data.DataColumn columnSelectedCage;
             
@@ -1152,9 +1152,9 @@ namespace ScoutingCodeRedo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CageAtteptColumn {
+            public global::System.Data.DataColumn CageAttemptColumn {
                 get {
-                    return this.columnCageAttept;
+                    return this.columnCageAttempt;
                 }
             }
             
@@ -1246,7 +1246,7 @@ namespace ScoutingCodeRedo {
                         int DelAlgaeF, 
                         double ClimbT, 
                         string EndState, 
-                        string CageAttept, 
+                        string CageAttempt, 
                         string SelectedCage, 
                         string PointScored) {
                 ActivitiesRow rowActivitiesRow = ((ActivitiesRow)(this.NewRow()));
@@ -1286,7 +1286,7 @@ namespace ScoutingCodeRedo {
                         DelAlgaeF,
                         ClimbT,
                         EndState,
-                        CageAttept,
+                        CageAttempt,
                         SelectedCage,
                         PointScored};
                 rowActivitiesRow.ItemArray = columnValuesArray;
@@ -1353,7 +1353,7 @@ namespace ScoutingCodeRedo {
                 this.columnDelAlgaeF = base.Columns["DelAlgaeF"];
                 this.columnClimbT = base.Columns["ClimbT"];
                 this.columnEndState = base.Columns["EndState"];
-                this.columnCageAttept = base.Columns["CageAttept"];
+                this.columnCageAttempt = base.Columns["CageAttempt"];
                 this.columnSelectedCage = base.Columns["SelectedCage"];
                 this.columnPointScored = base.Columns["PointScored"];
             }
@@ -1431,8 +1431,8 @@ namespace ScoutingCodeRedo {
                 base.Columns.Add(this.columnClimbT);
                 this.columnEndState = new global::System.Data.DataColumn("EndState", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEndState);
-                this.columnCageAttept = new global::System.Data.DataColumn("CageAttept", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCageAttept);
+                this.columnCageAttempt = new global::System.Data.DataColumn("CageAttempt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCageAttempt);
                 this.columnSelectedCage = new global::System.Data.DataColumn("SelectedCage", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSelectedCage);
                 this.columnPointScored = new global::System.Data.DataColumn("PointScored", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1479,7 +1479,7 @@ namespace ScoutingCodeRedo {
                 this.columnDelAlgaeF.AllowDBNull = false;
                 this.columnClimbT.AllowDBNull = false;
                 this.columnEndState.MaxLength = 2147483647;
-                this.columnCageAttept.MaxLength = 2147483647;
+                this.columnCageAttempt.MaxLength = 2147483647;
                 this.columnSelectedCage.MaxLength = 2147483647;
                 this.columnPointScored.MaxLength = 2147483647;
             }
@@ -3171,7 +3171,7 @@ namespace ScoutingCodeRedo {
             
             private global::System.Data.DataColumn columnEndState;
             
-            private global::System.Data.DataColumn columnCageAttept;
+            private global::System.Data.DataColumn columnCageAttempt;
             
             private global::System.Data.DataColumn columnSelectedCage;
             
@@ -3492,9 +3492,9 @@ namespace ScoutingCodeRedo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CageAtteptColumn {
+            public global::System.Data.DataColumn CageAttemptColumn {
                 get {
-                    return this.columnCageAttept;
+                    return this.columnCageAttempt;
                 }
             }
             
@@ -3586,7 +3586,7 @@ namespace ScoutingCodeRedo {
                         int DelAlgaeF, 
                         double ClimbT, 
                         string EndState, 
-                        string CageAttept, 
+                        string CageAttempt, 
                         string SelectedCage, 
                         string PointScored) {
                 UpdatePreviewsRow rowUpdatePreviewsRow = ((UpdatePreviewsRow)(this.NewRow()));
@@ -3626,7 +3626,7 @@ namespace ScoutingCodeRedo {
                         DelAlgaeF,
                         ClimbT,
                         EndState,
-                        CageAttept,
+                        CageAttempt,
                         SelectedCage,
                         PointScored};
                 rowUpdatePreviewsRow.ItemArray = columnValuesArray;
@@ -3686,7 +3686,7 @@ namespace ScoutingCodeRedo {
                 this.columnDelAlgaeF = base.Columns["DelAlgaeF"];
                 this.columnClimbT = base.Columns["ClimbT"];
                 this.columnEndState = base.Columns["EndState"];
-                this.columnCageAttept = base.Columns["CageAttept"];
+                this.columnCageAttempt = base.Columns["CageAttempt"];
                 this.columnSelectedCage = base.Columns["SelectedCage"];
                 this.columnPointScored = base.Columns["PointScored"];
             }
@@ -3764,8 +3764,8 @@ namespace ScoutingCodeRedo {
                 base.Columns.Add(this.columnClimbT);
                 this.columnEndState = new global::System.Data.DataColumn("EndState", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEndState);
-                this.columnCageAttept = new global::System.Data.DataColumn("CageAttept", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCageAttept);
+                this.columnCageAttempt = new global::System.Data.DataColumn("CageAttempt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCageAttempt);
                 this.columnSelectedCage = new global::System.Data.DataColumn("SelectedCage", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSelectedCage);
                 this.columnPointScored = new global::System.Data.DataColumn("PointScored", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3809,7 +3809,7 @@ namespace ScoutingCodeRedo {
                 this.columnDelAlgaeF.AllowDBNull = false;
                 this.columnClimbT.AllowDBNull = false;
                 this.columnEndState.MaxLength = 2147483647;
-                this.columnCageAttept.MaxLength = 2147483647;
+                this.columnCageAttempt.MaxLength = 2147483647;
                 this.columnSelectedCage.MaxLength = 2147483647;
                 this.columnPointScored.MaxLength = 2147483647;
             }
@@ -4478,17 +4478,17 @@ namespace ScoutingCodeRedo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CageAttept {
+            public string CageAttempt {
                 get {
                     try {
-                        return ((string)(this[this.tableActivities.CageAtteptColumn]));
+                        return ((string)(this[this.tableActivities.CageAttemptColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CageAttept\' in table \'Activities\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CageAttempt\' in table \'Activities\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableActivities.CageAtteptColumn] = value;
+                    this[this.tableActivities.CageAttemptColumn] = value;
                 }
             }
             
@@ -4718,14 +4718,14 @@ namespace ScoutingCodeRedo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCageAtteptNull() {
-                return this.IsNull(this.tableActivities.CageAtteptColumn);
+            public bool IsCageAttemptNull() {
+                return this.IsNull(this.tableActivities.CageAttemptColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCageAtteptNull() {
-                this[this.tableActivities.CageAtteptColumn] = global::System.Convert.DBNull;
+            public void SetCageAttemptNull() {
+                this[this.tableActivities.CageAttemptColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6273,17 +6273,17 @@ namespace ScoutingCodeRedo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CageAttept {
+            public string CageAttempt {
                 get {
                     try {
-                        return ((string)(this[this.tableUpdatePreviews.CageAtteptColumn]));
+                        return ((string)(this[this.tableUpdatePreviews.CageAttemptColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CageAttept\' in table \'UpdatePreviews\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CageAttempt\' in table \'UpdatePreviews\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableUpdatePreviews.CageAtteptColumn] = value;
+                    this[this.tableUpdatePreviews.CageAttemptColumn] = value;
                 }
             }
             
@@ -6513,14 +6513,14 @@ namespace ScoutingCodeRedo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCageAtteptNull() {
-                return this.IsNull(this.tableUpdatePreviews.CageAtteptColumn);
+            public bool IsCageAttemptNull() {
+                return this.IsNull(this.tableUpdatePreviews.CageAttemptColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCageAtteptNull() {
-                this[this.tableUpdatePreviews.CageAtteptColumn] = global::System.Convert.DBNull;
+            public void SetCageAttemptNull() {
+                this[this.tableUpdatePreviews.CageAttemptColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7297,7 +7297,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
             tableMapping.ColumnMappings.Add("DelAlgaeF", "DelAlgaeF");
             tableMapping.ColumnMappings.Add("ClimbT", "ClimbT");
             tableMapping.ColumnMappings.Add("EndState", "EndState");
-            tableMapping.ColumnMappings.Add("CageAttept", "CageAttept");
+            tableMapping.ColumnMappings.Add("CageAttempt", "CageAttempt");
             tableMapping.ColumnMappings.Add("SelectedCage", "SelectedCage");
             tableMapping.ColumnMappings.Add("PointScored", "PointScored");
             this._adapter.TableMappings.Add(tableMapping);
@@ -7326,8 +7326,8 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClimbT", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClimbT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Activities] ([Team], [Match], [Time], [RecordType], [Mode], [DriveSta], [Defense], [DefenseValue], [Avoidance], [ScouterName], [ScouterError], [Match_event], [Strategy], [Coop], [DZTime], [Del_Near_Far], [AcqAlgae_Near_Far], [AcqCoral_Near_Far], [Starting_Loc], [Leave], [AcqCoralS], [AcqCoralF], [AcqAlgaeR], [AcqAlgaeF], [DelCoralL1], [DelCoralL2], [DelCoralL3], [DelCoralL4], [DelCoralF], [DelAlgaeP], [DelAlgaeN], [DelAlgaeF], [ClimbT], [EndState], [CageAttept], [SelectedCage], [PointScored]) VALUES (@Team, @Match, @Time, @RecordType, @Mode, @DriveSta, @Defense, @DefenseValue, @Avoidance, @ScouterName, @ScouterError, @Match_event, @Strategy, @Coop, @DZTime, @Del_Near_Far, @AcqAlgae_Near_Far, @AcqCoral_Near_Far, @Starting_Loc, @Leave, @AcqCoralS, @AcqCoralF, @AcqAlgaeR, @AcqAlgaeF, @DelCoralL1, @DelCoralL2, @DelCoralL3, @DelCoralL4, @DelCoralF, @DelAlgaeP, @DelAlgaeN, @DelAlgaeF, @ClimbT, @EndState, @CageAttept, @SelectedCage, @PointScored);
-SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttept, SelectedCage, PointScored FROM Activities WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Activities] ([Team], [Match], [Time], [RecordType], [Mode], [DriveSta], [Defense], [DefenseValue], [Avoidance], [ScouterName], [ScouterError], [Match_event], [Strategy], [Coop], [DZTime], [Del_Near_Far], [AcqAlgae_Near_Far], [AcqCoral_Near_Far], [Starting_Loc], [Leave], [AcqCoralS], [AcqCoralF], [AcqAlgaeR], [AcqAlgaeF], [DelCoralL1], [DelCoralL2], [DelCoralL3], [DelCoralL4], [DelCoralF], [DelAlgaeP], [DelAlgaeN], [DelAlgaeF], [ClimbT], [EndState], [CageAttempt], [SelectedCage], [PointScored]) VALUES (@Team, @Match, @Time, @RecordType, @Mode, @DriveSta, @Defense, @DefenseValue, @Avoidance, @ScouterName, @ScouterError, @Match_event, @Strategy, @Coop, @DZTime, @Del_Near_Far, @AcqAlgae_Near_Far, @AcqCoral_Near_Far, @Starting_Loc, @Leave, @AcqCoralS, @AcqCoralF, @AcqAlgaeR, @AcqAlgaeF, @DelCoralL1, @DelCoralL2, @DelCoralL3, @DelCoralL4, @DelCoralF, @DelAlgaeP, @DelAlgaeN, @DelAlgaeF, @ClimbT, @EndState, @CageAttempt, @SelectedCage, @PointScored);
+SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttempt, SelectedCage, PointScored FROM Activities WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Team", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Team", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Match", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Match", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7363,7 +7363,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DelAlgaeF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DelAlgaeF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClimbT", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClimbT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndState", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndState", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CageAttept", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CageAttept", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CageAttempt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CageAttempt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SelectedCage", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SelectedCage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PointScored", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PointScored", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -7379,7 +7379,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
                 "qAlgaeF, [DelCoralL1] = @DelCoralL1, [DelCoralL2] = @DelCoralL2, [DelCoralL3] = " +
                 "@DelCoralL3, [DelCoralL4] = @DelCoralL4, [DelCoralF] = @DelCoralF, [DelAlgaeP] =" +
                 " @DelAlgaeP, [DelAlgaeN] = @DelAlgaeN, [DelAlgaeF] = @DelAlgaeF, [ClimbT] = @Cli" +
-                "mbT, [EndState] = @EndState, [CageAttept] = @CageAttept, [SelectedCage] = @Selec" +
+                "mbT, [EndState] = @EndState, [CageAttempt] = @CageAttempt, [SelectedCage] = @Selec" +
                 "tedCage, [PointScored] = @PointScored WHERE (([Id] = @Original_Id) AND ([Match] " +
                 "= @Original_Match) AND ([Time] = @Original_Time) AND ([ScouterError] = @Original" +
                 "_ScouterError) AND ([Coop] = @Original_Coop) AND ([DZTime] = @Original_DZTime) A" +
@@ -7394,7 +7394,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
                 "r, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCora" +
                 "l_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, Del" +
                 "CoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, De" +
-                "lAlgaeF, ClimbT, EndState, CageAttept, SelectedCage, PointScored FROM Activities" +
+                "lAlgaeF, ClimbT, EndState, CageAttempt, SelectedCage, PointScored FROM Activities" +
                 " WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Team", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Team", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7431,7 +7431,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DelAlgaeF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DelAlgaeF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClimbT", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClimbT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndState", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndState", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CageAttept", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CageAttept", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CageAttempt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CageAttempt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SelectedCage", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SelectedCage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PointScored", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PointScored", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7469,7 +7469,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttept, SelectedCage, PointScored FROM dbo.Activities";
+            this._commandCollection[0].CommandText = @"SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttempt, SelectedCage, PointScored FROM dbo.Activities";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7624,7 +7624,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
                     int DelAlgaeF, 
                     double ClimbT, 
                     string EndState, 
-                    string CageAttept, 
+                    string CageAttempt, 
                     string SelectedCage, 
                     string PointScored) {
             if ((Team == null)) {
@@ -7741,11 +7741,11 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
             else {
                 this.Adapter.InsertCommand.Parameters[33].Value = ((string)(EndState));
             }
-            if ((CageAttept == null)) {
+            if ((CageAttempt == null)) {
                 this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(CageAttept));
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(CageAttempt));
             }
             if ((SelectedCage == null)) {
                 this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
@@ -7814,7 +7814,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
                     int DelAlgaeF, 
                     double ClimbT, 
                     string EndState, 
-                    string CageAttept, 
+                    string CageAttempt, 
                     string SelectedCage, 
                     string PointScored, 
                     int Original_Id, 
@@ -7951,11 +7951,11 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(EndState));
             }
-            if ((CageAttept == null)) {
+            if ((CageAttempt == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(CageAttept));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(CageAttempt));
             }
             if ((SelectedCage == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
@@ -8044,7 +8044,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
                     int DelAlgaeF, 
                     double ClimbT, 
                     string EndState, 
-                    string CageAttept, 
+                    string CageAttempt, 
                     string SelectedCage, 
                     string PointScored, 
                     int Original_Id, 
@@ -8066,7 +8066,7 @@ SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue,
                     int Original_DelAlgaeN, 
                     int Original_DelAlgaeF, 
                     double Original_ClimbT) {
-            return this.Update(Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttept, SelectedCage, PointScored, Original_Id, Original_Match, Original_Time, Original_ScouterError, Original_Coop, Original_DZTime, Original_AcqCoralS, Original_AcqCoralF, Original_AcqAlgaeR, Original_AcqAlgaeF, Original_DelCoralL1, Original_DelCoralL2, Original_DelCoralL3, Original_DelCoralL4, Original_DelCoralF, Original_DelAlgaeP, Original_DelAlgaeN, Original_DelAlgaeF, Original_ClimbT, Original_Id);
+            return this.Update(Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttempt, SelectedCage, PointScored, Original_Id, Original_Match, Original_Time, Original_ScouterError, Original_Coop, Original_DZTime, Original_AcqCoralS, Original_AcqCoralF, Original_AcqAlgaeR, Original_AcqAlgaeF, Original_DelCoralL1, Original_DelCoralL2, Original_DelCoralL3, Original_DelCoralL4, Original_DelCoralF, Original_DelAlgaeP, Original_DelAlgaeN, Original_DelAlgaeF, Original_ClimbT, Original_Id);
         }
     }
     
@@ -9816,13 +9816,13 @@ SELECT Id, Event_key, Team_key, Team_number, Nickname FROM TeamSummaries WHERE (
             tableMapping.ColumnMappings.Add("DelAlgaeF", "DelAlgaeF");
             tableMapping.ColumnMappings.Add("ClimbT", "ClimbT");
             tableMapping.ColumnMappings.Add("EndState", "EndState");
-            tableMapping.ColumnMappings.Add("CageAttept", "CageAttept");
+            tableMapping.ColumnMappings.Add("CageAttempt", "CageAttempt");
             tableMapping.ColumnMappings.Add("SelectedCage", "SelectedCage");
             tableMapping.ColumnMappings.Add("PointScored", "PointScored");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[UpdatePreviews] ([Team], [Match], [Time], [RecordType], [Mode], [DriveSta], [Defense], [DefenseValue], [Avoidance], [ScouterName], [ScouterError], [Match_event], [Strategy], [Coop], [DZTime], [Del_Near_Far], [AcqAlgae_Near_Far], [AcqCoral_Near_Far], [Starting_Loc], [Leave], [AcqCoralS], [AcqCoralF], [AcqAlgaeR], [AcqAlgaeF], [DelCoralL1], [DelCoralL2], [DelCoralL3], [DelCoralL4], [DelCoralF], [DelAlgaeP], [DelAlgaeN], [DelAlgaeF], [ClimbT], [EndState], [CageAttept], [SelectedCage], [PointScored]) VALUES (@Team, @Match, @Time, @RecordType, @Mode, @DriveSta, @Defense, @DefenseValue, @Avoidance, @ScouterName, @ScouterError, @Match_event, @Strategy, @Coop, @DZTime, @Del_Near_Far, @AcqAlgae_Near_Far, @AcqCoral_Near_Far, @Starting_Loc, @Leave, @AcqCoralS, @AcqCoralF, @AcqAlgaeR, @AcqAlgaeF, @DelCoralL1, @DelCoralL2, @DelCoralL3, @DelCoralL4, @DelCoralF, @DelAlgaeP, @DelAlgaeN, @DelAlgaeF, @ClimbT, @EndState, @CageAttept, @SelectedCage, @PointScored)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[UpdatePreviews] ([Team], [Match], [Time], [RecordType], [Mode], [DriveSta], [Defense], [DefenseValue], [Avoidance], [ScouterName], [ScouterError], [Match_event], [Strategy], [Coop], [DZTime], [Del_Near_Far], [AcqAlgae_Near_Far], [AcqCoral_Near_Far], [Starting_Loc], [Leave], [AcqCoralS], [AcqCoralF], [AcqAlgaeR], [AcqAlgaeF], [DelCoralL1], [DelCoralL2], [DelCoralL3], [DelCoralL4], [DelCoralF], [DelAlgaeP], [DelAlgaeN], [DelAlgaeF], [ClimbT], [EndState], [CageAttempt], [SelectedCage], [PointScored]) VALUES (@Team, @Match, @Time, @RecordType, @Mode, @DriveSta, @Defense, @DefenseValue, @Avoidance, @ScouterName, @ScouterError, @Match_event, @Strategy, @Coop, @DZTime, @Del_Near_Far, @AcqAlgae_Near_Far, @AcqCoral_Near_Far, @Starting_Loc, @Leave, @AcqCoralS, @AcqCoralF, @AcqAlgaeR, @AcqAlgaeF, @DelCoralL1, @DelCoralL2, @DelCoralL3, @DelCoralL4, @DelCoralF, @DelAlgaeP, @DelAlgaeN, @DelAlgaeF, @ClimbT, @EndState, @CageAttempt, @SelectedCage, @PointScored)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Team", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Team", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Match", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Match", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9858,7 +9858,7 @@ SELECT Id, Event_key, Team_key, Team_number, Nickname FROM TeamSummaries WHERE (
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DelAlgaeF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DelAlgaeF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClimbT", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClimbT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndState", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndState", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CageAttept", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CageAttept", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CageAttempt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CageAttempt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SelectedCage", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SelectedCage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PointScored", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PointScored", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -9876,7 +9876,7 @@ SELECT Id, Event_key, Team_key, Team_number, Nickname FROM TeamSummaries WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttept, SelectedCage, PointScored FROM dbo.UpdatePreviews";
+            this._commandCollection[0].CommandText = @"SELECT Id, Team, Match, Time, RecordType, Mode, DriveSta, Defense, DefenseValue, Avoidance, ScouterName, ScouterError, Match_event, Strategy, Coop, DZTime, Del_Near_Far, AcqAlgae_Near_Far, AcqCoral_Near_Far, Starting_Loc, Leave, AcqCoralS, AcqCoralF, AcqAlgaeR, AcqAlgaeF, DelCoralL1, DelCoralL2, DelCoralL3, DelCoralL4, DelCoralF, DelAlgaeP, DelAlgaeN, DelAlgaeF, ClimbT, EndState, CageAttempt, SelectedCage, PointScored FROM dbo.UpdatePreviews";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9972,7 +9972,7 @@ SELECT Id, Event_key, Team_key, Team_number, Nickname FROM TeamSummaries WHERE (
                     int DelAlgaeF, 
                     double ClimbT, 
                     string EndState, 
-                    string CageAttept, 
+                    string CageAttempt, 
                     string SelectedCage, 
                     string PointScored) {
             if ((Team == null)) {
@@ -10089,11 +10089,11 @@ SELECT Id, Event_key, Team_key, Team_number, Nickname FROM TeamSummaries WHERE (
             else {
                 this.Adapter.InsertCommand.Parameters[33].Value = ((string)(EndState));
             }
-            if ((CageAttept == null)) {
+            if ((CageAttempt == null)) {
                 this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(CageAttept));
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(CageAttempt));
             }
             if ((SelectedCage == null)) {
                 this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
