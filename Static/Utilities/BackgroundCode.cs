@@ -19,6 +19,7 @@ namespace ScoutingCodeRedo.Static
 
         public static List<string> teamlist = new List<string>();           //The list of teams for the event selected
 
+        public static Queue<Activity> activitiesQueue = new Queue<Activity>();  //The queue of activities to be sent to the database
         public static Activity[] activity_record = new Activity[6];            //The activity record being sent to the database
         public static SeasonContext seasonframework = new SeasonContext();  //The database context
 
@@ -45,16 +46,13 @@ namespace ScoutingCodeRedo.Static
         {
             while (1 == 1)
             {
-                for (int i = 0; i < 6; i++)
+                if (activitiesQueue.Count != 0)
                 {
-                    if (activity_record[i].RecordType == "EndAuto" || activity_record[i].RecordType == "Activities" || activity_record[i].RecordType == "Defense" || activity_record[i].RecordType == "EndMatch" || activity_record[i].RecordType == "Match_Event")
-                    {
-                        //Save Record to the database
-                        seasonframework.ActivitySet.Add(activity_record[i]);
-                        seasonframework.SaveChanges();
+                    //Save Record to the database
+                    seasonframework.ActivitySet.Add(activitiesQueue.Peek());
+                    seasonframework.SaveChanges();
 
-                        activity_record[i].RecordType = "None";
-                    }
+                    activitiesQueue.Dequeue();
                 }
             }
         }

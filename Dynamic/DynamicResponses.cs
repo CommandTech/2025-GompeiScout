@@ -702,100 +702,99 @@ namespace ScoutingCodeRedo.Dynamic
 
         public static void TransactToDatabase(RobotState controller, string recordType, int id)
         {
-            if (controller.lastCoralAcqLoc == "Station" && controller.lastTransCoralLoc != "Station")
-            {
-                controller.AcqCoralS++;
-            }
-            else if (controller.lastCoralAcqLoc == "Floor" && controller.lastTransCoralLoc != "Floor")
-            {
-                controller.AcqCoralF++;
-            }
-            if (controller.lastAlgaeAcqLoc == "Reef" && controller.lastTransAlgaeLoc != "Reef")
-            {
-                controller.AcqAlgaeR++;
-            }
-            else if (controller.lastAlgaeAcqLoc == "Floor" && controller.lastTransAlgaeLoc != "Floor")
-            {
-                controller.AcqAlgaeF++;
-            }
-
-            if (controller.Leave == RobotState.LEAVE.Y && controller.Current_Mode == RobotState.ROBOT_MODE.Auto && recordType == "EndAuto")
-            {
-                controller.PointsScored += 3;
-            }
-            if (controller.lastAlgaeLoc == "Net")
-            {
-                controller.DelAlgaeN++;
-                controller.PointsScored += 4;
-            }
-            else if (controller.lastAlgaeLoc == "Processor")
-            {
-                controller.DelAlgaeP++;
-                controller.PointsScored += 6;
-            }
-            else if (controller.lastAlgaeLoc == "Floor")
-            {
-                controller.DelAlgaeF++;
-            }
-
-            if (controller.Current_Mode == RobotState.ROBOT_MODE.Auto)
-            {
-                if (controller.lastCoralLoc == "L4")
-                {
-                    controller.DelCoralL4++;
-                    controller.PointsScored += 7;
-                }
-                else if (controller.lastCoralLoc == "L3")
-                {
-                    controller.DelCoralL3++;
-                    controller.PointsScored += 6;
-                }
-                else if (controller.lastCoralLoc == "L2")
-                {
-                    controller.DelCoralL2++;
-                    controller.PointsScored += 4;
-                }
-                else if (controller.lastCoralLoc == "L1")
-                {
-                    controller.DelCoralL1++;
-                    controller.PointsScored += 3;
-                }
-                else if (controller.lastCoralLoc == "Floor")
-                {
-                    controller.DelCoralF++;
-                }
-            }
-            else
-            {
-                if (controller.lastCoralLoc == "L4")
-                {
-                    controller.DelCoralL4++;
-                    controller.PointsScored += 5;
-                }
-                else if (controller.lastCoralLoc == "L3")
-                {
-                    controller.DelCoralL3++;
-                    controller.PointsScored += 4;
-                }
-                else if (controller.lastCoralLoc == "L2")
-                {
-                    controller.DelCoralL2++;
-                    controller.PointsScored += 3;
-                }
-                else if (controller.lastCoralLoc == "L1")
-                {
-                    controller.DelCoralL1++;
-                    controller.PointsScored += 2;
-                }
-                else if (controller.lastCoralLoc == "Floor")
-                {
-                    controller.DelCoralF++;
-                }
-            }
-
-
             if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && (controller.TransactionCheck || recordType != "Activities") && controller.TeamName != null)
             {
+                if (controller.lastCoralAcqLoc == "Station" && controller.lastTransCoralLoc != "Station")
+                {
+                    controller.AcqCoralS++;
+                }
+                else if (controller.lastCoralAcqLoc == "Floor" && controller.lastTransCoralLoc != "Floor")
+                {
+                    controller.AcqCoralF++;
+                }
+                if (controller.lastAlgaeAcqLoc == "Reef" && controller.lastTransAlgaeLoc != "Reef")
+                {
+                    controller.AcqAlgaeR++;
+                }
+                else if (controller.lastAlgaeAcqLoc == "Floor" && controller.lastTransAlgaeLoc != "Floor")
+                {
+                    controller.AcqAlgaeF++;
+                }
+
+                if (controller.Leave == RobotState.LEAVE.Y && controller.Current_Mode == RobotState.ROBOT_MODE.Auto && recordType == "EndAuto")
+                {
+                    controller.PointsScored += 3;
+                }
+                if (controller.lastAlgaeLoc == "Net")
+                {
+                    controller.DelAlgaeN++;
+                    controller.PointsScored += 4;
+                }
+                else if (controller.lastAlgaeLoc == "Processor")
+                {
+                    controller.DelAlgaeP++;
+                    controller.PointsScored += 6;
+                }
+                else if (controller.lastAlgaeLoc == "Floor")
+                {
+                    controller.DelAlgaeF++;
+                }
+
+                if (controller.Current_Mode == RobotState.ROBOT_MODE.Auto)
+                {
+                    if (controller.lastCoralLoc == "L4")
+                    {
+                        controller.DelCoralL4++;
+                        controller.PointsScored += 7;
+                    }
+                    else if (controller.lastCoralLoc == "L3")
+                    {
+                        controller.DelCoralL3++;
+                        controller.PointsScored += 6;
+                    }
+                    else if (controller.lastCoralLoc == "L2")
+                    {
+                        controller.DelCoralL2++;
+                        controller.PointsScored += 4;
+                    }
+                    else if (controller.lastCoralLoc == "L1")
+                    {
+                        controller.DelCoralL1++;
+                        controller.PointsScored += 3;
+                    }
+                    else if (controller.lastCoralLoc == "Floor")
+                    {
+                        controller.DelCoralF++;
+                    }
+                }
+                else
+                {
+                    if (controller.lastCoralLoc == "L4")
+                    {
+                        controller.DelCoralL4++;
+                        controller.PointsScored += 5;
+                    }
+                    else if (controller.lastCoralLoc == "L3")
+                    {
+                        controller.DelCoralL3++;
+                        controller.PointsScored += 4;
+                    }
+                    else if (controller.lastCoralLoc == "L2")
+                    {
+                        controller.DelCoralL2++;
+                        controller.PointsScored += 3;
+                    }
+                    else if (controller.lastCoralLoc == "L1")
+                    {
+                        controller.DelCoralL1++;
+                        controller.PointsScored += 2;
+                    }
+                    else if (controller.lastCoralLoc == "Floor")
+                    {
+                        controller.DelCoralF++;
+                    }
+                }
+
                 var activity_record = BackgroundCode.activity_record[id];
                 switch (recordType)
                 {
@@ -813,10 +812,12 @@ namespace ScoutingCodeRedo.Dynamic
                         {
                             activity_record.Starting_Loc = controller.GetStart().ToString();
                             activity_record.Del_Near_Far = "-";
+                            activity_record.AcqAlgae_Near_Far = "-";
                             if (controller.lastAlgaeLoc != " ")
                             {
                                 activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
                             }
+                            activity_record.AcqCoral_Near_Far = "Preload";
                             if (controller.lastCoralLoc != " ")
                             {
                                 activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
@@ -940,7 +941,7 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
                             }
-                            activity_record.AcqCoral_Near_Far = "-";
+                            activity_record.AcqCoral_Near_Far = "Preload";
                             if (controller.lastCoralLoc != " ")
                             {
                                 activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
@@ -1062,7 +1063,7 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 activity_record.AcqAlgae_Near_Far = controller.AcqAlgaeNearFar ? "Far" : "Near";
                             }
-                            activity_record.AcqCoral_Near_Far = "-";
+                            activity_record.AcqCoral_Near_Far = "Preload";
                             if (controller.lastCoralLoc != " ")
                             {
                                 activity_record.AcqCoral_Near_Far = controller.AcqCoralNearFar ? "Far" : "Near";
@@ -1296,7 +1297,7 @@ namespace ScoutingCodeRedo.Dynamic
                             {
                                 activity_record.AcqAlgae_Near_Far = !controller.AcqAlgaeNearFar ? "Far" : "Near";
                             }
-                            activity_record.AcqCoral_Near_Far = "-";
+                            activity_record.AcqCoral_Near_Far = "Preload";
                             if (controller.lastCoralLoc != " ")
                             {
                                 activity_record.AcqCoral_Near_Far = !controller.AcqCoralNearFar ? "Far" : "Near";
@@ -1371,6 +1372,7 @@ namespace ScoutingCodeRedo.Dynamic
                 }
 
                 controller.DisFlag = false;
+                BackgroundCode.activitiesQueue.Enqueue(activity_record);
             }
         }
 
