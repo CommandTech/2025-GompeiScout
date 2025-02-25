@@ -42,12 +42,13 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             if (pictureBox.Image != null)
             {
                 BarcodeReader reader = new BarcodeReader();
-                Result result = reader.Decode((Bitmap)pictureBox.Image);
+                Result result = reader.Decode((Bitmap)smallerPictureBox.Image);
                 if (result != null)
                 {
                     timer.Stop();
                     videoSource.SignalToStop();
                     MessageBox.Show("QR Code Detected: " + result.Text);
+                    ConvertData(result);
                 }
             }
         }
@@ -58,6 +59,19 @@ namespace ScoutingCodeRedo.Dynamic.Screens
                 videoSource.SignalToStop();
                 videoSource.WaitForStop();
             }
+        }
+
+        private void ConvertData(Result data)
+        {
+            string[] splitData = data.Text.Split(',');
+            //make sure to ignore qr codes already scanned (look at match number and driver station and possibly team number)
+            //using the driver station, find which activity_record should be modified
+            //figure out how many match event lines should be created
+            //create the end auto line with the auto l1 data
+            //create the match events
+            //create the end match line with tele l1 added to auto l1
+            //set the acquires to -1 because QR scout does not track them
+
         }
     }
 }

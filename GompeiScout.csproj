@@ -195,6 +195,9 @@
     <EmbeddedResource Include="Dynamic\Screens\FunctionsForm.resx">
       <DependentUpon>FunctionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic\Screens\QRScoutAdapter.resx">
+      <DependentUpon>QRScoutAdapter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dynamic\Screens\ScouterBoxes.resx">
       <DependentUpon>ScouterBoxes.cs</DependentUpon>
     </EmbeddedResource>
