@@ -73,6 +73,7 @@ namespace ScoutingCodeRedo.Dynamic
         public string SelectedCage { get; set; }
         public string PointScored { get; set; }
         public int DisAlg { get; set; }
+        public string Comments { get; set; }
 
         //Examples from previous years
         //public TimeSpan Cycle { get; set; }
@@ -128,6 +129,7 @@ namespace ScoutingCodeRedo.Dynamic
         public string SelectedCage { get; set; }
         public string PointScored { get; set; }
         public int DisAlg { get; set; }
+        public string Comments { get; set; }
     }
     public class EventSummary : BaseEntity
     {
