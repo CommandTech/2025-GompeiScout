@@ -89,5 +89,12 @@ namespace ScoutingCodeRedo.Dynamic
             this.Hide();
             frm.Show();
         }
+
+        private void BtnQRScout_Click(object sender, EventArgs e)
+        {
+            QRScoutAdapter frm = new QRScoutAdapter();
+            this.Hide();
+            frm.Show();
+        }
     }
 }

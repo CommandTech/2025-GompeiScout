@@ -14,6 +14,7 @@
             this.btnUpdateDatabase = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
             this.comboPracticeTeams = new System.Windows.Forms.ComboBox();
+            this.btnQRScout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateScouterText
@@ -133,10 +134,24 @@
             this.comboPracticeTeams.TabIndex = 361;
             this.comboPracticeTeams.SelectedIndexChanged += new System.EventHandler(this.ComboPracticeTeams_SelectedIndexChanged);
             // 
+            // btnQRScout
+            // 
+            this.btnQRScout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQRScout.ForeColor = System.Drawing.Color.Black;
+            this.btnQRScout.Location = new System.Drawing.Point(315, 167);
+            this.btnQRScout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnQRScout.Name = "btnQRScout";
+            this.btnQRScout.Size = new System.Drawing.Size(80, 35);
+            this.btnQRScout.TabIndex = 362;
+            this.btnQRScout.Text = "QR";
+            this.btnQRScout.UseVisualStyleBackColor = true;
+            this.btnQRScout.Click += new System.EventHandler(this.BtnQRScout_Click);
+            // 
             // FunctionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(408, 362);
+            this.Controls.Add(this.btnQRScout);
             this.Controls.Add(this.comboPracticeTeams);
             this.Controls.Add(this.btnCages);
             this.Controls.Add(this.btnUpdateDatabase);
@@ -149,6 +164,7 @@
             this.Name = "FunctionsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -162,5 +178,6 @@
         private System.Windows.Forms.Button btnUpdateDatabase;
         private System.Windows.Forms.Button btnCages;
         private System.Windows.Forms.ComboBox comboPracticeTeams;
+        private System.Windows.Forms.Button btnQRScout;
     }
 }
