@@ -17,11 +17,9 @@ namespace ScoutingCodeRedo.Dynamic.Screens
         {
             this.components = new System.ComponentModel.Container();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.smallerPictureBox = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelQRScanned = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.smallerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
@@ -34,38 +32,28 @@ namespace ScoutingCodeRedo.Dynamic.Screens
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // smallerPictureBox
-            // 
-            this.smallerPictureBox.Location = new System.Drawing.Point(300, 200);
-            this.smallerPictureBox.Name = "smallerPictureBox";
-            this.smallerPictureBox.Size = new System.Drawing.Size(200, 200);
-            this.smallerPictureBox.TabIndex = 1;
-            this.smallerPictureBox.TabStop = false;
-            // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
-            // panel1
+            // panelQRScanned
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(128, 0, 0, 0); // 50% transparent black
-            this.panel1.ForeColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(300, 200);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 200);
-            this.panel1.TabIndex = 2;
+            this.panelQRScanned.BackColor = System.Drawing.Color.Lime;
+            this.panelQRScanned.Location = new System.Drawing.Point(682, 27);
+            this.panelQRScanned.Name = "panelQRScanned";
+            this.panelQRScanned.Size = new System.Drawing.Size(101, 90);
+            this.panelQRScanned.TabIndex = 1;
+            this.panelQRScanned.Visible = false;
             // 
             // QRScoutAdapter
             // 
             this.ClientSize = new System.Drawing.Size(800, 601);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelQRScanned);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.smallerPictureBox);
             this.Name = "QRScoutAdapter";
             this.Text = "Camera Capture";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CameraCapture_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.smallerPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -73,8 +61,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
         #endregion
         private System.ComponentModel.IContainer components = null;
         private PictureBox pictureBox;
-        private PictureBox smallerPictureBox;
         private Timer timer;
-        private Panel panel1;
+        private Panel panelQRScanned;
     }
 }

@@ -639,22 +639,25 @@ namespace ScoutingCodeRedo.Static
             {
                 for (int i = Settings.Default.currentMatch - 1; i < BackgroundCode.InMemoryMatchList.Count; i++)
                 {
-                    List<string> teams = new List<string>
-                {
-                    BackgroundCode.InMemoryMatchList[i].Redteam1.Substring(3),
-                    BackgroundCode.InMemoryMatchList[i].Redteam2.Substring(3),
-                    BackgroundCode.InMemoryMatchList[i].Redteam3.Substring(3),
-                    BackgroundCode.InMemoryMatchList[i].Blueteam1.Substring(3),
-                    BackgroundCode.InMemoryMatchList[i].Blueteam2.Substring(3),
-                    BackgroundCode.InMemoryMatchList[i].Blueteam3.Substring(3)
-                };
-
-                    if (teams.Contains(BackgroundCode.homeTeam))
+                    if (i > 0)
                     {
-                        BackgroundCode.homePrio.Clear();
-                        BackgroundCode.homePrio.AddRange(teams);
-                        BackgroundCode.homePrio.Remove(BackgroundCode.homeTeam);
-                        break;
+                        List<string> teams = new List<string>
+                        {
+                            BackgroundCode.InMemoryMatchList[i].Redteam1.Substring(3),
+                            BackgroundCode.InMemoryMatchList[i].Redteam2.Substring(3),
+                            BackgroundCode.InMemoryMatchList[i].Redteam3.Substring(3),
+                            BackgroundCode.InMemoryMatchList[i].Blueteam1.Substring(3),
+                            BackgroundCode.InMemoryMatchList[i].Blueteam2.Substring(3),
+                            BackgroundCode.InMemoryMatchList[i].Blueteam3.Substring(3)
+                        };
+
+                        if (teams.Contains(BackgroundCode.homeTeam))
+                        {
+                            BackgroundCode.homePrio.Clear();
+                            BackgroundCode.homePrio.AddRange(teams);
+                            BackgroundCode.homePrio.Remove(BackgroundCode.homeTeam);
+                            break;
+                        }
                     }
                 }
             }
