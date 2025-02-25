@@ -146,6 +146,7 @@ namespace ScoutingCodeRedo.Dynamic
                         txtDelAlgaeF.Text = result.DelAlgaeF.ToString();
                         txtDelAlgaeP.Text = result.DelAlgaeP.ToString();
                         txtDelAlgaeN.Text = result.DelAlgaeN.ToString();
+                        txtDisAlg.Text = result.DisAlg.ToString();
 
                         comboStrategy.Text = result.Strategy.ToString();
                         comboEndState.Text = result.EndState.ToString();
@@ -473,6 +474,13 @@ namespace ScoutingCodeRedo.Dynamic
                         query = "UPDATE Activities SET DelAlgaeF = '" + txtDelAlgaeF.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
+                        if (int.TryParse(txtDisAlg.Text, out delAlgae))
+                        {
+                            AFChangeAmount = delAlgae - result.DisAlg;
+                        }
+                        query = "UPDATE Activities SET DisAlg = '" + txtDisAlg.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+
 
                         query = "UPDATE Activities SET ClimbT = '" + txtClimbTime.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
@@ -520,6 +528,10 @@ namespace ScoutingCodeRedo.Dynamic
 
                         line.DelAlgaeF += AFChangeAmount;
                         query = "UPDATE Activities SET DelAlgaeF = '" + line.DelAlgaeF + "' WHERE Id = '" + line.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+
+                        line.DisAlg += AFChangeAmount;
+                        query = "UPDATE Activities SET DisAlg = '" + line.DisAlg + "' WHERE Id = '" + line.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         switch (AcqChange)
