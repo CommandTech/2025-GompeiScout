@@ -97,6 +97,8 @@ namespace ScoutingCodeRedo.Dynamic
         public int autoCoralPoints;
         public int PointsScored;
 
+        public string Comments;
+
         // These are the standard types...
 
         public ROBOT_MODE Desired_Mode;         //Desired Mode

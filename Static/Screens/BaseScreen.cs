@@ -314,7 +314,7 @@ namespace ScoutingCodeRedo.Static
                 cbxEndMatch.Checked = false;
                 for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
                 {
-                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch", i);
+                    DynamicResponses.TransactToDatabase(BackgroundCode.Robots[BackgroundCode.Robots[i].ScouterBox], "EndMatch", i, "");
                     DynamicResponses.ResetValues(i);
                 }
 
