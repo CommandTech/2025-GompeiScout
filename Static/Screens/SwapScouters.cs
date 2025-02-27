@@ -8,8 +8,8 @@ namespace ScoutingCodeRedo.Static
 {
     public partial class SwapScouters : Form
     {
-        public List<ComboBox> scoutDrops = new List<ComboBox>();
-        public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new Dictionary<RobotState.SCOUTER_NAME, int>();
+        public List<ComboBox> scoutDrops = new();
+        public Dictionary<RobotState.SCOUTER_NAME, int> scouterDict = new();
 
         public SwapScouters()
         {

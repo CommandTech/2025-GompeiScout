@@ -41,20 +41,16 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void BtnPriority_Click(object sender, EventArgs e)
         {
-            using (var frm = new PriorityForm())
-            {
-                this.Hide();
-                frm.ShowDialog();
-            }
+            using var frm = new PriorityForm();
+            this.Hide();
+            frm.ShowDialog();
         }
 
         private void BtnSwapScouters_Click(object sender, EventArgs e)
         {
-            using (var frm = new SwapScouters())
-            {
-                this.Hide();
-                frm.ShowDialog();
-            }
+            using var frm = new SwapScouters();
+            this.Hide();
+            frm.ShowDialog();
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -67,11 +63,9 @@ namespace ScoutingCodeRedo.Dynamic
         {
             if (Settings.Default.DBExists)
             {
-                using (var frm = new UpdateDatabase(BackgroundCode.teamlist, BackgroundCode.MatchNumbers))
-                {
-                    this.Hide();
-                    frm.ShowDialog();
-                }
+                using var frm = new UpdateDatabase(BackgroundCode.teamlist, BackgroundCode.MatchNumbers);
+                this.Hide();
+                frm.ShowDialog();
             }
             else
             {
@@ -88,11 +82,9 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void BtnCages_Click(object sender, EventArgs e)
         {
-            using (var frm = new CagesForm())
-            {
-                this.Hide();
-                frm.ShowDialog();
-            }
+            using var frm = new CagesForm();
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }

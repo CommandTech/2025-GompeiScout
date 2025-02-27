@@ -113,11 +113,11 @@ namespace ScoutingCodeRedo.Static
             }
 
             //Loop through all connected gamepads
-            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) 
+            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++)
                 BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
 
             // Loop through all Scouters/Robots
-            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) 
+            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++)
                 BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);
 
             //If the program is in practice mode

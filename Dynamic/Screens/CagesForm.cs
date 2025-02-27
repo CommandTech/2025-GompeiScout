@@ -7,7 +7,7 @@ namespace ScoutingCodeRedo.Dynamic.Screens
 {
     internal partial class CagesForm : Form
     {
-        private readonly List<ComboBox> Cages = new List<ComboBox>();
+        private readonly List<ComboBox> Cages = new();
         public CagesForm()
         {
             InitializeComponent();

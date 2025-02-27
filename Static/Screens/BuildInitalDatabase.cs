@@ -33,44 +33,42 @@ namespace ScoutingCodeRedo.Static
             {
                 string uri = $"https://www.thebluealliance.com/api/v3/events/{DateTime.Now.Year}?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
-                using (HttpClient client = new HttpClient())
+                using HttpClient client = new();
+                try
                 {
-                    try
+                    HttpResponseMessage response = await client.GetAsync(uri);
+                    response.EnsureSuccessStatusCode(); // Throw if not a success code.
+
+                    string responseFromServer = await response.Content.ReadAsStringAsync();
+
+                    List<EventSummary> JSONevents = JsonConvert.DeserializeObject<List<EventSummary>>(responseFromServer);
+
+                    Log("Received " + JSONevents.Count + " events.");
+                    List<KeyValuePair<string, string>> elist = new();
+
+                    BackgroundCode.seasonframework.Eventset.AddRange(JSONevents);
+                    BackgroundCode.seasonframework.SaveChanges();
+
+                    foreach (var item in JSONevents)
                     {
-                        HttpResponseMessage response = await client.GetAsync(uri);
-                        response.EnsureSuccessStatusCode(); // Throw if not a success code.
-
-                        string responseFromServer = await response.Content.ReadAsStringAsync();
-
-                        List<EventSummary> JSONevents = JsonConvert.DeserializeObject<List<EventSummary>>(responseFromServer);
-
-                        Log("Received " + JSONevents.Count + " events.");
-                        List<KeyValuePair<string, string>> elist = new List<KeyValuePair<string, string>>();
-
-                        BackgroundCode.seasonframework.Eventset.AddRange(JSONevents);
-                        BackgroundCode.seasonframework.SaveChanges();
-
-                        foreach (var item in JSONevents)
-                        {
-                            elist.Add(new KeyValuePair<string, string>(item.Event_code, $"{item.Event_code} - {item.Name}"));
-                        }
-                        this.comboBoxSelectRegional.DataSource = elist;
-                        this.comboBoxSelectRegional.DisplayMember = "Value";
-                        this.comboBoxSelectRegional.ValueMember = "Key";
-                        this.comboBoxSelectRegional.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                        this.comboBoxSelectRegional.AutoCompleteSource = AutoCompleteSource.ListItems;
+                        elist.Add(new KeyValuePair<string, string>(item.Event_code, $"{item.Event_code} - {item.Name}"));
                     }
-                    catch (HttpRequestException e)
+                    this.comboBoxSelectRegional.DataSource = elist;
+                    this.comboBoxSelectRegional.DisplayMember = "Value";
+                    this.comboBoxSelectRegional.ValueMember = "Key";
+                    this.comboBoxSelectRegional.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    this.comboBoxSelectRegional.AutoCompleteSource = AutoCompleteSource.ListItems;
+                }
+                catch (HttpRequestException e)
+                {
+                    Log("Request error: " + e.Message);
+                    DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Error loading Blue Alliance data.", MessageBoxButtons.YesNo);
+                    if (manualMatches == DialogResult.Yes)
                     {
-                        Log("Request error: " + e.Message);
-                        DialogResult manualMatches = MessageBox.Show("Do you want to load manual matches?", "Error loading Blue Alliance data.", MessageBoxButtons.YesNo);
-                        if (manualMatches == DialogResult.Yes)
-                        {
-                            Log("Loading manual matches.");
-                            LoadManualMatches();
-                            comboBoxSelectRegional.Items.Add("manualEvent");
-                            comboBoxSelectRegional.SelectedItem = "manualEvent";
-                        }
+                        Log("Loading manual matches.");
+                        LoadManualMatches();
+                        comboBoxSelectRegional.Items.Add("manualEvent");
+                        comboBoxSelectRegional.SelectedItem = "manualEvent";
                     }
                 }
             }

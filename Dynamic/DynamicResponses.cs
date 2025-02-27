@@ -14,8 +14,8 @@ namespace ScoutingCodeRedo.Dynamic
 
             var robot = BackgroundCode.Robots[controllerNumber];
 
-            if (robot.ClimbT_StopWatch == null) robot.ClimbT_StopWatch = new Stopwatch();
-            if (robot.DefTime_StopWatch == null) robot.DefTime_StopWatch = new Stopwatch();
+            robot.ClimbT_StopWatch ??= new Stopwatch();
+            robot.DefTime_StopWatch ??= new Stopwatch();
 
             if (!robot.NoSho && robot.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name)
             {
@@ -1416,8 +1416,8 @@ namespace ScoutingCodeRedo.Dynamic
             robot.Cage_Attempt = RobotState.CAGE_ATTEMPT.Select;
             robot.End_State = RobotState.END_STATE.Select;
 
-            if (robot.ClimbT_StopWatch == null) robot.ClimbT_StopWatch = new Stopwatch();
-            if (robot.DefTime_StopWatch == null) robot.DefTime_StopWatch = new Stopwatch();
+            robot.ClimbT_StopWatch ??= new Stopwatch();
+            robot.DefTime_StopWatch ??= new Stopwatch();
             try
             {
                 robot.ClimbT_StopWatch.Stop();

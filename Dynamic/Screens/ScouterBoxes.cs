@@ -7,7 +7,7 @@ namespace ScoutingCodeRedo.Dynamic
 {
     internal partial class ScouterBoxes : Form
     {
-        readonly Dictionary<int, string> DefenseEquality = new Dictionary<int, string>
+        readonly Dictionary<int, string> DefenseEquality = new()
         {
             { 0, "None" },
             { 1, "1 Station" },
@@ -16,7 +16,7 @@ namespace ScoutingCodeRedo.Dynamic
             { 4, "Counter" },
             { 9, "Scouter Error" }
         };
-        readonly Dictionary<int, string> AvoidanceEquality = new Dictionary<int, string>
+        readonly Dictionary<int, string> AvoidanceEquality = new()
         {
             { 0, "None" },
             { 1, "1 Station" },
