@@ -12,25 +12,22 @@ namespace ScoutingCodeRedo.Dynamic
         {
             InitializeComponent();
             cbxPractice.Checked = Settings.Default.practiceMode;
-
             comboPracticeTeams.Visible = Settings.Default.practiceMode;
 
             try
             {
-                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam1);
-                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam2);
-                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Redteam3);
-                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam1);
-                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam2);
-                comboPracticeTeams.Items.Add(BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1].Blueteam3);
+                var currentMatch = BackgroundCode.InMemoryMatchList[Settings.Default.currentMatch - 1];
+                var teams = new[] { currentMatch.Redteam1, currentMatch.Redteam2, currentMatch.Redteam3, currentMatch.Blueteam1, currentMatch.Blueteam2, currentMatch.Blueteam3 };
 
+                comboPracticeTeams.Items.AddRange(teams);
                 comboPracticeTeams.SelectedIndex = Settings.Default.practiceTeam;
             }
             catch
             {
-
+                // Handle exception if necessary
             }
         }
+
         private void ComboPracticeTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
             Settings.Default.practiceChanged = true;
@@ -44,16 +41,20 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void BtnPriority_Click(object sender, EventArgs e)
         {
-            PriorityForm frm = new PriorityForm();
-            this.Hide();
-            frm.Show();
+            using (var frm = new PriorityForm())
+            {
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
 
         private void BtnSwapScouters_Click(object sender, EventArgs e)
         {
-            SwapScouters frm = new SwapScouters();
-            this.Hide();
-            frm.Show();
+            using (var frm = new SwapScouters())
+            {
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -66,13 +67,15 @@ namespace ScoutingCodeRedo.Dynamic
         {
             if (Settings.Default.DBExists)
             {
-                UpdateDatabase frm = new UpdateDatabase(BackgroundCode.teamlist, BackgroundCode.MatchNumbers);
-                this.Hide();
-                frm.Show();
+                using (var frm = new UpdateDatabase(BackgroundCode.teamlist, BackgroundCode.MatchNumbers))
+                {
+                    this.Hide();
+                    frm.ShowDialog();
+                }
             }
             else
             {
-                MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
+                MessageBox.Show("Please load The Blue Alliance to create the database or create the database in a different way");
             }
         }
 
@@ -85,9 +88,11 @@ namespace ScoutingCodeRedo.Dynamic
 
         private void BtnCages_Click(object sender, EventArgs e)
         {
-            CagesForm frm = new CagesForm();
-            this.Hide();
-            frm.Show();
+            using (var frm = new CagesForm())
+            {
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
     }
 }

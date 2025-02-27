@@ -107,13 +107,18 @@ namespace ScoutingCodeRedo.Static
         private void JoyStickReader(object sender, EventArgs e)
         {
             //Updates the screen with the current data
-            UpdateScreen();
+            if (DateTime.Now.Millisecond % 50 < 20)
+            {
+                UpdateScreen();
+            }
 
             //Loop through all connected gamepads
-            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
+            for (int gamepad_ctr = 0; gamepad_ctr < BackgroundCode.gamePads.Length; gamepad_ctr++) 
+                BackgroundCode.controllers.ReadStick(BackgroundCode.gamePads, gamepad_ctr);
 
             // Loop through all Scouters/Robots
-            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);  //Initialize all six robots
+            for (int robot_ctr = 0; robot_ctr < BackgroundCode.Robots.Length; robot_ctr++) 
+                BackgroundCode.Robots[robot_ctr] = BackgroundCode.controllers.GetRobotState(robot_ctr);
 
             //If the program is in practice mode
             if ((Settings.Default.practiceMode && Settings.Default.practiceChanged) || wasPractice)
@@ -504,15 +509,15 @@ namespace ScoutingCodeRedo.Static
                 {
                     try
                     {
-                        HttpResponseMessage response = await client.GetAsync(uri);
-                        response.EnsureSuccessStatusCode(); // Throw if not a success code.
-
-                        string responseFromServer = await response.Content.ReadAsStringAsync();
+                        HttpResponseMessage response = await client.GetAsync(uri).ConfigureAwait(false);
+                        response.EnsureSuccessStatusCode();
+                        string responseFromServer = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                         //Log("Response from Server -> " + responseFromServer);
                         //Console.Write(responseFromServer);
 
                         List<TeamSummary> JSONteams = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TeamSummary>>(responseFromServer);
                         Log("Received " + JSONteams.Count + " teams for " + regional + ".");
+                        dynamic objt = JSONteams;
 
                         var teamquery = from b in BackgroundCode.seasonframework.Teamset
                                         orderby b.Team_key
@@ -533,30 +538,27 @@ namespace ScoutingCodeRedo.Static
                             var result = db.Teamset.FirstOrDefault(b => b.Team_key == teamNumber);
                             if (result == null)
                             {
-                                //Recording a list of teams to the database
-                                JSONteams = (List<TeamSummary>)Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer, typeof(List<TeamSummary>));
+                                List<TeamSummary> teamsToAdd = new List<TeamSummary>();
 
-                                dynamic objt = Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer);
-
-                                var team_key = "0";
                                 for (int i = 0; i < JSONteams.Count; i++)
                                 {
-                                    team_key = objt[i].key;
+                                    string team_key = objt[i].key;
                                     var result2 = db.Teamset.FirstOrDefault(b => b.Team_key == team_key);
                                     if (result2 == null)
                                     {
-                                        TeamSummary team_record = new TeamSummary
+                                        teamsToAdd.Add(new TeamSummary
                                         {
                                             Team_key = objt[i].key,
                                             Team_number = objt[i].team_number,
                                             Event_key = regional,
                                             Nickname = objt[i].nickname
-                                        };
-
-                                        //Save changes
-                                        BackgroundCode.seasonframework.Teamset.Add(team_record);
-                                        BackgroundCode.seasonframework.SaveChanges();
+                                        });
                                     }
+                                }
+                                if (teamsToAdd.Count > 0)
+                                {
+                                    BackgroundCode.seasonframework.Teamset.AddRange(teamsToAdd);
+                                    BackgroundCode.seasonframework.SaveChanges();
                                 }
                             }
                         }
