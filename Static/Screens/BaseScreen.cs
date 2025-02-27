@@ -58,13 +58,13 @@ namespace ScoutingCodeRedo.Static
                 BackgroundCode.activity_record[i] = new Activity();
             }
 
-            Thread transactThread = new Thread(BackgroundCode.RecordToDatabase);
+            Thread transactThread = new(BackgroundCode.RecordToDatabase);
             transactThread.Start();
 
             // Create and start a new thread for each controller
             foreach (var gamePad in BackgroundCode.gamePads)
             {
-                Thread controllerThread = new Thread(() => ControllerThreadMethod(gamePad));
+                Thread controllerThread = new(() => ControllerThreadMethod(gamePad));
                 controllerThread.Start();
             }
 
@@ -235,12 +235,12 @@ namespace ScoutingCodeRedo.Static
                 Settings.Default.currentMatch = int.Parse(iniFile.Read("MatchData", "match_number", "")) - 1;
                 Settings.Default.redRight = bool.Parse(iniFile.Read("MatchData", "redRight", ""));
                 var teamPrioList = new List<string>(iniFile.Read("MatchData", "teamPrio", "").Split(','));
-                BackgroundCode.teamPrio.AddRange(teamPrioList.ToArray());
+                BackgroundCode.teamPrio.AddRange([.. teamPrioList]);
 
 
-                List<string> scouterNames = new List<string>(iniFile.Read("MatchData", "scouterNames", "").Split(','));
-                List<string> scouterLocations = new List<string>(iniFile.Read("MatchData", "scouterLocations", "").Split(','));
-                List<string> cages = new List<string>(iniFile.Read("MatchData", "cages", "").Split(','));
+                List<string> scouterNames = new(iniFile.Read("MatchData", "scouterNames", "").Split(','));
+                List<string> scouterLocations = new(iniFile.Read("MatchData", "scouterLocations", "").Split(','));
+                List<string> cages = new(iniFile.Read("MatchData", "cages", "").Split(','));
 
                 for (int i = 0; i < 6; i++)
                 {
@@ -440,11 +440,11 @@ namespace ScoutingCodeRedo.Static
             BackgroundCode.InMemoryMatchList.Clear();
             if (Settings.Default.manualMatchList != null)
             {
-                List<string> manualTeams = new List<string>();
+                List<string> manualTeams = [];
 
                 for (int i = 0; i < Settings.Default.manualMatchList.Count; i++)
                 {
-                    Match matchData = new Match
+                    Match matchData = new()
                     {
                         Match_number = i,
                         Set_number = i,
@@ -478,7 +478,7 @@ namespace ScoutingCodeRedo.Static
 
                 foreach (var team in manualTeams)
                 {
-                    TeamSummary teamData = new TeamSummary
+                    TeamSummary teamData = new()
                     {
                         Team_key = "frc" + team,
                         Team_number = team,
@@ -505,7 +505,7 @@ namespace ScoutingCodeRedo.Static
 
                 string uri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{regional}/teams?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
-                using (HttpClient client = new HttpClient())
+                using (HttpClient client = new())
                 {
                     try
                     {
@@ -532,34 +532,32 @@ namespace ScoutingCodeRedo.Static
                         }
                         Log("Teams -> " + string.Join(", ", JSONteams.Select(item => item.Team_number)));
 
-                        using (var db = new SeasonContext())
+                        using var db = new SeasonContext();
+                        var teamNumber = BackgroundCode.Robots[0].TeamName;
+                        var result = db.Teamset.FirstOrDefault(b => b.Team_key == teamNumber);
+                        if (result == null)
                         {
-                            var teamNumber = BackgroundCode.Robots[0].TeamName;
-                            var result = db.Teamset.FirstOrDefault(b => b.Team_key == teamNumber);
-                            if (result == null)
-                            {
-                                List<TeamSummary> teamsToAdd = new List<TeamSummary>();
+                            List<TeamSummary> teamsToAdd = [];
 
-                                for (int i = 0; i < JSONteams.Count; i++)
+                            for (int i = 0; i < JSONteams.Count; i++)
+                            {
+                                string team_key = objt[i].key;
+                                var result2 = db.Teamset.FirstOrDefault(b => b.Team_key == team_key);
+                                if (result2 == null)
                                 {
-                                    string team_key = objt[i].key;
-                                    var result2 = db.Teamset.FirstOrDefault(b => b.Team_key == team_key);
-                                    if (result2 == null)
+                                    teamsToAdd.Add(new TeamSummary
                                     {
-                                        teamsToAdd.Add(new TeamSummary
-                                        {
-                                            Team_key = objt[i].key,
-                                            Team_number = objt[i].team_number,
-                                            Event_key = regional,
-                                            Nickname = objt[i].nickname
-                                        });
-                                    }
+                                        Team_key = objt[i].key,
+                                        Team_number = objt[i].team_number,
+                                        Event_key = regional,
+                                        Nickname = objt[i].nickname
+                                    });
                                 }
-                                if (teamsToAdd.Count > 0)
-                                {
-                                    BackgroundCode.seasonframework.Teamset.AddRange(teamsToAdd);
-                                    BackgroundCode.seasonframework.SaveChanges();
-                                }
+                            }
+                            if (teamsToAdd.Count > 0)
+                            {
+                                BackgroundCode.seasonframework.Teamset.AddRange(teamsToAdd);
+                                BackgroundCode.seasonframework.SaveChanges();
                             }
                         }
                     }
@@ -571,7 +569,7 @@ namespace ScoutingCodeRedo.Static
 
                 string matchesuri = $"https://www.thebluealliance.com/api/v3/event/{DateTime.Now.Year}{regional}/matches?X-TBA-Auth-Key={Settings.Default.API_Key}";
 
-                using (HttpClient client = new HttpClient())
+                using (HttpClient client = new())
                 {
                     try
                     {
@@ -592,7 +590,7 @@ namespace ScoutingCodeRedo.Static
                         {
                             if (JSONmatches[i].Comp_level == "qm")
                             {
-                                Match match_record = new Match();
+                                Match match_record = new();
 
                                 MatchCount++;
                                 BackgroundCode.MatchNumbers.Add(MatchCount);
@@ -633,7 +631,7 @@ namespace ScoutingCodeRedo.Static
                     }
                 }
 
-                BackgroundCode.InMemoryMatchList = BackgroundCode.UnSortedMatchList.OrderBy(o => o.Match_number).ToList();
+                BackgroundCode.InMemoryMatchList = [.. BackgroundCode.UnSortedMatchList.OrderBy(o => o.Match_number)];
             }
             NextMatch();
         }
@@ -645,15 +643,15 @@ namespace ScoutingCodeRedo.Static
                 {
                     if (i > 0)
                     {
-                        List<string> teams = new List<string>
-                        {
+                        List<string> teams =
+                        [
                             BackgroundCode.InMemoryMatchList[i].Redteam1.Substring(3),
                             BackgroundCode.InMemoryMatchList[i].Redteam2.Substring(3),
                             BackgroundCode.InMemoryMatchList[i].Redteam3.Substring(3),
                             BackgroundCode.InMemoryMatchList[i].Blueteam1.Substring(3),
                             BackgroundCode.InMemoryMatchList[i].Blueteam2.Substring(3),
                             BackgroundCode.InMemoryMatchList[i].Blueteam3.Substring(3)
-                        };
+                        ];
 
                         if (teams.Contains(BackgroundCode.homeTeam))
                         {
@@ -684,7 +682,7 @@ namespace ScoutingCodeRedo.Static
 
         private void BtnFunctions_Click(object sender, EventArgs e)
         {
-            FunctionsForm frm = new FunctionsForm();
+            FunctionsForm frm = new();
             frm.Show();
         }
     }
