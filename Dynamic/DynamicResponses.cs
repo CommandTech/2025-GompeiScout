@@ -109,10 +109,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -248,10 +249,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -383,10 +385,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -438,10 +441,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -490,8 +494,9 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.TransactionCheck = true;
                     }
                     //Deliver Coral to the Floor
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
+                    if (gamepad.LeftButton_Press && robot.totalCoralDeliveries == 0 && !robot.Flag)
                     {
+                        robot.hasCoral++;
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
