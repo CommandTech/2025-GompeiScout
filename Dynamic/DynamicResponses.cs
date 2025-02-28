@@ -109,10 +109,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -248,10 +249,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -383,10 +385,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -438,10 +441,11 @@ namespace ScoutingCodeRedo.Dynamic
                     }
                     if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
                     {
-                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0)
+                        if (robot.TransactionCheck && robot.totalCoralDeliveries == 0 && robot.lastCoralLoc == "Floor")
                         {
-                            robot.hasCoral--;
+                            robot.hasCoral++;
                             robot.lastCoralAcqLoc = " ";
+                            robot.lastCoralLoc = "Floor";
                             robot.AcqCoralNearFar = false;
                         }
                         else
@@ -490,8 +494,9 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.TransactionCheck = true;
                     }
                     //Deliver Coral to the Floor
-                    if (gamepad.LeftButton_Press && robot.lastCoralAcqLoc == robot.prevlastCoralAcqLoc && robot.lastCoralAcqLoc != " " && !robot.Flag)
+                    if (gamepad.LeftButton_Press && robot.totalCoralDeliveries == 0 && !robot.Flag)
                     {
+                        robot.hasCoral++;
                         robot.lastCoralLoc = "Floor";
                         robot.TransactionCheck = true;
                     }
@@ -566,7 +571,7 @@ namespace ScoutingCodeRedo.Dynamic
                 if (gamepad.StartButton_Press && robot.Current_Mode == RobotState.ROBOT_MODE.Auto)
                 {
                     robot.AUTO = false;
-                    TransactToDatabase(robot, "EndAuto", controllerNumber);
+                    TransactToDatabase(robot, "EndAuto", controllerNumber, "");
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Surfacing;
                     robot.Current_Mode = RobotState.ROBOT_MODE.Teleop;
                 }
@@ -598,7 +603,7 @@ namespace ScoutingCodeRedo.Dynamic
                     robot.Current_Mode = RobotState.ROBOT_MODE.Surfacing;
                     robot.Desired_Mode = RobotState.ROBOT_MODE.Defense;
 
-                    TransactToDatabase(robot, "Defense", controllerNumber);
+                    TransactToDatabase(robot, "Defense", controllerNumber, "");
 
                     robot.DefTime_StopWatch.Reset();
 
@@ -632,7 +637,7 @@ namespace ScoutingCodeRedo.Dynamic
                         robot.DefTime = robot.DefTime_StopWatch.Elapsed;
                         robot.DefTime_StopWatch_running = false;
 
-                        TransactToDatabase(robot, "Defense", controllerNumber);
+                        TransactToDatabase(robot, "Defense", controllerNumber, "");
 
                         robot.DefTime_StopWatch.Reset();
                     }
@@ -685,7 +690,7 @@ namespace ScoutingCodeRedo.Dynamic
                 //2025 Transaction
                 if (gamepad.RightTrigger_Press && robot.TransactionCheck)
                 {
-                    TransactToDatabase(robot, "Activities", controllerNumber);
+                    TransactToDatabase(robot, "Activities", controllerNumber, "");
                 }
                 else if (gamepad.RightTrigger_Press)
                 {
@@ -700,9 +705,9 @@ namespace ScoutingCodeRedo.Dynamic
             }
         }
 
-        public static void TransactToDatabase(RobotState controller, string recordType, int id)
+        public static void TransactToDatabase(RobotState controller, string recordType, int id, string qrName)
         {
-            if (controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name && (controller.TransactionCheck || recordType != "Activities") && controller.TeamName != null)
+            if ((controller.GetScouterName() != RobotState.SCOUTER_NAME.Select_Name || qrName != "") && (controller.TransactionCheck || recordType != "Activities") && controller.TeamName != null)
             {
                 if (controller.lastCoralAcqLoc == "Station" && controller.lastTransCoralLoc != "Station")
                 {
@@ -801,9 +806,17 @@ namespace ScoutingCodeRedo.Dynamic
                     case ("EndAuto"):
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
+                        if (qrName != "")
+                        {
+                            activity_record.Team = controller.TeamName;
+                        }
                         activity_record.Match = Settings.Default.currentMatch;
                         activity_record.Mode = controller.Current_Mode.ToString();
                         activity_record.ScouterName = controller.GetScouterName().ToString();
+                        if (qrName != "")
+                        {
+                            activity_record.ScouterName = qrName;
+                        }
 
                         activity_record.Match_event = "-";
                         activity_record.Leave = controller.GetLeave().ToString();
@@ -926,6 +939,10 @@ namespace ScoutingCodeRedo.Dynamic
                     case ("Activities"):
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
+                        if (qrName != "")
+                        {
+                            activity_record.Team = controller.TeamName;
+                        }
                         activity_record.Match = Settings.Default.currentMatch;
                         activity_record.Mode = controller.Current_Mode.ToString();
                         activity_record.ScouterName = controller.GetScouterName().ToString();
@@ -1048,9 +1065,17 @@ namespace ScoutingCodeRedo.Dynamic
                     case ("EndMatch"):
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
+                        if (qrName != "")
+                        {
+                            activity_record.Team = controller.TeamName;
+                        }
                         activity_record.Match = Settings.Default.currentMatch;
                         activity_record.Mode = controller.Current_Mode.ToString();
                         activity_record.ScouterName = controller.GetScouterName().ToString();
+                        if (qrName != "")
+                        {
+                            activity_record.ScouterName = qrName;
+                        }
 
                         activity_record.Match_event = "-";
                         activity_record.Leave = "-";
@@ -1129,7 +1154,6 @@ namespace ScoutingCodeRedo.Dynamic
                         activity_record.DelCoralL3 = controller.DelCoralL3;
                         activity_record.DelCoralL4 = controller.DelCoralL4;
 
-                        //activity_record.CageAttempt = controller.GetAttempt().ToString();
                         if (controller.ClimbTDouble == 0)
                         {
                             activity_record.CageAttempt = "N";
@@ -1152,6 +1176,7 @@ namespace ScoutingCodeRedo.Dynamic
                             controller.Def_Eff = 0;
                         }
                         activity_record.Avoidance = controller.Avo_Rat.ToString();
+
 
 
                         if (controller.Def_Rat == 9)
@@ -1192,9 +1217,17 @@ namespace ScoutingCodeRedo.Dynamic
                     case ("Match_Event"):
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
+                        if (qrName != "")
+                        {
+                            activity_record.Team = controller.TeamName;
+                        }
                         activity_record.Match = Settings.Default.currentMatch;
                         activity_record.Mode = controller.Current_Mode.ToString();
                         activity_record.ScouterName = controller.GetScouterName().ToString();
+                        if (qrName != "")
+                        {
+                            activity_record.ScouterName = qrName;
+                        }
 
                         activity_record.Match_event = controller.Match_event.ToString();
                         activity_record.Leave = "-";
@@ -1268,6 +1301,10 @@ namespace ScoutingCodeRedo.Dynamic
                     case "Defense":
                         activity_record.Time = DateTime.Now;
                         activity_record.Team = BackgroundCode.Robots[controller.ScouterBox].TeamName;
+                        if (qrName != "")
+                        {
+                            activity_record.Team = controller.TeamName;
+                        }
                         activity_record.Match = Settings.Default.currentMatch;
                         activity_record.Mode = RobotState.ROBOT_MODE.Defense.ToString();
                         activity_record.ScouterName = controller.GetScouterName().ToString();
