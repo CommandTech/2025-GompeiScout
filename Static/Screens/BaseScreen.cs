@@ -344,6 +344,11 @@ namespace ScoutingCodeRedo.Static
         private void NextMatch()
         {
             Settings.Default.currentMatch++;
+
+            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+            {
+                DynamicResponses.ResetValues(i);
+            }
             LoadMatch();
         }
 
@@ -357,15 +362,15 @@ namespace ScoutingCodeRedo.Static
             {
                 Settings.Default.currentMatch--;
 
+                for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
+                {
+                    DynamicResponses.ResetValues(i);
+                }
                 LoadMatch();
             }
         }
         private void LoadMatch()
         {
-            for (int i = 0; i < BackgroundCode.gamePads.Length; i++)
-            {
-                DynamicResponses.ResetValues(i);
-            }
             RefreshPrio();
 
             this.lblMatch.Text = $"{Settings.Default.currentMatch}/{BackgroundCode.UnSortedMatchList.Count}";

@@ -1418,7 +1418,9 @@ namespace ScoutingCodeRedo.Dynamic
                 }
 
                 controller.DisFlag = false;
-                BackgroundCode.activitiesQueue.Enqueue(activity_record);
+                Activity test = new Activity();
+                test = activity_record;
+                BackgroundCode.activitiesQueue.Enqueue(test);
             }
         }
 
