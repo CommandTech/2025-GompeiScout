@@ -14,9 +14,11 @@ Coded and run inside Microsoft Visual Studio
 
 Visual Studio can be found at: https://visualstudio.microsoft.com/
 
-Database using SQLite and SQL Server Management Studio
+Database using SQL Server Express and SQL Server Management Studio
 
-SQL Server Management Studio can be found at: https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16#download-ssms
+SQL Server Management Studio can be found at: https://aka.ms/ssmsfullsetup
+
+SQL Server Express can be found at: https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x409&culture=en-us&country=us
 
 Match Preview Report and data visualization using React on our website
 
